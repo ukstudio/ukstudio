@@ -1,0 +1,29 @@
+<!DOCTYPE html><html><head><meta charset="utf-8" /><!--Always force latest IE rendering engine or request Chrome Frame--><meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" /><!--Use title if it's in the page YAML frontmatter--><title>The Middleman</title><link href="http://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet" type="text/css" /><link href="/stylesheets/normalize.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="/stylesheets/all.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="/stylesheets/highlight.css" media="screen" rel="stylesheet" type="text/css" /><script src="/javascripts/all.js" type="text/javascript"></script><link href="/feed.xml" rel="alternate" title="atom" type="application/atom+xml" /><script type="text/javascript">var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-12755601-1']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();</script></head><body class="2010 2010_11 2010_11_25 2010_11_25_index"><div class="cointainer-fluid"><div class="navbar navbar-default" role="navigation"><div class="container-fluid"><div class="navbar-header"><a class="navbar-brand" href="/">UKSTUDIO</a></div><div class="navbar-collapse collapse"><ul class="nav navbar-nav navbar-right"><li><a href="http://twitter.com/ukstudio">Twitter</a></li><li><a href="http://github.com/ukstudio">GitHub</a></li></ul></div></div></div></div><div class="container"><h1><Archive></Archive>Nov 25 2010</h1><article><h2><a href="/2010/11/25/pathogen_and_neocomplcache/">2010-11-25 pathogen.vimとneocomplcache.vimのスニペット機能</a></h2>vimの環境を少し整理した。
+
+<h2>pathogen.vimを使うことにした</h2>
+<a href="https://github.com/tpope/vim-pathogen">tpope&apos;s vim-pathogen at master - GitHub</a>
+
+我らがtpope先生のプラグイン、pathogen.vimを使ってプラグインを管理するようにした。.vim/bundleにあるプラグインに対してruntimepathを追加してくれるので、今まで.vim以下のautoloadやpluginsとかにバラバラになってたプラグインを1つにまとめたまま管理できる。
+
+1つにまとめられると、githubとかにあるプラグインはgitのsubmoduleで扱うことが出来るので便利。特にgithubにあがってるようなプラグインは更新が速いものが多いのでなおさら便利(unite.vimとか)。これで主要なプラグインの更新はgit submodule updateで済む。
+
+ちなみに今のディレクトリ構成はこんな感じ。
+<a href="https://github.com/ukstudio/config/tree/master/.vim/bundle/">.vim/bundle at master from ukstudio&apos;s config - GitHub</a>
+
+ちなみにこういうことをしていて、プラグインの自動更新とかがデフォルトでないvimもいい加減レガシーな環境だよなぁと思うのであった。
+
+<h2>neocomplcache.vimのsnippets機能を使いはじめた</h2>
+何となくなじめなかったsnippets機能だけど、neocomplcacheにいつのまにか実装されてたので試すことにした。とりあえず、rspecまわりをいくつか追加したけど思いの他便利である。補完で候補がでてくるのとsnippetsの編集がラクなのがとてもいい。
+
+<a href="https://github.com/ukstudio/config/blob/master/.vim/snippets/rspec.snip">.vim/snippets/rspec.snip at master from ukstudio&apos;s config - GitHub</a>
+</article><hr /></div></body></html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html><html><head><meta charset="utf-8" /><!--Always force latest IE rendering engine or request Chrome Frame--><meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" /><!--Use title if it's in the page YAML frontmatter--><title>The Middleman</title><link href="http://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet" type="text/css" /><link href="/stylesheets/normalize.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="/stylesheets/all.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="/stylesheets/highlight.css" media="screen" rel="stylesheet" type="text/css" /><script src="/javascripts/all.js" type="text/javascript"></script><link href="/feed.xml" rel="alternate" title="atom" type="application/atom+xml" /><script type="text/javascript">var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-12755601-1']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();</script></head><body class="2014 2014_03 2014_03_18 2014_03_18_index"><div class="cointainer-fluid"><div class="navbar navbar-default" role="navigation"><div class="container-fluid"><div class="navbar-header"><a class="navbar-brand" href="/">UKSTUDIO</a></div><div class="navbar-collapse collapse"><ul class="nav navbar-nav navbar-right"><li><a href="http://twitter.com/ukstudio">Twitter</a></li><li><a href="http://github.com/ukstudio">GitHub</a></li></ul></div></div></div></div><div class="container"><h1><Archive></Archive>Mar 18 2014</h1><article><h2><a href="/2014/03/18/bitlbee_hipchat/">2014-03-18 BitlBeeでHipChatに接続する</a></h2><p>HipChatのLinuxクライアントは残念ながら日本語入力ができないのでかわりにIRCを使ってみる。
+HipChatはJabberが使えるのでBitlBeeを使ってJabber経由でIRCと繋ぐことにする。BitlBee自体の設定はなにもいらないので各環境にあわせて適当に入れて起動する。</p>
+<pre class="highlight text">sudo emerge bitlbee
+sudo /etc/init.d/bitlbee start
+</pre>
+<p>次にIRCクライアントでBitlBeeに接続する。BitlBeeはlocalhostに6667ポートで立ち上がっているので(コンフィグで修正していなければ)、そこに接続する。文字コードはUTF-8でOK。
+接続できたらbitlbeeの部屋でコマンドを入力し、アカウントを追加する。HipChatのJabberのアカウントは「Account Setting &gt; XMPP/Jabber info」にある。</p>
+<pre class="highlight text">account add jabber username@chat.hipchat.com &#39;password&#39;
+</pre>
+<p>次に各ユーザがニックネームで表示されるように設定する。これをやらないと数字の羅列で誰が誰だかわからない状態になってしまう。</p>
+<pre class="highlight text">account hipchat set nick_source full_name
+</pre>
+<p>次にアカウントを有効化する。この時点で認証などもしているので失敗したらアカウント情報を見直すこと。</p>
+<pre class="highlight text">account hipchat on
+</pre>
+<p>有効化できたらすでに部屋に参加できるが数字の羅列が頭についているので使いにくい。別の名前を割り当てることができるので適当に自分が使いやすい名前をつける。</p>
+<pre class="highlight text">chat add hipchat room_jaber_name@conf.hipchat.com #channelname
+</pre>
+<p>ニックの設定次第だとHipChatから怒られるのでその場合HipCHatで使っている名前を設定する。</p>
+<pre class="highlight text">channel #channelname set nick &#39;room nickname&#39;
+</pre>
+<p>無事、部屋にjoinしてログが流れてきたら終了。</p>
+<pre class="highlight text">/join #channelname
+</pre></article><hr /></div></body></html>

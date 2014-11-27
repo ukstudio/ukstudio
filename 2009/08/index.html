@@ -1,0 +1,157 @@
+<!DOCTYPE html><html><head><meta charset="utf-8" /><!--Always force latest IE rendering engine or request Chrome Frame--><meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" /><!--Use title if it's in the page YAML frontmatter--><title>The Middleman</title><link href="http://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet" type="text/css" /><link href="/stylesheets/normalize.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="/stylesheets/all.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="/stylesheets/highlight.css" media="screen" rel="stylesheet" type="text/css" /><script src="/javascripts/all.js" type="text/javascript"></script><link href="/feed.xml" rel="alternate" title="atom" type="application/atom+xml" /><script type="text/javascript">var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-12755601-1']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();</script></head><body class="2009 2009_08 2009_08_index"><div class="cointainer-fluid"><div class="navbar navbar-default" role="navigation"><div class="container-fluid"><div class="navbar-header"><a class="navbar-brand" href="/">UKSTUDIO</a></div><div class="navbar-collapse collapse"><ul class="nav navbar-nav navbar-right"><li><a href="http://twitter.com/ukstudio">Twitter</a></li><li><a href="http://github.com/ukstudio">GitHub</a></li></ul></div></div></div></div><div class="container"><h1><Archive></Archive>Aug 2009</h1><article><h2><a href="/2009/08/25/multiruby/">2009-08-25 Ruby1.8.7とRuby1.9.2を共存させる</a></h2><strong>現在は、以下の方法より<a href="http://rvm.beginrescueend.com/">rvm</a>を使うことをオススメします。 10/05/28 追記</strong>
+
+ローカルに開発環境としてRuby1.8.7とRuby1.9.2を共存させる方法。
+
+<h2>Rubyのインストール</h2>
+まずはRubyの処理系をインストール。<a href="http://www.ruby-lang.org/ja/">ruby-lang.org</a>から適当に落とす。今回はruby 1.8.7-p174とruby 1.9.2-preview1を使用。
+
+まず、Ruby1.9.2から。
+
+<pre><code>$ ./configure --prefix=/Users/uk/local --program-suffix=-1.9.2
+$ make
+$ make install
+</code></pre>
+
+--prefixでインストール箇所を指定。自分の$HOME以下のどこかにいれるのが最近のマイブーム。この後でてくるgemも$HOME以下。Rubyはともかくgemは$HOME以下を推奨する。ある程度有名なライブラリならいいが、適当な野良ライブラリをインストールするにはこちらの方が安心な為。
+
+--program-suffixを指定するとインストールしたバイナリの後ろに指定した文字列を付加できる。この例だと「ruby-1.9.2」となる。他の処理系と分けるためこの指定は必須。
+
+次に同じ要領で1.8.7もインストール。やることは同じ。
+
+<pre><code>$ ./configure --prefix/Users/uk/local --program-suffix=-1.8.7
+$ make
+$ make install
+</code></pre>
+
+これでそれぞれのバイナリが/Users/uk/local/binに入っている状態となる。
+
+<h2>RubyGems</h2>
+次にgemの設定。Ruby1.9からはgemが標準で入っている為、インストールは必要ない。ただバージョンが1.3.4なのでアップデートしておくといいだろう。
+
+1.8.7は別途gemをインストールする。<a href="http://rubyforge.org/projects/rubygems/">RubyForgeにプロジェクトがある</a>のでそこからダウンロードしてくる。
+
+<pre><code>$ ruby-1.8.7 setup.rb
+</code></pre>
+
+それぞれのgemのenvを見ておくと、インストールしたライブラリがどこに保存されるかわかる。
+
+<pre><code>$ gem-1.9.2 env
+$ gem-1.8.7 env
+</code></pre>
+
+それぞれ、GEM PATHSの先頭が/Users/uk/local/lib/ruby/gems/1.8と/Users/uk/local/lib/ruby/gems/1.9.1(何で1.9.2じゃないのかはわからん)になっているはずだ。今後、gemを使ってライブラリをインストールするときはsudoは必要ない。
+
+<h2>シンボリックリンク</h2>
+この時点でRuby1.9.2とRuby1.8.7がそれぞれ使える状態になってはいるが、いちいちバージョンを指定するのも面倒なので、シンボリックリンクで対応する。riとかも必要に応じて作る。
+
+<pre><code>$ ln -s ~/local/bin/ruby-1.8.7 ~/local/bin/ruby
+$ ln -s ~/local/bin/irb-1.8.7 ~/local/bin/irb
+$ ln -s ~/local/bin/gem-1.8.7 ~/local/bin/gem
+</code></pre>
+
+Ruby1.9.2を使いたいときは、一度シンボリックリンクを消し、再度作りなおす。
+
+とは言え、その作業を手動で行うのは手間なのでスクリプトで対応するのがオススメ。5分ぐらいで書いたスクリプトをgistに貼っておいた。実行権限を与えて、引数にバージョンを与えると使えるはずだ。PATHとCMDは適当に書き換えること。そのうちもうちょっとマシなものに書き直すかも。
+
+<script src="http://gist.github.com/174406.js"></script>
+
+<h2>まとめ</h2>
+とりあえず、こんな感じでRuby1.9.2とRuby1.8.7を共存させてみた。いくつか、気になる点があって例えばgemでRailsをインストールするとシェバングが「#!/Users/uk/local/bin/ruby-1.9.2」となっており、シンボリックリンクを用意しただけではダメな時もある。その時はとりあえず諦めて以下の様に実行している。
+
+<pre><code>$ ruby -S Rails hoge
+</code></pre>
+
+実際にこの環境で開発するのはこれからなので、もしかしたらそのうち色々な問題もでてくる可能性はあるが、とりあえずこの環境でやってみようと思う。
+</article><hr /><article><h2><a href="/2009/08/20/review_kinesis/">2009-08-20 Kinesisを2週間使ったのでレビューする</a></h2><a href="http://d.hatena.ne.jp/ursm">ursm</a>さんに2週間程、<a href="http://ja.wikipedia.org/wiki/Kinesis">Kinesis</a>をお借りしたのでレビューを書く。
+
+結論から言うと、Kinesisはとても素晴しいキーボードだった。ursmさんや<a href="http://whileimautomaton.net/">kana</a>さんが常用するのもわかる気がする。
+
+<h2>指の負担が少ない</h2>
+Kinesisはキーの部分が、おわんの形にへこんでおり、かつ各キーの角度や位置がそれぞれ微調整されておりパッと見カオス。案外これがいい感じにフィットしていて指の動きがスムーズ。ちょっと動かせばすぐ届く感じ。多分、タイピング速度も一般的なキーボードよりは速くなる気がする。
+
+あといくつかのキーが親指の部分にあるため、Ctrlキーとか小指を酷使することもなかった。親指は大体暇なので、こういうのはありがたい。HHKだと大体SpaceかCmdぐらいしか使わない(Space押しっぱでShiftになるようにはしてるけど)
+
+<h2>Key Remap</h2>
+Kinesisは単体でキーのremapができる。OS側でやらなくてすむのはとても素晴しい。正直、いくつかのキーで配置に不満があったのだけど([とか]とかCmdとか)適当に配置しなおし。特にCmdは半角、全角の切り替えにCmd+Spaceを使っていたので、デフォルトの状態じゃどうしようもなかった。
+
+Remapがキーボード単体でできるのは本当に素晴しいので他のキーボードも見習ってください。
+
+<h2>でかい</h2>
+とりあえずでかい。ただまぁ、この大きさは多分仕方なくて、小さくしてしまうと腕がちょっと窮屈になってしまう。腕の位置を自然にするために左右分割してると思うのでまぁしょうがないのだろう。それとは別にどことなく外人の手の大きさに合わされているので、いくつか遠く感じるキーもあった。
+
+<h2>まとめ</h2>
+Kinesisを2週間使って、HHKやMacBookのキーボードで打ちづらさを感じるようなり、しかもタイプミスが増えたのでursmさんには損害賠償を払ってもらいたいです。Kinesis1個で手を打ちます。
+</article><hr /><article><h2><a href="/2009/08/12/twitter_bot/">2009-08-12 ついったーBOT作者にお願いしたいこと</a></h2>最近、行儀がわるいというか、ハッキリ言ってしまうと「鬱陶しいBOT」が増えた(前からかもだけど)気がするので個人的にBOTを作るときに気をつけてもらいたいことを書いておく。
+
+<h2>言及に気を配って</h2>
+ついったーの仕様上、いつからかは知らないけど発言内容に「@自分のID」が含まれていると言及されたということでReplyに流れてくる。
+
+それはまぁいいんだけど、BOTが必要以上にIDを含めているとそれだけでReplyがうまってしまう。特に「○○なう系BOT」がひどい。山手線とか色々あるけど<a href="http://twitter.com/shibuya_now">渋谷なうBOT</a>がひどい。
+
+なにがひどいって一度「渋谷なう」と言ったら補足されて大体24時間ぐらいはそのBOTの発言に自分のIDが含まれて、誰かが「渋谷なう」と言う度に自分のReplyに流れてくる。そんな情報は求めていない。せめて@をはずしてほしい。
+
+それと同じような理由で延々と特定のキーワードに対してReTweetする「RT BOT」もなにかと鬱陶しい。特定のキーワードを集めて広めるという意味もあるかもしれないが、大抵の場合検索すれば解決すると思う。
+
+<h2>RT捏造</h2>
+<del datetime="2009-08-11T21:51:38+00:00">これはついさっき気づいたんだけど、clibotという学習系のBOTが<a href="http://twitter.com/clibot/status/3250129088">さも俺が発言したかのようにRTしていた</a>が、俺はそんな発言を一切していない。</del>
+
+追記(2009-08-12): 作者の方から<a href="http://twitter.com/clicube/status/3252794902">replyを頂いた</a>。わざわざありがとうございます。
+
+学習系だから仕方ないと言うかもしれないが、まるで俺が発言したかのように扱われるのはあまりいい気分ではない。
+
+<h2>Blockを前提としない</h2>
+この手の文句は大体がBlockしたらいいのだろうけど、BOTを作る側の礼儀としてそこは前提にしてはいけないと思う。
+
+基本的にBOTはFollowしてくれてる人のみを対象にするか、出来る限りそれ以外の人へ影響を減らすようにして欲しい。
+
+例えばキーワードを拾うBOTだったら、せめてIDの先頭に@をつけないでおくとかするだけでも大分かわる。それでも自分のIDでキーワード反応させてる人がいるから影響が0とはならないが。その人へのリンクが必要というなら、発言のパーマリンクでも一緒に載せておけばいい。
+
+別に@を飛ばすなとまで言うつもりはないが、あまりの意味のない内容を何度もReplyされるとさすがに鬱陶しい。
+
+<h2>作者への連絡先を明記して</h2>
+BOTを作るなら、Bioにでも自分のTwitterのIDなりブログのURLなり載せておいてほしい。BOTへの苦情・要望を誰に伝えたらいいのかさっぱりわからない。
+
+BOTを作ったのなら無責任に放ったらかすのではなく、BOTの発言も自分の発言と同程度の責任を持っておいて欲しい。
+
+<h2>まとめ</h2>
+個人的な要望として適当につらつらと書き殴ったけど別に強制するつもりはない。だけどまぁ、BOTを作るときは少しばかりここに書いたことに気を使ってもらえるとうれしい。
+</article><hr /><article><h2><a href="/2009/08/11/oauth/">2009-08-11 OAuthを使ってみた雑感</a></h2>最近、TwitterのDMスパムなどで話題のOAuthですが、仕事で使ってみて色々思うところもあるのでまとめておく。
+
+<h2>OAuthは安全か</h2>
+まず、 OAuthでよく言われてるようにみえるパスワードをサービスに渡さないから安全ということに関して。簡単に言うと、「パスワード渡すよりは安全だけどまぁ信用していいかどうかの判断は必要だよね」ってところ。
+
+OAuthは難しい話を抜きにしてしまえば、期限つきパスワード(Twitterは無期限っぽいですが)をサービスごとに発行するようなものだと思う。パスワードを渡した場合と違って、パスワードを書き換えられてログインできなくなるということはないが、APIで実行できることは基本的に出来るのでOAuthにもそれなりのリスクはある。
+
+リスクと言ってもパスワードを第三者に渡すよりははるかに安全。先程述べたようにパスワードを書き換えられる心配もないし、仮に第三者のサービスからトークンが流出したとしても、トークンは無効化できるし、同一のパスワードを使っているサービスへの影響もない。(他のサービスと同じパスワードを使うのはどうなの?云々は置いておいて)
+
+<h2>セキュリティより利便性</h2>
+上記で述べたようにセキュリティ的にはパスワードを渡すより安全だが、ユーザ視点からみた場合のOAuthの利点はセキュリティ云々より利便性なんだと思う。
+
+まず、パスワードの入力の手間が省ける。実際にIDとパスワードを入力してみればわかると思うけど、クリックで認証が済んでしまうOAuthの方が大分ラク。この辺は実装の詳細は違えど、利便性という意味では携帯の簡単ログインに近い。
+
+また、パスワードを第三者のサービスに渡さないことでTwitterのパスワードを変更をする場合、Twitterのパスワードを変更するだけで済む。Twitterのパスワードを変える人がどれだけいるのか知らないけど。
+
+<h2>サービス提供側としてOAuthを使うべきか</h2>
+実際のところ、OAuthを使ったところでやることはあまりかわらない。当然、OAuthで取得したトークンが外部に漏れてしまえば、そのトークンを使用してTwitterへの発言やFollowingのremoveなどができてしまう。よってトークンが外に漏れないよう管理する必要がある。まぁそもそもデータが外部に漏れるということ自体があってはいけないことだけど。
+
+だけどパスワードを預かるよりはユーザにとっても自分達にとっても安全なのは間違いないし、自分達の責任が限定されるという点からもOAuthを使うべき。その方がリスクが少ない。
+
+例えば、他の同一パスワードを使用しているサービスで不正があった場合に、OAuthであればパスワードを持っていないので自分達のデータからパスワードが漏れるということがないし、そういう疑いをかけられることもない。
+
+OAuthを使う際、サービス内部にOAuthを使用してなにをするのかを明記しておくといい。OAuthの仕組みなどを説明する必要はないが、自分達がTwitterに対してなにをするのかぐらいは書いておく方がユーザも安心できる。
+
+現状、TwitterのOAuthの認可のページがかなり不親切かつほとんど英語なので、そのあたりは自分達でうまくサポートするしかない。
+
+<h2>まとめ</h2>
+パスワード使うよりはユーザにとってもサービスを提供する側にとってもメリットがあるのでOAuthが使えるなら使っておきましょう。
+</article><hr /></div></body></html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html><html><head><meta charset="utf-8" /><!--Always force latest IE rendering engine or request Chrome Frame--><meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" /><!--Use title if it's in the page YAML frontmatter--><title>autotestの結果をMacのsayコマンドで通知する</title><link href="http://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet" type="text/css" /><link href="/stylesheets/normalize.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="/stylesheets/all.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="/stylesheets/highlight.css" media="screen" rel="stylesheet" type="text/css" /><script src="/javascripts/all.js" type="text/javascript"></script><link href="/feed.xml" rel="alternate" title="atom" type="application/atom+xml" /><script type="text/javascript">var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-12755601-1']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();</script></head><body class="2008 2008_06 2008_06_30 2008_06_30_song_for_autotest 2008_06_30_song_for_autotest_index"><div class="cointainer-fluid"><div class="navbar navbar-default" role="navigation"><div class="container-fluid"><div class="navbar-header"><a class="navbar-brand" href="/">UKSTUDIO</a></div><div class="navbar-collapse collapse"><ul class="nav navbar-nav navbar-right"><li><a href="http://twitter.com/ukstudio">Twitter</a></li><li><a href="http://github.com/ukstudio">GitHub</a></li></ul></div></div></div></div><div class="container"><article><h1>autotestの結果をMacのsayコマンドで通知する</h1><hr /><div class="article-body">かなりネタなエントリー。
+
+Macにはsayコマンドと言うものがあって、入力した英単語とかをしゃべらせることができる。詳細はMacの手書き説明書さんが最近エントリー書いているのでそちらを見てくださいな。
+
+<a href="http://veadardiary.blog29.fc2.com/blog-entry-1645.html">Macが歌いだす！？ | Macの手書き説明書</a>
+
+んで、今回はそのsayコマンドを使って、autotestの結果をしゃべらせよう!というネタ企画。実用性はほぼ皆無。
+
+まずは~/.autotestを修正。最下行に以下を追記する。既にgrowlの通知などの設定がある場合はそこにsayコマンドの実行文を追記すればOK。
+
+<pre lang="ruby">
+module Autotest::Growl
+  Autotest.add_hook :ran_command do |at|
+    results = [at.results].flatten.flatten.join("\n")
+    output = results.slice(/(\d+)\s+examples?,\s*(\d+)\s+failures?(,\s*(\d+)\s+not implemented)?/)
+    if output
+      if $~[2].to_i > 0
+        `say -v bad faild`
+      else
+        `say -v good success!`
+      end
+    end
+  end
+end
+</pre>
+
+`で括っている2箇所でsayコマンドを実行している。失敗したときはbadな声で、成功したときはgoodな声で結果を通知する。他にも色んな声があるらしいので、そこらへんは好みで。
+
+<pre lang="bash">
+ls /System/Library/Speech/Voices
+</pre>
+
+とすると声の一覧がでるっぽい。
+</div></article></div></body></html>

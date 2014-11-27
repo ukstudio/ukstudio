@@ -1,0 +1,128 @@
+<!DOCTYPE html><html><head><meta charset="utf-8" /><!--Always force latest IE rendering engine or request Chrome Frame--><meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" /><!--Use title if it's in the page YAML frontmatter--><title>ukstudio.jp</title><link href="http://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet" type="text/css" /><link href="/stylesheets/normalize.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="/stylesheets/all.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="/stylesheets/highlight.css" media="screen" rel="stylesheet" type="text/css" /><script src="/javascripts/all.js" type="text/javascript"></script><link href="/feed.xml" rel="alternate" title="atom" type="application/atom+xml" /><script type="text/javascript">var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-12755601-1']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();</script></head><body class="page page_6 page_6_index"><div class="cointainer-fluid"><div class="navbar navbar-default" role="navigation"><div class="container-fluid"><div class="navbar-header"><a class="navbar-brand" href="/">UKSTUDIO</a></div><div class="navbar-collapse collapse"><ul class="nav navbar-nav navbar-right"><li><a href="http://twitter.com/ukstudio">Twitter</a></li><li><a href="http://github.com/ukstudio">GitHub</a></li></ul></div></div></div></div><div class="container"><article><h1><a href="/2011/05/09/build_vim/">2011-05-09 Vimをソースからビルド</a></h1><hr /><div class="article-body">aptで入れたvimのrubyインターフェースのバージョンが1.8.6なのが気にいらなくてvimをソースからビルドした。
+
+<pre><code>$ hg clone https://vim.googlecode.com/hg/ vim
+$ hg update vim73
+
+$ cd vim
+$ ./configure --enable-multibyte --prefix=$HOME/local --enable-rubyinterp</code></pre>
+
+これでOK。aptで入れたvimも一応残しておきたかったのでprefixで$HOME以下にビルドするようにした。Rubyインターフェースはrvmで入れた1.9.2を見るようになっていたのでとりあえずよしとする。何でrvmの奴を見にいったのかはよくわからない。
+</div></article><article><h1><a href="/2011/04/19/coffeescript-qunit/">2011-04-19 CoffeeScript + QUnitでTDD環境作ったよ</a></h1><hr /><div class="article-body">Rails3.1からCoffeeScriptがデフォルトで入ってるとかなんとかで、とりあえずCoffeeScriptだけで少し触ってみた。とりあえずQUnit自体もCoffeeScriptで書けるようなTDD環境を作ってみた。
+
+とりあえず、UbuntuにCoffeeScriptをインストールするわけだけどaptの方が古いしせっかくだから最新のを触るかと思ったのでgithubからCoffeeScriptとnode.jsのリポジトリをcloneしてインストール。
+
+<pre>$ git clone git://github.com/joyent/node.git 
+$ cd node
+$ ./configure
+$ make
+$ sudo make install
+$ node -v
+v0.5.0-pre</code></pre>
+
+<pre><code>$ git clone git://github.com/jashkenas/coffee-script.git
+$ cd coffee-script
+$ sudo bin/cake install
+$ coffee -v
+CoffeeScript version 1.1.0-pre</code></pre>
+
+ディレクトリ構成はこんな感じ。coffeeにCoffeeScriptに入れて生成されたJavaScriptはsrcにいれるルール。test/index.htmlはQUnitの結果を見るため。test/qunitはずばりQUnitそのもの。
+
+<pre>./coffee/hello.coffee
+./src/hello.js
+./test/index.html
+./test/qunit/qunit.css
+./test/qunit/qunit.js
+./test/coffee/test-hello.coffee
+./test/src/test-hello.js</pre>
+
+CoffeeScriptは-wでファイルの変更を監視してコンパイルしなおすことができるので,以下の用に実行しておけばそれぞれ変更があったらコンパイルしてくれる。CoffeeScriptはデフォルトでfunction(){}();で囲って外部からアクセスできなくなるので,-bを付けてトップレベルにJavaScriptを生成するようにする。
+
+<pre>$ coffee -w -b -o src/ -c coffee</pre>
+<pre>$ coffee -w -b -o test/src -c test/coffee</pre>
+
+これでテストコードもしくは本体のコードを修正すれば勝手にコンパイルするのでtest/index.htmlを見ればよい。後はもうちょい頑張ってブラウザを勝手にリロードするか,Rhinoとか使えばindex.htmlを用意しなくてもCUIでテスト結果をみれそう。
+
+一式は以下のgistに置いた。(Qunitはライセンス見てないので外してある)
+<a href="https://gist.github.com/925753">CoffeeScript+QUnit — Gist</a>
+</div></article><article><h1><a href="/2011/04/11/odrk01/">2011-04-11 大江戸Ruby会議01で発表してきました</a></h1><hr /><div class="article-body">昨日は大江戸Ruby会議という名のasakusa.rbの生活発表会があったので、普段の生活で考えてることを発表してきた。ちなみに実はasakusa.rbの参加回数はそんなに多くなかったりする。当日のスライドと動画はこちら。KaigiFreaksは仕事がはやくてすごい。いつもありがとうございます!
+
+
+
+<a href="http://vimeo.com/channels/oedorubykaigi01">大江戸Ruby会議01 on Vimeo</a>
+
+この発表について何か僕にもの申したい人がいたら@ukstudioかy.akamatsu[at]ukstudio.jpまで頂けるとありがたいです。
+
+発表内容についてちょこっとだけ書いておこうかな。<a href="http://www.amazon.co.jp/gp/product/487311473X?ie=UTF8&ref_=sr_1_1&qid=1302526992&sr=8-1&linkCode=shr&camp=1207&creative=8411&tag=ukstudio0c-22">パブリックスピーカーの告白</a>で言う「講演家がこう話せばよかったと思うスピーチ」にあたる部分。
+
+タイトルに戦略ってあるけど、正直そもそもそういったものがあるのかよくわからない。CIとかは環境の話だし、TDDとかリファクタリングとかはスキルだしでそれらが「戦略」かと言われると違う気がする。
+
+結局のところ、継続的に改善していくしかないと思うんだよなぁ。そうなると後はもう手を動かすか動かさないかの話になる。そんなことを考えたら終始「熱意を持って頑張って」みたいな話になってしまった。これはこれで妙に好評だったけど(母数80ぐらいのうちサンプリング5ぐらい)。ちなみに熱意がなくとも仕事だと割り切って手を動かしてももちろんいいと思います。
+
+で、手を動かす前提となるとClean Codeを保てるかは個々の設計能力に依存してくる。そういうわけでRubyでClean Codeってどう実現するんだろうね?というところをSOLID原則を取り出して話をしたつもり。
+
+終わった後に@t_wadaさんからRubyConfで似た話をした人がいるから動画を見た方がいいと言われ、今日twitterで動画を教えてもらった。
+
+<a href="http://confreaks.net/videos/185-rubyconf2009-solid-ruby">SOLID Ruby - Jim Weirich - Ruby Conference 2009</a>
+
+資料も豪快にgithubにあがっていて、こっちは@kakutaniさんに教えてもらった。お二人共ありがとうございます。
+
+<a href="https://github.com/jimweirich/presentation_solid_ruby">jimweirich/presentation_solid_ruby - GitHub</a>
+
+まだ資料をざっと見ただけなんだけど、僕より全然良くできてるので皆さんこっちを見るといいです。まだまだ精進が足りない。
+
+Rubyらしい設計って色々とまだ手探りなんだけど、参考になったのは<a href="http://www.amazon.co.jp/gp/product/4894712857?ie=UTF8&ref_=sr_1_1&s=books&qid=1302526019&sr=8-1&linkCode=shr&camp=1207&creative=8411&tag=ukstudio0c-22">Rubyによるデザインパターン</a>とか<a href="http://www.amazon.co.jp/gp/product/4048678841?ie=UTF8&ref_=sr_1_2&s=books&qid=1302526019&sr=8-2&linkCode=shr&camp=1207&creative=8411&tag=ukstudio0c-22">リファクタリング:Rubyエディション</a>あたりかなぁ。
+
+後はJavaだけど、<a href="http://www.amazon.co.jp/gp/product/4048676881?ie=UTF8&ref_=sr_1_1&s=books&qid=1302526151&sr=1-1&linkCode=shr&camp=1207&creative=8411&tag=ukstudio0c-22">Clean Code</a>とか<a href="http://www.amazon.co.jp/gp/product/4797347783?ie=UTF8&ref_=sr_1_2&s=books&qid=1302526151&sr=1-2&linkCode=shr&camp=1207&creative=8411&tag=ukstudio0c-22">Amazon.co.jp： アジャイルソフトウェア開発の奥義</a>とか。両方とも結構ヘビーな本だけど勉強になる。
+
+大江戸Ruby会議の全体的な感想は他のWeb日記力の高い人におまかせしたいと思うのでそちらをどうぞ。と言うのも、発表が最後の方だったので会議中ずっとそわそわしてたため、文章にまとめられるほどまだ消化できてないのだ。この辺はなかなか難しいところだけど、あの空気感の一旦を担えた(と思いたい)と言うことでよしとする。
+
+最後に。発起人の@a_matsudaさん、実行委員長の@kakutaniさんを始め、スタッフ、発表者、参加者のみなさん、どうもありがとうございました!
+</div></article><article><h1><a href="/2011/03/24/activity/">2011-03-24 近況</a></h1><hr /><div class="article-body"><h3>個人事業主になりました</h3>
+<a href="http://ukstudio.jp/wp-content/uploads/2011/03/FxCam_1300951372227.jpg"><img src="http://ukstudio.jp/wp-content/uploads/2011/03/FxCam_1300951372227.jpg" alt="" title="FxCam_1300951372227" width="720" height="480" class="alignnone size-full wp-image-824" /></a>
+この間の確定申告の際に、個人事業主届けを出してきた。去年は出さずに1年働いていたけど、今年は確定申告を青にしたのでそのついでに。届出の提出はすごいあっけなくて、改めて個人事業主なんてそんな大層なものじゃないなーと思った。
+
+屋号は「UKSTUDIO」にした。屋号を取ったから何が変わるってわけでもないけど、本名とukstudioっていうIDの間にある溝を埋めるぐらいの意味はあるかな。
+
+<h3>4月下旬からスケールアウトでお仕事</h3>
+<a href='http://twitter.com/yamaz'>@yamaz</a>さんからお声がかかって、4月下旬からスケールアウトで働くことになった。正社員ではなく1年の契約です。
+
+一応、別の仕事も請けることは可能だけど最初から複数の仕事をまわせる気がしないし当分はお仕事の依頼は請けられないと思います。あしからず。
+
+「パフォーマンスを出してください」と言われたので頑張りたいと思います。よろしくお願いします。
+</div></article><article><h1><a href="/2011/03/21/tddbc-fukuoka/">2011-03-21 TDDBC福岡に参加してきた</a></h1><hr /><div class="article-body"><a href="http://ukstudio.jp/wp-content/uploads/2011/03/2011-03-19-09.24.06.jpg"><img src="http://ukstudio.jp/wp-content/uploads/2011/03/2011-03-19-09.24.06.jpg" alt="" title="博多駅" class="alignnone size-full wp-image-815" style='width: 100%;'/></a>
+
+福岡TDDBCに参加してきた。今回で3回目の参加(1回目は東京、2回目は東北)。
+
+3回は割と多めの参加回数だと思うけど、参加者層が地域によって違ったり、当然ペアプロする相手も違うわけでいつも違う刺激をもらってる。
+
+今回は@mzpさんが参加するとのことなので普段使ってるRubyではなくOCamlで参加。OCaml組は2ペア(4人)いて、1日目の前半を@suerさん、1日目の後半と2日目を@mzpさんとペアを組んでやった。OCamlは初心者もいいところなので2人には大分お世話になりました。どうもありがとうございます。
+
+コンパイルが必要な言語でTDDをやるとコンパイルがテンポを崩しがちなんだけれど、OMakeが結構よく出来ていてautotestみたいなことも出来るし、その辺は特に不自由ない感じ。OCamlの型付けの強さはなかなか慣れないけれど、コンパイルが通った時点で型の間違いがないって言うのは割と安心かも。
+
+慣れない言語でTDDをやって一番実感したのは、普段Rubyの時は「こういうインターフェースで使いたい」と振る舞いの視点からテストケースを考えられるのに、OCamlだと「今回正規表現が必要そうだけどOCamlだとどうやるの?」といった具合で先に実装の詳細について考えはじめてしまうこと。本来は実装は置いておいてテストケースを考えるべきなのについつい実装の方を考えてしまった。
+
+ただ、言語を習得していく過程でTDDが出来ないかと言うとそんなことはないとも思う。ペアプロの時はたまたま僕にとってオーバーペースだっただけで、落ち着いてbaby stepで刻んでいけば逆に習得しやすくなるかもしれない。今回はRubyと同じテンポでやろうとした俺のミスだなー。
+
+後、ここ最近新しい言語を習得できないなーと思っていたけどこういうイベントで挑戦するのは悪くない。普段だとついついRubyに逃げちゃうんだけど、ペアプロだと逃げようがない。あとは@mzpさんのコードを書くところを横でみれたのは大きいと思う。こう書くのかーって発見がいっぱいあった。
+
+2日目の休憩時間に@mzpさんがAsakusaSatelliteのテストコードを修正していて、RSpecで書かれていたので「ここはこう書けるよ」「こうした方がRSpecっぽいよ」と横で口出ししていたら@mzpさんと@suerさんにRSpecの魅力が伝わったようでよかった。
+
+ここ最近、RSpecに興味はあるけどどう書いたらいいかわからないみたいな話を良くきく。構文だけだったらドキュメントみればいいんだけど、それをどう活用するのかみたいな話はなかなかまとまってないからかな。結構需要がありそうなのでそのうちるびまあたりに寄稿してみようかな。最近やっとletの使い方が見えてきたよ。
+
+そう言えば、今回は結構若い人が多かった気がする。@mzpさんは1つ上らしいし、@bleisさんは同い年だった。主催の@pocketfberserkerさんも年下。<del>講師の1人の@akinekoさんは俺より1つ2つ年下だったと思うし</del>(年上だそうです)。こういうイベントで同世代や自分より若い人がいるとなんかうれしいなー。
+
+今回のTDDBCもなかなか刺激的で楽しかった。次のTDDBCもいくつか開催決まってるっぽいし、今回で動きだす地域もあるみたいだし楽しみ。
+
+最後に、主催の@pocketfberserkerさんを始め、今回のTDDBCの運営に携わっていた方々、どうもありがとうございました!
+<a href="http://togetter.com/li/114056">Togetter - 「TDD Boot Camp福岡」</a>
+</div></article><div class="pager"><ul><li class="previous"><a href="/page/5/">Prev</a></li><li class="next"><a href="/page/7/">Next</a></li></ul></div></div></body></html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html><html><head><meta charset="utf-8" /><!--Always force latest IE rendering engine or request Chrome Frame--><meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" /><!--Use title if it's in the page YAML frontmatter--><title>ukstudio.jp</title><link href="http://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet" type="text/css" /><link href="/stylesheets/normalize.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="/stylesheets/all.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="/stylesheets/highlight.css" media="screen" rel="stylesheet" type="text/css" /><script src="/javascripts/all.js" type="text/javascript"></script><link href="/feed.xml" rel="alternate" title="atom" type="application/atom+xml" /><script type="text/javascript">var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-12755601-1']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();</script></head><body class="page page_28 page_28_index"><div class="cointainer-fluid"><div class="navbar navbar-default" role="navigation"><div class="container-fluid"><div class="navbar-header"><a class="navbar-brand" href="/">UKSTUDIO</a></div><div class="navbar-collapse collapse"><ul class="nav navbar-nav navbar-right"><li><a href="http://twitter.com/ukstudio">Twitter</a></li><li><a href="http://github.com/ukstudio">GitHub</a></li></ul></div></div></div></div><div class="container"><article><h1><a href="/2008/07/23/categories_and_tags_in_order/">2008-07-23 カテゴリとタグを整理しました</a></h1><hr /><div class="article-body">なんかWordPressにいつのまにかタグ機能が実装されていたので、せっかくなので使ってみることにしました。
+
+ベースはヤスヒサさんの<a href="http://www.yasuhisa.com/could/article/category-tag/">カテゴリとタグを上手に使い分ける</a>を参考にしています。
+
+ヤスヒサさんの記事を読んだあと、自分なりに色々考えて、カテゴリを廃止しタグのみにすることも検討したんですが、今まで書いたエントリーを見直して、タグだけじゃカバーしきれないなと思ったので、結局カテゴリも使ってみることにしました。
+
+カテゴリは、「プログラミング」「日記」「告知」の3種類にしようとも思ったんですが、そうすると例えばHTMLの話題やWeb全般に関する話題はどのカテゴリにも該当しないことに気づいたので、「記事」「日記」「告知」の3種類に最終的に決定しました。
+
+基本的にこのブログはRSS、検索、はてブ経由で来る人が多いので、1つの記事から関連のある他の記事に辿れることを重視しています。現状、デザインを修正してないのでわからないと思いますが・・・例えば、カテゴリ・タグをベースに関連エントリなど他のエントリとの繋りを作るといった感じですかね。カテゴリやタグ以外にははてブ数や時間とかもちょっと考慮に入れてます。
+
+今までは、1つのエントリで完結させてましたが、今後は「他にもこんな記事があるよ」と言ったことができたらなぁと思っています。
+</div></article><article><h1><a href="/2008/07/18/amazon_crossreview/">2008-07-18 Amazon商品ページにcrossreviewのレビューを表示するgreasemonkeyスクリプト書いた</a></h1><hr /><div class="article-body">初グリモン。結構適当に書いたけど、とりあえず動くのでよし。codereposに上げたのでいじりたい人はご自由にどうぞー。
+
+<a href="http://coderepos.org/share/browser/lang/javascript/userscripts/amazon_crossreview.user.js?">amazon_crossreview.user.js</a>
+
+現状、取得できるレビュー数が7件までなのは仕様です。ごめんなさい!
+
+サンプル画像
+<img src="http://img.skitch.com/20080718-bs6mqgs1nrjggarixunr4wgmdd.jpg" alt="greasemonkey_for_crossreview"/>
+</div></article><article><h1><a href="/2008/07/15/iphone-developer-program/">2008-07-15 iPhone Developer Programに登録しました。</a></h1><hr /><div class="article-body">結論から言うと、まだ実機検証も配布もできてない段階です。そもそもアプリ作れてないですしね。ただ、米国在住者じゃないと登録できないってことはないですね。とりあえず登録はできたっぽいので。
+
+端的に今の状況を説明すると、
+
+<ul>
+<li>iPhone Developer Program(Standardの方、$99)を日本のオンラインApple Storeから注文する</li>
+<li>activate codeがメールで届く</li>
+<li><blockquote>
+We are unable to activate your iPhone Developer Program membership because we are unable to successfully verify your identity. Please contact us and reference Enrollment ID#xxxxxxx for further assistance.</blockquote></li>
+<li>activateできねーよ!って日本語と英語でADC(Apple Developer Connection)のcontact usから送信</li>
+<li>数時間後、「あんたのアカウント情報調整したからもっかい試してみ」って返事がくる(日本語できた)</li>
+<li>めでたくactivate完了</li>
+</ul>
+
+そんな感じでとりあえずDeveloper Programには登録できましたーと。んで、そのあとも実機検証までデバイスの登録とか証明書の作成とか色々ある。やり方は一応英語でドキュメントがあるけれど、なんかキレイにまとまってない。とりあえずはProgram Portal(activate後、ログインできるページ)のメニューを順番にやっていけばいいんじゃないかねー。各メニューにHow Toがあるからそれに従えばいいはず。
+
+おれがやったのは
+
+<ul>
+<li>Certificatesの追加</li>
+<li>Devicesの追加</li>
+<li>App IDsの追加</li>
+<li>Provisioningの追加</li>
+<li>xcodeのオーガナイザ上で、iPod Touchのrestore</li>
+<li>オーガナイザでTouchにProvisionを追加</li>
+<li>xcodeのプロジェクトのinfoでDeviceを選択しようにも選択肢にでない! <- ｲﾏｺｺ</li>
+</ul>
+
+正直、手順が悪かったのか何が悪かったのかがよくわからない。AppleIDに登録してある情報が日本語だからから至るところで文字化けしてるし。証明書のコモンネームまで文字化けしてる。
+
+xcodeのinfoでiPhoneDeveloper:<firstname><lastname>を入力するところがあるんだけど、そこに証明書のコモンネームを書けってドキュメントに書いてあったけど、上で書いたようにコモンネームが文字化けしてるのでどうしたもんかなーと。
+
+んで、証明書を作りなおししまくってたら、Errorがでるようになって追加できなくなってしまった。んで、またメールでなんとかしてーって連絡したところ。
+
+そんな感じでまだiPod Touchで自作appを作るところまではいってない。これからやる人は英語のApple ID作った方がいい気がする。その方が問題なさそう。ただ、あれって日本の住所でも英語で登録できたっけ・・・
+
+とりあえずまた進展があったらエントリ書く。
+
+<h2>追記</h2>
+どうやら大抵の人は一発でactivateできてないっぽいですね(We are unable to activate your iPhone...ってやつ)。そう言うときはとりあえずメールでなんとかしてくれーと頼むのがいいんじゃないですかね。
+
+実機で動かすまでが長いですなぁ。
+</div></article><article><h1><a href="/2008/07/03/release_crossreview/">2008-07-03 crossreviewがリリースされました!</a></h1><hr /><div class="article-body">今日、<a href="http://crossreview.jp/">crossreview</a>というサービスがリリースしました。smashmediaの河野さんのアイディアと元に、僕の勤め先であるRAWHIDE.が開発を手伝わさせていただきました。
+
+<a href="http://blog.crossreview.jp/plessrelease">プレスリリース</a>
+<a href="http://smashmedia.jp/blog/2008/07/001654.html">ぼくとcrossreviewの誕生日</a>
+
+Amazonの商品をレビューするサイトなのですが、Twitterみたいに気軽にレビューできます。他にもお気に入り機能(Twitterでいうfollowみたいなもの)があるので、似た趣味の人のレビューを追ったりすると色々とおもしろいんじゃないかと思います。
+
+ちなみに僕のページは<a href="http://crossreview.jp/ukstudio/">http://crossreview.jp/ukstudio/</a>ですよー。
+
+
+ブログパーツ、横のもほしいなぁー。あとで要望だしちゃおう。
+</div></article><article><h1><a href="/2008/06/30/song_for_autotest/">2008-06-30 autotestの結果をMacのsayコマンドで通知する</a></h1><hr /><div class="article-body">かなりネタなエントリー。
+
+Macにはsayコマンドと言うものがあって、入力した英単語とかをしゃべらせることができる。詳細はMacの手書き説明書さんが最近エントリー書いているのでそちらを見てくださいな。
+
+<a href="http://veadardiary.blog29.fc2.com/blog-entry-1645.html">Macが歌いだす！？ | Macの手書き説明書</a>
+
+んで、今回はそのsayコマンドを使って、autotestの結果をしゃべらせよう!というネタ企画。実用性はほぼ皆無。
+
+まずは~/.autotestを修正。最下行に以下を追記する。既にgrowlの通知などの設定がある場合はそこにsayコマンドの実行文を追記すればOK。
+
+<pre lang="ruby">
+module Autotest::Growl
+  Autotest.add_hook :ran_command do |at|
+    results = [at.results].flatten.flatten.join("\n")
+    output = results.slice(/(\d+)\s+examples?,\s*(\d+)\s+failures?(,\s*(\d+)\s+not implemented)?/)
+    if output
+      if $~[2].to_i > 0
+        `say -v bad faild`
+      else
+        `say -v good success!`
+      end
+    end
+  end
+end
+</pre>
+
+`で括っている2箇所でsayコマンドを実行している。失敗したときはbadな声で、成功したときはgoodな声で結果を通知する。他にも色んな声があるらしいので、そこらへんは好みで。
+
+<pre lang="bash">
+ls /System/Library/Speech/Voices
+</pre>
+
+とすると声の一覧がでるっぽい。
+</div></article><div class="pager"><ul><li class="previous"><a href="/page/27/">Prev</a></li><li class="next"><a href="/page/29/">Next</a></li></ul></div></div></body></html>

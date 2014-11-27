@@ -1,0 +1,74 @@
+<!DOCTYPE html><html><head><meta charset="utf-8" /><!--Always force latest IE rendering engine or request Chrome Frame--><meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" /><!--Use title if it's in the page YAML frontmatter--><title>The Middleman</title><link href="http://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet" type="text/css" /><link href="/stylesheets/normalize.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="/stylesheets/all.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="/stylesheets/highlight.css" media="screen" rel="stylesheet" type="text/css" /><script src="/javascripts/all.js" type="text/javascript"></script><link href="/feed.xml" rel="alternate" title="atom" type="application/atom+xml" /><script type="text/javascript">var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-12755601-1']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();</script></head><body class="2010 2010_12 2010_12_index"><div class="cointainer-fluid"><div class="navbar navbar-default" role="navigation"><div class="container-fluid"><div class="navbar-header"><a class="navbar-brand" href="/">UKSTUDIO</a></div><div class="navbar-collapse collapse"><ul class="nav navbar-nav navbar-right"><li><a href="http://twitter.com/ukstudio">Twitter</a></li><li><a href="http://github.com/ukstudio">GitHub</a></li></ul></div></div></div></div><div class="container"><h1><Archive></Archive>Dec 2010</h1><article><h2><a href="/2010/12/24/misawa-ruby-recipe/">2010-12-24 IRCでミサワをいつも側に...</a></h2>このエントリーは<a href="http://atnd.org/events/10901">Ruby逆引きレシピAdvent Calendar</a>の参加エントリです。担当は12月24日です。前日のエントリは@kei-sさんの <a href="http://d.hatena.ne.jp/kei-s/20101223/1293084650">Ruby逆引きレシピで作る、忙しい人のための『地獄のミサワの「女に惚れさす名言集」』- 札幌市西区</a>です。
+
+<a href="http://ukstudio.jp/wp-content/uploads/2010/12/FxCam_12931282608781.jpg"><img src="http://ukstudio.jp/wp-content/uploads/2010/12/FxCam_12931282608781.jpg" alt="" title="FxCam_1293128260878" width="360" height="240" class="alignnone size-full wp-image-783" /></a>
+
+
+さて、私達プログラマが使うソフトウェアの中で最も起動時間の長いものは多分エディタでしょう。では次はなんでしょうか?そう、<strong>IRC</strong>ですね!今回は逆引きレシピの中から「レシピ109 IRC botを作りたい」を紹介します。
+
+レシピのサンプルコードを参考に「ミサワ」のキーワードに反応して地獄っぽい返答をするBOTを作ってみました。これでいつでもミサワ先輩のありがたい御言葉を頂戴することができますね!
+
+<script src="https://gist.github.com/753353.js?file=irc.rb"></script>
+<a href="http://ukstudio.jp/wp-content/uploads/2010/12/screenshot3.png"><img src="http://ukstudio.jp/wp-content/uploads/2010/12/screenshot3.png" alt="" title="screenshot3" width="711" height="125" class="alignnone size-full wp-image-781" /></a>
+
+上記のコードだとありがたい御言葉がハードコーディングされていますね。ミサワ先輩のありがたい御言葉はたくさんありますから全て書くのはあまり効率的ではありません。なのでRuby逆引きレシピAdvent Calendarの12月17日を担当した@june29さんの<a href="http://june29.jp/2010/12/17/glamorous-rubysappororecipe/">地獄のRuby札幌の「女に惚れさす逆引きレシピ集」 - 準二級.jp</a>を参考に御言葉のかわりに画像へのパーマリンクを取得しておいて返答するという方法もありだと思います。
+
+このエントリを書きはじめたのは火曜日でしたが、前日の@kei-sさんがまさかのミサワネタ。「おいおい天丼なんてレベルじゃねーぞ」状態でも動じない。それが俺の流儀だ。
+
+さて、ミサワ先輩以上に偉大なレシピ先輩ですが、@noplansさんに頂いてから「○○やるにはどうするんだっけ」と思ったらレシピ先輩に聞くようになりました。Rubyのコードを書くときは横に置いておきたい一冊です!ありがとうございます!
+</article><hr /><article><h2><a href="/2010/12/17/recovery-network-manager-gnome/">2010-12-17 うっかりnetwork-manager-gnomeを消してネット繋がらなくなった</a></h2>xubuntuを以前インストールしててもういらねーやと思って色々消してたら、気づいたらnetwork-manager-gnomeも消えていてインターネットに繋がらなくなったでござる。
+
+とりあえず手元のHT-03Aで適当にぐぐった結果、<a href="https://forums.ubuntulinux.jp/viewtopic.php?id=6441">Ubuntu日本語フォーラム / [Ubuntu 9.10] ネットワーク・マネジャーを復元したい</a>が見つかったので試してみるもそれっぽいパッケージがCDから見つからず挫折。
+
+んじゃ、コマンドラインからなんかネット接続する方法があればなんとかなるかな?と思ってこれまた適当にぐぐると<a href="http://felix-labo.jp/pukiwiki/?Ubuntu%2Femobile-H11HW%E6%8E%A5%E7%B6%9A%E6%96%B9%E6%B3%95">Ubuntu/emobile-H11HW接続方法 - Felix-labo&apos;s Wiki</a>が見つかったので試した結果なんとかインターネット接続成功。
+
+あとは<a href="http://packages.ubuntu.com/"> Ubuntu Packages Search</a>からnetwork-manager-gnomeのdebパッケージを落としてきて、recovery consoleからaptitudeでインストールで無事終了。
+</article><hr /><article><h2><a href="/2010/12/16/its_agile/">2010-12-16 「問題→解決→原因調査→開発プロセスに組込む」 それアジャイルだよ</a></h2>普段、イテレーションの終わり(ちなみに1週間)にKPTをやって問題点をだして、それを解決すべくTryを実践してはいる。けれど、短期的な解決で落ち着いてしまってしばらくすると似たような問題が発生する。 結局のところ、問題が発生したらその場の解決だけではなく、問題の原因を検証して、自分達の開発プロセスに再発防止の仕組みを組込まなければならないなと思った次第。
+
+そんなことをFaceBookやTwitterに書き込んでいたら、諸先輩方(@kdmsnrさん、@nawotoさんありがとうございます)から「それがアジャイル」みたいなことを言われてしまった。確かに言われてみればそうだ。一定のプロセスにこだわらないからこそ、柔軟に問題・変化に合わせてプロセスを変えていけるのがアジャイルなんだよね。うーむ、勉強不足。
+
+今までやってきたことを繰り返したところで結果は同じなのは当然。今までのやり方で「何かうまくいっていない」と思ったら、やり方を変える必要がある。その辺りの検証が今のチームには不足してるなぁ。
+
+あとは開発の遅れやバグの発生などが開発チームの問題として捉えられがちだけど、結構開発プロセスが上手くまわってなかったり、プロジェクト関係者のコミニュケーションロスが原因で発生してるものもある。そういう意味でちゃんと開発メンバー外のプロジェクトに関わる人を全員まきこんでやっていかないといけないわけだけど現状出来てないなぁ。そろそろアジャイルごっこから抜けだすべき時期なのかもしれない。(<a href="http://www.amazon.co.jp/gp/product/4839924023?ie=UTF8&redirect=true&tag=ukstudio0c-22&linkCode=shr&camp=1207&creative=8411&creativeASIN=4839924023">アジャイルな見積りと計画づくり</a>の訳者あとがき)
+
+その辺もなぜコミニュケーションが上手くいっていないのか、なぜデモ直前のテストで問題が多発するのかとか、ちゃんと原因を調べてプロセスに組み込んでいかないといけないなぁ。
+
+ちなみに僕が再発防止の仕組みをプロセスに組込まないなといけないなと思ったのは<a href="http://www.amazon.co.jp/gp/product/482228350X?linkCode=shr&camp=1207&creative=8411&tag=ukstudio0c-22">リーン開発の本質 ソフトウエア開発に活かす7つの原則</a>がきっかけ。リーンが何かと言うのはまだまだちゃんと理解しきれていないけれど、現状を色々考えさせてくれるいい本でした。
+</article><hr /><article><h2><a href="/2010/12/14/rspec_japanize/">2010-12-14 RSpec日本語化計画</a></h2>やっぱ僕達は日本人なので仕様記述的と言うからには日本語で書きたい。とりあえずRubyは日本語を一応識別子に使えるのでその辺で適当にやってみた。<del datetime="2010-12-14T10:26:03+00:00">shouldが鬼門すぎるのだがどうしたもんか。「it should_not 空であること」って明らかにおかしすぎる。</del>@takaiさんが少し修正してくれた。
+
+<script src="https://gist.github.com/740240.js?file=hoge_spec.rb"></script>
+
+本当はもっとちゃんとした記事を書くつもりだったんだけどなんか脇道にそれてしまった。
+</article><hr /><article><h2><a href="/2010/12/07/sappororubykaigi03/">2010-12-07 札幌Ruby会議03に行ってきました</a></h2>札幌Ruby会議03、お疲れ様でした!本当にいい会議でした、ありがとうございます。
+
+すごいざっくりと感想を言うと「感極まった」とだけ言っておく。あの場にいた時の気持ちはなかなか文章にしづらい。個々の発表で行くと気になるトピックがどうだったとか、この話が良かった、あの話よくわからんみたいなことは言えるのだけど、「札幌Ruby会議」のあの場に居て思ったことはうまく言い表せないんだなー。とは言え「感極まった」で止まってては話にならんので、今後どう行動していくかだな。
+
+ちょっと過去の話になるけど、札幌Ruby会議03に参加したきっかけとしては、やっぱりRubyKaigi2010でスタッフやったことかな。RubyKaigiスタッフで札幌なNiceな人達と会って「札幌RubyKaigiやるよ」と言われて、素直に「行きたい!」と思えたので参加を決めた。更にRubyKaigiのスタッフをやるきっかけとしては東京RubyKaigi03のスタッフをやったことで、そのスタッフをやったきっかけも更に前の〜と遡っていく。
+
+結局あの時あの場にいたってことはそれまでの積み重ねがあってそれが1本の道になってるんだなと。「今後どう行動していくか」ってのも結局は「今やれること、やるべきこと、やりたいこと」をやっていくしかないなと改めって思った次第。
+
+ところで話は少し変わって、島田さんの発表に僕の発表が影響を与えられていたようで良かったです。大抵、自分がなにかを発表したときはあの場にいた人やまわりにどう思ってもらえたのだろう?と不安になる部分は少なからずあるのでこう言ってもらえるのはとてもうれしいです。
+
+<blockquote>
+j, k, u, m
+みんながオブジェクト倶楽部の夏イベントでした発表は、コードや技術、自分自身に等身大で向き合ったとても良い発表でした。あの時の発表に対して自分だったらどんな発表をしただろうか、というのが発表の筋の入り口になりました。ありがとう。
+<cite><a href="http://snoozer05.org/?date=20101204#p01">『Rubyの教えてくれたこと』 - but it&apos;s up to us to change(2010-12-04)</a></cite>
+</blockquote>
+
+最後に、札幌Ruby会議03に参加できたことは僕の中で非常に大きなことだったと思います。単純なモチベアップだけでなく、今後自分がどうしていくか考えるきっかけになりました。本当にありがとうございます。
+
+<h2>札幌観光</h2>
+
+北海道は幼少のころに2回ほど来てるけどあまり記憶がないので実質初めて。なので滞在3日目(12/5)はひとりで適当に観光。本当はたいやき部の方に参加するつもりだったけど、午前中若干二日酔いですぐ動けなさそうだったのと、ツアーにスープカレーが含まれてた(辛いの苦手)ので断念。たいやきは食べたいのでそれはまたの機会に。
+
+観光は札幌周辺と小樽をノープランで。北海道は食べ物がおいしくて素晴しい。次は函館行きたいなぁ。
+</article><hr /></div></body></html>

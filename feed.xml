@@ -1,0 +1,357 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>ukstudio.jp</title>
+  <id>http://ukstudio.jp</id>
+  <link href="http://ukstudio.jp"/>
+  <link href="http://ukstudio.jp/feed.xml" rel="self"/>
+  <updated>2014-11-27T07:33:00Z</updated>
+  <author>
+    <name>AKAMATSU Yuki</name>
+  </author>
+  <entry>
+    <title>spotlights.jp</title>
+    <link rel="alternate" href="http://ukstudio.jp/2014/11/27/spotlights-jp/"/>
+    <id>http://ukstudio.jp/2014/11/27/spotlights-jp/</id>
+    <published>2014-11-27T07:33:00Z</published>
+    <updated>2014-11-27T16:43:31+09:00</updated>
+    <author>
+      <name>AKAMATSU Yuki</name>
+    </author>
+    <content type="html">&lt;p&gt;&lt;a class="embedly-card" href="https://spotlights.jp"&gt;みんなで贈るソーシャルギフト・プレゼント ＼SPOTLIGHTS／（スポットライト）&lt;/a&gt;
+&lt;script async src="//cdn.embedly.com/widgets/platform.js" charset="UTF-8"&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;div style="text-align: center"&gt;
+  &lt;iframe width="560" height="315" src="//www.youtube.com/embed/xP14KD2qIR8" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;p&gt;今日の10時より&lt;a href="http://spicelife.jp/"&gt;株式会社spice life（スパイスライフ）&lt;/a&gt;からSPOTLIGHTSがリリースされました!!&lt;/p&gt;
+
+&lt;p&gt;ここ2ヶ月弱の追い込みにプログラマとして開発に関わらせて頂いてます(今後も関わっていく予定です)。実は自分のブログで関わってます！って言えるサービスは初めてだと思うので、期間はまだ短いですがちょっと感慨深いものがあります。&lt;/p&gt;
+
+&lt;p&gt;結婚式や誕生日のお祝いや日頃の感謝などにご活用ください。&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>RSpecでPower Assertをやるには</title>
+    <link rel="alternate" href="http://ukstudio.jp/2014/09/21/rspec_power_assert/"/>
+    <id>http://ukstudio.jp/2014/09/21/rspec_power_assert/</id>
+    <published>2014-09-21T06:12:00Z</published>
+    <updated>2014-11-27T15:26:19+09:00</updated>
+    <author>
+      <name>AKAMATSU Yuki</name>
+    </author>
+    <content type="html">&lt;p&gt;RubyKaigi 2014でpower assertの話を聞いてrspecでどうにかならんかちょっと考えてみました。まず結論だけ書くとrspecでpower assertを使いたければ以下の様に書けばOK。&lt;/p&gt;
+&lt;pre class="highlight ruby"&gt;&lt;span class="nb"&gt;require&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;rspec&amp;#39;&lt;/span&gt;
+&lt;span class="nb"&gt;require&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;minitest&amp;#39;&lt;/span&gt;
+&lt;span class="nb"&gt;require&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;minitest-power_assert&amp;#39;&lt;/span&gt;
+
+&lt;span class="k"&gt;module&lt;/span&gt; &lt;span class="nn"&gt;Minitest&lt;/span&gt;
+  &lt;span class="k"&gt;module&lt;/span&gt; &lt;span class="nn"&gt;Assertions&lt;/span&gt;
+    &lt;span class="n"&gt;prepend&lt;/span&gt;  &lt;span class="no"&gt;Minitest&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="no"&gt;PowerAssert&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="no"&gt;Assertions&lt;/span&gt;
+  &lt;span class="k"&gt;end&lt;/span&gt;
+&lt;span class="k"&gt;end&lt;/span&gt;
+
+&lt;span class="no"&gt;RSpec&lt;/span&gt;&lt;span class="nf"&gt;.configure&lt;/span&gt; &lt;span class="k"&gt;do&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;&lt;span class="n"&gt;config&lt;/span&gt;&lt;span class="o"&gt;|&lt;/span&gt;
+  &lt;span class="n"&gt;config&lt;/span&gt;&lt;span class="nf"&gt;.expect_with&lt;/span&gt; &lt;span class="ss"&gt;:minitest&lt;/span&gt;
+&lt;span class="k"&gt;end&lt;/span&gt;
+
+&lt;span class="n"&gt;describe&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;Test&amp;#39;&lt;/span&gt; &lt;span class="k"&gt;do&lt;/span&gt;
+  &lt;span class="n"&gt;it&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;test&amp;#39;&lt;/span&gt; &lt;span class="k"&gt;do&lt;/span&gt;
+    &lt;span class="n"&gt;assert&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="nf"&gt;.to_s.class&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="nf"&gt;.to_i.class&lt;/span&gt; &lt;span class="p"&gt;}&lt;/span&gt;
+  &lt;span class="k"&gt;end&lt;/span&gt;
+&lt;span class="k"&gt;end&lt;/span&gt;
+&lt;/pre&gt;
+&lt;p&gt;これを&lt;/p&gt;
+&lt;pre class="highlight shell"&gt;&lt;span class="gp"&gt;$ &lt;/span&gt;rspec --color -rpower_assert power_assert.rb
+&lt;/pre&gt;
+&lt;p&gt;で実行するとこんな感じ。power_assertは事前にrequireした方が情報量がちょっと増える。&lt;/p&gt;
+&lt;pre class="highlight text"&gt;Failures:
+
+  1) Test test
+     Failure/Error: assert { 1.to_s.class == 1.to_i.class }
+     Minitest::Assertion:
+
+           assert { 1.to_s.class == 1.to_i.class }
+                      |    |     |    |    |
+                      |    |     |    |    Fixnum
+                      |    |     |    1
+                      |    |     false
+                      |    String
+                      &amp;quot;1&amp;quot;
+&lt;/pre&gt;
+&lt;h2 id="letとsubject"&gt;letとsubject&lt;/h2&gt;
+
+&lt;p&gt;power&lt;em&gt;assertの0.1.3だとdefined&lt;/em&gt;methodで定義されたメソッドの値が取れていないらしく、letやsubjectの値が表示されない。現時点でのmasterの0.1.4devだと修正されているとのことなのでちゃんと表示される。&lt;/p&gt;
+&lt;pre class="highlight ruby"&gt;&lt;span class="n"&gt;describe&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;Test&amp;#39;&lt;/span&gt; &lt;span class="k"&gt;do&lt;/span&gt;
+  &lt;span class="n"&gt;let&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="ss"&gt;:klass&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="nf"&gt;.to_s.class&lt;/span&gt; &lt;span class="p"&gt;}&lt;/span&gt;
+  &lt;span class="n"&gt;it&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;test&amp;#39;&lt;/span&gt; &lt;span class="k"&gt;do&lt;/span&gt;
+    &lt;span class="n"&gt;assert&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="n"&gt;klass&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="nf"&gt;.to_i.class&lt;/span&gt; &lt;span class="p"&gt;}&lt;/span&gt;
+  &lt;span class="k"&gt;end&lt;/span&gt;
+&lt;span class="k"&gt;end&lt;/span&gt;
+&lt;/pre&gt;
+&lt;p&gt;これを実行すると&lt;/p&gt;
+&lt;pre class="highlight text"&gt;Failures:
+
+  1) Test test
+     Failure/Error: assert { klass == 1.to_i.class }
+     Minitest::Assertion:
+
+           assert { klass == 1.to_i.class }
+                    |     |    |    |
+                    |     |    |    Fixnum
+                    |     |    1
+                    |     false
+                    String
+&lt;/pre&gt;
+&lt;p&gt;こんな感じ。subjectも大体おなじ。&lt;/p&gt;
+
+&lt;h2 id="expectとマッチャ"&gt;expectとマッチャ&lt;/h2&gt;
+
+&lt;p&gt;この方法はMinitestのadapterとminitest-power_assertを使うようにしているので無理。&lt;/p&gt;
+
+&lt;p&gt;ちなみに &lt;a href="https://gist.github.com/mizoR/3cf068eeae033bd5db5a"&gt;rspec で 手軽に power_assert 出力できるようにする&lt;/a&gt; の方法でexpectを使ってみると&lt;/p&gt;
+&lt;pre class="highlight ruby"&gt;&lt;span class="nb"&gt;require&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;rspec/core&amp;#39;&lt;/span&gt;
+&lt;span class="nb"&gt;require&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;power_assert&amp;#39;&lt;/span&gt;
+
+&lt;span class="k"&gt;module&lt;/span&gt; &lt;span class="nn"&gt;RSpec&lt;/span&gt;
+  &lt;span class="k"&gt;module&lt;/span&gt; &lt;span class="nn"&gt;PowerAssert&lt;/span&gt;
+    &lt;span class="k"&gt;def &lt;/span&gt;&lt;span class="nf"&gt;power_assert&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="n"&gt;block&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+      &lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="no"&gt;PowerAssert&lt;/span&gt;&lt;span class="nf"&gt;.start&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;block&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;do&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;&lt;span class="n"&gt;pa&lt;/span&gt;&lt;span class="o"&gt;|&lt;/span&gt;
+        &lt;span class="k"&gt;begin&lt;/span&gt;
+          &lt;span class="n"&gt;pa&lt;/span&gt;&lt;span class="nf"&gt;.yield&lt;/span&gt;
+        &lt;span class="k"&gt;rescue&lt;/span&gt; &lt;span class="no"&gt;RSpec&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="no"&gt;Expectations&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="no"&gt;ExpectationNotMetError&lt;/span&gt; &lt;span class="o"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;e&lt;/span&gt;
+          &lt;span class="n"&gt;e&lt;/span&gt;&lt;span class="nf"&gt;.message&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="se"&gt;\n&lt;/span&gt;&lt;span class="s2"&gt;PowerAssert:&lt;/span&gt;&lt;span class="se"&gt;\n&lt;/span&gt;&lt;span class="si"&gt;#{&lt;/span&gt;&lt;span class="n"&gt;pa&lt;/span&gt;&lt;span class="nf"&gt;.message_proc.call&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;
+          &lt;span class="k"&gt;raise&lt;/span&gt; &lt;span class="n"&gt;e&lt;/span&gt;
+        &lt;span class="k"&gt;end&lt;/span&gt;
+      &lt;span class="k"&gt;end&lt;/span&gt;
+    &lt;span class="k"&gt;end&lt;/span&gt;
+  &lt;span class="k"&gt;end&lt;/span&gt;
+&lt;span class="k"&gt;end&lt;/span&gt;
+
+&lt;span class="k"&gt;class &lt;/span&gt;&lt;span class="nc"&gt;RSpec&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="no"&gt;Core&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="no"&gt;ExampleGroup&lt;/span&gt;
+  &lt;span class="kp"&gt;include&lt;/span&gt; &lt;span class="no"&gt;RSpec&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="no"&gt;PowerAssert&lt;/span&gt;
+&lt;span class="k"&gt;end&lt;/span&gt;
+
+&lt;span class="n"&gt;describe&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;Test&amp;#39;&lt;/span&gt; &lt;span class="k"&gt;do&lt;/span&gt;
+  &lt;span class="n"&gt;it&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;test&amp;#39;&lt;/span&gt; &lt;span class="k"&gt;do&lt;/span&gt;
+    &lt;span class="n"&gt;power_assert&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+      &lt;span class="n"&gt;expect&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="nf"&gt;.to_s.class&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="nf"&gt;.to&lt;/span&gt; &lt;span class="n"&gt;eq&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="nf"&gt;.to_i.class&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="p"&gt;}&lt;/span&gt;
+  &lt;span class="k"&gt;end&lt;/span&gt;
+&lt;span class="k"&gt;end&lt;/span&gt;
+&lt;/pre&gt;
+&lt;p&gt;これは&lt;/p&gt;
+&lt;pre class="highlight text"&gt;       PowerAssert:
+             expect(1.to_s.class).to eq(1.to_i.class)
+             |        |    |      |  |    |    |
+             |        |    |      |  |    |    Fixnum
+             |        |    |      |  |    1
+             |        |    |      |  #&amp;lt;RSpec::Matchers::BuiltIn::Eq:0x007f0850c91d78 @expected=Fixnum, @actual=String&amp;gt;
+             |        |    |      nil
+             |        |    String
+             |        &amp;quot;1&amp;quot;
+             #&amp;lt;RSpec::Expectations::ExpectationTarget:0x007f0850caa170 @target=String&amp;gt;
+
+&lt;/pre&gt;
+&lt;p&gt;こうなってしまう。この場合、expectの@targetにStringという結果が入っているのでそれを取り出すようにして、eqの方も@expectedに期待するものがはいってるのでそれを取りだすようにすればいいのかなぁ。&lt;/p&gt;
+
+&lt;p&gt;もしくはexpectとeqの中の値さえわかれば良いといえば良いのでいっそ値をださなくてもいいのかも? 例えばこんな感じ。&lt;/p&gt;
+&lt;pre class="highlight text"&gt;       PowerAssert:
+             expect(1.to_s.class).to eq(1.to_i.class)
+                      |    |              |    |
+                      |    |              |    Fixnum
+                      |    |              1
+                      |    |
+                      |    |
+                      |    String
+                     &amp;quot;1&amp;quot;
+
+
+&lt;/pre&gt;
+&lt;p&gt;別の例としてbe_falseyだとこんな感じ。&lt;/p&gt;
+&lt;pre class="highlight text"&gt;     Failure/Error: expect(nil.to_s.to_i).to be_falsey
+       expected: falsey value
+            got: 0
+       PowerAssert:
+             expect(nil.to_s.to_i).to be_falsey
+             |          |    |     |  |
+             |          |    |     |  #&amp;lt;RSpec::Matchers::BuiltIn::BeFalsey:0x007fa84b53bb00 @actual=0&amp;gt;
+             |          |    |     nil
+             |          |    0
+             |          &amp;quot;&amp;quot;
+             #&amp;lt;RSpec::Expectations::ExpectationTarget:0x007fa84b3e02b0 @target=0&amp;gt;
+&lt;/pre&gt;
+&lt;p&gt;これに関していうとbe&lt;em&gt;falseyにはfalseが欲しいという情報がない。be&lt;/em&gt;falseyを見れば求めてるものはわかるって話かもしれないけど… 更に言うとRSpec3でComposable Matcherが入ったりとか、以前からあるCustom Matcherとかがあったりして、それら全部対応するのは厳しいなーという感じ(そもそも対応できるのかもよくわからない…)&lt;/p&gt;
+
+&lt;p&gt;そもそもの話をするとそういったマッチャというか、たくさんあるassertion methodを使い分けしたくないからpower assertをつかうわけで別にマッチャとか使わなくていいのではという気持ちがある。&lt;/p&gt;
+
+&lt;p&gt;なのでexpectとかカスタムマッチャとかは(power assertを使う部分では)諦めてassertですませるのがよさそうかなと個人的には思う。&lt;/p&gt;
+&lt;pre class="highlight ruby"&gt;&lt;span class="n"&gt;config&lt;/span&gt;&lt;span class="nf"&gt;.expect_with&lt;/span&gt; &lt;span class="ss"&gt;:minitest&lt;/span&gt;
+&lt;span class="n"&gt;config&lt;/span&gt;&lt;span class="nf"&gt;.expect_with&lt;/span&gt; &lt;span class="ss"&gt;:rspec&lt;/span&gt;
+&lt;/pre&gt;
+&lt;p&gt;spec&lt;em&gt;helper.rbにminitestもrspecも両方使うよう書けばpower&lt;/em&gt;assertを使いたいところと、rspecを使いたいところで分けることができるのでどうしてもマッチャを使いたいところは素直にマッチャを書いてpower assertは諦めるしかない。&lt;/p&gt;
+
+&lt;p&gt;今あるテスト資産をそのまんまpower assert対応にはできないのが悲しいところではあるけれども、このassertを使う方法でもexpectation部分以外はrspecの機能そのまま使えるのでそこまで悪くはないかなと思う。&lt;/p&gt;
+
+&lt;p&gt;まだpower_assert gemの実装を理解できていないので、もしかしたらうまいことやれるかもしれないけどとりあえずここでギブアップ…&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Arelあれこれ</title>
+    <link rel="alternate" href="http://ukstudio.jp/2014/09/05/arel/"/>
+    <id>http://ukstudio.jp/2014/09/05/arel/</id>
+    <published>2014-09-05T08:51:00Z</published>
+    <updated>2014-11-27T15:26:19+09:00</updated>
+    <author>
+      <name>AKAMATSU Yuki</name>
+    </author>
+    <content type="html">&lt;h2 id="model.arel_table-を読みづらいと感じる"&gt;Model.arel_table を読みづらいと感じる&lt;/h2&gt;
+
+&lt;p&gt;例えばこういうコード。&lt;/p&gt;
+&lt;pre class="highlight ruby"&gt;&lt;span class="no"&gt;Post&lt;/span&gt;&lt;span class="nf"&gt;.joins&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="ss"&gt;:comments&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="nf"&gt;.order&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="no"&gt;Comment&lt;/span&gt;&lt;span class="nf"&gt;.arel_table&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="ss"&gt;:created_at&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="nf"&gt;.desc&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;
+&lt;p&gt;発行されるSQLはこんな感じ。&lt;/p&gt;
+&lt;pre class="highlight sql"&gt;&lt;span class="k"&gt;SELECT&lt;/span&gt; &lt;span class="nv"&gt;&amp;quot;posts&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="k"&gt;FROM&lt;/span&gt; &lt;span class="nv"&gt;&amp;quot;posts&amp;quot;&lt;/span&gt; &lt;span class="k"&gt;INNER&lt;/span&gt; &lt;span class="k"&gt;JOIN&lt;/span&gt; &lt;span class="nv"&gt;&amp;quot;comments&amp;quot;&lt;/span&gt; &lt;span class="k"&gt;ON&lt;/span&gt; &lt;span class="nv"&gt;&amp;quot;comments&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nv"&gt;&amp;quot;post_id&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;&amp;quot;posts&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nv"&gt;&amp;quot;id&amp;quot;&lt;/span&gt;  &lt;span class="k"&gt;ORDER&lt;/span&gt; &lt;span class="k"&gt;BY&lt;/span&gt; &lt;span class="nv"&gt;&amp;quot;comments&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nv"&gt;&amp;quot;created_at&amp;quot;&lt;/span&gt; &lt;span class="k"&gt;DESC&lt;/span&gt;
+&lt;/pre&gt;
+&lt;p&gt;こちらの方が個人的には読みやすい。&lt;/p&gt;
+&lt;pre class="highlight ruby"&gt;&lt;span class="no"&gt;Post&lt;/span&gt;&lt;span class="nf"&gt;.joins&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="ss"&gt;:comments&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="nf"&gt;.order&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;comments.created_at desc&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;
+&lt;h2 id="問題もある"&gt;問題もある&lt;/h2&gt;
+
+&lt;h3 id="テーブル名を変えてしまったとき"&gt;テーブル名を変えてしまったとき&lt;/h3&gt;
+
+&lt;p&gt;仮にテーブル名がかわったら後者の場合はエラーになる。&lt;/p&gt;
+&lt;pre class="highlight sql"&gt;&lt;span class="k"&gt;SELECT&lt;/span&gt; &lt;span class="nv"&gt;&amp;quot;posts&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="k"&gt;FROM&lt;/span&gt; &lt;span class="nv"&gt;&amp;quot;posts&amp;quot;&lt;/span&gt; &lt;span class="k"&gt;INNER&lt;/span&gt; &lt;span class="k"&gt;JOIN&lt;/span&gt; &lt;span class="nv"&gt;&amp;quot;new_comments&amp;quot;&lt;/span&gt; &lt;span class="k"&gt;ON&lt;/span&gt; &lt;span class="nv"&gt;&amp;quot;new_comments&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nv"&gt;&amp;quot;post_id&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;&amp;quot;posts&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nv"&gt;&amp;quot;id&amp;quot;&lt;/span&gt;  &lt;span class="k"&gt;ORDER&lt;/span&gt; &lt;span class="k"&gt;BY&lt;/span&gt; &lt;span class="n"&gt;comments&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;created_at&lt;/span&gt; &lt;span class="k"&gt;DESC&lt;/span&gt;
+&lt;span class="n"&gt;SQLite3&lt;/span&gt;&lt;span class="p"&gt;::&lt;/span&gt;&lt;span class="k"&gt;SQLException&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="k"&gt;no&lt;/span&gt; &lt;span class="n"&gt;such&lt;/span&gt; &lt;span class="k"&gt;column&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;comments&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;created_at&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="k"&gt;SELECT&lt;/span&gt; &lt;span class="nv"&gt;&amp;quot;posts&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="k"&gt;FROM&lt;/span&gt; &lt;span class="nv"&gt;&amp;quot;posts&amp;quot;&lt;/span&gt; &lt;span class="k"&gt;INNER&lt;/span&gt; &lt;span class="k"&gt;JOIN&lt;/span&gt; &lt;span class="nv"&gt;&amp;quot;new_comments&amp;quot;&lt;/span&gt; &lt;span class="k"&gt;ON&lt;/span&gt; &lt;span class="nv"&gt;&amp;quot;new_comments&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nv"&gt;&amp;quot;post_id&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;&amp;quot;posts&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nv"&gt;&amp;quot;id&amp;quot;&lt;/span&gt;  &lt;span class="k"&gt;ORDER&lt;/span&gt; &lt;span class="k"&gt;BY&lt;/span&gt; &lt;span class="n"&gt;comments&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;created_at&lt;/span&gt; &lt;span class="n"&gt;D&lt;/span&gt;
+&lt;span class="n"&gt;ESC&lt;/span&gt;
+&lt;span class="n"&gt;ActiveRecord&lt;/span&gt;&lt;span class="p"&gt;::&lt;/span&gt;&lt;span class="n"&gt;StatementInvalid&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;SQLite3&lt;/span&gt;&lt;span class="p"&gt;::&lt;/span&gt;&lt;span class="k"&gt;SQLException&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="k"&gt;no&lt;/span&gt; &lt;span class="n"&gt;such&lt;/span&gt; &lt;span class="k"&gt;column&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;comments&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;created_at&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="k"&gt;SELECT&lt;/span&gt; &lt;span class="nv"&gt;&amp;quot;posts&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="k"&gt;FROM&lt;/span&gt; &lt;span class="nv"&gt;&amp;quot;posts&amp;quot;&lt;/span&gt; &lt;span class="k"&gt;INNER&lt;/span&gt; &lt;span class="k"&gt;JOIN&lt;/span&gt; &lt;span class="nv"&gt;&amp;quot;new_comments&amp;quot;&lt;/span&gt; &lt;span class="k"&gt;ON&lt;/span&gt; &lt;span class="nv"&gt;&amp;quot;new_comments&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nv"&gt;&amp;quot;post_id&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;&amp;quot;posts&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nv"&gt;&amp;quot;id&amp;quot;&lt;/span&gt;
+  &lt;span class="k"&gt;ORDER&lt;/span&gt; &lt;span class="k"&gt;BY&lt;/span&gt; &lt;span class="n"&gt;comments&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;created_at&lt;/span&gt; &lt;span class="k"&gt;DESC&lt;/span&gt;
+
+&lt;/pre&gt;
+&lt;p&gt;前者はモデルの方でテーブル名を変更すれば動作する。&lt;/p&gt;
+&lt;pre class="highlight ruby"&gt;&lt;span class="k"&gt;class &lt;/span&gt;&lt;span class="nc"&gt;Comment&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt; &lt;span class="no"&gt;ActiveRecord&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="no"&gt;Base&lt;/span&gt;
+  &lt;span class="nb"&gt;self&lt;/span&gt;&lt;span class="nf"&gt;.table_name&lt;/span&gt;  &lt;span class="ss"&gt;:new_comments&lt;/span&gt;
+&lt;span class="k"&gt;end&lt;/span&gt;
+&lt;/pre&gt;
+&lt;h3 id="scopeでmergeしたいとき"&gt;scopeでmergeしたいとき&lt;/h3&gt;
+&lt;pre class="highlight ruby"&gt;&lt;span class="k"&gt;class &lt;/span&gt;&lt;span class="nc"&gt;Comment&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt; &lt;span class="no"&gt;ActiveRecord&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="no"&gt;Base&lt;/span&gt;
+  &lt;span class="n"&gt;scope&lt;/span&gt; &lt;span class="ss"&gt;:recent&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="n"&gt;where&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;created_at &amp;gt; ?&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="nf"&gt;.days.ago&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="k"&gt;end&lt;/span&gt;
+
+&lt;span class="no"&gt;Post&lt;/span&gt;&lt;span class="nf"&gt;.joins&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="ss"&gt;:comments&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="nf"&gt;.merge&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="no"&gt;Comment&lt;/span&gt;&lt;span class="nf"&gt;.recent&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;
+&lt;p&gt;これだとCommentのcreated_atが解決できなくてコケる。&lt;/p&gt;
+&lt;pre class="highlight sql"&gt;&lt;span class="k"&gt;SELECT&lt;/span&gt; &lt;span class="nv"&gt;&amp;quot;posts&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="k"&gt;FROM&lt;/span&gt; &lt;span class="nv"&gt;&amp;quot;posts&amp;quot;&lt;/span&gt; &lt;span class="k"&gt;INNER&lt;/span&gt; &lt;span class="k"&gt;JOIN&lt;/span&gt; &lt;span class="nv"&gt;&amp;quot;comments&amp;quot;&lt;/span&gt; &lt;span class="k"&gt;ON&lt;/span&gt; &lt;span class="nv"&gt;&amp;quot;comments&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nv"&gt;&amp;quot;post_id&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;&amp;quot;posts&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nv"&gt;&amp;quot;id&amp;quot;&lt;/span&gt; &lt;span class="k"&gt;WHERE&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;created_at&lt;/span&gt; &lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;2014-08-26 09:16:45.106691&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;SQLite3&lt;/span&gt;&lt;span class="p"&gt;::&lt;/span&gt;&lt;span class="k"&gt;SQLException&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;ambiguous&lt;/span&gt; &lt;span class="k"&gt;column&lt;/span&gt; &lt;span class="n"&gt;name&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;created_at&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="k"&gt;SELECT&lt;/span&gt; &lt;span class="nv"&gt;&amp;quot;posts&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="k"&gt;FROM&lt;/span&gt; &lt;span class="nv"&gt;&amp;quot;posts&amp;quot;&lt;/span&gt; &lt;span class="k"&gt;INNER&lt;/span&gt; &lt;span class="k"&gt;JOIN&lt;/span&gt; &lt;span class="nv"&gt;&amp;quot;comments&amp;quot;&lt;/span&gt; &lt;span class="k"&gt;ON&lt;/span&gt; &lt;span class="nv"&gt;&amp;quot;comments&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nv"&gt;&amp;quot;post_id&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;&amp;quot;posts&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nv"&gt;&amp;quot;id&amp;quot;&lt;/span&gt; &lt;span class="k"&gt;WHERE&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;created_at&lt;/span&gt; &lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;2014-08-26 09:16:45.
+106691&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;ActiveRecord&lt;/span&gt;&lt;span class="p"&gt;::&lt;/span&gt;&lt;span class="n"&gt;StatementInvalid&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;SQLite3&lt;/span&gt;&lt;span class="p"&gt;::&lt;/span&gt;&lt;span class="k"&gt;SQLException&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;ambiguous&lt;/span&gt; &lt;span class="k"&gt;column&lt;/span&gt; &lt;span class="n"&gt;name&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;created_at&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="k"&gt;SELECT&lt;/span&gt; &lt;span class="nv"&gt;&amp;quot;posts&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="k"&gt;FROM&lt;/span&gt; &lt;span class="nv"&gt;&amp;quot;posts&amp;quot;&lt;/span&gt; &lt;span class="k"&gt;INNER&lt;/span&gt; &lt;span class="k"&gt;JOIN&lt;/span&gt; &lt;span class="nv"&gt;&amp;quot;comments&amp;quot;&lt;/span&gt; &lt;span class="k"&gt;ON&lt;/span&gt; &lt;span class="nv"&gt;&amp;quot;comments&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nv"&gt;&amp;quot;post_id&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;&amp;quot;posts&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nv"&gt;&amp;quot;id&amp;quot;&lt;/span&gt; &lt;span class="k"&gt;WHERE&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;cr&lt;/span&gt;
+&lt;span class="n"&gt;eated_at&lt;/span&gt; &lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;2014-08-26 09:16:45.106691&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;
+&lt;p&gt;正しくはこう。&lt;/p&gt;
+&lt;pre class="highlight ruby"&gt;&lt;span class="k"&gt;class &lt;/span&gt;&lt;span class="nc"&gt;Comment&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt; &lt;span class="no"&gt;ActiveRecord&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="no"&gt;Base&lt;/span&gt;
+  &lt;span class="n"&gt;scope&lt;/span&gt; &lt;span class="ss"&gt;:recent&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="n"&gt;where&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;self&lt;/span&gt;&lt;span class="nf"&gt;.arel_table&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="ss"&gt;:created_at&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="nf"&gt;.gt&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="nf"&gt;.days.ago&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt; &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="k"&gt;end&lt;/span&gt;
+&lt;/pre&gt;&lt;pre class="highlight sql"&gt;&lt;span class="k"&gt;SELECT&lt;/span&gt; &lt;span class="nv"&gt;&amp;quot;posts&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="k"&gt;FROM&lt;/span&gt; &lt;span class="nv"&gt;&amp;quot;posts&amp;quot;&lt;/span&gt; &lt;span class="k"&gt;INNER&lt;/span&gt; &lt;span class="k"&gt;JOIN&lt;/span&gt; &lt;span class="nv"&gt;&amp;quot;comments&amp;quot;&lt;/span&gt; &lt;span class="k"&gt;ON&lt;/span&gt; &lt;span class="nv"&gt;&amp;quot;comments&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nv"&gt;&amp;quot;post_id&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;&amp;quot;posts&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nv"&gt;&amp;quot;id&amp;quot;&lt;/span&gt; &lt;span class="k"&gt;WHERE&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;&amp;quot;comments&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nv"&gt;&amp;quot;created_at&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;2014-08-26 09:19:17.406299&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;
+&lt;h2 id="僕個人の結論"&gt;僕個人の結論&lt;/h2&gt;
+
+&lt;p&gt;Model.arel_tableはできる限り隠したい(読みづらいから)。そしてmergeを使いたいケースではArelを使っておく。その変わりmergeが必要になるまでは無理にArelを使わない。&lt;/p&gt;
+
+&lt;p&gt;さっきのComment#recentの例でいうなら最初は&lt;code&gt;where(&amp;#39;created_at &amp;gt; ?&amp;#39;, 10.days.ago)&lt;/code&gt;で書いておく。merged使いたい時になったらArelの方で書き直す。&lt;/p&gt;
+
+&lt;p&gt;テーブル名の変更のリスクは気にしない。そもそもあまりテーブル変更しないし…。既にあるDBの上にRailsアプリケーションを構築する場合はDBリファクタリングのことを考えてArel使いまくった方がいいのかもしれない。&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Vim(TagBar)でRSpecのctagsを扱う</title>
+    <link rel="alternate" href="http://ukstudio.jp/2014/04/18/rspec_ctags/"/>
+    <id>http://ukstudio.jp/2014/04/18/rspec_ctags/</id>
+    <published>2014-04-18T09:20:00Z</published>
+    <updated>2014-11-27T15:26:19+09:00</updated>
+    <author>
+      <name>AKAMATSU Yuki</name>
+    </author>
+    <content type="html">&lt;p&gt;&lt;img alt="rspec ctags" src="/images/2014-04-18-vim-rspec-ctags.png" /&gt;&lt;/p&gt;
+
+&lt;p&gt;unite-outlineとかを使う人には不要なのかもしれないけど、あいにくuniteユーザではないのでctagsでなんとかできないか調べてみた。&lt;/p&gt;
+
+&lt;p&gt;まず、Funtooで入るctagsではrspecのタグは生成できないのでforkされたctagsを使う必要がある。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="https://github.com/fishman/ctags"&gt;fishman/ctags&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;インストール場所はお好みで。個人的には手で入れる系のものは$HOME/localにインストールするのが好きなのでそこにインストールした。あとはTagBarの方でこのctagsを使うよう設定する。&lt;/p&gt;
+&lt;pre class="highlight viml"&gt;&lt;span class="k"&gt;let&lt;/span&gt; &lt;span class="nv"&gt;g:tagbar_ctags_bin&lt;/span&gt;&lt;span class="p"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;/home/ukstudio/local/bin/ctags&amp;quot;&lt;/span&gt;
+&lt;span class="k"&gt;let&lt;/span&gt; &lt;span class="nv"&gt;g:tagbar_type_ruby&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+&lt;span class="se"&gt;    \&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;kinds&amp;#39;&lt;/span&gt; &lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;
+&lt;span class="se"&gt;        \&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;m:modules&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;span class="se"&gt;        \&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;c:classes&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;span class="se"&gt;        \&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;d:describes&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;span class="se"&gt;        \&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;C:contexts&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;span class="se"&gt;        \&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;f:methods&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;span class="se"&gt;        \&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;F:singleton methods&amp;#39;&lt;/span&gt;
+&lt;span class="se"&gt;    \&lt;/span&gt; &lt;span class="p"&gt;]&lt;/span&gt;
+&lt;span class="se"&gt;\&lt;/span&gt; &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;
+&lt;p&gt;これで上の画像のような感じでTagBarに表示されるようになるはず。&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>lsと間違えてerutasoを打ってしまうGentoo/Funtooユーザーのみなさまへ</title>
+    <link rel="alternate" href="http://ukstudio.jp/2014/03/27/erutaso_ebuild/"/>
+    <id>http://ukstudio.jp/2014/03/27/erutaso_ebuild/</id>
+    <published>2014-03-27T05:09:00Z</published>
+    <updated>2014-11-27T15:26:19+09:00</updated>
+    <author>
+      <name>AKAMATSU Yuki</name>
+    </author>
+    <content type="html">&lt;p&gt;&lt;a href="https://github.com/ukstudio/ukstudio-overlay/tree/master/app-shells/erutaso/"&gt;ebuild&lt;/a&gt;を作ってみましたのでご活用ください。初めてのebuildなので不具合・不都合あればpull-reqを。ukstudioというoverlayを作りましたのでそこからインストールできるはずです。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="https://github.com/ukstudio/ukstudio-overlay"&gt;https://github.com/ukstudio/ukstudio-overlay&lt;/a&gt;&lt;/p&gt;
+&lt;pre class="highlight shell"&gt;curl https://raw.github.com/ukstudio/ukstudio-overlay/master/profiles/layman.xml &amp;gt; /etc/layman/overlays/ukstudio-overlay.xml
+layman -f -a ukstudio
+
+emerge erutaso
+which erutaso &lt;span class="c"&gt;#=&amp;gt; /usr/bin/erutaso&lt;/span&gt;
+
+erutaso
+&lt;/pre&gt;
+&lt;h2 id="see-also"&gt;See also&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href="https://twitter.com/sgymtic/status/448832543039574016"&gt;https://twitter.com/sgymtic/status/448832543039574016&lt;/a&gt;&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>BitlBeeでHipChatに接続する</title>
+    <link rel="alternate" href="http://ukstudio.jp/2014/03/18/bitlbee_hipchat/"/>
+    <id>http://ukstudio.jp/2014/03/18/bitlbee_hipchat/</id>
+    <published>2014-03-18T05:33:00Z</published>
+    <updated>2014-11-27T15:26:19+09:00</updated>
+    <author>
+      <name>AKAMATSU Yuki</name>
+    </author>
+    <content type="html">&lt;p&gt;HipChatのLinuxクライアントは残念ながら日本語入力ができないのでかわりにIRCを使ってみる。
+HipChatはJabberが使えるのでBitlBeeを使ってJabber経由でIRCと繋ぐことにする。BitlBee自体の設定はなにもいらないので各環境にあわせて適当に入れて起動する。&lt;/p&gt;
+&lt;pre class="highlight text"&gt;sudo emerge bitlbee
+sudo /etc/init.d/bitlbee start
+&lt;/pre&gt;
+&lt;p&gt;次にIRCクライアントでBitlBeeに接続する。BitlBeeはlocalhostに6667ポートで立ち上がっているので(コンフィグで修正していなければ)、そこに接続する。文字コードはUTF-8でOK。
+接続できたらbitlbeeの部屋でコマンドを入力し、アカウントを追加する。HipChatのJabberのアカウントは「Account Setting &amp;gt; XMPP/Jabber info」にある。&lt;/p&gt;
+&lt;pre class="highlight text"&gt;account add jabber username@chat.hipchat.com &amp;#39;password&amp;#39;
+&lt;/pre&gt;
+&lt;p&gt;次に各ユーザがニックネームで表示されるように設定する。これをやらないと数字の羅列で誰が誰だかわからない状態になってしまう。&lt;/p&gt;
+&lt;pre class="highlight text"&gt;account hipchat set nick_source full_name
+&lt;/pre&gt;
+&lt;p&gt;次にアカウントを有効化する。この時点で認証などもしているので失敗したらアカウント情報を見直すこと。&lt;/p&gt;
+&lt;pre class="highlight text"&gt;account hipchat on
+&lt;/pre&gt;
+&lt;p&gt;有効化できたらすでに部屋に参加できるが数字の羅列が頭についているので使いにくい。別の名前を割り当てることができるので適当に自分が使いやすい名前をつける。&lt;/p&gt;
+&lt;pre class="highlight text"&gt;chat add hipchat room_jaber_name@conf.hipchat.com #channelname
+&lt;/pre&gt;
+&lt;p&gt;ニックの設定次第だとHipChatから怒られるのでその場合HipCHatで使っている名前を設定する。&lt;/p&gt;
+&lt;pre class="highlight text"&gt;channel #channelname set nick &amp;#39;room nickname&amp;#39;
+&lt;/pre&gt;
+&lt;p&gt;無事、部屋にjoinしてログが流れてきたら終了。&lt;/p&gt;
+&lt;pre class="highlight text"&gt;/join #channelname
+&lt;/pre&gt;</content>
+  </entry>
+</feed>

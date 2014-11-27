@@ -1,0 +1,35 @@
+<!DOCTYPE html><html><head><meta charset="utf-8" /><!--Always force latest IE rendering engine or request Chrome Frame--><meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" /><!--Use title if it's in the page YAML frontmatter--><title>MacBookにRubyOnRailsをインストールする</title><link href="http://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet" type="text/css" /><link href="/stylesheets/normalize.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="/stylesheets/all.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="/stylesheets/highlight.css" media="screen" rel="stylesheet" type="text/css" /><script src="/javascripts/all.js" type="text/javascript"></script><link href="/feed.xml" rel="alternate" title="atom" type="application/atom+xml" /><script type="text/javascript">var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-12755601-1']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();</script></head><body class="2007 2007_09 2007_09_28 2007_09_28_rubyonrails_install_in_macbook 2007_09_28_rubyonrails_install_in_macbook_index"><div class="cointainer-fluid"><div class="navbar navbar-default" role="navigation"><div class="container-fluid"><div class="navbar-header"><a class="navbar-brand" href="/">UKSTUDIO</a></div><div class="navbar-collapse collapse"><ul class="nav navbar-nav navbar-right"><li><a href="http://twitter.com/ukstudio">Twitter</a></li><li><a href="http://github.com/ukstudio">GitHub</a></li></ul></div></div></div></div><div class="container"><article><h1>MacBookにRubyOnRailsをインストールする</h1><hr /><div class="article-body">Railsを試すためにMacBookにRubyOnRailsをインストールしてみました。MacPortsは既にインストールされてるものとして話を進めるので、インストールしていない人はGoogleで調べるなりしてインストールしてくださいな。と言ってもRubyGemsのインストールでしか今回は使いませんけど。
+<h2>まずはRubyGemsをインストール</h2>
+MacPortsを利用してRubyGemsを入れます。rb-rubygemsという名前で登録されているはずです。
+<pre>% sudo port install rb-rubygems</pre>
+<a href="http://www.flickr.com/photo_zoom.gne?id=1447826801&amp;size=o"><img src="http://farm2.static.flickr.com/1008/1447826801_bf64321738.jpg?v=0" alt="install gem" /></a>
+<h3>というかRubyGemsってなに?</h3>
+いわゆるパッケージマネージャーってやつです。Perlで言うところのCPANみたいなものです。Rubyはまだ標準のパッケージマネージャーはありませんが、Railsがインストールできるということもあってか大抵はRubyGemsが使われるようです。
+<ul>
+	<li><a href="http://jp.rubyist.net/magazine/?0006-PackageManagement">Rubyist Magazine - シリーズ パッケージマネジメント 【第 1 回】 RubyGems (1)</a></li>
+	<li><a href="http://d.hatena.ne.jp/secondlife/20061106/1162785661">川o・-・）＜2nd life - RubyGems パッケージの作り方 - rubyforge 登録まで</a></li>
+	<li><a href="http://www.rubygems.org/">RubyGems Manuals</a></li>
+</ul>
+<h2>gemからRailsをインストール</h2>
+<pre>% sudo gem install rails</pre>
+<a href="http://www.flickr.com/photo_zoom.gne?id=1447826981&amp;size=o"><img src="http://farm2.static.flickr.com/1341/1447826981_c3eb32b601.jpg?v=0" alt="install rails" /></a>
+
+gemをインストールしてしまえば、コマンド一発でRailsがインストール出来てしまいます。簡単ですね。
+<h2>プロジェクトを作ってみる</h2>
+<pre>% rails hello</pre>
+<a href="http://www.flickr.com/photo_zoom.gne?id=1447827317&amp;size=o"><img src="http://farm2.static.flickr.com/1245/1447827317_f6bc5901ef.jpg?v=0" alt="create project" /></a>
+
+gemでRailsをインストールしたら、プロジェクトを作ってみましょう。helloというディレクトリが出来て、その中にappディレクトリやRakefileとかが作られていれば問題ありません。ちなみにhelloというのはプロジェクト名です。
+<h3>おまけ</h3>
+キャプチャのMelchiorっていうのはエヴァネタです。マギシステムの。痛い子ですみません。
+</div></article></div></body></html>

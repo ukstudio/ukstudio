@@ -1,0 +1,165 @@
+<!DOCTYPE html><html><head><meta charset="utf-8" /><!--Always force latest IE rendering engine or request Chrome Frame--><meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" /><!--Use title if it's in the page YAML frontmatter--><title>The Middleman</title><link href="http://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet" type="text/css" /><link href="/stylesheets/normalize.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="/stylesheets/all.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="/stylesheets/highlight.css" media="screen" rel="stylesheet" type="text/css" /><script src="/javascripts/all.js" type="text/javascript"></script><link href="/feed.xml" rel="alternate" title="atom" type="application/atom+xml" /><script type="text/javascript">var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-12755601-1']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();</script></head><body class="2014 2014_09 2014_09_21 2014_09_21_index"><div class="cointainer-fluid"><div class="navbar navbar-default" role="navigation"><div class="container-fluid"><div class="navbar-header"><a class="navbar-brand" href="/">UKSTUDIO</a></div><div class="navbar-collapse collapse"><ul class="nav navbar-nav navbar-right"><li><a href="http://twitter.com/ukstudio">Twitter</a></li><li><a href="http://github.com/ukstudio">GitHub</a></li></ul></div></div></div></div><div class="container"><h1><Archive></Archive>Sep 21 2014</h1><article><h2><a href="/2014/09/21/rspec_power_assert/">2014-09-21 RSpecでPower Assertをやるには</a></h2><p>RubyKaigi 2014でpower assertの話を聞いてrspecでどうにかならんかちょっと考えてみました。まず結論だけ書くとrspecでpower assertを使いたければ以下の様に書けばOK。</p>
+<pre class="highlight ruby"><span class="nb">require</span> <span class="s1">&#39;rspec&#39;</span>
+<span class="nb">require</span> <span class="s1">&#39;minitest&#39;</span>
+<span class="nb">require</span> <span class="s1">&#39;minitest-power_assert&#39;</span>
+
+<span class="k">module</span> <span class="nn">Minitest</span>
+  <span class="k">module</span> <span class="nn">Assertions</span>
+    <span class="n">prepend</span>  <span class="no">Minitest</span><span class="o">::</span><span class="no">PowerAssert</span><span class="o">::</span><span class="no">Assertions</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="no">RSpec</span><span class="nf">.configure</span> <span class="k">do</span> <span class="o">|</span><span class="n">config</span><span class="o">|</span>
+  <span class="n">config</span><span class="nf">.expect_with</span> <span class="ss">:minitest</span>
+<span class="k">end</span>
+
+<span class="n">describe</span> <span class="s1">&#39;Test&#39;</span> <span class="k">do</span>
+  <span class="n">it</span> <span class="s1">&#39;test&#39;</span> <span class="k">do</span>
+    <span class="n">assert</span> <span class="p">{</span> <span class="mi">1</span><span class="nf">.to_s.class</span> <span class="o">==</span> <span class="mi">1</span><span class="nf">.to_i.class</span> <span class="p">}</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</pre>
+<p>これを</p>
+<pre class="highlight shell"><span class="gp">$ </span>rspec --color -rpower_assert power_assert.rb
+</pre>
+<p>で実行するとこんな感じ。power_assertは事前にrequireした方が情報量がちょっと増える。</p>
+<pre class="highlight text">Failures:
+
+  1) Test test
+     Failure/Error: assert { 1.to_s.class == 1.to_i.class }
+     Minitest::Assertion:
+
+           assert { 1.to_s.class == 1.to_i.class }
+                      |    |     |    |    |
+                      |    |     |    |    Fixnum
+                      |    |     |    1
+                      |    |     false
+                      |    String
+                      &quot;1&quot;
+</pre>
+<h2 id="letとsubject">letとsubject</h2>
+
+<p>power<em>assertの0.1.3だとdefined</em>methodで定義されたメソッドの値が取れていないらしく、letやsubjectの値が表示されない。現時点でのmasterの0.1.4devだと修正されているとのことなのでちゃんと表示される。</p>
+<pre class="highlight ruby"><span class="n">describe</span> <span class="s1">&#39;Test&#39;</span> <span class="k">do</span>
+  <span class="n">let</span><span class="p">(</span><span class="ss">:klass</span><span class="p">)</span> <span class="p">{</span> <span class="mi">1</span><span class="nf">.to_s.class</span> <span class="p">}</span>
+  <span class="n">it</span> <span class="s1">&#39;test&#39;</span> <span class="k">do</span>
+    <span class="n">assert</span> <span class="p">{</span> <span class="n">klass</span> <span class="o">==</span> <span class="mi">1</span><span class="nf">.to_i.class</span> <span class="p">}</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</pre>
+<p>これを実行すると</p>
+<pre class="highlight text">Failures:
+
+  1) Test test
+     Failure/Error: assert { klass == 1.to_i.class }
+     Minitest::Assertion:
+
+           assert { klass == 1.to_i.class }
+                    |     |    |    |
+                    |     |    |    Fixnum
+                    |     |    1
+                    |     false
+                    String
+</pre>
+<p>こんな感じ。subjectも大体おなじ。</p>
+
+<h2 id="expectとマッチャ">expectとマッチャ</h2>
+
+<p>この方法はMinitestのadapterとminitest-power_assertを使うようにしているので無理。</p>
+
+<p>ちなみに <a href="https://gist.github.com/mizoR/3cf068eeae033bd5db5a">rspec で 手軽に power_assert 出力できるようにする</a> の方法でexpectを使ってみると</p>
+<pre class="highlight ruby"><span class="nb">require</span> <span class="s1">&#39;rspec/core&#39;</span>
+<span class="nb">require</span> <span class="s1">&#39;power_assert&#39;</span>
+
+<span class="k">module</span> <span class="nn">RSpec</span>
+  <span class="k">module</span> <span class="nn">PowerAssert</span>
+    <span class="k">def </span><span class="nf">power_assert</span><span class="p">(</span><span class="o">&amp;</span><span class="n">block</span><span class="p">)</span>
+      <span class="o">::</span><span class="no">PowerAssert</span><span class="nf">.start</span><span class="p">(</span><span class="n">block</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">pa</span><span class="o">|</span>
+        <span class="k">begin</span>
+          <span class="n">pa</span><span class="nf">.yield</span>
+        <span class="k">rescue</span> <span class="no">RSpec</span><span class="o">::</span><span class="no">Expectations</span><span class="o">::</span><span class="no">ExpectationNotMetError</span> <span class="o">=&gt;</span> <span class="n">e</span>
+          <span class="n">e</span><span class="nf">.message</span> <span class="o">&lt;&lt;</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">PowerAssert:</span><span class="se">\n</span><span class="si">#{</span><span class="n">pa</span><span class="nf">.message_proc.call</span><span class="si">}</span><span class="s2">&quot;</span>
+          <span class="k">raise</span> <span class="n">e</span>
+        <span class="k">end</span>
+      <span class="k">end</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="k">class </span><span class="nc">RSpec</span><span class="o">::</span><span class="no">Core</span><span class="o">::</span><span class="no">ExampleGroup</span>
+  <span class="kp">include</span> <span class="no">RSpec</span><span class="o">::</span><span class="no">PowerAssert</span>
+<span class="k">end</span>
+
+<span class="n">describe</span> <span class="s1">&#39;Test&#39;</span> <span class="k">do</span>
+  <span class="n">it</span> <span class="s1">&#39;test&#39;</span> <span class="k">do</span>
+    <span class="n">power_assert</span> <span class="p">{</span>
+      <span class="n">expect</span><span class="p">(</span><span class="mi">1</span><span class="nf">.to_s.class</span><span class="p">)</span><span class="nf">.to</span> <span class="n">eq</span><span class="p">(</span><span class="mi">1</span><span class="nf">.to_i.class</span><span class="p">)</span>
+    <span class="p">}</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</pre>
+<p>これは</p>
+<pre class="highlight text">       PowerAssert:
+             expect(1.to_s.class).to eq(1.to_i.class)
+             |        |    |      |  |    |    |
+             |        |    |      |  |    |    Fixnum
+             |        |    |      |  |    1
+             |        |    |      |  #&lt;RSpec::Matchers::BuiltIn::Eq:0x007f0850c91d78 @expected=Fixnum, @actual=String&gt;
+             |        |    |      nil
+             |        |    String
+             |        &quot;1&quot;
+             #&lt;RSpec::Expectations::ExpectationTarget:0x007f0850caa170 @target=String&gt;
+
+</pre>
+<p>こうなってしまう。この場合、expectの@targetにStringという結果が入っているのでそれを取り出すようにして、eqの方も@expectedに期待するものがはいってるのでそれを取りだすようにすればいいのかなぁ。</p>
+
+<p>もしくはexpectとeqの中の値さえわかれば良いといえば良いのでいっそ値をださなくてもいいのかも? 例えばこんな感じ。</p>
+<pre class="highlight text">       PowerAssert:
+             expect(1.to_s.class).to eq(1.to_i.class)
+                      |    |              |    |
+                      |    |              |    Fixnum
+                      |    |              1
+                      |    |
+                      |    |
+                      |    String
+                     &quot;1&quot;
+
+
+</pre>
+<p>別の例としてbe_falseyだとこんな感じ。</p>
+<pre class="highlight text">     Failure/Error: expect(nil.to_s.to_i).to be_falsey
+       expected: falsey value
+            got: 0
+       PowerAssert:
+             expect(nil.to_s.to_i).to be_falsey
+             |          |    |     |  |
+             |          |    |     |  #&lt;RSpec::Matchers::BuiltIn::BeFalsey:0x007fa84b53bb00 @actual=0&gt;
+             |          |    |     nil
+             |          |    0
+             |          &quot;&quot;
+             #&lt;RSpec::Expectations::ExpectationTarget:0x007fa84b3e02b0 @target=0&gt;
+</pre>
+<p>これに関していうとbe<em>falseyにはfalseが欲しいという情報がない。be</em>falseyを見れば求めてるものはわかるって話かもしれないけど… 更に言うとRSpec3でComposable Matcherが入ったりとか、以前からあるCustom Matcherとかがあったりして、それら全部対応するのは厳しいなーという感じ(そもそも対応できるのかもよくわからない…)</p>
+
+<p>そもそもの話をするとそういったマッチャというか、たくさんあるassertion methodを使い分けしたくないからpower assertをつかうわけで別にマッチャとか使わなくていいのではという気持ちがある。</p>
+
+<p>なのでexpectとかカスタムマッチャとかは(power assertを使う部分では)諦めてassertですませるのがよさそうかなと個人的には思う。</p>
+<pre class="highlight ruby"><span class="n">config</span><span class="nf">.expect_with</span> <span class="ss">:minitest</span>
+<span class="n">config</span><span class="nf">.expect_with</span> <span class="ss">:rspec</span>
+</pre>
+<p>spec<em>helper.rbにminitestもrspecも両方使うよう書けばpower</em>assertを使いたいところと、rspecを使いたいところで分けることができるのでどうしてもマッチャを使いたいところは素直にマッチャを書いてpower assertは諦めるしかない。</p>
+
+<p>今あるテスト資産をそのまんまpower assert対応にはできないのが悲しいところではあるけれども、このassertを使う方法でもexpectation部分以外はrspecの機能そのまま使えるのでそこまで悪くはないかなと思う。</p>
+
+<p>まだpower_assert gemの実装を理解できていないので、もしかしたらうまいことやれるかもしれないけどとりあえずここでギブアップ…</p>
+</article><hr /></div></body></html>

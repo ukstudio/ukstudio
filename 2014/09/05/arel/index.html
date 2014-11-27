@@ -1,0 +1,66 @@
+<!DOCTYPE html><html><head><meta charset="utf-8" /><!--Always force latest IE rendering engine or request Chrome Frame--><meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" /><!--Use title if it's in the page YAML frontmatter--><title>Arelあれこれ</title><link href="http://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet" type="text/css" /><link href="/stylesheets/normalize.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="/stylesheets/all.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="/stylesheets/highlight.css" media="screen" rel="stylesheet" type="text/css" /><script src="/javascripts/all.js" type="text/javascript"></script><link href="/feed.xml" rel="alternate" title="atom" type="application/atom+xml" /><script type="text/javascript">var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-12755601-1']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();</script></head><body class="2014 2014_09 2014_09_05 2014_09_05_arel 2014_09_05_arel_index"><div class="cointainer-fluid"><div class="navbar navbar-default" role="navigation"><div class="container-fluid"><div class="navbar-header"><a class="navbar-brand" href="/">UKSTUDIO</a></div><div class="navbar-collapse collapse"><ul class="nav navbar-nav navbar-right"><li><a href="http://twitter.com/ukstudio">Twitter</a></li><li><a href="http://github.com/ukstudio">GitHub</a></li></ul></div></div></div></div><div class="container"><article><h1>Arelあれこれ</h1><hr /><div class="article-body"><h2 id="model.arel_table-を読みづらいと感じる">Model.arel_table を読みづらいと感じる</h2>
+
+<p>例えばこういうコード。</p>
+<pre class="highlight ruby"><span class="no">Post</span><span class="nf">.joins</span><span class="p">(</span><span class="ss">:comments</span><span class="p">)</span><span class="nf">.order</span><span class="p">(</span><span class="no">Comment</span><span class="nf">.arel_table</span><span class="o">[</span><span class="ss">:created_at</span><span class="o">]</span><span class="nf">.desc</span><span class="p">)</span>
+</pre>
+<p>発行されるSQLはこんな感じ。</p>
+<pre class="highlight sql"><span class="k">SELECT</span> <span class="nv">&quot;posts&quot;</span><span class="p">.</span><span class="o">*</span> <span class="k">FROM</span> <span class="nv">&quot;posts&quot;</span> <span class="k">INNER</span> <span class="k">JOIN</span> <span class="nv">&quot;comments&quot;</span> <span class="k">ON</span> <span class="nv">&quot;comments&quot;</span><span class="p">.</span><span class="nv">&quot;post_id&quot;</span> <span class="o">=</span> <span class="nv">&quot;posts&quot;</span><span class="p">.</span><span class="nv">&quot;id&quot;</span>  <span class="k">ORDER</span> <span class="k">BY</span> <span class="nv">&quot;comments&quot;</span><span class="p">.</span><span class="nv">&quot;created_at&quot;</span> <span class="k">DESC</span>
+</pre>
+<p>こちらの方が個人的には読みやすい。</p>
+<pre class="highlight ruby"><span class="no">Post</span><span class="nf">.joins</span><span class="p">(</span><span class="ss">:comments</span><span class="p">)</span><span class="nf">.order</span><span class="p">(</span><span class="s1">&#39;comments.created_at desc&#39;</span><span class="p">)</span>
+</pre>
+<h2 id="問題もある">問題もある</h2>
+
+<h3 id="テーブル名を変えてしまったとき">テーブル名を変えてしまったとき</h3>
+
+<p>仮にテーブル名がかわったら後者の場合はエラーになる。</p>
+<pre class="highlight sql"><span class="k">SELECT</span> <span class="nv">&quot;posts&quot;</span><span class="p">.</span><span class="o">*</span> <span class="k">FROM</span> <span class="nv">&quot;posts&quot;</span> <span class="k">INNER</span> <span class="k">JOIN</span> <span class="nv">&quot;new_comments&quot;</span> <span class="k">ON</span> <span class="nv">&quot;new_comments&quot;</span><span class="p">.</span><span class="nv">&quot;post_id&quot;</span> <span class="o">=</span> <span class="nv">&quot;posts&quot;</span><span class="p">.</span><span class="nv">&quot;id&quot;</span>  <span class="k">ORDER</span> <span class="k">BY</span> <span class="n">comments</span><span class="p">.</span><span class="n">created_at</span> <span class="k">DESC</span>
+<span class="n">SQLite3</span><span class="p">::</span><span class="k">SQLException</span><span class="p">:</span> <span class="k">no</span> <span class="n">such</span> <span class="k">column</span><span class="p">:</span> <span class="n">comments</span><span class="p">.</span><span class="n">created_at</span><span class="p">:</span> <span class="k">SELECT</span> <span class="nv">&quot;posts&quot;</span><span class="p">.</span><span class="o">*</span> <span class="k">FROM</span> <span class="nv">&quot;posts&quot;</span> <span class="k">INNER</span> <span class="k">JOIN</span> <span class="nv">&quot;new_comments&quot;</span> <span class="k">ON</span> <span class="nv">&quot;new_comments&quot;</span><span class="p">.</span><span class="nv">&quot;post_id&quot;</span> <span class="o">=</span> <span class="nv">&quot;posts&quot;</span><span class="p">.</span><span class="nv">&quot;id&quot;</span>  <span class="k">ORDER</span> <span class="k">BY</span> <span class="n">comments</span><span class="p">.</span><span class="n">created_at</span> <span class="n">D</span>
+<span class="n">ESC</span>
+<span class="n">ActiveRecord</span><span class="p">::</span><span class="n">StatementInvalid</span><span class="p">:</span> <span class="n">SQLite3</span><span class="p">::</span><span class="k">SQLException</span><span class="p">:</span> <span class="k">no</span> <span class="n">such</span> <span class="k">column</span><span class="p">:</span> <span class="n">comments</span><span class="p">.</span><span class="n">created_at</span><span class="p">:</span> <span class="k">SELECT</span> <span class="nv">&quot;posts&quot;</span><span class="p">.</span><span class="o">*</span> <span class="k">FROM</span> <span class="nv">&quot;posts&quot;</span> <span class="k">INNER</span> <span class="k">JOIN</span> <span class="nv">&quot;new_comments&quot;</span> <span class="k">ON</span> <span class="nv">&quot;new_comments&quot;</span><span class="p">.</span><span class="nv">&quot;post_id&quot;</span> <span class="o">=</span> <span class="nv">&quot;posts&quot;</span><span class="p">.</span><span class="nv">&quot;id&quot;</span>
+  <span class="k">ORDER</span> <span class="k">BY</span> <span class="n">comments</span><span class="p">.</span><span class="n">created_at</span> <span class="k">DESC</span>
+
+</pre>
+<p>前者はモデルの方でテーブル名を変更すれば動作する。</p>
+<pre class="highlight ruby"><span class="k">class </span><span class="nc">Comment</span> <span class="o">&lt;</span> <span class="no">ActiveRecord</span><span class="o">::</span><span class="no">Base</span>
+  <span class="nb">self</span><span class="nf">.table_name</span>  <span class="ss">:new_comments</span>
+<span class="k">end</span>
+</pre>
+<h3 id="scopeでmergeしたいとき">scopeでmergeしたいとき</h3>
+<pre class="highlight ruby"><span class="k">class </span><span class="nc">Comment</span> <span class="o">&lt;</span> <span class="no">ActiveRecord</span><span class="o">::</span><span class="no">Base</span>
+  <span class="n">scope</span> <span class="ss">:recent</span><span class="p">,</span> <span class="o">-&gt;</span> <span class="p">{</span> <span class="n">where</span><span class="p">(</span><span class="s1">&#39;created_at &gt; ?&#39;</span><span class="p">,</span> <span class="mi">10</span><span class="nf">.days.ago</span><span class="p">)</span> <span class="p">}</span>
+<span class="k">end</span>
+
+<span class="no">Post</span><span class="nf">.joins</span><span class="p">(</span><span class="ss">:comments</span><span class="p">)</span><span class="nf">.merge</span><span class="p">(</span><span class="no">Comment</span><span class="nf">.recent</span><span class="p">)</span>
+</pre>
+<p>これだとCommentのcreated_atが解決できなくてコケる。</p>
+<pre class="highlight sql"><span class="k">SELECT</span> <span class="nv">&quot;posts&quot;</span><span class="p">.</span><span class="o">*</span> <span class="k">FROM</span> <span class="nv">&quot;posts&quot;</span> <span class="k">INNER</span> <span class="k">JOIN</span> <span class="nv">&quot;comments&quot;</span> <span class="k">ON</span> <span class="nv">&quot;comments&quot;</span><span class="p">.</span><span class="nv">&quot;post_id&quot;</span> <span class="o">=</span> <span class="nv">&quot;posts&quot;</span><span class="p">.</span><span class="nv">&quot;id&quot;</span> <span class="k">WHERE</span> <span class="p">(</span><span class="n">created_at</span> <span class="o">&gt;</span> <span class="s1">&#39;2014-08-26 09:16:45.106691&#39;</span><span class="p">)</span>
+<span class="n">SQLite3</span><span class="p">::</span><span class="k">SQLException</span><span class="p">:</span> <span class="n">ambiguous</span> <span class="k">column</span> <span class="n">name</span><span class="p">:</span> <span class="n">created_at</span><span class="p">:</span> <span class="k">SELECT</span> <span class="nv">&quot;posts&quot;</span><span class="p">.</span><span class="o">*</span> <span class="k">FROM</span> <span class="nv">&quot;posts&quot;</span> <span class="k">INNER</span> <span class="k">JOIN</span> <span class="nv">&quot;comments&quot;</span> <span class="k">ON</span> <span class="nv">&quot;comments&quot;</span><span class="p">.</span><span class="nv">&quot;post_id&quot;</span> <span class="o">=</span> <span class="nv">&quot;posts&quot;</span><span class="p">.</span><span class="nv">&quot;id&quot;</span> <span class="k">WHERE</span> <span class="p">(</span><span class="n">created_at</span> <span class="o">&gt;</span> <span class="s1">&#39;2014-08-26 09:16:45.
+106691&#39;</span><span class="p">)</span>
+<span class="n">ActiveRecord</span><span class="p">::</span><span class="n">StatementInvalid</span><span class="p">:</span> <span class="n">SQLite3</span><span class="p">::</span><span class="k">SQLException</span><span class="p">:</span> <span class="n">ambiguous</span> <span class="k">column</span> <span class="n">name</span><span class="p">:</span> <span class="n">created_at</span><span class="p">:</span> <span class="k">SELECT</span> <span class="nv">&quot;posts&quot;</span><span class="p">.</span><span class="o">*</span> <span class="k">FROM</span> <span class="nv">&quot;posts&quot;</span> <span class="k">INNER</span> <span class="k">JOIN</span> <span class="nv">&quot;comments&quot;</span> <span class="k">ON</span> <span class="nv">&quot;comments&quot;</span><span class="p">.</span><span class="nv">&quot;post_id&quot;</span> <span class="o">=</span> <span class="nv">&quot;posts&quot;</span><span class="p">.</span><span class="nv">&quot;id&quot;</span> <span class="k">WHERE</span> <span class="p">(</span><span class="n">cr</span>
+<span class="n">eated_at</span> <span class="o">&gt;</span> <span class="s1">&#39;2014-08-26 09:16:45.106691&#39;</span><span class="p">)</span>
+</pre>
+<p>正しくはこう。</p>
+<pre class="highlight ruby"><span class="k">class </span><span class="nc">Comment</span> <span class="o">&lt;</span> <span class="no">ActiveRecord</span><span class="o">::</span><span class="no">Base</span>
+  <span class="n">scope</span> <span class="ss">:recent</span><span class="p">,</span> <span class="o">-&gt;</span> <span class="p">{</span> <span class="n">where</span><span class="p">(</span><span class="nb">self</span><span class="nf">.arel_table</span><span class="o">[</span><span class="ss">:created_at</span><span class="o">]</span><span class="nf">.gt</span><span class="p">(</span><span class="mi">10</span><span class="nf">.days.ago</span><span class="p">))</span> <span class="p">}</span>
+<span class="k">end</span>
+</pre><pre class="highlight sql"><span class="k">SELECT</span> <span class="nv">&quot;posts&quot;</span><span class="p">.</span><span class="o">*</span> <span class="k">FROM</span> <span class="nv">&quot;posts&quot;</span> <span class="k">INNER</span> <span class="k">JOIN</span> <span class="nv">&quot;comments&quot;</span> <span class="k">ON</span> <span class="nv">&quot;comments&quot;</span><span class="p">.</span><span class="nv">&quot;post_id&quot;</span> <span class="o">=</span> <span class="nv">&quot;posts&quot;</span><span class="p">.</span><span class="nv">&quot;id&quot;</span> <span class="k">WHERE</span> <span class="p">(</span><span class="nv">&quot;comments&quot;</span><span class="p">.</span><span class="nv">&quot;created_at&quot;</span> <span class="o">&gt;</span> <span class="s1">&#39;2014-08-26 09:19:17.406299&#39;</span><span class="p">)</span>
+</pre>
+<h2 id="僕個人の結論">僕個人の結論</h2>
+
+<p>Model.arel_tableはできる限り隠したい(読みづらいから)。そしてmergeを使いたいケースではArelを使っておく。その変わりmergeが必要になるまでは無理にArelを使わない。</p>
+
+<p>さっきのComment#recentの例でいうなら最初は<code>where(&#39;created_at &gt; ?&#39;, 10.days.ago)</code>で書いておく。merged使いたい時になったらArelの方で書き直す。</p>
+
+<p>テーブル名の変更のリスクは気にしない。そもそもあまりテーブル変更しないし…。既にあるDBの上にRailsアプリケーションを構築する場合はDBリファクタリングのことを考えてArel使いまくった方がいいのかもしれない。</p>
+</div></article></div></body></html>
