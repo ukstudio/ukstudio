@@ -4,10 +4,63 @@
   <id>http://ukstudio.jp</id>
   <link href="http://ukstudio.jp"/>
   <link href="http://ukstudio.jp/feed.xml" rel="self"/>
-  <updated>2014-11-27T07:33:00Z</updated>
+  <updated>2014-12-14T07:50:00Z</updated>
   <author>
     <name>AKAMATSU Yuki</name>
   </author>
+  <entry>
+    <title>esaのストックとフローの絞り込みで(俺にとって)なにがうれしいのか</title>
+    <link rel="alternate" href="http://ukstudio.jp/2014/12/14/esa_flow_stock/"/>
+    <id>http://ukstudio.jp/2014/12/14/esa_flow_stock/</id>
+    <published>2014-12-14T07:50:00Z</published>
+    <updated>2014-12-14T16:54:10+09:00</updated>
+    <author>
+      <name>AKAMATSU Yuki</name>
+    </author>
+    <content type="html">&lt;p&gt;そもそもesaのストックとフローの絞り込みってなに？っていう人は以下のリンクからどうぞ。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="https://docs.esa.io/posts/31"&gt;release_note/2014/12/13/検索結果の絞り込み(Stock or Flow) - docs - esa.io&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;簡単に説明するとesaではカテゴリに日付が入っている記事はフロー、入っていない記事はストックとして扱いそれらを分けて検索できるようになった。&lt;/p&gt;
+
+&lt;h2 id="結論から"&gt;結論から&lt;/h2&gt;
+
+&lt;p&gt;たまには長い話をすっとばして結論を書く。簡単に言ってしまうと&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;yy年mm月dd日にAの仕様を変更したよ&lt;/li&gt;
+&lt;li&gt;現時点において最新の仕様はこうです&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;という2種類の情報を前者はフロー、後者はストックとして分けて検索できるようになった。大体においてほしい情報というのは後者のストックなので個人的には非常にうれしい。&lt;/p&gt;
+
+&lt;h2 id="そもそもストックとフローとは"&gt;そもそもストックとフローとは&lt;/h2&gt;
+
+&lt;p&gt;記事自体にストックとフローという概念をもたせるのは実はあまり新しい話でもなく、「wiki ブログ ストック フロー」で検索するとそれなりに記事がでてくる。要はwiki=ストック、ブログ=フローということだ。もちろん、wikiのあるページにフローの概念をもたせることもブログのある記事にストックの概念をもたせることも可能だけど大枠としてそういうことにする。&lt;a href="http://jkondo.hatenablog.com/entry/2011/11/19/114109"&gt;ブログもストックっていう人もいるけど&lt;/a&gt;、wikiとかブログとかはここではあまり重要ではないので置いておく。&lt;/p&gt;
+
+&lt;p&gt;僕の捉え方でいうと、時系列にそって情報の流れがあるものはフロー、累積されていくようなものはストックと考えている(これなんの説明にもなっていないのでは…)&lt;/p&gt;
+
+&lt;h2 id="議事録はフロー"&gt;議事録はフロー&lt;/h2&gt;
+
+&lt;p&gt;esaでそれなりの量の議事録を書いてきたけど、これらはMTGの日付をカテゴリに入れているのでフローだ。これらは日々の仕様の変更の流れをそのまま現しているのでフローとして扱うのは妥当だと思う。&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt="flow.png" src="/images/2014-12-14-flow.png" /&gt;&lt;/p&gt;
+
+&lt;p&gt;こういった情報がフローだけだと困ることがある。議事録には変更の差分しか書かれていない。なので現時点であるべき仕様を議事録から読み解くのは大変だ。エンジニアにわかるようにいうとgitの各commitのdiffから現在のソースコードを想像しろというものだ。&lt;/p&gt;
+
+&lt;h2 id="そこでストック"&gt;そこでストック&lt;/h2&gt;
+
+&lt;p&gt;つまり、フローである議事録とは別に今あるべき姿を累積する記事が必要になる。そこでesa上では日付の入っていない記事を作り、そこにあるべき姿を書いていく。重要なのはフローと違いストックはその記事をちゃんと更新する必要があるということだ。&lt;/p&gt;
+
+&lt;p&gt;今まではこういう風にフローとストックの記事を分けてもうまく検索することができずにREADME.mdにリンクを貼っておくということしかできなかった。なのでそもそも人の目につかず、結果更新もされないという感じだったけれど、検索しやすくなったことで情報が古いことが目につきやすくなるので自然と更新も行われやすくなるのではないかと思う(みんな更新してね!)&lt;/p&gt;
+
+&lt;h2 id="おまけ"&gt;おまけ&lt;/h2&gt;
+
+&lt;p&gt;そもそも仕様をesaに書くの?みたいな話ありそうだけど、実装の前にメンバーに仕様を共有するケースはそれなりにあるし、コードを読んでもWhyがわからないのでなぜこうしたのかみたいな部分はドキュメントに残したりもする。&lt;/p&gt;
+
+&lt;p&gt;それに今回は仕様の話を例にとったけど、例えばインフラまわりだと議事録でこういう構成にしたという話を残すのとは別に構成がかわったことによってデプロイ手順もかわったならそれはストックとして残したいという話もある。&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>spotlights.jpが本日10時にリリースされました</title>
     <link rel="alternate" href="http://ukstudio.jp/2014/11/27/spotlights-jp/"/>
@@ -319,39 +372,5 @@ erutaso
 
 &lt;p&gt;&lt;a href="https://twitter.com/sgymtic/status/448832543039574016"&gt;https://twitter.com/sgymtic/status/448832543039574016&lt;/a&gt;&lt;/p&gt;
 </content>
-  </entry>
-  <entry>
-    <title>BitlBeeでHipChatに接続する</title>
-    <link rel="alternate" href="http://ukstudio.jp/2014/03/18/bitlbee_hipchat/"/>
-    <id>http://ukstudio.jp/2014/03/18/bitlbee_hipchat/</id>
-    <published>2014-03-18T05:33:00Z</published>
-    <updated>2014-11-27T15:26:19+09:00</updated>
-    <author>
-      <name>AKAMATSU Yuki</name>
-    </author>
-    <content type="html">&lt;p&gt;HipChatのLinuxクライアントは残念ながら日本語入力ができないのでかわりにIRCを使ってみる。
-HipChatはJabberが使えるのでBitlBeeを使ってJabber経由でIRCと繋ぐことにする。BitlBee自体の設定はなにもいらないので各環境にあわせて適当に入れて起動する。&lt;/p&gt;
-&lt;pre class="highlight text"&gt;sudo emerge bitlbee
-sudo /etc/init.d/bitlbee start
-&lt;/pre&gt;
-&lt;p&gt;次にIRCクライアントでBitlBeeに接続する。BitlBeeはlocalhostに6667ポートで立ち上がっているので(コンフィグで修正していなければ)、そこに接続する。文字コードはUTF-8でOK。
-接続できたらbitlbeeの部屋でコマンドを入力し、アカウントを追加する。HipChatのJabberのアカウントは「Account Setting &amp;gt; XMPP/Jabber info」にある。&lt;/p&gt;
-&lt;pre class="highlight text"&gt;account add jabber username@chat.hipchat.com &amp;#39;password&amp;#39;
-&lt;/pre&gt;
-&lt;p&gt;次に各ユーザがニックネームで表示されるように設定する。これをやらないと数字の羅列で誰が誰だかわからない状態になってしまう。&lt;/p&gt;
-&lt;pre class="highlight text"&gt;account hipchat set nick_source full_name
-&lt;/pre&gt;
-&lt;p&gt;次にアカウントを有効化する。この時点で認証などもしているので失敗したらアカウント情報を見直すこと。&lt;/p&gt;
-&lt;pre class="highlight text"&gt;account hipchat on
-&lt;/pre&gt;
-&lt;p&gt;有効化できたらすでに部屋に参加できるが数字の羅列が頭についているので使いにくい。別の名前を割り当てることができるので適当に自分が使いやすい名前をつける。&lt;/p&gt;
-&lt;pre class="highlight text"&gt;chat add hipchat room_jaber_name@conf.hipchat.com #channelname
-&lt;/pre&gt;
-&lt;p&gt;ニックの設定次第だとHipChatから怒られるのでその場合HipCHatで使っている名前を設定する。&lt;/p&gt;
-&lt;pre class="highlight text"&gt;channel #channelname set nick &amp;#39;room nickname&amp;#39;
-&lt;/pre&gt;
-&lt;p&gt;無事、部屋にjoinしてログが流れてきたら終了。&lt;/p&gt;
-&lt;pre class="highlight text"&gt;/join #channelname
-&lt;/pre&gt;</content>
   </entry>
 </feed>

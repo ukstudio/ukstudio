@@ -8,7 +8,41 @@ _gaq.push(['_trackPageview']);
   var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
   ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
   var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-})();</script></head><body class="page page_19 page_19_index"><div class="cointainer-fluid"><div class="navbar navbar-default" role="navigation"><div class="container-fluid"><div class="navbar-header"><a class="navbar-brand" href="/">UKSTUDIO</a></div><div class="navbar-collapse collapse"><ul class="nav navbar-nav navbar-right"><li><a href="http://twitter.com/ukstudio">Twitter</a></li><li><a href="http://github.com/ukstudio">GitHub</a></li></ul></div></div></div></div><div class="container"><article><h1><a href="/2009/08/11/oauth/">2009-08-11 OAuthを使ってみた雑感</a></h1><hr /><div class="article-body">最近、TwitterのDMスパムなどで話題のOAuthですが、仕事で使ってみて色々思うところもあるのでまとめておく。
+})();</script></head><body class="page page_19 page_19_index"><div class="cointainer-fluid"><div class="navbar navbar-default" role="navigation"><div class="container-fluid"><div class="navbar-header"><a class="navbar-brand" href="/">UKSTUDIO</a></div><div class="navbar-collapse collapse"><ul class="nav navbar-nav navbar-right"><li><a href="http://twitter.com/ukstudio">Twitter</a></li><li><a href="http://github.com/ukstudio">GitHub</a></li></ul></div></div></div></div><div class="container"><article><h1><a href="/2009/08/12/twitter_bot/">2009-08-12 ついったーBOT作者にお願いしたいこと</a></h1><hr /><div class="article-body">最近、行儀がわるいというか、ハッキリ言ってしまうと「鬱陶しいBOT」が増えた(前からかもだけど)気がするので個人的にBOTを作るときに気をつけてもらいたいことを書いておく。
+
+<h2>言及に気を配って</h2>
+ついったーの仕様上、いつからかは知らないけど発言内容に「@自分のID」が含まれていると言及されたということでReplyに流れてくる。
+
+それはまぁいいんだけど、BOTが必要以上にIDを含めているとそれだけでReplyがうまってしまう。特に「○○なう系BOT」がひどい。山手線とか色々あるけど<a href="http://twitter.com/shibuya_now">渋谷なうBOT</a>がひどい。
+
+なにがひどいって一度「渋谷なう」と言ったら補足されて大体24時間ぐらいはそのBOTの発言に自分のIDが含まれて、誰かが「渋谷なう」と言う度に自分のReplyに流れてくる。そんな情報は求めていない。せめて@をはずしてほしい。
+
+それと同じような理由で延々と特定のキーワードに対してReTweetする「RT BOT」もなにかと鬱陶しい。特定のキーワードを集めて広めるという意味もあるかもしれないが、大抵の場合検索すれば解決すると思う。
+
+<h2>RT捏造</h2>
+<del datetime="2009-08-11T21:51:38+00:00">これはついさっき気づいたんだけど、clibotという学習系のBOTが<a href="http://twitter.com/clibot/status/3250129088">さも俺が発言したかのようにRTしていた</a>が、俺はそんな発言を一切していない。</del>
+
+追記(2009-08-12): 作者の方から<a href="http://twitter.com/clicube/status/3252794902">replyを頂いた</a>。わざわざありがとうございます。
+
+学習系だから仕方ないと言うかもしれないが、まるで俺が発言したかのように扱われるのはあまりいい気分ではない。
+
+<h2>Blockを前提としない</h2>
+この手の文句は大体がBlockしたらいいのだろうけど、BOTを作る側の礼儀としてそこは前提にしてはいけないと思う。
+
+基本的にBOTはFollowしてくれてる人のみを対象にするか、出来る限りそれ以外の人へ影響を減らすようにして欲しい。
+
+例えばキーワードを拾うBOTだったら、せめてIDの先頭に@をつけないでおくとかするだけでも大分かわる。それでも自分のIDでキーワード反応させてる人がいるから影響が0とはならないが。その人へのリンクが必要というなら、発言のパーマリンクでも一緒に載せておけばいい。
+
+別に@を飛ばすなとまで言うつもりはないが、あまりの意味のない内容を何度もReplyされるとさすがに鬱陶しい。
+
+<h2>作者への連絡先を明記して</h2>
+BOTを作るなら、Bioにでも自分のTwitterのIDなりブログのURLなり載せておいてほしい。BOTへの苦情・要望を誰に伝えたらいいのかさっぱりわからない。
+
+BOTを作ったのなら無責任に放ったらかすのではなく、BOTの発言も自分の発言と同程度の責任を持っておいて欲しい。
+
+<h2>まとめ</h2>
+個人的な要望として適当につらつらと書き殴ったけど別に強制するつもりはない。だけどまぁ、BOTを作るときは少しばかりここに書いたことに気を使ってもらえるとうれしい。
+</div></article><article><h1><a href="/2009/08/11/oauth/">2009-08-11 OAuthを使ってみた雑感</a></h1><hr /><div class="article-body">最近、TwitterのDMスパムなどで話題のOAuthですが、仕事で使ってみて色々思うところもあるのでまとめておく。
 
 <h2>OAuthは安全か</h2>
 まず、 OAuthでよく言われてるようにみえるパスワードをサービスに渡さないから安全ということに関して。簡単に言うと、「パスワード渡すよりは安全だけどまぁ信用していいかどうかの判断は必要だよね」ってところ。
@@ -42,23 +76,6 @@ OAuthを使う際、サービス内部にOAuthを使用してなにをするの�
 メンテナンスと言うか、設定を一からやりなおしたかったのと、CentOSに飽きたのでたまには違うディストリビューションにしたかったので、Gentooでビルドしなおしてました。
 
 ブログのテーマとかも追々直していきますが、とりあえず見れるところまで。
-</div></article><article><h1><a href="/2009/07/16/android_alternative/">2009-07-16 HT-03AのGmailアプリからメールを送るとmultipart/alternativeになる</a></h1><hr /><div class="article-body">先日もエントリを書いたように、今現在HT-03Aを使っているのですが、ひとつ問題が。
-
-まぁタイトルのまんまなのですが、標準のGmailアプリからメールを送るとヘッダがmultipart/alternativeになってしまいます。もちろんWebからだとtext/plainで送れます。multipart/alternativeについては詳しくは書きませんが、多分大抵の場合、HTMLメールとして受け取ることになると思います。
-
-<img src="http://img.skitch.com/20090716-e9kguk8wruw5t8p4a45qcruark.jpg" alt="alternative"/>
-
-それの何が問題かと言うと、携帯に送った場合それがデコメとして認識されて受け取った側が返信する際にデコメ作成画面になってしまうということです。
-
-要はメールを受けとる > 返信ボタンを押す > デコメ作成画面になる > 一々テキストメールに変更しなければならないといった感じに手間が増えてしまうのです。
-
-全部の携帯がそうかはわかりませんが、auのある携帯ではそういう動作になるようです(型番は忘れた)
-
-とりあえず、仕方がないので今のところは、Gmailアプリで受信(通知がくる) > メーラー(標準でついてくるGmail以外のメールを受信するやつ)でGmailを再度受信 > そっちで返信 とやるとなんとかtext/plainで送れます。非常に面倒です。他になにかいい方法があれば教えてください。
-
-ちなみに、この件でDoCoMoのサポセンに問合せたところ、「標準のGmailアプリではテキストメールしか送れません。細かいことはGmailのヘルプを参照してください。」と言われてしまいどうしたもんかなーといったところです。
-
-もし、誰か標準のGmailアプリでtext/plainでメールを送る方法をご存知でしたら教えてもらえるとありがたいです。
 </div></article><article><h1><a href="/2009/07/16/ht_03a_gtalk/">2009-07-16 HT-03AでGtalkまわりでハマッったのでメモ</a></h1><hr /><div class="article-body">なんだか変なところではまるな、android。
 
 Gtalkでチャットをする時は大体クライアント側でその人を登録すると思うんですが、連絡帳にすでにその人が登録してあった場合、マージ的なことはしてくれません。具体的な例で説明した方がわかりやすいと思うので具体例しめします。
@@ -77,19 +94,21 @@ Gtalkでチャットをする時は大体クライアント側でその人を登
 ちなみに僕は一度Gtalkのフレンドリストが全部消えたのですが、多分連絡帳整理の際に一度連絡先を全て消したためだと思います。Gtalkのフレンドリストが消えないようにするには、上記のようにフレンド登録されたアカウントはそのまま残しておかないとダメなんだと思います。
 
 ちなみに、僕が知ってる範囲ですが、フレンド登録されているアカウントかどうかの区別はチャットができるかできないかでしか判断できないと思います。具体的に言うと連絡帳をWebで見たときに「チャット」のリンクがあるかどうかぐらいだと思います。
-</div></article><article><h1><a href="/2009/07/14/rails_oauth_twitter/">2009-07-14 RailsからOAuthを利用してTwitterにポストする</a></h1><hr /><div class="article-body">OAuthの細かい説明は抜き。
+</div></article><article><h1><a href="/2009/07/16/android_alternative/">2009-07-16 HT-03AのGmailアプリからメールを送るとmultipart/alternativeになる</a></h1><hr /><div class="article-body">先日もエントリを書いたように、今現在HT-03Aを使っているのですが、ひとつ問題が。
 
-まず、OAuthを使うためにはTwitterでアプリケーションの登録が必要なので、<a href="http://twitter.com/oauth_clients">http://twitter.com/oauth_clients</a>で登録をしておいてください。 以下のコードの6行目の部分を取得したConsumer keyとConsumer secretをに置き換えてください。
+まぁタイトルのまんまなのですが、標準のGmailアプリからメールを送るとヘッダがmultipart/alternativeになってしまいます。もちろんWebからだとtext/plainで送れます。multipart/alternativeについては詳しくは書きませんが、多分大抵の場合、HTMLメールとして受け取ることになると思います。
 
-<script src="http://gist.github.com/146684.js"></script>
+<img src="http://img.skitch.com/20090716-e9kguk8wruw5t8p4a45qcruark.jpg" alt="alternative"/>
 
-適当なところからverifyアクションにリダイレクトしてくると、さらにTwitterにリダイレクトします。その後、callbackアクションに戻ってくるので、そこで認証して取得したトークンをUserモデルに保存します。(ここでは自分のサービスにログインしているユーザが認証を行っています。)
+それの何が問題かと言うと、携帯に送った場合それがデコメとして認識されて受け取った側が返信する際にデコメ作成画面になってしまうということです。
 
-その後、保存したトークンを使ってTwitterに発言をします。リクエストが受け入れられなかった場合の処理などは省いてます。
+要はメールを受けとる > 返信ボタンを押す > デコメ作成画面になる > 一々テキストメールに変更しなければならないといった感じに手間が増えてしまうのです。
 
-<script src="http://gist.github.com/146685.js"></script>
+全部の携帯がそうかはわかりませんが、auのある携帯ではそういう動作になるようです(型番は忘れた)
 
-Twitterには取得したトークンに有効期限はありませんが、有効期限が存在するものもある(どちらかというとそっちの方が多いのかも)気をつける必要があります。
+とりあえず、仕方がないので今のところは、Gmailアプリで受信(通知がくる) > メーラー(標準でついてくるGmail以外のメールを受信するやつ)でGmailを再度受信 > そっちで返信 とやるとなんとかtext/plainで送れます。非常に面倒です。他になにかいい方法があれば教えてください。
 
-ちなみに細かいことを調べていないので「トークンをDBに保存してしまっていいのか」とか「トークンが外部に漏れてしまった場合はどうしたらいいのか」などについてはよくわかっていません。
+ちなみに、この件でDoCoMoのサポセンに問合せたところ、「標準のGmailアプリではテキストメールしか送れません。細かいことはGmailのヘルプを参照してください。」と言われてしまいどうしたもんかなーといったところです。
+
+もし、誰か標準のGmailアプリでtext/plainでメールを送る方法をご存知でしたら教えてもらえるとありがたいです。
 </div></article><div class="pager"><ul><li class="previous"><a href="/page/18/">Prev</a></li><li class="next"><a href="/page/20/">Next</a></li></ul></div></div></body></html>

@@ -8,7 +8,14 @@ _gaq.push(['_trackPageview']);
   var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
   ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
   var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-})();</script></head><body class="page page_33 page_33_index"><div class="cointainer-fluid"><div class="navbar navbar-default" role="navigation"><div class="container-fluid"><div class="navbar-header"><a class="navbar-brand" href="/">UKSTUDIO</a></div><div class="navbar-collapse collapse"><ul class="nav navbar-nav navbar-right"><li><a href="http://twitter.com/ukstudio">Twitter</a></li><li><a href="http://github.com/ukstudio">GitHub</a></li></ul></div></div></div></div><div class="container"><article><h1><a href="/2007/12/28/mac_leopard/">2007-12-28 Leopardをインストール</a></h1><hr /><div class="article-body">来年から仕事でMacBookを使う可能性がでてきたのもあって、OSをLeopardに入れ替えた。仕事で使い始めると入れ替えるタイミングが難しくなるからね。
+})();</script></head><body class="page page_33 page_33_index"><div class="cointainer-fluid"><div class="navbar navbar-default" role="navigation"><div class="container-fluid"><div class="navbar-header"><a class="navbar-brand" href="/">UKSTUDIO</a></div><div class="navbar-collapse collapse"><ul class="nav navbar-nav navbar-right"><li><a href="http://twitter.com/ukstudio">Twitter</a></li><li><a href="http://github.com/ukstudio">GitHub</a></li></ul></div></div></div></div><div class="container"><article><h1><a href="/2007/12/30/rubycocoa_brainfuckinterpreter/">2007-12-30 RubyCocoaでBrainFuckインタプリタっぽいものを作ってみた</a></h1><hr /><div class="article-body">初めてのRubyCocoaでのプログラミング。以前作ったBrainfuckのコードを処理するRubyプログラムを流用した。主に参考にしたのは<a href="http://limechat.net/rubycocoa/tutorial/">RubyCocoa 入門</a>。と言うか、ここしか見てない。
+
+<img src="http://farm3.static.flickr.com/2055/2148748886_48f93983a6.jpg?v=0"/>
+
+上のテキストフィールドにBrainfuckのコードを入力して、executeのボタンを押すと変換された文字列が下のフィールドに表示される。キャプチャのBrainfuckのコードは途切れてるだけで、実際はもっと長い。本当はテキストエリアみたいなのにしたかったんだけれど、オブジェクトがどれだかわからなかった。
+
+以前、Objective-Cで少しだけCocoaプログラミングをした時も同じことを思ったけど、Interface BuilderはやっぱりUIを設計していく上で優秀だと思う。コントローラクラスとオブジェクトを関連づける操作もかなり直感的でさすがAppleと言ったところか。
+</div></article><article><h1><a href="/2007/12/28/mac_leopard/">2007-12-28 Leopardをインストール</a></h1><hr /><div class="article-body">来年から仕事でMacBookを使う可能性がでてきたのもあって、OSをLeopardに入れ替えた。仕事で使い始めると入れ替えるタイミングが難しくなるからね。
 
 <h2>Webクリップウィジェット</h2>
 LeopardからSafariで見ているページをDashboardにクリップできるようになった。試しに<a href="http://suztomo.net/fuwatter/">Fuwatter</a>をクリップしてみた。特に重たい感じもなく、普通に動く。
@@ -82,26 +89,6 @@ Twitterでyuguiさんが「<a href="http://twitter.com/yugui/statuses/531123082"
 
 <strong>12/26 追記</strong>
 10代後半をターゲットに入れてるくせに飲み会とか意味わかんないですね。そこらへんは追い追い考えときます・・・
-</div></article><article><h1><a href="/2007/12/20/fixdap_ruby_project/">2007-12-20 fixdap.jpに「Rubyを極める」プロジェクトを作ってみました</a></h1><hr /><div class="article-body"><a href="http://fixdap.com/p/Ruby/">Rubyを極める - fixdap</a>
-
-@mobcovが<a href="http://fixdap.com/p/RubyCocoa/">RubyCocoaを極める - fixdap</a>を。@faultierが<a href="http://fixdap.com/p/rspec/">RSpecを極める - fixdap</a>を作っていたので、それらの姉妹プロジェクトってことで。
-
-とりあえず、あまり難しいことは考えてないので「こんな勉強をしてみよう」とか「Rubyで○○なプログラムを書いてみよう」とかちょっとしたことでもタスク作っちゃって欲しいなと思う今日この頃。
-
-丁度、近いうちに「たのしいRuby 第2版」の練習問題をちゃんとやろうと思ってたのでそのタスクを作ってみた。(<a href="http://fixdap.com/p/Ruby/1760/">http://fixdap.com/p/Ruby/1760/</a>)書いたプログラムはこのブログにでも貼りつけて、そのリンクをfixdapの方にコメントで書けばいいかな。
-
-もしくは、CodeReposにCommitしちゃうってのもありかなー。/lang/ruby/study/tanoshi_ruby/とかで。んで、もし添削したい人とかいたら勝手に修正してCommitしちゃえばいいし。あまりにも書き直すようであれば、fixdapのコメントで一言言うか、気にせずCommitして、svnのコメントになんかしら書いておけばいいし。
-
-プロジェクトメンバーがオレ１人なのが寂しいなー。作ったばかりだから仕方ないけどw
-
-<h2>追記 07/12/20</h2>
-yappoさんからブクマでコメントもらいました。
-<blockquote>
-yappo coderepos 添削用は coderepos.org/share/dan 以下で
-</blockquote>
-とのことなので、coderepos.org/share/dan/ruby/tanoshi_ruby/とか作ろうと思います。yappoさん、ありがとう。
-
-あとプロジェクトメンバーがちょこっと増えてた。わっほい。
 </div></article><article><h1><a href="/2007/12/20/tanoshi_ruby_sec10_practice/">2007-12-20 たのしいRuby 第10章 練習問題</a></h1><hr /><div class="article-body">たのしいRuby 第10章 数値(Numeric)クラスの練習問題をやってみた。
 
 (1)と(2)は華氏を摂氏、もしくは逆の摂氏を華氏に変換するプログラムを書けと言う問題。小数点以下を求める為に引数をFloat()で囲む。そんなに難しい問題じゃないので、テストはかなり適当。

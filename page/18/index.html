@@ -8,7 +8,24 @@ _gaq.push(['_trackPageview']);
   var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
   ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
   var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-})();</script></head><body class="page page_18 page_18_index"><div class="cointainer-fluid"><div class="navbar navbar-default" role="navigation"><div class="container-fluid"><div class="navbar-header"><a class="navbar-brand" href="/">UKSTUDIO</a></div><div class="navbar-collapse collapse"><ul class="nav navbar-nav navbar-right"><li><a href="http://twitter.com/ukstudio">Twitter</a></li><li><a href="http://github.com/ukstudio">GitHub</a></li></ul></div></div></div></div><div class="container"><article><h1><a href="/2009/10/02/ruby-freaks/">2009-10-02 Ruby Freaks Loungeに記事を書きました</a></h1><hr /><div class="article-body"><a href="http://gihyo.jp/dev/serial/01/ruby/0021">第21回　Railsアプリの受け入れテストをCucumberで書こう</a>
+})();</script></head><body class="page page_18 page_18_index"><div class="cointainer-fluid"><div class="navbar navbar-default" role="navigation"><div class="container-fluid"><div class="navbar-header"><a class="navbar-brand" href="/">UKSTUDIO</a></div><div class="navbar-collapse collapse"><ul class="nav navbar-nav navbar-right"><li><a href="http://twitter.com/ukstudio">Twitter</a></li><li><a href="http://github.com/ukstudio">GitHub</a></li></ul></div></div></div></div><div class="container"><article><h1><a href="/2009/10/06/web_trustee_company/">2009-10-06 Web系受託会社は亡びる</a></h1><hr /><div class="article-body">やけに煽ってるタイトルだけど、別にそんな大した話でもない。最近個人的に思ってることをつらつらと書く。
+
+まず、Web系受託会社の定義だけどまぁWebサービスやWebアプリケーションなど比較的規模の小さいものを受託で作っているところとする。「規模の小さい」も割と感覚的なものだけど、まぁその辺の詳細は省く。
+
+で、なんでまた亡びるとか言いだしたのかと言うとこの程度の規模のものは外部に開発を依頼するより、自分達で作る内製に向かっていくんじゃないと思っている為。特に最近の不景気でエンジニアを雇って内部で作るという流れがあるように見える。少なくとも僕のまわりでは。現にそういう話で「うちこない?」的なことも何度か言われている。受託会社に勤めている身としてはうちに発注してよと思わなくもないが、なかなかそうも行かないらしい。
+
+まぁ個人的にはWebサービス、アプリケーションに限らず、いわゆる業務システムも内製した方がいいと思ってるからまぁこの流れは歓迎してると言えばしてるんだけど、受託会社としてはちょっとやばいかなと。
+
+要は今まで発注してくれてた会社が自分達で作るようになって、受託会社に仕事がこなくなるからやばいんじゃないのって話。業務システムとか割と規模の大きい仕事を受けてるところはまだ大丈夫だと思う。 それよりWebサービス、アプリケーションをメインで受託してる会社がやばい。
+
+なんでやばいかと言うと、ちょっと優秀なエンジニアなら1人で作れるものが多い。例えばSNS(ブームは去ったけどね)を作ろうとなったときに、外部に依頼するよりエンジニア1人とデザイナ1人雇えば十分だと思うし、僕自身作れる自信がある。まぁSNSと言っても規模は色々あるんだろうけど。
+
+まぁさっきも言ったように、内製するのは歓迎だしそれはそれでいいんだけど、受託会社として今後どうするのかって話。
+
+いくつか思いつくのは、業務システム系に手を出す、売るものを作る(パッケージ開発)、自社サービス(広告、課金)とかとか。まぁどれが正解とかわからんし、もしかしたら他にも道があるかも。
+
+そんなことを考える日々です。他のWeb系受託の人たちはどう考えてるんだろうねー。
+</div></article><article><h1><a href="/2009/10/02/ruby-freaks/">2009-10-02 Ruby Freaks Loungeに記事を書きました</a></h1><hr /><div class="article-body"><a href="http://gihyo.jp/dev/serial/01/ruby/0021">第21回　Railsアプリの受け入れテストをCucumberで書こう</a>
 
 <a href="http://d.hatena.ne.jp/onering/">榊さん</a>の紹介で、Ruby Freaks Loungeに記事を書かせて頂きました。ありがとうございます。内容はCucumberについて。割と自分のブログに書いた内容や、WEB+DBのRails特集で書いたことと被ってるかな。
 
@@ -109,38 +126,4 @@ Remapがキーボード単体でできるのは本当に素晴しいので他の
 
 <h2>まとめ</h2>
 Kinesisを2週間使って、HHKやMacBookのキーボードで打ちづらさを感じるようなり、しかもタイプミスが増えたのでursmさんには損害賠償を払ってもらいたいです。Kinesis1個で手を打ちます。
-</div></article><article><h1><a href="/2009/08/12/twitter_bot/">2009-08-12 ついったーBOT作者にお願いしたいこと</a></h1><hr /><div class="article-body">最近、行儀がわるいというか、ハッキリ言ってしまうと「鬱陶しいBOT」が増えた(前からかもだけど)気がするので個人的にBOTを作るときに気をつけてもらいたいことを書いておく。
-
-<h2>言及に気を配って</h2>
-ついったーの仕様上、いつからかは知らないけど発言内容に「@自分のID」が含まれていると言及されたということでReplyに流れてくる。
-
-それはまぁいいんだけど、BOTが必要以上にIDを含めているとそれだけでReplyがうまってしまう。特に「○○なう系BOT」がひどい。山手線とか色々あるけど<a href="http://twitter.com/shibuya_now">渋谷なうBOT</a>がひどい。
-
-なにがひどいって一度「渋谷なう」と言ったら補足されて大体24時間ぐらいはそのBOTの発言に自分のIDが含まれて、誰かが「渋谷なう」と言う度に自分のReplyに流れてくる。そんな情報は求めていない。せめて@をはずしてほしい。
-
-それと同じような理由で延々と特定のキーワードに対してReTweetする「RT BOT」もなにかと鬱陶しい。特定のキーワードを集めて広めるという意味もあるかもしれないが、大抵の場合検索すれば解決すると思う。
-
-<h2>RT捏造</h2>
-<del datetime="2009-08-11T21:51:38+00:00">これはついさっき気づいたんだけど、clibotという学習系のBOTが<a href="http://twitter.com/clibot/status/3250129088">さも俺が発言したかのようにRTしていた</a>が、俺はそんな発言を一切していない。</del>
-
-追記(2009-08-12): 作者の方から<a href="http://twitter.com/clicube/status/3252794902">replyを頂いた</a>。わざわざありがとうございます。
-
-学習系だから仕方ないと言うかもしれないが、まるで俺が発言したかのように扱われるのはあまりいい気分ではない。
-
-<h2>Blockを前提としない</h2>
-この手の文句は大体がBlockしたらいいのだろうけど、BOTを作る側の礼儀としてそこは前提にしてはいけないと思う。
-
-基本的にBOTはFollowしてくれてる人のみを対象にするか、出来る限りそれ以外の人へ影響を減らすようにして欲しい。
-
-例えばキーワードを拾うBOTだったら、せめてIDの先頭に@をつけないでおくとかするだけでも大分かわる。それでも自分のIDでキーワード反応させてる人がいるから影響が0とはならないが。その人へのリンクが必要というなら、発言のパーマリンクでも一緒に載せておけばいい。
-
-別に@を飛ばすなとまで言うつもりはないが、あまりの意味のない内容を何度もReplyされるとさすがに鬱陶しい。
-
-<h2>作者への連絡先を明記して</h2>
-BOTを作るなら、Bioにでも自分のTwitterのIDなりブログのURLなり載せておいてほしい。BOTへの苦情・要望を誰に伝えたらいいのかさっぱりわからない。
-
-BOTを作ったのなら無責任に放ったらかすのではなく、BOTの発言も自分の発言と同程度の責任を持っておいて欲しい。
-
-<h2>まとめ</h2>
-個人的な要望として適当につらつらと書き殴ったけど別に強制するつもりはない。だけどまぁ、BOTを作るときは少しばかりここに書いたことに気を使ってもらえるとうれしい。
 </div></article><div class="pager"><ul><li class="previous"><a href="/page/17/">Prev</a></li><li class="next"><a href="/page/19/">Next</a></li></ul></div></div></body></html>

@@ -8,7 +8,41 @@ _gaq.push(['_trackPageview']);
   var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
   ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
   var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-})();</script></head><body class="page page_11 page_11_index"><div class="cointainer-fluid"><div class="navbar navbar-default" role="navigation"><div class="container-fluid"><div class="navbar-header"><a class="navbar-brand" href="/">UKSTUDIO</a></div><div class="navbar-collapse collapse"><ul class="nav navbar-nav navbar-right"><li><a href="http://twitter.com/ukstudio">Twitter</a></li><li><a href="http://github.com/ukstudio">GitHub</a></li></ul></div></div></div></div><div class="container"><article><h1><a href="/2010/09/02/rubykaigi2010/">2010-09-02 RubyKaigi2010を終えて</a></h1><hr /><div class="article-body"><img src='http://farm5.static.flickr.com/4134/4935820587_2169342225.jpg'/>
+})();</script></head><body class="page page_11 page_11_index"><div class="cointainer-fluid"><div class="navbar navbar-default" role="navigation"><div class="container-fluid"><div class="navbar-header"><a class="navbar-brand" href="/">UKSTUDIO</a></div><div class="navbar-collapse collapse"><ul class="nav navbar-nav navbar-right"><li><a href="http://twitter.com/ukstudio">Twitter</a></li><li><a href="http://github.com/ukstudio">GitHub</a></li></ul></div></div></div></div><div class="container"><article><h1><a href="/2010/09/03/rspec2_rails3_autotes/">2010-09-03 RSpec2+Rails3+autotest環境の構築</a></h1><hr /><div class="article-body">9月からやる仕事がめでたく、Rails3.0 + Ruby1.9.2のお仕事なので色々と環境構築。とりあえず自動テストまわりやりました。
+
+一応、環境を他と切り分けるために、rvmでアプリ用にgemsetを用意。アプリごとに簡単に環境を構築できるrvmマジ便利。
+
+<pre>
+gem install bundler --pre
+gem install rails
+</pre>
+
+まずは、bundlerとrailsをインストール。次は適当なアプリを作って必要なgemのインストールなどを行う。テストはRSpecで書くので、-TをつけてTest/Unitは使わないようにする。
+
+<pre>
+rails new demo -T
+</pre>
+
+次に必要なgemをGemfileに記述。rspecとかを「テストだけだから」と思って、gropu :testにしたら、モデルを作成したときにTest/Unitのテストコードが作られたりしたので注意。githubの<a href='http://ja.wiki.github.com/rspec/rspec/autotest/'>Wiki</a>を見るとautotestのgemは不要そうなんだけど、実際ないとうまくautotestが動かなかた。
+
+<script src="http://gist.github.com/563447.js?file=Gemfile"></script>
+
+<pre>
+bundle install
+</pre>
+
+あとはモデルを作って、テストが実行できればOK。
+
+<pre>
+rails g rspec:install
+rails g model user
+rake
+autotest
+</pre>
+
+<h3>追記</h3>
+Twitterで@conceal_rsさんから補足ありました。ありがとうございます!
+</div></article><article><h1><a href="/2010/09/02/rubykaigi2010/">2010-09-02 RubyKaigi2010を終えて</a></h1><hr /><div class="article-body"><img src='http://farm5.static.flickr.com/4134/4935820587_2169342225.jpg'/>
 <a href='http://www.flickr.com/photos/recompile_net/sets/72157624694727057/'>via http://www.flickr.com/photos/recompile_net/sets/72157624694727057/</a>
 
 少し間があいたけど、今年のRubyKaigiについてつらつらと書こうかな。
@@ -74,35 +108,6 @@ Googleの連絡先には「グループ」という概念があります。グ�
 Gmailにラベルという機能があります。ラベルはそれぞれ独立しており、そこに特に関係性はありません。しかし、Gmail Labsにある「Nested Labels」を使えば名前の通りラベルをネスト構造にすることができます。「設定」から「Labs」を選び「ラベルのネスト」(日本語版の場合です)を有効にし、あとは適切にラベルを設定するだけです。例えば僕の場合「ruby/ruby-list」「ruby/rubykaigi」と言った感じでラベリングしています。
 
 ただ、紹介しといて何ですがそんなに便利でもないかなーというのが正直なところです。ですが、サイドバーのラベルが折り畳めるようになるのでラベルの数が増えてきて整理したいという場合にはそれなりに便利なのではないかと思います。
-</div></article><article><h1><a href="/2010/07/18/oblove2010summer/">2010-07-18 オブラブ2010夏イベントに参加・発表してきました</a></h1><hr /><div class="article-body">招待講演ということで、若人トラックトップバッター務めさせて頂きました。発表を聞いて頂いた方、ありがとうございました。
-
-個人的に今回印象に残っているのは、m_sekiさんのロールプレイの話とjune29さんの最大限能力を発揮する話でした。色々とグサグサくるというか要反省な感じです。
-
-今回のオブラブはいつもよりスタッフが少なかったらしいですが、全然気にならない進行ぶりでした。どうもありがとうございました!
-
-以下、個人的KPT。
-
-<h3>Keep</h3>
-<ul>
-<li>遅刻しなかった</li>
-<li>発表した</li>
-<li>資料間に合った</li>
-</ul>
-
-<h3>Problem</h3>
-<ul>
-<li>資料の出来</li>
-<li>発表の出来</li>
-<li>人見知り力</li>
-<li>m_sekiさんからの質問にしどろもどろになってしまった</li>
-</ul>
-
-<h3>Try</h3>
-<ul>
-<li>前日には資料用意</li>
-<li>一回は発表を通しで練習する</li>
-<li>Twitter上で絡みのある人ぐらいには話かける</li>
-</ul>
 </div></article><article><h1><a href="/2010/07/18/value/">2010-07-18 コードがきれいに書けると顧客へ提供する価値は向上するのか</a></h1><hr /><div class="article-body">今思っていることを整理するがてら書いておきます。
 
 僕がここ最近ずっと「コードはきれいに書くべき」「読みやすいコードを」と言い続けています。16日のオブラブの発表もそうですし、WEB+DB Vol.56の記事もそうです。

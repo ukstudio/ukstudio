@@ -8,7 +8,14 @@ _gaq.push(['_trackPageview']);
   var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
   ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
   var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-})();</script></head><body class="page page_8 page_8_index"><div class="cointainer-fluid"><div class="navbar navbar-default" role="navigation"><div class="container-fluid"><div class="navbar-header"><a class="navbar-brand" href="/">UKSTUDIO</a></div><div class="navbar-collapse collapse"><ul class="nav navbar-nav navbar-right"><li><a href="http://twitter.com/ukstudio">Twitter</a></li><li><a href="http://github.com/ukstudio">GitHub</a></li></ul></div></div></div></div><div class="container"><article><h1><a href="/2010/12/16/its_agile/">2010-12-16 「問題→解決→原因調査→開発プロセスに組込む」 それアジャイルだよ</a></h1><hr /><div class="article-body">普段、イテレーションの終わり(ちなみに1週間)にKPTをやって問題点をだして、それを解決すべくTryを実践してはいる。けれど、短期的な解決で落ち着いてしまってしばらくすると似たような問題が発生する。 結局のところ、問題が発生したらその場の解決だけではなく、問題の原因を検証して、自分達の開発プロセスに再発防止の仕組みを組込まなければならないなと思った次第。
+})();</script></head><body class="page page_8 page_8_index"><div class="cointainer-fluid"><div class="navbar navbar-default" role="navigation"><div class="container-fluid"><div class="navbar-header"><a class="navbar-brand" href="/">UKSTUDIO</a></div><div class="navbar-collapse collapse"><ul class="nav navbar-nav navbar-right"><li><a href="http://twitter.com/ukstudio">Twitter</a></li><li><a href="http://github.com/ukstudio">GitHub</a></li></ul></div></div></div></div><div class="container"><article><h1><a href="/2010/12/17/recovery-network-manager-gnome/">2010-12-17 うっかりnetwork-manager-gnomeを消してネット繋がらなくなった</a></h1><hr /><div class="article-body">xubuntuを以前インストールしててもういらねーやと思って色々消してたら、気づいたらnetwork-manager-gnomeも消えていてインターネットに繋がらなくなったでござる。
+
+とりあえず手元のHT-03Aで適当にぐぐった結果、<a href="https://forums.ubuntulinux.jp/viewtopic.php?id=6441">Ubuntu日本語フォーラム / [Ubuntu 9.10] ネットワーク・マネジャーを復元したい</a>が見つかったので試してみるもそれっぽいパッケージがCDから見つからず挫折。
+
+んじゃ、コマンドラインからなんかネット接続する方法があればなんとかなるかな?と思ってこれまた適当にぐぐると<a href="http://felix-labo.jp/pukiwiki/?Ubuntu%2Femobile-H11HW%E6%8E%A5%E7%B6%9A%E6%96%B9%E6%B3%95">Ubuntu/emobile-H11HW接続方法 - Felix-labo&apos;s Wiki</a>が見つかったので試した結果なんとかインターネット接続成功。
+
+あとは<a href="http://packages.ubuntu.com/"> Ubuntu Packages Search</a>からnetwork-manager-gnomeのdebパッケージを落としてきて、recovery consoleからaptitudeでインストールで無事終了。
+</div></article><article><h1><a href="/2010/12/16/its_agile/">2010-12-16 「問題→解決→原因調査→開発プロセスに組込む」 それアジャイルだよ</a></h1><hr /><div class="article-body">普段、イテレーションの終わり(ちなみに1週間)にKPTをやって問題点をだして、それを解決すべくTryを実践してはいる。けれど、短期的な解決で落ち着いてしまってしばらくすると似たような問題が発生する。 結局のところ、問題が発生したらその場の解決だけではなく、問題の原因を検証して、自分達の開発プロセスに再発防止の仕組みを組込まなければならないなと思った次第。
 
 そんなことをFaceBookやTwitterに書き込んでいたら、諸先輩方(@kdmsnrさん、@nawotoさんありがとうございます)から「それがアジャイル」みたいなことを言われてしまった。確かに言われてみればそうだ。一定のプロセスにこだわらないからこそ、柔軟に問題・変化に合わせてプロセスを変えていけるのがアジャイルなんだよね。うーむ、勉強不足。
 
@@ -65,16 +72,4 @@ j, k, u, m
 何となくなじめなかったsnippets機能だけど、neocomplcacheにいつのまにか実装されてたので試すことにした。とりあえず、rspecまわりをいくつか追加したけど思いの他便利である。補完で候補がでてくるのとsnippetsの編集がラクなのがとてもいい。
 
 <a href="https://github.com/ukstudio/config/blob/master/.vim/snippets/rspec.snip">.vim/snippets/rspec.snip at master from ukstudio&apos;s config - GitHub</a>
-</div></article><article><h1><a href="/2010/11/22/railsdevcon2010/">2010-11-22 RailsDevCon2010で話してきました</a></h1><hr /><div class="article-body">RailsDevCon2010、お疲れ様でした。主催かつ発表のお声をくれた@ysakakiさん、スタッフの方々、スピーカー、発表を聞いてくれたみなさま、どうもありがとうございました。
-
-今回、「Railsプロジェクトを成功させるために現場ができること」というタイトルで話したけどびっくりするぐらいRailsに関係のない話。オマケ程度にちょこっと。以下、資料です。
-
-
-
-
-テーマとしては、@ysakakiさんから声をかけて頂いた時に、[Railsの現場でまだまだバージョン管理すらしてないところあるよね。そういう基本的なところを改めて赤松さんの方から話して欲しい」と言うことだったので、個人的に基本的な所と言うと「TDD」と「バージョン管理」(できれば継続インテグレーションもいれたい)だったので、その変も踏まえて技術的負債というトピックを扱った。
-
-具体的な話をしても、スクリーン上じゃコード読みづらいし、わかりにくいかなと思ったので少しぼかした形で発表したわけだけど、全体的にふわふわと掴みどころのない話になってしまったかもしれない。次どこかで発表する時、もしくはブログにでももっと具体的なコードレベルのことを書きたいな。
-
-懇親会は二次会まで参加した。久しぶりに同世代の人と話せたのは楽しかった。ぜひぜひこれからも頑張ってほしい。
 </div></article><div class="pager"><ul><li class="previous"><a href="/page/7/">Prev</a></li><li class="next"><a href="/page/9/">Next</a></li></ul></div></div></body></html>

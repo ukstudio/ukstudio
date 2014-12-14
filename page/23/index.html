@@ -8,7 +8,89 @@ _gaq.push(['_trackPageview']);
   var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
   ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
   var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-})();</script></head><body class="page page_23 page_23_index"><div class="cointainer-fluid"><div class="navbar navbar-default" role="navigation"><div class="container-fluid"><div class="navbar-header"><a class="navbar-brand" href="/">UKSTUDIO</a></div><div class="navbar-collapse collapse"><ul class="nav navbar-nav navbar-right"><li><a href="http://twitter.com/ukstudio">Twitter</a></li><li><a href="http://github.com/ukstudio">GitHub</a></li></ul></div></div></div></div><div class="container"><article><h1><a href="/2009/01/09/rspec_result_output_html.erb/">2009-01-09 RSpecの結果をHTMLで出力する方法</a></h1><hr /><div class="article-body">RSpecにはオプション-hがあるので、そこでフォーマットを指定してやればいい。以下、Railsの例。
+})();</script></head><body class="page page_23 page_23_index"><div class="cointainer-fluid"><div class="navbar navbar-default" role="navigation"><div class="container-fluid"><div class="navbar-header"><a class="navbar-brand" href="/">UKSTUDIO</a></div><div class="navbar-collapse collapse"><ul class="nav navbar-nav navbar-right"><li><a href="http://twitter.com/ukstudio">Twitter</a></li><li><a href="http://github.com/ukstudio">GitHub</a></li></ul></div></div></div></div><div class="container"><article><h1><a href="/2009/01/14/vim_tips/">2009-01-14 覚えとくと便利かもしれないVimのTips</a></h1><hr /><div class="article-body">適当に思い付いたものを書いてみる。
+
+<h2>CTRL-X CTRL-L</h2>
+行単位での補完。まぁ該当の行でyyしてpして貼り付けでもいいかもしれないけど、移動するの面倒な場合もあるし。
+
+以下、自分のvimrcで「n CTRL-X CTRL-L」した例。
+
+<a href="http://ukstudio.jp/wp-content/uploads/2009/01/c-xc-l.jpg"><img src="http://ukstudio.jp/wp-content/uploads/2009/01/c-xc-l.jpg" alt="" title="c-xc-l" width="300" height="234" class="alignnone size-medium wp-image-294" /></a>
+
+ちなみに俺がこれを一番使うときはRSpecのdescribeの行を補完する時かな。こんな感じ。
+
+<pre lang="ruby">
+describe "hogehoge" do
+end
+
+desCTRL-X CTRL-L
+↓
+describe "hogehoge" do
+</pre>
+
+んで、hでちょこちょこっと"の中に移動してdi"で"の中を削除する感じ。
+
+<h2>di"</h2>
+こっそり上で登場してるけど"で囲まれた文字列をd(削除)する。da"だと"も含めて削除。ちなみにこれはテキストオブジェクトっていうVim7からの機能で他にも色々パターンがあって、個人的にVimの機能の中でも特別気に入っている。ちゃんと説明すると長いのでいくつか例だけ示す。
+
+<dl>
+<dt>di"</dt>
+<dd>"の中を削除</dd>
+<dt>da"</dt>
+<dd>"も含めて削除</dd>
+<dt>yi"</dt>
+<dd>"の中をコピー</dd>
+<dt>ya"</dt>
+<dd>"も含めてコピー</dd>
+<dt>di(</dt>
+<dd>()の中を削除</dd>
+<dt>da(</dt>
+<dd>()も含めて削除</dd>
+<dt>di{</dt>
+<dd>{}の中を削除</dd>
+<dt>da{</dt>
+<dd>{}も含めて削除</dd>
+</dl>
+
+<h2>gf</h2>
+カーソル以下のファイル名を開いてくれる。requireやinclude、ファイルをオープンしたりする処理のところで便利。
+
+<pre lang="ruby">
+require "hoge"
+</pre>
+
+hogeのところでgfするとhoge.rbを開く。
+
+<h2>CTRL-AとCTRL-X</h2>
+VimM#3でamachangが感動してた気がする。カーソル以下の数字をインクリメントとデクリメントしてくれる。ちゃんと1000とかも1001や999にしてくれるよ。マクロで多用するかも。
+
+<h2>guuとgUUと~</h2>
+guuはカーソル行の文字を全部小文字に、gUUは全部大文字に。~はカーソル以下の文字を小文字なら大文字に、大文字なら小文字に。
+
+書いといてなんだけどあまり使った記憶ないな、これ。
+
+<h2>:!</h2>
+:!を使うと外部コマンドを叩くことができる。単体だと結果を返すだけなので頭に.(ドット)を付けて結果を挿入したりする。単体で使うときはlsの結果を見るときが多いかも。一々screenのウィンドウを移動しなくて済む。なんか段々書くのが面倒になってきたので例で示す。
+
+<strong>追記</strong>: kanaさんより指摘がありました。挿入はr!〜ですね。
+
+<blockquote>
+> 単体だと結果を返すだけなので頭に.(ドット)を付けて結果を挿入したりする。
+嘘。:{range}!{cmd}はフィルタリング。結果的にそうなるケースはあるけれど意味は違う。本当に挿入するなら:r!{cmd} (:read !{cmd})。
+</blockquote>
+<dl>
+<dt>:!ls ~</dt>
+<dd>ls ~の結果が表示される</dd>
+<dt>:.!date </dt>
+<dd>date結果が挿入される</dd>
+<dt>:%!sort</dt>
+<dd>今開いてるファイルをsortした結果に書き変わる</dd>
+<dt>:%!grep hoge</dt>
+<dd>hogeが含む行だけに書き変わる</dd>
+<dt>:!ruby -c %</dt>
+<dd>今開いてるファイルをrubyの構文チェックに通す。PHPとかでも似たようなことができる</dd>
+</dl>
+</div></article><article><h1><a href="/2009/01/09/rspec_result_output_html.erb/">2009-01-09 RSpecの結果をHTMLで出力する方法</a></h1><hr /><div class="article-body">RSpecにはオプション-hがあるので、そこでフォーマットを指定してやればいい。以下、Railsの例。
 
 <pre lang="bash">
 RAILS_ROOT$ spec spec -f h:spec/spec_report.html
@@ -119,23 +201,4 @@ p5home: /Applications/Processing.app/Contents/Resources/Java
 <iframe src="http://rcm-jp.amazon.co.jp/e/cm?t=2004-05-22&o=9&p=8&l=as1&asins=4873113784&md=1X69VDGQCMF7Z30FM082&fc1=000000&IS2=1&lt1=_blank&m=amazon&lc1=0000FF&bc1=000000&bg1=FFFFFF&f=ifr" style="width:120px;height:240px;" scrolling="no" marginwidth="0" marginheight="0" frameborder="0"></iframe>
 
 <iframe src="http://rcm-jp.amazon.co.jp/e/cm?t=2004-05-22&o=9&p=8&l=as1&asins=4861005582&md=1X69VDGQCMF7Z30FM082&fc1=000000&IS2=1&lt1=_blank&m=amazon&lc1=0000FF&bc1=000000&bg1=FFFFFF&f=ifr" style="width:120px;height:240px;" scrolling="no" marginwidth="0" marginheight="0" frameborder="0"></iframe>
-</div></article><article><h1><a href="/2008/11/27/mac_gem_install_mysql/">2008-11-27 Macでgem install mysqlをする方法</a></h1><hr /><div class="article-body">Rails2.2からmysqlのアダプタが付属していないので各個人でインストールする必要があります。gemで入れようとするとエラーがでると思うので以下のように対応してください。
-
-<pre lang="bash">
-$ sudo gem install mysql
-$ cd /opt/local/lib/ruby/gems/1.8/gems/mysql-2.7/
-$ sudo ruby extconf.rb --with-mysql-config=/opt/local/lib/mysql5/bin/mysql_config
-$ sudo make
-$ sudo make install
-</pre>
-
-パスに関しては、人によって違うかもしれませんが適宜読み替えてください。
-
-追記
-
-<pre lang="bash">
-$ sudo gem install mysql -- --with-mysql-config=/opt/local/lib/mysql5/bin/mysql_config
-</pre>
-
-これでも大丈夫らしい。
 </div></article><div class="pager"><ul><li class="previous"><a href="/page/22/">Prev</a></li><li class="next"><a href="/page/24/">Next</a></li></ul></div></div></body></html>

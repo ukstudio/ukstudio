@@ -8,7 +8,7 @@ _gaq.push(['_trackPageview']);
   var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
   ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
   var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-})();</script></head><body class="page page_3 page_3_index"><div class="cointainer-fluid"><div class="navbar navbar-default" role="navigation"><div class="container-fluid"><div class="navbar-header"><a class="navbar-brand" href="/">UKSTUDIO</a></div><div class="navbar-collapse collapse"><ul class="nav navbar-nav navbar-right"><li><a href="http://twitter.com/ukstudio">Twitter</a></li><li><a href="http://github.com/ukstudio">GitHub</a></li></ul></div></div></div></div><div class="container"><article><h1><a href="/2013/10/18/middleman/">2013-10-18 ブログをWordPressからmiddlemanに移行しました</a></h1><hr /><div class="article-body"><p>今まで当ブログはWordPressでブログを書いていたけれど、今回<a href="http://middlemanapp.com/">middleman</a>を使うことにした。特になにかが気に入ってmiddlemanを選んだわけでもないのだけど、しばらくはこれで運用してみようと思う。</p><p>運用はGithub Pageで行なうことにした。これで今まで中途半端に保持していたVPSを解約することができる。最近はIRCを全然使ってないからいいけど、なんかの機会に使うようになったらtiarraとかをどう運用するか考えなくちゃいけないなぁ。</p><p>デザインやその他足りない機能は追々増やしていこうとおもいます。とりあえずRSSだけは用意した。</p></div></article><article><h1><a href="/2012/09/11/validates_presence_of/">2012-09-11 validates :foo_id, :presence => trueを追う</a></h1><hr /><div class="article-body">チームメンバーから「validates_presence_of :user_idはそのuser_idが存在するか確かめてくれる」という情報を得て、そんな隠れ仕様あんの?とおもってちょっと調べてみた。
+})();</script></head><body class="page page_3 page_3_index"><div class="cointainer-fluid"><div class="navbar navbar-default" role="navigation"><div class="container-fluid"><div class="navbar-header"><a class="navbar-brand" href="/">UKSTUDIO</a></div><div class="navbar-collapse collapse"><ul class="nav navbar-nav navbar-right"><li><a href="http://twitter.com/ukstudio">Twitter</a></li><li><a href="http://github.com/ukstudio">GitHub</a></li></ul></div></div></div></div><div class="container"><article><h1><a href="/2013/12/27/funtoo/">2013-12-27 GentooからFuntooに移行しました</a></h1><hr /><div class="article-body"><p>GentooからFuntooに移行した。<a href="http://esminc.doorkeeper.jp/events/3547">Funtoo Linux インストール講習会</a>から大分日が立ってしまった。</p><p>インストール自体は<a href="http://www.funtoo.org/Funtoo_Linux_Installation">Funtoo Linux Installation</a>をそのまま実行。boot-updateのビルドだけ失敗したが、texinfo-5.1以上をmaskしたら解決。</p><p>ネット関係はNetworkManagerが妙に不安定だったのでwicdを使うことにした。wicd-cursesがいい感じ。今のところ接続も安定している。</p><p>X環境まわりは例のごとくXmonadで。GNOMEも一度入れたけど、結局使わないのでアンインストール。mix-inのGNOMEも余計なUSEフラグをつけて邪魔だったので使わないことにした。</p><p>GNOMEを削除したのでGDMではなくSlimeを使うことにした。GDMとかstartxがxinitrcを読むのかxprofileを読むのかとかいっつも忘れる…</p><p>その他GitやらRubyやら入れてひととおり終了。カーネルをバイナリで入れてるので起動が遅いけどカーネルのコンフィグでハマるのもダルいしとりあえずこのままで行く予定。</p></div></article><article><h1><a href="/2013/10/18/middleman/">2013-10-18 ブログをWordPressからmiddlemanに移行しました</a></h1><hr /><div class="article-body"><p>今まで当ブログはWordPressでブログを書いていたけれど、今回<a href="http://middlemanapp.com/">middleman</a>を使うことにした。特になにかが気に入ってmiddlemanを選んだわけでもないのだけど、しばらくはこれで運用してみようと思う。</p><p>運用はGithub Pageで行なうことにした。これで今まで中途半端に保持していたVPSを解約することができる。最近はIRCを全然使ってないからいいけど、なんかの機会に使うようになったらtiarraとかをどう運用するか考えなくちゃいけないなぁ。</p><p>デザインやその他足りない機能は追々増やしていこうとおもいます。とりあえずRSSだけは用意した。</p></div></article><article><h1><a href="/2012/09/11/validates_presence_of/">2012-09-11 validates :foo_id, :presence => trueを追う</a></h1><hr /><div class="article-body">チームメンバーから「validates_presence_of :user_idはそのuser_idが存在するか確かめてくれる」という情報を得て、そんな隠れ仕様あんの?とおもってちょっと調べてみた。
 
 結論だけまず言うと
 <pre>
@@ -135,15 +135,4 @@ $ aqualung -o jack --auto
 その上で動詞と名詞のテストという観点で考えると案外すっきりするんじゃないのってを思いついた。でも結局のところTDDで書いたユニットテストだけじゃ足りないのは皆わかってるんだから、TDDが何なのかに拘ってないで必要だと思うこと足りないことやればいいんじゃないの?という結論になったのが資料の最後の方。こうして文章にしてみると、動詞と名詞のテストってのは上手いこと言えた気がしたから資料にいれたけど話の流れとしては変だしいれなくてもよかったかも。
 
 まとめると「定義にこだわってないで必要だと思うことをやろう」です。名詞動詞とか「TDDはテストではない」という言葉の暴力性とか自分で言っておいて何だけど結構どうでもいい。「TDDはテストを目的としていないからテスト手法ではない」とか「TDDはいくらかテスト手法的な部分もあるのだからその断言はおかしい」とかつい議論しがちだけど、そんなことよりお互いにTDDだけでは足りない部分があるのはわかってるんだから、そこを考えようよってことです。
-</div></article><article><h1><a href="/2012/04/02/married/">2012-04-02 結婚いたしました</a></h1><hr /><div class="article-body">この度4月1日付けで結婚いたしました。
-
-Facebookには届出を出した時点で結婚したことを書いたんですが、たくさんのイイネ!とおめでとうのお言葉ありがとうございます。書類をだしただけで特に何もかわっていないので今だに結婚した自覚がないんですが、そのうち自覚するものなんでしょうか。
-
-今のところ式は予定していないので、近いうちにパーティ的なことはしたいなと考えています。その時は改めて近しい皆様にはご招待させていただきます。
-
-以上、簡単ではありますが結婚のご報告でした。
-
-See also
-<a href="http://amzn.to/ukstudio">ukstudioの欲しいものリスト</a>
-<a href="http://www.amazon.co.jp/gp/registry/wishlist/16JI782TB8ZX7">新婚なのでなんかくださいリスト</a>
 </div></article><div class="pager"><ul><li class="previous"><a href="/page/2/">Prev</a></li><li class="next"><a href="/page/4/">Next</a></li></ul></div></div></body></html>

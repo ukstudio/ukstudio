@@ -8,7 +8,72 @@ _gaq.push(['_trackPageview']);
   var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
   ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
   var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-})();</script></head><body class="page page_6 page_6_index"><div class="cointainer-fluid"><div class="navbar navbar-default" role="navigation"><div class="container-fluid"><div class="navbar-header"><a class="navbar-brand" href="/">UKSTUDIO</a></div><div class="navbar-collapse collapse"><ul class="nav navbar-nav navbar-right"><li><a href="http://twitter.com/ukstudio">Twitter</a></li><li><a href="http://github.com/ukstudio">GitHub</a></li></ul></div></div></div></div><div class="container"><article><h1><a href="/2011/05/09/build_vim/">2011-05-09 Vimをソースからビルド</a></h1><hr /><div class="article-body">aptで入れたvimのrubyインターフェースのバージョンが1.8.6なのが気にいらなくてvimをソースからビルドした。
+})();</script></head><body class="page page_6 page_6_index"><div class="cointainer-fluid"><div class="navbar navbar-default" role="navigation"><div class="container-fluid"><div class="navbar-header"><a class="navbar-brand" href="/">UKSTUDIO</a></div><div class="navbar-collapse collapse"><ul class="nav navbar-nav navbar-right"><li><a href="http://twitter.com/ukstudio">Twitter</a></li><li><a href="http://github.com/ukstudio">GitHub</a></li></ul></div></div></div></div><div class="container"><article><h1><a href="/2011/05/10/duostack_nodejs/">2011-05-10 duostackでnode.jsアプリを動かすまで</a></h1><hr /><div class="article-body"><h2>node.jsのインストール</h2>
+何はともあれnode.jsのインストール。aptではなくgithubからリポジトリをcloneしてmakeした。最近はapt以外のものは$HOME/localに入れるルールでやってるのでnode.jsも同様に。node.jsをsudoで入れると結構ハマるみたいな話を聞くので特に理由がなければaptとかで入れるか$HOME以下に入れるのがよさそう。
+
+<pre>$ git clone git://github.com/joyent/node.git
+$ cd node
+$ ./configure --prefix=$HOME/local
+$ make
+$ make install
+$ which node
+/home/ukstuido/local/bin/node</pre>
+
+<h2>npmのインストール</h2>
+duostackを使うのにnpmが必要なのでnpmもインストール。curl使う方じゃなくてmakeしてインストールした。curl ... | sh の形式があまり好きじゃない程度の理由。
+
+<pre>$ git clone git://github.com/isaacs/npm.git
+$ cd npm
+$ make install
+$ which npm
+/home/ukstudio/local/bin/npm</pre>
+
+npmがインストールされる場所は特に指定しなくても$HOME/localに入った。node.jsの位置でも見てるんだろうか。よくわからない。
+
+<h2>duostackのインストール</h2>
+あらかじめ、<a href="https://www.duostack.com/">Duostack</a>のアカウントは取っておくこと。結構すぐ登録確認メールが来る。
+
+duostackのインストールは-gオプションを付けないとnode_modulesディレクトリがカレントディレクトリに出来る。最初-gオプションを知らなくて困惑した。
+
+<pre>$ npm install -g duostack
+$ which duostack
+/home/ukstudio/local/bin/duostack</pre>
+
+
+<h2>アプリの作成とデプロイ</h2>
+ここまで来ると<a href="http://docs.duostack.com/node/quick-start-guide#create-a-new-node-app">Duostack · Docs: Quick Start Guide</a>に従うだけでOK。
+
+適当なディレクトリを作ってそこにserver.jsを置く。
+
+<pre>$ mkdir sample
+$ cd sample
+$ vim server.js</pre>
+<script src="http://gist.github.com/963569.js?file=gistfile1.js"></script>
+
+git initしてやる。
+
+<pre>$ git init
+$ git add .
+$ git commit -m 'init'</pre>
+
+duostackコマンドでアプリケーションを登録。ここで指定したアプリ名がそのままドメインになる。
+
+<pre>$ duostack create ukstudio
+$ git push duostack master</pre>
+
+無事にpushできればURLが表示されているはずなのでブラウザで確認する。今回の例だと<a href = "http://ukstudio.duostack.net/">http://ukstudio.duostack.net/</a>になる。
+
+こんな感じでduostackでnode.jsアプリを動かすところまで試してみた。herokuとかもそうだけど、こうサクッとアプリが動かせる環境があるのはうれしい。
+
+次はnode.js + CoffeeScriptとか、もうちょっとアプリらしいアプリを作ってみようかな。
+
+<h2>追記: duostackでCoffeeScriptを動かす</h2>
+CoffeeScriptからコンパイルしたJavaScriptを乗せるんじゃなくて、CoffeeScriptそのものを乗せる方法。server.jsは必要っぽいのでそこからrequireする形にした。CoffeeScriptはアプリの中にインストールしておく。 これで一応動くことは動く。
+
+<pre>$ npm install coffee-script</pre>
+
+<script src="https://gist.github.com/964149.js"> </script>
+</div></article><article><h1><a href="/2011/05/09/build_vim/">2011-05-09 Vimをソースからビルド</a></h1><hr /><div class="article-body">aptで入れたvimのrubyインターフェースのバージョンが1.8.6なのが気にいらなくてvimをソースからビルドした。
 
 <pre><code>$ hg clone https://vim.googlecode.com/hg/ vim
 $ hg update vim73
@@ -99,30 +164,4 @@ Rubyらしい設計って色々とまだ手探りなんだけど、参考にな�
 一応、別の仕事も請けることは可能だけど最初から複数の仕事をまわせる気がしないし当分はお仕事の依頼は請けられないと思います。あしからず。
 
 「パフォーマンスを出してください」と言われたので頑張りたいと思います。よろしくお願いします。
-</div></article><article><h1><a href="/2011/03/21/tddbc-fukuoka/">2011-03-21 TDDBC福岡に参加してきた</a></h1><hr /><div class="article-body"><a href="http://ukstudio.jp/wp-content/uploads/2011/03/2011-03-19-09.24.06.jpg"><img src="http://ukstudio.jp/wp-content/uploads/2011/03/2011-03-19-09.24.06.jpg" alt="" title="博多駅" class="alignnone size-full wp-image-815" style='width: 100%;'/></a>
-
-福岡TDDBCに参加してきた。今回で3回目の参加(1回目は東京、2回目は東北)。
-
-3回は割と多めの参加回数だと思うけど、参加者層が地域によって違ったり、当然ペアプロする相手も違うわけでいつも違う刺激をもらってる。
-
-今回は@mzpさんが参加するとのことなので普段使ってるRubyではなくOCamlで参加。OCaml組は2ペア(4人)いて、1日目の前半を@suerさん、1日目の後半と2日目を@mzpさんとペアを組んでやった。OCamlは初心者もいいところなので2人には大分お世話になりました。どうもありがとうございます。
-
-コンパイルが必要な言語でTDDをやるとコンパイルがテンポを崩しがちなんだけれど、OMakeが結構よく出来ていてautotestみたいなことも出来るし、その辺は特に不自由ない感じ。OCamlの型付けの強さはなかなか慣れないけれど、コンパイルが通った時点で型の間違いがないって言うのは割と安心かも。
-
-慣れない言語でTDDをやって一番実感したのは、普段Rubyの時は「こういうインターフェースで使いたい」と振る舞いの視点からテストケースを考えられるのに、OCamlだと「今回正規表現が必要そうだけどOCamlだとどうやるの?」といった具合で先に実装の詳細について考えはじめてしまうこと。本来は実装は置いておいてテストケースを考えるべきなのについつい実装の方を考えてしまった。
-
-ただ、言語を習得していく過程でTDDが出来ないかと言うとそんなことはないとも思う。ペアプロの時はたまたま僕にとってオーバーペースだっただけで、落ち着いてbaby stepで刻んでいけば逆に習得しやすくなるかもしれない。今回はRubyと同じテンポでやろうとした俺のミスだなー。
-
-後、ここ最近新しい言語を習得できないなーと思っていたけどこういうイベントで挑戦するのは悪くない。普段だとついついRubyに逃げちゃうんだけど、ペアプロだと逃げようがない。あとは@mzpさんのコードを書くところを横でみれたのは大きいと思う。こう書くのかーって発見がいっぱいあった。
-
-2日目の休憩時間に@mzpさんがAsakusaSatelliteのテストコードを修正していて、RSpecで書かれていたので「ここはこう書けるよ」「こうした方がRSpecっぽいよ」と横で口出ししていたら@mzpさんと@suerさんにRSpecの魅力が伝わったようでよかった。
-
-ここ最近、RSpecに興味はあるけどどう書いたらいいかわからないみたいな話を良くきく。構文だけだったらドキュメントみればいいんだけど、それをどう活用するのかみたいな話はなかなかまとまってないからかな。結構需要がありそうなのでそのうちるびまあたりに寄稿してみようかな。最近やっとletの使い方が見えてきたよ。
-
-そう言えば、今回は結構若い人が多かった気がする。@mzpさんは1つ上らしいし、@bleisさんは同い年だった。主催の@pocketfberserkerさんも年下。<del>講師の1人の@akinekoさんは俺より1つ2つ年下だったと思うし</del>(年上だそうです)。こういうイベントで同世代や自分より若い人がいるとなんかうれしいなー。
-
-今回のTDDBCもなかなか刺激的で楽しかった。次のTDDBCもいくつか開催決まってるっぽいし、今回で動きだす地域もあるみたいだし楽しみ。
-
-最後に、主催の@pocketfberserkerさんを始め、今回のTDDBCの運営に携わっていた方々、どうもありがとうございました!
-<a href="http://togetter.com/li/114056">Togetter - 「TDD Boot Camp福岡」</a>
 </div></article><div class="pager"><ul><li class="previous"><a href="/page/5/">Prev</a></li><li class="next"><a href="/page/7/">Next</a></li></ul></div></div></body></html>

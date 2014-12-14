@@ -8,44 +8,22 @@ _gaq.push(['_trackPageview']);
   var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
   ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
   var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-})();</script></head><body class="page page_26 page_26_index"><div class="cointainer-fluid"><div class="navbar navbar-default" role="navigation"><div class="container-fluid"><div class="navbar-header"><a class="navbar-brand" href="/">UKSTUDIO</a></div><div class="navbar-collapse collapse"><ul class="nav navbar-nav navbar-right"><li><a href="http://twitter.com/ukstudio">Twitter</a></li><li><a href="http://github.com/ukstudio">GitHub</a></li></ul></div></div></div></div><div class="container"><article><h1><a href="/2008/09/18/firefox_addon/">2008-09-18 Firefoxの拡張の整理</a></h1><hr /><div class="article-body">1つ前の記事でプロファイルの使い分けの設定をしたけど、整理もかねて~/Library/Application Support/Firefoxを削除して、1から構築しなおした。
+})();</script></head><body class="page page_26 page_26_index"><div class="cointainer-fluid"><div class="navbar navbar-default" role="navigation"><div class="container-fluid"><div class="navbar-header"><a class="navbar-brand" href="/">UKSTUDIO</a></div><div class="navbar-collapse collapse"><ul class="nav navbar-nav navbar-right"><li><a href="http://twitter.com/ukstudio">Twitter</a></li><li><a href="http://github.com/ukstudio">GitHub</a></li></ul></div></div></div></div><div class="container"><article><h1><a href="/2008/09/19/no_use_number_prime/">2008-09-19 数字を使わずに素数判定</a></h1><hr /><div class="article-body">86のSkypeチャットで話題になったのでちょこちょこっと書いた。普通にループして比較するだけお。もっといい方法あるんだろうけど、とりあえずはよしとする。
 
-<h2>拡張のインストール</h2>
-<h3>開発/普段共通</h3>
-<dl>
-<dt>Nightly Tester Tools</dt>
-<dd>今、メインに使っているのがShiretoko(Firefox3.1α2)なので、これを入れないと動かない拡張が多い</dd>
-<dt>Vimperator</dt>
-<dd>Firefoxをvimみたいに操作。もうこいつがないと生きていけない体になってしまった。</dd>
-<dt>XUL/Migemo</dt>
-<dd>Vimpでmigemo_hint.jsを使うために。</dd>
-<dt>GreaseMonkey</dt>
-<dd>あんまりグリモンは使っていなくてAutopagerizeぐらいかな。でも必須。</dd>
-</dl>
+<pre lang="ruby">
+class Integer
+  def prime?
+    return false if self.zero? || self == [[]].size
+    ([[],[]].size...self).each do |i|
+      return false if (self%i).zero?
+    end
+    true
+  end
+end
+</pre>
 
-<h3>開発</h3>
-<dl>
-<dt>Web Developer</dt>
-<dd>HTMLやCSSいじったりするときに。ブロック要素の枠表示が一番使用率高いかも。</dd>
-<dt>Firebug</dt>
-<dd>JavaScriptを書くときに。Inspect Element(日本語だと要素を表示とかだっけ?)が地味に便利。</dd>
-<dt>Live HTTP Headers<dt>
-<dd>ブラウザがどんなリクエストを送って、どんなレスポンスを受けとってるか調べるときに。HTTPステータスとか。</dd>
-<dt>HTML Validator</dt>
-<dd>名前のとおり。タグの閉じ忘れとかもわかる。</dd>
-<dt>SQLite Manager</dt>
-<dd>RailsでたまにSQLiteを使うのでその時に。</dd>
-<dt>SeleniumIDE</dt>
-<dd>Seleniumのテストケースを作る時に。ブラウザが勝手に動くのはおもしろい。</dd>
-<dt>RestTest</dt>
-<dd>RESTアプリのテストに。GET/POST/PUT/DELETEのヘッダを偽装。</dd>
-</dl>
-
-大体こんな感じか。普段は基本的に閲覧しかしないので、vimpとグリモンがあればOK。他の拡張はほとんど開発のときにしか使わないので、必要なときだけ読み込めばいい。
-
-vimpのプラグインと設定ファイルに関しては、<a href="http://github.com/ukstudio/config/tree/master">githubに置いてある</a>ので、それをもってくるだけ。
-
-とりあえずこんなもんかなー。
+suztomoのやつ。
+<a href="http://d.hatena.ne.jp/suztomo/20080918/1221746629">http://d.hatena.ne.jp/suztomo/20080918/1221746629</a>
 </div></article><article><h1><a href="/2008/09/18/firefox/">2008-09-18 MacでFirefoxのプロファイルの使い分けと別バージョンの同時起動をする</a></h1><hr /><div class="article-body">Firefoxのプロファイルの使い分け(普段用/開発用)と別バージョン(2.0と3.1)の同時起動がしたかったのでちょっと設定してみた。
 
 <h2>プロファイルの作成</h2>
@@ -104,6 +82,44 @@ app化に関しては<a href="http://www.pqrs.org/tekezo/macosx/doc/makeapp/">[M
 あとはapp化したのを直接クリックするなり、QuickSilverから呼びだすようにしておけばいい。
 
 <table  border="0" cellpadding="5"><tr><td colspan="2"><a href="http://www.amazon.co.jp/Firefox-Hacks-Mozilla%E3%83%86%E3%82%AF%E3%83%8E%E3%83%AD%E3%82%B8%E5%BE%B9%E5%BA%95%E6%B4%BB%E7%94%A8%E3%83%86%E3%82%AF%E3%83%8B%E3%83%83%E3%82%AF-%E6%B1%9F%E6%9D%91-%E7%A7%80%E4%B9%8B/dp/487311375X%3FSubscriptionId%3D0G91FPYVW6ZGWBH4Y9G2%26tag%3D2004-05-22%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D487311375X" target="_blank">Firefox 3 Hacks Mozillaテクノロジ徹底活用テクニック</a><img src='http://www.assoc-amazon.jp/e/ir?t=2004-05-22&l=ur2&o=9' width='1' height='1' border='0' alt='' /></td></tr><tr><td valign="top"><a href="http://www.amazon.co.jp/Firefox-Hacks-Mozilla%E3%83%86%E3%82%AF%E3%83%8E%E3%83%AD%E3%82%B8%E5%BE%B9%E5%BA%95%E6%B4%BB%E7%94%A8%E3%83%86%E3%82%AF%E3%83%8B%E3%83%83%E3%82%AF-%E6%B1%9F%E6%9D%91-%E7%A7%80%E4%B9%8B/dp/487311375X%3FSubscriptionId%3D0G91FPYVW6ZGWBH4Y9G2%26tag%3D2004-05-22%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D487311375X" target="_blank"><img src="http://ecx.images-amazon.com/images/I/41664CPo6pL._SL160_.jpg" border="0" alt="Firefox 3 Hacks Mozillaテクノロジ徹底活用テクニック" /></a></td><td valign="top"><font size="-1">江村 秀之<br /><br />オライリージャパン  2008-08-27<br />売り上げランキング : 11045<br /><br /><br /><a href="http://www.amazon.co.jp/Firefox-Hacks-Mozilla%E3%83%86%E3%82%AF%E3%83%8E%E3%83%AD%E3%82%B8%E5%BE%B9%E5%BA%95%E6%B4%BB%E7%94%A8%E3%83%86%E3%82%AF%E3%83%8B%E3%83%83%E3%82%AF-%E6%B1%9F%E6%9D%91-%E7%A7%80%E4%B9%8B/dp/487311375X%3FSubscriptionId%3D0G91FPYVW6ZGWBH4Y9G2%26tag%3D2004-05-22%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D487311375X" target="_blank">Amazonで詳しく見る</a></font><font size="-2"> by <a href="http://www.goodpic.com/mt/aws/index.html" >G-Tools</a></font></td></tr></table>
+</div></article><article><h1><a href="/2008/09/18/firefox_addon/">2008-09-18 Firefoxの拡張の整理</a></h1><hr /><div class="article-body">1つ前の記事でプロファイルの使い分けの設定をしたけど、整理もかねて~/Library/Application Support/Firefoxを削除して、1から構築しなおした。
+
+<h2>拡張のインストール</h2>
+<h3>開発/普段共通</h3>
+<dl>
+<dt>Nightly Tester Tools</dt>
+<dd>今、メインに使っているのがShiretoko(Firefox3.1α2)なので、これを入れないと動かない拡張が多い</dd>
+<dt>Vimperator</dt>
+<dd>Firefoxをvimみたいに操作。もうこいつがないと生きていけない体になってしまった。</dd>
+<dt>XUL/Migemo</dt>
+<dd>Vimpでmigemo_hint.jsを使うために。</dd>
+<dt>GreaseMonkey</dt>
+<dd>あんまりグリモンは使っていなくてAutopagerizeぐらいかな。でも必須。</dd>
+</dl>
+
+<h3>開発</h3>
+<dl>
+<dt>Web Developer</dt>
+<dd>HTMLやCSSいじったりするときに。ブロック要素の枠表示が一番使用率高いかも。</dd>
+<dt>Firebug</dt>
+<dd>JavaScriptを書くときに。Inspect Element(日本語だと要素を表示とかだっけ?)が地味に便利。</dd>
+<dt>Live HTTP Headers<dt>
+<dd>ブラウザがどんなリクエストを送って、どんなレスポンスを受けとってるか調べるときに。HTTPステータスとか。</dd>
+<dt>HTML Validator</dt>
+<dd>名前のとおり。タグの閉じ忘れとかもわかる。</dd>
+<dt>SQLite Manager</dt>
+<dd>RailsでたまにSQLiteを使うのでその時に。</dd>
+<dt>SeleniumIDE</dt>
+<dd>Seleniumのテストケースを作る時に。ブラウザが勝手に動くのはおもしろい。</dd>
+<dt>RestTest</dt>
+<dd>RESTアプリのテストに。GET/POST/PUT/DELETEのヘッダを偽装。</dd>
+</dl>
+
+大体こんな感じか。普段は基本的に閲覧しかしないので、vimpとグリモンがあればOK。他の拡張はほとんど開発のときにしか使わないので、必要なときだけ読み込めばいい。
+
+vimpのプラグインと設定ファイルに関しては、<a href="http://github.com/ukstudio/config/tree/master">githubに置いてある</a>ので、それをもってくるだけ。
+
+とりあえずこんなもんかなー。
 </div></article><article><h1><a href="/2008/09/09/firefox3_1/">2008-09-09 Firefoxα2とβ1preを試してみた</a></h1><hr /><div class="article-body">いつのまにかFirefoxのα2とβ1preがリリースされてたので試してみた。個人的にVimpとかグリモンがないとどうにもならない体になってしまったので<a href="https://addons.mozilla.org/ja/firefox/addon/6543">Nightly Tester Tools</a>をインストール。これで3.01で動いていた拡張は大体動く模様。
 
 それとTraceMonkeyを使えるようにするためabout:configを開いて、「jit」で検索。2項目ほどヒットするので、それぞれの値をfalseからtrueに変更する。これでTraceMonkeyはONになるみたい。
@@ -140,13 +156,4 @@ Vimの人達の集りでRails.vimというRails使う人限定のプラグイン
 それにしても、エディタ1つで4時間(懇親会含めるともっとある)発表があって、それに40人集まるってのもすごい話だ。
 
 あと、VimMのMはみみのMらしいです。VimM#2はmickey24がうさみみをつけて主催するそうです。期待。
-</div></article><article><h1><a href="/2008/08/31/web_design_questionnaire/">2008-08-31 wuたんのWebデザインに関するアンケートにご協力を。</a></h1><hr /><div class="article-body"><strong>結果が公開されています</strong>
-<a href="http://3ping.org/2008/08/31/0120">Webデザインに関するアンケート結果</a>
-<hr />
-
-<a href="http://3ping.org/2008/08/31/0120">Web デザインに関するアンケートにご協力ください - 3ping.org</a>
-
-このブログはWebデザイナよりは、プログラマ、エンジニアと言った方が多いと思うのですが、よろしかったらご協力お願いします。以下のフォームからでも回答可能です。結果は公開してもらえるようです。よろしくお願いします。
-
-<div style="margin: 1em 20px; border: 7px solid #eee; padding: 20px;"><iframe src="http://spreadsheets.google.com/embeddedform?key=pqZ008056mIlxmXskWwiMbg" width="310" height="1319" frameborder="0" marginheight="0" marginwidth="0">読込中...</iframe></div>
 </div></article><div class="pager"><ul><li class="previous"><a href="/page/25/">Prev</a></li><li class="next"><a href="/page/27/">Next</a></li></ul></div></div></body></html>

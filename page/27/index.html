@@ -8,7 +8,16 @@ _gaq.push(['_trackPageview']);
   var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
   ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
   var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-})();</script></head><body class="page page_27 page_27_index"><div class="cointainer-fluid"><div class="navbar navbar-default" role="navigation"><div class="container-fluid"><div class="navbar-header"><a class="navbar-brand" href="/">UKSTUDIO</a></div><div class="navbar-collapse collapse"><ul class="nav navbar-nav navbar-right"><li><a href="http://twitter.com/ukstudio">Twitter</a></li><li><a href="http://github.com/ukstudio">GitHub</a></li></ul></div></div></div></div><div class="container"><article><h1><a href="/2008/08/25/selenium_on_rspec/">2008-08-25 Selenium on Rspecを軽く試してみた</a></h1><hr /><div class="article-body">とりあえずはScaffoldで簡単なアプリを作って、そのテストケースを作成、実行してみるところまで。そんな難しいことはしない。Railsは2.0.2を使用。2.1だとSeleniumにパッチを当てなきゃいけないので面倒。2.1の人は<a href="http://clearspace.openqa.org/docs/DOC-1072">Selenium on Rails patch for RoR 2.1</a>からパッチをあててください。
+})();</script></head><body class="page page_27 page_27_index"><div class="cointainer-fluid"><div class="navbar navbar-default" role="navigation"><div class="container-fluid"><div class="navbar-header"><a class="navbar-brand" href="/">UKSTUDIO</a></div><div class="navbar-collapse collapse"><ul class="nav navbar-nav navbar-right"><li><a href="http://twitter.com/ukstudio">Twitter</a></li><li><a href="http://github.com/ukstudio">GitHub</a></li></ul></div></div></div></div><div class="container"><article><h1><a href="/2008/08/31/web_design_questionnaire/">2008-08-31 wuたんのWebデザインに関するアンケートにご協力を。</a></h1><hr /><div class="article-body"><strong>結果が公開されています</strong>
+<a href="http://3ping.org/2008/08/31/0120">Webデザインに関するアンケート結果</a>
+<hr />
+
+<a href="http://3ping.org/2008/08/31/0120">Web デザインに関するアンケートにご協力ください - 3ping.org</a>
+
+このブログはWebデザイナよりは、プログラマ、エンジニアと言った方が多いと思うのですが、よろしかったらご協力お願いします。以下のフォームからでも回答可能です。結果は公開してもらえるようです。よろしくお願いします。
+
+<div style="margin: 1em 20px; border: 7px solid #eee; padding: 20px;"><iframe src="http://spreadsheets.google.com/embeddedform?key=pqZ008056mIlxmXskWwiMbg" width="310" height="1319" frameborder="0" marginheight="0" marginwidth="0">読込中...</iframe></div>
+</div></article><article><h1><a href="/2008/08/25/selenium_on_rspec/">2008-08-25 Selenium on Rspecを軽く試してみた</a></h1><hr /><div class="article-body">とりあえずはScaffoldで簡単なアプリを作って、そのテストケースを作成、実行してみるところまで。そんな難しいことはしない。Railsは2.0.2を使用。2.1だとSeleniumにパッチを当てなきゃいけないので面倒。2.1の人は<a href="http://clearspace.openqa.org/docs/DOC-1072">Selenium on Rails patch for RoR 2.1</a>からパッチをあててください。
 
 <h3>準備</h3>
 まずは準備としてプラグインのインストールと、Scaffoldで簡単なアプリを作成する。
@@ -186,106 +195,4 @@ Q&Aで「例えばテキストエディタなのでバンドルに保存され�
 どこの国に配布するにせよ、登録するバイナリは1つです。つまり1つのバイナリをローカライズするってことかと。翻訳の仕組みは・・・聞き損ねたか、忘れました。確かビルド時に「single binary supporting multiple languages」を選ぶとかそんなん。これ書いちゃまずいのかな。まぁいいや。
 
 まぁ、大体こんな感じです。他にも色々聞いてますが、ほとんどドキュメントに書いてあるようなことばかりでした。ここに書いた内容がちょっと際どいので、さっきも書きましたがエントリが消えてる可能性もあります。その時はごめんなさい。
-</div></article><article><h1><a href="/2008/07/27/ukstudio_controlled_git/">2008-07-27 ukstudio.jpをgitで管理するようにしてみた</a></h1><hr /><div class="article-body">最近流行りのgitを使ってみようかなーってことでとりあえずukstudio.jpを全部gitで管理するようにした。
-
-最終的に以下のような構成になった。
-
-<a href="http://ukstudio.jp/wp-content/uploads/2008/07/git-ukstudio.png"><img src="http://ukstudio.jp/wp-content/uploads/2008/07/git-ukstudio.png" alt="" title="git-ukstudio" width="284" height="284" class="alignnone size-medium wp-image-145" /></a>
-
-<h2>MacBookにgitをインストールする</h2>
-MacBookにgitをインストールするのは簡単だった。MacPortsですんなり入った。
-
-参考: <a href="http://d.hatena.ne.jp/from_kyushu/20080414/git_on_mac">MacPortsを使ってgitをインストールしてみた - Post-itみたいな</a>
-
-<h2>サーバにgitをインストールする</h2>
-サーバはslicehostのCentOS5.1を使用。インストールされてるsvnが1.4なのでこちらは一旦remove。
-
-<pre lang="bash">
-$ yum remove subversion
-</pre>
-
-gitはyumの標準リポジトリでは管理されてないので、外部リポジトリ(<a href="http://dag.wieers.com/rpm/">DAG</a>)を登録してそこからインストールした。
-
-<pre lang="bash">
-$ wget http://dag.wieers.com/packages/rpmforge-release/rpmforge-release-$0.3.6-1.el5.rf.i386.rpm
-$ rpm -ivh rpmforge-release-0.3.6-1.el5.rf.i386.rpm
-$ yum install git
-</pre>
-
-<h2>リポジトリを作る</h2>
-とりあえずコミットする人の名前とメールアドレスを登録しないといけないらしいので登録。これはサーバの方も同じ。
-
-<pre lang="bash">
-$ git config --global user.email yuki.0w0[at]gmail.com
-$ git config --global user.name YukiAkamatsu
-</pre>
-
-次にローカルのファイル群をcommitする。
-<pre lang="bash">
-$ cd ~/ukstudio.jp
-$ git init
-$ git add .
-$ git commit -m "first commit"
-</pre>
-
-この状態だとまだローカル内での変更のみ。なので、この変更をサーバ側で受け取れるようにする。
-
-<pre lang="bash">
-# ukstudio.jpにログインした状態
-[ukstudio.jp]$ mkdir /var/git/ukstudio.jp
-[ukstudio.jp]$ cd /var/git/ukstudio.jp
-[ukstudio.jp]$ git init-db
-</pre>
-
-んで、またローカルに戻ってさっきcommitしたのをpushして反映させる。
-
-<pre lang="bash">
-$ git remote add ukstudio.jp ssh://ukstudio@ukstudio.jp/var/git/ukstudio.jp
-$ git push ukstudio.jp ukstudio.jp master
-</pre>
-
-最後に外部から見れるように配置する。
-
-<pre lang="bash">
-# ukstudio.jp
-[ukstudio.jp]$ cd /var/www/vhost/
-[ukstudio.jp]$ git clone /var/git/ukstudio.jp
-</pre>
-
-これで/var/www/vhost/ukstudio.jpが作成されて、そこにずらーっとファイルができてるはず。とりあえずこれでukstudio.jpをgitで管理できるようになった。(と思う)
-
-<h2>ローカルで変更を加えてみる</h2>
-本当にうまく管理できているのか、適当なファイルを作って確かめてみたいと思う。
-
-<pre lang="bash">
-$ cd ~/ukstudio.jp
-$ touch hoge.txt
-$ git add hoge.txt
-$ git commit -m "commit test"
-$ git push ukstudio.jp master
-
-#ukstudio.jp
-[ukstudio.jp]$ cd ~/var/www/vhost/ukstudio.jp
-[ukstudio.jp]$ git pull
-</pre>
-
-これでhoge.txtがあれば、うまく管理できてることになると思う。
-
-そんな感じで、とりあえずしばらくはgitを使ってみようかなーと思う。「git log -p」とやるとコミットログがdiff付きでみれて便利。
-
-<h3>参考</h3>
-<a href="http://www8.atwiki.jp/git_jp/pub/Documentation.ja/user-manual.html">Git ユーザマニュアル(1.5.3以降)</a>
-<a href="http://www8.atwiki.jp/git_jp/pub/Documentation.ja/tutorial.html">Gitチュートリアル(1.5.1以降)</a>
-<a href="http://www.nofuture.tv/index.rb?GitMemo">Gitメモ</a>
-<a href="http://blog.champierre.com/archives/670">せっかちな人のためのgit入門</a>
-<a href="http://www.kaeruspoon.net/articles/477">バージョン管理をsubversionからgitに移行してみた</a>
-
-<h2>SSHについて補足</h2>
-サーバへのSSH接続は鍵認証でやっています。秘密鍵を~/.ssh/id_dsa_ukstudio.jpで保存して、~/.ssh/configに以下のように書いています。
-
-<pre lang="bash">
-Host ukstudio.jp
-IdentityFile ~/.ssh/id_dsa_ukstudio.jp
-Protocol 2,1
-</pre>
 </div></article><div class="pager"><ul><li class="previous"><a href="/page/26/">Prev</a></li><li class="next"><a href="/page/28/">Next</a></li></ul></div></div></body></html>
