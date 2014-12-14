@@ -6631,34 +6631,42 @@ button.close {
 
 /* line 10, /Users/ukstudio/.ghq/github.com/ukstudio/ukstudio.github.io/source/stylesheets/all.css.scss */
 a {
-  color: #2c3e50; }
+  color: #2c3e50;
+  text-decoration: underline; }
 
-/* line 11, /Users/ukstudio/.ghq/github.com/ukstudio/ukstudio.github.io/source/stylesheets/all.css.scss */
+/* line 14, /Users/ukstudio/.ghq/github.com/ukstudio/ukstudio.github.io/source/stylesheets/all.css.scss */
 h1 {
   font-size: 1.5em;
   padding-left: 0.3em;
   border-left: 0.2em solid #2c3e50; }
+  /* line 18, /Users/ukstudio/.ghq/github.com/ukstudio/ukstudio.github.io/source/stylesheets/all.css.scss */
+  h1 a {
+    text-decoration: none; }
 
-/* line 16, /Users/ukstudio/.ghq/github.com/ukstudio/ukstudio.github.io/source/stylesheets/all.css.scss */
+/* line 20, /Users/ukstudio/.ghq/github.com/ukstudio/ukstudio.github.io/source/stylesheets/all.css.scss */
 h2 {
-  font-size: 1.5em; }
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-top: 20px;
+  margin-bottom: 15px;
+  text-decoration: none; }
 
-/* line 17, /Users/ukstudio/.ghq/github.com/ukstudio/ukstudio.github.io/source/stylesheets/all.css.scss */
+/* line 27, /Users/ukstudio/.ghq/github.com/ukstudio/ukstudio.github.io/source/stylesheets/all.css.scss */
 hr {
   border-top: 1px solid #2c3e50; }
 
-/* line 19, /Users/ukstudio/.ghq/github.com/ukstudio/ukstudio.github.io/source/stylesheets/all.css.scss */
+/* line 29, /Users/ukstudio/.ghq/github.com/ukstudio/ukstudio.github.io/source/stylesheets/all.css.scss */
 article {
   margin-bottom: 3em; }
 
-/* line 23, /Users/ukstudio/.ghq/github.com/ukstudio/ukstudio.github.io/source/stylesheets/all.css.scss */
+/* line 33, /Users/ukstudio/.ghq/github.com/ukstudio/ukstudio.github.io/source/stylesheets/all.css.scss */
 .article-body {
   padding-left: 1em; }
 
-/* line 27, /Users/ukstudio/.ghq/github.com/ukstudio/ukstudio.github.io/source/stylesheets/all.css.scss */
+/* line 37, /Users/ukstudio/.ghq/github.com/ukstudio/ukstudio.github.io/source/stylesheets/all.css.scss */
 body {
   font-family: 'Oswald', sans-serif; }
 
-/* line 31, /Users/ukstudio/.ghq/github.com/ukstudio/ukstudio.github.io/source/stylesheets/all.css.scss */
+/* line 41, /Users/ukstudio/.ghq/github.com/ukstudio/ukstudio.github.io/source/stylesheets/all.css.scss */
 pre {
   font-family: 'Inconsolata', monospace; }
