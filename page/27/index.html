@@ -8,7 +8,21 @@ _gaq.push(['_trackPageview']);
   var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
   ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
   var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-})();</script></head><body class="page page_27 page_27_index"><div class="cointainer-fluid"><div class="navbar navbar-default" role="navigation"><div class="container-fluid"><div class="navbar-header"><a class="navbar-brand" href="/">UKSTUDIO</a></div><div class="navbar-collapse collapse"><ul class="nav navbar-nav navbar-right"><li><a href="http://twitter.com/ukstudio">Twitter</a></li><li><a href="http://github.com/ukstudio">GitHub</a></li></ul></div></div></div></div><div class="container"><article><h1><a href="/2008/08/31/web_design_questionnaire/">2008-08-31 wuたんのWebデザインに関するアンケートにご協力を。</a></h1><hr /><div class="article-body"><strong>結果が公開されています</strong>
+})();</script></head><body class="page page_27 page_27_index"><div class="cointainer-fluid"><div class="navbar navbar-default" role="navigation"><div class="container-fluid"><div class="navbar-header"><a class="navbar-brand" href="/">UKSTUDIO</a></div><div class="navbar-collapse collapse"><ul class="nav navbar-nav navbar-right"><li><a href="http://twitter.com/ukstudio">Twitter</a></li><li><a href="http://github.com/ukstudio">GitHub</a></li></ul></div></div></div></div><div class="container"><article><h1><a href="/2008/09/07/vimm_railsvim/">2008-09-07 VimM#2でRails.vimについて話してきました</a></h1><hr /><div class="article-body"><a href="http://wiki.livedoor.jp/biowithit/d/VimM%232">VimM#2</a>
+
+とりあえず資料。正直、これだけ見てもさっぱりな資料だとは思いますがw
+
+
+Vimの人達の集りでRails.vimというRails使う人限定のプラグインの話はどうなんだろーとか思っていたけど、結構Rails使ってる人いたみたいでよかった。
+
+発表内容自体はかなりgdgdというか、伝えたいことをうまく伝えられなかったなーと言った感じ。やっぱり事前に練習しとくべき。あとは慣れかなー。しばらくは積極的に発表する側で頑張りたい。
+
+それと、RSpecの具体的な対応については<a href="http://ukstudio.jp/2008/06/05/rails_vim_rspec/">rails.vimのファイル切り替えをRSpecに対応させる(仮)</a>を参照。
+
+それにしても、エディタ1つで4時間(懇親会含めるともっとある)発表があって、それに40人集まるってのもすごい話だ。
+
+あと、VimMのMはみみのMらしいです。VimM#2はmickey24がうさみみをつけて主催するそうです。期待。
+</div></article><article><h1><a href="/2008/08/31/web_design_questionnaire/">2008-08-31 wuたんのWebデザインに関するアンケートにご協力を。</a></h1><hr /><div class="article-body"><strong>結果が公開されています</strong>
 <a href="http://3ping.org/2008/08/31/0120">Webデザインに関するアンケート結果</a>
 <hr />
 
@@ -156,43 +170,4 @@ collectionで値を渡す。@objectsの値を1つずつ、partial側でentryと�
 </dl>
 
 多分、大体こんな感じかなー。間違ってたらごめんなさい。
-</div></article><article><h1><a href="/2008/07/29/iphone_seminar/">2008-07-29 Apple主催のiPhoneアプリケーション開発入門セミナーに参加してきた</a></h1><hr /><div class="article-body">会場が家からすぐ近くだったので行ってきました。なるべく話しても大丈夫そうなところを選んで書きますが、場合によってはエントリーが消えることもあるかも。セミナーの内容が完全黙秘なのか、SDKの部分はダメなのかどっちかよくわからないので。英語苦手だ。
-
-<h2>ドキュメントみろ</h2>
-今回、話を聞いてきたことの大半は既にドキュメントとしてあるとのこと。英語だけど。なので英語がわかる人はそちらを読めばいいと思います。というか他にドキュメントがないので、英語読めなくても読まなきゃいけないんだけど。
-
-<a href="http://developer.apple.com/jp">http://developer.apple.com/jp</a>
-
-<h2>iPhoneでできないこと(と言うよりはやっちゃいけないこと)</h2>
-いくつかAppleから「これはできない」と言われたアプリがあります。
-
-<ul>
-<li>リアルタイムにルーティングするもの(カーナビとか。位置情報のみはOK)</li>
-<li>インストーラー、インタプリタは無理。(エグゼキュータブルは無理って言ってた)</li>
-<li>データの読み書きはバンドル内のみ(バンドル = アプリケーションの実行フォルダ)</li>
-</ul>
-
-ちなみにOpenURLでアプリケーションを立ち上げるのは大丈夫らしいです。
-
-<h2>開発手順</h2>
-ほぼドキュメントそのままなので省きます。
-
-<h2>App Storeへの登録</h2>
-個人的な印象からすると、無料・個人であれば、そこまでハードルは高くなさそうな感じ。
-
-無料・個人であれば、アプリ情報を登録し、公開条件や配布する国の指定のみで大丈夫そうです。法人に関しては場合によっては登記標本が必要かもしれません。
-
-それに加えて有料の場合は、なんか書類を送る必要があります。ちょっとこの辺り聞き損ねてしまいましたが、特別ハードルが高いって程でもなさそうです。
-
-アプリの審査に関して言えば、現状は「実物を見て、評価し、判断する」のが前提だそうです。つまり、「これはダメ」という線引きが曖昧で実際に審査をお願いしてみないと何とも言えないとのこと。もちろん、上に書いた「できないこと」は即はじかれるのかもしれませんが。brainfuckインタプリタを「翻訳アプリ」とか言えば、もしかしたら通るのかもしれないですけどw とりあえずはApp Storeに登録されてるものから判断するしかなさそうです。
-
-<h2>アプリのアップデート</h2>
-アプリのアップデートは機能としてあるそうです。つまり、アップデートをするのにお金がかかったり、特別な作業が必要というわけではなさそうです。ただ、アップデートが差分アップデートではなく、丸ごととりかえるそうです。
-
-Q&Aで「例えばテキストエディタなのでバンドルに保存されてるデータはアップロード時どうなるのか?」と言った質問がありましたが「確かバックアップの仕組みがあったはずだが、確認してみないとわからない」とのこと。
-
-<h2>アプリのローカライズ</h2>
-どこの国に配布するにせよ、登録するバイナリは1つです。つまり1つのバイナリをローカライズするってことかと。翻訳の仕組みは・・・聞き損ねたか、忘れました。確かビルド時に「single binary supporting multiple languages」を選ぶとかそんなん。これ書いちゃまずいのかな。まぁいいや。
-
-まぁ、大体こんな感じです。他にも色々聞いてますが、ほとんどドキュメントに書いてあるようなことばかりでした。ここに書いた内容がちょっと際どいので、さっきも書きましたがエントリが消えてる可能性もあります。その時はごめんなさい。
 </div></article><div class="pager"><ul><li class="previous"><a href="/page/26/">Prev</a></li><li class="next"><a href="/page/28/">Next</a></li></ul></div></div></body></html>

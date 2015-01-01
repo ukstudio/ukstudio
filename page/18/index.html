@@ -8,7 +8,21 @@ _gaq.push(['_trackPageview']);
   var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
   ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
   var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-})();</script></head><body class="page page_18 page_18_index"><div class="cointainer-fluid"><div class="navbar navbar-default" role="navigation"><div class="container-fluid"><div class="navbar-header"><a class="navbar-brand" href="/">UKSTUDIO</a></div><div class="navbar-collapse collapse"><ul class="nav navbar-nav navbar-right"><li><a href="http://twitter.com/ukstudio">Twitter</a></li><li><a href="http://github.com/ukstudio">GitHub</a></li></ul></div></div></div></div><div class="container"><article><h1><a href="/2009/10/06/web_trustee_company/">2009-10-06 Web系受託会社は亡びる</a></h1><hr /><div class="article-body">やけに煽ってるタイトルだけど、別にそんな大した話でもない。最近個人的に思ってることをつらつらと書く。
+})();</script></head><body class="page page_18 page_18_index"><div class="cointainer-fluid"><div class="navbar navbar-default" role="navigation"><div class="container-fluid"><div class="navbar-header"><a class="navbar-brand" href="/">UKSTUDIO</a></div><div class="navbar-collapse collapse"><ul class="nav navbar-nav navbar-right"><li><a href="http://twitter.com/ukstudio">Twitter</a></li><li><a href="http://github.com/ukstudio">GitHub</a></li></ul></div></div></div></div><div class="container"><article><h1><a href="/2009/11/02/testing_private_method/">2009-11-02 RSpecでprivateメソッドをテストする</a></h1><hr /><div class="article-body"><script src="http://gist.github.com/223674.js"></script>
+
+Object#send(__send__)ならメソッドの呼び出し制限に関わらずメソッドを呼び出すことが可能なので、privateメソッドもテスト可能。
+
+確か、1.9以降はメソッド呼び出し制限がObject#sendにも影響するとどこかで見た記憶があるのだけど結局そうはなっていないみたい。
+
+1.9.1、1.8.7で確認済み。
+
+ちなみにオマケ。
+<script src="http://gist.github.com/223679.js"></script>
+
+Pythonはメソッド名の前にアンダースコアを2つけるとprivateなメソッドになるのだけれど、実際のところ別名でメソッドを定義してそちらを呼び出してるっぽい。別名で定義された方はprivateではないので、そちらを呼び出してテストすることが可能。
+
+他にもJavaだったらsetAccessible(True)を実行すればpublicなメソッドに変更されるのでテスト可能。と聞いただけで確認はしていない。
+</div></article><article><h1><a href="/2009/10/06/web_trustee_company/">2009-10-06 Web系受託会社は亡びる</a></h1><hr /><div class="article-body">やけに煽ってるタイトルだけど、別にそんな大した話でもない。最近個人的に思ってることをつらつらと書く。
 
 まず、Web系受託会社の定義だけどまぁWebサービスやWebアプリケーションなど比較的規模の小さいものを受託で作っているところとする。「規模の小さい」も割と感覚的なものだけど、まぁその辺の詳細は省く。
 
@@ -107,23 +121,4 @@ Ruby1.9.2を使いたいときは、一度シンボリックリンクを消し�
 </code></pre>
 
 実際にこの環境で開発するのはこれからなので、もしかしたらそのうち色々な問題もでてくる可能性はあるが、とりあえずこの環境でやってみようと思う。
-</div></article><article><h1><a href="/2009/08/20/review_kinesis/">2009-08-20 Kinesisを2週間使ったのでレビューする</a></h1><hr /><div class="article-body"><a href="http://d.hatena.ne.jp/ursm">ursm</a>さんに2週間程、<a href="http://ja.wikipedia.org/wiki/Kinesis">Kinesis</a>をお借りしたのでレビューを書く。
-
-結論から言うと、Kinesisはとても素晴しいキーボードだった。ursmさんや<a href="http://whileimautomaton.net/">kana</a>さんが常用するのもわかる気がする。
-
-<h2>指の負担が少ない</h2>
-Kinesisはキーの部分が、おわんの形にへこんでおり、かつ各キーの角度や位置がそれぞれ微調整されておりパッと見カオス。案外これがいい感じにフィットしていて指の動きがスムーズ。ちょっと動かせばすぐ届く感じ。多分、タイピング速度も一般的なキーボードよりは速くなる気がする。
-
-あといくつかのキーが親指の部分にあるため、Ctrlキーとか小指を酷使することもなかった。親指は大体暇なので、こういうのはありがたい。HHKだと大体SpaceかCmdぐらいしか使わない(Space押しっぱでShiftになるようにはしてるけど)
-
-<h2>Key Remap</h2>
-Kinesisは単体でキーのremapができる。OS側でやらなくてすむのはとても素晴しい。正直、いくつかのキーで配置に不満があったのだけど([とか]とかCmdとか)適当に配置しなおし。特にCmdは半角、全角の切り替えにCmd+Spaceを使っていたので、デフォルトの状態じゃどうしようもなかった。
-
-Remapがキーボード単体でできるのは本当に素晴しいので他のキーボードも見習ってください。
-
-<h2>でかい</h2>
-とりあえずでかい。ただまぁ、この大きさは多分仕方なくて、小さくしてしまうと腕がちょっと窮屈になってしまう。腕の位置を自然にするために左右分割してると思うのでまぁしょうがないのだろう。それとは別にどことなく外人の手の大きさに合わされているので、いくつか遠く感じるキーもあった。
-
-<h2>まとめ</h2>
-Kinesisを2週間使って、HHKやMacBookのキーボードで打ちづらさを感じるようなり、しかもタイプミスが増えたのでursmさんには損害賠償を払ってもらいたいです。Kinesis1個で手を打ちます。
 </div></article><div class="pager"><ul><li class="previous"><a href="/page/17/">Prev</a></li><li class="next"><a href="/page/19/">Next</a></li></ul></div></div></body></html>

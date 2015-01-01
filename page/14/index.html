@@ -8,7 +8,94 @@ _gaq.push(['_trackPageview']);
   var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
   ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
   var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-})();</script></head><body class="page page_14 page_14_index"><div class="cointainer-fluid"><div class="navbar navbar-default" role="navigation"><div class="container-fluid"><div class="navbar-header"><a class="navbar-brand" href="/">UKSTUDIO</a></div><div class="navbar-collapse collapse"><ul class="nav navbar-nav navbar-right"><li><a href="http://twitter.com/ukstudio">Twitter</a></li><li><a href="http://github.com/ukstudio">GitHub</a></li></ul></div></div></div></div><div class="container"><article><h1><a href="/2010/03/12/tethering_sim_change/">2010-03-12 HT-03AでテザリングかつSIM挿し替え時の料金について</a></h1><hr /><div class="article-body">docomoに問合せて返信きた。
+})();</script></head><body class="page page_14 page_14_index"><div class="cointainer-fluid"><div class="navbar navbar-default" role="navigation"><div class="container-fluid"><div class="navbar-header"><a class="navbar-brand" href="/">UKSTUDIO</a></div><div class="navbar-collapse collapse"><ul class="nav navbar-nav navbar-right"><li><a href="http://twitter.com/ukstudio">Twitter</a></li><li><a href="http://github.com/ukstudio">GitHub</a></li></ul></div></div></div></div><div class="container"><article><h1><a href="/2010/03/29/apache_passenger_rails_for_centos/">2010-03-29 CentOS 5.4(EC2)にApache+PassengerでRails環境作る</a></h1><hr /><div class="article-body">後々、また参照する気がするので記録しておく。この手の環境構築系のドキュメントってWikiかなんかにみんなで情報集めたらそこそこ便利そうな気がするのだけどどうだろう。
+
+<h2>Ruby、RubyGemsのインストール</h2>
+yumでRubyをインストールしようとすると、1.8.5が入ってしまうので仕方なくソースからインストール。
+
+<code><pre>
+$ cd /usr/local/src
+$ sudo wget ftp://ftp.ruby-lang.org/pub/ruby/1.8/ruby-1.8.7-p249.tar.gz
+$ sudo tar zxvf ruby-1.8.7-p249.tar.gz
+$ cd ruby-1.8.7-p249
+$ sudo ./configure
+$ sudo make
+$ sudo make install
+</pre></code>
+
+<code><pre>
+$ cd /usr/local/src
+$ sudo wget http://rubyforge.org/frs/download.php/69365/rubygems-1.3.6.tgz
+$ sudo tar zxvf rubygems-1.3.6
+$ cd rubygems-1.3.6
+$ sudo ruby setup.rb
+</pre></code>
+
+この時点で一応RubyGemsもインストール出来てはいるけれど、実際に使おうとするとエラーが発生する。どうやらzlibが入っていなかった模様。
+
+<code><pre>
+$ sudo yum install zlib-devel
+$ cd /usr/local/src/ruby-1.8.7-p249/ext/zlib
+$ sudo extconf.rb --with-zlib-include=/usr/include --with-zlib-lib=/usr/lib
+$ sudo make
+$ sudo make install
+</pre></code>
+<h2>MySQLのインストール</h2>
+こっちはyumからサクッとインストール。
+
+<code><pre>
+$ sudo yum install mysql mysql-server mysql-devel
+$ sudo /etc/initd.mysqld start
+</pre></code>
+
+my.cnfの設定は/usr/share/mysql/以下からコピーしてきたりとか適当に。ユーザの設定とかも適当に。
+
+<h2>Apache+Passenger</h2>
+まずはApacheをサクッとインストール。
+
+<code><pre>
+$ sudo yum install httpd-devel
+</pre></code>
+
+そしてPassengerのインストール。
+
+<code><pre>
+$ sudo gem install passenger
+$ sudo passenger-install-apache2-module
+</pre></code>
+
+ここでまたしてもエラー。どうやらOpenSSLが入っていないとかなんとか。
+<code><pre>
+$ sudo yum install openssl-devel
+$ cd /usr/local/src/ruby-1.8.7-p249/ext/openssl
+$ sudo ruby extconf.rb
+$ sudo make
+$ sudo make install
+</pre></code>
+
+これで無事Passengerがインストール出来る。
+
+<code><pre>
+$ sudo passenger-install-apache2-module
+</pre></code>
+
+最低限のPassengerの設定。この設定の内容はpassenger-install-apache2-moduleを実行した時に表示されているので確認しておくこと。
+
+<code><pre>
+$ sudo vi /etc/httpd/conf.d/passenger.conf
+LoadModule passenger_module /usr/local/lib/ruby/gems/1.8/gems/passenger-2.2.11/ext/apache2/mod_passenger.so
+PassengerRoot /usr/local/lib/ruby/gems/1.8/gems/passenger-2.2.11
+PassengerRuby /usr/local/bin/ruby
+</pre></code>
+
+あとはhttpd.confのDocumentRootをRailsのpublicディレクトリにすればOK。
+<code><pre>
+$ sudo vi /etc/httpd/conf/httpd.conf
+DocumentRoot /path/to/rails/public
+</pre></code>
+
+本当に最低限だけどとりあえずこれでPassengerでRailsを動かすことが出来るはず。ApacheやMySQLの自動起動はchkconfigを設定すればよい。Passengerの細かい設定は<a href='http://www.modrails.com/documentation/Users%20guide.html'>Passenger users guid</a>を参考に。
+</div></article><article><h1><a href="/2010/03/12/tethering_sim_change/">2010-03-12 HT-03AでテザリングかつSIM挿し替え時の料金について</a></h1><hr /><div class="article-body">docomoに問合せて返信きた。
 
 <h2>テザリング</h2>
 <blockquote>
@@ -212,7 +299,4 @@ MVCについてだけど、個人的にはとりあえずフレームワーク�
 
 <h2>まとめ</h2>
 オブジェクト指向は難しいと思います。未だに僕も勉強中だし、ちゃんと理解してないプログラマも多いし。 多分、理解するには人のコードを読んで、自分でコードを書いて、それを誰かにレビューしてもらうというのが早いと思うんだけど、とりあえず1つ1つ理解していくしかないと思うのでじっくり頑張ってください。
-</div></article><article><h1><a href="/2010/02/17/clojure_fizzbuzz/">2010-02-17 ClojureでFizzBuzz</a></h1><hr /><div class="article-body"><script src="http://gist.github.com/306528.js?file=fizzbuzz.clj"></script>
-
-新しい言語学ぶ時はとりあえずFizzBuzzを書く。Clojureのcondは括弧が少なくて個人的に好きです。
 </div></article><div class="pager"><ul><li class="previous"><a href="/page/13/">Prev</a></li><li class="next"><a href="/page/15/">Next</a></li></ul></div></div></body></html>

@@ -8,7 +8,26 @@ _gaq.push(['_trackPageview']);
   var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
   ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
   var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-})();</script></head><body class="page page_11 page_11_index"><div class="cointainer-fluid"><div class="navbar navbar-default" role="navigation"><div class="container-fluid"><div class="navbar-header"><a class="navbar-brand" href="/">UKSTUDIO</a></div><div class="navbar-collapse collapse"><ul class="nav navbar-nav navbar-right"><li><a href="http://twitter.com/ukstudio">Twitter</a></li><li><a href="http://github.com/ukstudio">GitHub</a></li></ul></div></div></div></div><div class="container"><article><h1><a href="/2010/09/03/rspec2_rails3_autotes/">2010-09-03 RSpec2+Rails3+autotest環境の構築</a></h1><hr /><div class="article-body">9月からやる仕事がめでたく、Rails3.0 + Ruby1.9.2のお仕事なので色々と環境構築。とりあえず自動テストまわりやりました。
+})();</script></head><body class="page page_11 page_11_index"><div class="cointainer-fluid"><div class="navbar navbar-default" role="navigation"><div class="container-fluid"><div class="navbar-header"><a class="navbar-brand" href="/">UKSTUDIO</a></div><div class="navbar-collapse collapse"><ul class="nav navbar-nav navbar-right"><li><a href="http://twitter.com/ukstudio">Twitter</a></li><li><a href="http://github.com/ukstudio">GitHub</a></li></ul></div></div></div></div><div class="container"><article><h1><a href="/2010/09/05/sla/">2010-09-05 外国語学習の科学</a></h1><hr /><div class="article-body">新書なのでサクッと読めた。おもしろかったので簡単に紹介する。
+
+<blockquote>
+このような背景から、「外国語学習」という現象そのものを対象とした学問分野が1960年代ごろから発達してきました。これが、「第二言語習得(Second Language Acquisition = SLA)」という新たな研究分野です。
+</blockquote>
+
+書名にある第二言語とは、上記の引用の通り比較的新しい学問で、主に「第二言語習得メカニズムの解明」と「どのような習得方法が効果的か」という問題を扱うとのこと。
+
+ちなみに第二言語 = 英語というわけではなく、母国語を第一言語として、それ以外の言語については全て第二言語として扱うらしい。日本語話者が英語を習って、次にロシア語を習った場合でも、ロシア語は第二言語と呼ばれる。
+
+そもそも僕がこの本を手にとったきっかけは「いい加減、科学的に正しい英語学習法が確立されてていいんじゃないの?」という疑問なので、この本はそういう疑問に対して丁度よさそうだったため。
+
+結論から書くと、現状「正しい英語学習法」というのは確立されていないらしい。とは言え、今までの研究でわかってきたことをベースに、ある程度の方向性は見えてきているようで、この本に目を通しておけば少なくとも巷の「うさんくさい英語学習法」に騙されることはなくなりそうではある。
+
+何にせよ、英語学習者、英語を教える側、子を持つ親(子供の言語学習についても触れられているため)など英語に関わる人は読んでおいて損はない本であるのは間違いない。もちろん「第二言語習得」という研究に興味がある人もその取っ掛かりとしてはいい本だと思う。
+
+ちなみに英語を学習するための効率的な方法を知りたいという人は6章の「効果的な外国語学習法」だけ読んでおけば十分かとも思うが、そんなに量の多い本でもないし、残りの章も読むことをおすすめする。読み易いし、内容もおもしろいので、ちょっとした読み物気分で読めばいいと思う。
+
+<iframe src="http://rcm-jp.amazon.co.jp/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=ukstudio0c-22&o=9&p=8&l=as1&m=amazon&f=ifr&md=1X69VDGQCMF7Z30FM082&asins=4004311500" style="width:120px;height:240px;" scrolling="no" marginwidth="0" marginheight="0" frameborder="0"></iframe>
+</div></article><article><h1><a href="/2010/09/03/rspec2_rails3_autotes/">2010-09-03 RSpec2+Rails3+autotest環境の構築</a></h1><hr /><div class="article-body">9月からやる仕事がめでたく、Rails3.0 + Ruby1.9.2のお仕事なので色々と環境構築。とりあえず自動テストまわりやりました。
 
 一応、環境を他と切り分けるために、rvmでアプリ用にgemsetを用意。アプリごとに簡単に環境を構築できるrvmマジ便利。
 
@@ -108,21 +127,4 @@ Googleの連絡先には「グループ」という概念があります。グ�
 Gmailにラベルという機能があります。ラベルはそれぞれ独立しており、そこに特に関係性はありません。しかし、Gmail Labsにある「Nested Labels」を使えば名前の通りラベルをネスト構造にすることができます。「設定」から「Labs」を選び「ラベルのネスト」(日本語版の場合です)を有効にし、あとは適切にラベルを設定するだけです。例えば僕の場合「ruby/ruby-list」「ruby/rubykaigi」と言った感じでラベリングしています。
 
 ただ、紹介しといて何ですがそんなに便利でもないかなーというのが正直なところです。ですが、サイドバーのラベルが折り畳めるようになるのでラベルの数が増えてきて整理したいという場合にはそれなりに便利なのではないかと思います。
-</div></article><article><h1><a href="/2010/07/18/value/">2010-07-18 コードがきれいに書けると顧客へ提供する価値は向上するのか</a></h1><hr /><div class="article-body">今思っていることを整理するがてら書いておきます。
-
-僕がここ最近ずっと「コードはきれいに書くべき」「読みやすいコードを」と言い続けています。16日のオブラブの発表もそうですし、WEB+DB Vol.56の記事もそうです。
-
-ただ、僕が話すメリットも基本的には開発者側の視点です。もちろん、開発者がメリットを享受した結果、顧客にも何らかのメリットはあります。(バグが減る、仕様変更のコストが減るなど)
-
-とは言え、「コードをきれいに書ける」と言うのは「自分自身が書こうと思ったものを書ける」と言うことでしかないとも思うわけで、それはつまり「自分の脳内で思い描いたソフトウェアを具現化する」能力とも言えるのかなと思います。
-
-じゃあ、仮に「顧客が思い描いたソフトウェア」と「開発者が思い描いたソフトウェア」でズレがあった場合はどうでしょう。当然そこに価値はありません。(価値が0とは言いませんが、理想よりは少ないことは確か)
-
-更に言うと、「顧客が思い描いたソフトウェア」が顧客にとって本当に必要なものだとは限りません。
-
-結局のところ、顧客に対して価値を提供するには「きれいにコードを書ける」こと以外にも更に何かプラスアルファがいるはずです。そのプラスアルファが何かは僕自身まだ答えはでていません。
-
-ですが、プラスアルファが何であれ「きれにコードを書ける」技術はほぼ間違いなく必要です。理想を思い描けたところで、それを具現化する能力がおぼつかなければ意味がありません。
-
-つまり、「きれいにコードを書ける」ということは、「前提」であり、その先も考える必要があるのだと最近は思っています。
 </div></article><div class="pager"><ul><li class="previous"><a href="/page/10/">Prev</a></li><li class="next"><a href="/page/12/">Next</a></li></ul></div></div></body></html>

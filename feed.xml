@@ -4,10 +4,34 @@
   <id>http://ukstudio.jp</id>
   <link href="http://ukstudio.jp"/>
   <link href="http://ukstudio.jp/feed.xml" rel="self"/>
-  <updated>2014-12-14T07:50:00Z</updated>
+  <updated>2015-01-01T01:01:00Z</updated>
   <author>
     <name>AKAMATSU Yuki</name>
   </author>
+  <entry>
+    <title>株式会社spice lifeに入社しました</title>
+    <link rel="alternate" href="http://ukstudio.jp/2015/01/01/joined_spicelife/"/>
+    <id>http://ukstudio.jp/2015/01/01/joined_spicelife/</id>
+    <published>2015-01-01T01:01:00Z</published>
+    <updated>2015-01-01T10:48:34+09:00</updated>
+    <author>
+      <name>AKAMATSU Yuki</name>
+    </author>
+    <content type="html">&lt;p&gt;あけましておめでとうございます。今年もどうぞよろしくお願いいたします。&lt;/p&gt;
+
+&lt;p&gt;さて、タイトル通りではありますが、&lt;strong&gt;本日2015年1月1日から株式会社spice lifeに入社しました&lt;/strong&gt;。社員です。&lt;/p&gt;
+
+&lt;blockquote style='text-align: center' class="twitter-tweet" lang="en"&gt;&lt;p&gt;入社&lt;/p&gt;&amp;mdash; ゆーけー/赤松 祐希 (@ukstudio) &lt;a href="https://twitter.com/ukstudio/status/550306578851569668"&gt;December 31, 2014&lt;/a&gt;&lt;/blockquote&gt;
+
+&lt;script async src="//platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;
+
+&lt;p&gt;なので2010年(だったかな)から続いていたフリーランス業も一旦終わりになります。&lt;/p&gt;
+
+&lt;p&gt;spice lifeには6月の終わり頃からフリーランスとして契約させてもらっていてとりあえず半年契約しましょう、その後はその半年働いてよかったら再契約しましょう、という感じでした。ところがどっこい、再契約どころか正式に入社という運びとなりました。&lt;/p&gt;
+
+&lt;p&gt;ここ最近はリリースの時にもこのブログで&lt;a href="/2014/11/27/spotlights-jp/"&gt;お知らせ&lt;/a&gt;した&lt;a href="https://spotlights.jp/"&gt;SPOTLIGHTS&lt;/a&gt;というサービスの開発に携わっています。もうしばらく携わっていく予定ですので何卒よろしくおねがいします。&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>esaのストックとフローの絞り込みで(俺にとって)なにがうれしいのか</title>
     <link rel="alternate" href="http://ukstudio.jp/2014/12/14/esa_flow_stock/"/>
@@ -346,31 +370,6 @@
 &lt;span class="se"&gt;\&lt;/span&gt; &lt;span class="p"&gt;}&lt;/span&gt;
 &lt;/pre&gt;
 &lt;p&gt;これで上の画像のような感じでTagBarに表示されるようになるはず。&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
-    <title>lsと間違えてerutasoを打ってしまうGentoo/Funtooユーザーのみなさまへ</title>
-    <link rel="alternate" href="http://ukstudio.jp/2014/03/27/erutaso_ebuild/"/>
-    <id>http://ukstudio.jp/2014/03/27/erutaso_ebuild/</id>
-    <published>2014-03-27T05:09:00Z</published>
-    <updated>2014-11-27T15:26:19+09:00</updated>
-    <author>
-      <name>AKAMATSU Yuki</name>
-    </author>
-    <content type="html">&lt;p&gt;&lt;a href="https://github.com/ukstudio/ukstudio-overlay/tree/master/app-shells/erutaso/"&gt;ebuild&lt;/a&gt;を作ってみましたのでご活用ください。初めてのebuildなので不具合・不都合あればpull-reqを。ukstudioというoverlayを作りましたのでそこからインストールできるはずです。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href="https://github.com/ukstudio/ukstudio-overlay"&gt;https://github.com/ukstudio/ukstudio-overlay&lt;/a&gt;&lt;/p&gt;
-&lt;pre class="highlight shell"&gt;curl https://raw.github.com/ukstudio/ukstudio-overlay/master/profiles/layman.xml &amp;gt; /etc/layman/overlays/ukstudio-overlay.xml
-layman -f -a ukstudio
-
-emerge erutaso
-which erutaso &lt;span class="c"&gt;#=&amp;gt; /usr/bin/erutaso&lt;/span&gt;
-
-erutaso
-&lt;/pre&gt;
-&lt;h2 id="see-also"&gt;See also&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href="https://twitter.com/sgymtic/status/448832543039574016"&gt;https://twitter.com/sgymtic/status/448832543039574016&lt;/a&gt;&lt;/p&gt;
 </content>
   </entry>
 </feed>

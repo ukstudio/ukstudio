@@ -8,7 +8,93 @@ _gaq.push(['_trackPageview']);
   var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
   ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
   var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-})();</script></head><body class="page page_31 page_31_index"><div class="cointainer-fluid"><div class="navbar navbar-default" role="navigation"><div class="container-fluid"><div class="navbar-header"><a class="navbar-brand" href="/">UKSTUDIO</a></div><div class="navbar-collapse collapse"><ul class="nav navbar-nav navbar-right"><li><a href="http://twitter.com/ukstudio">Twitter</a></li><li><a href="http://github.com/ukstudio">GitHub</a></li></ul></div></div></div></div><div class="container"><article><h1><a href="/2008/02/15/vim_ruby_on_rails/">2008-02-15 VimでRuby on Railsの開発する為の環境構築</a></h1><hr /><div class="article-body">ちょこっとだけ環境整えたので忘備録エントリとして。
+})();</script></head><body class="page page_31 page_31_index"><div class="cointainer-fluid"><div class="navbar navbar-default" role="navigation"><div class="container-fluid"><div class="navbar-header"><a class="navbar-brand" href="/">UKSTUDIO</a></div><div class="navbar-collapse collapse"><ul class="nav navbar-nav navbar-right"><li><a href="http://twitter.com/ukstudio">Twitter</a></li><li><a href="http://github.com/ukstudio">GitHub</a></li></ul></div></div></div></div><div class="container"><article><h1><a href="/2008/02/25/haskell_sec2/">2008-02-25 ふつケル第2章</a></h1><hr /><div class="article-body"><h2>ハロー、ワールド</h2>
+<pre lang="haskell">
+main = putStrLn "Hello, World!"
+</pre>
+
+「main = 」は変数mainの定義. 「putStrLn "Hello, World!"」が変数mainの値となる。putStrLnは標準出力に文字列と開業を出力する時に使う関数で、正確に言うと<strong>文字列を1つ受けとり、その文字列と改行を出力するアクションを返す関数</strong>.
+
+「putStrLn "Hello, World!"」の式を、Haskellでは<strong>"Hello,World!"にputStrLn関数を適用する</strong>と言うらしいけど、今一ピンとこないな. 普段Rubyやってるからかな. putStrLn関数を"Hello,World!"にあてはめて用いると言いなおせばまだわかるかな. ・・・あんまり変わらないか.
+
+<h2>cat</h2>
+<pre lang="haskell">
+main = do cs < - getContents
+          putStr cs
+</pre>
+
+1行目のcs < - getContentsとputStr csの2つの式が揃っているのには意味があるらしい。インデントに意味があるなんてPythonみたいなやつだ。複数の式のインデントを揃えることで、do式で1つのブロックに束ねることができる。この規則をレイアウトやオフサイドルールと言う。<strong>複数のアクションをdo式でまとめると上から下へ実行されることが保証される</strong>。
+
+アクションの結果を得るときに「< -」を使う。このサンプルの場合だと、getContentsアクションで入力した文字列が変数csに結びつき、それを「<strong>変数を値(アクションの結果)に束縛する(bind)</strong>」と言う。値が変数を束縛するのか。値は寂しがりやさんだな。
+
+このサンプルには遅延評価も関連してるが、ここではあまり詳しく触れてないのでスルー。
+
+<h2>countline</h2>
+</pre><pre lang="haskell">
+main = do cs < - getContents
+          print $ length $ lines cs
+</pre>
+
+Haskellにおいてリストはかなり重要。Haskellでは<strong>文字列もリスト</strong>となっている。リストには<strong>一種類の値しか入れられない</strong>。このあたりはRuby、JavaScriptあたりをやっていると忘れがちなので注意。
+
+</pre><pre lang="haskell">
+['a', 'b', 'c'] => "abc"
+[1, 2, 'a'] => NG
+</pre>
+
+$演算子は+や-と同じような二項演算子。ここでは<strong>式を区切る</strong>ために使われている。$を()に置き換えると以下のようになる。
+
+<pre lang="haskell">
+main = do cs < - getContents
+          print (length (lines cs))
+</pre>
+
+<h2>head</h2>
+</pre><pre lang="haskell">
+main = do cs < - getContents
+          putStr $ firstNLines 10 cs
+
+firstNLines n cs = unlines $ take n $ lines cs
+</pre>
+
+4行目のfirstNLinesは関数の定義。基本的にmainの時と同じだけど、今回は仮引数が登場している。nとcsがそれぞれ第1仮引数、第2引数。
+
+</pre><pre lang="haskell">
+関数名 仮引数1 仮引数2・・・ = 関数本体
+</pre>
+
+<h2>tail</h2>
+<pre lang="haskell">
+main = do cs < - getContents
+          putStr $ lastNLines 10 cs
+
+lastNLines n cs = unlines $ takeLast n $ lines cs
+takeLast n ss = reverse $ take n $ reverse ss
+</pre>
+
+今迄に登場したものだけを使っているので、特別なことはなし。
+
+<h2>練習問題</h2>
+
+countbyte.hs
+</pre><pre lang="haskell">
+main = do cs < - getContents
+          print $ length cs
+</pre>
+
+countword.hs
+</pre><pre lang="haskell">
+main = do cs < - getContents
+          print $ length $ words cs
+</pre>
+
+とりあえずチャチャっと書いてみた。countword.hsは単語数だから問題ないと思うけど、countbyte.hsは日本語の全角文字とかも1byte扱いすると思う。と思ったらちゃんと計算してくれた。でも、ghciで"あ"のlengthをとると1が返ってくる。よくわからん。
+
+</pre><pre lang="haskell">
+Prelude> length "あ"
+1
+</pre>
+</div></article><article><h1><a href="/2008/02/15/vim_ruby_on_rails/">2008-02-15 VimでRuby on Railsの開発する為の環境構築</a></h1><hr /><div class="article-body">ちょこっとだけ環境整えたので忘備録エントリとして。
 
 <h2>Vim/Rubyのインストール</h2>
 Ruby(.rb)とeruby(.rhtml)ファイルでシンタックスハイライトとオムニ補完が有効になる拡張。gemからインストール可能。
@@ -249,36 +335,4 @@ LTの詳細は各人の資料やエントリーにまかせたいと思うけど
 そんなわけで、無事「野望新年会」おわりました。pinkmacさんをはじめ、事務局の皆さん、参加者の皆さん、お疲れ様でした。とても楽しかったです。なんか色々これからもおもしろそうなことがありそうな集まりなので、ちょこちょこ参加していけたらいいなぁと思います。
 
 どうぞよろしく!!
-</div></article><article><h1><a href="/2008/01/12/blog/">2008-01-12 オレがブログを書く理由</a></h1><hr /><div class="article-body">まめこの「<a href="http://blog.woopsdez.jp/2008/01/post_294.php">車輪の再発明だとしても記事は書くべき</a>」に反応してみる。「記事をかくべき」というのには非常に同意。
-
-じゃあ、なぜ「かくべき」なのか。それは人それぞれになると思うけど、オレがブログを書く理由を簡単にまとめてみたのでよければ参考にしてほしい。
-
-<h2>ブログは自分の為に書く</h2>
-基本的にブログは自分の為に書いている。あまり他の人に役立つかどうかとか、誰か似たようなこと書いてるだろうなとかは気にしない。
-
-<h3>思考のツールとしてのブログ</h3>
-文章を書くということは、ある程度自分の思考を整理することになる。別にこれだけならブログでなくとも、ノートや日記帳、テキストファイルやローカルなWikiでもいい。けれど、公開してるブログにはそれらにない特徴がある。
-
-不特定多数の人に見られるということである。
-
-不特定多数に見られるということは、少なくとも自分が「人にみせてもいい」と思えるレベルになるまで文章を推古することになる。その過程で自分なりになるべく客観的に文章を判断しようとする。そうすることで今迄とはまた違った視点で物事を考えられるわけだ。
-
-また、不特定多数から何らかの反応(コメント、トラックバック、etc)があった場合、それはローカルな環境での記録ではなかなか得られないものだ。自分のノートに書いといただけでは、誰もそれについて考えるといったことはしない。
-
-<h3>最大の読者は自分</h3>
-当たり前の話だけど、過去の自分に会うことはできない。もちろん、昔に自分がどんなことを考え、どんなことをしていたのか覚えてるとも限らない。人は忘れる生き物だ。
-
-けれどブログに記事を書いておけば、その記事を見にいくことによって擬似的にだけど当時の自分と会うことができる。過去の自分は全くの別人なのではないかと思う時もある程、思考の違いに驚くことがある。過去のエントリと現在の自分の思考の違いから学ぶことも多いものだ。
-
-ある一定以上、ブログを続けているとそのうちデータベースとして機能するようになる。自分が何を考え、何に悩んでいたのか。そしてどんな行動をしてきたのか。それらが記録されているブログは後に貴重な財産となるはず。
-
-<h3>コラボレーション</h3>
-各人のアウトプットが1つのコラボレーションを生むことがある。最近の例で言えば、<a href="http://born1981.g.hatena.ne.jp/">1981s</a>がそうなのではないかと思う。
-
-<a href="http://d.hatena.ne.jp/kamawada/20071128/1196228938">ゆーすけべーさんが発案</a>し、<a href="http://d.hatena.ne.jp/amachang/20071128/1196241194">amachangが呼び掛ける</a>。実はあまり詳しい経緯を追ってないので間違ってたら申し訳ないけれど、少なくともゆーすけべーさんが記事をかかなければ1981sが存在しなかったのは確か。
-
-1981sに限らず、誰かがブログで言いだしたのがきっかけで生まれたものはたくさんあるんじゃないかと思う。
-
-<h2>「書くべき」は言い過ぎかもしれないけど</h2>
-最初に同意しといてここで言い過ぎと言うのはおかしいかもしれないけど、そもそも強制されるようなものでもないと思うので。ただ、少なくともオレはブログを書くことで色々得るものが多いと思うので「ブログイイヨー、オススメダヨー」ぐらいのノリでオススメしておきます。
 </div></article><div class="pager"><ul><li class="previous"><a href="/page/30/">Prev</a></li><li class="next"><a href="/page/32/">Next</a></li></ul></div></div></body></html>

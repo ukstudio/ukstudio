@@ -8,7 +8,52 @@ _gaq.push(['_trackPageview']);
   var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
   ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
   var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-})();</script></head><body class="page page_5 page_5_index"><div class="cointainer-fluid"><div class="navbar navbar-default" role="navigation"><div class="container-fluid"><div class="navbar-header"><a class="navbar-brand" href="/">UKSTUDIO</a></div><div class="navbar-collapse collapse"><ul class="nav navbar-nav navbar-right"><li><a href="http://twitter.com/ukstudio">Twitter</a></li><li><a href="http://github.com/ukstudio">GitHub</a></li></ul></div></div></div></div><div class="container"><article><h1><a href="/2011/09/29/debut_gentoo/">2011-09-29 Gentooデビューしました</a></h1><hr /><div class="article-body">メインの開発マシンのOSをUbuntuからGentooにしました。Gentooにした理由は割となんとなくだけど、強いて言うならGentooいいよっていう人の気持ちを知りたいのと、あとPortageは割と好きだからかな。Ubuntuに不満があったわけでもない。Unityは好きじゃないけど、どうせXMonad使うし。
+})();</script></head><body class="page page_5 page_5_index"><div class="cointainer-fluid"><div class="navbar navbar-default" role="navigation"><div class="container-fluid"><div class="navbar-header"><a class="navbar-brand" href="/">UKSTUDIO</a></div><div class="navbar-collapse collapse"><ul class="nav navbar-nav navbar-right"><li><a href="http://twitter.com/ukstudio">Twitter</a></li><li><a href="http://github.com/ukstudio">GitHub</a></li></ul></div></div></div></div><div class="container"><article><h1><a href="/2011/10/12/lvm_kvm/">2011-10-12 LVMを使っているKVMのディスクイメージの容量を追加する</a></h1><hr /><div class="article-body">KVMのディスクイメージの容量を増やしたのでメモ。
+
+<h2>イメージファイルの拡張</h2>
+まずはイメージのフォーマットを確認する。qemu-imgのinfoでわかる。
+
+<pre>$ qemu-img info vm.img</pre>
+
+今回はqcow2になっていたのでrawに変換する。
+
+<pre>$ qemu-img convert -f qcow2 vm.img -O raw vm.raw</pre>
+
+ddのseekを使って末尾に領域を追加する。10GBのイメージに5GB追加するならこんな感じ。
+
+<pre>$ dd if=/dev/zero ov=vm.raw bs=1G count=5 seek=10</pre>
+
+フォーマットを元に戻す。
+
+<pre>$ qemu-img convert -f raw vm.raw -O qcow2 vm.img</pre>
+
+<h2>仮想マシンのパーティションの修正</h2>
+その後、イメージを立ち上げてパーティションを修正する。今回のパーティションは/dev/hda1がboot、/dev/hda2がlvmになっていたので/dev/hda2の方を修正する。
+
+<pre>$ fdisk /dev/hda
+> d
+> 2 # /dev/hda2を一旦削除
+> n
+> p
+> 2
+> Enter
+> Enter # /dev/hda2を作りなおす。デフォルトでサイズが拡大するはず。
+> t
+> 2
+> 8e # /dev/hda2のパーティションタイプをLVMにする
+> w
+> q # 書きこんで終了
+$ reboot
+</pre>
+
+<h2>ボリュームの追加</h2>
+<pre>$ vgextend VolGroup00 /dev/sda2
+$ lvextend -L +5GB /dev/VolGroup00/LogVol00
+$ resize2fs /dev/VolGroup00/LogVol00
+</pre>
+
+思い出しながら書いてるから細かいところで違うかもしれないけど、だいたいこんな感じで容量の追加が完了。
+</div></article><article><h1><a href="/2011/09/29/debut_gentoo/">2011-09-29 Gentooデビューしました</a></h1><hr /><div class="article-body">メインの開発マシンのOSをUbuntuからGentooにしました。Gentooにした理由は割となんとなくだけど、強いて言うならGentooいいよっていう人の気持ちを知りたいのと、あとPortageは割と好きだからかな。Ubuntuに不満があったわけでもない。Unityは好きじゃないけど、どうせXMonad使うし。
 
 インストールは<a href="http://atnd.org/events/19056">第2回 Gentoo Linux インストール講習会 : ATND</a>に参加したおかげで起動するまでは割とすんなり(Thanks @ursm, @kenchan)。Funtooもいれて、実際起動するところまでは持っていったけど無線LANの設定とかがGentooのドキュメント通りじゃなくて混乱したので今回はやめた。
 
@@ -160,21 +205,4 @@ BDDは上で説明したように、コンテキストで「振る舞い」が�
 <a href="http://d.hatena.ne.jp/digitalsoul/20090819/1250686015">BDDの導入 - Dan North - Digital Romanticism</a>
 <a href="http://d.hatena.ne.jp/digitalsoul/20090928/1254147487">ストーリーについて - Dan North - Digital Romanticism</a>
 <a href="http://www.slideshare.net/haru01/xpcustomertesting">XP Customer Testing</a>
-</div></article><article><h1><a href="/2011/05/14/mongodb_nodejs/">2011-05-14 mongodb + node.js を軽く試した</a></h1><hr /><div class="article-body"><h2>mongodbのインストール</h2>
-<pre class='sunlight-hilight-bash'>$ sudo aptitude install mongodb
-$ mkdir /path/to/data
-$ mongod --dbpath /path/to/data</pre>
-
-<h2>mongooseのインストール</h2>
-<pre>$ npm install -g mongoose</pre>
-node.jsでmongodb扱うのに他にもライブラリあるみたいだけど、とりあえずnpmでサクッと使えるmongooseを使ってみる。
-<h2>サンプル</h2>
-軽く試しただけなので、詳細は <a href="https://github.com/LearnBoost/mongoose">LearnBoost/mongoose - GitHub</a> を参照。
-<script src="https://gist.github.com/971943.js"> </script>
-実行するとmongodbの中身はこんな感じ。
-
-<pre>> db.users.find()
-{ "_id" : ObjectId("4dce0fb5bad67a145c000001"), "name" : "AKAMATSU Yuki", "age" : 24 }</pre>
-
-印象としてはActiveRecordっぽいというかORMっぽいというか。mongodb自体をそんなに触ってないからこのアプローチが正しいのかどうかはわからないけど、馴染みやすくはある。
 </div></article><div class="pager"><ul><li class="previous"><a href="/page/4/">Prev</a></li><li class="next"><a href="/page/6/">Next</a></li></ul></div></div></body></html>

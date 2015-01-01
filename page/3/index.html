@@ -8,7 +8,42 @@ _gaq.push(['_trackPageview']);
   var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
   ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
   var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-})();</script></head><body class="page page_3 page_3_index"><div class="cointainer-fluid"><div class="navbar navbar-default" role="navigation"><div class="container-fluid"><div class="navbar-header"><a class="navbar-brand" href="/">UKSTUDIO</a></div><div class="navbar-collapse collapse"><ul class="nav navbar-nav navbar-right"><li><a href="http://twitter.com/ukstudio">Twitter</a></li><li><a href="http://github.com/ukstudio">GitHub</a></li></ul></div></div></div></div><div class="container"><article><h1><a href="/2013/12/27/funtoo/">2013-12-27 GentooからFuntooに移行しました</a></h1><hr /><div class="article-body"><p>GentooからFuntooに移行した。<a href="http://esminc.doorkeeper.jp/events/3547">Funtoo Linux インストール講習会</a>から大分日が立ってしまった。</p><p>インストール自体は<a href="http://www.funtoo.org/Funtoo_Linux_Installation">Funtoo Linux Installation</a>をそのまま実行。boot-updateのビルドだけ失敗したが、texinfo-5.1以上をmaskしたら解決。</p><p>ネット関係はNetworkManagerが妙に不安定だったのでwicdを使うことにした。wicd-cursesがいい感じ。今のところ接続も安定している。</p><p>X環境まわりは例のごとくXmonadで。GNOMEも一度入れたけど、結局使わないのでアンインストール。mix-inのGNOMEも余計なUSEフラグをつけて邪魔だったので使わないことにした。</p><p>GNOMEを削除したのでGDMではなくSlimeを使うことにした。GDMとかstartxがxinitrcを読むのかxprofileを読むのかとかいっつも忘れる…</p><p>その他GitやらRubyやら入れてひととおり終了。カーネルをバイナリで入れてるので起動が遅いけどカーネルのコンフィグでハマるのもダルいしとりあえずこのままで行く予定。</p></div></article><article><h1><a href="/2013/10/18/middleman/">2013-10-18 ブログをWordPressからmiddlemanに移行しました</a></h1><hr /><div class="article-body"><p>今まで当ブログはWordPressでブログを書いていたけれど、今回<a href="http://middlemanapp.com/">middleman</a>を使うことにした。特になにかが気に入ってmiddlemanを選んだわけでもないのだけど、しばらくはこれで運用してみようと思う。</p><p>運用はGithub Pageで行なうことにした。これで今まで中途半端に保持していたVPSを解約することができる。最近はIRCを全然使ってないからいいけど、なんかの機会に使うようになったらtiarraとかをどう運用するか考えなくちゃいけないなぁ。</p><p>デザインやその他足りない機能は追々増やしていこうとおもいます。とりあえずRSSだけは用意した。</p></div></article><article><h1><a href="/2012/09/11/validates_presence_of/">2012-09-11 validates :foo_id, :presence => trueを追う</a></h1><hr /><div class="article-body">チームメンバーから「validates_presence_of :user_idはそのuser_idが存在するか確かめてくれる」という情報を得て、そんな隠れ仕様あんの?とおもってちょっと調べてみた。
+})();</script></head><body class="page page_3 page_3_index"><div class="cointainer-fluid"><div class="navbar navbar-default" role="navigation"><div class="container-fluid"><div class="navbar-header"><a class="navbar-brand" href="/">UKSTUDIO</a></div><div class="navbar-collapse collapse"><ul class="nav navbar-nav navbar-right"><li><a href="http://twitter.com/ukstudio">Twitter</a></li><li><a href="http://github.com/ukstudio">GitHub</a></li></ul></div></div></div></div><div class="container"><article><h1><a href="/2014/03/05/kensington_slimblade/">2014-03-05 Kensingtonのslimbladeを導入</a></h1><hr /><div class="article-body"><p>ちょっと新しいマウスを捜してたのでこの機会にトラックボールに移行してみた。購入したのはKensingtonの<a href="http://www.amazon.co.jp/gp/product/B0024AFD42?ie=UTF8&amp;camp=1207&amp;creative=8411&amp;creativeASIN=B0024AFD42&amp;linkCode=shr&amp;tag=ukstudio0c-22">SlimBlade</a>。</p><p>昔はLinuxで使うと上の2つのボタンが使えなかったみたいだけど、今はパッチがあたったようで問題なく使える。なぜか右奥がバックボタンなのに左奥がミドルボタンだけど。この辺のリマップはxorg.confあたりでいいのかな。あまり困りはしないのでとりあえずは特に設定を変えずに使ってみることにする。</p></div></article><article><h1><a href="/2013/12/27/funtoo/">2013-12-27 GentooからFuntooに移行しました</a></h1><hr /><div class="article-body"><p>GentooからFuntooに移行した。<a href="http://esminc.doorkeeper.jp/events/3547">Funtoo Linux インストール講習会</a>から大分日が立ってしまった。</p><p>インストール自体は<a href="http://www.funtoo.org/Funtoo_Linux_Installation">Funtoo Linux Installation</a>をそのまま実行。boot-updateのビルドだけ失敗したが、texinfo-5.1以上をmaskしたら解決。</p><p>ネット関係はNetworkManagerが妙に不安定だったのでwicdを使うことにした。wicd-cursesがいい感じ。今のところ接続も安定している。</p><p>X環境まわりは例のごとくXmonadで。GNOMEも一度入れたけど、結局使わないのでアンインストール。mix-inのGNOMEも余計なUSEフラグをつけて邪魔だったので使わないことにした。</p><p>GNOMEを削除したのでGDMではなくSlimeを使うことにした。GDMとかstartxがxinitrcを読むのかxprofileを読むのかとかいっつも忘れる…</p><p>その他GitやらRubyやら入れてひととおり終了。カーネルをバイナリで入れてるので起動が遅いけどカーネルのコンフィグでハマるのもダルいしとりあえずこのままで行く予定。</p></div></article><article><h1><a href="/2013/10/18/middleman/">2013-10-18 ブログをWordPressからmiddlemanに移行しました</a></h1><hr /><div class="article-body"><p>今まで当ブログはWordPressでブログを書いていたけれど、今回<a href="http://middlemanapp.com/">middleman</a>を使うことにした。特になにかが気に入ってmiddlemanを選んだわけでもないのだけど、しばらくはこれで運用してみようと思う。</p><p>運用はGithub Pageで行なうことにした。これで今まで中途半端に保持していたVPSを解約することができる。最近はIRCを全然使ってないからいいけど、なんかの機会に使うようになったらtiarraとかをどう運用するか考えなくちゃいけないなぁ。</p><p>デザインやその他足りない機能は追々増やしていこうとおもいます。とりあえずRSSだけは用意した。</p></div></article><article><h1><a href="/2012/09/11/ripping_cd_on_gentoo/">2012-09-11 GentooでCDをリッピングして聞く</a></h1><hr /><div class="article-body">メモ
+
+CDをwavで一旦取り込んでflacに変換。
+<pre>
+$ sudo emerge cdrtools
+$ sudo emerge flac
+$ cdda2wav -H -B
+$ find . -name "*.wav" -print0 | xargs -0 flac
+</pre>
+
+
+<pre>
+# /etc/security/limits.conf
+@audio - rtprio 99
+@audio - memlock unlimited
+@audio - nice -10
+</pre>
+
+<pre>
+# /etc/portage/package.use
+media-sound/aqualung alsa cdda cddb ffmpeg flac mp3 oss wavpack jack
+media-sound/jack-audio-connection-kit alsa
+</pre>
+
+<pre>
+# mplayer で聞く
+$ mplayer *
+# aqualung & jackで聞く
+$ sudo emerge aqualung
+$ sudo emerge jack-audio-connection-kit
+$ jackd -R -d alsa
+$ aqualung -o jack --auto
+</pre>
+
+正直、JACKで何が変わってるのかよーわからん。
+</div></article><article><h1><a href="/2012/09/11/validates_presence_of/">2012-09-11 validates :foo_id, :presence => trueを追う</a></h1><hr /><div class="article-body">チームメンバーから「validates_presence_of :user_idはそのuser_idが存在するか確かめてくれる」という情報を得て、そんな隠れ仕様あんの?とおもってちょっと調べてみた。
 
 結論だけまず言うと
 <pre>
@@ -91,48 +126,4 @@ instance.valid? #=> true
 この様に直接値を入れてしまえばDBにselect文はなげない。
 
 なので、そういう動作をすることもあるだけで厳密にはそのIDのレコードが存在を確かめているわけではない。
-</div></article><article><h1><a href="/2012/09/11/ripping_cd_on_gentoo/">2012-09-11 GentooでCDをリッピングして聞く</a></h1><hr /><div class="article-body">メモ
-
-CDをwavで一旦取り込んでflacに変換。
-<pre>
-$ sudo emerge cdrtools
-$ sudo emerge flac
-$ cdda2wav -H -B
-$ find . -name "*.wav" -print0 | xargs -0 flac
-</pre>
-
-
-<pre>
-# /etc/security/limits.conf
-@audio - rtprio 99
-@audio - memlock unlimited
-@audio - nice -10
-</pre>
-
-<pre>
-# /etc/portage/package.use
-media-sound/aqualung alsa cdda cddb ffmpeg flac mp3 oss wavpack jack
-media-sound/jack-audio-connection-kit alsa
-</pre>
-
-<pre>
-# mplayer で聞く
-$ mplayer *
-# aqualung & jackで聞く
-$ sudo emerge aqualung
-$ sudo emerge jack-audio-connection-kit
-$ jackd -R -d alsa
-$ aqualung -o jack --auto
-</pre>
-
-正直、JACKで何が変わってるのかよーわからん。
-</div></article><article><h1><a href="/2012/04/09/tddconf2012/">2012-04-09 TDDカンファレンスでLTしてきたのでその補足</a></h1><hr /><div class="article-body">4月の6日の<a href='http://atnd.org/events/26808'>TDDカンファレンス</a>に参加&amp;LT発表してきた。参加といっても遅刻していったのでほとんど話を聞けていないのだけれど。
-
-とりあえず資料は<a href='http://ukstudio.github.com/tddconf_20120406/'>こちら</a>。読み直してみたら途中の話の飛躍がこれはひどい。当日もかなり短い発表の上に色々内容を省いてしまったので色々と補足しておく。(当日聞いていただいた方に申し訳ないし、あまりこういうのはよくないね。パブリックスピーカー読んででなおします。)
-
-今回の内容の発端は「TDDはテストではない」という言葉の暴力性というか、言い切りに何となく違和感を感じていたのがきっかけ。もちろん、誤解されたくないという意味では言い切るのは大事なんだろうけどちょっとだけ暴力的に感じる。暴力的に感じる理由は資料にも書いてあるけど、実際TDDで書いたユニットテストはテスト資産として流用している。それは副産物的なものかもしれないけれど、TDDの効果としては大きいんだから言い切っちゃうのはどうなんだろうという感じ。
-
-その上で動詞と名詞のテストという観点で考えると案外すっきりするんじゃないのってを思いついた。でも結局のところTDDで書いたユニットテストだけじゃ足りないのは皆わかってるんだから、TDDが何なのかに拘ってないで必要だと思うこと足りないことやればいいんじゃないの?という結論になったのが資料の最後の方。こうして文章にしてみると、動詞と名詞のテストってのは上手いこと言えた気がしたから資料にいれたけど話の流れとしては変だしいれなくてもよかったかも。
-
-まとめると「定義にこだわってないで必要だと思うことをやろう」です。名詞動詞とか「TDDはテストではない」という言葉の暴力性とか自分で言っておいて何だけど結構どうでもいい。「TDDはテストを目的としていないからテスト手法ではない」とか「TDDはいくらかテスト手法的な部分もあるのだからその断言はおかしい」とかつい議論しがちだけど、そんなことよりお互いにTDDだけでは足りない部分があるのはわかってるんだから、そこを考えようよってことです。
 </div></article><div class="pager"><ul><li class="previous"><a href="/page/2/">Prev</a></li><li class="next"><a href="/page/4/">Next</a></li></ul></div></div></body></html>

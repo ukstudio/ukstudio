@@ -8,7 +8,46 @@ _gaq.push(['_trackPageview']);
   var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
   ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
   var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-})();</script></head><body class="page page_28 page_28_index"><div class="cointainer-fluid"><div class="navbar navbar-default" role="navigation"><div class="container-fluid"><div class="navbar-header"><a class="navbar-brand" href="/">UKSTUDIO</a></div><div class="navbar-collapse collapse"><ul class="nav navbar-nav navbar-right"><li><a href="http://twitter.com/ukstudio">Twitter</a></li><li><a href="http://github.com/ukstudio">GitHub</a></li></ul></div></div></div></div><div class="container"><article><h1><a href="/2008/07/27/ukstudio_controlled_git/">2008-07-27 ukstudio.jpをgitで管理するようにしてみた</a></h1><hr /><div class="article-body">最近流行りのgitを使ってみようかなーってことでとりあえずukstudio.jpを全部gitで管理するようにした。
+})();</script></head><body class="page page_28 page_28_index"><div class="cointainer-fluid"><div class="navbar navbar-default" role="navigation"><div class="container-fluid"><div class="navbar-header"><a class="navbar-brand" href="/">UKSTUDIO</a></div><div class="navbar-collapse collapse"><ul class="nav navbar-nav navbar-right"><li><a href="http://twitter.com/ukstudio">Twitter</a></li><li><a href="http://github.com/ukstudio">GitHub</a></li></ul></div></div></div></div><div class="container"><article><h1><a href="/2008/07/29/iphone_seminar/">2008-07-29 Apple主催のiPhoneアプリケーション開発入門セミナーに参加してきた</a></h1><hr /><div class="article-body">会場が家からすぐ近くだったので行ってきました。なるべく話しても大丈夫そうなところを選んで書きますが、場合によってはエントリーが消えることもあるかも。セミナーの内容が完全黙秘なのか、SDKの部分はダメなのかどっちかよくわからないので。英語苦手だ。
+
+<h2>ドキュメントみろ</h2>
+今回、話を聞いてきたことの大半は既にドキュメントとしてあるとのこと。英語だけど。なので英語がわかる人はそちらを読めばいいと思います。というか他にドキュメントがないので、英語読めなくても読まなきゃいけないんだけど。
+
+<a href="http://developer.apple.com/jp">http://developer.apple.com/jp</a>
+
+<h2>iPhoneでできないこと(と言うよりはやっちゃいけないこと)</h2>
+いくつかAppleから「これはできない」と言われたアプリがあります。
+
+<ul>
+<li>リアルタイムにルーティングするもの(カーナビとか。位置情報のみはOK)</li>
+<li>インストーラー、インタプリタは無理。(エグゼキュータブルは無理って言ってた)</li>
+<li>データの読み書きはバンドル内のみ(バンドル = アプリケーションの実行フォルダ)</li>
+</ul>
+
+ちなみにOpenURLでアプリケーションを立ち上げるのは大丈夫らしいです。
+
+<h2>開発手順</h2>
+ほぼドキュメントそのままなので省きます。
+
+<h2>App Storeへの登録</h2>
+個人的な印象からすると、無料・個人であれば、そこまでハードルは高くなさそうな感じ。
+
+無料・個人であれば、アプリ情報を登録し、公開条件や配布する国の指定のみで大丈夫そうです。法人に関しては場合によっては登記標本が必要かもしれません。
+
+それに加えて有料の場合は、なんか書類を送る必要があります。ちょっとこの辺り聞き損ねてしまいましたが、特別ハードルが高いって程でもなさそうです。
+
+アプリの審査に関して言えば、現状は「実物を見て、評価し、判断する」のが前提だそうです。つまり、「これはダメ」という線引きが曖昧で実際に審査をお願いしてみないと何とも言えないとのこと。もちろん、上に書いた「できないこと」は即はじかれるのかもしれませんが。brainfuckインタプリタを「翻訳アプリ」とか言えば、もしかしたら通るのかもしれないですけどw とりあえずはApp Storeに登録されてるものから判断するしかなさそうです。
+
+<h2>アプリのアップデート</h2>
+アプリのアップデートは機能としてあるそうです。つまり、アップデートをするのにお金がかかったり、特別な作業が必要というわけではなさそうです。ただ、アップデートが差分アップデートではなく、丸ごととりかえるそうです。
+
+Q&Aで「例えばテキストエディタなのでバンドルに保存されてるデータはアップロード時どうなるのか?」と言った質問がありましたが「確かバックアップの仕組みがあったはずだが、確認してみないとわからない」とのこと。
+
+<h2>アプリのローカライズ</h2>
+どこの国に配布するにせよ、登録するバイナリは1つです。つまり1つのバイナリをローカライズするってことかと。翻訳の仕組みは・・・聞き損ねたか、忘れました。確かビルド時に「single binary supporting multiple languages」を選ぶとかそんなん。これ書いちゃまずいのかな。まぁいいや。
+
+まぁ、大体こんな感じです。他にも色々聞いてますが、ほとんどドキュメントに書いてあるようなことばかりでした。ここに書いた内容がちょっと際どいので、さっきも書きましたがエントリが消えてる可能性もあります。その時はごめんなさい。
+</div></article><article><h1><a href="/2008/07/27/ukstudio_controlled_git/">2008-07-27 ukstudio.jpをgitで管理するようにしてみた</a></h1><hr /><div class="article-body">最近流行りのgitを使ってみようかなーってことでとりあえずukstudio.jpを全部gitで管理するようにした。
 
 最終的に以下のような構成になった。
 
@@ -171,15 +210,4 @@ xcodeのinfoでiPhoneDeveloper:<firstname><lastname>を入力するところが�
 どうやら大抵の人は一発でactivateできてないっぽいですね(We are unable to activate your iPhone...ってやつ)。そう言うときはとりあえずメールでなんとかしてくれーと頼むのがいいんじゃないですかね。
 
 実機で動かすまでが長いですなぁ。
-</div></article><article><h1><a href="/2008/07/03/release_crossreview/">2008-07-03 crossreviewがリリースされました!</a></h1><hr /><div class="article-body">今日、<a href="http://crossreview.jp/">crossreview</a>というサービスがリリースしました。smashmediaの河野さんのアイディアと元に、僕の勤め先であるRAWHIDE.が開発を手伝わさせていただきました。
-
-<a href="http://blog.crossreview.jp/plessrelease">プレスリリース</a>
-<a href="http://smashmedia.jp/blog/2008/07/001654.html">ぼくとcrossreviewの誕生日</a>
-
-Amazonの商品をレビューするサイトなのですが、Twitterみたいに気軽にレビューできます。他にもお気に入り機能(Twitterでいうfollowみたいなもの)があるので、似た趣味の人のレビューを追ったりすると色々とおもしろいんじゃないかと思います。
-
-ちなみに僕のページは<a href="http://crossreview.jp/ukstudio/">http://crossreview.jp/ukstudio/</a>ですよー。
-
-
-ブログパーツ、横のもほしいなぁー。あとで要望だしちゃおう。
 </div></article><div class="pager"><ul><li class="previous"><a href="/page/27/">Prev</a></li><li class="next"><a href="/page/29/">Next</a></li></ul></div></div></body></html>
