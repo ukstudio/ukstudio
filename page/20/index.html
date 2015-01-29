@@ -8,7 +8,25 @@ _gaq.push(['_trackPageview']);
   var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
   ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
   var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-})();</script></head><body class="page page_20 page_20_index"><div class="cointainer-fluid"><div class="navbar navbar-default" role="navigation"><div class="container-fluid"><div class="navbar-header"><a class="navbar-brand" href="/">UKSTUDIO</a></div><div class="navbar-collapse collapse"><ul class="nav navbar-nav navbar-right"><li><a href="http://twitter.com/ukstudio">Twitter</a></li><li><a href="http://github.com/ukstudio">GitHub</a></li></ul></div></div></div></div><div class="container"><article><h1><a href="/2009/07/16/android_alternative/">2009-07-16 HT-03AのGmailアプリからメールを送るとmultipart/alternativeになる</a></h1><hr /><div class="article-body">先日もエントリを書いたように、今現在HT-03Aを使っているのですが、ひとつ問題が。
+})();</script></head><body class="page page_20 page_20_index"><div class="cointainer-fluid"><div class="navbar navbar-default" role="navigation"><div class="container-fluid"><div class="navbar-header"><a class="navbar-brand" href="/">UKSTUDIO</a></div><div class="navbar-collapse collapse"><ul class="nav navbar-nav navbar-right"><li><a href="http://twitter.com/ukstudio">Twitter</a></li><li><a href="http://github.com/ukstudio">GitHub</a></li></ul></div></div></div></div><div class="container"><article><h1><a href="/2009/07/16/ht_03a_gtalk/">2009-07-16 HT-03AでGtalkまわりでハマッったのでメモ</a></h1><hr /><div class="article-body">なんだか変なところではまるな、android。
+
+Gtalkでチャットをする時は大体クライアント側でその人を登録すると思うんですが、連絡帳にすでにその人が登録してあった場合、マージ的なことはしてくれません。具体的な例で説明した方がわかりやすいと思うので具体例しめします。
+
+<ol>
+<li>連絡帳にすでにAさんが登録してあり、携帯アドレスとGmailアドレスが登録されています</li>
+<li>その人とGtalkで会話したいのですが、連絡帳に登録してあっても一度フレンド登録しないといけなません</li>
+<li>なのでフレンド登録する</li>
+<li>無事会話できるが、連絡帳にAさんが2人存在してしまう(手動で登録したものと、Gtalkでフレンド登録したもの)</li>
+<li>Gmailの連絡帳で、アカウントの統合ができるので統合する</li>
+<li>Gtalkで会話できなくなる</li>
+</ol>
+
+で、じゃあ2つ登録されてしまったアカウントはどうしたらいいのかと言うと、<strong>Gtalkでフレンド登録された時に作られたアカウントの方に、最初から登録されていた方のデータをうつしてください。</strong>
+
+ちなみに僕は一度Gtalkのフレンドリストが全部消えたのですが、多分連絡帳整理の際に一度連絡先を全て消したためだと思います。Gtalkのフレンドリストが消えないようにするには、上記のようにフレンド登録されたアカウントはそのまま残しておかないとダメなんだと思います。
+
+ちなみに、僕が知ってる範囲ですが、フレンド登録されているアカウントかどうかの区別はチャットができるかできないかでしか判断できないと思います。具体的に言うと連絡帳をWebで見たときに「チャット」のリンクがあるかどうかぐらいだと思います。
+</div></article><article><h1><a href="/2009/07/16/android_alternative/">2009-07-16 HT-03AのGmailアプリからメールを送るとmultipart/alternativeになる</a></h1><hr /><div class="article-body">先日もエントリを書いたように、今現在HT-03Aを使っているのですが、ひとつ問題が。
 
 まぁタイトルのまんまなのですが、標準のGmailアプリからメールを送るとヘッダがmultipart/alternativeになってしまいます。もちろんWebからだとtext/plainで送れます。multipart/alternativeについては詳しくは書きませんが、多分大抵の場合、HTMLメールとして受け取ることになると思います。
 
@@ -108,7 +126,4 @@ Google Mapはストリートビューにコンパスモードというものが�
 <a href="http://www.alphagrips.com/">http://www.alphagrips.com/</a>
 
 とりあえず上記のサイトにデモがあるので見てみるといいと思います。
-</div></article><article><h1><a href="/2009/06/19/webdb_51/">2009-06-19 WEB+DB PRESS Vol.51でRailsの特集を執筆しました</a></h1><hr /><div class="article-body"><table  class="g-tools_table"><tr><td colspan="2"><span class="g-tools_title"><a href="http://www.amazon.co.jp/WEB-DB-PRESS-Vol-51-PRESS%E7%B7%A8%E9%9B%86%E9%83%A8/dp/4774138908%3FSubscriptionId%3D0G91FPYVW6ZGWBH4Y9G2%26tag%3D2004-05-22%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D4774138908" target="_blank">WEB+DB PRESS Vol.51</a><img src='http://www.assoc-amazon.jp/e/ir?t=2004-05-22&l=ur2&o=9' width='1' height='1' border='0' alt='' /></span></td></tr><tr><td valign="top"><span class="g-tools_img"><a href="http://www.amazon.co.jp/WEB-DB-PRESS-Vol-51-PRESS%E7%B7%A8%E9%9B%86%E9%83%A8/dp/4774138908%3FSubscriptionId%3D0G91FPYVW6ZGWBH4Y9G2%26tag%3D2004-05-22%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D4774138908" target="_blank"><img src="http://ecx.images-amazon.com/images/I/61aVDmJxrxL._SL160_.jpg"  alt="WEB+DB PRESS Vol.51" /></a></span></td><td valign="top"><span class="g-tools_body">WEB+DB PRESS編集部 <br /><br />技術評論社  2009-06-24<br />売り上げランキング : 130<br /><br /><br /><a href="http://www.amazon.co.jp/WEB-DB-PRESS-Vol-51-PRESS%E7%B7%A8%E9%9B%86%E9%83%A8/dp/4774138908%3FSubscriptionId%3D0G91FPYVW6ZGWBH4Y9G2%26tag%3D2004-05-22%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D4774138908" target="_blank">Amazonで詳しく見る</a></span><span class="g-tools_by"> by <a href="http://www.goodpic.com/mt/aws/index.html" >G-Tools</a></span></td></tr></table>
-
-僕個人っていうわけではないですが、会社の人達と一緒に6月24日発売のWEB+DB PRESS Vol.51で執筆させて頂きました。初めての執筆活動なので、読みにくい部分、至らない部分などあると思いますが、買って読んで頂けると幸いです。
 </div></article><div class="pager"><ul><li class="previous"><a href="/page/19/">Prev</a></li><li class="next"><a href="/page/21/">Next</a></li></ul></div></div></body></html>

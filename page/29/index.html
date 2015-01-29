@@ -8,7 +8,49 @@ _gaq.push(['_trackPageview']);
   var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
   ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
   var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-})();</script></head><body class="page page_29 page_29_index"><div class="cointainer-fluid"><div class="navbar navbar-default" role="navigation"><div class="container-fluid"><div class="navbar-header"><a class="navbar-brand" href="/">UKSTUDIO</a></div><div class="navbar-collapse collapse"><ul class="nav navbar-nav navbar-right"><li><a href="http://twitter.com/ukstudio">Twitter</a></li><li><a href="http://github.com/ukstudio">GitHub</a></li></ul></div></div></div></div><div class="container"><article><h1><a href="/2008/07/03/release_crossreview/">2008-07-03 crossreviewがリリースされました!</a></h1><hr /><div class="article-body">今日、<a href="http://crossreview.jp/">crossreview</a>というサービスがリリースしました。smashmediaの河野さんのアイディアと元に、僕の勤め先であるRAWHIDE.が開発を手伝わさせていただきました。
+})();</script></head><body class="page page_29 page_29_index"><div class="cointainer-fluid"><div class="navbar navbar-default" role="navigation"><div class="container-fluid"><div class="navbar-header"><a class="navbar-brand" href="/">UKSTUDIO</a></div><div class="navbar-collapse collapse"><ul class="nav navbar-nav navbar-right"><li><a href="http://twitter.com/ukstudio">Twitter</a></li><li><a href="http://github.com/ukstudio">GitHub</a></li></ul></div></div></div></div><div class="container"><article><h1><a href="/2008/07/15/iphone-developer-program/">2008-07-15 iPhone Developer Programに登録しました。</a></h1><hr /><div class="article-body">結論から言うと、まだ実機検証も配布もできてない段階です。そもそもアプリ作れてないですしね。ただ、米国在住者じゃないと登録できないってことはないですね。とりあえず登録はできたっぽいので。
+
+端的に今の状況を説明すると、
+
+<ul>
+<li>iPhone Developer Program(Standardの方、$99)を日本のオンラインApple Storeから注文する</li>
+<li>activate codeがメールで届く</li>
+<li><blockquote>
+We are unable to activate your iPhone Developer Program membership because we are unable to successfully verify your identity. Please contact us and reference Enrollment ID#xxxxxxx for further assistance.</blockquote></li>
+<li>activateできねーよ!って日本語と英語でADC(Apple Developer Connection)のcontact usから送信</li>
+<li>数時間後、「あんたのアカウント情報調整したからもっかい試してみ」って返事がくる(日本語できた)</li>
+<li>めでたくactivate完了</li>
+</ul>
+
+そんな感じでとりあえずDeveloper Programには登録できましたーと。んで、そのあとも実機検証までデバイスの登録とか証明書の作成とか色々ある。やり方は一応英語でドキュメントがあるけれど、なんかキレイにまとまってない。とりあえずはProgram Portal(activate後、ログインできるページ)のメニューを順番にやっていけばいいんじゃないかねー。各メニューにHow Toがあるからそれに従えばいいはず。
+
+おれがやったのは
+
+<ul>
+<li>Certificatesの追加</li>
+<li>Devicesの追加</li>
+<li>App IDsの追加</li>
+<li>Provisioningの追加</li>
+<li>xcodeのオーガナイザ上で、iPod Touchのrestore</li>
+<li>オーガナイザでTouchにProvisionを追加</li>
+<li>xcodeのプロジェクトのinfoでDeviceを選択しようにも選択肢にでない! <- ｲﾏｺｺ</li>
+</ul>
+
+正直、手順が悪かったのか何が悪かったのかがよくわからない。AppleIDに登録してある情報が日本語だからから至るところで文字化けしてるし。証明書のコモンネームまで文字化けしてる。
+
+xcodeのinfoでiPhoneDeveloper:<firstname><lastname>を入力するところがあるんだけど、そこに証明書のコモンネームを書けってドキュメントに書いてあったけど、上で書いたようにコモンネームが文字化けしてるのでどうしたもんかなーと。
+
+んで、証明書を作りなおししまくってたら、Errorがでるようになって追加できなくなってしまった。んで、またメールでなんとかしてーって連絡したところ。
+
+そんな感じでまだiPod Touchで自作appを作るところまではいってない。これからやる人は英語のApple ID作った方がいい気がする。その方が問題なさそう。ただ、あれって日本の住所でも英語で登録できたっけ・・・
+
+とりあえずまた進展があったらエントリ書く。
+
+<h2>追記</h2>
+どうやら大抵の人は一発でactivateできてないっぽいですね(We are unable to activate your iPhone...ってやつ)。そう言うときはとりあえずメールでなんとかしてくれーと頼むのがいいんじゃないですかね。
+
+実機で動かすまでが長いですなぁ。
+</div></article><article><h1><a href="/2008/07/03/release_crossreview/">2008-07-03 crossreviewがリリースされました!</a></h1><hr /><div class="article-body">今日、<a href="http://crossreview.jp/">crossreview</a>というサービスがリリースしました。smashmediaの河野さんのアイディアと元に、僕の勤め先であるRAWHIDE.が開発を手伝わさせていただきました。
 
 <a href="http://blog.crossreview.jp/plessrelease">プレスリリース</a>
 <a href="http://smashmedia.jp/blog/2008/07/001654.html">ぼくとcrossreviewの誕生日</a>
@@ -137,64 +179,4 @@ specEditは「:Rspec」に対応していて、開いたファイルがControlle
 とりあえず、現状の設定で簡易的にRSpecに対応させることができる。「:Rspec」の存在が気持ち悪いのであれば、それは消して開いているファイルがControllerかModelか自分で判断して「:Rspeccontroller」か「:Rspecmodel」を使いわければいいと思う。「:Rspec [tab]」でエラーが出るし個人的には気持ちわるいんだけど、対応させたスペックを開くことの方がおおいし、その時は短いコマンドの方が都合がいいのでここらへんは妥協。今回Viewには対応させていないけれど、同じ要領でできるはず。
 
 rails.vimを少しよんだだけだし、実際の動作もまともに検証してないので変な動作したらごめんなさい。まぁ致命的な問題は起きないだろうけど。正式にrails.vimがRSpecに対応してくれるといいんだけどね。
-</div></article><article><h1><a href="/2008/06/04/rails_for_beginner/">2008-06-04 RE:Rails初心者はどうやって他人のRailsコードを読めばいいか</a></h1><hr /><div class="article-body">オレもRailsを初めて3ヶ月(もうちょいあるかも)たったので、ある程度オレの経験を元にまとめてみる。参考になるといいなー。
-
-<h2>1. まずはアプリケーションを実際に動作させる</h2>
-<pre lang="bash">
-% ruby script/server
-</pre>
-とりあえずコード読む前にそのアプリケーションがどんなものを把握するのが重要。コード読んでもわかるだろうけど、実際にブラウザでいじくりまわした方がはやく理解できると思う。その時にコントローラー名とアクション名もみといた方がよさげ。
-
-<h2>2. モデル図を書く</h2>
-これはid:Hash本人も重要って書いてたけど、ほんとに重要。そんなにキレイな図とかじゃなくていいから、紙とかに多対多なのか1対多なのかとか、参照名はなにかとかぐらいメモがてら書いておくと吉。モデルの関連さえ把握できれば、そのRailsアプリの半分以上理解できたも同然ってぐらい重要。
-
-<h2>3. Logをみる</h2>
-<pre lang="bash">
-% tail -f log/development.log
-</pre>
-開発時にも言えることだけどなるべくLogはみた方がいい。log/の下にdevelopment.log(多分ないと思うけど、productionで動作させてるならproduction.log)があるのでtailコマンドとかでみるといい。フォームのsubmit時のパラメータが見れたり、あとはlogger.infoで出力をチェックしたりとかできる。
-
-<h2>4. script/consoleを使う</h2>
-<pre lang="bash">
-% ruby ./script/console
-</pre>
-基本的な使い勝手はirbと同じ。irbと違うのはRails環境があらかじめロードされていること。例えば、モデルのメソッド名を呼び出したりとか。メソッドレベルで動作をみたい場合に便利。あと、2.0以降からモデル名を入力するとカラムの一覧も表示される。
-
-<pre lang="ruby">
->> User
-=> User(id: integer,  created_at: datetime, updated_at: datetime)
->> User.find(:all)
-=> []
->> user = User.new
-=> #<user id: nil, created_at: nil, updated_at: nil>
-</pre>
-
-<h2>test(or spec)があれば見る *追記08/06/04*</h2>
-<blockquote>
-できれば「test(or spec)があれば、見ろ」も入れて欲しい。
-あれは「どういう挙動をして欲しいか」=「どう使うか」が書いてあるんだから、
-どんな構造のアプリなんだか理解する助けになるよ。
-てか、ならないなら書く意味ないもの。
-</blockquote>
-コメント欄での指摘。このエントリを書こうと決めたときは書くつもりだったのに、実際に書いたら忘れてたっていう。
-
-thx、faultier。
-
-<h2>まとめとオマケ</h2>
-なんかTips的なエントリになったけど、とりあえずざっと思いついたのはこんな感じ。あとはコントローラのアクションからスタートして、モデルのメソッドや一連の流れを追えばいいんじゃないかな。コントローラーのアクションも上から順に読むよりは、機能ごとの流れで追った方がいいと思う。例えば、new->create->showとかedit->update->showとか。実際はもうちょい複雑な場合もあるだろうけど。実際の流れがどんな風になってるかは実際にアプリを動かしながらURLを確認したり、ログの出力やビューのフォームのアクションを見れば大体わかるはず。
-
-あとはオマケ的な指摘だけど、Railsが2系であればビューファイルの拡張子は「.rhtml」より「.html.erb」の方がいい。この辺はActionPackのマルチビューに関係してる。この辺は初心者のうちはとりあえず「.html.erb」にしとくぐらいでいいと思うし、なによりオレがマルチビューについてまだちゃんと理解してないので詳細ははぶく。ｻｰｾﾝ｡
-
-respond_toは1つのアクションで複数のフォーマットを出力するときに使う。
-<pre lang="ruby">
-respond_to do |format|
-  format.html
-  format.xml { render :xml => @user }
-end
-</pre>
-上記のように書くと、ブラウザからの通常アクセス時はhtmlを、WebサービスなどでXMLを指定された場合はXMLを出力する。Webアプリは、例えばブラウザからのアクセスとAPIでのアクセスで、処理は同じだけど出力が違うなんてことがあったりする。そういうときにrespond_toで指定してやることで無闇にアクションを増やさなくてすむ。
-
-<table  border="0" cellpadding="5"><tr><td colspan="2"><a href="http://www.amazon.co.jp/gp/redirect.html%3FASIN=4797336625%26tag=2004-05-22%26lcode=xm2%26cID=2025%26ccmID=165953%26location=/o/ASIN/4797336625%253FSubscriptionId=0G91FPYVW6ZGWBH4Y9G2" target="_top">Railsレシピブック 183の技</a><img src='http://www.assoc-amazon.jp/e/ir?t=2004-05-22&l=ur2&o=9' width='1' height='1' border='0' alt='' /></td></tr><tr><td valign="top"><a href="http://www.amazon.co.jp/gp/redirect.html%3FASIN=4797336625%26tag=2004-05-22%26lcode=xm2%26cID=2025%26ccmID=165953%26location=/o/ASIN/4797336625%253FSubscriptionId=0G91FPYVW6ZGWBH4Y9G2" target="_top"><img src="http://ecx.images-amazon.com/images/I/419FtZYCmyL._SL160_.jpg" border="0" alt="Railsレシピブック 183の技" /></a></td><td valign="top"><font size="-1">高橋 征義<br /><br />ソフトバンククリエイティブ  2008-05-31<br />売り上げランキング : 1080<br /><br /><br /><a href="http://www.amazon.co.jp/gp/redirect.html%3FASIN=4797336625%26tag=2004-05-22%26lcode=xm2%26cID=2025%26ccmID=165953%26location=/o/ASIN/4797336625%253FSubscriptionId=0G91FPYVW6ZGWBH4Y9G2" target="_top">Amazonで詳しく見る</a></font><font size="-2"> by <a href="http://www.goodpic.com/mt/aws/index.html" >G-Tools</a></font></td></tr></table>
-
-<table  border="0" cellpadding="5"><tr><td colspan="2"><a href="http://www.amazon.co.jp/gp/redirect.html%3FASIN=4274066967%26tag=2004-05-22%26lcode=xm2%26cID=2025%26ccmID=165953%26location=/o/ASIN/4274066967%253FSubscriptionId=0G91FPYVW6ZGWBH4Y9G2" target="_top">RailsによるアジャイルWebアプリケーション開発 第2版</a><img src='http://www.assoc-amazon.jp/e/ir?t=2004-05-22&l=ur2&o=9' width='1' height='1' border='0' alt='' /></td></tr><tr><td valign="top"><a href="http://www.amazon.co.jp/gp/redirect.html%3FASIN=4274066967%26tag=2004-05-22%26lcode=xm2%26cID=2025%26ccmID=165953%26location=/o/ASIN/4274066967%253FSubscriptionId=0G91FPYVW6ZGWBH4Y9G2" target="_top"><img src="http://ecx.images-amazon.com/images/I/51Y%2BviLzM5L._SL160_.jpg" border="0" alt="RailsによるアジャイルWebアプリケーション開発 第2版" /></a></td><td valign="top"><font size="-1">前田 修吾 <br /><br />オーム社  2007-10-26<br />売り上げランキング : 8708<br /><br /><strong>おすすめ平均  </strong><img src="http://g-images.amazon.com/images/G/01/detail/stars-5-0.gif" alt="star" /><br /><img src="http://g-images.amazon.com/images/G/01/detail/stars-5-0.gif" alt="star" />充実した内容でわかりやすい<br /><img src="http://g-images.amazon.com/images/G/01/detail/stars-5-0.gif" alt="star" />railsが良いのかrubyが良いのか本が良いのか<br /><img src="http://g-images.amazon.com/images/G/01/detail/stars-5-0.gif" alt="star" />１日に少しの時間で成果が分かる１冊<br /><br /><a href="http://www.amazon.co.jp/gp/redirect.html%3FASIN=4274066967%26tag=2004-05-22%26lcode=xm2%26cID=2025%26ccmID=165953%26location=/o/ASIN/4274066967%253FSubscriptionId=0G91FPYVW6ZGWBH4Y9G2" target="_top">Amazonで詳しく見る</a></font><font size="-2"> by <a href="http://www.goodpic.com/mt/aws/index.html" >G-Tools</a></font></td></tr></table>
 </div></article><div class="pager"><ul><li class="previous"><a href="/page/28/">Prev</a></li><li class="next"><a href="/page/30/">Next</a></li></ul></div></div></body></html>

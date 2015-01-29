@@ -8,7 +8,29 @@ _gaq.push(['_trackPageview']);
   var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
   ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
   var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-})();</script></head><body class="page page_27 page_27_index"><div class="cointainer-fluid"><div class="navbar navbar-default" role="navigation"><div class="container-fluid"><div class="navbar-header"><a class="navbar-brand" href="/">UKSTUDIO</a></div><div class="navbar-collapse collapse"><ul class="nav navbar-nav navbar-right"><li><a href="http://twitter.com/ukstudio">Twitter</a></li><li><a href="http://github.com/ukstudio">GitHub</a></li></ul></div></div></div></div><div class="container"><article><h1><a href="/2008/09/07/vimm_railsvim/">2008-09-07 VimM#2でRails.vimについて話してきました</a></h1><hr /><div class="article-body"><a href="http://wiki.livedoor.jp/biowithit/d/VimM%232">VimM#2</a>
+})();</script></head><body class="page page_27 page_27_index"><div class="cointainer-fluid"><div class="navbar navbar-default" role="navigation"><div class="container-fluid"><div class="navbar-header"><a class="navbar-brand" href="/">UKSTUDIO</a></div><div class="navbar-collapse collapse"><ul class="nav navbar-nav navbar-right"><li><a href="http://twitter.com/ukstudio">Twitter</a></li><li><a href="http://github.com/ukstudio">GitHub</a></li></ul></div></div></div></div><div class="container"><article><h1><a href="/2008/09/09/firefox3_1/">2008-09-09 Firefoxα2とβ1preを試してみた</a></h1><hr /><div class="article-body">いつのまにかFirefoxのα2とβ1preがリリースされてたので試してみた。個人的にVimpとかグリモンがないとどうにもならない体になってしまったので<a href="https://addons.mozilla.org/ja/firefox/addon/6543">Nightly Tester Tools</a>をインストール。これで3.01で動いていた拡張は大体動く模様。
+
+それとTraceMonkeyを使えるようにするためabout:configを開いて、「jit」で検索。2項目ほどヒットするので、それぞれの値をfalseからtrueに変更する。これでTraceMonkeyはONになるみたい。
+
+使ってみた感想をざっと過剰書きであげてみると
+
+<ul>
+<li>レンダリングが結構向上しているのが体感でわかる。</li>
+<li>Mac版FirefoxのFLAHの日本語入力問題が解決してるっぽい。</li>
+<li>β1preでLDRを開いたらちゃんと表示されなかった。α2は大丈夫。</li>
+<li>Ctrl+Tabがかっこいい。でもvimp使ってると関係ない話。</li>
+</ul>
+
+ざっとこんな感じ。レンダリングの向上がかなりうれしい。今のところβの方でLDRが表示できなかったこと以外特に問題は起きていない。まぁLDRが見れないのは致命的なのでとりあえずα2の方を使っていこうと思う。
+
+TraceMonkeyに関しては、オン、オフそれぞれ試したけど普通に使っている分には違いがわからなかった。オフでも十分はやくなっている。ベンチマークをとったらもしかしたら違うのかもしれないけど。
+
+なんにせよ、個人的には今回のα2とβ1preには非常に満足しているので、正式リリースが楽しみになってきた。
+
+<a href="http://developer.mozilla.org/devnews/index.php/2008/09/05/firefox-31-alpha-2-now-available-for-download/">Mozilla開発者向け公式ブログの記事</a>
+<a href="ftp://ftp.mozilla.org/pub/firefox/nightly/latest-trunk/">Firefox3.1β1pre</a>
+<a href="https://wiki.mozilla.org/JavaScript:TraceMonkey#Playing_with_TraceMonkey">TraceMonkeyの有効化</a>
+</div></article><article><h1><a href="/2008/09/07/vimm_railsvim/">2008-09-07 VimM#2でRails.vimについて話してきました</a></h1><hr /><div class="article-body"><a href="http://wiki.livedoor.jp/biowithit/d/VimM%232">VimM#2</a>
 
 とりあえず資料。正直、これだけ見てもさっぱりな資料だとは思いますがw
 
@@ -122,52 +144,4 @@ render :partial => @entries # インスタンス変数で複数形
 </pre>
 
 collectionで値を渡す。@objectsの値を1つずつ、partial側でentryとして参照できる。もちろん描画は@objects分繰り返される。
-</div></article><article><h1><a href="/2008/08/08/quill/">2008-08-08 Quillリリースおめでとうございます</a></h1><hr /><div class="article-body"><a href="http://quill.to/">Quill [羽根のように軽い、メモメモwebサービス]</a>
-<a href="http://blog.inafog.jp/archives/314">blog in a fog >> Quillリリースしました</a>
-<a href="http://blog.woopsdez.jp/?p=841">ウープスデザインブログ >> 羽根のように軽いメモメモwebサービス 「Quill」公開されました</a>
-
-と言うわけで、どうやら知り合いの人が開発に携わっているようなので、おめでとうございますエントリー。
-
-とりあえず簡単に使ってみて、なんやかんや言ってみようと思ったんだけれどちょっと問題が。自分、オンラインのメモって使わないんだよね。
-
-理由としては
-<ul>
-<li>いつも持ち歩いてるMOLESKINEにメモする</li>
-<li>ちょっとしたメモ(ToDoとかお買い物リスト的な)ものは付箋とかに書く</li>
-<li>長めの文章はTerminalでVimで書く</li>
-</ul>
-と言った感じかなぁ。
-
-多分、オンラインのメモってどこでも見れるってのが利点なんだろうけど、正直そこらへんはアナログで事足りちゃってる。それに携帯(WILLCOMユーザです)の通信速度があまり早くないからサッと見れない。まぁこれはある程度仕方ないけれど。と言うか、モバイル対応はまだしてないっぽいね。
-
-あとは、メモを書くのをもうちょいストレスフリーにしたい。例えば、おれがメモをするシーンは、「ネットで調べ物」とか「電話対応」とかなんだけど、ネットしてるときは当然ブラウザは別のページをみてるので、ブラウザでメモするのはちょっと手間。わざわざFxのウィンドウを2つにするのもいやだし。電話対応は片手が塞がるので、片手でメモできるペン・紙がラク。
-
-理想を言えば、QuickSilverでアプリを起動するのと同じぐらいスムーズに入力したいw まぁクライアントを提供するまではいかなくても、APIとかがあれば適当にQuickSilverやVimperatorのプラグインとかも自作できるだろうし。
-
-あ、でも新規入力の検索はいいね。開きたいメモをサッと検索できて、サッと編集に移れる。それとなんやかんや言ってますが、あくまで僕のスタイルにうまくハマらないってだけなので、別にサービス自体が悪いってわけではないです。実際かなりサクサク動いてますし、かなりシンプルなので使い方は人それぞれって感じかと。
-
-それとなんかショートカットキーが充実してるってことなのでJS読んで勝手に暴いてみた。ショートカットがあるのは一覧だけなのかな。JSの前半しか見てないんだけれども。
-
-<dl>
-<dt>j</dt>
-<dd>メモの選択を下に移動</dd>
-<dt>k</dt>
-<dd>メモの選択を上に移動</dd>
-<dt>x</dt>
-<dd>選択してるメモにチェックボックスのオン/オフ</dd>
-<dt>d</dt>
-<dd>チェックボックスがオンのメモを削除</dd>
-<dt>o</dt>
-<dd>選択してるメモを開く</dd>
-<dt>e<dt>
-<dd>選択してるメモを編集する</dd>
-<dt>Enter/Return</dt>
-<dd>選択してるメモを編集する</dd>
-<dt>s</dt>
-<dd>選択してるメモの星のオン/オフ</dd>
-<dt>c</dt>
-<dd>選択してるメモのラベル(鳥?)の変更</dd>
-</dl>
-
-多分、大体こんな感じかなー。間違ってたらごめんなさい。
 </div></article><div class="pager"><ul><li class="previous"><a href="/page/26/">Prev</a></li><li class="next"><a href="/page/28/">Next</a></li></ul></div></div></body></html>

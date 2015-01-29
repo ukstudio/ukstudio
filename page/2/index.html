@@ -8,7 +8,62 @@ _gaq.push(['_trackPageview']);
   var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
   ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
   var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-})();</script></head><body class="page page_2 page_2_index"><div class="cointainer-fluid"><div class="navbar navbar-default" role="navigation"><div class="container-fluid"><div class="navbar-header"><a class="navbar-brand" href="/">UKSTUDIO</a></div><div class="navbar-collapse collapse"><ul class="nav navbar-nav navbar-right"><li><a href="http://twitter.com/ukstudio">Twitter</a></li><li><a href="http://github.com/ukstudio">GitHub</a></li></ul></div></div></div></div><div class="container"><article><h1><a href="/2014/04/18/rspec_ctags/">2014-04-18 Vim(TagBar)でRSpecのctagsを扱う</a></h1><hr /><div class="article-body"><p><img alt="rspec ctags" src="/images/2014-04-18-vim-rspec-ctags.png" /></p>
+})();</script></head><body class="page page_2 page_2_index"><div class="cointainer-fluid"><div class="navbar navbar-default" role="navigation"><div class="container-fluid"><div class="navbar-header"><a class="navbar-brand" href="/">UKSTUDIO</a></div><div class="navbar-collapse collapse"><ul class="nav navbar-nav navbar-right"><li><a href="http://twitter.com/ukstudio">Twitter</a></li><li><a href="http://github.com/ukstudio">GitHub</a></li></ul></div></div></div></div><div class="container"><article><h1><a href="/2014/09/05/arel/">2014-09-05 Arelあれこれ</a></h1><hr /><div class="article-body"><h2 id="model.arel_table-を読みづらいと感じる">Model.arel_table を読みづらいと感じる</h2>
+
+<p>例えばこういうコード。</p>
+<pre class="highlight ruby"><span class="no">Post</span><span class="nf">.joins</span><span class="p">(</span><span class="ss">:comments</span><span class="p">)</span><span class="nf">.order</span><span class="p">(</span><span class="no">Comment</span><span class="nf">.arel_table</span><span class="o">[</span><span class="ss">:created_at</span><span class="o">]</span><span class="nf">.desc</span><span class="p">)</span>
+</pre>
+<p>発行されるSQLはこんな感じ。</p>
+<pre class="highlight sql"><span class="k">SELECT</span> <span class="nv">&quot;posts&quot;</span><span class="p">.</span><span class="o">*</span> <span class="k">FROM</span> <span class="nv">&quot;posts&quot;</span> <span class="k">INNER</span> <span class="k">JOIN</span> <span class="nv">&quot;comments&quot;</span> <span class="k">ON</span> <span class="nv">&quot;comments&quot;</span><span class="p">.</span><span class="nv">&quot;post_id&quot;</span> <span class="o">=</span> <span class="nv">&quot;posts&quot;</span><span class="p">.</span><span class="nv">&quot;id&quot;</span>  <span class="k">ORDER</span> <span class="k">BY</span> <span class="nv">&quot;comments&quot;</span><span class="p">.</span><span class="nv">&quot;created_at&quot;</span> <span class="k">DESC</span>
+</pre>
+<p>こちらの方が個人的には読みやすい。</p>
+<pre class="highlight ruby"><span class="no">Post</span><span class="nf">.joins</span><span class="p">(</span><span class="ss">:comments</span><span class="p">)</span><span class="nf">.order</span><span class="p">(</span><span class="s1">&#39;comments.created_at desc&#39;</span><span class="p">)</span>
+</pre>
+<h2 id="問題もある">問題もある</h2>
+
+<h3 id="テーブル名を変えてしまったとき">テーブル名を変えてしまったとき</h3>
+
+<p>仮にテーブル名がかわったら後者の場合はエラーになる。</p>
+<pre class="highlight sql"><span class="k">SELECT</span> <span class="nv">&quot;posts&quot;</span><span class="p">.</span><span class="o">*</span> <span class="k">FROM</span> <span class="nv">&quot;posts&quot;</span> <span class="k">INNER</span> <span class="k">JOIN</span> <span class="nv">&quot;new_comments&quot;</span> <span class="k">ON</span> <span class="nv">&quot;new_comments&quot;</span><span class="p">.</span><span class="nv">&quot;post_id&quot;</span> <span class="o">=</span> <span class="nv">&quot;posts&quot;</span><span class="p">.</span><span class="nv">&quot;id&quot;</span>  <span class="k">ORDER</span> <span class="k">BY</span> <span class="n">comments</span><span class="p">.</span><span class="n">created_at</span> <span class="k">DESC</span>
+<span class="n">SQLite3</span><span class="p">::</span><span class="k">SQLException</span><span class="p">:</span> <span class="k">no</span> <span class="n">such</span> <span class="k">column</span><span class="p">:</span> <span class="n">comments</span><span class="p">.</span><span class="n">created_at</span><span class="p">:</span> <span class="k">SELECT</span> <span class="nv">&quot;posts&quot;</span><span class="p">.</span><span class="o">*</span> <span class="k">FROM</span> <span class="nv">&quot;posts&quot;</span> <span class="k">INNER</span> <span class="k">JOIN</span> <span class="nv">&quot;new_comments&quot;</span> <span class="k">ON</span> <span class="nv">&quot;new_comments&quot;</span><span class="p">.</span><span class="nv">&quot;post_id&quot;</span> <span class="o">=</span> <span class="nv">&quot;posts&quot;</span><span class="p">.</span><span class="nv">&quot;id&quot;</span>  <span class="k">ORDER</span> <span class="k">BY</span> <span class="n">comments</span><span class="p">.</span><span class="n">created_at</span> <span class="n">D</span>
+<span class="n">ESC</span>
+<span class="n">ActiveRecord</span><span class="p">::</span><span class="n">StatementInvalid</span><span class="p">:</span> <span class="n">SQLite3</span><span class="p">::</span><span class="k">SQLException</span><span class="p">:</span> <span class="k">no</span> <span class="n">such</span> <span class="k">column</span><span class="p">:</span> <span class="n">comments</span><span class="p">.</span><span class="n">created_at</span><span class="p">:</span> <span class="k">SELECT</span> <span class="nv">&quot;posts&quot;</span><span class="p">.</span><span class="o">*</span> <span class="k">FROM</span> <span class="nv">&quot;posts&quot;</span> <span class="k">INNER</span> <span class="k">JOIN</span> <span class="nv">&quot;new_comments&quot;</span> <span class="k">ON</span> <span class="nv">&quot;new_comments&quot;</span><span class="p">.</span><span class="nv">&quot;post_id&quot;</span> <span class="o">=</span> <span class="nv">&quot;posts&quot;</span><span class="p">.</span><span class="nv">&quot;id&quot;</span>
+  <span class="k">ORDER</span> <span class="k">BY</span> <span class="n">comments</span><span class="p">.</span><span class="n">created_at</span> <span class="k">DESC</span>
+
+</pre>
+<p>前者はモデルの方でテーブル名を変更すれば動作する。</p>
+<pre class="highlight ruby"><span class="k">class </span><span class="nc">Comment</span> <span class="o">&lt;</span> <span class="no">ActiveRecord</span><span class="o">::</span><span class="no">Base</span>
+  <span class="nb">self</span><span class="nf">.table_name</span>  <span class="ss">:new_comments</span>
+<span class="k">end</span>
+</pre>
+<h3 id="scopeでmergeしたいとき">scopeでmergeしたいとき</h3>
+<pre class="highlight ruby"><span class="k">class </span><span class="nc">Comment</span> <span class="o">&lt;</span> <span class="no">ActiveRecord</span><span class="o">::</span><span class="no">Base</span>
+  <span class="n">scope</span> <span class="ss">:recent</span><span class="p">,</span> <span class="o">-&gt;</span> <span class="p">{</span> <span class="n">where</span><span class="p">(</span><span class="s1">&#39;created_at &gt; ?&#39;</span><span class="p">,</span> <span class="mi">10</span><span class="nf">.days.ago</span><span class="p">)</span> <span class="p">}</span>
+<span class="k">end</span>
+
+<span class="no">Post</span><span class="nf">.joins</span><span class="p">(</span><span class="ss">:comments</span><span class="p">)</span><span class="nf">.merge</span><span class="p">(</span><span class="no">Comment</span><span class="nf">.recent</span><span class="p">)</span>
+</pre>
+<p>これだとCommentのcreated_atが解決できなくてコケる。</p>
+<pre class="highlight sql"><span class="k">SELECT</span> <span class="nv">&quot;posts&quot;</span><span class="p">.</span><span class="o">*</span> <span class="k">FROM</span> <span class="nv">&quot;posts&quot;</span> <span class="k">INNER</span> <span class="k">JOIN</span> <span class="nv">&quot;comments&quot;</span> <span class="k">ON</span> <span class="nv">&quot;comments&quot;</span><span class="p">.</span><span class="nv">&quot;post_id&quot;</span> <span class="o">=</span> <span class="nv">&quot;posts&quot;</span><span class="p">.</span><span class="nv">&quot;id&quot;</span> <span class="k">WHERE</span> <span class="p">(</span><span class="n">created_at</span> <span class="o">&gt;</span> <span class="s1">&#39;2014-08-26 09:16:45.106691&#39;</span><span class="p">)</span>
+<span class="n">SQLite3</span><span class="p">::</span><span class="k">SQLException</span><span class="p">:</span> <span class="n">ambiguous</span> <span class="k">column</span> <span class="n">name</span><span class="p">:</span> <span class="n">created_at</span><span class="p">:</span> <span class="k">SELECT</span> <span class="nv">&quot;posts&quot;</span><span class="p">.</span><span class="o">*</span> <span class="k">FROM</span> <span class="nv">&quot;posts&quot;</span> <span class="k">INNER</span> <span class="k">JOIN</span> <span class="nv">&quot;comments&quot;</span> <span class="k">ON</span> <span class="nv">&quot;comments&quot;</span><span class="p">.</span><span class="nv">&quot;post_id&quot;</span> <span class="o">=</span> <span class="nv">&quot;posts&quot;</span><span class="p">.</span><span class="nv">&quot;id&quot;</span> <span class="k">WHERE</span> <span class="p">(</span><span class="n">created_at</span> <span class="o">&gt;</span> <span class="s1">&#39;2014-08-26 09:16:45.
+106691&#39;</span><span class="p">)</span>
+<span class="n">ActiveRecord</span><span class="p">::</span><span class="n">StatementInvalid</span><span class="p">:</span> <span class="n">SQLite3</span><span class="p">::</span><span class="k">SQLException</span><span class="p">:</span> <span class="n">ambiguous</span> <span class="k">column</span> <span class="n">name</span><span class="p">:</span> <span class="n">created_at</span><span class="p">:</span> <span class="k">SELECT</span> <span class="nv">&quot;posts&quot;</span><span class="p">.</span><span class="o">*</span> <span class="k">FROM</span> <span class="nv">&quot;posts&quot;</span> <span class="k">INNER</span> <span class="k">JOIN</span> <span class="nv">&quot;comments&quot;</span> <span class="k">ON</span> <span class="nv">&quot;comments&quot;</span><span class="p">.</span><span class="nv">&quot;post_id&quot;</span> <span class="o">=</span> <span class="nv">&quot;posts&quot;</span><span class="p">.</span><span class="nv">&quot;id&quot;</span> <span class="k">WHERE</span> <span class="p">(</span><span class="n">cr</span>
+<span class="n">eated_at</span> <span class="o">&gt;</span> <span class="s1">&#39;2014-08-26 09:16:45.106691&#39;</span><span class="p">)</span>
+</pre>
+<p>正しくはこう。</p>
+<pre class="highlight ruby"><span class="k">class </span><span class="nc">Comment</span> <span class="o">&lt;</span> <span class="no">ActiveRecord</span><span class="o">::</span><span class="no">Base</span>
+  <span class="n">scope</span> <span class="ss">:recent</span><span class="p">,</span> <span class="o">-&gt;</span> <span class="p">{</span> <span class="n">where</span><span class="p">(</span><span class="nb">self</span><span class="nf">.arel_table</span><span class="o">[</span><span class="ss">:created_at</span><span class="o">]</span><span class="nf">.gt</span><span class="p">(</span><span class="mi">10</span><span class="nf">.days.ago</span><span class="p">))</span> <span class="p">}</span>
+<span class="k">end</span>
+</pre><pre class="highlight sql"><span class="k">SELECT</span> <span class="nv">&quot;posts&quot;</span><span class="p">.</span><span class="o">*</span> <span class="k">FROM</span> <span class="nv">&quot;posts&quot;</span> <span class="k">INNER</span> <span class="k">JOIN</span> <span class="nv">&quot;comments&quot;</span> <span class="k">ON</span> <span class="nv">&quot;comments&quot;</span><span class="p">.</span><span class="nv">&quot;post_id&quot;</span> <span class="o">=</span> <span class="nv">&quot;posts&quot;</span><span class="p">.</span><span class="nv">&quot;id&quot;</span> <span class="k">WHERE</span> <span class="p">(</span><span class="nv">&quot;comments&quot;</span><span class="p">.</span><span class="nv">&quot;created_at&quot;</span> <span class="o">&gt;</span> <span class="s1">&#39;2014-08-26 09:19:17.406299&#39;</span><span class="p">)</span>
+</pre>
+<h2 id="僕個人の結論">僕個人の結論</h2>
+
+<p>Model.arel_tableはできる限り隠したい(読みづらいから)。そしてmergeを使いたいケースではArelを使っておく。その変わりmergeが必要になるまでは無理にArelを使わない。</p>
+
+<p>さっきのComment#recentの例でいうなら最初は<code>where(&#39;created_at &gt; ?&#39;, 10.days.ago)</code>で書いておく。merged使いたい時になったらArelの方で書き直す。</p>
+
+<p>テーブル名の変更のリスクは気にしない。そもそもあまりテーブル変更しないし…。既にあるDBの上にRailsアプリケーションを構築する場合はDBリファクタリングのことを考えてArel使いまくった方がいいのかもしれない。</p>
+</div></article><article><h1><a href="/2014/04/18/rspec_ctags/">2014-04-18 Vim(TagBar)でRSpecのctagsを扱う</a></h1><hr /><div class="article-body"><p><img alt="rspec ctags" src="/images/2014-04-18-vim-rspec-ctags.png" /></p>
 
 <p>unite-outlineとかを使う人には不要なのかもしれないけど、あいにくuniteユーザではないのでctagsでなんとかできないか調べてみた。</p>
 
@@ -89,13 +144,4 @@ sudo /etc/init.d/bitlbee start
 <p><code>/etc/init.d/btsync start</code>で無事btsyncが起動したら、<a href="http://localhost:8888/gui%E3%81%A7WebUI%E3%81%AB%E3%82%A2%E3%82%AF%E3%82%BB%E3%82%B9%E3%81%A7%E3%81%8D%E3%82%8B%E3%80%82ID%E3%81%A8%E3%83%91%E3%82%B9%E3%81%AF&#x27;admin&#x27;%E3%81%A8&#x27;password&#x27;%E3%80%82">http://localhost:8888/guiでWebUIにアクセスできる。IDとパスは&#39;admin&#39;と&#39;password&#39;。</a></p>
 
 <p>WebUIにアクセスできたら、Add FolderでQNAPと同期させたいディレクトリを指定する。Secret Keyはここでは生成させず先程のQNAPのsecret keyをコピペする。保存し、WebUIのトップ画面で&quot;connected devices and status&quot;でダウンロード速度が表示されたら無事同期がはじまっている。</p>
-</div></article><article><h1><a href="/2014/03/13/openvpn_qnap_funtoo/">2014-03-13 FuntooからQNAPにOpenVPNでつなぐ</a></h1><hr /><div class="article-body"><p>まずはFuntooにOpenVPNを入れる。</p>
-<pre class="highlight text">sudo emerge openvpn
-</pre>
-<p>次にQNAPからOpenVPNの設定ファイルをダウンロードする。場所は「コントロール・パネル -&gt; アプリケーション -&gt; VPNサービス -&gt; 設定ファイルのダウンロード」にある。(QTS 4.0.3)</p>
-
-<p>zipが落ちてくるのでunzipするとca.crtとopenvpn.ovpnが展開されるので/etc/openvpnにmvする。他にOpenVPNで接続するところはないのでそのまま放りこむ。openvpn.opvnのままだと/etc/init.d/openvpn start時に怒られるのでopenvpn.confにリネーム。</p>
-<pre class="highlight text">/etc/init.d/openvpn start
-</pre>
-<p>で起動する。ユーザとパスを聞かれるのでadminで認証する。他のユーザーで認証したい場合はVPNサービスの設定からユーザを追加する。ローカルIPでQNAPに繋れば無事終了。</p>
 </div></article><div class="pager"><ul><li class="previous"><a href="/">Prev</a></li><li class="next"><a href="/page/3/">Next</a></li></ul></div></div></body></html>

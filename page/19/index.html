@@ -8,7 +8,71 @@ _gaq.push(['_trackPageview']);
   var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
   ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
   var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-})();</script></head><body class="page page_19 page_19_index"><div class="cointainer-fluid"><div class="navbar navbar-default" role="navigation"><div class="container-fluid"><div class="navbar-header"><a class="navbar-brand" href="/">UKSTUDIO</a></div><div class="navbar-collapse collapse"><ul class="nav navbar-nav navbar-right"><li><a href="http://twitter.com/ukstudio">Twitter</a></li><li><a href="http://github.com/ukstudio">GitHub</a></li></ul></div></div></div></div><div class="container"><article><h1><a href="/2009/08/20/review_kinesis/">2009-08-20 Kinesisを2週間使ったのでレビューする</a></h1><hr /><div class="article-body"><a href="http://d.hatena.ne.jp/ursm">ursm</a>さんに2週間程、<a href="http://ja.wikipedia.org/wiki/Kinesis">Kinesis</a>をお借りしたのでレビューを書く。
+})();</script></head><body class="page page_19 page_19_index"><div class="cointainer-fluid"><div class="navbar navbar-default" role="navigation"><div class="container-fluid"><div class="navbar-header"><a class="navbar-brand" href="/">UKSTUDIO</a></div><div class="navbar-collapse collapse"><ul class="nav navbar-nav navbar-right"><li><a href="http://twitter.com/ukstudio">Twitter</a></li><li><a href="http://github.com/ukstudio">GitHub</a></li></ul></div></div></div></div><div class="container"><article><h1><a href="/2009/08/25/multiruby/">2009-08-25 Ruby1.8.7とRuby1.9.2を共存させる</a></h1><hr /><div class="article-body"><strong>現在は、以下の方法より<a href="http://rvm.beginrescueend.com/">rvm</a>を使うことをオススメします。 10/05/28 追記</strong>
+
+ローカルに開発環境としてRuby1.8.7とRuby1.9.2を共存させる方法。
+
+<h2>Rubyのインストール</h2>
+まずはRubyの処理系をインストール。<a href="http://www.ruby-lang.org/ja/">ruby-lang.org</a>から適当に落とす。今回はruby 1.8.7-p174とruby 1.9.2-preview1を使用。
+
+まず、Ruby1.9.2から。
+
+<pre><code>$ ./configure --prefix=/Users/uk/local --program-suffix=-1.9.2
+$ make
+$ make install
+</code></pre>
+
+--prefixでインストール箇所を指定。自分の$HOME以下のどこかにいれるのが最近のマイブーム。この後でてくるgemも$HOME以下。Rubyはともかくgemは$HOME以下を推奨する。ある程度有名なライブラリならいいが、適当な野良ライブラリをインストールするにはこちらの方が安心な為。
+
+--program-suffixを指定するとインストールしたバイナリの後ろに指定した文字列を付加できる。この例だと「ruby-1.9.2」となる。他の処理系と分けるためこの指定は必須。
+
+次に同じ要領で1.8.7もインストール。やることは同じ。
+
+<pre><code>$ ./configure --prefix/Users/uk/local --program-suffix=-1.8.7
+$ make
+$ make install
+</code></pre>
+
+これでそれぞれのバイナリが/Users/uk/local/binに入っている状態となる。
+
+<h2>RubyGems</h2>
+次にgemの設定。Ruby1.9からはgemが標準で入っている為、インストールは必要ない。ただバージョンが1.3.4なのでアップデートしておくといいだろう。
+
+1.8.7は別途gemをインストールする。<a href="http://rubyforge.org/projects/rubygems/">RubyForgeにプロジェクトがある</a>のでそこからダウンロードしてくる。
+
+<pre><code>$ ruby-1.8.7 setup.rb
+</code></pre>
+
+それぞれのgemのenvを見ておくと、インストールしたライブラリがどこに保存されるかわかる。
+
+<pre><code>$ gem-1.9.2 env
+$ gem-1.8.7 env
+</code></pre>
+
+それぞれ、GEM PATHSの先頭が/Users/uk/local/lib/ruby/gems/1.8と/Users/uk/local/lib/ruby/gems/1.9.1(何で1.9.2じゃないのかはわからん)になっているはずだ。今後、gemを使ってライブラリをインストールするときはsudoは必要ない。
+
+<h2>シンボリックリンク</h2>
+この時点でRuby1.9.2とRuby1.8.7がそれぞれ使える状態になってはいるが、いちいちバージョンを指定するのも面倒なので、シンボリックリンクで対応する。riとかも必要に応じて作る。
+
+<pre><code>$ ln -s ~/local/bin/ruby-1.8.7 ~/local/bin/ruby
+$ ln -s ~/local/bin/irb-1.8.7 ~/local/bin/irb
+$ ln -s ~/local/bin/gem-1.8.7 ~/local/bin/gem
+</code></pre>
+
+Ruby1.9.2を使いたいときは、一度シンボリックリンクを消し、再度作りなおす。
+
+とは言え、その作業を手動で行うのは手間なのでスクリプトで対応するのがオススメ。5分ぐらいで書いたスクリプトをgistに貼っておいた。実行権限を与えて、引数にバージョンを与えると使えるはずだ。PATHとCMDは適当に書き換えること。そのうちもうちょっとマシなものに書き直すかも。
+
+<script src="http://gist.github.com/174406.js"></script>
+
+<h2>まとめ</h2>
+とりあえず、こんな感じでRuby1.9.2とRuby1.8.7を共存させてみた。いくつか、気になる点があって例えばgemでRailsをインストールするとシェバングが「#!/Users/uk/local/bin/ruby-1.9.2」となっており、シンボリックリンクを用意しただけではダメな時もある。その時はとりあえず諦めて以下の様に実行している。
+
+<pre><code>$ ruby -S Rails hoge
+</code></pre>
+
+実際にこの環境で開発するのはこれからなので、もしかしたらそのうち色々な問題もでてくる可能性はあるが、とりあえずこの環境でやってみようと思う。
+</div></article><article><h1><a href="/2009/08/20/review_kinesis/">2009-08-20 Kinesisを2週間使ったのでレビューする</a></h1><hr /><div class="article-body"><a href="http://d.hatena.ne.jp/ursm">ursm</a>さんに2週間程、<a href="http://ja.wikipedia.org/wiki/Kinesis">Kinesis</a>をお借りしたのでレビューを書く。
 
 結論から言うと、Kinesisはとても素晴しいキーボードだった。ursmさんや<a href="http://whileimautomaton.net/">kana</a>さんが常用するのもわかる気がする。
 
@@ -95,22 +159,4 @@ OAuthを使う際、サービス内部にOAuthを使用してなにをするの�
 メンテナンスと言うか、設定を一からやりなおしたかったのと、CentOSに飽きたのでたまには違うディストリビューションにしたかったので、Gentooでビルドしなおしてました。
 
 ブログのテーマとかも追々直していきますが、とりあえず見れるところまで。
-</div></article><article><h1><a href="/2009/07/16/ht_03a_gtalk/">2009-07-16 HT-03AでGtalkまわりでハマッったのでメモ</a></h1><hr /><div class="article-body">なんだか変なところではまるな、android。
-
-Gtalkでチャットをする時は大体クライアント側でその人を登録すると思うんですが、連絡帳にすでにその人が登録してあった場合、マージ的なことはしてくれません。具体的な例で説明した方がわかりやすいと思うので具体例しめします。
-
-<ol>
-<li>連絡帳にすでにAさんが登録してあり、携帯アドレスとGmailアドレスが登録されています</li>
-<li>その人とGtalkで会話したいのですが、連絡帳に登録してあっても一度フレンド登録しないといけなません</li>
-<li>なのでフレンド登録する</li>
-<li>無事会話できるが、連絡帳にAさんが2人存在してしまう(手動で登録したものと、Gtalkでフレンド登録したもの)</li>
-<li>Gmailの連絡帳で、アカウントの統合ができるので統合する</li>
-<li>Gtalkで会話できなくなる</li>
-</ol>
-
-で、じゃあ2つ登録されてしまったアカウントはどうしたらいいのかと言うと、<strong>Gtalkでフレンド登録された時に作られたアカウントの方に、最初から登録されていた方のデータをうつしてください。</strong>
-
-ちなみに僕は一度Gtalkのフレンドリストが全部消えたのですが、多分連絡帳整理の際に一度連絡先を全て消したためだと思います。Gtalkのフレンドリストが消えないようにするには、上記のようにフレンド登録されたアカウントはそのまま残しておかないとダメなんだと思います。
-
-ちなみに、僕が知ってる範囲ですが、フレンド登録されているアカウントかどうかの区別はチャットができるかできないかでしか判断できないと思います。具体的に言うと連絡帳をWebで見たときに「チャット」のリンクがあるかどうかぐらいだと思います。
 </div></article><div class="pager"><ul><li class="previous"><a href="/page/18/">Prev</a></li><li class="next"><a href="/page/20/">Next</a></li></ul></div></div></body></html>

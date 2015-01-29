@@ -8,7 +8,18 @@ _gaq.push(['_trackPageview']);
   var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
   ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
   var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-})();</script></head><body class="2009 2009_04 2009_04_20 2009_04_20_index"><div class="cointainer-fluid"><div class="navbar navbar-default" role="navigation"><div class="container-fluid"><div class="navbar-header"><a class="navbar-brand" href="/">UKSTUDIO</a></div><div class="navbar-collapse collapse"><ul class="nav navbar-nav navbar-right"><li><a href="http://twitter.com/ukstudio">Twitter</a></li><li><a href="http://github.com/ukstudio">GitHub</a></li></ul></div></div></div></div><div class="container"><h1><Archive></Archive>Apr 20 2009</h1><article><h2><a href="/2009/04/20/cucumber/">2009-04-20 Cucumberの登場でRailsのテスティング環境が変わった</a></h2>ちょっと大げさなタイトルかもしれないですが、個人的にはそれぐらいの感動。「これで勝つる!」な気分。何に勝つのか知らないけれど。
+})();</script></head><body class="2009 2009_04 2009_04_20 2009_04_20_index"><div class="cointainer-fluid"><div class="navbar navbar-default" role="navigation"><div class="container-fluid"><div class="navbar-header"><a class="navbar-brand" href="/">UKSTUDIO</a></div><div class="navbar-collapse collapse"><ul class="nav navbar-nav navbar-right"><li><a href="http://twitter.com/ukstudio">Twitter</a></li><li><a href="http://github.com/ukstudio">GitHub</a></li></ul></div></div></div></div><div class="container"><h1><Archive></Archive>Apr 20 2009</h1><article><h2><a href="/2009/04/20/atmarkit_1986/">2009-04-20 @ITの86世代の記事に載りました</a></h2>今月頭に<a href="http://jibun.atmarkit.co.jp/ljibun01/cs/200904/05/01.html">「ハチロク世代」がIT業界を変える日</a>という記事の取材を受けてて、先日その記事が公開されました。頭ぼさぼさの人が僕です。
+
+まぁ大したことは話してないので、補足とかは特にないんですが、実際のところはタイトルに反して当の本人達は「おれたちがIT業界を変えるぞ!」っていう感じではないのかなーと。少なくとも自分自身と近しい86世代の人達は。(あくまでおれの印象だけど)
+
+個人的な感覚としては同年代の頑張りをみて「おれもがんばるぞ!」的なモチベーションにつながればいいかなって感じ。なんだかんだで同年代の活動は刺激をうけます。
+
+それと同じことは他の世代にも言えて、<q>こうやって無意味に世代間闘争に火を付けようとする報道に意味はあるのか？</q>ってコメントがはてブにあったけど、少なくとも俺個人には世代間闘争って感じはなくて、多分おれの知ってる範囲では他の人もそうだと思うんだけど、今回の記事をみて89世代や81世代の人達のモチベーションに繋がればいいんじゃないかなと僕は思います。逆に89世代や81世代、もちろん他の世代の人達を見て僕達のモチベーションもあがるわけで。
+
+なんかそのうち(もうすでにいるかもしれないけど)、「記事に載ってるわりには大したことしてないじゃないか!なんかサービスを運営してたり、起業してたりしないの?」って人もいるかもしれないけど、そう言う人達も多分1986年生れの人で探せばいるだろうけど、少なくとも僕に関しては「僕が目指してるのはそこじゃないんで」としか言えないかなぁ。
+
+なんか何が言いたいのかよくわからないエントリですが、よかったら記事を読んで頂けるとうれしいです。ちなみに髪を切れというリクエストには今のところ答えるつもりはないのであしからず。
+</article><hr /><article><h2><a href="/2009/04/20/cucumber/">2009-04-20 Cucumberの登場でRailsのテスティング環境が変わった</a></h2>ちょっと大げさなタイトルかもしれないですが、個人的にはそれぐらいの感動。「これで勝つる!」な気分。何に勝つのか知らないけれど。
 
 今までのRailsのテストはもっぱらRSpecで書いてて、確かにこれはこれで素晴らしい。採用当初はバグが減ってその時も「これで勝つる!」な気分でした。でもやっぱり受け入れテストがネックになるんですよね。Seleniumとかも使ったりしてましたけど、ブラウザががちゃがちゃ動くし、なんとなく面倒で結局手動で確認という感じになってしまいました。
 
@@ -63,15 +74,4 @@ Cucumberは残念なことに、Ajaxのテストができないのでその辺�
 最後に今まで書いたテストが落ちないようにリファクタリングを行います。ここまでで1つのユーザストーリ(Cucumberでいうフィーチャ)の実装が完了します。
 
 CucumberはRspecの時もそうでしたが、新しく導入するときにどうしてもコストがかかります。でも慣れてくればそのコストは大分減りますし、stepもある程度使いまわせるものが多いので長期的に見れば逆にコストが減ると思っています。個人的にはCucumberを採用しない理由はないと思うので、この記事を読んでいる人も是非試してみてください。
-</article><hr /><article><h2><a href="/2009/04/20/atmarkit_1986/">2009-04-20 @ITの86世代の記事に載りました</a></h2>今月頭に<a href="http://jibun.atmarkit.co.jp/ljibun01/cs/200904/05/01.html">「ハチロク世代」がIT業界を変える日</a>という記事の取材を受けてて、先日その記事が公開されました。頭ぼさぼさの人が僕です。
-
-まぁ大したことは話してないので、補足とかは特にないんですが、実際のところはタイトルに反して当の本人達は「おれたちがIT業界を変えるぞ!」っていう感じではないのかなーと。少なくとも自分自身と近しい86世代の人達は。(あくまでおれの印象だけど)
-
-個人的な感覚としては同年代の頑張りをみて「おれもがんばるぞ!」的なモチベーションにつながればいいかなって感じ。なんだかんだで同年代の活動は刺激をうけます。
-
-それと同じことは他の世代にも言えて、<q>こうやって無意味に世代間闘争に火を付けようとする報道に意味はあるのか？</q>ってコメントがはてブにあったけど、少なくとも俺個人には世代間闘争って感じはなくて、多分おれの知ってる範囲では他の人もそうだと思うんだけど、今回の記事をみて89世代や81世代の人達のモチベーションに繋がればいいんじゃないかなと僕は思います。逆に89世代や81世代、もちろん他の世代の人達を見て僕達のモチベーションもあがるわけで。
-
-なんかそのうち(もうすでにいるかもしれないけど)、「記事に載ってるわりには大したことしてないじゃないか!なんかサービスを運営してたり、起業してたりしないの?」って人もいるかもしれないけど、そう言う人達も多分1986年生れの人で探せばいるだろうけど、少なくとも僕に関しては「僕が目指してるのはそこじゃないんで」としか言えないかなぁ。
-
-なんか何が言いたいのかよくわからないエントリですが、よかったら記事を読んで頂けるとうれしいです。ちなみに髪を切れというリクエストには今のところ答えるつもりはないのであしからず。
 </article><hr /></div></body></html>

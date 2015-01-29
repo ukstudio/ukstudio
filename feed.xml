@@ -4,10 +4,77 @@
   <id>http://ukstudio.jp</id>
   <link href="http://ukstudio.jp"/>
   <link href="http://ukstudio.jp/feed.xml" rel="self"/>
-  <updated>2015-01-01T01:01:00Z</updated>
+  <updated>2015-01-29T10:54:00Z</updated>
   <author>
     <name>AKAMATSU Yuki</name>
   </author>
+  <entry>
+    <title>TEX Yodaが届いたので使い始めた</title>
+    <link rel="alternate" href="http://ukstudio.jp/2015/01/29/tex_yoda/"/>
+    <id>http://ukstudio.jp/2015/01/29/tex_yoda/</id>
+    <published>2015-01-29T10:54:00Z</published>
+    <updated>2015-01-29T20:27:41+09:00</updated>
+    <author>
+      <name>AKAMATSU Yuki</name>
+    </author>
+    <content type="html">&lt;p&gt;&lt;a href="https://www.massdrop.com/buy/tex-yoda?mode=guest_open"&gt;TEX Yoda TrackPoint Keyboard - Massdrop&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;一部で話題のTEX Yodaが先週の金曜日に届いたので今週から使っている。&lt;/p&gt;
+
+&lt;blockquote class="instagram-media" data-instgrm-captioned data-instgrm-version="4" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:658px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"&gt;&lt;div style="padding:8px;"&gt; &lt;div style=" background:#F8F8F8; line-height:0; margin-top:40px; padding:50% 0; text-align:center; width:100%;"&gt; &lt;div style=" background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAsCAMAAAApWqozAAAAGFBMVEUiIiI9PT0eHh4gIB4hIBkcHBwcHBwcHBydr+JQAAAACHRSTlMABA4YHyQsM5jtaMwAAADfSURBVDjL7ZVBEgMhCAQBAf//42xcNbpAqakcM0ftUmFAAIBE81IqBJdS3lS6zs3bIpB9WED3YYXFPmHRfT8sgyrCP1x8uEUxLMzNWElFOYCV6mHWWwMzdPEKHlhLw7NWJqkHc4uIZphavDzA2JPzUDsBZziNae2S6owH8xPmX8G7zzgKEOPUoYHvGz1TBCxMkd3kwNVbU0gKHkx+iZILf77IofhrY1nYFnB/lQPb79drWOyJVa/DAvg9B/rLB4cC+Nqgdz/TvBbBnr6GBReqn/nRmDgaQEej7WhonozjF+Y2I/fZou/qAAAAAElFTkSuQmCC); display:block; height:44px; margin:0 auto -44px; position:relative; top:-22px; width:44px;"&gt;&lt;/div&gt;&lt;/div&gt; &lt;p style=" margin:8px 0 0 0; padding:0 4px;"&gt; &lt;a href="https://instagram.com/p/yUmhN8xXLR/" style=" color:#000; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none; word-wrap:break-word;" target="_top"&gt;とりあえずできた&lt;/a&gt;&lt;/p&gt; &lt;p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;"&gt;AKAMATSU Yukiさん(@ukstudio)が投稿した写真 - &lt;time style=" font-family:Arial,sans-serif; font-size:14px; line-height:17px;" datetime="2015-01-26T15:18:07+00:00"&gt;2015 1月 26 7:18午前 PST&lt;/time&gt;&lt;/p&gt;&lt;/div&gt;&lt;/blockquote&gt;
+
+&lt;script async defer src="//platform.instagram.com/en_US/embeds.js"&gt;&lt;/script&gt;
+
+&lt;h2 id="ハンダ付け"&gt;ハンダ付け&lt;/h2&gt;
+
+&lt;p&gt;久々のハンダ付けだけど、MXスイッチの足と基板をつけるだけだし、オフィスに&lt;a href="http://asonas.hatenablog.com/entry/2015/01/24/173920"&gt;先に組み立て済みの同僚&lt;/a&gt;もいたのでそんなに難しいこともなく終了。といっても幾つかミスもあったわけだけど。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;LEDを付ける前に基板をネジ止めした&lt;/li&gt;
+&lt;li&gt;ハンダ付けしわすれた箇所があった&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;TEX YodaにはLEDつけるところがあるんだけど、そのLEDがキートップのパーツと同じ袋に入ってる。なので基板にひと通りスイッチつけて、満足してネジ止めして「さー、キートップつけるぞ」と思い袋あけるとそこからLEDがでてきて悲しい感じになる。ハンダ付けするときにLEDの話を同僚としていたのにこれだよ。&lt;/p&gt;
+
+&lt;p&gt;ハンダ付けしわすれたのは完全に自分のミス。ひと通り組み立て終わったあとに0のキーが効かず、ハンダ付けのときに基板壊したかなとすごい焦ったけど開けてみたら普通にハンダがついてなかったというオチ。ちなみに現状、左下のFnキーも動いてないのでそこも忘れてる可能性ある。&lt;/p&gt;
+
+&lt;blockquote class="instagram-media" data-instgrm-captioned data-instgrm-version="4" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:658px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"&gt;&lt;div style="padding:8px;"&gt; &lt;div style=" background:#F8F8F8; line-height:0; margin-top:40px; padding:50% 0; text-align:center; width:100%;"&gt; &lt;div style=" background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAsCAMAAAApWqozAAAAGFBMVEUiIiI9PT0eHh4gIB4hIBkcHBwcHBwcHBydr+JQAAAACHRSTlMABA4YHyQsM5jtaMwAAADfSURBVDjL7ZVBEgMhCAQBAf//42xcNbpAqakcM0ftUmFAAIBE81IqBJdS3lS6zs3bIpB9WED3YYXFPmHRfT8sgyrCP1x8uEUxLMzNWElFOYCV6mHWWwMzdPEKHlhLw7NWJqkHc4uIZphavDzA2JPzUDsBZziNae2S6owH8xPmX8G7zzgKEOPUoYHvGz1TBCxMkd3kwNVbU0gKHkx+iZILf77IofhrY1nYFnB/lQPb79drWOyJVa/DAvg9B/rLB4cC+Nqgdz/TvBbBnr6GBReqn/nRmDgaQEej7WhonozjF+Y2I/fZou/qAAAAAElFTkSuQmCC); display:block; height:44px; margin:0 auto -44px; position:relative; top:-22px; width:44px;"&gt;&lt;/div&gt;&lt;/div&gt; &lt;p style=" margin:8px 0 0 0; padding:0 4px;"&gt; &lt;a href="https://instagram.com/p/yV0z5CxXIt/" style=" color:#000; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none; word-wrap:break-word;" target="_top"&gt;ゼロのキー動かんと思ったらこれですよ&lt;/a&gt;&lt;/p&gt; &lt;p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;"&gt;AKAMATSU Yukiさん(@ukstudio)が投稿した写真 - &lt;time style=" font-family:Arial,sans-serif; font-size:14px; line-height:17px;" datetime="2015-01-27T02:42:15+00:00"&gt;2015 1月 26 6:42午後 PST&lt;/time&gt;&lt;/p&gt;&lt;/div&gt;&lt;/blockquote&gt;
+
+&lt;script async defer src="//platform.instagram.com/en_US/embeds.js"&gt;&lt;/script&gt;
+
+&lt;h2 id="選んだ軸"&gt;選んだ軸&lt;/h2&gt;
+
+&lt;p&gt;実は買って届くまでMXスイッチの軸の色の意味を知らなかったんだけど、買うときに一番値段が高かったクリア軸にした。わからないときはとりあえず高いのにしておく精神。調べてみると茶軸に近い感じということらしい。茶軸使ったことないからそう言われてもわからないけど…。他にも色々な軸があるので試してみたい気がする。緑とか気になる。&lt;/p&gt;
+
+&lt;h2 id="ちょっとしたカスタマイズ"&gt;ちょっとしたカスタマイズ&lt;/h2&gt;
+
+&lt;p&gt;MXスイッチ互換のキートップが売ってたりするので適当に変えてみたりした。PCゲーマーではおなじみのWASD。あとIJKLを赤に。これらはFnを押すとカーソルキーの動きをしてくれる。あとはなんとなくスペースも赤にしたら顔みたいになった。&lt;/p&gt;
+
+&lt;blockquote class="instagram-media" data-instgrm-captioned data-instgrm-version="4" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:658px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"&gt;&lt;div style="padding:8px;"&gt; &lt;div style=" background:#F8F8F8; line-height:0; margin-top:40px; padding:50% 0; text-align:center; width:100%;"&gt; &lt;div style=" background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAsCAMAAAApWqozAAAAGFBMVEUiIiI9PT0eHh4gIB4hIBkcHBwcHBwcHBydr+JQAAAACHRSTlMABA4YHyQsM5jtaMwAAADfSURBVDjL7ZVBEgMhCAQBAf//42xcNbpAqakcM0ftUmFAAIBE81IqBJdS3lS6zs3bIpB9WED3YYXFPmHRfT8sgyrCP1x8uEUxLMzNWElFOYCV6mHWWwMzdPEKHlhLw7NWJqkHc4uIZphavDzA2JPzUDsBZziNae2S6owH8xPmX8G7zzgKEOPUoYHvGz1TBCxMkd3kwNVbU0gKHkx+iZILf77IofhrY1nYFnB/lQPb79drWOyJVa/DAvg9B/rLB4cC+Nqgdz/TvBbBnr6GBReqn/nRmDgaQEej7WhonozjF+Y2I/fZou/qAAAAAElFTkSuQmCC); display:block; height:44px; margin:0 auto -44px; position:relative; top:-22px; width:44px;"&gt;&lt;/div&gt;&lt;/div&gt; &lt;p style=" margin:8px 0 0 0; padding:0 4px;"&gt; &lt;a href="https://instagram.com/p/yY9zPMxXH1/" style=" color:#000; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none; word-wrap:break-word;" target="_top"&gt;顔っぽい&lt;/a&gt;&lt;/p&gt; &lt;p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;"&gt;AKAMATSU Yukiさん(@ukstudio)が投稿した写真 - &lt;time style=" font-family:Arial,sans-serif; font-size:14px; line-height:17px;" datetime="2015-01-28T07:58:31+00:00"&gt;2015 1月 27 11:58午後 PST&lt;/time&gt;&lt;/p&gt;&lt;/div&gt;&lt;/blockquote&gt;
+
+&lt;script async defer src="//platform.instagram.com/en_US/embeds.js"&gt;&lt;/script&gt;
+
+&lt;h2 id="キーレイアウト"&gt;キーレイアウト&lt;/h2&gt;
+
+&lt;p&gt;現時点のレイアウトはDIPスイッチの１，３，５がオフ、２，４，６がオンになっている。それぞれの意味はマニュアル参照。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="https://docs.google.com/file/d/0B7TuRf3KQe7GdjJwNXMwdHZIUm8/edit"&gt;TKB-600i-Datasheet_14-0603-Rev 1.0.pdf - Google ドライブ&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;大体よくあるレイアウトだとは思うけど、珍しいのはESCと`~が同じキーでどちらかをFnキー押しながらじゃないと入力できない(DIPスイッチの3番参照)。&lt;/p&gt;
+
+&lt;p&gt;最初は普通に入力したらESCにして`~をFnキー押すようにしていたのだけど~がShiftも押さなきゃいけないのがあまりに不便すぎてやめた。VimmerとしてはESCはコード書くときそんなに使わないし、普段もMacユーザーなのでKarabinerでctrl-[をESC扱いにするようにしてESC単体で押す必要をなくして無事解決。&lt;/p&gt;
+
+&lt;h2 id="総評"&gt;総評&lt;/h2&gt;
+
+&lt;p&gt;概ね使い心地には満足している。元々ThinkPad使っていたのでトラックポイントも違和感なく、机からマウスを排除できたし、むしろマウスのためだけに腕を動かさなくなったが大分よい。実はHHKで一番気に入らなかったのがDELETEの位置で、TEX Yodaではそこが\になったのも良い。&lt;/p&gt;
+
+&lt;p&gt;本体の重さがそれなりにある。その気になれば撲殺できそうな程度には。なので持ち歩くつもりでいるならHHKの方がよいかなと思う。俺はあまりキーボードを持ち歩く人間ではないので問題ない。&lt;/p&gt;
+
+&lt;p&gt;タッチ感だけど、音はクリア軸のせいかTEX Yodaがそうなのかわからないけど、ちょっとちゃっちい音のような気もする。クリック感は個人的には大分気に入っていて、HHK、KinesisとTEX Yoda(クリア軸)だったらTEX Yodaが一番好み。ちなみにAlphaGripは俺の中では黒歴史化している。&lt;/p&gt;
+
+&lt;p&gt;今massdropをみると$199までもうちょいなので、興味ある人は買っていきましょう。ハンダ付けも$25でやってくれる模様。買って損はしないキーボードだと思います。実物みないと…という人は弊社に2つあるので遊びにくるとよいですよ。&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>株式会社spice lifeに入社しました</title>
     <link rel="alternate" href="http://ukstudio.jp/2015/01/01/joined_spicelife/"/>
@@ -339,39 +406,6 @@
 &lt;p&gt;さっきのComment#recentの例でいうなら最初は&lt;code&gt;where(&amp;#39;created_at &amp;gt; ?&amp;#39;, 10.days.ago)&lt;/code&gt;で書いておく。merged使いたい時になったらArelの方で書き直す。&lt;/p&gt;
 
 &lt;p&gt;テーブル名の変更のリスクは気にしない。そもそもあまりテーブル変更しないし…。既にあるDBの上にRailsアプリケーションを構築する場合はDBリファクタリングのことを考えてArel使いまくった方がいいのかもしれない。&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
-    <title>Vim(TagBar)でRSpecのctagsを扱う</title>
-    <link rel="alternate" href="http://ukstudio.jp/2014/04/18/rspec_ctags/"/>
-    <id>http://ukstudio.jp/2014/04/18/rspec_ctags/</id>
-    <published>2014-04-18T09:20:00Z</published>
-    <updated>2014-11-27T15:26:19+09:00</updated>
-    <author>
-      <name>AKAMATSU Yuki</name>
-    </author>
-    <content type="html">&lt;p&gt;&lt;img alt="rspec ctags" src="/images/2014-04-18-vim-rspec-ctags.png" /&gt;&lt;/p&gt;
-
-&lt;p&gt;unite-outlineとかを使う人には不要なのかもしれないけど、あいにくuniteユーザではないのでctagsでなんとかできないか調べてみた。&lt;/p&gt;
-
-&lt;p&gt;まず、Funtooで入るctagsではrspecのタグは生成できないのでforkされたctagsを使う必要がある。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href="https://github.com/fishman/ctags"&gt;fishman/ctags&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;インストール場所はお好みで。個人的には手で入れる系のものは$HOME/localにインストールするのが好きなのでそこにインストールした。あとはTagBarの方でこのctagsを使うよう設定する。&lt;/p&gt;
-&lt;pre class="highlight viml"&gt;&lt;span class="k"&gt;let&lt;/span&gt; &lt;span class="nv"&gt;g:tagbar_ctags_bin&lt;/span&gt;&lt;span class="p"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;/home/ukstudio/local/bin/ctags&amp;quot;&lt;/span&gt;
-&lt;span class="k"&gt;let&lt;/span&gt; &lt;span class="nv"&gt;g:tagbar_type_ruby&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-&lt;span class="se"&gt;    \&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;kinds&amp;#39;&lt;/span&gt; &lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;
-&lt;span class="se"&gt;        \&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;m:modules&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-&lt;span class="se"&gt;        \&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;c:classes&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-&lt;span class="se"&gt;        \&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;d:describes&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-&lt;span class="se"&gt;        \&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;C:contexts&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-&lt;span class="se"&gt;        \&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;f:methods&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-&lt;span class="se"&gt;        \&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;F:singleton methods&amp;#39;&lt;/span&gt;
-&lt;span class="se"&gt;    \&lt;/span&gt; &lt;span class="p"&gt;]&lt;/span&gt;
-&lt;span class="se"&gt;\&lt;/span&gt; &lt;span class="p"&gt;}&lt;/span&gt;
-&lt;/pre&gt;
-&lt;p&gt;これで上の画像のような感じでTagBarに表示されるようになるはず。&lt;/p&gt;
 </content>
   </entry>
 </feed>

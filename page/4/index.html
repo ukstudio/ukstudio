@@ -8,7 +8,42 @@ _gaq.push(['_trackPageview']);
   var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
   ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
   var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-})();</script></head><body class="page page_4 page_4_index"><div class="cointainer-fluid"><div class="navbar navbar-default" role="navigation"><div class="container-fluid"><div class="navbar-header"><a class="navbar-brand" href="/">UKSTUDIO</a></div><div class="navbar-collapse collapse"><ul class="nav navbar-nav navbar-right"><li><a href="http://twitter.com/ukstudio">Twitter</a></li><li><a href="http://github.com/ukstudio">GitHub</a></li></ul></div></div></div></div><div class="container"><article><h1><a href="/2012/04/09/tddconf2012/">2012-04-09 TDDカンファレンスでLTしてきたのでその補足</a></h1><hr /><div class="article-body">4月の6日の<a href='http://atnd.org/events/26808'>TDDカンファレンス</a>に参加&amp;LT発表してきた。参加といっても遅刻していったのでほとんど話を聞けていないのだけれど。
+})();</script></head><body class="page page_4 page_4_index"><div class="cointainer-fluid"><div class="navbar navbar-default" role="navigation"><div class="container-fluid"><div class="navbar-header"><a class="navbar-brand" href="/">UKSTUDIO</a></div><div class="navbar-collapse collapse"><ul class="nav navbar-nav navbar-right"><li><a href="http://twitter.com/ukstudio">Twitter</a></li><li><a href="http://github.com/ukstudio">GitHub</a></li></ul></div></div></div></div><div class="container"><article><h1><a href="/2012/09/11/ripping_cd_on_gentoo/">2012-09-11 GentooでCDをリッピングして聞く</a></h1><hr /><div class="article-body">メモ
+
+CDをwavで一旦取り込んでflacに変換。
+<pre>
+$ sudo emerge cdrtools
+$ sudo emerge flac
+$ cdda2wav -H -B
+$ find . -name "*.wav" -print0 | xargs -0 flac
+</pre>
+
+
+<pre>
+# /etc/security/limits.conf
+@audio - rtprio 99
+@audio - memlock unlimited
+@audio - nice -10
+</pre>
+
+<pre>
+# /etc/portage/package.use
+media-sound/aqualung alsa cdda cddb ffmpeg flac mp3 oss wavpack jack
+media-sound/jack-audio-connection-kit alsa
+</pre>
+
+<pre>
+# mplayer で聞く
+$ mplayer *
+# aqualung & jackで聞く
+$ sudo emerge aqualung
+$ sudo emerge jack-audio-connection-kit
+$ jackd -R -d alsa
+$ aqualung -o jack --auto
+</pre>
+
+正直、JACKで何が変わってるのかよーわからん。
+</div></article><article><h1><a href="/2012/04/09/tddconf2012/">2012-04-09 TDDカンファレンスでLTしてきたのでその補足</a></h1><hr /><div class="article-body">4月の6日の<a href='http://atnd.org/events/26808'>TDDカンファレンス</a>に参加&amp;LT発表してきた。参加といっても遅刻していったのでほとんど話を聞けていないのだけれど。
 
 とりあえず資料は<a href='http://ukstudio.github.com/tddconf_20120406/'>こちら</a>。読み直してみたら途中の話の飛躍がこれはひどい。当日もかなり短い発表の上に色々内容を省いてしまったので色々と補足しておく。(当日聞いていただいた方に申し訳ないし、あまりこういうのはよくないね。パブリックスピーカー読んででなおします。)
 
@@ -51,8 +86,4 @@ See also
 </ul>
 
 ぐだぐだ言ったけど、最終的には気分である。
-</div></article><article><h1><a href="/2012/01/11/rails3_primary_key_foreign_key_big_int/">2012-01-11 rails3でprimary keyとforeign keyをbig intにする</a></h1><hr /><div class="article-body">以下は、PostgreSQLの例。
-<code><pre>ActiveRecord::ConnectionAdapters::PostgreSQLAdapter::NATIVE_DATABASE_TYPES[:primary_key] = 'bigserial primary key' </pre></code>
-外部キーの場合、<code>t.references :user</code>とか書いてると、ActiveRecord側でintegerがハードコーディングされているのでlimitオプションを付けるしかなさそう。
-<code><pre>t.references :user, :limit => 8</pre></code>
 </div></article><div class="pager"><ul><li class="previous"><a href="/page/3/">Prev</a></li><li class="next"><a href="/page/5/">Next</a></li></ul></div></div></body></html>

@@ -8,7 +8,43 @@ _gaq.push(['_trackPageview']);
   var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
   ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
   var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-})();</script></head><body class="page page_37 page_37_index"><div class="cointainer-fluid"><div class="navbar navbar-default" role="navigation"><div class="container-fluid"><div class="navbar-header"><a class="navbar-brand" href="/">UKSTUDIO</a></div><div class="navbar-collapse collapse"><ul class="nav navbar-nav navbar-right"><li><a href="http://twitter.com/ukstudio">Twitter</a></li><li><a href="http://github.com/ukstudio">GitHub</a></li></ul></div></div></div></div><div class="container"><article><h1><a href="/2007/10/28/activerecord/">2007-10-28 ActiveRecordを使ってみる</a></h1><hr /><div class="article-body">ActiveRecordはRubyOnRailsのO/Rマッパーとして有名ですが、Railsに依存しているわけではなく単体で使えます。
+})();</script></head><body class="page page_37 page_37_index"><div class="cointainer-fluid"><div class="navbar navbar-default" role="navigation"><div class="container-fluid"><div class="navbar-header"><a class="navbar-brand" href="/">UKSTUDIO</a></div><div class="navbar-collapse collapse"><ul class="nav navbar-nav navbar-right"><li><a href="http://twitter.com/ukstudio">Twitter</a></li><li><a href="http://github.com/ukstudio">GitHub</a></li></ul></div></div></div></div><div class="container"><article><h1><a href="/2007/10/28/ruby_fizzbuzz/">2007-10-28 RubyでFizzBuzz</a></h1><hr /><div class="article-body">今更ながらにFizzBuzz問題をRubyで問いてみる。前は確かPHPだけで問いて、Rubyで問いてなかったと思うから。
+
+<strong>ループ内で出力</strong>
+<pre lang="ruby">
+100.times(){|i|
+  i += 1
+  if i%5 == 0 && i%3 == 0 then
+    puts "FizzBuzz"
+  elsif i%5 == 0
+    puts "Buzz"
+  elsif i%3 == 0
+    puts "Fizz"
+  else
+    puts i
+  end
+}</pre>
+<strong>配列を作ってそれを出力</strong>
+<pre lang="ruby">
+fizzbuzz = Array.new(100){|i|
+  i += 1
+  if i%5 == 0 && i%3 == 0 then
+    "FizzBuzz"
+  elsif i%5 == 0
+    "Buzz"
+  elsif i%3 == 0
+    "Fizz"
+  else
+    i
+  end
+}
+puts fizzbuzz</pre>
+まぁ、普通ですな。後々データを再利用する可能性を考えると、ループ内で出力するより配列を作った方がいいかなとは思う。
+
+if文のところはもうちょっとなんとかなる気もするけど、コードゴルフしてるわけでもないし、これでいいかな。再帰で書けって言われたら多分できないけど。
+
+精進ですなー。
+</div></article><article><h1><a href="/2007/10/28/activerecord/">2007-10-28 ActiveRecordを使ってみる</a></h1><hr /><div class="article-body">ActiveRecordはRubyOnRailsのO/Rマッパーとして有名ですが、Railsに依存しているわけではなく単体で使えます。
 
 <h2>DBを用意する</h2>
 なにはともあれ、DBがないと始まらないので適当に用意します。
@@ -322,28 +358,4 @@ export LANG=ja_JP.UTF-8</pre>
 	<li>echo 日本語など日本語が入力でき、かつちゃんと出力される</li>
 	<li>lsを発行したときに日本語のファイルやディレクトリが文字化けしていない</li>
 </ol>
-</div></article><article><h1><a href="/2007/09/28/rubyonrails_install_in_macbook/">2007-09-28 MacBookにRubyOnRailsをインストールする</a></h1><hr /><div class="article-body">Railsを試すためにMacBookにRubyOnRailsをインストールしてみました。MacPortsは既にインストールされてるものとして話を進めるので、インストールしていない人はGoogleで調べるなりしてインストールしてくださいな。と言ってもRubyGemsのインストールでしか今回は使いませんけど。
-<h2>まずはRubyGemsをインストール</h2>
-MacPortsを利用してRubyGemsを入れます。rb-rubygemsという名前で登録されているはずです。
-<pre>% sudo port install rb-rubygems</pre>
-<a href="http://www.flickr.com/photo_zoom.gne?id=1447826801&amp;size=o"><img src="http://farm2.static.flickr.com/1008/1447826801_bf64321738.jpg?v=0" alt="install gem" /></a>
-<h3>というかRubyGemsってなに?</h3>
-いわゆるパッケージマネージャーってやつです。Perlで言うところのCPANみたいなものです。Rubyはまだ標準のパッケージマネージャーはありませんが、Railsがインストールできるということもあってか大抵はRubyGemsが使われるようです。
-<ul>
-	<li><a href="http://jp.rubyist.net/magazine/?0006-PackageManagement">Rubyist Magazine - シリーズ パッケージマネジメント 【第 1 回】 RubyGems (1)</a></li>
-	<li><a href="http://d.hatena.ne.jp/secondlife/20061106/1162785661">川o・-・）＜2nd life - RubyGems パッケージの作り方 - rubyforge 登録まで</a></li>
-	<li><a href="http://www.rubygems.org/">RubyGems Manuals</a></li>
-</ul>
-<h2>gemからRailsをインストール</h2>
-<pre>% sudo gem install rails</pre>
-<a href="http://www.flickr.com/photo_zoom.gne?id=1447826981&amp;size=o"><img src="http://farm2.static.flickr.com/1341/1447826981_c3eb32b601.jpg?v=0" alt="install rails" /></a>
-
-gemをインストールしてしまえば、コマンド一発でRailsがインストール出来てしまいます。簡単ですね。
-<h2>プロジェクトを作ってみる</h2>
-<pre>% rails hello</pre>
-<a href="http://www.flickr.com/photo_zoom.gne?id=1447827317&amp;size=o"><img src="http://farm2.static.flickr.com/1245/1447827317_f6bc5901ef.jpg?v=0" alt="create project" /></a>
-
-gemでRailsをインストールしたら、プロジェクトを作ってみましょう。helloというディレクトリが出来て、その中にappディレクトリやRakefileとかが作られていれば問題ありません。ちなみにhelloというのはプロジェクト名です。
-<h3>おまけ</h3>
-キャプチャのMelchiorっていうのはエヴァネタです。マギシステムの。痛い子ですみません。
 </div></article><div class="pager"><ul><li class="previous"><a href="/page/36/">Prev</a></li><li class="next"><a href="/page/38/">Next</a></li></ul></div></div></body></html>

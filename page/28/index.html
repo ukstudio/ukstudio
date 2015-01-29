@@ -8,7 +8,55 @@ _gaq.push(['_trackPageview']);
   var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
   ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
   var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-})();</script></head><body class="page page_28 page_28_index"><div class="cointainer-fluid"><div class="navbar navbar-default" role="navigation"><div class="container-fluid"><div class="navbar-header"><a class="navbar-brand" href="/">UKSTUDIO</a></div><div class="navbar-collapse collapse"><ul class="nav navbar-nav navbar-right"><li><a href="http://twitter.com/ukstudio">Twitter</a></li><li><a href="http://github.com/ukstudio">GitHub</a></li></ul></div></div></div></div><div class="container"><article><h1><a href="/2008/07/29/iphone_seminar/">2008-07-29 Apple主催のiPhoneアプリケーション開発入門セミナーに参加してきた</a></h1><hr /><div class="article-body">会場が家からすぐ近くだったので行ってきました。なるべく話しても大丈夫そうなところを選んで書きますが、場合によってはエントリーが消えることもあるかも。セミナーの内容が完全黙秘なのか、SDKの部分はダメなのかどっちかよくわからないので。英語苦手だ。
+})();</script></head><body class="page page_28 page_28_index"><div class="cointainer-fluid"><div class="navbar navbar-default" role="navigation"><div class="container-fluid"><div class="navbar-header"><a class="navbar-brand" href="/">UKSTUDIO</a></div><div class="navbar-collapse collapse"><ul class="nav navbar-nav navbar-right"><li><a href="http://twitter.com/ukstudio">Twitter</a></li><li><a href="http://github.com/ukstudio">GitHub</a></li></ul></div></div></div></div><div class="container"><article><h1><a href="/2008/08/08/quill/">2008-08-08 Quillリリースおめでとうございます</a></h1><hr /><div class="article-body"><a href="http://quill.to/">Quill [羽根のように軽い、メモメモwebサービス]</a>
+<a href="http://blog.inafog.jp/archives/314">blog in a fog >> Quillリリースしました</a>
+<a href="http://blog.woopsdez.jp/?p=841">ウープスデザインブログ >> 羽根のように軽いメモメモwebサービス 「Quill」公開されました</a>
+
+と言うわけで、どうやら知り合いの人が開発に携わっているようなので、おめでとうございますエントリー。
+
+とりあえず簡単に使ってみて、なんやかんや言ってみようと思ったんだけれどちょっと問題が。自分、オンラインのメモって使わないんだよね。
+
+理由としては
+<ul>
+<li>いつも持ち歩いてるMOLESKINEにメモする</li>
+<li>ちょっとしたメモ(ToDoとかお買い物リスト的な)ものは付箋とかに書く</li>
+<li>長めの文章はTerminalでVimで書く</li>
+</ul>
+と言った感じかなぁ。
+
+多分、オンラインのメモってどこでも見れるってのが利点なんだろうけど、正直そこらへんはアナログで事足りちゃってる。それに携帯(WILLCOMユーザです)の通信速度があまり早くないからサッと見れない。まぁこれはある程度仕方ないけれど。と言うか、モバイル対応はまだしてないっぽいね。
+
+あとは、メモを書くのをもうちょいストレスフリーにしたい。例えば、おれがメモをするシーンは、「ネットで調べ物」とか「電話対応」とかなんだけど、ネットしてるときは当然ブラウザは別のページをみてるので、ブラウザでメモするのはちょっと手間。わざわざFxのウィンドウを2つにするのもいやだし。電話対応は片手が塞がるので、片手でメモできるペン・紙がラク。
+
+理想を言えば、QuickSilverでアプリを起動するのと同じぐらいスムーズに入力したいw まぁクライアントを提供するまではいかなくても、APIとかがあれば適当にQuickSilverやVimperatorのプラグインとかも自作できるだろうし。
+
+あ、でも新規入力の検索はいいね。開きたいメモをサッと検索できて、サッと編集に移れる。それとなんやかんや言ってますが、あくまで僕のスタイルにうまくハマらないってだけなので、別にサービス自体が悪いってわけではないです。実際かなりサクサク動いてますし、かなりシンプルなので使い方は人それぞれって感じかと。
+
+それとなんかショートカットキーが充実してるってことなのでJS読んで勝手に暴いてみた。ショートカットがあるのは一覧だけなのかな。JSの前半しか見てないんだけれども。
+
+<dl>
+<dt>j</dt>
+<dd>メモの選択を下に移動</dd>
+<dt>k</dt>
+<dd>メモの選択を上に移動</dd>
+<dt>x</dt>
+<dd>選択してるメモにチェックボックスのオン/オフ</dd>
+<dt>d</dt>
+<dd>チェックボックスがオンのメモを削除</dd>
+<dt>o</dt>
+<dd>選択してるメモを開く</dd>
+<dt>e<dt>
+<dd>選択してるメモを編集する</dd>
+<dt>Enter/Return</dt>
+<dd>選択してるメモを編集する</dd>
+<dt>s</dt>
+<dd>選択してるメモの星のオン/オフ</dd>
+<dt>c</dt>
+<dd>選択してるメモのラベル(鳥?)の変更</dd>
+</dl>
+
+多分、大体こんな感じかなー。間違ってたらごめんなさい。
+</div></article><article><h1><a href="/2008/07/29/iphone_seminar/">2008-07-29 Apple主催のiPhoneアプリケーション開発入門セミナーに参加してきた</a></h1><hr /><div class="article-body">会場が家からすぐ近くだったので行ってきました。なるべく話しても大丈夫そうなところを選んで書きますが、場合によってはエントリーが消えることもあるかも。セミナーの内容が完全黙秘なのか、SDKの部分はダメなのかどっちかよくわからないので。英語苦手だ。
 
 <h2>ドキュメントみろ</h2>
 今回、話を聞いてきたことの大半は既にドキュメントとしてあるとのこと。英語だけど。なので英語がわかる人はそちらを読めばいいと思います。というか他にドキュメントがないので、英語読めなくても読まなきゃいけないんだけど。
@@ -168,46 +216,4 @@ Protocol 2,1
 
 サンプル画像
 <img src="http://img.skitch.com/20080718-bs6mqgs1nrjggarixunr4wgmdd.jpg" alt="greasemonkey_for_crossreview"/>
-</div></article><article><h1><a href="/2008/07/15/iphone-developer-program/">2008-07-15 iPhone Developer Programに登録しました。</a></h1><hr /><div class="article-body">結論から言うと、まだ実機検証も配布もできてない段階です。そもそもアプリ作れてないですしね。ただ、米国在住者じゃないと登録できないってことはないですね。とりあえず登録はできたっぽいので。
-
-端的に今の状況を説明すると、
-
-<ul>
-<li>iPhone Developer Program(Standardの方、$99)を日本のオンラインApple Storeから注文する</li>
-<li>activate codeがメールで届く</li>
-<li><blockquote>
-We are unable to activate your iPhone Developer Program membership because we are unable to successfully verify your identity. Please contact us and reference Enrollment ID#xxxxxxx for further assistance.</blockquote></li>
-<li>activateできねーよ!って日本語と英語でADC(Apple Developer Connection)のcontact usから送信</li>
-<li>数時間後、「あんたのアカウント情報調整したからもっかい試してみ」って返事がくる(日本語できた)</li>
-<li>めでたくactivate完了</li>
-</ul>
-
-そんな感じでとりあえずDeveloper Programには登録できましたーと。んで、そのあとも実機検証までデバイスの登録とか証明書の作成とか色々ある。やり方は一応英語でドキュメントがあるけれど、なんかキレイにまとまってない。とりあえずはProgram Portal(activate後、ログインできるページ)のメニューを順番にやっていけばいいんじゃないかねー。各メニューにHow Toがあるからそれに従えばいいはず。
-
-おれがやったのは
-
-<ul>
-<li>Certificatesの追加</li>
-<li>Devicesの追加</li>
-<li>App IDsの追加</li>
-<li>Provisioningの追加</li>
-<li>xcodeのオーガナイザ上で、iPod Touchのrestore</li>
-<li>オーガナイザでTouchにProvisionを追加</li>
-<li>xcodeのプロジェクトのinfoでDeviceを選択しようにも選択肢にでない! <- ｲﾏｺｺ</li>
-</ul>
-
-正直、手順が悪かったのか何が悪かったのかがよくわからない。AppleIDに登録してある情報が日本語だからから至るところで文字化けしてるし。証明書のコモンネームまで文字化けしてる。
-
-xcodeのinfoでiPhoneDeveloper:<firstname><lastname>を入力するところがあるんだけど、そこに証明書のコモンネームを書けってドキュメントに書いてあったけど、上で書いたようにコモンネームが文字化けしてるのでどうしたもんかなーと。
-
-んで、証明書を作りなおししまくってたら、Errorがでるようになって追加できなくなってしまった。んで、またメールでなんとかしてーって連絡したところ。
-
-そんな感じでまだiPod Touchで自作appを作るところまではいってない。これからやる人は英語のApple ID作った方がいい気がする。その方が問題なさそう。ただ、あれって日本の住所でも英語で登録できたっけ・・・
-
-とりあえずまた進展があったらエントリ書く。
-
-<h2>追記</h2>
-どうやら大抵の人は一発でactivateできてないっぽいですね(We are unable to activate your iPhone...ってやつ)。そう言うときはとりあえずメールでなんとかしてくれーと頼むのがいいんじゃないですかね。
-
-実機で動かすまでが長いですなぁ。
 </div></article><div class="pager"><ul><li class="previous"><a href="/page/27/">Prev</a></li><li class="next"><a href="/page/29/">Next</a></li></ul></div></div></body></html>

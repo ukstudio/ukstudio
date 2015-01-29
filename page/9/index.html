@@ -8,7 +8,30 @@ _gaq.push(['_trackPageview']);
   var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
   ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
   var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-})();</script></head><body class="page page_9 page_9_index"><div class="cointainer-fluid"><div class="navbar navbar-default" role="navigation"><div class="container-fluid"><div class="navbar-header"><a class="navbar-brand" href="/">UKSTUDIO</a></div><div class="navbar-collapse collapse"><ul class="nav navbar-nav navbar-right"><li><a href="http://twitter.com/ukstudio">Twitter</a></li><li><a href="http://github.com/ukstudio">GitHub</a></li></ul></div></div></div></div><div class="container"><article><h1><a href="/2010/11/25/pathogen_and_neocomplcache/">2010-11-25 pathogen.vimとneocomplcache.vimのスニペット機能</a></h1><hr /><div class="article-body">vimの環境を少し整理した。
+})();</script></head><body class="page page_9 page_9_index"><div class="cointainer-fluid"><div class="navbar navbar-default" role="navigation"><div class="container-fluid"><div class="navbar-header"><a class="navbar-brand" href="/">UKSTUDIO</a></div><div class="navbar-collapse collapse"><ul class="nav navbar-nav navbar-right"><li><a href="http://twitter.com/ukstudio">Twitter</a></li><li><a href="http://github.com/ukstudio">GitHub</a></li></ul></div></div></div></div><div class="container"><article><h1><a href="/2010/12/07/sappororubykaigi03/">2010-12-07 札幌Ruby会議03に行ってきました</a></h1><hr /><div class="article-body">札幌Ruby会議03、お疲れ様でした!本当にいい会議でした、ありがとうございます。
+
+すごいざっくりと感想を言うと「感極まった」とだけ言っておく。あの場にいた時の気持ちはなかなか文章にしづらい。個々の発表で行くと気になるトピックがどうだったとか、この話が良かった、あの話よくわからんみたいなことは言えるのだけど、「札幌Ruby会議」のあの場に居て思ったことはうまく言い表せないんだなー。とは言え「感極まった」で止まってては話にならんので、今後どう行動していくかだな。
+
+ちょっと過去の話になるけど、札幌Ruby会議03に参加したきっかけとしては、やっぱりRubyKaigi2010でスタッフやったことかな。RubyKaigiスタッフで札幌なNiceな人達と会って「札幌RubyKaigiやるよ」と言われて、素直に「行きたい!」と思えたので参加を決めた。更にRubyKaigiのスタッフをやるきっかけとしては東京RubyKaigi03のスタッフをやったことで、そのスタッフをやったきっかけも更に前の〜と遡っていく。
+
+結局あの時あの場にいたってことはそれまでの積み重ねがあってそれが1本の道になってるんだなと。「今後どう行動していくか」ってのも結局は「今やれること、やるべきこと、やりたいこと」をやっていくしかないなと改めって思った次第。
+
+ところで話は少し変わって、島田さんの発表に僕の発表が影響を与えられていたようで良かったです。大抵、自分がなにかを発表したときはあの場にいた人やまわりにどう思ってもらえたのだろう?と不安になる部分は少なからずあるのでこう言ってもらえるのはとてもうれしいです。
+
+<blockquote>
+j, k, u, m
+みんながオブジェクト倶楽部の夏イベントでした発表は、コードや技術、自分自身に等身大で向き合ったとても良い発表でした。あの時の発表に対して自分だったらどんな発表をしただろうか、というのが発表の筋の入り口になりました。ありがとう。
+<cite><a href="http://snoozer05.org/?date=20101204#p01">『Rubyの教えてくれたこと』 - but it&apos;s up to us to change(2010-12-04)</a></cite>
+</blockquote>
+
+最後に、札幌Ruby会議03に参加できたことは僕の中で非常に大きなことだったと思います。単純なモチベアップだけでなく、今後自分がどうしていくか考えるきっかけになりました。本当にありがとうございます。
+
+<h2>札幌観光</h2>
+
+北海道は幼少のころに2回ほど来てるけどあまり記憶がないので実質初めて。なので滞在3日目(12/5)はひとりで適当に観光。本当はたいやき部の方に参加するつもりだったけど、午前中若干二日酔いですぐ動けなさそうだったのと、ツアーにスープカレーが含まれてた(辛いの苦手)ので断念。たいやきは食べたいのでそれはまたの機会に。
+
+観光は札幌周辺と小樽をノープランで。北海道は食べ物がおいしくて素晴しい。次は函館行きたいなぁ。
+</div></article><article><h1><a href="/2010/11/25/pathogen_and_neocomplcache/">2010-11-25 pathogen.vimとneocomplcache.vimのスニペット機能</a></h1><hr /><div class="article-body">vimの環境を少し整理した。
 
 <h2>pathogen.vimを使うことにした</h2>
 <a href="https://github.com/tpope/vim-pathogen">tpope&apos;s vim-pathogen at master - GitHub</a>
@@ -72,6 +95,4 @@ EvernoteはUbuntu用のアプリケーションがないのでNevernoteやWine�
 <li><a href='http://gihyo.jp/admin/serial/01/ubuntu-recipe'>連載：Ubuntu Weekly Recipe｜gihyo.jp … 技術評論社</a></li>
 <li><a href='http://d.hatena.ne.jp/voidy21/20091127/1259345628'>キーボード派におすすめするLinuxのCompiz設定 - Secret Sword!!!</a></li>
 <li><a href='http://nippondanji.blogspot.com/2010/08/blog-post.html'>漢(オトコ)のコンピュータ道: ラップトップ購入!OSは・・・</a></li>
-</div></article><article><h1><a href="/2010/10/19/search_with_scope/">2010-10-19 scopeでお手軽検索</a></h1><hr /><div class="article-body">Rails3.0のscope(2系で言うnamed_scope)を使ったお手軽検索。モデルにextendして使う。やってることは渡されたパラメータのkeyのscopeを呼び出して、それらを全部チェインさせるだけ。お手軽だけど、scopeを定義するだけなので結構融通が効くし便利。
-<script src="http://gist.github.com/632769.js?file=searchable.rb"></script>
 </div></article><div class="pager"><ul><li class="previous"><a href="/page/8/">Prev</a></li><li class="next"><a href="/page/10/">Next</a></li></ul></div></div></body></html>
