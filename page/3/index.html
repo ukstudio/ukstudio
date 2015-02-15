@@ -8,96 +8,116 @@ _gaq.push(['_trackPageview']);
   var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
   ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
   var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-})();</script></head><body class="page page_3 page_3_index"><div class="cointainer-fluid"><div class="navbar navbar-default" role="navigation"><div class="container-fluid"><div class="navbar-header"><a class="navbar-brand" href="/">UKSTUDIO</a></div><div class="navbar-collapse collapse"><ul class="nav navbar-nav navbar-right"><li><a href="http://twitter.com/ukstudio">Twitter</a></li><li><a href="http://github.com/ukstudio">GitHub</a></li></ul></div></div></div></div><div class="container"><article><h1><a href="/2014/03/13/openvpn_qnap_funtoo/">2014-03-13 FuntooからQNAPにOpenVPNでつなぐ</a></h1><hr /><div class="article-body"><p>まずはFuntooにOpenVPNを入れる。</p>
-<pre class="highlight text">sudo emerge openvpn
-</pre>
-<p>次にQNAPからOpenVPNの設定ファイルをダウンロードする。場所は「コントロール・パネル -&gt; アプリケーション -&gt; VPNサービス -&gt; 設定ファイルのダウンロード」にある。(QTS 4.0.3)</p>
+})();</script></head><body class="page page_3 page_3_index"><div class="header"><div class="header-navigation"><ul><li><i class="fa fa-twitter"></i><a href="http://twitter.com/ukstudio">Twitter</a></li><li><i class="fa fa-github-alt"></i><a href="http://github.com/ukstudio">GitHub</a></li></ul></div><div class="header-title"><a href="/">UKSTUDIO</a></div></div><div class="container"><article class="article-content"><h1 class="article--title"><a href="/2010/12/07/sappororubykaigi03/">札幌Ruby会議03に行ってきました</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2010-12-07 00:00:00 UTC" pubdate="pubdate">December 07 2010</time></div><div class="article-tags"></div><div class="article-summary">札幌Ruby会議03、お疲れ様でした!本当にいい会議でした、ありがとうございます。
 
-<p>zipが落ちてくるのでunzipするとca.crtとopenvpn.ovpnが展開されるので/etc/openvpnにmvする。他にOpenVPNで接続するところはないのでそのまま放りこむ。openvpn.opvnのままだと/etc/init.d/openvpn start時に怒られるのでopenvpn.confにリネーム。</p>
-<pre class="highlight text">/etc/init.d/openvpn start
-</pre>
-<p>で起動する。ユーザとパスを聞かれるのでadminで認証する。他のユーザーで認証したい場合はVPNサービスの設定からユーザを追加する。ローカルIPでQNAPに繋れば無事終了。</p>
-</div></article><article><h1><a href="/2014/03/05/kensington_slimblade/">2014-03-05 Kensingtonのslimbladeを導入</a></h1><hr /><div class="article-body"><p>ちょっと新しいマウスを捜してたのでこの機会にトラックボールに移行してみた。購入したのはKensingtonの<a href="http://www.amazon.co.jp/gp/product/B0024AFD42?ie=UTF8&amp;camp=1207&amp;creative=8411&amp;creativeASIN=B0024AFD42&amp;linkCode=shr&amp;tag=ukstudio0c-22">SlimBlade</a>。</p><p>昔はLinuxで使うと上の2つのボタンが使えなかったみたいだけど、今はパッチがあたったようで問題なく使える。なぜか右奥がバックボタンなのに左奥がミドルボタンだけど。この辺のリマップはxorg.confあたりでいいのかな。あまり困りはしないのでとりあえずは特に設定を変えずに使ってみることにする。</p></div></article><article><h1><a href="/2013/12/27/funtoo/">2013-12-27 GentooからFuntooに移行しました</a></h1><hr /><div class="article-body"><p>GentooからFuntooに移行した。<a href="http://esminc.doorkeeper.jp/events/3547">Funtoo Linux インストール講習会</a>から大分日が立ってしまった。</p><p>インストール自体は<a href="http://www.funtoo.org/Funtoo_Linux_Installation">Funtoo Linux Installation</a>をそのまま実行。boot-updateのビルドだけ失敗したが、texinfo-5.1以上をmaskしたら解決。</p><p>ネット関係はNetworkManagerが妙に不安定だったのでwicdを使うことにした。wicd-cursesがいい感じ。今のところ接続も安定している。</p><p>X環境まわりは例のごとくXmonadで。GNOMEも一度入れたけど、結局使わないのでアンインストール。mix-inのGNOMEも余計なUSEフラグをつけて邪魔だったので使わないことにした。</p><p>GNOMEを削除したのでGDMではなくSlimeを使うことにした。GDMとかstartxがxinitrcを読むのかxprofileを読むのかとかいっつも忘れる…</p><p>その他GitやらRubyやら入れてひととおり終了。カーネルをバイナリで入れてるので起動が遅いけどカーネルのコンフィグでハマるのもダルいしとりあえずこのままで行く予定。</p></div></article><article><h1><a href="/2013/10/18/middleman/">2013-10-18 ブログをWordPressからmiddlemanに移行しました</a></h1><hr /><div class="article-body"><p>今まで当ブログはWordPressでブログを書いていたけれど、今回<a href="http://middlemanapp.com/">middleman</a>を使うことにした。特になにかが気に入ってmiddlemanを選んだわけでもないのだけど、しばらくはこれで運用してみようと思う。</p><p>運用はGithub Pageで行なうことにした。これで今まで中途半端に保持していたVPSを解約することができる。最近はIRCを全然使ってないからいいけど、なんかの機会に使うようになったらtiarraとかをどう運用するか考えなくちゃいけないなぁ。</p><p>デザインやその他足りない機能は追々増やしていこうとおもいます。とりあえずRSSだけは用意した。</p></div></article><article><h1><a href="/2012/09/11/validates_presence_of/">2012-09-11 validates :foo_id, :presence => trueを追う</a></h1><hr /><div class="article-body">チームメンバーから「validates_presence_of :user_idはそのuser_idが存在するか確かめてくれる」という情報を得て、そんな隠れ仕様あんの?とおもってちょっと調べてみた。
+すごいざっくりと感想を言うと「感極まった」とだけ言っておく。あの場にいた時の気持ちはなかなか文章にしづらい。個々の発表で行くと気になるトピックがどうだったとか、この話が良かった、あの話よくわからんみたいなことは言えるのだけど、「札幌Ruby会議」のあの場に居て思ったことはうまく言い表せないんだなー。とは言え「感極まった」で止まってては話にならんので、今後どう行動していくかだな。
 
-結論だけまず言うと
-<pre>
-validates :user_id, :presence => true
-validates_presence_of :user_id
-</pre>
-ではなく、
-<pre>
-validates :user, :presence => true
-validates_presence_of :user, :presence => true
-</pre>
-の用に関連名を指定するとそれっぽい動作をしなくもない。
+ちょっと過去の話...</div><div class="read-more"><a href="/2010/12/07/sappororubykaigi03/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2010/11/25/pathogen_and_neocomplcache/">pathogen.vimとneocomplcache.vimのスニペット機能</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2010-11-25 00:00:00 UTC" pubdate="pubdate">November 25 2010</time></div><div class="article-tags"></div><div class="article-summary">vimの環境を少し整理した。
 
-とりあえずコードを追うとpresence系のバリデーション自体はActiveModel::Validations::PresenceValidatorで定義されている。
+<h2>pathogen.vimを使うことにした</h2>
+<a href="https://github.com/tpope/vim-pathogen">tpope's vim-pathogen at master - GitHub</a>
 
-<pre>module ActiveModel
-  # == Active Model Presence Validator
-  module Validations
-    class PresenceValidator < EachValidator
-      def validate(record)
-        record.errors.add_on_blank(attributes, options)
-</pre>
+我らがtpope先生のプラグイン、pathogen.vimを使ってプラグインを管理するようにした。.vim/bundleにあるプラグインに対してruntimepathを追加してくれるので、今まで.vim以下のautoloadやpluginsとかにバラバラになってたプラグインを1つにまとめたまま管理できる。
 
-次にadd_on_blankを見てみる。
+1つにまとめら...</div><div class="read-more"><a href="/2010/11/25/pathogen_and_neocomplcache/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2010/11/22/railsdevcon2010/">RailsDevCon2010で話してきました</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2010-11-22 00:00:00 UTC" pubdate="pubdate">November 22 2010</time></div><div class="article-tags"></div><div class="article-summary">RailsDevCon2010、お疲れ様でした。主催かつ発表のお声をくれた@ysakakiさん、スタッフの方々、スピーカー、発表を聞いてくれたみなさま、どうもありがとうございました。
 
-<pre># File activemodel/lib/active_model/errors.rb, line 251
-def add_on_blank(attributes, options = {})
-  [attributes].flatten.each do |attribute|
-    value = @base.send(:read_attribute_for_validation, attribute)
-    add(attribute, :blank, options) if value.blank?
-  end
+今回、「Railsプロジェクトを成功させるために現場ができること」というタイトルで話したけどびっくりするぐらいRailsに関係のない話。オマケ程度にちょこっと。以下、資料です。
+
+
+
+
+テーマとしては、@ysakakiさんから声をかけて頂いた時に、[Railsの現場でまだまだバージョン管理すら...</div><div class="read-more"><a href="/2010/11/22/railsdevcon2010/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2010/11/17/pbcopy_for_ubuntu/">UbuntuでMacOSのpbcopyっぽいことをする</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2010-11-17 00:00:00 UTC" pubdate="pubdate">November 17 2010</time></div><div class="article-tags"></div><div class="article-summary">普段ブログ書くとき、ローカルのvimで記事を書いてからそれをWordPressの記事作成画面にコピペしている。Macの時はpbcopyを使っていたけど、それと同じことをUbuntuでするにはxselというのを使えばよさそうだ。
+
+<pre><code>$ sudo aptitude install xsel
+$ cat hoge.txt | xsel -ib
+</code></pre>
+</div><div class="read-more"><a href="/2010/11/17/pbcopy_for_ubuntu/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2010/10/30/mac_to_ubuntu/">MacからUbuntuに乗り換えた</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2010-10-30 00:00:00 UTC" pubdate="pubdate">October 30 2010</time></div><div class="article-tags"></div><div class="article-summary">最近メインで使っているMacBookが調子悪かったので新しいマシンを買うことにした。元々、Core i7&amp;メモリ8GBでMacBook Proの15インチを買うつもりだったけど、Lenovoが18周年記念でThinkPadが安かったので以前から考えていたLinuxマシンに手を出すことにした。
+
+<h2>X201sをCore i7&amp;メモリ8GBで</h2>
+基本的にほぼ毎日パソコンを持ち歩くので比較的重さが軽めのX201sを選択。CPUとメモリは元々予定してたi7と8GBを選択。HDDとSSDで迷ったけ...</div><div class="read-more"><a href="/2010/10/30/mac_to_ubuntu/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2010/10/19/search_with_scope/">scopeでお手軽検索</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2010-10-19 00:00:00 UTC" pubdate="pubdate">October 19 2010</time></div><div class="article-tags"></div><div class="article-summary">Rails3.0のscope(2系で言うnamed_scope)を使ったお手軽検索。モデルにextendして使う。やってることは渡されたパラメータのkeyのscopeを呼び出して、それらを全部チェインさせるだけ。お手軽だけど、scopeを定義するだけなので結構融通が効くし便利。
+<script src="http://gist.github.com/632769.js?file=searchable.rb"></script>
+</div><div class="read-more"><a href="/2010/10/19/search_with_scope/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2010/10/07/steak_stats/">steakのspec/acceptanceをrake statsに反映させる</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2010-10-07 00:00:00 UTC" pubdate="pubdate">October 07 2010</time></div><div class="article-tags"></div><div class="article-summary"><strong>どうやらsteakで対応してるみたいです(コメント欄参照)。steakのgroupに:developmentを追加すればrake statsの結果にAcceptance specsと表示されます。</strong>
+
+結論から言うとrakeファイルを追加して以下のように書けばOK。(Rails.root/lib/tasks/statistics.rakeとかね)
+<script src="http://gist.github.com/613641.js?file=statistics.rake"></script>
+task名がstatsetupなのはrspec-rails/lib/rspec/tasks/rspec.rakeでそうなっている為。cucumber...</div><div class="read-more"><a href="/2010/10/07/steak_stats/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2010/10/06/work/">最近のお仕事まわりでツラツラと書く</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2010-10-06 00:00:00 UTC" pubdate="pubdate">October 06 2010</time></div><div class="article-tags"></div><div class="article-summary">今の仕事についてつらつらと書く。今漠然と思ってることを書き出しただけなので、そんなに意味のある内容でもないかも。
+
+<h2>アジャイル</h2>
+そもそも何をもってアジャイルと言うのか、中々難しいところではある。昨日から読んでる「<a href="http://amzn.to/a6ueou">間違いだらけのソフトウェア・アーキテクチャ</a>」では<q>僕はアジャイル(開発)というのは、できればアジャイル宣言を守るか、守る努力をしているものだけに、その名前を冠してほしいと思っているけど・・・。</q>とある。そういう意味だと改めてうちのチームでもアジャイル宣言を確認するべきかもしれない...</div><div class="read-more"><a href="/2010/10/06/work/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2010/09/13/git-svn/">Better Subversionとしてのgit-svn</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2010-09-13 00:00:00 UTC" pubdate="pubdate">September 13 2010</time></div><div class="article-tags"></div><div class="article-summary">普段のプログラミングにgitを使用しているのだけど、実際の現場ではまだまだsvnが主流だったりする。svnを直接使ってもいいのだけど、やはりローカル上でコミットしたいとか、複数のコミットを1つにまとめたいとか、トピックブランチを切りたいとかあるのでそれはsvn単体だと厳しい。そんなわけでBetter SVNとしてのgit svnの紹介、と言うよりメモ。
+
+<h2>リポジトリのクローン</h2>
+<code><pre>git svn clone repository_url</pre></code>
+これでsvnリポジトリをgitリポジトリとして取...</div><div class="read-more"><a href="/2010/09/13/git-svn/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2010/09/10/password_edit/">パスワード変更の機能をどこにもたせるべきか</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2010-09-10 00:00:00 UTC" pubdate="pubdate">September 10 2010</time></div><div class="article-tags"></div><div class="article-summary">ちょっと色々わからなくなったので、誰かのアドバイスを期待してここに書く。
+
+簡単に前提を書くと、UserモデルのCRUDとは別にUserのパスワードを変更する画面が必要になった。Usersコントローラにpassword_editみたいなactionを書くのもあまりきれいじゃないなと思ってコントローラを分けることにした。
+
+<pre><code>resources :users do
+  resource :password
 end
-</pre>
+</code></pre>
 
-add_on_blankメソッドはattributesの内容を走査してblankだったらerrorsに追加してるんだろうなーというのが読み取れる。じゃあ実際に値を取ってきてるであろう:read_attribute_for_validationは何なのだろう。api.rubyonrails.orgで検索してもヒットしない。仕方ないからgitリポジトリをgrepして探す。そうすると以下の様なコードがみつかる。
+確実にUserのレコードは必要になるので上記の用にネストさせることにした。こ...</div><div class="read-more"><a href="/2010/09/10/password_edit/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2010/09/10/mitakarb10/">mitaka.rb#10に参加してきました</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2010-09-10 00:00:00 UTC" pubdate="pubdate">September 10 2010</time></div><div class="article-tags"></div><div class="article-summary">9日に開催された<a href="http://atnd.org/events/7542">mitaka.rb#10</a>に参加してきた。何だかんだで3回目の参加。今回のmitaka.rbは主催の<a href="http://twitter.com/ysakaki">@ysakaki</a>さんと協賛の(株)HatchUpさんの圧倒的財力により、なんと3000円というお得な会でした。飲み放題だし、ご飯もとてもおいしかった。おかげで今日は若干二日酔いです。
 
-<pre># activemodel/lib/active_model/validations.rb line 327
-alias :read_attribute_for_validation :send
-</pre>
+今回は<a href="http://twitter.com/takahashim">@takahashim</a>さんが参加されてて、たまたま席が近く色々とお話が出来て楽しかった。実はあまりちゃんと話したことがなかったのでよかった。後は<a href="http://www.tokyorubyistmeetup.org/">Tokyo Rubyist Meetup</a>から</div><div class="read-more"><a href="/2010/09/10/mitakarb10/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2010/09/05/sla/">外国語学習の科学</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2010-09-05 00:00:00 UTC" pubdate="pubdate">September 05 2010</time></div><div class="article-tags"></div><div class="article-summary">新書なのでサクッと読めた。おもしろかったので簡単に紹介する。
 
-つまりただのsend。なので
+<blockquote>
+このような背景から、「外国語学習」という現象そのものを対象とした学問分野が1960年代ごろから発達してきました。これが、「第二言語習得(Second Language Acquisition = SLA)」という新たな研究分野です。
+</blockquote>
 
-<pre>validates :user_id, :presence => true</pre>
+書名にある第二言語とは、上記の引用の通り比較的新しい学問で、主に「第二言語習得メカニズムの解明」と「どのような習得方法が効果的か」という問題を扱うとのこと。
 
-というコードは
+ちなみに第二言語 = 英語とい...</div><div class="read-more"><a href="/2010/09/05/sla/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2010/09/03/rspec2_rails3_autotes/">RSpec2+Rails3+autotest環境の構築</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2010-09-03 00:00:00 UTC" pubdate="pubdate">September 03 2010</time></div><div class="article-tags"></div><div class="article-summary">9月からやる仕事がめでたく、Rails3.0 + Ruby1.9.2のお仕事なので色々と環境構築。とりあえず自動テストまわりやりました。
 
-<pre>instance.send(:send, :user_id)</pre>
-
-となり、結局は普通に指定した属性の値を見るに過ぎない。
-
-
-で、最初の話に戻るが
+一応、環境を他と切り分けるために、rvmでアプリ用にgemsetを用意。アプリごとに簡単に環境を構築できるrvmマジ便利。
 
 <pre>
-validates :user_id, :presence => true
-</pre>
-は普通にuser_idの値がblank?かどうかだけを見るので実際にそのuser_idでUserが存在するかチェックはしない。
-
-<pre>
-validates :user, :presence => true
+gem install bundler --pre
+gem install rails
 </pre>
 
-はどうかというと、instance.userがnilの状態でinstance.userを呼び出すとinstance.user_idでUserを取りにいく。そこでUserが存在しなければ[]が返ってくるのでblank?がtrueとなりこのバリデーションは失敗する。
+まずは、bundlerとrailsをインストール。次は適当なアプリを作って必要なgemのインストールなどを行う。テストはRSpecで書...</div><div class="read-more"><a href="/2010/09/03/rspec2_rails3_autotes/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2010/09/02/rubykaigi2010/">RubyKaigi2010を終えて</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2010-09-02 00:00:00 UTC" pubdate="pubdate">September 02 2010</time></div><div class="article-tags"></div><div class="article-summary"><img src="http://farm5.static.flickr.com/4134/4935820587_2169342225.jpg">
+<a href="http://www.flickr.com/photos/recompile_net/sets/72157624694727057/">via http://www.flickr.com/photos/recompile_net/sets/72157624694727057/</a>
 
-<pre>
-instance = Model.new
-instance.user_id = 111111111
-instance.valid? #=> false
-  User Load (3.4ms)  SELECT "users".* FROM "users" WHERE ""."id" = 111111111 LIMIT 1
-</pre>
+少し間があいたけど、今年のRubyKaigiについてつらつらと書こうかな。
 
-なので、このケースに限って言えばそのIDのレコードが存在するか確認する動作をしている。とは言え、あくまでisntance.userの値を見るだけなので
+<h3>スタッフ参加してみて</h3>
+今年はスタッフとしての参加だったのだけれど、RubyKaigiのスタッフは東京RubyKaigi03の時にやっただけなので、本家の方は初めて。3日間と結構な長丁場なのでうまく立ち回れるか不安だったのだけど、自分なりにはそれなりに頑張れたのではないか...</div><div class="read-more"><a href="/2010/09/02/rubykaigi2010/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2010/08/26/before_rubykaigi2010/">RubyKaigi2010前日です!</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2010-08-26 00:00:00 UTC" pubdate="pubdate">August 26 2010</time></div><div class="article-tags"></div><div class="article-summary">さて、いよいよ<a href="http://rubykaigi.org/2010/ja">RubyKaigi2010</a>前日となりました。僕は今日の夜に筑波入りをする予定なのですが、初スタッフ参加ということもありすでになんかそわそわしています。
 
-<pre>
-instance = Model.new
-instance.user = User.new
-instance.valid? #=> true
-</pre>
+ところで僕の所属はKaigiFreaksレポート班なのですが、既にスタッフ業として<a href="http://jp.rubyist.net/magazine/?preRubyKaigi2010">Rubyist Magazine 日本Ruby会議2010直前特集号</a>と、gihyo.jpに<a href="http://gihyo.jp/news/report/01/rubykaigi2010/0000">RubyKaigi2010直前レポート</a>を一部書きました。まだ読んでいない方はぜひ読んでみてください。直前特集号の中に<a href="http://jp.rubyist.net/magazine/?preRubyKaigi2010-05">RubyKaigi2010参加者のしお...</a></div><div class="read-more"><a href="/2010/08/26/before_rubykaigi2010/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2010/08/04/gmail/">Gmailを便利に使ういくつかの方法</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2010-08-04 00:00:00 UTC" pubdate="pubdate">August 04 2010</time></div><div class="article-tags"></div><div class="article-summary">今のところ仕事、プライベート共にメールは全部Gmailでまかなっているのでそこらへんのtipsとかをまとめておきます。
 
-この様に直接値を入れてしまえばDBにselect文はなげない。
+<h2>mailtoをGmailにする</h2>
+PCでGmailを使うにあたってメーラーを使わずWebで済ませていますが、その場合mailtoをクリックしたときに使ってもいないMail.appが起動してしまったりと困る場合があります。
 
-なので、そういう動作をすることもあるだけで厳密にはそのIDのレコードが存在を確かめているわけではない。
-</div></article><div class="pager"><ul><li class="previous"><a href="/page/2/">Prev</a></li><li class="next"><a href="/page/4/">Next</a></li></ul></div></div></body></html>
+その場合、<a href="http://toolbar.google.com/gmail-helper/">Google Notifier</a>を使うと便利です。Google NotifierはGmailの受信通知やGoogle カレンダーのリマインダ通...</div><div class="read-more"><a href="/2010/08/04/gmail/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2010/07/18/oblove2010summer/">オブラブ2010夏イベントに参加・発表してきました</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2010-07-18 00:00:00 UTC" pubdate="pubdate">July 18 2010</time></div><div class="article-tags"></div><div class="article-summary">招待講演ということで、若人トラックトップバッター務めさせて頂きました。発表を聞いて頂いた方、ありがとうございました。
+
+個人的に今回印象に残っているのは、m_sekiさんのロールプレイの話とjune29さんの最大限能力を発揮する話でした。色々とグサグサくるというか要反省な感じです。
+
+今回のオブラブはいつもよりスタッフが少なかったらしいですが、全然気にならない進行ぶりでした。どうもありがとうございました!
+
+以下、個人的KPT。
+
+<h3>Keep</h3>
+<ul>
+<li>遅刻しなかった</li>
+<li>発表した</li>
+<li>資料間に合った</li>
+</ul>
+
+</div><div class="read-more"><a href="/2010/07/18/oblove2010summer/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2010/07/18/value/">コードがきれいに書けると顧客へ提供する価値は向上するのか</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2010-07-18 00:00:00 UTC" pubdate="pubdate">July 18 2010</time></div><div class="article-tags"></div><div class="article-summary">今思っていることを整理するがてら書いておきます。
+
+僕がここ最近ずっと「コードはきれいに書くべき」「読みやすいコードを」と言い続けています。16日のオブラブの発表もそうですし、WEB+DB Vol.56の記事もそうです。
+
+ただ、僕が話すメリットも基本的には開発者側の視点です。もちろん、開発者がメリットを享受した結果、顧客にも何らかのメリットはあります。(バグが減る、仕様変更のコストが減るなど)
+
+とは言え、「コードをきれいに書ける」と言うのは「自分自身が書こうと思ったものを書ける」と言う...</div><div class="read-more"><a href="/2010/07/18/value/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2010/06/07/rails_warden/">warden+railsでパスワード認証</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2010-06-07 00:00:00 UTC" pubdate="pubdate">June 07 2010</time></div><div class="article-tags"></div><div class="article-summary">今作っているサービスが後々、OAuth、OpenIDあたりにも対応することになるかもしれないので、そのあたり柔軟に対応できそうなwardenを試してみました。
+
+必要なgemは<a href="http://github.com/hassox/warden">warden</a>と<a href="http://github.com/hassox/rails_warden">rails_warden</a>の2つ。
+
+Userモデルは以下のような感じで。
+<script src="http://gist.github.com/428559.js?file=20100602075944_create_users.rb"></script>
+
+次に<a href="http://github.com/hassox/rails_warden">githubのページ</a>を参考にconfig/initializers/warden.rbを追加します。今回はパスワードで認証をしたいのでpasswordのstrategyを自分で追加します。(と言ってもほとんどサンプルと同じ...</div><div class="read-more"><a href="/2010/06/07/rails_warden/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2010/05/31/presented_books/">本を頂きました</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2010-05-31 00:00:00 UTC" pubdate="pubdate">May 31 2010</time></div><div class="article-tags"></div><div class="article-summary">[caption id="attachment_645" align="aligncenter" width="240" caption="頂いた本"]<img src="http://173.230.148.68/wp-content/uploads/2010/05/2010-05-31-01.23.jpeg" alt="頂いた本" title="頂いた本" width="240" height="180" class="size-full wp-image-645">[/caption]
+
+今日、Amazonから3冊ほど屆きました。<a href="http://amzn.to/bKguL8">ソフトウェアテストの技法 第二版</a>、<a href="http://amzn.to/bWzGWL">初めて人のためのLISP</a>、<a href="http://amzn.to/b3zv8w">Joel on Software</a>の3冊です。
+
+自分で買ったものではなく、どうやら僕の<a href="http://www.amazon.co.jp/gp/registry/wishlist/275HV3Y5DV8OY?ie=UTF8&amp;filter=all&amp;x=13&amp;sort=priority&amp;layout=standard&amp;y=12&amp;reveal=unpurchased&amp;linkCode=shr&amp;camp=1207&amp;creative=8415&amp;tag=ukstudio0c-22">wishlist</a>から送って頂いたようなんですが、差出人が書かれておらず誰からなのかわかりません。引越し祝いかなにかかなーと思って@takkanm...</div><div class="read-more"><a href="/2010/05/31/presented_books/">READ MORE</a></div></article><div class="pager"><ul><li class="previous"><a href="/page/2/">Prev</a></li><li class="next"><a href="/page/4/">Next</a></li></ul></div></div></body></html>

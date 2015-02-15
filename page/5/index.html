@@ -8,136 +8,132 @@ _gaq.push(['_trackPageview']);
   var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
   ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
   var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-})();</script></head><body class="page page_5 page_5_index"><div class="cointainer-fluid"><div class="navbar navbar-default" role="navigation"><div class="container-fluid"><div class="navbar-header"><a class="navbar-brand" href="/">UKSTUDIO</a></div><div class="navbar-collapse collapse"><ul class="nav navbar-nav navbar-right"><li><a href="http://twitter.com/ukstudio">Twitter</a></li><li><a href="http://github.com/ukstudio">GitHub</a></li></ul></div></div></div></div><div class="container"><article><h1><a href="/2012/01/11/rails3_primary_key_foreign_key_big_int/">2012-01-11 rails3でprimary keyとforeign keyをbig intにする</a></h1><hr /><div class="article-body">以下は、PostgreSQLの例。
-<code><pre>ActiveRecord::ConnectionAdapters::PostgreSQLAdapter::NATIVE_DATABASE_TYPES[:primary_key] = 'bigserial primary key' </pre></code>
-外部キーの場合、<code>t.references :user</code>とか書いてると、ActiveRecord側でintegerがハードコーディングされているのでlimitオプションを付けるしかなさそう。
-<code><pre>t.references :user, :limit => 8</pre></code>
-</div></article><article><h1><a href="/2011/10/12/lvm_kvm/">2011-10-12 LVMを使っているKVMのディスクイメージの容量を追加する</a></h1><hr /><div class="article-body">KVMのディスクイメージの容量を増やしたのでメモ。
+})();</script></head><body class="page page_5 page_5_index"><div class="header"><div class="header-navigation"><ul><li><i class="fa fa-twitter"></i><a href="http://twitter.com/ukstudio">Twitter</a></li><li><i class="fa fa-github-alt"></i><a href="http://github.com/ukstudio">GitHub</a></li></ul></div><div class="header-title"><a href="/">UKSTUDIO</a></div></div><div class="container"><article class="article-content"><h1 class="article--title"><a href="/2010/01/06/tddbc/">TDD Boot Campに参加してきました</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2010-01-06 00:00:00 UTC" pubdate="pubdate">January 06 2010</time></div><div class="article-tags"></div><div class="article-summary">これまた、割と今更なエントリ。当日は@t_wadaさんのお誘いでRubyグループのコーチ役として参加したけどあまりコーチらしいことしてないな・・・申し訳ない。
 
-<h2>イメージファイルの拡張</h2>
-まずはイメージのフォーマットを確認する。qemu-imgのinfoでわかる。
+TDD Boot Camp(以下tddbc)では、午前中に @t_wada さんと Lasse氏 の講演、午後は各言語ごとにグループを作りペアプログラミング。朝から夜にかけてがっつりなイベントだった。TDDをやりたくてもやり方がわからない、やってみたはいいけど上手くいかないって人にはとてもいいイベントだったんじゃなかろうか。実際、...</div><div class="read-more"><a href="/2010/01/06/tddbc/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2010/01/06/oblove_bounen_2009/">オブラブ忘年会2009でLTしてきた</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2010-01-06 00:00:00 UTC" pubdate="pubdate">January 06 2010</time></div><div class="article-tags"></div><div class="article-summary">大分今更のエントリだけど、去年末にオブラブ忘年会2009に参加、LTで発表してきた。とりあえず資料はりつけ。永田さん、なんでiPhone買ってしもうたんや。
 
-<pre>$ qemu-img info vm.img</pre>
+資料を当日用意したので、色々とグダグダな発表だったけど楽しかったのでよしとする。酒を飲みながらのLTは初めてだけど、変なテンションであれはあれで良かったかも。
 
-今回はqcow2になっていたのでrawに変換する。
+オブラブ忘年会、楽しかったです。スタッフの皆様、本当にありがとうございました。
+</div><div class="read-more"><a href="/2010/01/06/oblove_bounen_2009/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2010/01/02/happy_new_year/">あけましておめでとうございます+退職のお知らせ</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2010-01-02 00:00:00 UTC" pubdate="pubdate">January 02 2010</time></div><div class="article-tags"></div><div class="article-summary">みなさま、あけましておめでとうございます。 本年もよろしくお願い致します。
 
-<pre>$ qemu-img convert -f qcow2 vm.img -O raw vm.raw</pre>
+思えば、昨年もいろんな人のお世話になりました。休職から結局退職することになってしまったRAWHIDE.の人達をはじめ、仕事がきっかけで仲良くさせて頂くようになった永和システムマネージメントの人達や、Twitterや様々なコミュニティで知り合った人達、普段から仲良くさせて頂いてる人達などなど、本当にありがとうございます。
 
-ddのseekを使って末尾に領域を追加する。10GBのイメージに5GB追加するならこんな感じ。
+ところで、今さらっと書きましたが先日社長とお話をさせて頂きまして結果、12月付けでRAWHIDE...</div><div class="read-more"><a href="/2010/01/02/happy_new_year/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2009/12/02/dreaming_in_code/">プログラマーのジレンマ 夢と現実の狭間</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2009-12-02 00:00:00 UTC" pubdate="pubdate">December 02 2009</time></div><div class="article-tags"></div><div class="article-summary"><table class="g-tools_table"><tr>
+<td valign="top"><span class="g-tools_img"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4822283801/2004-05-22/" target="_blank"><img src="http://ecx.images-amazon.com/images/I/51dTcwyDMsL._SL160_.jpg" alt="プログラマーのジレンマ 夢と現実の狭間"></a></span></td>
+<td valign="top">
+<span class="g-tools_body"><a href="http://www.amazon.co.jp/%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9E%E3%83%BC%E3%81%AE%E3%82%B8%E3%83%AC%E3%83%B3%E3%83%9E-%E5%A4%A2%E3%81%A8%E7%8F%BE%E5%AE%9F%E3%81%AE%E7%8B%AD%E9%96%93-%E3%82%B9%E3%82%B3%E3%83%83%E3%83%88%E3%83%BB%E3%83%AD%E3%83%BC%E3%82%BC%E3%83%B3%E3%83%90%E3%83%BC%E3%82%B0/dp/4822283801%3FSubscriptionId%3D15SMZCTB9V8NGR2TW082%26tag%3D2004-05-22%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D4822283801" target="_blank">プログラマーのジレンマ 夢と現実の狭間</a><img src="http://www.assoc-amazon.jp/e/ir?t=2004-05-22&amp;l=ur2&amp;o=9" width="1" height="1" border="0" alt=""><br>伊豆原 弓 <br><br>日経BP社  2009-05-21<br>売り上げランキング : 29765<br>おすすめ平均  <img src="http://g-images.amazon.com/images/G/01/detail/stars-3-5.gif"><br><br><a href="http://www.amazon.co.jp/%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9E%E3%83%BC%E3%81%AE%E3%82%B8%E3%83%AC%E3%83%B3%E3%83%9E-%E5%A4%A2%E3%81%A8%E7%8F%BE%E5%AE%9F%E3%81%AE%E7%8B%AD%E9%96%93-%E3%82%B9%E3%82%B3%E3%83%83%E3%83%88%E3%83%BB%E3%83%AD%E3%83%BC%E3%82%BC%E3%83%B3%E3%83%90%E3%83%BC%E3%82%B0/dp/4822283801%3FSubscriptionId%3D15SMZCTB9V8NGR2TW082%26tag%3D2004-05-22%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D4822283801" target="_blank">Amazonで詳しく見る</a></span> <span class="g-tools_by">by <a href="http://www.goodpic.com/mt/aws/index.html">G-Tools</a></span>
+</td>
+</tr></table>
 
-<pre>$ dd if=/dev/zero ov=vm.raw bs=1G count=5 seek=10</pre>
+読み終わってから結構日が立ってしまったが、なかなかよい本だと思ったので紹介しておく。
 
-フォーマットを元に戻す。
+本書は、「Chandler」というOSSプロジェクトを1人のジャーナリストが3年間に渡って追い続けたドキュメンタリーだ。Chandlerプロジェクトは、優秀なメンバー(名前や、名前がわからなくとも参加したプロジェクト、製品...</div><div class="read-more"><a href="/2009/12/02/dreaming_in_code/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2009/11/09/ht-03a_android/">最近のHT-03A(Android)の使い方</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2009-11-09 00:00:00 UTC" pubdate="pubdate">November 09 2009</time></div><div class="article-tags"></div><div class="article-summary">HT-03Aを買ってからそれなりに時間がたったわけだけど、現時点で僕の使い方をまとめておく。
 
-<pre>$ qemu-img convert -f raw vm.raw -O qcow2 vm.img</pre>
+主な用途もなにも、僕は携帯をこれ1つしか持っていないので基本的にはガラパゴスケータイと然程かわらない。知り合いとのメールや電話での連絡、あとはネットを見るのが主な用途。もちろん、ガラパゴスケータイ(この言い方あまり好きじゃないんだけど他に何て言えばいいのかしら)からHT-03Aに移行してかわったことも多いので、そこらへんを重点的にまとめる。
 
-<h2>仮想マシンのパーティションの修正</h2>
-その後、イメージを立ち上げてパーティションを修正する。今回のパーティションは/dev/hda1がboot、/dev/hda2がlvmになっていたので/dev/hda2の方を修正する。
+<h2>Twitter</h2>
+Androidマーケットにはたくさん...</div><div class="read-more"><a href="/2009/11/09/ht-03a_android/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2009/11/03/mathematics/">最近読んだ数学に関連する本</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2009-11-03 00:00:00 UTC" pubdate="pubdate">November 03 2009</time></div><div class="article-tags"></div><div class="article-summary"><h2>ぼくには数字が風景に見える</h2>
+<table class="g-tools_table">
+<tr><td colspan="2"><span class="g-tools_title"><a href="http://www.amazon.co.jp/%E3%81%BC%E3%81%8F%E3%81%AB%E3%81%AF%E6%95%B0%E5%AD%97%E3%81%8C%E9%A2%A8%E6%99%AF%E3%81%AB%E8%A6%8B%E3%81%88%E3%82%8B-D-%E3%82%BF%E3%83%A1%E3%83%83%E3%83%88/dp/4062139545%3FSubscriptionId%3D15SMZCTB9V8NGR2TW082%26tag%3D2004-05-22%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D4062139545" target="_blank">ぼくには数字が風景に見える</a><img src="http://www.assoc-amazon.jp/e/ir?t=2004-05-22&amp;l=ur2&amp;o=9" width="1" height="1" border="0" alt=""></span></td></tr>
+<tr>
+<td valign="top"><span class="g-tools_img"><a href="http://www.amazon.co.jp/%E3%81%BC%E3%81%8F%E3%81%AB%E3%81%AF%E6%95%B0%E5%AD%97%E3%81%8C%E9%A2%A8%E6%99%AF%E3%81%AB%E8%A6%8B%E3%81%88%E3%82%8B-D-%E3%82%BF%E3%83%A1%E3%83%83%E3%83%88/dp/4062139545%3FSubscriptionId%3D15SMZCTB9V8NGR2TW082%26tag%3D2004-05-22%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D4062139545" target="_blank"><img src="http://ecx.images-amazon.com/images/I/51s2ct%2BbjnL._SL160_.jpg" alt="ぼくには数字が風景に見える"></a></span></td>
+<td valign="top">
+<span class="g-tools_body">古屋 美登里 <br><br>講談社  2007-06-13<br>売り上げランキング : 20117<br><br><strong>おすすめ平均  </strong><img src="http://g-images.amazon.com/images/G/01/detail/stars-4-5.gif" alt="star"><br><img src="http://g-images.amazon.com/images/G/01/detail/stars-5-0.gif" alt="star">新鮮な感動を感じました<br><img src="http://g-images.amazon.com/images/G/01/detail/stars-5-0.gif" alt="star">天才の頭の中を覗ける本<br><img src="http://g-images.amazon.com/images/G/01/detail/stars-4-0.gif" alt="star">異常な天才の半生記<br><br><a href="http://www.amazon.co.jp/%E3%81%BC%E3%81%8F%E3%81%AB%E3%81%AF%E6%95%B0%E5%AD%97%E3%81%8C%E9%A2%A8%E6%99%AF%E3%81%AB%E8%A6%8B%E3%81%88%E3%82%8B-D-%E3%82%BF%E3%83%A1%E3%83%83%E3%83%88/dp/4062139545%3FSubscriptionId%3D15SMZCTB9V8NGR2TW082%26tag%3D2004-05-22%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D4062139545" target="_blank">Amazonで詳しく見る</a></span><span class="g-tools_by"> by <a href="http://www.goodpic.com/mt/aws/index.html">G-Tools</a></span>
+</td>
+</tr>
+</table>
 
-<pre>$ fdisk /dev/hda
-> d
-> 2 # /dev/hda2を一旦削除
-> n
-> p
-> 2
-> Enter
-> Enter # /dev/hda2を作りなおす。デフォルトでサイズが拡大するはず。
-> t
-> 2
-> 8e # /dev/hda2のパーティションタイプをLVMにする
-> w
-> q # 書きこんで終了
-$ reboot
-</pre>
+割と最近(と言ってもここ数ヶ月の話だが)に「レインマン」のDVDを見たのでその繋りで積読状態になっていたのを読み切ってみた。レインマン繋りというのは、レインマンの主人公と同じくこの本の著者ダニエルもサヴァン症候群(アスペルガー症候群)...</div><div class="read-more"><a href="/2009/11/03/mathematics/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2009/11/02/testing_private_method/">RSpecでprivateメソッドをテストする</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2009-11-02 00:00:00 UTC" pubdate="pubdate">November 02 2009</time></div><div class="article-tags"></div><div class="article-summary"><script src="http://gist.github.com/223674.js"></script>
 
-<h2>ボリュームの追加</h2>
-<pre>$ vgextend VolGroup00 /dev/sda2
-$ lvextend -L +5GB /dev/VolGroup00/LogVol00
-$ resize2fs /dev/VolGroup00/LogVol00
-</pre>
+Object#send(__send__)ならメソッドの呼び出し制限に関わらずメソッドを呼び出すことが可能なので、privateメソッドもテスト可能。
 
-思い出しながら書いてるから細かいところで違うかもしれないけど、だいたいこんな感じで容量の追加が完了。
-</div></article><article><h1><a href="/2011/09/29/debut_gentoo/">2011-09-29 Gentooデビューしました</a></h1><hr /><div class="article-body">メインの開発マシンのOSをUbuntuからGentooにしました。Gentooにした理由は割となんとなくだけど、強いて言うならGentooいいよっていう人の気持ちを知りたいのと、あとPortageは割と好きだからかな。Ubuntuに不満があったわけでもない。Unityは好きじゃないけど、どうせXMonad使うし。
+確か、1.9以降はメソッド呼び出し制限がObject#sendにも影響するとどこかで見た記憶があるのだけど結局そうはなっていないみたい。
 
-インストールは<a href="http://atnd.org/events/19056">第2回 Gentoo Linux インストール講習会 : ATND</a>に参加したおかげで起動するまでは割とすんなり(Thanks @ursm, @kenchan)。Funtooもいれて、実際起動するところまでは持っていったけど無線LANの設定とかがGentooのドキュメント通りじゃなくて混乱したので今回はやめた。
+1.9.1、1.8.7で確認済み。
 
-Gentooのインストールは色々と勉強になった。パーティション切るのも中学生の時に本に従ってLinuxいれた時以来だし、GRUBに至っては触ったことなかったし。ほかにもカーネルやXとかの設定とか、普段は動くものがすぐそこにあるだけだから意外に知らないのよね。
+ちなみにオマケ。
+<script src="http://gist.github.com/223679.js"></script>
 
-とりあえず今はXfce4 + XMonadの環境を作った。XMonad単体の方がいいんだけど、PDFリーダとかメッセンジャーとか何使ったらいいかわからなかったからとりあえずXfce4を使うようにした。GNOME3いれようとしたけど挫折。
-<a href="http://ukstudio.jp/wp-content/uploads/2011/09/gentoo.png"><img src="http://ukstudio.jp/wp-content/uploads/2011/09/gentoo.png" alt="" title="gentoo" width="478" class="alignnone size-full wp-image-904" /></a>
+Pythonはメソッド名の前にアンダースコアを2つけるとprivateなメソッドになるのだけれど、実際のところ別名でメソッドを定義してそ...</div><div class="read-more"><a href="/2009/11/02/testing_private_method/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2009/10/06/web_trustee_company/">Web系受託会社は亡びる</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2009-10-06 00:00:00 UTC" pubdate="pubdate">October 06 2009</time></div><div class="article-tags"></div><div class="article-summary">やけに煽ってるタイトルだけど、別にそんな大した話でもない。最近個人的に思ってることをつらつらと書く。
 
-そんなわけでしばらくはGentoo生活を送ります。
-</div></article><article><h1><a href="/2011/08/25/ipv6hackathon/">2011-08-25 IPv6 Hackathonに参加してきた</a></h1><hr /><div class="article-body">この間のLL PlanetsでIPv6 Hackathonとやらに参加してきた。Ruby組は僕と @sugamasao と @takano32 の3人でチーム組んだ。
+まず、Web系受託会社の定義だけどまぁWebサービスやWebアプリケーションなど比較的規模の小さいものを受託で作っているところとする。「規模の小さい」も割と感覚的なものだけど、まぁその辺の詳細は省く。
 
-<h2>RailsはIPv6でも大丈夫っぽい</h2>
-大丈夫っぽいっていうのは軽くさわった程度なので断言できるほどでもないため。IPv6でRailsを立ち上げたかったら上記のように--bを指定すれば大丈夫です。
+で、なんでまた亡びるとか言いだしたのかと言うとこの程度の規模のものは外部に開発を依頼するより、自分達で作る内製に向かっていくんじゃないと思っている為。特に最近の不景気でエンジニアを雇って...</div><div class="read-more"><a href="/2009/10/06/web_trustee_company/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2009/10/02/ruby-freaks/">Ruby Freaks Loungeに記事を書きました</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2009-10-02 00:00:00 UTC" pubdate="pubdate">October 02 2009</time></div><div class="article-tags"></div><div class="article-summary"><a href="http://gihyo.jp/dev/serial/01/ruby/0021">第21回　Railsアプリの受け入れテストをCucumberで書こう</a>
 
-<pre><code>rails server --b="::"  -p 3000</code></pre>
+<a href="http://d.hatena.ne.jp/onering/">榊さん</a>の紹介で、Ruby Freaks Loungeに記事を書かせて頂きました。ありがとうございます。内容はCucumberについて。割と自分のブログに書いた内容や、WEB+DBのRails特集で書いたことと被ってるかな。
 
-Unicornの場合もオプションで大丈夫。
+あともう一回、記事を書く予定なのでそっちでは実際にRailsアプリのテストをCucumberで書く記事にするつもり。チュートリアル形式的な。
 
-<pre><code>unicorn_rails -l '[::]:3000'</code></pre>
+感想とか突っ込みとかあれば教えて頂けるとうれしいです...</div><div class="read-more"><a href="/2009/10/02/ruby-freaks/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2009/09/24/gae_account_for_android/">Android携帯しか持っていない人がGAEのアカウントを作る方法</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2009-09-24 00:00:00 UTC" pubdate="pubdate">September 24 2009</time></div><div class="article-tags"></div><div class="article-summary">今月の頭の話だけど、GAEのアカウントを作った。
 
-あとはApacheは対応してるし一応なんとかなるのではないか。Nginxとかthinは調べてないのでわからないです。あとMySQLはIPv6に対応していないらしいけど、データベースはWebサーバから見えれば大丈夫だし何とかなるでしょう。きっと。
+ただ、GAEのアカウントを作るには携帯の認証が必要で、携帯のアドレスにメールを送ってもらいそれを受け取る必要がある。アドレスを入力する際はセレクトボックスでドメインを選ぶ形式だった。
 
-<h2>github.comやrubygems.orgはAAAAレコードがない</h2>
-digコマンド叩けばわかるけど、みんな大好きgithub.comとrubygems.orgにはAAAAレコードがありません。ということで、IPv6オンリーな環境だと使えないと思うのでトンネル掘るなりなんなりの対応が必要っぽい。
+僕はHT-03A(Android携帯)しか持っていなくて、かつDoCoMoのメールアドレスを契約していないので、gmailしかメールアドレスを持っていないことになる。だけど、そのセレクトボックスにはGmailのドメインが一覧に表示されていない。
 
-<h2>今回作ったもの</h2>
-ネタアプリを作っただけなので実装としてはそんなにおもしろいものでもないかな。
+仕方がな...</div><div class="read-more"><a href="/2009/09/24/gae_account_for_android/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2009/08/25/multiruby/">Ruby1.8.7とRuby1.9.2を共存させる</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2009-08-25 00:00:00 UTC" pubdate="pubdate">August 25 2009</time></div><div class="article-tags"></div><div class="article-summary"><strong>現在は、以下の方法より<a href="http://rvm.beginrescueend.com/">rvm</a>を使うことをオススメします。 10/05/28 追記</strong>
 
-ひとつは、twitterの発言ひとつに対してIPv6のアドレスをひとつ割り振って、そのIPv6にリクエストがきたらそれに対応するtwitterの発言を表示させるというもの。ただのアドレスの無駄遣いですね。
+ローカルに開発環境としてRuby1.8.7とRuby1.9.2を共存させる方法。
 
-あと1時間ぐらい僕の時間があまったので、その1時間でIPv6アドレスをキーとするストレージっぽいものを作った。あるIPv6に対してPOSTするとbodyの内容が保存されて、GETすると保存された内容が取得できるみたいな。更新はPUTだろっていう話もあったけど、時間が足りなかったのでした。
+<h2>Rubyのインストール</h2>
+まずはRubyの処理系をインストール。<a href="http://www.ruby-lang.org/ja/">ruby-lang.org</a>から適当に落とす。今回はruby 1.8.7-p174とruby 1.9.2-preview1を使用。
 
-発表資料がそのうち公開されると思います。
-<a href="http://ll.jus.or.jp/2011/slide.html">Lightweight Language Planets : 公開資料</a>
-<h2>Net::HTTPとURI</h2>
-そのストレージのテストをするのにRubyでNet::HTTPとURIを使って画像をPOSTするコードを書いた。その時にちょっとハマったことがあるので説明しておく。
+まず、Ruby1.9.2から。
 
-<script src="https://gist.github.com/1170083.js?file=ipv6.rb"></script>
+<pre><code>$ ./configure --prefix=/Users/uk/local --program-suffix...</code></pre></div><div class="read-more"><a href="/2009/08/25/multiruby/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2009/08/20/review_kinesis/">Kinesisを2週間使ったのでレビューする</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2009-08-20 00:00:00 UTC" pubdate="pubdate">August 20 2009</time></div><div class="article-tags"></div><div class="article-summary"><a href="http://d.hatena.ne.jp/ursm">ursm</a>さんに2週間程、<a href="http://ja.wikipedia.org/wiki/Kinesis">Kinesis</a>をお借りしたのでレビューを書く。
 
-IPv6は:を使ってアドレスを区切るので、ポート部とわけるために[]を使うことがある。そのアドレスをURI.parseしたあとにURI::HTTP#hostで値を取得すると[]が残ったままになり、Net::HTTPは[]があるとどうやらダメっぽくてエラーがでる。パッと見コードに何も問題がなさそうに見えるので知っておかないとハマる人はハマりそう。実際に僕はハマりました。
+結論から言うと、Kinesisはとても素晴しいキーボードだった。ursmさんや<a href="http://whileimautomaton.net/">kana</a>さんが常用するのもわかる気がする。
 
-で、たまたまURI::HTTP#hostnameというメソッドがみつけてこっちは[]を取り除く。このURI::HTTP#hostnameはるりまを見るとどこにも乗ってなくて、挙動の違いはバグかとも思ったりしたんだけどどうやら違うみたい。
+<h2>指の負担が少ない</h2>
+Kinesisはキーの部分が、おわんの形にへこんでおり、かつ各キーの角度や位置がそれぞれ微調整されておりパッと見カオス。案外これがいい感じにフィットしていて指の動きがスムーズ。ちょっと動かせばすぐ届く感じ。多分、タイピング速度も一般的なキーボードよりは速くなる気がする。
 
-Rubyのuri/generic.rbを見ると以下のように書いてあった。
+あと...</div><div class="read-more"><a href="/2009/08/20/review_kinesis/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2009/08/12/twitter_bot/">ついったーBOT作者にお願いしたいこと</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2009-08-12 00:00:00 UTC" pubdate="pubdate">August 12 2009</time></div><div class="article-tags"></div><div class="article-summary">最近、行儀がわるいというか、ハッキリ言ってしまうと「鬱陶しいBOT」が増えた(前からかもだけど)気がするので個人的にBOTを作るときに気をつけてもらいたいことを書いておく。
 
-<blockquote>
-# Since IPv6 addresses are wrapped by brackets in URIs,
-# this method returns IPv6 addresses wrapped by brackets.
-# This form is not appropriate to pass socket methods such as TCPSocket.open.
-# If unwrapped host names are required, use "hostname" method.
-#
-#   URI("http://[::1]/bar/baz").host #=> "[::1]"
-#   URI("http://[::1]/bar/baz").hostname #=> "::1"
-</blockquote>
+<h2>言及に気を配って</h2>
+ついったーの仕様上、いつからかは知らないけど発言内容に「@自分のID」が含まれていると言及されたということでReplyに流れてくる。
 
-ということで、hostnameメソッドを使いましょうという話でした。
-</div></article><article><h1><a href="/2011/08/04/tddbc_tokyo_1_6/">2011-08-04 TDDBC 東京 1.6でサポートスタッフをやってきました</a></h1><hr /><div class="article-body"><a href="http://www.zusaar.com/event/agZ6dXNhYXJyDQsSBUV2ZW50GPGlAww">TDD Boot Camp 東京 1.6</a>にRubyのサポートスタッフとして参加してきた。
+それはまぁいいんだけど、BOTが必要以上にIDを含めているとそれだけでReplyがうまってしまう。特に「○○なう系BOT」がひどい。山手線とか色々あるけど<a href="http://twitter.com/shibuya_now">渋谷なうBOT</a></div><div class="read-more"><a href="/2009/08/12/twitter_bot/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2009/08/11/oauth/">OAuthを使ってみた雑感</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2009-08-11 00:00:00 UTC" pubdate="pubdate">August 11 2009</time></div><div class="article-tags"></div><div class="article-summary">最近、TwitterのDMスパムなどで話題のOAuthですが、仕事で使ってみて色々思うところもあるのでまとめておく。
 
-当初の予定ではあくまでサポートなのでペアプロには参加しない予定だったけど、Rubyのグループが5人で人数が奇数になってしまったので急遽ペアプロに参加することにした。
+<h2>OAuthは安全か</h2>
+まず、 OAuthでよく言われてるようにみえるパスワードをサービスに渡さないから安全ということに関して。簡単に言うと、「パスワード渡すよりは安全だけどまぁ信用していいかどうかの判断は必要だよね」ってところ。
 
-この辺は@t_wadaさんや主催の@pocketberserkerさんとも相談してペアとトリオのふたつに分けるっていう話もあったけれど、僕が「せっかくだからペアプロして帰ってもらいたい」と思ったので若干の迷いはあれどペアプロに参加することにしたのでした。Ruby組は@takahashimさんや@1syoさん、@kwappaさんたちが参加されていて彼らなら付きっ切りでサポートしなくても大丈夫そうというのも理由のひとつ。
+OAuthは難しい話を抜きにしてしまえば、期限つきパスワード(Twitterは無期限っぽいですが)をサービスごとに発行するようなものだと思う。パ...</div><div class="read-more"><a href="/2009/08/11/oauth/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2009/07/27/server_maintenance/">サーバのメンテナンスしてました</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2009-07-27 00:00:00 UTC" pubdate="pubdate">July 27 2009</time></div><div class="article-tags"></div><div class="article-summary">事後報告になってしまいますが、先週の金曜から今日にかけてサーバのメンテナンスしてました。サイトが見れなくて困った人がいたら申し訳ないです。
 
-コードレビューを見た感じだと一応はうまくいったんじゃないかなと思う。特に@1syoさんと@takahashimさんのペア(ダブル高橋!)は積極的に質問をしてくれたので、僕としても教えがいがあった(えらそう)。ただ、質問を受けると僕の方のペアプロが一時的に中断してしまうし、僕としても頭の切り替えが結構大変だったので出来ることならやはり参加者同士でペアが組めるといいんだろうなぁ。理想を言うと全部のペアをスタッフ+参加者にすることなんだろうけど、あまり現実的じゃなさそう。
+メンテナンスと言うか、設定を一からやりなおしたかったのと、CentOSに飽きたのでたまには違うディストリビューションにしたかったので、Gentooでビルドしなおしてました。
 
-今回、最初に僕とペアを組んだ方が(お名前を聞くのを忘れてしまった...)モダンなテストの書き方を知りたいと言うので、ある程度xUnit的なテストの書き方でペアプロを進めた後、がっつりRSpec的な書き方にリファクタリングするということをやってみた。他のペアもRSpecは初期の<code>it "なんちゃらかんちゃら"</code>の書き方をされていたので、コードレビュー時に共有できたのはよかったのかな。RSpecの書き方については言っちゃいけないということはないだろうから言っちゃうけどそのうちるびまの方に書く予定なのでお楽しみに。
+ブログのテーマとかも追々直していきますが、とりあえず見れるところまで。
+</div><div class="read-more"><a href="/2009/07/27/server_maintenance/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2009/07/16/ht_03a_gtalk/">HT-03AでGtalkまわりでハマッったのでメモ</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2009-07-16 00:00:00 UTC" pubdate="pubdate">July 16 2009</time></div><div class="article-tags"></div><div class="article-summary">なんだか変なところではまるな、android。
 
-Ruby組は全体的にTDDのサイクル自体はできていた感じで、内容としてはテストの書き方にフォーカスが移っていたように感じる。例えば、標準出力が絡むテストのやり方とか、システム時刻が絡むテストのやり方とかdescribe/contextの切り方とか。多分、TDDBCも回数が増えていくにつれ、こういう人達がどんどん増えてくると思うからTDDBCの次の道をしめせるといいんじゃないかと思った。参考図書はいくつかあるけど、例えばxUTPとかTDDBCからのジャンプアップがヘビーすぎるなぁという気もする。(もちろんいきなりあれを全部読めという話でもないんだけれど)
+Gtalkでチャットをする時は大体クライアント側でその人を登録すると思うんですが、連絡帳にすでにその人が登録してあった場合、マージ的なことはしてくれません。具体的な例で説明した方がわかりやすいと思うので具体例しめします。
 
-話は変わって当日のお題を再度ひとりで実装してみたので、コードを公開しておきます。
+<ol>
+<li>連絡帳にすでにAさんが登録してあり、携帯アドレスとGmailアドレスが登録されています</li>
+<li>その人とGtalkで会話したいのですが、連絡帳に登録してあっても一度フレンド登録しないといけなません</li>
+<li>なのでフレンド登録する</li>
+<li>無事...</li>
+</ol></div><div class="read-more"><a href="/2009/07/16/ht_03a_gtalk/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2009/07/16/android_alternative/">HT-03AのGmailアプリからメールを送るとmultipart/alternativeになる</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2009-07-16 00:00:00 UTC" pubdate="pubdate">July 16 2009</time></div><div class="article-tags"></div><div class="article-summary">先日もエントリを書いたように、今現在HT-03Aを使っているのですが、ひとつ問題が。
 
-<a href="https://github.com/ukstudio/tddbc1.6">ukstudio/tddbc1.6 - GitHub</a>
+まぁタイトルのまんまなのですが、標準のGmailアプリからメールを送るとヘッダがmultipart/alternativeになってしまいます。もちろんWebからだとtext/plainで送れます。multipart/alternativeについては詳しくは書きませんが、多分大抵の場合、HTMLメールとして受け取ることになると思います。
 
-あまりじっくり書いたって感じでもないので仕様漏れとかありそうだけど、テストコードの書き方の参考にはなるかと思います。@bleisさんみたいに細かに解説しようと思ったけど気力がないのでした。
+<img src="http://img.skitch.com/20090716-e9kguk8wruw5t8p4a45qcruark.jpg" alt="alternative">
 
-そういえば今回のスタッフも若手が多いな。@bleisさんと俺が86世代、@kyonn_mmさんと@pocketberserkerさんがひとつだかふたつだか年下だっけ? 同世代の人が頑張ってるのはとても刺激になります。
+それの何が問題かと言うと、携帯に送った場合それがデコメとして認...</div><div class="read-more"><a href="/2009/07/16/android_alternative/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2009/07/14/rails_oauth_twitter/">RailsからOAuthを利用してTwitterにポストする</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2009-07-14 00:00:00 UTC" pubdate="pubdate">July 14 2009</time></div><div class="article-tags"></div><div class="article-summary">OAuthの細かい説明は抜き。
 
-最後に、主催の@pocketberserkerさん、講演をしてくださった@t_wadaさんをはじめ、スタッフの方々どうもお疲れ様でした。参加者のみなさま、どうもありがとうございました。
+まず、OAuthを使うためにはTwitterでアプリケーションの登録が必要なので、<a href="http://twitter.com/oauth_clients">http://twitter.com/oauth_clients</a>で登録をしておいてください。 以下のコードの6行目の部分を取得したConsumer keyとConsumer secretをに置き換えてください。
 
-特に@pocketberserkerさんは佐賀の人なのにもかかわらず東京でTDDBC主催とか、そのパワフルさを見習いたい感じです。本当にお疲れ様でした。
+<script src="http://gist.github.com/146684.js"></script>
 
-おまけ
-<script src="https://gist.github.com/1124762.js"> </script>
-</div></article><div class="pager"><ul><li class="previous"><a href="/page/4/">Prev</a></li><li class="next"><a href="/page/6/">Next</a></li></ul></div></div></body></html>
+適当なところからverifyアクションにリダイレクトしてくると、さらにTwitterにリダイレクトします。その後、callbackアクションに戻ってくるので、そ...</div><div class="read-more"><a href="/2009/07/14/rails_oauth_twitter/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2009/07/13/android_ht_03a/">DoCoMoのAndroid携帯「HT-03A」を買って3日たったので適当にレビューする</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2009-07-13 00:00:00 UTC" pubdate="pubdate">July 13 2009</time></div><div class="article-tags"></div><div class="article-summary">買いました、DoCoMoのAndroid携帯「HT-03A」。本当は買わないつもりだったんですけど。以下レビューです。画像はない上にそれなりに長文です。
+
+<h2>契約</h2>
+発売日前日の夜に急にむらむらきまして、発売日、新宿ヨドバシに開店時間に行ったら在庫があるとのことなのでその場で契約。新規契約だったので、具体的な金額は忘れましたが2万数千円ってとこでした。ヨドバシはポイントがつくので、その場で一括支払い。
+
+ヨドバシに行ったらすでに、僕の前には10人ぐらいいた上に、対応している店員があまり多くなか...</div><div class="read-more"><a href="/2009/07/13/android_ht_03a/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2009/07/08/alphagrip/">AlphaGripキーボード買いました</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2009-07-08 00:00:00 UTC" pubdate="pubdate">July 08 2009</time></div><div class="article-tags"></div><div class="article-summary"><a href="http://www.flickr.com/photos/ukstudio/3700581002/"><img src="http://farm4.static.flickr.com/3652/3700581002_3e6002fcfc.jpg?v=0" alt=""></a>
+
+今日、無事届きました。送料こみで130ドルちょい。本体は109ドルぐらい。
+
+ちょこっと触った感じですが、とりあえず配列がわからんですな。手元みながらじゃないと入力できません。日本語は入力できますが、あまり向いてない感じはします(SKK使用)。コードや英文だとそんなに悪くはなさそうです。
+
+ただ、サイズが外人仕様のためか少し大きいかもしれません。EscとCtrlが遠いのはVimmerとしてはちょっと残念です。あとhjklも少し辛いです。
+
+まわりからはネタのような目で見られますが、僕は...</div><div class="read-more"><a href="/2009/07/08/alphagrip/">READ MORE</a></div></article><div class="pager"><ul><li class="previous"><a href="/page/4/">Prev</a></li><li class="next"><a href="/page/6/">Next</a></li></ul></div></div></body></html>

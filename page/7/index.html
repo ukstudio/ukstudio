@@ -8,140 +8,179 @@ _gaq.push(['_trackPageview']);
   var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
   ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
   var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-})();</script></head><body class="page page_7 page_7_index"><div class="cointainer-fluid"><div class="navbar navbar-default" role="navigation"><div class="container-fluid"><div class="navbar-header"><a class="navbar-brand" href="/">UKSTUDIO</a></div><div class="navbar-collapse collapse"><ul class="nav navbar-nav navbar-right"><li><a href="http://twitter.com/ukstudio">Twitter</a></li><li><a href="http://github.com/ukstudio">GitHub</a></li></ul></div></div></div></div><div class="container"><article><h1><a href="/2011/04/11/odrk01/">2011-04-11 大江戸Ruby会議01で発表してきました</a></h1><hr /><div class="article-body">昨日は大江戸Ruby会議という名のasakusa.rbの生活発表会があったので、普段の生活で考えてることを発表してきた。ちなみに実はasakusa.rbの参加回数はそんなに多くなかったりする。当日のスライドと動画はこちら。KaigiFreaksは仕事がはやくてすごい。いつもありがとうございます!
+})();</script></head><body class="page page_7 page_7_index"><div class="header"><div class="header-navigation"><ul><li><i class="fa fa-twitter"></i><a href="http://twitter.com/ukstudio">Twitter</a></li><li><i class="fa fa-github-alt"></i><a href="http://github.com/ukstudio">GitHub</a></li></ul></div><div class="header-title"><a href="/">UKSTUDIO</a></div></div><div class="container"><article class="article-content"><h1 class="article--title"><a href="/2008/11/14/rubygems_update/">RubyGemsのupdateの方法が変わっていた</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2008-11-14 00:00:00 UTC" pubdate="pubdate">November 14 2008</time></div><div class="article-tags"></div><div class="article-summary">せっかくMerb1.0がでたことだしインストールしてみようかと思ったら、gemを1.3以上いれやがれ!と怒られてしまった。それならアップデートするかーと思い、update --systemをやってsuccessと出たはいいけど、gem -vで1.2と表示される。MacPortsの方でアップデートして、1.3入れても-vは1.2でなんぞーとか思っていたらupdateの方法が変わってたみたい。
+
+以下、update手順。
+
+<ol>
+<li>
+<a href="http://rubyforge.org/frs/?group_id=126&amp;release_id=16500">RubyForge</a>からrubygems-upate-1.3.1.gem...</li>
+</ol></div><div class="read-more"><a href="/2008/11/14/rubygems_update/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2008/11/10/skitch/">Skitchでキャプチャアップロード</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2008-11-10 00:00:00 UTC" pubdate="pubdate">November 10 2008</time></div><div class="article-tags"></div><div class="article-summary"><a href="http://d.hatena.ne.jp/snow-bell/20081110/1226249937">セキュリティの教訓 - snow-bellの日記</a>
+
+snow-bellのところでgyazoのセキュリティが話題になってたので、ちょっとレスもかねてエントリー書く。
+
+<a href="http://skitch.com/">Skitch.com</a>
+
+今、オレが使ってるツールはgyazoじゃなくてSkitchというものを使ってる。デモが上で見れるのでそれを見てもらえばどんなものか大体わかるはず。
+
+基本的な用途は、キャプチャ-&gt;編集-&gt;アップロード。大体gyazoと同じ。オレがgyazoを使わない理由は、画像の削除と公開範囲が指定できないってところが...</div><div class="read-more"><a href="/2008/11/10/skitch/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2008/11/07/vimrc/">「地味に便利なVim設定」をもうちょい地味に便利にする</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2008-11-07 00:00:00 UTC" pubdate="pubdate">November 07 2008</time></div><div class="article-tags"></div><div class="article-summary"><a href="http://blog.blueblack.net/item_317">地味に便利なVim設定 - ナレッジエース</a>
+
+いくつかもうちょい便利にできるよーってところがあったので書いてみる。
+
+<h2>スペース + wで保存</h2>
+別に¥¥で保存でもいいと思うけど、ちょっと指が遠い気がする。ので僕はスペース + wで保存してる。同じ要領でquitも。
+<pre lang="vim">
+nnoremap <space>w :<c-u>write<cr>
+nnoremap <space>q :<c-u>quit<cr>
+</cr></c-u></space></cr></c-u></space></pre>
+
+<h2>jとkでカーソルキーを中心に保ってスクロール</h2>
+わざわざスペースを使わなくてもできる。gj、gkにしておくと表示行で上下に移動できるので折り返しの行があると...</div><div class="read-more"><a href="/2008/11/07/vimrc/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2008/10/28/todo/">RTMとか挫折するので自分に合うTODO管理を考えてみた</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2008-10-28 00:00:00 UTC" pubdate="pubdate">October 28 2008</time></div><div class="article-tags"></div><div class="article-summary">RTMとか今までに数回使おうとして、なぜかいつも使わなくなる。RTM自体は使いやすいんだけど、多分ブラウザベースが合わないんだろう。CUIでタスク管理したい!って思って以前試したけど(名前わすれちゃった)、なんかそれも合わなかった。
+
+んで、今回自分なりに考えたToDo管理は下のような感じ。ちなみにオレの使ってるOSはMacな。Linuxでも大丈夫だと思うけど。windowsはしらん。
+
+<ul>
+<li>ToDoの作成は「touch todo名.txt」</li>
+<li>ToDoの詳細はそのファイルに書き込めばいい</li>
+<li>終...</li>
+</ul></div><div class="read-more"><a href="/2008/10/28/todo/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2008/10/27/xss/">XSS対策に入力時エスケープは非常にややこしい</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2008-10-27 00:00:00 UTC" pubdate="pubdate">October 27 2008</time></div><div class="article-tags"></div><div class="article-summary">to-Rさんの<a href="http://blog.webcreativepark.net/2008/10/24-201629.html">XSSの脆弱性を限りなくなくす方法</a>を読んでなんかもにょもにょしたのでエントリーを書く。多分、to-Rさんはこれから書くことに関して理解してて、あの対策を行なってるのかもしれないけど、それでも書く。自分の勉強も兼てるので変なところがあれば教えていただけるとありがたいです。
+
+入力時エスケープは非常に<strong>ややこしい</strong>
+
+確かに、入力値に必ずエスケープしておけば、XSS対策漏れにはなるかもしれない。けれど非常にややこしいことになる。
+
+例えば、受け取ったデータの文字列に対して文字数制限の...</div><div class="read-more"><a href="/2008/10/27/xss/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2008/10/06/vimm3/">VimM#3開催のお知らせ</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2008-10-06 00:00:00 UTC" pubdate="pubdate">October 06 2008</time></div><div class="article-tags"></div><div class="article-summary">11月の22日(土)の14時からVimM#3を開催します。
+
+今回のテーマは「脱初心者」ということでなるべくなら初心者の方に来てもらいたいなと思っています。なんかメンバーみると結構「おまえ初心者じゃないだろう!」て人がいるので、負けずに初心者の方もいっぱい来てください。
+
+スピーカーもまだ募集しているので応募お待ちしております。
+
+今回の会場もささださんとほしさんにご協力頂きました。二回連続にわたりありがとうございます。
+
+<a href="http://wiki.livedoor.jp/biowithit/d/VimM%233">VimM#3</a>
+</div><div class="read-more"><a href="/2008/10/06/vimm3/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2008/10/04/rails_many_db/">RailsでMySQLとPostgreSQLを同時に扱う方法(+問題点)</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2008-10-04 00:00:00 UTC" pubdate="pubdate">October 04 2008</time></div><div class="article-tags"></div><div class="article-summary">プラグインとか無しで、複数のDB(MySQLとPostgreSQL)を扱う方法。Rails2.1でしか試してないけど、多分1.2とかでも大丈夫。多分。MySQLとPostgreSQLの接続ライブラリはgemからインストールしておくこと。
+
+まずは、database.ymlに扱うデータベースの定義を書く。
+
+<pre lang="ruby">
+development:
+  adapter: mysql
+  encoding: utf8
+  database: db_development
+  username: root
+ ...</pre></div><div class="read-more"><a href="/2008/10/04/rails_many_db/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2008/09/19/no_use_number_prime/">数字を使わずに素数判定</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2008-09-19 00:00:00 UTC" pubdate="pubdate">September 19 2008</time></div><div class="article-tags"></div><div class="article-summary">86のSkypeチャットで話題になったのでちょこちょこっと書いた。普通にループして比較するだけお。もっといい方法あるんだろうけど、とりあえずはよしとする。
+
+<pre lang="ruby">
+class Integer
+  def prime?
+    return false if self.zero? || self == [[]].size
+    ([[],[]].size...self).each do |i|
+      return false if (self%i).zero?
+    end
+    true...</pre></div><div class="read-more"><a href="/2008/09/19/no_use_number_prime/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2008/09/18/firefox/">MacでFirefoxのプロファイルの使い分けと別バージョンの同時起動をする</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2008-09-18 00:00:00 UTC" pubdate="pubdate">September 18 2008</time></div><div class="article-tags"></div><div class="article-summary">Firefoxのプロファイルの使い分け(普段用/開発用)と別バージョン(2.0と3.1)の同時起動がしたかったのでちょっと設定してみた。
+
+<h2>プロファイルの作成</h2>
+まずは使い分けるためのプロファイルを作成する。今回作成したのは以下の3つ。
+<ul>
+<li>Firefox3.1</li>
+<li>Firefox3.1_development</li>
+<li>Firefox2.0</li>
+</ul>
+
+プロファイルの作成の仕方はTerminalから-Pオプションを付けて、Firefoxを起動させればいい。
+
+<pre lang="bash">
+$ /Applications/Firefox.app...</pre></div><div class="read-more"><a href="/2008/09/18/firefox/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2008/09/18/firefox_addon/">Firefoxの拡張の整理</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2008-09-18 00:00:00 UTC" pubdate="pubdate">September 18 2008</time></div><div class="article-tags"></div><div class="article-summary">1つ前の記事でプロファイルの使い分けの設定をしたけど、整理もかねて~/Library/Application Support/Firefoxを削除して、1から構築しなおした。
+
+<h2>拡張のインストール</h2>
+<h3>開発/普段共通</h3>
+<dl>
+<dt>Nightly Tester Tools</dt>
+<dd>今、メインに使っているのがShiretoko(Firefox3.1α2)なので、これを入れないと動かない拡張が多い</dd>
+<dt>Vimperator</dt>
+<dd>Firefoxをvimみたいに操作。もうこいつがないと生きていけない体になってしまった。</dd>
+<dt>XUL/Migemo</dt>
+</dl></div><div class="read-more"><a href="/2008/09/18/firefox_addon/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2008/09/09/firefox3_1/">Firefoxα2とβ1preを試してみた</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2008-09-09 00:00:00 UTC" pubdate="pubdate">September 09 2008</time></div><div class="article-tags"></div><div class="article-summary">いつのまにかFirefoxのα2とβ1preがリリースされてたので試してみた。個人的にVimpとかグリモンがないとどうにもならない体になってしまったので<a href="https://addons.mozilla.org/ja/firefox/addon/6543">Nightly Tester Tools</a>をインストール。これで3.01で動いていた拡張は大体動く模様。
+
+それとTraceMonkeyを使えるようにするためabout:configを開いて、「jit」で検索。2項目ほどヒットするので、それぞれの値をfalseからtrueに変更する。これでTraceMonkeyはONになるみたい。
+
+使ってみ...</div><div class="read-more"><a href="/2008/09/09/firefox3_1/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2008/09/07/vimm_railsvim/">VimM#2でRails.vimについて話してきました</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2008-09-07 00:00:00 UTC" pubdate="pubdate">September 07 2008</time></div><div class="article-tags"></div><div class="article-summary"><a href="http://wiki.livedoor.jp/biowithit/d/VimM%232">VimM#2</a>
+
+とりあえず資料。正直、これだけ見てもさっぱりな資料だとは思いますがw
 
 
+Vimの人達の集りでRails.vimというRails使う人限定のプラグインの話はどうなんだろーとか思っていたけど、結構Rails使ってる人いたみたいでよかった。
 
-<a href="http://vimeo.com/channels/oedorubykaigi01">大江戸Ruby会議01 on Vimeo</a>
+発表内容自体はかなりgdgdというか、伝えたいことをうまく伝えられなかったなーと言った感じ。やっぱり事前に練習しとくべき。あとは慣れかなー。しばらくは積極的に発表する側で頑張りたい。
 
-この発表について何か僕にもの申したい人がいたら@ukstudioかy.akamatsu[at]ukstudio.jpまで頂けるとありがたいです。
+それと、RSpecの具体的な対応については<a href="http://ukstudio.jp/2008/06/05/rails_vim_rspec/">rails...</a></div><div class="read-more"><a href="/2008/09/07/vimm_railsvim/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2008/08/31/web_design_questionnaire/">wuたんのWebデザインに関するアンケートにご協力を。</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2008-08-31 00:00:00 UTC" pubdate="pubdate">August 31 2008</time></div><div class="article-tags"></div><div class="article-summary"><strong>結果が公開されています</strong>
+<a href="http://3ping.org/2008/08/31/0120">Webデザインに関するアンケート結果</a>
+<hr />
 
-発表内容についてちょこっとだけ書いておこうかな。<a href="http://www.amazon.co.jp/gp/product/487311473X?ie=UTF8&ref_=sr_1_1&qid=1302526992&sr=8-1&linkCode=shr&camp=1207&creative=8411&tag=ukstudio0c-22">パブリックスピーカーの告白</a>で言う「講演家がこう話せばよかったと思うスピーチ」にあたる部分。
+<a href="http://3ping.org/2008/08/31/0120">Web デザインに関するアンケートにご協力ください - 3ping.org</a>
 
-タイトルに戦略ってあるけど、正直そもそもそういったものがあるのかよくわからない。CIとかは環境の話だし、TDDとかリファクタリングとかはスキルだしでそれらが「戦略」かと言われると違う気がする。
+このブログはWebデザイナよりは、プログラマ、エンジニアと言った方が多いと思うのですが、よろしかったらご協力お願いします。以下のフォームからでも回答可能です。結果は公開してもらえるようです。よろしくお願いします。
 
-結局のところ、継続的に改善していくしかないと思うんだよなぁ。そうなると後はもう手を動かすか動かさないかの話になる。そんなことを考えたら終始「熱意を持って頑張って」みたいな話になってしまった。これはこれで妙に好評だったけど(母数80ぐらいのうちサンプリング5ぐらい)。ちなみに熱意がなくとも仕事だと割り切って手を動かしてももちろんいいと思います。
+<div style="margin: 1em 20px; border: 7px solid #eee; padding: 20px;"><iframe src="http://spreadsheets.google.com/embeddedform?key=pqZ008056mIlxmXskWwiMbg" width="310" height="1319" frameborder="0" marginheight="0" marginwidth="0">読込中...</iframe></div>
+</div><div class="read-more"><a href="/2008/08/31/web_design_questionnaire/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2008/08/25/selenium_on_rspec/">Selenium on Rspecを軽く試してみた</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2008-08-25 00:00:00 UTC" pubdate="pubdate">August 25 2008</time></div><div class="article-tags"></div><div class="article-summary">とりあえずはScaffoldで簡単なアプリを作って、そのテストケースを作成、実行してみるところまで。そんな難しいことはしない。Railsは2.0.2を使用。2.1だとSeleniumにパッチを当てなきゃいけないので面倒。2.1の人は<a href="http://clearspace.openqa.org/docs/DOC-1072">Selenium on Rails patch for RoR 2.1</a>からパッチをあててください。
 
-で、手を動かす前提となるとClean Codeを保てるかは個々の設計能力に依存してくる。そういうわけでRubyでClean Codeってどう実現するんだろうね?というところをSOLID原則を取り出して話をしたつもり。
+<h3>準備</h3>
+まずは準備としてプラグインのインストールと、Scaffoldで簡単なアプリを作成する。
+<pre lang="ruby">
+$ rails _2.0.2_ blog
+$ cd blog
+$...</pre></div><div class="read-more"><a href="/2008/08/25/selenium_on_rspec/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2008/08/13/ruby_on_rails_partial/">Railsのpartialの使い方</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2008-08-13 00:00:00 UTC" pubdate="pubdate">August 13 2008</time></div><div class="article-tags"></div><div class="article-summary">あまりpartialをちゃんと使いこなせていない気がするので(いつもインスタンス変数で適当に値わたしてる)使い方をちょっとメモ。
 
-終わった後に@t_wadaさんからRubyConfで似た話をした人がいるから動画を見た方がいいと言われ、今日twitterで動画を教えてもらった。
-
-<a href="http://confreaks.net/videos/185-rubyconf2009-solid-ruby">SOLID Ruby - Jim Weirich - Ruby Conference 2009</a>
-
-資料も豪快にgithubにあがっていて、こっちは@kakutaniさんに教えてもらった。お二人共ありがとうございます。
-
-<a href="https://github.com/jimweirich/presentation_solid_ruby">jimweirich/presentation_solid_ruby - GitHub</a>
-
-まだ資料をざっと見ただけなんだけど、僕より全然良くできてるので皆さんこっちを見るといいです。まだまだ精進が足りない。
-
-Rubyらしい設計って色々とまだ手探りなんだけど、参考になったのは<a href="http://www.amazon.co.jp/gp/product/4894712857?ie=UTF8&ref_=sr_1_1&s=books&qid=1302526019&sr=8-1&linkCode=shr&camp=1207&creative=8411&tag=ukstudio0c-22">Rubyによるデザインパターン</a>とか<a href="http://www.amazon.co.jp/gp/product/4048678841?ie=UTF8&ref_=sr_1_2&s=books&qid=1302526019&sr=8-2&linkCode=shr&camp=1207&creative=8411&tag=ukstudio0c-22">リファクタリング:Rubyエディション</a>あたりかなぁ。
-
-後はJavaだけど、<a href="http://www.amazon.co.jp/gp/product/4048676881?ie=UTF8&ref_=sr_1_1&s=books&qid=1302526151&sr=1-1&linkCode=shr&camp=1207&creative=8411&tag=ukstudio0c-22">Clean Code</a>とか<a href="http://www.amazon.co.jp/gp/product/4797347783?ie=UTF8&ref_=sr_1_2&s=books&qid=1302526151&sr=1-2&linkCode=shr&camp=1207&creative=8411&tag=ukstudio0c-22">Amazon.co.jp： アジャイルソフトウェア開発の奥義</a>とか。両方とも結構ヘビーな本だけど勉強になる。
-
-大江戸Ruby会議の全体的な感想は他のWeb日記力の高い人におまかせしたいと思うのでそちらをどうぞ。と言うのも、発表が最後の方だったので会議中ずっとそわそわしてたため、文章にまとめられるほどまだ消化できてないのだ。この辺はなかなか難しいところだけど、あの空気感の一旦を担えた(と思いたい)と言うことでよしとする。
-
-最後に。発起人の@a_matsudaさん、実行委員長の@kakutaniさんを始め、スタッフ、発表者、参加者のみなさん、どうもありがとうございました!
-</div></article><article><h1><a href="/2011/03/24/activity/">2011-03-24 近況</a></h1><hr /><div class="article-body"><h3>個人事業主になりました</h3>
-<a href="http://ukstudio.jp/wp-content/uploads/2011/03/FxCam_1300951372227.jpg"><img src="http://ukstudio.jp/wp-content/uploads/2011/03/FxCam_1300951372227.jpg" alt="" title="FxCam_1300951372227" width="720" height="480" class="alignnone size-full wp-image-824" /></a>
-この間の確定申告の際に、個人事業主届けを出してきた。去年は出さずに1年働いていたけど、今年は確定申告を青にしたのでそのついでに。届出の提出はすごいあっけなくて、改めて個人事業主なんてそんな大層なものじゃないなーと思った。
-
-屋号は「UKSTUDIO」にした。屋号を取ったから何が変わるってわけでもないけど、本名とukstudioっていうIDの間にある溝を埋めるぐらいの意味はあるかな。
-
-<h3>4月下旬からスケールアウトでお仕事</h3>
-<a href='http://twitter.com/yamaz'>@yamaz</a>さんからお声がかかって、4月下旬からスケールアウトで働くことになった。正社員ではなく1年の契約です。
-
-一応、別の仕事も請けることは可能だけど最初から複数の仕事をまわせる気がしないし当分はお仕事の依頼は請けられないと思います。あしからず。
-
-「パフォーマンスを出してください」と言われたので頑張りたいと思います。よろしくお願いします。
-</div></article><article><h1><a href="/2011/03/21/tddbc-fukuoka/">2011-03-21 TDDBC福岡に参加してきた</a></h1><hr /><div class="article-body"><a href="http://ukstudio.jp/wp-content/uploads/2011/03/2011-03-19-09.24.06.jpg"><img src="http://ukstudio.jp/wp-content/uploads/2011/03/2011-03-19-09.24.06.jpg" alt="" title="博多駅" class="alignnone size-full wp-image-815" style='width: 100%;'/></a>
-
-福岡TDDBCに参加してきた。今回で3回目の参加(1回目は東京、2回目は東北)。
-
-3回は割と多めの参加回数だと思うけど、参加者層が地域によって違ったり、当然ペアプロする相手も違うわけでいつも違う刺激をもらってる。
-
-今回は@mzpさんが参加するとのことなので普段使ってるRubyではなくOCamlで参加。OCaml組は2ペア(4人)いて、1日目の前半を@suerさん、1日目の後半と2日目を@mzpさんとペアを組んでやった。OCamlは初心者もいいところなので2人には大分お世話になりました。どうもありがとうございます。
-
-コンパイルが必要な言語でTDDをやるとコンパイルがテンポを崩しがちなんだけれど、OMakeが結構よく出来ていてautotestみたいなことも出来るし、その辺は特に不自由ない感じ。OCamlの型付けの強さはなかなか慣れないけれど、コンパイルが通った時点で型の間違いがないって言うのは割と安心かも。
-
-慣れない言語でTDDをやって一番実感したのは、普段Rubyの時は「こういうインターフェースで使いたい」と振る舞いの視点からテストケースを考えられるのに、OCamlだと「今回正規表現が必要そうだけどOCamlだとどうやるの?」といった具合で先に実装の詳細について考えはじめてしまうこと。本来は実装は置いておいてテストケースを考えるべきなのについつい実装の方を考えてしまった。
-
-ただ、言語を習得していく過程でTDDが出来ないかと言うとそんなことはないとも思う。ペアプロの時はたまたま僕にとってオーバーペースだっただけで、落ち着いてbaby stepで刻んでいけば逆に習得しやすくなるかもしれない。今回はRubyと同じテンポでやろうとした俺のミスだなー。
-
-後、ここ最近新しい言語を習得できないなーと思っていたけどこういうイベントで挑戦するのは悪くない。普段だとついついRubyに逃げちゃうんだけど、ペアプロだと逃げようがない。あとは@mzpさんのコードを書くところを横でみれたのは大きいと思う。こう書くのかーって発見がいっぱいあった。
-
-2日目の休憩時間に@mzpさんがAsakusaSatelliteのテストコードを修正していて、RSpecで書かれていたので「ここはこう書けるよ」「こうした方がRSpecっぽいよ」と横で口出ししていたら@mzpさんと@suerさんにRSpecの魅力が伝わったようでよかった。
-
-ここ最近、RSpecに興味はあるけどどう書いたらいいかわからないみたいな話を良くきく。構文だけだったらドキュメントみればいいんだけど、それをどう活用するのかみたいな話はなかなかまとまってないからかな。結構需要がありそうなのでそのうちるびまあたりに寄稿してみようかな。最近やっとletの使い方が見えてきたよ。
-
-そう言えば、今回は結構若い人が多かった気がする。@mzpさんは1つ上らしいし、@bleisさんは同い年だった。主催の@pocketfberserkerさんも年下。<del>講師の1人の@akinekoさんは俺より1つ2つ年下だったと思うし</del>(年上だそうです)。こういうイベントで同世代や自分より若い人がいるとなんかうれしいなー。
-
-今回のTDDBCもなかなか刺激的で楽しかった。次のTDDBCもいくつか開催決まってるっぽいし、今回で動きだす地域もあるみたいだし楽しみ。
-
-最後に、主催の@pocketfberserkerさんを始め、今回のTDDBCの運営に携わっていた方々、どうもありがとうございました!
-<a href="http://togetter.com/li/114056">Togetter - 「TDD Boot Camp福岡」</a>
-</div></article><article><h1><a href="/2011/01/23/bought_galaxy_tab/">2011-01-23 Galaxy Tabを購入した</a></h1><hr /><div class="article-body">HT-03AからGalaxy Tabに機種変した。と言っても電話はこれしか持っておらず、さすがにGalaxy Tabで通話するのは不便なので機種変した後SIMを抜いてHT-03Aに戻した。Galaxy TabはWi-Fiメインで使う予定。今のところ外でGalaxy Tabからネットに繋ぐことはあまり考えてない。とは言え繋げるにこしたことはないので、今持っているイーモバをPocketWiFiにするか、b-mobileを契約するかぐらいのことは検討している。
-
-<h2>Galaxy Tabを購入した目的</h2>
-Galaxy Tabを購入した最大の目的は電子書籍。本については基本的に紙で読みたい派なのでちょっと前は「別に電子書籍とかいいや」と思っていたけど、仕事中に「あの本に書いてあった気がする。けど手元にない」みたいなことは結構良くあるので、その辺りのメリットを考慮して踏み切った。
-
-仕事中にという限定で言えば別に端末を買わずともPCにデータを入れておけばいいだけだ。にも関わらず端末を買ったのは本の大きさが原因で読む機会を減らしている物があること。例えば通勤中とかで本を読むのだけど、ある一定以上の大きさになると鞄から出すのが億劫になったり、そもそも鞄に入らないことが多い為。
-
-あともう1つの理由は、PCはやはりじっくり本を読むにはあまり適していないため。つまりは電子書籍買ったり自炊するんだったら、読み終わった本をデータとして持ち歩くだけでなく、最初から読むことも考えたかった。
-
-<h3>電子書籍としてのGalaxy Tabの評価</h3>
-評価と言っても他の端末を使っていないのであまり比較したものは言えないけど、僕からすると「必要十分」と言ったところ。PDFやepubのデータで読んでいるけど速度的には十分。流石に紙の本みたいにあるキーワードを探しながらペラペラめくるというのは厳しい。ただ、せっかくのデジタルなのでそこらへんは検索でカバーしたいところ。
-
-ちなみにPDFを読む為に使っているアプリはezPDF Readerと言うアプリ。有料だけど$1ぐらいだったと思うので問題ない。このアプリを使っている理由はブックマーク機能と文壇合わせ機能があること。Adobe Readerで読んでいる時はPDFの余白が結構邪魔で、端末のサイズが小さめのこともあって拡大を適宜調節するのがちょっと面倒だった。ezPDF Readerの文壇合わせは文章のブロックごとに余白を詰めてくれるので拡大をわざわざする必要がない。この機能が今のところezPDF Reader以外見当らなかったのでこれを使用している。
-
-端末のサイズ的には電車内で片手持ちをするならこのサイズが限界と言ったところか(人にもよるし女性だと辛いかもしれない)。逆に単純に電子書籍端末として考えると少し小さい気もする。この辺のバランスは人によって違うだろうから何とも言えない。個人的には満足してるし、現状販売されている端末の中だとこのサイズがベストだったと思う。
-
-<h2>Galaxy Tabを買って最初にやったこと</h2>
-<h3>root権の取得</h3>
-Galaxy Tabでrootを取得するには<a href="http://forum.xda-developers.com/showthread.php?t=833953">[APP] z4root - xda-developers</a>からz4rootのapkを取得してインストールすればいい(要会員登録)。インストールや使い方の詳細は検索すれば出てくると思うので割愛するが、とても簡単にroot化できる。root化は自己責任で。
-
-<h3>システムフォントをTakaoフォントに</h3>
-個人的にTakaoフォントが気に入っているのでGalaxy TabのシステムフォントをTakaoフォントにすることにした。手順はちょっと面倒だが以下の通り。ちなみにパソコンがUbuntu 10.10前提の話。
-
-まずは、Android SDKを用意してadbコマンドを使えるようにする。Galaxy TabはそのままだとDeviceとして認識されないので/etc/udev/rules.d/51.andorid.rulesにlsusbからidVendorとidProductというパラメータを記述しなければならない。この辺はDev Phoneと同じ問題っぽいので詳しくはDev Phoneについて検索するといいかも。
-
-<pre>SUBSYSTEM='usb', ATTRS{idVendor}=="04e8", ATTRS{idProduct}=="681c", MODE=="0666"</pre>
-
-ファイルを保存したら<code>sudo service udev restart</code>してやる。
-
-これだけでもまだadbで繋ぐには不十分でadbのserverをsudoで立ち上げてやらないといけない。
-
-<pre>
-$ adb kill-server
-$ sudo adb start-server
-$ adb devices # ここでdeviceが?????とかじゃなくちゃんと表示されていればOK
+<pre lang="ruby">
+render :partial =&gt; 'entry'
 </pre>
 
-adb shellで無事端末につなげたらフォントを書き換える為にsuしなくてはならない。suするとGalaxy Tab側でx4rootのアプリがrootを許可するかポップアップを出しているので許可してやる。システムフォントは/system/fonts以下に入っている。日本語フォントはDroidSansJapanese.ttfで、英語はDroidSans.ttfとDroidSans-Bold.ttf。他にもあるかもしれないけど今回書き換えたのはこの3つ。ちゃんとバックアップ取っておくこと。ハードリセットしても元には戻らない。
+一番基本となるpartialの使い方。_entry.html.erbを描画。
 
-/system以下がread onlyになっていたら再マウントする必要がある。最初にmountを叩いてどのデバイスがsystemにマウントされているか確認して再マウントしよう。
-
-<pre>
-# mount
-# mount -o remount,rw /dev/block/stl9 /system
+<pre lang="ruby">
+render :partial =&gt; 'entry', :locals =&gt; {:title =&gt; "タイトル"}
 </pre>
 
-インストールするフォントはadbからpushするなり、USB接続してコピペするなりして転送する。僕は一旦/sdcardに置いてから、busyboxのcpで/system/fontsに移した(mvだとうまく出来なかったので)。busyboxはマーケットからインストールすることが出来る。日本語のフォントはサイズが大きいのでrenameしたものを3つ用意するよりは1つ置いてシンボリックリンクを貼るといい。リンク先は必ずsystem以下に置こう。/sdcard以下だとUSB接続した時とかにリンクが切れて、フォントを見つけられなくなったGalaxy Tabが延々と再起動を繰り返したりしてリセットせざるを得なくなる。
+localsでpartial側に値を渡す。partial側ではローカル変数titleで文字列"タイト...</div><div class="read-more"><a href="/2008/08/13/ruby_on_rails_partial/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2008/08/08/quill/">Quillリリースおめでとうございます</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2008-08-08 00:00:00 UTC" pubdate="pubdate">August 08 2008</time></div><div class="article-tags"></div><div class="article-summary"><a href="http://quill.to/">Quill [羽根のように軽い、メモメモwebサービス]</a>
+<a href="http://blog.inafog.jp/archives/314">blog in a fog &gt;&gt; Quillリリースしました</a>
+<a href="http://blog.woopsdez.jp/?p=841">ウープスデザインブログ &gt;&gt; 羽根のように軽いメモメモwebサービス 「Quill」公開されました</a>
 
-<pre>
-# busybox cp /sdcard/TakaoGothic.ttf /system/fonts/
-# cd /system/fonts
-# ln -s TakaoGothic.ttf DroidSansJapanese.ttf
-</pre>
+と言うわけで、どうやら知り合いの人が開発に携わっているようなので、おめでとうございますエントリー。
 
-これで端末の方でフォントを「標準フォント」に変更すればOK。
+とりあえず簡単に使ってみて、なんやかんや言ってみようと思ったんだけれどちょっと問題が。自分、オンラインのメモって使わないんだよね。
 
-<h2>全体的な使用感</h2>
-これもまた比較する端末がHT-03Aになるので何とも言えないけど、少なくともそこそこ快適に動作する。特にもたつきもないので、HT-03Aが余計に苦痛に感じられる程。画面サイズはTwitterやFacebook、Gmailなどのアプリを使うには非常に快適で、ブラウザでPCサイトも拡大・縮小がピンチイン・ピンチアウトでラクなのでそこそこ快適。ネットする程度ならPC起動する必要がないぐらい。ニコニコ動画はブラウザでもアプリでも見れてない。ブラウザはFlashがうまくうごいてない気がする。アプリはローディングが遅い(最初に全部読み込もうとしてるっぽい)から挫折しただけでもしかしたらちゃんと見れるかもしれない。
+理由としては
+<ul>
+<li>いつも持ち歩いてるMOLESKINE...</li>
+</ul></div><div class="read-more"><a href="/2008/08/08/quill/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2008/07/29/iphone_seminar/">Apple主催のiPhoneアプリケーション開発入門セミナーに参加してきた</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2008-07-29 00:00:00 UTC" pubdate="pubdate">July 29 2008</time></div><div class="article-tags"></div><div class="article-summary">会場が家からすぐ近くだったので行ってきました。なるべく話しても大丈夫そうなところを選んで書きますが、場合によってはエントリーが消えることもあるかも。セミナーの内容が完全黙秘なのか、SDKの部分はダメなのかどっちかよくわからないので。英語苦手だ。
 
-そんな感じでGalaxy Tabは非常に満足している。今はちょうどキャンペーン中で4万しないぐらいで購入できた。値段的には割引価格後で個人的にはちょうどいいかなぁって感じ。もし買うなら今だし、買わないならせっかくなら他のタブレットが販売されるのを待った方がいいかもしれない。
-</div></article><article><h1><a href="/2011/01/20/what_is_software_design/">2011-01-20 ソフトウェア設計とは何か?(ソフトウェア工学とは何か?)</a></h1><hr /><div class="article-body">ソフトウェア設計とは何か?というとても良い論文の翻訳があるのだけど、いつのまにか記事が無くなっていた。手元にあるテキストデータを公開しようにも翻訳者の方との連絡手段がない。
+<h2>ドキュメントみろ</h2>
+今回、話を聞いてきたことの大半は既にドキュメントとしてあるとのこと。英語だけど。なので英語がわかる人はそちらを読めばいいと思います。というか他にドキュメントがないので、英語読めなくても読まなきゃいけないんだけど。
 
-幸いなことにarchive.orgに記事のアーカイブが残っている。ただ、このarchive.orgが検索でまともにヒットしないので、せめて今後この記事を探す人がいた時のことを考えてここにリンクを貼っておく。
+<a href="http://developer.apple.com/jp">http:/...</a></div><div class="read-more"><a href="/2008/07/29/iphone_seminar/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2008/07/27/ukstudio_controlled_git/">ukstudio.jpをgitで管理するようにしてみた</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2008-07-27 00:00:00 UTC" pubdate="pubdate">July 27 2008</time></div><div class="article-tags"></div><div class="article-summary">最近流行りのgitを使ってみようかなーってことでとりあえずukstudio.jpを全部gitで管理するようにした。
 
-<a href="http://web.archive.org/web/20080803072849/www.biwa.ne.jp/~mmura/SoftwareDevelopment/WhatIsSoftwareDesignJ.html"> ソフトウェア設計とは何か?</a>
-</div></article><div class="pager"><ul><li class="previous"><a href="/page/6/">Prev</a></li><li class="next"><a href="/page/8/">Next</a></li></ul></div></div></body></html>
+最終的に以下のような構成になった。
+
+<a href="http://ukstudio.jp/wp-content/uploads/2008/07/git-ukstudio.png"><img src="http://ukstudio.jp/wp-content/uploads/2008/07/git-ukstudio.png" alt="" title="git-ukstudio" width="284" height="284" class="alignnone size-medium wp-image-145"></a>
+
+<h2>MacBookにgitをインストールする</h2>
+MacBookにgitをインストールするのは簡単だった。MacPortsですんなり入った。
+
+参考: <a href="http://d.hatena.ne.jp/from_kyushu/20080414/git_on_mac">MacPortsを使ってgitをインストールしてみた - Post-itみたいな</a>
+
+<h2>サーバにgitをインストールする</h2>
+サーバはslicehostのCentOS5.1を使用。インストールされて...</div><div class="read-more"><a href="/2008/07/27/ukstudio_controlled_git/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2008/07/23/categories_and_tags_in_order/">カテゴリとタグを整理しました</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2008-07-23 00:00:00 UTC" pubdate="pubdate">July 23 2008</time></div><div class="article-tags"></div><div class="article-summary">なんかWordPressにいつのまにかタグ機能が実装されていたので、せっかくなので使ってみることにしました。
+
+ベースはヤスヒサさんの<a href="http://www.yasuhisa.com/could/article/category-tag/">カテゴリとタグを上手に使い分ける</a>を参考にしています。
+
+ヤスヒサさんの記事を読んだあと、自分なりに色々考えて、カテゴリを廃止しタグのみにすることも検討したんですが、今まで書いたエントリーを見直して、タグだけじゃカバーしきれないなと思ったので、結局カテゴリも使ってみることにしました。
+
+カテゴリは、「プログラミング」「日記」「告知」の3種類にしようとも思ったん...</div><div class="read-more"><a href="/2008/07/23/categories_and_tags_in_order/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2008/07/18/amazon_crossreview/">Amazon商品ページにcrossreviewのレビューを表示するgreasemonkeyスクリプト書いた</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2008-07-18 00:00:00 UTC" pubdate="pubdate">July 18 2008</time></div><div class="article-tags"></div><div class="article-summary">初グリモン。結構適当に書いたけど、とりあえず動くのでよし。codereposに上げたのでいじりたい人はご自由にどうぞー。
+
+<a href="http://coderepos.org/share/browser/lang/javascript/userscripts/amazon_crossreview.user.js?">amazon_crossreview.user.js</a>
+
+現状、取得できるレビュー数が7件までなのは仕様です。ごめんなさい!
+
+サンプル画像
+<img src="http://img.skitch.com/20080718-bs6mqgs1nrjggarixunr4wgmdd.jpg" alt="greasemonkey_for_crossreview"/>
+</div><div class="read-more"><a href="/2008/07/18/amazon_crossreview/">READ MORE</a></div></article><div class="pager"><ul><li class="previous"><a href="/page/6/">Prev</a></li><li class="next"><a href="/page/8/">Next</a></li></ul></div></div></body></html>

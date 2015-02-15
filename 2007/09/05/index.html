@@ -8,7 +8,7 @@ _gaq.push(['_trackPageview']);
   var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
   ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
   var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-})();</script></head><body class="2007 2007_09 2007_09_05 2007_09_05_index"><div class="cointainer-fluid"><div class="navbar navbar-default" role="navigation"><div class="container-fluid"><div class="navbar-header"><a class="navbar-brand" href="/">UKSTUDIO</a></div><div class="navbar-collapse collapse"><ul class="nav navbar-nav navbar-right"><li><a href="http://twitter.com/ukstudio">Twitter</a></li><li><a href="http://github.com/ukstudio">GitHub</a></li></ul></div></div></div></div><div class="container"><h1><Archive></Archive>Sep  5 2007</h1><article><h2><a href="/2007/09/05/codeblock/">2007-09-05 コードブロックとyield文</a></h2>メソッド内でyield文を使うことでメソッドからコードブロックを呼び出すことができます。yield文が呼び出されるたびに、ブロックに処理が移り、処理が終わるとyieldの直後の処理に移ります。
+})();</script></head><body class="2007 2007_09 2007_09_05 2007_09_05_index"><div class="header"><div class="header-navigation"><ul><li><i class="fa fa-twitter"></i><a href="http://twitter.com/ukstudio">Twitter</a></li><li><i class="fa fa-github-alt"></i><a href="http://github.com/ukstudio">GitHub</a></li></ul></div><div class="header-title"><a href="/">UKSTUDIO</a></div></div><div class="container"><h1><Archive></Archive>Sep  5 2007</h1><article><h2><a href="/2007/09/05/codeblock/">2007-09-05 コードブロックとyield文</a></h2>メソッド内でyield文を使うことでメソッドからコードブロックを呼び出すことができます。yield文が呼び出されるたびに、ブロックに処理が移り、処理が終わるとyieldの直後の処理に移ります。
 <pre lang="ruby">def exec_block
   yield
   puts "hoge"

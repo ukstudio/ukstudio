@@ -8,201 +8,167 @@ _gaq.push(['_trackPageview']);
   var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
   ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
   var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-})();</script></head><body class="page page_6 page_6_index"><div class="cointainer-fluid"><div class="navbar navbar-default" role="navigation"><div class="container-fluid"><div class="navbar-header"><a class="navbar-brand" href="/">UKSTUDIO</a></div><div class="navbar-collapse collapse"><ul class="nav navbar-nav navbar-right"><li><a href="http://twitter.com/ukstudio">Twitter</a></li><li><a href="http://github.com/ukstudio">GitHub</a></li></ul></div></div></div></div><div class="container"><article><h1><a href="/2011/07/02/bdd/">2011-07-02 BDDについて自分なりにまとめてみた</a></h1><hr /><div class="article-body">BDDという言葉も割と人によって指すものが違うようなので「俺の中でのBDDはこうだよ」って内容のエントリ。別に絶対的なものでもないと思うので参考までに。
+})();</script></head><body class="page page_6 page_6_index"><div class="header"><div class="header-navigation"><ul><li><i class="fa fa-twitter"></i><a href="http://twitter.com/ukstudio">Twitter</a></li><li><i class="fa fa-github-alt"></i><a href="http://github.com/ukstudio">GitHub</a></li></ul></div><div class="header-title"><a href="/">UKSTUDIO</a></div></div><div class="container"><article class="article-content"><h1 class="article--title"><a href="/2009/06/19/webdb_51/">WEB+DB PRESS Vol.51でRailsの特集を執筆しました</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2009-06-19 00:00:00 UTC" pubdate="pubdate">June 19 2009</time></div><div class="article-tags"></div><div class="article-summary"><table  class="g-tools_table"><tr><td colspan="2"><span class="g-tools_title"><a href="http://www.amazon.co.jp/WEB-DB-PRESS-Vol-51-PRESS%E7%B7%A8%E9%9B%86%E9%83%A8/dp/4774138908%3FSubscriptionId%3D0G91FPYVW6ZGWBH4Y9G2%26tag%3D2004-05-22%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D4774138908" target="_blank">WEB+DB PRESS Vol.51</a><img src='http://www.assoc-amazon.jp/e/ir?t=2004-05-22&l=ur2&o=9' width='1' height='1' border='0' alt='' /></span></td></tr><tr><td valign="top"><span class="g-tools_img"><a href="http://www.amazon.co.jp/WEB-DB-PRESS-Vol-51-PRESS%E7%B7%A8%E9%9B%86%E9%83%A8/dp/4774138908%3FSubscriptionId%3D0G91FPYVW6ZGWBH4Y9G2%26tag%3D2004-05-22%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D4774138908" target="_blank"><img src="http://ecx.images-amazon.com/images/I/61aVDmJxrxL._SL160_.jpg"  alt="WEB+DB PRESS Vol.51" /></a></span></td><td valign="top"><span class="g-tools_body">WEB+DB PRESS編集部 <br /><br />技術評論社  2009-06-24<br />売り上げランキング : 130<br /><br /><br /><a href="http://www.amazon.co.jp/WEB-DB-PRESS-Vol-51-PRESS%E7%B7%A8%E9%9B%86%E9%83%A8/dp/4774138908%3FSubscriptionId%3D0G91FPYVW6ZGWBH4Y9G2%26tag%3D2004-05-22%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D4774138908" target="_blank">Amazonで詳しく見る</a></span><span class="g-tools_by"> by <a href="http://www.goodpic.com/mt/aws/index.html" >G-Tools</a></span></td></tr></table>
 
-<h2>結論から</h2>
-とりあえず結論だけ知りたい人向けに。
+僕個人っていうわけではないですが、会社の人達と一緒に6月24日発売のWEB+DB PRESS Vol.51で執筆させて頂きました。初めての執筆活動なので、読みにくい部分、至らない部分などあると思いますが、買って読んで頂けると幸いです。
+</div><div class="read-more"><a href="/2009/06/19/webdb_51/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2009/06/16/basic_of_programming/">「プログラミングの基礎」を読みはじめた</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2009-06-16 00:00:00 UTC" pubdate="pubdate">June 16 2009</time></div><div class="article-tags"></div><div class="article-summary">結構前のきしださんのエントリ(<a href="http://d.hatena.ne.jp/nowokay/20090321#1237617054">いまSICPを読むのは時間の無駄</a>)に触発されて購入した「プログラミングの基礎」を読み始めました。実はこのエントリから結構すぐに購入したんだけど、id:snow-bellについこないだまで貸してたので今日からスタート。
 
-<ul>
-  <li>BDDにはふたつの種類がある</li>
-  <li>1. TDDの言い換えのBDD(開発寄り)</li>
-  <li>2. ATDD(受け入れテスト)でのBDD(ユーザ寄り)</li>
-</ul>
+とりあえず4章まで読んだけど、確かに読みやすい。SICPみたいに堅苦しい日本語ではないので、まぁよっぽど活字ダメですっていう人じゃなければ大丈夫そう。
 
-<h2>振る舞い</h2>
-BDDは振る舞い駆動開発と言われたりするように、テストという言葉のかわりに<strong>振る舞い</strong>という言葉を使う。日本語的には仕様と言うほうがわかりやすいかもしれない。
+個人的にいいなぁと思ったのはテストファーストだった点。
 
-多分、BDDのイメージが掴みにくいのはこの振る舞いという言葉にあると思う。と言うのも振る舞いと言うのは、人の立場よって変わるからだ。例えば、プログラマがあるクラスを実装している時に言う振る舞いはそのクラスのメソッドとかの仕様になる。逆にユーザレベルの人が言う振る舞いはアプリケーションの要件・動作を言うだろう。
+4.6の「関数定義に対するデザイ...</div><div class="read-more"><a href="/2009/06/16/basic_of_programming/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2009/06/03/agile_estimating_and_planning/">アジャイルな見積りと計画づくり</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2009-06-03 00:00:00 UTC" pubdate="pubdate">June 03 2009</time></div><div class="article-tags"></div><div class="article-summary">献本して頂いたにも関わらず、書評が大部遅くなってしまいました。角谷さん、ごめんなさい。
 
-つまり、BDDという言葉はTDDからATDDの両方にかかるので文脈によって指すものがかわってくる。この辺は<a href="http://twitter.com/#!/t_wada">@t_wada</a>さんの言う「誰のためのテストか」を考える方がわかりやすいだろう。
+<table border="0" cellpadding="5">
+<tr><td colspan="2">
+<a href="http://www.amazon.co.jp/%E3%82%A2%E3%82%B8%E3%83%A3%E3%82%A4%E3%83%AB%E3%81%AA%E8%A6%8B%E7%A9%8D%E3%82%8A%E3%81%A8%E8%A8%88%E7%94%BB%E3%81%A5%E3%81%8F%E3%82%8A-%7E%E4%BE%A1%E5%80%A4%E3%81%82%E3%82%8B%E3%82%BD%E3%83%95%E3%83%88%E3%82%A6%E3%82%A7%E3%82%A2%E3%82%92%E8%82%B2%E3%81%A6%E3%82%8B%E6%A6%82%E5%BF%B5%E3%81%A8%E6%8A%80%E6%B3%95%7E-Mike-Cohn/dp/4839924023%3FSubscriptionId%3D0G91FPYVW6ZGWBH4Y9G2%26tag%3D2004-05-22%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D4839924023" target="_top">アジャイルな見積りと計画づくり ~価値あるソフトウェアを育てる概念と技法~</a><img src="http://www.assoc-amazon.jp/e/ir?t=2004-05-22&amp;l=ur2&amp;o=9" width="1" height="1" border="0" alt="">
+</td></tr>
+<tr>
+<td valign="top"><a href="http://www.amazon.co.jp/%E3%82%A2%E3%82%B8%E3%83%A3%E3%82%A4%E3%83%AB%E3%81%AA%E8%A6%8B%E7%A9%8D%E3%82%8A%E3%81%A8%E8%A8%88%E7%94%BB%E3%81%A5%E3%81%8F%E3%82%8A-%7E%E4%BE%A1%E5%80%A4%E3%81%82%E3%82%8B%E3%82%BD%E3%83%95%E3%83%88%E3%82%A6%E3%82%A7%E3%82%A2%E3%82%92%E8%82%B2%E3%81%A6%E3%82%8B%E6%A6%82%E5%BF%B5%E3%81%A8%E6%8A%80%E6%B3%95%7E-Mike-Cohn/dp/4839924023%3FSubscriptionId%3D0G91FPYVW6ZGWBH4Y9G2%26tag%3D2004-05-22%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D4839924023" target="_top"><img src="http://ecx.images-amazon.com/images/I/51N9wG%2B0BgL._SL160_.jpg" border="0" alt="アジャイルな見積りと計画づくり ~価値あるソフトウェアを育てる概念と技法~"></a></td>
+<td valign="top">
+<font size="-1">安井 力 角谷 信太郎 <br><br>毎日コミュニケーションズ  2009-01-29<br>売り上げランキング : 8925<br><br><strong>おすすめ平均  </strong><img src="http://g-images.amazon.com/images/G/01/detail/stars-5-0.gif" alt="star"><br><img src="http://g-images.amazon.com/images/G/01/detail/stars-5-0.gif" alt="star">「正直になること」がアジャイル成功の秘訣<br><img src="http://g-images.amazon.com/images/G/01/detail/stars-5-0.gif" alt="star">ソフトウェアの見積りは本来こうでないか？<br><img src="http://g-images.amazon.com/images/G/01/detail/stars-5-0.gif" alt="star">自信を持って見積もりを出すための手引き書<br><br><a href="http://www.amazon.co.jp/%E3%82%A2%E3%82%B8%E3%83%A3%E3%82%A4%E3%83%AB%E3%81%AA%E8%A6%8B%E7%A9%8D%E3%82%8A%E3%81%A8%E8%A8%88%E7%94%BB%E3%81%A5%E3%81%8F%E3%82%8A-%7E%E4%BE%A1%E5%80%A4%E3%81%82%E3%82%8B%E3%82%BD%E3%83%95%E3%83%88%E3%82%A6%E3%82%A7%E3%82%A2%E3%82%92%E8%82%B2%E3%81%A6%E3%82%8B%E6%A6%82%E5%BF%B5%E3%81%A8%E6%8A%80%E6%B3%95%7E-Mike-Cohn/dp/4839924023%3FSubscriptionId%3D0G91FPYVW6ZGWBH4Y9G2%26tag%3D2004-05-22%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D4839924023" target="_top">Amazonで詳しく見る</a></font><font size="-2"> by <a href="http://www.goodpic.com/mt/aws/index.html">G-Tools</a></font>
+</td>
+</tr>
+</table>
 
-<div style="width:425px" id="__ss_7353562"> <strong style="display:block;margin:12px 0 4px"><a href="http://www.slideshare.net/t_wada/tddbc-fukuoka-day1" title="TDDBC Fukuoka Day1" target="_blank">TDDBC Fukuoka Day1</a></strong> <iframe src="http://www.slideshare.net/slideshow/embed_code/7353562?startSlide=24" width="425" height="355" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe> <div style="padding:5px 0 12px"> View more <a href="http://www.slideshare.net/" target="_blank">presentations</a> from <a href="http://www.slideshare.net/t_wada" target="_blank">Takuto Wada</a> </div> </div>
+さすがに全てのアジャイル本に目を通してい...</div><div class="read-more"><a href="/2009/06/03/agile_estimating_and_planning/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2009/06/02/chromium_for_mac/">Mac版Chromium</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2009-06-02 00:00:00 UTC" pubdate="pubdate">June 02 2009</time></div><div class="article-tags"></div><div class="article-summary">mattnさんの<a href="http://mattn.kaoriya.net/software/linux/20090601225017.htm">ChromiumのLinux版入れてみた</a>をみて、もしやと思って調べてみたらやっぱりありました。Mac版。
 
-<a href="http://ukstudio.jp/wp-content/uploads/2011/07/2011-07-011.jpg"><img src="http://ukstudio.jp/wp-content/uploads/2011/07/2011-07-011.jpg" alt="" title="2011-07-01" width="326" height="184" class="alignnone size-full wp-image-879" /></a>
+<a href="http://build.chromium.org/buildbot/snapshots/">http://build.chromium.org/buildbot/snapshots/</a>からダウンロードできます。sub-rel-macってところから適当にDLして解凍するとChromium.appがあるのでそれを起動。
 
-<h2>TDDの別名としてのBDD</h2>
-TDDにかかるBDD、つまりプログラマの為のBDDについて説明する。そもそもBDDという言葉が生まれた背景にはTDDに対する誤解がある。いわゆる「TDDのテストはテストじゃないよ」ってやつ。その誤解を避けるために生まれたのがBDD。多分「誤解を避ける」というのもあまり適切な表現ではない。と言うのもこの表現だとTDDを実践していない人の誤解を避けるために生まれた印象をうける。
+<a href="http://ukstudio.jp/wp-content/uploads/2009/06/mac-chromium.jpg"><img src="http://ukstudio.jp/wp-content/uploads/2009/06/mac-chromium.jpg" alt="" title="mac-chromium" width="300" height="226" class="alignnone size-medium wp-image-350"></a>
 
-実際はテストという言葉を使うことでTDDを実践する(しようとする)<strong>プログラマ自身にもよくない影響がある。</strong>例えばTDDの場合先にテストコードを書くので当然テストを書くときにテスト対象が存在しない。これは不自然だ。テスト対象がないことで、TDDに慣れていない人は「何をテストすればいいの?」と思うことも少なくない。
+まだまだ開発版という感じですが、とりあえず起動がすごい早いのはよくわかりました。あとテキストフィールドに日本語が入力できないっぽいです。
 
-BDDではテストという言葉の変わりに<strong>振る舞い</strong>という言葉を使うと先程書いた。振る舞いという言葉を使うことで、テストという言葉から受ける違和感はなくなる。テスト対象が存在しなうちにテストを書くのは不自然だけど、なにかを実装する前に振る舞い(仕様)を決めるのは自然だ。
+...</div><div class="read-more"><a href="/2009/06/02/chromium_for_mac/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2009/05/11/cucumber_email_spec_for_action_mailer/">Cucumber+email_specでActionMailerのテストをする</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2009-05-11 00:00:00 UTC" pubdate="pubdate">May 11 2009</time></div><div class="article-tags"></div><div class="article-summary">今までメール(ActionMailer)のテストはどうにも面倒で、自分でブラウザから動かしてログを見てってやっていたんですが、Cucumberでメールのテストもできるっぽいので試してみました。
 
-また、振る舞いに着目することでより良い設計ができるようになる。少なくとも僕はそう感じている。TDDでも先にテストコードを書くのでインターフェースに注意を向けることができるが、BDDの語彙を使うことでより実装と振る舞いを分離して考えられるからだと思う。
+確認環境はRails2.3.2、Cucumber0.2.3、email_spec0.0.10。
 
-とは言え結局のところやることはTDDと変わらない。はたから見たら、TDDをしているのかBDDをしているのか区別つかないだろう。なのでここでひとつめの結論<strong>BDDはTDDの言い換え</strong>になる。もちろん使う言葉が違いプログラマに与える影響が違う以上、厳密にはTDDとBDDは違うものなのかもしれない。けれど個人的にはそこまでTDDとBDDの違いに厳密性を求めてないし、求める必要もないと思うので、<strong>プログラマ視点で見たときはほぼ同じ</strong>という結論。
+email_specはgithubをsourceに指定してインストールすることができます(<a href="http://github.com/bmabey/email-spec/tree/master">bmabey's email-spec at master - GitHub</a>)。config/environments...</div><div class="read-more"><a href="/2009/05/11/cucumber_email_spec_for_action_mailer/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2009/04/28/vim_hacks_project/">Vim Hacks Projectはじめました</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2009-04-28 00:00:00 UTC" pubdate="pubdate">April 28 2009</time></div><div class="article-tags"></div><div class="article-summary"><a href="http://www.lingr.com/room/vim-users.jp/archives/2009/04/24#msg-66101529">Lingrでのkanaさんの発言がきっかけ</a>でVim Hacks Projectをはじめることにしました。
 
-<h2>ATDDとBDD</h2>
-ATDDはAcceptance Test Driven Developmentの略でAcceptance Testというのは受け入れテストのこと。TDDのよりレイヤの高いものだと思えばいい。<a href="http://t.co/MKI3PST">Growing Object-Oriented Software, Guided by Tes</a>tの画像がわかりやすいので拝借。
+<h2>Vim Hacks Projectとは</h2>
 
-<a href="http://ukstudio.jp/wp-content/uploads/2011/07/2011-07-02.jpg"><img src="http://ukstudio.jp/wp-content/uploads/2011/07/2011-07-02.jpg" alt="" title="2011-07-02" width="489" height="275" class="alignnone size-full wp-image-881" /></a>
+<blockquote>
+Foobar Hacksが出版されている昨今、是非Vim Hacksを出そうではないか! という訳で、手始めに有志を募って各々のVim Hacksをvim-users.jpにて認め、頃合いを見計らって企画を持ちかけよう! という計画。</blockquote>
 
-ATDDのひとつのサイクルでひとつの受け入れテストが完了し、それを繰り返すことでアプリケーションを実装していく。<strong>受け入れテストはどちらかと言えば顧客のためのテスト。</strong>受け入れという名の通り、このテストがパスすればその機能は実装が完了したとわかり、顧客の立場からすると要件が正しく実装されていること、進捗が管理しやすいなどの利点がある。
+とりあえず僕も参加します。僕の記事は29日0時に公開予定です。現在5人のローテーションで1hack/2day...</div><div class="read-more"><a href="/2009/04/28/vim_hacks_project/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2009/04/20/atmarkit_1986/">@ITの86世代の記事に載りました</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2009-04-20 00:00:00 UTC" pubdate="pubdate">April 20 2009</time></div><div class="article-tags"></div><div class="article-summary">今月頭に<a href="http://jibun.atmarkit.co.jp/ljibun01/cs/200904/05/01.html">「ハチロク世代」がIT業界を変える日</a>という記事の取材を受けてて、先日その記事が公開されました。頭ぼさぼさの人が僕です。
 
-これとBDDに何が関係するのかと言うと、上で書いたように<strong>BDDの振る舞いはユーザレベルで見たときはアプリケーションの要件・動作を指す。</strong>顧客は大抵の場合、ユーザレベルなのでこの場合での振る舞いは受け入れ条件となり得る。つまり、ATDDをBDDでやることは可能と言える。ATDDをBDDでやるメリットは、BDDでは振る舞いの言葉を使うのでより顧客・ユーザに近い言葉で受け入れテストを記述できるようになる(例:<a href="http://cukes.info/">cucumber</a>の日本語での記述とか)。
+まぁ大したことは話してないので、補足とかは特にないんですが、実際のところはタイトルに反して当の本人達は「おれたちがIT業界を変えるぞ!」っていう感じではないのかなーと。少なくとも自分自身と近しい86世代の人達は。(あくまでおれの印象だけど)
 
-これがふたつめの結論の<strong>ATDDでのBDD</strong>。
+個人的な感覚としては同年代の頑張りをみて「おれもがんばるぞ!」的なモチベーションにつながればいいかなって感じ。なんだかん...</div><div class="read-more"><a href="/2009/04/20/atmarkit_1986/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2009/04/20/cucumber/">Cucumberの登場でRailsのテスティング環境が変わった</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2009-04-20 00:00:00 UTC" pubdate="pubdate">April 20 2009</time></div><div class="article-tags"></div><div class="article-summary">ちょっと大げさなタイトルかもしれないですが、個人的にはそれぐらいの感動。「これで勝つる!」な気分。何に勝つのか知らないけれど。
 
-ちなみにATDD自体も結構あやふやなやつで、何をテストするのかは受け入れ基準による。もし受け入れ基準が「とあるクラスに正しくメソッドが実装されていること」だとしたらどうなるか。これはややこしいけれど、ATDDのサイクルとTDDのサイクルの距離が大分近くなると思う。場合によってはTDDで書いたテストコードがそのまま受け入れ基準となり得ることもある。それでもTDDとATDDは目的が違うのでその辺は意識した方がいい。
+今までのRailsのテストはもっぱらRSpecで書いてて、確かにこれはこれで素晴らしい。採用当初はバグが減ってその時も「これで勝つる!」な気分でした。でもやっぱり受け入れテストがネックになるんですよね。Seleniumとかも使ったりしてましたけど、ブラウザががちゃがちゃ動くし、なんとなく面倒で結局手動で確認という感じになってしまいました。
 
-<h2>Outside-In</h2>
-BDDは上で説明したように、コンテキストで「振る舞い」が指すものが変わる。とは言え、根源となる思想はあってそのひとつがOutside-In。Outside-Inと言うのは<strong>外側から見た振る舞いを軸に内部を作りこんでいく</strong>ということ。人によって見る位置が違うので「外側」がどこか変わってくる。プログラマならメソッドやクラスの外だし、ユーザならアプリケーションの外側。なので、BDDがなにかを一言で答えるとしたら<strong>振る舞いに着目して、それを軸に内側を作りこんでいくこと</strong>になるのかなぁ。
+そこでCucumber...</div><div class="read-more"><a href="/2009/04/20/cucumber/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2009/04/14/accepts_nested_attributes_for/">accepts_nested_attributes_forしたモデルの日本語化</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2009-04-14 00:00:00 UTC" pubdate="pubdate">April 14 2009</time></div><div class="article-tags"></div><div class="article-summary">名前、長いよね。accepts_nested_attributes_for。以下、ネストしたって言います。長いので。
 
-<h2>再び結論</h2>
-長々と書いて逆に混乱してきた人もいるかもしれないのでさくっとまとめ。
+最近はもっぱら日本語化はi18nにしてるんですが、今回ちょこっとこのネスト関係ではまったのでメモ。
 
-<ul>
-  <li>結局は'誰が'、'誰の為に'、'何を'テストしているのかが重要である</li>
-  <li>TDDはDeveloper Testing。つまり僕達のためのもの。</li>
-  <li>ATDDはCustomer Testing。つまり顧客のためのもの。</li>
-  <li>BDDは振る舞いに着目する。状況・目的によって「振る舞い」が指すものが変わる。それに合わせて語彙も変わる。</li>
-</ul>
+<script src="http://gist.github.com/94931.js"></script>
 
-なんちゃらDDはいっぱいあって、しかもそれらが色々な軸で交わったりしてすごいややこしい。TDD/BDD/ATDDと誰かが言った時は、大抵の場合暗黙のコンテキストがあるのでそこに気をつけよう。わからなかったら聞こう。<strong>「それは誰の為のテストで何をテストしているんですか?」</strong>
+とりあえずモデルの作成までガッとやります。Railsのバージョンは2.3.2です。最下行はgemのインストールが必要です(<a href="http://github.com/amatsuda/i18n_generators/tree/master">http://github.com/amatsuda/i18n_generators/tree/master</a>)
 
-個人的にはBDDという言葉を使わないのは誰の為のテストかわかりづらいから。なので大体の場合はTDDとATDDのふたつを使うことが多い。BDDが僕達にくれたものは大きいけれど、その知見はTDD/ATDDに十分反映されている(もしくはされつつある)ので、<strong>普通にTDD/ATDDと言えばいいじゃないか</strong>って意見。BDDって言葉を使うとややこしくなるので僕は使いません。
+<script src="http://gist.github.com/94933.js"></script>
+<script src="http://gist.github.com/94934.js"></script>
 
-おまえの言うBDDは間違ってる!!という人は突っ込みいただけるとありがたいです。
+それぞれアソシエーションと...</div><div class="read-more"><a href="/2009/04/14/accepts_nested_attributes_for/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2009/04/06/vim_mtl/">Vim勉強会 in MTLで話してきました</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2009-04-06 00:00:00 UTC" pubdate="pubdate">April 06 2009</time></div><div class="article-tags"></div><div class="article-summary"><a href="http://atnd.org/events/482">Vim勉強会 in MTL : ATND</a>
+当日の<a href="http://www.lingr.com/room/vim_mtl/archives/2009/04/03">Lingrのログ</a>と<a href="http://www.flickr.com/photos/iandeth/sets/72157616306681532/">写真</a>と<a href="http://www.ustream.tv/channel/vimmtl20090403">録画</a>
 
-<h2>See also</h2>
-<a href="http://d.hatena.ne.jp/digitalsoul/20090819/1250686015">BDDの導入 - Dan North - Digital Romanticism</a>
-<a href="http://d.hatena.ne.jp/digitalsoul/20090928/1254147487">ストーリーについて - Dan North - Digital Romanticism</a>
-<a href="http://www.slideshare.net/haru01/xpcustomertesting">XP Customer Testing</a>
-</div></article><article><h1><a href="/2011/05/14/mongodb_nodejs/">2011-05-14 mongodb + node.js を軽く試した</a></h1><hr /><div class="article-body"><h2>mongodbのインストール</h2>
-<pre class='sunlight-hilight-bash'>$ sudo aptitude install mongodb
-$ mkdir /path/to/data
-$ mongod --dbpath /path/to/data</pre>
+録画はあまり質に期待しないでとのこと(見てない)
 
-<h2>mongooseのインストール</h2>
-<pre>$ npm install -g mongoose</pre>
-node.jsでmongodb扱うのに他にもライブラリあるみたいだけど、とりあえずnpmでサクッと使えるmongooseを使ってみる。
-<h2>サンプル</h2>
-軽く試しただけなので、詳細は <a href="https://github.com/LearnBoost/mongoose">LearnBoost/mongoose - GitHub</a> を参照。
-<script src="https://gist.github.com/971943.js"> </script>
-実行するとmongodbの中身はこんな感じ。
+<h2>便利なVimスクリプトやTips紹介 id:iandeth</h2>
+タイトル通り便利なTipsの紹介。個人的には今回の勉強会に参加してくれた人達を見ると、これぐらいの内容が丁度よかったのかなーって思う。おれのはちょっと調子に乗りすぎたw
 
-<pre>> db.users.find()
-{ "_id" : ObjectId("4dce0fb5bad67a145c000001"), "name" : "AKAMATSU Yuki", "age" : 24 }</pre>
+<h2><de>Vim捌きを上達させる、たったひとつの冴えたやり方至高のエディタには、至高のキーボード id:ursm</de></h2>
+Vim勉強会なのにVimの...</div><div class="read-more"><a href="/2009/04/06/vim_mtl/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2009/02/27/ducktyping/">RubyでDuckTyping</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2009-02-27 00:00:00 UTC" pubdate="pubdate">February 27 2009</time></div><div class="article-tags"></div><div class="article-summary">今日、知人に「DuckTypingのメリットが今一ピンとこない」と言われて実際にコード書いて説明をしたのだけれども、せっかくなのでエントリにまとめる。
 
-印象としてはActiveRecordっぽいというかORMっぽいというか。mongodb自体をそんなに触ってないからこのアプローチが正しいのかどうかはわからないけど、馴染みやすくはある。
-</div></article><article><h1><a href="/2011/05/10/duostack_nodejs/">2011-05-10 duostackでnode.jsアプリを動かすまで</a></h1><hr /><div class="article-body"><h2>node.jsのインストール</h2>
-何はともあれnode.jsのインストール。aptではなくgithubからリポジトリをcloneしてmakeした。最近はapt以外のものは$HOME/localに入れるルールでやってるのでnode.jsも同様に。node.jsをsudoで入れると結構ハマるみたいな話を聞くので特に理由がなければaptとかで入れるか$HOME以下に入れるのがよさそう。
+DuckTypingとは、動的言語の柔軟性を表現する概念で以下の格言に由来する。
 
-<pre>$ git clone git://github.com/joyent/node.git
-$ cd node
-$ ./configure --prefix=$HOME/local
-$ make
-$ make install
-$ which node
-/home/ukstuido/local/bin/node</pre>
+<blockquote>
+    "If it walks like a duck and quacks like a duck, it must be a duck"
+（もしもそれがアヒルのように歩き、アヒルのように鳴くのなら、それはアヒルである）
+</blockquote>
 
-<h2>npmのインストール</h2>
-duostackを使うのにnpmが必要なのでnpmもインストール。curl使う方じゃなくてmakeしてインストールした。curl ... | sh の形式があまり好きじゃない程度の理由。
+つまり、アヒルのように振...</div><div class="read-more"><a href="/2009/02/27/ducktyping/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2009/02/24/file_column_name_error/">Rails2.0.2から2.2.2に上げたらFileColumnがNameErrorだした。</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2009-02-24 00:00:00 UTC" pubdate="pubdate">February 24 2009</time></div><div class="article-tags"></div><div class="article-summary">自分の担当している案件のRailsのバージョンを2.0.2から2.2.2に上げたら以下のようなエラーが発生。
+<blockquote>
+uninitialized constant FileColumn::ClassMethods::Inflector (NameError)
+</blockquote>
 
-<pre>$ git clone git://github.com/isaacs/npm.git
-$ cd npm
-$ make install
-$ which npm
-/home/ukstudio/local/bin/npm</pre>
+これの対応は/vender/plugin/file_column/lib/file_column.rbの以下の部分を
+<pre lang="ruby">
+my_options = FileColumn::init_options(options,
+           ...</pre></div><div class="read-more"><a href="/2009/02/24/file_column_name_error/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2009/01/14/vim_tips/">覚えとくと便利かもしれないVimのTips</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2009-01-14 00:00:00 UTC" pubdate="pubdate">January 14 2009</time></div><div class="article-tags"></div><div class="article-summary">適当に思い付いたものを書いてみる。
 
-npmがインストールされる場所は特に指定しなくても$HOME/localに入った。node.jsの位置でも見てるんだろうか。よくわからない。
+<h2>CTRL-X CTRL-L</h2>
+行単位での補完。まぁ該当の行でyyしてpして貼り付けでもいいかもしれないけど、移動するの面倒な場合もあるし。
 
-<h2>duostackのインストール</h2>
-あらかじめ、<a href="https://www.duostack.com/">Duostack</a>のアカウントは取っておくこと。結構すぐ登録確認メールが来る。
+以下、自分のvimrcで「n CTRL-X CTRL-L」した例。
 
-duostackのインストールは-gオプションを付けないとnode_modulesディレクトリがカレントディレクトリに出来る。最初-gオプションを知らなくて困惑した。
+<a href="http://ukstudio.jp/wp-content/uploads/2009/01/c-xc-l.jpg"><img src="http://ukstudio.jp/wp-content/uploads/2009/01/c-xc-l.jpg" alt="" title="c-xc-l" width="300" height="234" class="alignnone size-medium wp-image-294"></a>
 
-<pre>$ npm install -g duostack
-$ which duostack
-/home/ukstudio/local/bin/duostack</pre>
+ちなみに俺がこれを一番使うときはRSpecのdescribeの行を補完する時かな。こんな感じ。
+
+<pre lang="ruby">
+describe "hogehoge" do
+end
+
+desCTRL-X CTRL-L
+↓
+describe "hogehoge" do
+</pre>
+...</div><div class="read-more"><a href="/2009/01/14/vim_tips/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2009/01/09/rspec_result_output_html.erb/">RSpecの結果をHTMLで出力する方法</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2009-01-09 00:00:00 UTC" pubdate="pubdate">January 09 2009</time></div><div class="article-tags"><ul><li><i class="fa fa-tag"></i><a href="/tags/article/">article</a></li><li><i class="fa fa-tag"></i><a href="/tags/rspec/">RSpec</a></li><li><i class="fa fa-tag"></i><a href="/tags/ruby/">Ruby</a></li></ul></div><div class="article-summary">RSpecにはオプション-hがあるので、そこでフォーマットを指定してやればいい。以下、Railsの例。
+
+<pre lang="bash">
+RAILS_ROOT$ spec spec -f h:spec/spec_report.html
+</pre>
+
+これで、specディレクトリにspec_report.htmlが出力される。
+</div><div class="read-more"><a href="/2009/01/09/rspec_result_output_html.erb/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2008/12/31/ruby_book/">Re:Ruby初心者の2冊目はなに?</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2008-12-31 00:00:00 UTC" pubdate="pubdate">December 31 2008</time></div><div class="article-tags"></div><div class="article-summary"><a href="http://anond.hatelabo.jp/20081230213406">Ruby初心者の２冊目はなに？</a>
+<a href="http://d.hatena.ne.jp/z/20081231/1230650467">Rubyの「最初の二冊目」は何?　に答えてみる。 - どんなジレンマ</a>
+
+id:hrkt0115311さんに名前を出してもらったことだし、簡単に紹介しておこうと思う。crossreviewに書いてない本も多いしね。と言うかしょっぱなからそうなんだけど。
+
+<h2>Rubyレシピブック第二版</h2>
+<a href="http://www.amazon.co.jp/o/ASIN/4797340045/2004-05-22">Rubyレシピブック第二版</a>
+
+id:hrkt0115311さんもすすめてたけど、たのしいRubyを読んだのならこれもオススメ。大体初心者が思うあれがしたい、これがしたいはここを参照...</div><div class="read-more"><a href="/2008/12/31/ruby_book/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2008/12/18/vimrc_reading/">第1回vimrc読書会が開催されるそうです。</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2008-12-18 00:00:00 UTC" pubdate="pubdate">December 18 2008</time></div><div class="article-tags"></div><div class="article-summary"><a href="http://vim.g.hatena.ne.jp/ka-nacht/20081218/1229529163">第1回vimrc読書会開催のお知らせ</a>
+
+だそうです。おもしろそうだなー、参加したいなーとか思ってたら
+
+<blockquote>
+肴rc
+    id:ukstudioのvimrc
+</blockquote>
+
+おれのだ!
+
+当日はtwitterの関西忘年会の二次会真っ最中な気がするけど、イーモバイルで繋げられそうだったら繋げよう。
+</div><div class="read-more"><a href="/2008/12/18/vimrc_reading/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2008/12/08/action-coding/">JRubyとProcessing1.1でaction-coding!</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2008-12-08 00:00:00 UTC" pubdate="pubdate">December 08 2008</time></div><div class="article-tags"></div><div class="article-summary">せっかくProcessingも正式版になったことだし、少しaction-codingで遊んでみる。
+
+まずはJRubyをインストール。面倒なのでバイナリで。環境はMac OSX 10.5.5。
+
+<a href="http://dist.codehaus.org/jruby/">http://dist.codehaus.org/jruby/</a>からjruby-bin-1.1.5.tar.gz(バージョンは適宜読み替え)をダウンロード。現時点では1.1.5をインストールしておけば大丈夫だろう。解凍したら適当な位置に移動。
+
+<pre lang="bash">
+$ tar zxvf jruby-bin-1.1.5...</pre></div><div class="read-more"><a href="/2008/12/08/action-coding/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2008/11/27/mac_gem_install_mysql/">Macでgem install mysqlをする方法</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2008-11-27 00:00:00 UTC" pubdate="pubdate">November 27 2008</time></div><div class="article-tags"></div><div class="article-summary">Rails2.2からmysqlのアダプタが付属していないので各個人でインストールする必要があります。gemで入れようとするとエラーがでると思うので以下のように対応してください。
+
+<pre lang="bash">
+$ sudo gem install mysql
+$ cd /opt/local/lib/ruby/gems/1.8/gems/mysql-2.7/
+$ sudo ruby extconf.rb --with-mysql-config=/opt/local/lib/mysql5/bin/mysql_config...</pre></div><div class="read-more"><a href="/2008/11/27/mac_gem_install_mysql/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2008/11/26/rails_22_i18n/">Rails2.2のi18n(国際化)を簡単に試してみた</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2008-11-26 00:00:00 UTC" pubdate="pubdate">November 26 2008</time></div><div class="article-tags"></div><div class="article-summary">11月21日にRails2.2が正式リリースされた。 RCなどでチェックしてた人は既に知っているかもしれないけど、2.2からデフォルトでi18n(国際化)対応がされている。
+
+ちなみにi18nというのはinternationalizationの頭と後ろのiとn、文字数が18文字というところから来てるらしい。
+
+とりあえず、まずはアプリの作成。
+
+<pre lang="bash">
+$ rails i18n_demo
+</pre>
+
+作成されたファイル群の中にconfig/locales/en.ymlというファイルが出来ていると思うけど...</div><div class="read-more"><a href="/2008/11/26/rails_22_i18n/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2008/11/23/vimm3-2/">VimM#3を開催してきました</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2008-11-23 00:00:00 UTC" pubdate="pubdate">November 23 2008</time></div><div class="article-tags"></div><div class="article-summary">﻿﻿﻿﻿﻿﻿﻿﻿﻿本日、VimM#3を東京大学秋葉原キャンパスにて開催してきました。協力頂いた、星さん、笹田さんありがとうございました。また、参加頂いたみなさん、本当にありがとうございました。グダグダな部分もありましたが、無事終えることができました。
+
+以下、簡単な感想。
+
+<h2>Vimで効率的なテキスト編集 - ukstudio</h2>
+自分の発表。相変わらず準備不足・・・とりあえず資料。
 
 
-<h2>アプリの作成とデプロイ</h2>
-ここまで来ると<a href="http://docs.duostack.com/node/quick-start-guide#create-a-new-node-app">Duostack · Docs: Quick Start Guide</a>に従うだけでOK。
-
-適当なディレクトリを作ってそこにserver.jsを置く。
-
-<pre>$ mkdir sample
-$ cd sample
-$ vim server.js</pre>
-<script src="http://gist.github.com/963569.js?file=gistfile1.js"></script>
-
-git initしてやる。
-
-<pre>$ git init
-$ git add .
-$ git commit -m 'init'</pre>
-
-duostackコマンドでアプリケーションを登録。ここで指定したアプリ名がそのままドメインになる。
-
-<pre>$ duostack create ukstudio
-$ git push duostack master</pre>
-
-無事にpushできればURLが表示されているはずなのでブラウザで確認する。今回の例だと<a href = "http://ukstudio.duostack.net/">http://ukstudio.duostack.net/</a>になる。
-
-こんな感じでduostackでnode.jsアプリを動かすところまで試してみた。herokuとかもそうだけど、こうサクッとアプリが動かせる環境があるのはうれしい。
-
-次はnode.js + CoffeeScriptとか、もうちょっとアプリらしいアプリを作ってみようかな。
-
-<h2>追記: duostackでCoffeeScriptを動かす</h2>
-CoffeeScriptからコンパイルしたJavaScriptを乗せるんじゃなくて、CoffeeScriptそのものを乗せる方法。server.jsは必要っぽいのでそこからrequireする形にした。CoffeeScriptはアプリの中にインストールしておく。 これで一応動くことは動く。
-
-<pre>$ npm install coffee-script</pre>
-
-<script src="https://gist.github.com/964149.js"> </script>
-</div></article><article><h1><a href="/2011/05/09/build_vim/">2011-05-09 Vimをソースからビルド</a></h1><hr /><div class="article-body">aptで入れたvimのrubyインターフェースのバージョンが1.8.6なのが気にいらなくてvimをソースからビルドした。
-
-<pre><code>$ hg clone https://vim.googlecode.com/hg/ vim
-$ hg update vim73
-
-$ cd vim
-$ ./configure --enable-multibyte --prefix=$HOME/local --enable-rubyinterp</code></pre>
-
-これでOK。aptで入れたvimも一応残しておきたかったのでprefixで$HOME以下にビルドするようにした。Rubyインターフェースはrvmで入れた1.9.2を見るようになっていたのでとりあえずよしとする。何でrvmの奴を見にいったのかはよくわからない。
-</div></article><article><h1><a href="/2011/04/19/coffeescript-qunit/">2011-04-19 CoffeeScript + QUnitでTDD環境作ったよ</a></h1><hr /><div class="article-body">Rails3.1からCoffeeScriptがデフォルトで入ってるとかなんとかで、とりあえずCoffeeScriptだけで少し触ってみた。とりあえずQUnit自体もCoffeeScriptで書けるようなTDD環境を作ってみた。
-
-とりあえず、UbuntuにCoffeeScriptをインストールするわけだけどaptの方が古いしせっかくだから最新のを触るかと思ったのでgithubからCoffeeScriptとnode.jsのリポジトリをcloneしてインストール。
-
-<pre>$ git clone git://github.com/joyent/node.git 
-$ cd node
-$ ./configure
-$ make
-$ sudo make install
-$ node -v
-v0.5.0-pre</code></pre>
-
-<pre><code>$ git clone git://github.com/jashkenas/coffee-script.git
-$ cd coffee-script
-$ sudo bin/cake install
-$ coffee -v
-CoffeeScript version 1.1.0-pre</code></pre>
-
-ディレクトリ構成はこんな感じ。coffeeにCoffeeScriptに入れて生成されたJavaScriptはsrcにいれるルール。test/index.htmlはQUnitの結果を見るため。test/qunitはずばりQUnitそのもの。
-
-<pre>./coffee/hello.coffee
-./src/hello.js
-./test/index.html
-./test/qunit/qunit.css
-./test/qunit/qunit.js
-./test/coffee/test-hello.coffee
-./test/src/test-hello.js</pre>
-
-CoffeeScriptは-wでファイルの変更を監視してコンパイルしなおすことができるので,以下の用に実行しておけばそれぞれ変更があったらコンパイルしてくれる。CoffeeScriptはデフォルトでfunction(){}();で囲って外部からアクセスできなくなるので,-bを付けてトップレベルにJavaScriptを生成するようにする。
-
-<pre>$ coffee -w -b -o src/ -c coffee</pre>
-<pre>$ coffee -w -b -o test/src -c test/coffee</pre>
-
-これでテストコードもしくは本体のコードを修正すれば勝手にコンパイルするのでtest/index.htmlを見ればよい。後はもうちょい頑張ってブラウザを勝手にリロードするか,Rhinoとか使えばindex.htmlを用意しなくてもCUIでテスト結果をみれそう。
-
-一式は以下のgistに置いた。(Qunitはライセンス見てないので外してある)
-<a href="https://gist.github.com/925753">CoffeeScript+QUnit — Gist</a>
-</div></article><div class="pager"><ul><li class="previous"><a href="/page/5/">Prev</a></li><li class="next"><a href="/page/7/">Next</a></li></ul></div></div></body></html>
+なるべく、チュートリアルに載っていなくて初心者が知らなそうなものをいくつか選んだつもりだったけど、ちょっと微...</div><div class="read-more"><a href="/2008/11/23/vimm3-2/">READ MORE</a></div></article><div class="pager"><ul><li class="previous"><a href="/page/5/">Prev</a></li><li class="next"><a href="/page/7/">Next</a></li></ul></div></div></body></html>

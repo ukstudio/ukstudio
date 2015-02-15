@@ -8,7 +8,7 @@ _gaq.push(['_trackPageview']);
   var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
   ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
   var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-})();</script></head><body class="2011 2011_05 2011_05_10 2011_05_10_duostack_nodejs 2011_05_10_duostack_nodejs_index"><div class="cointainer-fluid"><div class="navbar navbar-default" role="navigation"><div class="container-fluid"><div class="navbar-header"><a class="navbar-brand" href="/">UKSTUDIO</a></div><div class="navbar-collapse collapse"><ul class="nav navbar-nav navbar-right"><li><a href="http://twitter.com/ukstudio">Twitter</a></li><li><a href="http://github.com/ukstudio">GitHub</a></li></ul></div></div></div></div><div class="container"><article><h1>duostackでnode.jsアプリを動かすまで</h1><hr /><div class="article-body"><h2>node.jsのインストール</h2>
+})();</script></head><body class="2011 2011_05 2011_05_10 2011_05_10_duostack_nodejs 2011_05_10_duostack_nodejs_index"><div class="header"><div class="header-navigation"><ul><li><i class="fa fa-twitter"></i><a href="http://twitter.com/ukstudio">Twitter</a></li><li><i class="fa fa-github-alt"></i><a href="http://github.com/ukstudio">GitHub</a></li></ul></div><div class="header-title"><a href="/">UKSTUDIO</a></div></div><div class="container"><article><h1>duostackでnode.jsアプリを動かすまで</h1><hr /><div class="article-body"><h2>node.jsのインストール</h2>
 何はともあれnode.jsのインストール。aptではなくgithubからリポジトリをcloneしてmakeした。最近はapt以外のものは$HOME/localに入れるルールでやってるのでnode.jsも同様に。node.jsをsudoで入れると結構ハマるみたいな話を聞くので特に理由がなければaptとかで入れるか$HOME以下に入れるのがよさそう。
 
 <pre>$ git clone git://github.com/joyent/node.git

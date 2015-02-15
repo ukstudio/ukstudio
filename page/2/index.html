@@ -8,140 +8,122 @@ _gaq.push(['_trackPageview']);
   var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
   ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
   var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-})();</script></head><body class="page page_2 page_2_index"><div class="cointainer-fluid"><div class="navbar navbar-default" role="navigation"><div class="container-fluid"><div class="navbar-header"><a class="navbar-brand" href="/">UKSTUDIO</a></div><div class="navbar-collapse collapse"><ul class="nav navbar-nav navbar-right"><li><a href="http://twitter.com/ukstudio">Twitter</a></li><li><a href="http://github.com/ukstudio">GitHub</a></li></ul></div></div></div></div><div class="container"><article><h1><a href="/2014/09/05/arel/">2014-09-05 Arelあれこれ</a></h1><hr /><div class="article-body"><h2 id="model.arel_table-を読みづらいと感じる">Model.arel_table を読みづらいと感じる</h2>
+})();</script></head><body class="page page_2 page_2_index"><div class="header"><div class="header-navigation"><ul><li><i class="fa fa-twitter"></i><a href="http://twitter.com/ukstudio">Twitter</a></li><li><i class="fa fa-github-alt"></i><a href="http://github.com/ukstudio">GitHub</a></li></ul></div><div class="header-title"><a href="/">UKSTUDIO</a></div></div><div class="container"><article class="article-content"><h1 class="article--title"><a href="/2012/01/11/rails3_primary_key_foreign_key_big_int/">rails3でprimary keyとforeign keyをbig intにする</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2012-01-11 00:00:00 UTC" pubdate="pubdate">January 11 2012</time></div><div class="article-tags"></div><div class="article-summary">以下は、PostgreSQLの例。
+<code><pre>ActiveRecord::ConnectionAdapters::PostgreSQLAdapter::NATIVE_DATABASE_TYPES[:primary_key] = 'bigserial primary key' </pre></code>
+外部キーの場合、<code>t.references :user</code>とか書いてると、ActiveRecord側でintegerがハードコーディングされているのでlimitオプションを付けるしかなさそう。
+<code><pre>t.references :user...</pre></code></div><div class="read-more"><a href="/2012/01/11/rails3_primary_key_foreign_key_big_int/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2011/10/12/lvm_kvm/">LVMを使っているKVMのディスクイメージの容量を追加する</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2011-10-12 00:00:00 UTC" pubdate="pubdate">October 12 2011</time></div><div class="article-tags"></div><div class="article-summary">KVMのディスクイメージの容量を増やしたのでメモ。
 
-<p>例えばこういうコード。</p>
-<pre class="highlight ruby"><span class="no">Post</span><span class="nf">.joins</span><span class="p">(</span><span class="ss">:comments</span><span class="p">)</span><span class="nf">.order</span><span class="p">(</span><span class="no">Comment</span><span class="nf">.arel_table</span><span class="o">[</span><span class="ss">:created_at</span><span class="o">]</span><span class="nf">.desc</span><span class="p">)</span>
-</pre>
-<p>発行されるSQLはこんな感じ。</p>
-<pre class="highlight sql"><span class="k">SELECT</span> <span class="nv">&quot;posts&quot;</span><span class="p">.</span><span class="o">*</span> <span class="k">FROM</span> <span class="nv">&quot;posts&quot;</span> <span class="k">INNER</span> <span class="k">JOIN</span> <span class="nv">&quot;comments&quot;</span> <span class="k">ON</span> <span class="nv">&quot;comments&quot;</span><span class="p">.</span><span class="nv">&quot;post_id&quot;</span> <span class="o">=</span> <span class="nv">&quot;posts&quot;</span><span class="p">.</span><span class="nv">&quot;id&quot;</span>  <span class="k">ORDER</span> <span class="k">BY</span> <span class="nv">&quot;comments&quot;</span><span class="p">.</span><span class="nv">&quot;created_at&quot;</span> <span class="k">DESC</span>
-</pre>
-<p>こちらの方が個人的には読みやすい。</p>
-<pre class="highlight ruby"><span class="no">Post</span><span class="nf">.joins</span><span class="p">(</span><span class="ss">:comments</span><span class="p">)</span><span class="nf">.order</span><span class="p">(</span><span class="s1">&#39;comments.created_at desc&#39;</span><span class="p">)</span>
-</pre>
-<h2 id="問題もある">問題もある</h2>
+<h2>イメージファイルの拡張</h2>
+まずはイメージのフォーマットを確認する。qemu-imgのinfoでわかる。
 
-<h3 id="テーブル名を変えてしまったとき">テーブル名を変えてしまったとき</h3>
+<pre>$ qemu-img info vm.img</pre>
 
-<p>仮にテーブル名がかわったら後者の場合はエラーになる。</p>
-<pre class="highlight sql"><span class="k">SELECT</span> <span class="nv">&quot;posts&quot;</span><span class="p">.</span><span class="o">*</span> <span class="k">FROM</span> <span class="nv">&quot;posts&quot;</span> <span class="k">INNER</span> <span class="k">JOIN</span> <span class="nv">&quot;new_comments&quot;</span> <span class="k">ON</span> <span class="nv">&quot;new_comments&quot;</span><span class="p">.</span><span class="nv">&quot;post_id&quot;</span> <span class="o">=</span> <span class="nv">&quot;posts&quot;</span><span class="p">.</span><span class="nv">&quot;id&quot;</span>  <span class="k">ORDER</span> <span class="k">BY</span> <span class="n">comments</span><span class="p">.</span><span class="n">created_at</span> <span class="k">DESC</span>
-<span class="n">SQLite3</span><span class="p">::</span><span class="k">SQLException</span><span class="p">:</span> <span class="k">no</span> <span class="n">such</span> <span class="k">column</span><span class="p">:</span> <span class="n">comments</span><span class="p">.</span><span class="n">created_at</span><span class="p">:</span> <span class="k">SELECT</span> <span class="nv">&quot;posts&quot;</span><span class="p">.</span><span class="o">*</span> <span class="k">FROM</span> <span class="nv">&quot;posts&quot;</span> <span class="k">INNER</span> <span class="k">JOIN</span> <span class="nv">&quot;new_comments&quot;</span> <span class="k">ON</span> <span class="nv">&quot;new_comments&quot;</span><span class="p">.</span><span class="nv">&quot;post_id&quot;</span> <span class="o">=</span> <span class="nv">&quot;posts&quot;</span><span class="p">.</span><span class="nv">&quot;id&quot;</span>  <span class="k">ORDER</span> <span class="k">BY</span> <span class="n">comments</span><span class="p">.</span><span class="n">created_at</span> <span class="n">D</span>
-<span class="n">ESC</span>
-<span class="n">ActiveRecord</span><span class="p">::</span><span class="n">StatementInvalid</span><span class="p">:</span> <span class="n">SQLite3</span><span class="p">::</span><span class="k">SQLException</span><span class="p">:</span> <span class="k">no</span> <span class="n">such</span> <span class="k">column</span><span class="p">:</span> <span class="n">comments</span><span class="p">.</span><span class="n">created_at</span><span class="p">:</span> <span class="k">SELECT</span> <span class="nv">&quot;posts&quot;</span><span class="p">.</span><span class="o">*</span> <span class="k">FROM</span> <span class="nv">&quot;posts&quot;</span> <span class="k">INNER</span> <span class="k">JOIN</span> <span class="nv">&quot;new_comments&quot;</span> <span class="k">ON</span> <span class="nv">&quot;new_comments&quot;</span><span class="p">.</span><span class="nv">&quot;post_id&quot;</span> <span class="o">=</span> <span class="nv">&quot;posts&quot;</span><span class="p">.</span><span class="nv">&quot;id&quot;</span>
-  <span class="k">ORDER</span> <span class="k">BY</span> <span class="n">comments</span><span class="p">.</span><span class="n">created_at</span> <span class="k">DESC</span>
+今回はqcow2になっていたのでrawに変換する。
 
-</pre>
-<p>前者はモデルの方でテーブル名を変更すれば動作する。</p>
-<pre class="highlight ruby"><span class="k">class </span><span class="nc">Comment</span> <span class="o">&lt;</span> <span class="no">ActiveRecord</span><span class="o">::</span><span class="no">Base</span>
-  <span class="nb">self</span><span class="nf">.table_name</span>  <span class="ss">:new_comments</span>
-<span class="k">end</span>
-</pre>
-<h3 id="scopeでmergeしたいとき">scopeでmergeしたいとき</h3>
-<pre class="highlight ruby"><span class="k">class </span><span class="nc">Comment</span> <span class="o">&lt;</span> <span class="no">ActiveRecord</span><span class="o">::</span><span class="no">Base</span>
-  <span class="n">scope</span> <span class="ss">:recent</span><span class="p">,</span> <span class="o">-&gt;</span> <span class="p">{</span> <span class="n">where</span><span class="p">(</span><span class="s1">&#39;created_at &gt; ?&#39;</span><span class="p">,</span> <span class="mi">10</span><span class="nf">.days.ago</span><span class="p">)</span> <span class="p">}</span>
-<span class="k">end</span>
+<pre>$ qemu-img convert -f qcow2 vm.img -O raw vm.raw</pre>
 
-<span class="no">Post</span><span class="nf">.joins</span><span class="p">(</span><span class="ss">:comments</span><span class="p">)</span><span class="nf">.merge</span><span class="p">(</span><span class="no">Comment</span><span class="nf">.recent</span><span class="p">)</span>
-</pre>
-<p>これだとCommentのcreated_atが解決できなくてコケる。</p>
-<pre class="highlight sql"><span class="k">SELECT</span> <span class="nv">&quot;posts&quot;</span><span class="p">.</span><span class="o">*</span> <span class="k">FROM</span> <span class="nv">&quot;posts&quot;</span> <span class="k">INNER</span> <span class="k">JOIN</span> <span class="nv">&quot;comments&quot;</span> <span class="k">ON</span> <span class="nv">&quot;comments&quot;</span><span class="p">.</span><span class="nv">&quot;post_id&quot;</span> <span class="o">=</span> <span class="nv">&quot;posts&quot;</span><span class="p">.</span><span class="nv">&quot;id&quot;</span> <span class="k">WHERE</span> <span class="p">(</span><span class="n">created_at</span> <span class="o">&gt;</span> <span class="s1">&#39;2014-08-26 09:16:45.106691&#39;</span><span class="p">)</span>
-<span class="n">SQLite3</span><span class="p">::</span><span class="k">SQLException</span><span class="p">:</span> <span class="n">ambiguous</span> <span class="k">column</span> <span class="n">name</span><span class="p">:</span> <span class="n">created_at</span><span class="p">:</span> <span class="k">SELECT</span> <span class="nv">&quot;posts&quot;</span><span class="p">.</span><span class="o">*</span> <span class="k">FROM</span> <span class="nv">&quot;posts&quot;</span> <span class="k">INNER</span> <span class="k">JOIN</span> <span class="nv">&quot;comments&quot;</span> <span class="k">ON</span> <span class="nv">&quot;comments&quot;</span><span class="p">.</span><span class="nv">&quot;post_id&quot;</span> <span class="o">=</span> <span class="nv">&quot;posts&quot;</span><span class="p">.</span><span class="nv">&quot;id&quot;</span> <span class="k">WHERE</span> <span class="p">(</span><span class="n">created_at</span> <span class="o">&gt;</span> <span class="s1">&#39;2014-08-26 09:16:45.
-106691&#39;</span><span class="p">)</span>
-<span class="n">ActiveRecord</span><span class="p">::</span><span class="n">StatementInvalid</span><span class="p">:</span> <span class="n">SQLite3</span><span class="p">::</span><span class="k">SQLException</span><span class="p">:</span> <span class="n">ambiguous</span> <span class="k">column</span> <span class="n">name</span><span class="p">:</span> <span class="n">created_at</span><span class="p">:</span> <span class="k">SELECT</span> <span class="nv">&quot;posts&quot;</span><span class="p">.</span><span class="o">*</span> <span class="k">FROM</span> <span class="nv">&quot;posts&quot;</span> <span class="k">INNER</span> <span class="k">JOIN</span> <span class="nv">&quot;comments&quot;</span> <span class="k">ON</span> <span class="nv">&quot;comments&quot;</span><span class="p">.</span><span class="nv">&quot;post_id&quot;</span> <span class="o">=</span> <span class="nv">&quot;posts&quot;</span><span class="p">.</span><span class="nv">&quot;id&quot;</span> <span class="k">WHERE</span> <span class="p">(</span><span class="n">cr</span>
-<span class="n">eated_at</span> <span class="o">&gt;</span> <span class="s1">&#39;2014-08-26 09:16:45.106691&#39;</span><span class="p">)</span>
-</pre>
-<p>正しくはこう。</p>
-<pre class="highlight ruby"><span class="k">class </span><span class="nc">Comment</span> <span class="o">&lt;</span> <span class="no">ActiveRecord</span><span class="o">::</span><span class="no">Base</span>
-  <span class="n">scope</span> <span class="ss">:recent</span><span class="p">,</span> <span class="o">-&gt;</span> <span class="p">{</span> <span class="n">where</span><span class="p">(</span><span class="nb">self</span><span class="nf">.arel_table</span><span class="o">[</span><span class="ss">:created_at</span><span class="o">]</span><span class="nf">.gt</span><span class="p">(</span><span class="mi">10</span><span class="nf">.days.ago</span><span class="p">))</span> <span class="p">}</span>
-<span class="k">end</span>
-</pre><pre class="highlight sql"><span class="k">SELECT</span> <span class="nv">&quot;posts&quot;</span><span class="p">.</span><span class="o">*</span> <span class="k">FROM</span> <span class="nv">&quot;posts&quot;</span> <span class="k">INNER</span> <span class="k">JOIN</span> <span class="nv">&quot;comments&quot;</span> <span class="k">ON</span> <span class="nv">&quot;comments&quot;</span><span class="p">.</span><span class="nv">&quot;post_id&quot;</span> <span class="o">=</span> <span class="nv">&quot;posts&quot;</span><span class="p">.</span><span class="nv">&quot;id&quot;</span> <span class="k">WHERE</span> <span class="p">(</span><span class="nv">&quot;comments&quot;</span><span class="p">.</span><span class="nv">&quot;created_at&quot;</span> <span class="o">&gt;</span> <span class="s1">&#39;2014-08-26 09:19:17.406299&#39;</span><span class="p">)</span>
-</pre>
-<h2 id="僕個人の結論">僕個人の結論</h2>
+ddのseekを使って末尾に領域を追加する。10GBのイメージに5GB追加するならこんな感じ。
 
-<p>Model.arel_tableはできる限り隠したい(読みづらいから)。そしてmergeを使いたいケースではArelを使っておく。その変わりmergeが必要になるまでは無理にArelを使わない。</p>
+<pre>$ dd if...</pre></div><div class="read-more"><a href="/2011/10/12/lvm_kvm/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2011/09/29/debut_gentoo/">Gentooデビューしました</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2011-09-29 00:00:00 UTC" pubdate="pubdate">September 29 2011</time></div><div class="article-tags"></div><div class="article-summary">メインの開発マシンのOSをUbuntuからGentooにしました。Gentooにした理由は割となんとなくだけど、強いて言うならGentooいいよっていう人の気持ちを知りたいのと、あとPortageは割と好きだからかな。Ubuntuに不満があったわけでもない。Unityは好きじゃないけど、どうせXMonad使うし。
 
-<p>さっきのComment#recentの例でいうなら最初は<code>where(&#39;created_at &gt; ?&#39;, 10.days.ago)</code>で書いておく。merged使いたい時になったらArelの方で書き直す。</p>
+インストールは<a href="http://atnd.org/events/19056">第2回 Gentoo Linux インストール講習会 : ATND</a>に参加したおかげで起動するまでは割とすんなり(Thanks @ursm, @kenchan)...</div><div class="read-more"><a href="/2011/09/29/debut_gentoo/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2011/08/25/ipv6hackathon/">IPv6 Hackathonに参加してきた</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2011-08-25 00:00:00 UTC" pubdate="pubdate">August 25 2011</time></div><div class="article-tags"></div><div class="article-summary">この間のLL PlanetsでIPv6 Hackathonとやらに参加してきた。Ruby組は僕と @sugamasao と @takano32 の3人でチーム組んだ。
 
-<p>テーブル名の変更のリスクは気にしない。そもそもあまりテーブル変更しないし…。既にあるDBの上にRailsアプリケーションを構築する場合はDBリファクタリングのことを考えてArel使いまくった方がいいのかもしれない。</p>
-</div></article><article><h1><a href="/2014/04/18/rspec_ctags/">2014-04-18 Vim(TagBar)でRSpecのctagsを扱う</a></h1><hr /><div class="article-body"><p><img alt="rspec ctags" src="/images/2014-04-18-vim-rspec-ctags.png" /></p>
+<h2>RailsはIPv6でも大丈夫っぽい</h2>
+大丈夫っぽいっていうのは軽くさわった程度なので断言できるほどでもないため。IPv6でRailsを立ち上げたかったら上記のように--bを指定すれば大丈夫です。
 
-<p>unite-outlineとかを使う人には不要なのかもしれないけど、あいにくuniteユーザではないのでctagsでなんとかできないか調べてみた。</p>
+<pre><code>rails server --b="::"  -p 3000</code></pre>
 
-<p>まず、Funtooで入るctagsではrspecのタグは生成できないのでforkされたctagsを使う必要がある。</p>
+Unicornの場合もオプションで大丈夫。
+...</div><div class="read-more"><a href="/2011/08/25/ipv6hackathon/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2011/08/04/tddbc_tokyo_1_6/">TDDBC 東京 1.6でサポートスタッフをやってきました</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2011-08-04 00:00:00 UTC" pubdate="pubdate">August 04 2011</time></div><div class="article-tags"></div><div class="article-summary"><a href="http://www.zusaar.com/event/agZ6dXNhYXJyDQsSBUV2ZW50GPGlAww">TDD Boot Camp 東京 1.6</a>にRubyのサポートスタッフとして参加してきた。
 
-<p><a href="https://github.com/fishman/ctags">fishman/ctags</a></p>
+当初の予定ではあくまでサポートなのでペアプロには参加しない予定だったけど、Rubyのグループが5人で人数が奇数になってしまったので急遽ペアプロに参加することにした。
 
-<p>インストール場所はお好みで。個人的には手で入れる系のものは$HOME/localにインストールするのが好きなのでそこにインストールした。あとはTagBarの方でこのctagsを使うよう設定する。</p>
-<pre class="highlight viml"><span class="k">let</span> <span class="nv">g:tagbar_ctags_bin</span><span class="p">=</span><span class="s2">&quot;/home/ukstudio/local/bin/ctags&quot;</span>
-<span class="k">let</span> <span class="nv">g:tagbar_type_ruby</span> <span class="p">=</span> <span class="p">{</span>
-<span class="se">    \</span> <span class="s1">&#39;kinds&#39;</span> <span class="p">:</span> <span class="p">[</span>
-<span class="se">        \</span> <span class="s1">&#39;m:modules&#39;</span><span class="p">,</span>
-<span class="se">        \</span> <span class="s1">&#39;c:classes&#39;</span><span class="p">,</span>
-<span class="se">        \</span> <span class="s1">&#39;d:describes&#39;</span><span class="p">,</span>
-<span class="se">        \</span> <span class="s1">&#39;C:contexts&#39;</span><span class="p">,</span>
-<span class="se">        \</span> <span class="s1">&#39;f:methods&#39;</span><span class="p">,</span>
-<span class="se">        \</span> <span class="s1">&#39;F:singleton methods&#39;</span>
-<span class="se">    \</span> <span class="p">]</span>
-<span class="se">\</span> <span class="p">}</span>
-</pre>
-<p>これで上の画像のような感じでTagBarに表示されるようになるはず。</p>
-</div></article><article><h1><a href="/2014/03/27/erutaso_ebuild/">2014-03-27 lsと間違えてerutasoを打ってしまうGentoo/Funtooユーザーのみなさまへ</a></h1><hr /><div class="article-body"><p><a href="https://github.com/ukstudio/ukstudio-overlay/tree/master/app-shells/erutaso/">ebuild</a>を作ってみましたのでご活用ください。初めてのebuildなので不具合・不都合あればpull-reqを。ukstudioというoverlayを作りましたのでそこからインストールできるはずです。</p>
+この辺は@t_wadaさんや主催の@pocketberserkerさんとも相談してペアとトリオのふたつに分けるっていう話もあったけれど、僕が「せっかくだからペアプロして帰ってもらいたい」と思ったので若干の迷いはあれどペアプロに...</div><div class="read-more"><a href="/2011/08/04/tddbc_tokyo_1_6/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2011/07/02/bdd/">BDDについて自分なりにまとめてみた</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2011-07-02 00:00:00 UTC" pubdate="pubdate">July 02 2011</time></div><div class="article-tags"></div><div class="article-summary">BDDという言葉も割と人によって指すものが違うようなので「俺の中でのBDDはこうだよ」って内容のエントリ。別に絶対的なものでもないと思うので参考までに。
 
-<p><a href="https://github.com/ukstudio/ukstudio-overlay">https://github.com/ukstudio/ukstudio-overlay</a></p>
-<pre class="highlight shell">curl https://raw.github.com/ukstudio/ukstudio-overlay/master/profiles/layman.xml &gt; /etc/layman/overlays/ukstudio-overlay.xml
-layman -f -a ukstudio
+<h2>結論から</h2>
+とりあえず結論だけ知りたい人向けに。
 
-emerge erutaso
-which erutaso <span class="c">#=&gt; /usr/bin/erutaso</span>
+<ul>
+  <li>BDDにはふたつの種類がある</li>
+  <li>1. TDDの言い換えのBDD(開発寄り)</li>
+  <li>2. ATDD(受け入れテスト)でのBDD(ユーザ寄り)</li>
+</ul>
 
-erutaso
-</pre>
-<h2 id="see-also">See also</h2>
+<h2>振る舞い</h2>
+BDDは振る舞い駆動開発と言われたりするように、テストという言葉のかわりに<strong>振る舞い</strong>という言葉を使う。日本...</div><div class="read-more"><a href="/2011/07/02/bdd/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2011/05/14/mongodb_nodejs/">mongodb + node.js を軽く試した</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2011-05-14 00:00:00 UTC" pubdate="pubdate">May 14 2011</time></div><div class="article-tags"></div><div class="article-summary"><h2>mongodbのインストール</h2>
+<pre class="sunlight-hilight-bash">$ sudo aptitude install mongodb
+$ mkdir /path/to/data
+$ mongod --dbpath /path/to/data</pre>
 
-<p><a href="https://twitter.com/sgymtic/status/448832543039574016">https://twitter.com/sgymtic/status/448832543039574016</a></p>
-</div></article><article><h1><a href="/2014/03/18/bitlbee_hipchat/">2014-03-18 BitlBeeでHipChatに接続する</a></h1><hr /><div class="article-body"><p>HipChatのLinuxクライアントは残念ながら日本語入力ができないのでかわりにIRCを使ってみる。
-HipChatはJabberが使えるのでBitlBeeを使ってJabber経由でIRCと繋ぐことにする。BitlBee自体の設定はなにもいらないので各環境にあわせて適当に入れて起動する。</p>
-<pre class="highlight text">sudo emerge bitlbee
-sudo /etc/init.d/bitlbee start
-</pre>
-<p>次にIRCクライアントでBitlBeeに接続する。BitlBeeはlocalhostに6667ポートで立ち上がっているので(コンフィグで修正していなければ)、そこに接続する。文字コードはUTF-8でOK。
-接続できたらbitlbeeの部屋でコマンドを入力し、アカウントを追加する。HipChatのJabberのアカウントは「Account Setting &gt; XMPP/Jabber info」にある。</p>
-<pre class="highlight text">account add jabber username@chat.hipchat.com &#39;password&#39;
-</pre>
-<p>次に各ユーザがニックネームで表示されるように設定する。これをやらないと数字の羅列で誰が誰だかわからない状態になってしまう。</p>
-<pre class="highlight text">account hipchat set nick_source full_name
-</pre>
-<p>次にアカウントを有効化する。この時点で認証などもしているので失敗したらアカウント情報を見直すこと。</p>
-<pre class="highlight text">account hipchat on
-</pre>
-<p>有効化できたらすでに部屋に参加できるが数字の羅列が頭についているので使いにくい。別の名前を割り当てることができるので適当に自分が使いやすい名前をつける。</p>
-<pre class="highlight text">chat add hipchat room_jaber_name@conf.hipchat.com #channelname
-</pre>
-<p>ニックの設定次第だとHipChatから怒られるのでその場合HipCHatで使っている名前を設定する。</p>
-<pre class="highlight text">channel #channelname set nick &#39;room nickname&#39;
-</pre>
-<p>無事、部屋にjoinしてログが流れてきたら終了。</p>
-<pre class="highlight text">/join #channelname
-</pre></div></article><article><h1><a href="/2014/03/13/bittorrentsync_qnap_funtoo/">2014-03-13 BitTorrent SyncでQNAPとFuntooで同期する</a></h1><hr /><div class="article-body"><p>QNAPの一部のディレクトリ(主に電子書籍)とローカルのマシンで同期を取りたかったのでBitTorrent Syncで同期を取ってみる。NFSでもいいんだけど、電子書籍ぐらいならローカルにおけるぐらいのストレージ容量はあるので。</p>
+<h2>mongooseのインストール</h2>
+<pre>$ npm install -g mongoose</pre>
+node.jsでmongodb扱うのに他にもライブラリあるみたいだけど、とりあえずnpmでサクッと使えるmongooseを使ってみる。
+<h2>サンプル</h2>
+軽く試しただけなので、詳細は <a href="https://github.com/LearnBoost/mongoose">LearnBoost...</a></div><div class="read-more"><a href="/2011/05/14/mongodb_nodejs/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2011/05/10/duostack_nodejs/">duostackでnode.jsアプリを動かすまで</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2011-05-10 00:00:00 UTC" pubdate="pubdate">May 10 2011</time></div><div class="article-tags"></div><div class="article-summary"><h2>node.jsのインストール</h2>
+何はともあれnode.jsのインストール。aptではなくgithubからリポジトリをcloneしてmakeした。最近はapt以外のものは$HOME/localに入れるルールでやってるのでnode.jsも同様に。node.jsをsudoで入れると結構ハマるみたいな話を聞くので特に理由がなければaptとかで入れるか$HOME以下に入れるのがよさそう。
 
-<h2 id="qnapにbittorrent-syncを入れる">QNAPにBitTorrent Syncを入れる</h2>
+<pre>$ git clone git://github.com/joyent/node.git
+$ cd node...</pre></div><div class="read-more"><a href="/2011/05/10/duostack_nodejs/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2011/05/09/build_vim/">Vimをソースからビルド</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2011-05-09 00:00:00 UTC" pubdate="pubdate">May 09 2011</time></div><div class="article-tags"></div><div class="article-summary">aptで入れたvimのrubyインターフェースのバージョンが1.8.6なのが気にいらなくてvimをソースからビルドした。
 
-<p>基本的には<a href="http://www.qnap.com/useng/index.php?sn=9137">QNAPのドキュメント</a>を参照すれば問題ないと思う。簡単に説明しておくとQTSにBitTorrent Syncを追加し、BitTorrent SyncのWebUIを起動する。WebUIのアクセスユーザは途中で&quot;Please modify the Login ID / Password&quot;とか言われる画面でLogin IDとPasswordを入力し、Apply Changesをすればそのユーザで接続できる。</p>
+<pre><code>$ hg clone https://vim.googlecode.com/hg/ vim
+$ hg update vim73
 
-<p>次にBitTorrent SyncのWebUIが起動したらAdd Folderから該当のディレクトリを選択する。Secret KeyはここでGenerateしておく。(後でローカルの方の設定で使用する)。QNAP側はこれで終わり。</p>
+$ cd vim
+$ ./configure --enable-multibyte --prefix=$HOME/local --enable-rubyinterp</code></pre>
 
-<h2 id="funtooにbittorrent-syncを入れる">FuntooにBitTorrent Syncを入れる</h2>
+これでOK。aptで入れたvimも一応残しておきたかった...</div><div class="read-more"><a href="/2011/05/09/build_vim/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2011/04/19/coffeescript-qunit/">CoffeeScript + QUnitでTDD環境作ったよ</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2011-04-19 00:00:00 UTC" pubdate="pubdate">April 19 2011</time></div><div class="article-tags"></div><div class="article-summary">Rails3.1からCoffeeScriptがデフォルトで入ってるとかなんとかで、とりあえずCoffeeScriptだけで少し触ってみた。とりあえずQUnit自体もCoffeeScriptで書けるようなTDD環境を作ってみた。
 
-<p>FuntooはportageにBitTorrent Syncのebuildがあるのでそれを使う。</p>
-<pre class="highlight text">sudo emerge bittorrent sync
-</pre>
-<p>起動は<code>/etc/init.d/btsync start</code>だが、コンフィグの修正が必要。init.dで起動するとログがでないからわからないが、<code>/opt/btsync/btsync</code>で起動するとstorage_pathが存在しないと怒られるのがわかる。コンフィグは<code>/etc/btsync/config</code>がそう。</p>
-<pre class="highlight text">// &quot;storage_path&quot; : &quot;/home/user/.sync&quot;,
-&quot;storage_path&quot; : &quot;/home/ukstudio/.sync&quot;,
-</pre>
-<p>ディレクトリはお好みで。</p>
+とりあえず、UbuntuにCoffeeScriptをインストールするわけだけどaptの方が古いしせっかくだから最新のを触るかと思ったのでgithubからCoffeeScriptとnode.jsのリポジトリをcloneしてインストール。
 
-<p><code>/etc/init.d/btsync start</code>で無事btsyncが起動したら、<a href="http://localhost:8888/gui%E3%81%A7WebUI%E3%81%AB%E3%82%A2%E3%82%AF%E3%82%BB%E3%82%B9%E3%81%A7%E3%81%8D%E3%82%8B%E3%80%82ID%E3%81%A8%E3%83%91%E3%82%B9%E3%81%AF&#x27;admin&#x27;%E3%81%A8&#x27;password&#x27;%E3%80%82">http://localhost:8888/guiでWebUIにアクセスできる。IDとパスは&#39;admin&#39;と&#39;password&#39;。</a></p>
+<pre>$ git clone...</pre></div><div class="read-more"><a href="/2011/04/19/coffeescript-qunit/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2011/04/11/odrk01/">大江戸Ruby会議01で発表してきました</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2011-04-11 00:00:00 UTC" pubdate="pubdate">April 11 2011</time></div><div class="article-tags"></div><div class="article-summary">昨日は大江戸Ruby会議という名のasakusa.rbの生活発表会があったので、普段の生活で考えてることを発表してきた。ちなみに実はasakusa.rbの参加回数はそんなに多くなかったりする。当日のスライドと動画はこちら。KaigiFreaksは仕事がはやくてすごい。いつもありがとうございます!
 
-<p>WebUIにアクセスできたら、Add FolderでQNAPと同期させたいディレクトリを指定する。Secret Keyはここでは生成させず先程のQNAPのsecret keyをコピペする。保存し、WebUIのトップ画面で&quot;connected devices and status&quot;でダウンロード速度が表示されたら無事同期がはじまっている。</p>
-</div></article><div class="pager"><ul><li class="previous"><a href="/">Prev</a></li><li class="next"><a href="/page/3/">Next</a></li></ul></div></div></body></html>
+
+
+<a href="http://vimeo.com/channels/oedorubykaigi01">大江戸Ruby会議01 on Vimeo</a>
+
+この発表について何か僕にもの申したい人がいたら@ukstudioかy.akamatsu[at]ukstudio.jpまで頂けるとありが...</div><div class="read-more"><a href="/2011/04/11/odrk01/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2011/03/24/activity/">近況</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2011-03-24 00:00:00 UTC" pubdate="pubdate">March 24 2011</time></div><div class="article-tags"></div><div class="article-summary"><h3>個人事業主になりました</h3>
+<a href="http://ukstudio.jp/wp-content/uploads/2011/03/FxCam_1300951372227.jpg"><img src="http://ukstudio.jp/wp-content/uploads/2011/03/FxCam_1300951372227.jpg" alt="" title="FxCam_1300951372227" width="720" height="480" class="alignnone size-full wp-image-824"></a>
+この間の確定申告の際に、個人事業主届けを出してきた。去年は出さずに1年働いていたけど、今年は確定申告を青にしたのでそのついでに。届出の提出はすごいあっけなくて、改めて個人事業主なんてそんな大層なものじゃないなーと思った。
+
+屋号は「UKSTUDIO」にした。屋号を取ったから何が変わるってわけでもないけど、本名とukstudioっていうIDの間にある溝を埋めるぐらいの意味はあるかな。
+
+<h3>4月下旬からスケールアウトでお仕事</h3>
+<a href="http://twitter.com/yamaz">@yamaz</a>さんからお声がかか...</div><div class="read-more"><a href="/2011/03/24/activity/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2011/03/21/tddbc-fukuoka/">TDDBC福岡に参加してきた</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2011-03-21 00:00:00 UTC" pubdate="pubdate">March 21 2011</time></div><div class="article-tags"></div><div class="article-summary"><a href="http://ukstudio.jp/wp-content/uploads/2011/03/2011-03-19-09.24.06.jpg"><img src="http://ukstudio.jp/wp-content/uploads/2011/03/2011-03-19-09.24.06.jpg" alt="" title="博多駅" class="alignnone size-full wp-image-815" style="width: 100%;"></a>
+
+福岡TDDBCに参加してきた。今回で3回目の参加(1回目は東京、2回目は東北)。
+
+3回は割と多めの参加回数だと思うけど、参加者層が地域によって違ったり、当然ペアプロする相手も違うわけでいつも違う刺激をもらってる。
+
+今回は@mzpさんが参加するとのことなので普段使ってるRubyではなくOCamlで参加。OCaml組は2ペア(4人)いて、1日目の前半を@suerさん、1日目の後半と2日目を@mzpさんとペアを組んでやった。OCamlは初心者もいいところなので2人には大分お世...</div><div class="read-more"><a href="/2011/03/21/tddbc-fukuoka/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2011/01/23/bought_galaxy_tab/">Galaxy Tabを購入した</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2011-01-23 00:00:00 UTC" pubdate="pubdate">January 23 2011</time></div><div class="article-tags"></div><div class="article-summary">HT-03AからGalaxy Tabに機種変した。と言っても電話はこれしか持っておらず、さすがにGalaxy Tabで通話するのは不便なので機種変した後SIMを抜いてHT-03Aに戻した。Galaxy TabはWi-Fiメインで使う予定。今のところ外でGalaxy Tabからネットに繋ぐことはあまり考えてない。とは言え繋げるにこしたことはないので、今持っているイーモバをPocketWiFiにするか、b-mobileを契約するかぐらいのことは検討している。
+
+<h2>Galaxy Tabを購入し...</h2></div><div class="read-more"><a href="/2011/01/23/bought_galaxy_tab/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2011/01/20/what_is_software_design/">ソフトウェア設計とは何か?(ソフトウェア工学とは何か?)</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2011-01-20 00:00:00 UTC" pubdate="pubdate">January 20 2011</time></div><div class="article-tags"></div><div class="article-summary">ソフトウェア設計とは何か?というとても良い論文の翻訳があるのだけど、いつのまにか記事が無くなっていた。手元にあるテキストデータを公開しようにも翻訳者の方との連絡手段がない。
+
+幸いなことにarchive.orgに記事のアーカイブが残っている。ただ、このarchive.orgが検索でまともにヒットしないので、せめて今後この記事を探す人がいた時のことを考えてここにリンクを貼っておく。
+
+<a href="http://web.archive.org/web/20080803072849/www.biwa.ne.jp/~mmura/SoftwareDevelopment/WhatIsSoftwareDesignJ.html"> ソフトウェア設計とは何か?</a>
+</div><div class="read-more"><a href="/2011/01/20/what_is_software_design/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2011/01/01/2010_retrospective/">2010年のふりかえり</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2011-01-01 00:00:00 UTC" pubdate="pubdate">January 01 2011</time></div><div class="article-tags"></div><div class="article-summary">新年あけましておめでとうございます。今年もどうぞよろしくお願い致します。
+
+去年のふりかえりの記事を去年中に書けなかったので、新年早々ブログを書いております。
+
+<h2>お仕事</h2>
+去年頭からフリーランスとして働きはじめてるけどまずは1年過ごせた。特に営業をせずともいくつかお仕事の紹介を頂いたり、実際にお手伝いさせてもらったりできるのは本当にありがたいことだなぁと思う。もし愛想つかしていらっしゃなければ今年もどうぞよろしくお願い致します。
+
+あと去年執筆したWEB+DBの記事は、思いの外...</div><div class="read-more"><a href="/2011/01/01/2010_retrospective/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2010/12/24/misawa-ruby-recipe/">IRCでミサワをいつも側に...</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2010-12-24 00:00:00 UTC" pubdate="pubdate">December 24 2010</time></div><div class="article-tags"></div><div class="article-summary">このエントリーは<a href="http://atnd.org/events/10901">Ruby逆引きレシピAdvent Calendar</a>の参加エントリです。担当は12月24日です。前日のエントリは@kei-sさんの <a href="http://d.hatena.ne.jp/kei-s/20101223/1293084650">Ruby逆引きレシピで作る、忙しい人のための『地獄のミサワの「女に惚れさす名言集」』- 札幌市西区</a>です。
+
+<a href="http://ukstudio.jp/wp-content/uploads/2010/12/FxCam_12931282608781.jpg"><img src="http://ukstudio.jp/wp-content/uploads/2010/12/FxCam_12931282608781.jpg" alt="" title="FxCam_1293128260878" width="360" height="240" class="alignnone size-full wp-image-783"></a>
+
+
+さて、私達プログラマが使うソフトウェアの中で最も起動時間の長いものは多分エディタでしょう。では次はなんでしょうか?そう、<strong>IRC</strong>ですね!今回は逆引きレシピの中から「レシピ109 IRC botを作りたい」を紹介します。
+
+...</div><div class="read-more"><a href="/2010/12/24/misawa-ruby-recipe/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2010/12/17/recovery-network-manager-gnome/">うっかりnetwork-manager-gnomeを消してネット繋がらなくなった</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2010-12-17 00:00:00 UTC" pubdate="pubdate">December 17 2010</time></div><div class="article-tags"></div><div class="article-summary">xubuntuを以前インストールしててもういらねーやと思って色々消してたら、気づいたらnetwork-manager-gnomeも消えていてインターネットに繋がらなくなったでござる。
+
+とりあえず手元のHT-03Aで適当にぐぐった結果、<a href="https://forums.ubuntulinux.jp/viewtopic.php?id=6441">Ubuntu日本語フォーラム / [Ubuntu 9.10] ネットワーク・マネジャーを復元したい</a>が見つかったので試してみるもそれっぽいパッケージがCDから見つからず挫折。
+
+んじゃ、コマンドラインからなんかネット接続する方法があればなんとかなるかな...</div><div class="read-more"><a href="/2010/12/17/recovery-network-manager-gnome/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2010/12/16/its_agile/">「問題→解決→原因調査→開発プロセスに組込む」 それアジャイルだよ</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2010-12-16 00:00:00 UTC" pubdate="pubdate">December 16 2010</time></div><div class="article-tags"></div><div class="article-summary">普段、イテレーションの終わり(ちなみに1週間)にKPTをやって問題点をだして、それを解決すべくTryを実践してはいる。けれど、短期的な解決で落ち着いてしまってしばらくすると似たような問題が発生する。 結局のところ、問題が発生したらその場の解決だけではなく、問題の原因を検証して、自分達の開発プロセスに再発防止の仕組みを組込まなければならないなと思った次第。
+
+そんなことをFaceBookやTwitterに書き込んでいたら、諸先輩方(@kdmsnrさん、@nawotoさんありがとうございま...</div><div class="read-more"><a href="/2010/12/16/its_agile/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2010/12/14/rspec_japanize/">RSpec日本語化計画</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2010-12-14 00:00:00 UTC" pubdate="pubdate">December 14 2010</time></div><div class="article-tags"></div><div class="article-summary">やっぱ僕達は日本人なので仕様記述的と言うからには日本語で書きたい。とりあえずRubyは日本語を一応識別子に使えるのでその辺で適当にやってみた。<del datetime="2010-12-14T10:26:03+00:00">shouldが鬼門すぎるのだがどうしたもんか。「it should_not 空であること」って明らかにおかしすぎる。</del>@takaiさんが少し修正してくれた。
+
+<script src="https://gist.github.com/740240.js?file=hoge_spec.rb"></script>
+
+本当はもっとちゃんとした記事を書くつもりだったんだけどなんか脇道にそれてしまった。
+</div><div class="read-more"><a href="/2010/12/14/rspec_japanize/">READ MORE</a></div></article><div class="pager"><ul><li class="previous"><a href="/">Prev</a></li><li class="next"><a href="/page/3/">Next</a></li></ul></div></div></body></html>

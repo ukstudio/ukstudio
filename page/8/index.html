@@ -8,68 +8,217 @@ _gaq.push(['_trackPageview']);
   var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
   ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
   var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-})();</script></head><body class="page page_8 page_8_index"><div class="cointainer-fluid"><div class="navbar navbar-default" role="navigation"><div class="container-fluid"><div class="navbar-header"><a class="navbar-brand" href="/">UKSTUDIO</a></div><div class="navbar-collapse collapse"><ul class="nav navbar-nav navbar-right"><li><a href="http://twitter.com/ukstudio">Twitter</a></li><li><a href="http://github.com/ukstudio">GitHub</a></li></ul></div></div></div></div><div class="container"><article><h1><a href="/2011/01/01/2010_retrospective/">2011-01-01 2010年のふりかえり</a></h1><hr /><div class="article-body">新年あけましておめでとうございます。今年もどうぞよろしくお願い致します。
+})();</script></head><body class="page page_8 page_8_index"><div class="header"><div class="header-navigation"><ul><li><i class="fa fa-twitter"></i><a href="http://twitter.com/ukstudio">Twitter</a></li><li><i class="fa fa-github-alt"></i><a href="http://github.com/ukstudio">GitHub</a></li></ul></div><div class="header-title"><a href="/">UKSTUDIO</a></div></div><div class="container"><article class="article-content"><h1 class="article--title"><a href="/2008/07/15/iphone-developer-program/">iPhone Developer Programに登録しました。</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2008-07-15 00:00:00 UTC" pubdate="pubdate">July 15 2008</time></div><div class="article-tags"></div><div class="article-summary">結論から言うと、まだ実機検証も配布もできてない段階です。そもそもアプリ作れてないですしね。ただ、米国在住者じゃないと登録できないってことはないですね。とりあえず登録はできたっぽいので。
 
-去年のふりかえりの記事を去年中に書けなかったので、新年早々ブログを書いております。
+端的に今の状況を説明すると、
 
-<h2>お仕事</h2>
-去年頭からフリーランスとして働きはじめてるけどまずは1年過ごせた。特に営業をせずともいくつかお仕事の紹介を頂いたり、実際にお手伝いさせてもらったりできるのは本当にありがたいことだなぁと思う。もし愛想つかしていらっしゃなければ今年もどうぞよろしくお願い致します。
+<ul>
+<li>iPhone Developer Program(Standardの方、$99)を日本のオンラインApple Storeから注文する</li>
+<li>activate codeがメールで届く</li>
+<li><blockquote>
+We are unable to activate your iPhone Developer...</blockquote></li>
+</ul></div><div class="read-more"><a href="/2008/07/15/iphone-developer-program/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2008/07/03/release_crossreview/">crossreviewがリリースされました!</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2008-07-03 00:00:00 UTC" pubdate="pubdate">July 03 2008</time></div><div class="article-tags"></div><div class="article-summary">今日、<a href="http://crossreview.jp/">crossreview</a>というサービスがリリースしました。smashmediaの河野さんのアイディアと元に、僕の勤め先であるRAWHIDE.が開発を手伝わさせていただきました。
 
-あと去年執筆したWEB+DBの記事は、思いの外好評で結構色々な人からお褒めを頂きました。たまに自分で読み直すけど、結構良く書けてるなぁと我ながら思う。あの時の自分すごい。この記事がきっかけでもう1つ進んでいるものがあるのだけれど、こっちも良いものにしたいなぁ。来年の夏頃にはお見せできるはずです。
+<a href="http://blog.crossreview.jp/plessrelease">プレスリリース</a>
+<a href="http://smashmedia.jp/blog/2008/07/001654.html">ぼくとcrossreviewの誕生日</a>
 
-<h2>プログラミング</h2>
-去年はずっと自分なりのClean Codeを考えてたおかげか、ここ最近書くコードは以前に比べると大分マシになったと思う。あとはTDDを含めたTestingについても考えてるけど、この辺はまだまだ勉強不足な部分はあるなぁ。TDDそのもののやり方は大分馴染んできたけど、テストコードの書き方とか受け入れテストやモック/スタブの使い方がまだまだ。
+Amazonの商品をレビューするサイトなのですが、Twitterみたいに気軽にレビューできます。他にもお気に入り機能(Twitterでいうfollowみたいなもの)があるので、似た趣味の人のレビューを追ったりすると色々とおもしろいんじゃないかと思います。...</div><div class="read-more"><a href="/2008/07/03/release_crossreview/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2008/06/30/song_for_autotest/">autotestの結果をMacのsayコマンドで通知する</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2008-06-30 00:00:00 UTC" pubdate="pubdate">June 30 2008</time></div><div class="article-tags"></div><div class="article-summary">かなりネタなエントリー。
 
-あとは使えるプログラミング言語が去年は増やせなかったなぁ。興味ある言語だけなら結構あるんだけど。今年はSmalltalkと関数型言語を何か1つ勉強したいなぁ。あとDCIやドメインモデルあたりの勉強もしたいな。去年中に理解することが出来なかったと言うか、そもそも勉強できてないというか。
+Macにはsayコマンドと言うものがあって、入力した英単語とかをしゃべらせることができる。詳細はMacの手書き説明書さんが最近エントリー書いているのでそちらを見てくださいな。
 
-<h2>英語</h2>
-英語は去年も本当にだめだった。1年でそこそこ話せることを目標にしてたけど途中で頓挫した。今年こそはと意気込んでも多分また頓挫するので、ちゃんと計画を立てよう。これは英語に限らず。普段仕事で計画とか見積りとかやってる割には普段の私生活はそういうことあまりしてないのは良くないな。
+<a href="http://veadardiary.blog29.fc2.com/blog-entry-1645.html">Macが歌いだす！？ | Macの手書き説明書</a>
 
-<h2>人とのつながり</h2>
-あと、去年一番強く意識したのが「人とのつながり」。Ruby会議やオブラブ、RailsDevConで会った人達、他にもasakusarb、mitakarb、ブログやWEB+DBの記事を見てお仕事を依頼してくれた人達、前々から知り合ってた人達。本当に色んな人に会ったと思う。色々な人とのつながりのおかげでできたことも多いし、人と合うことで新しい刺激と自分を見つめ直すことができた。去年は本当に色んな人から色んなものをもらえた、すごい良い年でした。
+んで、今回はそのsayコマンドを使って、autotestの結果をしゃべらせよう!というネタ企画。実用性はほぼ皆無。
 
-<h2>今年</h2>
-去年は本当に良い年だったけど、それでもやっぱりいくつか出来なかったこともあるし、自分の未熟さを痛感することも多かったのでその辺は今年ちゃんとしたいな。毎年、あれやりたいこれが必要だをその場で判断してきてて、それはそれでそれなりに上手くまわっていたけど、今年はもうちょっと計画をたてていきたい。
+まずは~/.autotestを修正。最下行に以下を追記する。既にgrowlの通知などの設定がある場合はそこにsayコマン...</div><div class="read-more"><a href="/2008/06/30/song_for_autotest/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2008/06/13/rails2_1min/">Ruby on Rails 2.0アプリを10秒で作る2.0</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2008-06-13 00:00:00 UTC" pubdate="pubdate">June 13 2008</time></div><div class="article-tags"></div><div class="article-summary"><ul>
+<li>Railsのインストールは作業時間に含みません</li>
+<li>shファイル作る時間も含みません</li>
+<li>筆者の環境がMacBookなのでそれ以外の環境は適当に脳内変換すべし</li>
+<li>ネタです</li>
+</ul>
 
-あとはRubyConfは今年こそ行こう。行きたいなーだと行かなそうなので、行くよ!とここに書いておこう。んで、現状のままで行っても英語よくわかりませんでしたで帰ってきそうなので、やっぱり諸々計画立てて動かないといけないのだ。
-</div></article><article><h1><a href="/2010/12/24/misawa-ruby-recipe/">2010-12-24 IRCでミサワをいつも側に...</a></h1><hr /><div class="article-body">このエントリーは<a href="http://atnd.org/events/10901">Ruby逆引きレシピAdvent Calendar</a>の参加エントリです。担当は12月24日です。前日のエントリは@kei-sさんの <a href="http://d.hatena.ne.jp/kei-s/20101223/1293084650">Ruby逆引きレシピで作る、忙しい人のための『地獄のミサワの「女に惚れさす名言集」』- 札幌市西区</a>です。
+適当なディレクトリにhoge.shを作る。
 
-<a href="http://ukstudio.jp/wp-content/uploads/2010/12/FxCam_12931282608781.jpg"><img src="http://ukstudio.jp/wp-content/uploads/2010/12/FxCam_12931282608781.jpg" alt="" title="FxCam_1293128260878" width="360" height="240" class="alignnone size-full wp-image-783" /></a>
+<pre lang="sh">
+rails itpro
+cd itpro
+script/generate scaffold itpro userid:string name:string
+rake db:migrate
+</pre>
+
+<pre lang="bash">
+$ chmod 775 hoge.sh
+#別に775じゃなくてもとりあえず実行権限あ...</pre></div><div class="read-more"><a href="/2008/06/13/rails2_1min/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2008/06/05/rails_vim_rspec/">rails.vimのファイル切り替えをRSpecに対応させる(仮)</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2008-06-05 00:00:00 UTC" pubdate="pubdate">June 05 2008</time></div><div class="article-tags"></div><div class="article-summary">rails.vimをインストールすると、RcontrollerとかRmodelコマンドでRSpecファイルからControllerやModelファイルに切り替えることができるんだけど、その逆ができないので対応させた。仮なのはVimスクリプトをちゃんと書けなくてコピペのごまかしだから。
+
+書きかえるファイルは~/.vim/autoload/rails.vim。一応行数も書いたけどもしかしたらズレてるかもしれないので参考程度に。あと、バージョンは2.0使ってる。
+
+まずは、:Rspec、:Rspeccontroller...</div><div class="read-more"><a href="/2008/06/05/rails_vim_rspec/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2008/06/04/rails_for_beginner/">RE:Rails初心者はどうやって他人のRailsコードを読めばいいか</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2008-06-04 00:00:00 UTC" pubdate="pubdate">June 04 2008</time></div><div class="article-tags"></div><div class="article-summary">オレもRailsを初めて3ヶ月(もうちょいあるかも)たったので、ある程度オレの経験を元にまとめてみる。参考になるといいなー。
+
+<h2>1. まずはアプリケーションを実際に動作させる</h2>
+<pre lang="bash">
+% ruby script/server
+</pre>
+とりあえずコード読む前にそのアプリケーションがどんなものを把握するのが重要。コード読んでもわかるだろうけど、実際にブラウザでいじくりまわした方がはやく理解できると思う。その時にコントローラー名とアクション名もみといた方がよさげ。
+
+<h2>2. モデル図を書く</h2>
+これはid:Hash...</div><div class="read-more"><a href="/2008/06/04/rails_for_beginner/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2008/05/27/rawhide-designer/">RAWHIDE.ではデザイナを募集しています。</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2008-05-27 00:00:00 UTC" pubdate="pubdate">May 27 2008</time></div><div class="article-tags"></div><div class="article-summary">ども、お久しぶりです。久々のエントリで求人ってのも微妙な感じですが、できるだけ色んな人に見てもらいたいですからねー。そもそもこのブログをデザイナが見てるのかどうかが微妙なのかもしれませんが。
+
+そんな感じでどうぞよろしくですよー(0w0)
+
+<a href="http://blog.raw-hide.jp/wp/?p=371">FIGHT! THE RAWHIDE★ » デザイナー募集のお知らせ</a>
+
+<h3>募集する職種</h3>
+<p>
+デザイナー　１名
+</p>
+<h3>仕事内容</h3>
+<p>
+企画ごとに編成されるチームの一員として、立ち上げから制作、監修までの一連の業務。
+※当面は、ディレクション担当者とともに制作進行して...</p></div><div class="read-more"><a href="/2008/05/27/rawhide-designer/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2008/03/14/autotest_for_macbook/">MacBookにRailsの自動テスト環境を構築した</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2008-03-14 00:00:00 UTC" pubdate="pubdate">March 14 2008</time></div><div class="article-tags"></div><div class="article-summary">なんかautotestが流行りつつある今日この頃ですが、みなさまいかがお過ごしでしょうか。とりあえず丁度うちの会社でも自動テストしようかーみたいな話がでてたので構築してみましたよ!
+
+<h2>ZenTestのインストール</h2>
+とりあえずは定番のZenTest(autotest)とRedGreen(結果の色付け)をインストールします。
+
+<pre lang="bash">
+$ sudo gem install ZenTest
+$ sudo gem install RedGreen
+</pre>
+
+次にautotestの設定ファイルの作成。example_dot_autotest...</div><div class="read-more"><a href="/2008/03/14/autotest_for_macbook/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2008/03/04/from_unittest_to_rspec/">test/unitで書いたテストにRSpecでテストを追記する方法</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2008-03-04 00:00:00 UTC" pubdate="pubdate">March 04 2008</time></div><div class="article-tags"></div><div class="article-summary">10分ぐらい調べて試してみただけだけど。
+
+<pre lang="ruby">
+require 'rubygems'
+require 'test/unit'
+require 'spec'
+
+class TestArray 
+
+<pre lang="bash">
+$ ruby test.rb
+....
+
+Finished in 0.007974 seconds
+
+4 examples, 0 failures
+</pre>
+
+RSpecの方のテストはるびまの角谷さんの<a href="http://jp.rubyist.net/magazine/?0021-Rspec">記事</a>から拝借しました。
+
+spceをrequireして、クラスに書きこんでいけばよさそう。仕事だとtest...</pre></div><div class="read-more"><a href="/2008/03/04/from_unittest_to_rspec/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2008/03/01/rawhide/">RAWHIDE.入社のお知らせ</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2008-03-01 00:00:00 UTC" pubdate="pubdate">March 01 2008</time></div><div class="article-tags"></div><div class="article-summary">こんばんわ、UKです。
+
+実は2月22日に今まで勤務していた会社を退職しました。ついったーやmixiでつながっている人達は知ってたかもですが。
+
+で、新しい職場ですが実は年末から話がすすんでおり(これも一部の人達は知ってたかもですね)、この度3月1日付けで正式にRAWHIDE.に入社することになりました。わーい。
+
+<a href="http://blog.raw-hide.jp/wp/?p=336">FIGHT! THE RAWHIDE★ » RAWHIDE.に入社しました。</a>
+
+早くRAWHIDE.の一員、戦力として役立てるよう頑張る所存です。よろしくお願いします。
+
+<a href="http://twitter.com/Hamachiya2/statuses/742737192">オマ...</a></div><div class="read-more"><a href="/2008/03/01/rawhide/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2008/02/27/haskell_sec3/">ふつケル第3章</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2008-02-27 00:00:00 UTC" pubdate="pubdate">February 27 2008</time></div><div class="article-tags"></div><div class="article-summary"><h2>型と値</h2>
+Haskellには<strong>型推論</strong>という機能がある。型推論は処理系の方で型を推測し、<strong>矛盾なく全ての式が型づけできればコンパイル時にエラーにはならない</strong>。Haskell以外にも、OCaml、Scala、MLなど静的型付け関数型言語のほとんどが型推論の機能を供えている。
+
+Haskellの型には、<strong>Int(整数値)、Char(文字)、String(文字列)、Bool(真偽値)</strong>がある。Intは最低30ビット幅の符号付き整数値を意味する。CharやStringで扱う文字(列)のエンコードにはUnicode...</div><div class="read-more"><a href="/2008/02/27/haskell_sec3/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2008/02/25/haskell_sec2/">ふつケル第2章</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2008-02-25 00:00:00 UTC" pubdate="pubdate">February 25 2008</time></div><div class="article-tags"></div><div class="article-summary"><h2>ハロー、ワールド</h2>
+<pre lang="haskell">
+main = putStrLn "Hello, World!"
+</pre>
+
+「main = 」は変数mainの定義. 「putStrLn "Hello, World!"」が変数mainの値となる。putStrLnは標準出力に文字列と開業を出力する時に使う関数で、正確に言うと<strong>文字列を1つ受けとり、その文字列と改行を出力するアクションを返す関数</strong>.
+
+「putStrLn "Hello, World!"」の式を、Haskellでは<strong>"Hello,World!"にputStrLn関数を適用...</strong></div><div class="read-more"><a href="/2008/02/25/haskell_sec2/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2008/02/15/vim_ruby_on_rails/">VimでRuby on Railsの開発する為の環境構築</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2008-02-15 00:00:00 UTC" pubdate="pubdate">February 15 2008</time></div><div class="article-tags"></div><div class="article-summary">ちょこっとだけ環境整えたので忘備録エントリとして。
+
+<h2>Vim/Rubyのインストール</h2>
+Ruby(.rb)とeruby(.rhtml)ファイルでシンタックスハイライトとオムニ補完が有効になる拡張。gemからインストール可能。
+
+<pre lang="bash">
+$ sudo gem install vim-ruby
+$ vim-ruby-install.rb
+</pre>
+
+vim-ruby-install.rbを実行するとインストール先の選択肢が表示される。1が自分のみ、2が全体へのインストールになる。基本的にどちらでもいいと思うけ...</div><div class="read-more"><a href="/2008/02/15/vim_ruby_on_rails/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2008/02/07/programming_for_beginner/">そろそろ「初心者用言語」について一言いっておくか</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2008-02-07 00:00:00 UTC" pubdate="pubdate">February 07 2008</time></div><div class="article-tags"></div><div class="article-summary"><a href="http://generation1986.g.hatena.ne.jp/ukstudio/20080204/1202113687">最もタメになる「初心者用言語」まとめ UK is not Britonish</a>
+
+「いい嫁」程度のお遊びのつもりでいたら、結構な騒ぎになっちゃっいました。とりあえずあのまとめを見ても、初心者の人は混乱してしまうと思うので自分なりに初心者さんへのメッセージもこめてエントリーを書いてみました。
+
+<h2>簡単な流れの説明</h2>
+一応簡単に今回の流れを説明しておくと、「初心者用言語」の流れの発端はまつもとさんの「<a href="http://www.rubyist.net/~matz/20080204.html#p01">初心者向けの言語</a>」。その後に、amachangの「<a href="http://d.hatena.ne.jp/amachang/20080204/1202096633">最もタメになる「初心者用言語」はJavaScript</a></div><div class="read-more"><a href="/2008/02/07/programming_for_beginner/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2008/02/02/doukaku_lifegame/">Rubyでライフゲーム書いた</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2008-02-02 00:00:00 UTC" pubdate="pubdate">February 02 2008</time></div><div class="article-tags"></div><div class="article-summary"><a href="http://ja.doukaku.org/comment/5581/">どう書く?org #5581</a>
+
+久々にどう書くorgに投稿してみた。1個1個セルの周り調べてくのも面白みがないなと思って、生きてるセルの周りをスコア付けしてくやり方でやってみた。
+
+生きてるセルに+10し、生きてるセルの周りに+1していく。最終的にスコアが3(まわりに3つの生きてるセルがある)のセルは次世代で誕生するセルと判断。スコアが12もしくは13の(今の世代で生きてるセルで、まわりに2つもしくは3つの生きてるセルがある)のセルは次世代も維持するセルと判断。
+
+テストはWikipedia...</div><div class="read-more"><a href="/2008/02/02/doukaku_lifegame/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2008/01/22/yaboo/">野望新年会に参加してきました</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2008-01-22 00:00:00 UTC" pubdate="pubdate">January 22 2008</time></div><div class="article-tags"></div><div class="article-summary">書くのが遅くなっちゃいましたが、なんとかエントリーアップです。
 
 
-さて、私達プログラマが使うソフトウェアの中で最も起動時間の長いものは多分エディタでしょう。では次はなんでしょうか?そう、<strong>IRC</strong>ですね!今回は逆引きレシピの中から「レシピ109 IRC botを作りたい」を紹介します。
+<a href="http://www.yabooo.org/archives/13">いずれにせよ野望新年会2008</a>
 
-レシピのサンプルコードを参考に「ミサワ」のキーワードに反応して地獄っぽい返答をするBOTを作ってみました。これでいつでもミサワ先輩のありがたい御言葉を頂戴することができますね!
+19日、pinkmacさん主催の野望新年会に乗り込んできました。きっかけとしてはpinkmacさんの1981sでのエントリー。(<a href="http://born1981.g.hatena.ne.jp/pinkmac/20080108/1199798490">いま、日本のITは変わるかもしれない</a>)
 
-<script src="https://gist.github.com/753353.js?file=irc.rb"></script>
-<a href="http://ukstudio.jp/wp-content/uploads/2010/12/screenshot3.png"><img src="http://ukstudio.jp/wp-content/uploads/2010/12/screenshot3.png" alt="" title="screenshot3" width="711" height="125" class="alignnone size-full wp-image-781" /></a>
 
-上記のコードだとありがたい御言葉がハードコーディングされていますね。ミサワ先輩のありがたい御言葉はたくさんありますから全て書くのはあまり効率的ではありません。なのでRuby逆引きレシピAdvent Calendarの12月17日を担当した@june29さんの<a href="http://june29.jp/2010/12/17/glamorous-rubysappororecipe/">地獄のRuby札幌の「女に惚れさす逆引きレシピ集」 - 準二級.jp</a>を参考に御言葉のかわりに画像へのパーマリンクを取得しておいて返答するという方法もありだと思います。
+1986って書いてあったので、せっかくだから行ってみるかーぐらいのノリ。こっそり1986sの方で<a href="http://generation1986.g.hatena.ne.jp/ukstudio/20080111/1200060303">宣伝</a>してたわけだけど、86sの人に聞いたら結構これを見て知ったって人が何人かいた。よかったよかった。
 
-このエントリを書きはじめたのは火曜日でしたが、前日の@kei-sさんがまさかのミサワネタ。「おいおい天丼なんてレベルじゃねーぞ」状態でも動じない。それが俺の流儀だ。
 
-さて、ミサワ先輩以上に偉大なレシピ先輩ですが、@noplansさんに頂いてから「○○やるにはどうするんだっけ」と思ったらレシピ先輩に聞くようになりました。Rubyのコードを書くときは横に置いておきたい一冊です!ありがとうございます!
-</div></article><article><h1><a href="/2010/12/17/recovery-network-manager-gnome/">2010-12-17 うっかりnetwork-manager-gnomeを消してネット繋がらなくなった</a></h1><hr /><div class="article-body">xubuntuを以前インストールしててもういらねーやと思って色々消してたら、気づいたらnetwork-manager-gnomeも消えていてインターネットに繋がらなくなったでござる。
+参加者は大体20人...</div><div class="read-more"><a href="/2008/01/22/yaboo/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2008/01/12/blog/">オレがブログを書く理由</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2008-01-12 00:00:00 UTC" pubdate="pubdate">January 12 2008</time></div><div class="article-tags"></div><div class="article-summary">まめこの「<a href="http://blog.woopsdez.jp/2008/01/post_294.php">車輪の再発明だとしても記事は書くべき</a>」に反応してみる。「記事をかくべき」というのには非常に同意。
 
-とりあえず手元のHT-03Aで適当にぐぐった結果、<a href="https://forums.ubuntulinux.jp/viewtopic.php?id=6441">Ubuntu日本語フォーラム / [Ubuntu 9.10] ネットワーク・マネジャーを復元したい</a>が見つかったので試してみるもそれっぽいパッケージがCDから見つからず挫折。
+じゃあ、なぜ「かくべき」なのか。それは人それぞれになると思うけど、オレがブログを書く理由を簡単にまとめてみたのでよければ参考にしてほしい。
 
-んじゃ、コマンドラインからなんかネット接続する方法があればなんとかなるかな?と思ってこれまた適当にぐぐると<a href="http://felix-labo.jp/pukiwiki/?Ubuntu%2Femobile-H11HW%E6%8E%A5%E7%B6%9A%E6%96%B9%E6%B3%95">Ubuntu/emobile-H11HW接続方法 - Felix-labo&apos;s Wiki</a>が見つかったので試した結果なんとかインターネット接続成功。
+<h2>ブログは自分の為に書く</h2>
+基本的にブログは自分の為に書いている。あまり他の人に役立つかどうかとか、誰か似たようなこと書いてるだろうなとかは気にしない。
 
-あとは<a href="http://packages.ubuntu.com/"> Ubuntu Packages Search</a>からnetwork-manager-gnomeのdebパッケージを落としてきて、recovery consoleからaptitudeでインストールで無事終了。
-</div></article><article><h1><a href="/2010/12/16/its_agile/">2010-12-16 「問題→解決→原因調査→開発プロセスに組込む」 それアジャイルだよ</a></h1><hr /><div class="article-body">普段、イテレーションの終わり(ちなみに1週間)にKPTをやって問題点をだして、それを解決すべくTryを実践してはいる。けれど、短期的な解決で落ち着いてしまってしばらくすると似たような問題が発生する。 結局のところ、問題が発生したらその場の解決だけではなく、問題の原因を検証して、自分達の開発プロセスに再発防止の仕組みを組込まなければならないなと思った次第。
+<h3>思考のツールとしてのブログ</h3>
+文章を書くということは、ある程度自分の思考を整理することになる...</div><div class="read-more"><a href="/2008/01/12/blog/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2008/01/12/ruby_tumblr_getimages_2nd/">Tumblrの全画像を取得するRubyスクリプト改</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2008-01-12 00:00:00 UTC" pubdate="pubdate">January 12 2008</time></div><div class="article-tags"></div><div class="article-summary"><a href="http://uk-studio.net/2008/01/11/ruby_tumblr_getimages/">Tumblrの全画像を取得するRubyスクリプトを書いた・・・けど</a>
 
-そんなことをFaceBookやTwitterに書き込んでいたら、諸先輩方(@kdmsnrさん、@nawotoさんありがとうございます)から「それがアジャイル」みたいなことを言われてしまった。確かに言われてみればそうだ。一定のプロセスにこだわらないからこそ、柔軟に問題・変化に合わせてプロセスを変えていけるのがアジャイルなんだよね。うーむ、勉強不足。
+上のエントリーのコードを書き直した。これで10kb未満の画像でも問題ないはず。それとTumblrのIDを引数で与えるようにも修正した。独自ドメインのやつには対応してないです。ごめんなさい。
 
-今までやってきたことを繰り返したところで結果は同じなのは当然。今までのやり方で「何かうまくいっていない」と思ったら、やり方を変える必要がある。その辺りの検証が今のチームには不足してるなぁ。
+あとこっそり<a href="http://coderepos.org/share/browser/lang/ruby/misc/tumblr_getimages.rb">CodeReposにCommitした</a>ので、煮るなり焼くなりお好きにどうぞ。
 
-あとは開発の遅れやバグの発生などが開発チームの問題として捉えられがちだけど、結構開発プロセスが上手くまわってなかったり、プロジェクト関係者のコミニュケーションロスが原因で発生してるものもある。そういう意味でちゃんと開発メンバー外のプロジェクトに関わる人を全員まきこんでやっていかないといけないわけだけど現状出来てないなぁ。そろそろアジャイルごっこから抜けだすべき時期なのかもしれない。(<a href="http://www.amazon.co.jp/gp/product/4839924023?ie=UTF8&redirect=true&tag=ukstudio0c-22&linkCode=shr&camp=1207&creative=8411&creativeASIN=4839924023">アジャイルな見積りと計画づくり</a>の訳者あとがき)
+<pre lang="ruby">
+require 'open-uri'
+require 'rexml/document'
+require 'FileUtils'
 
-その辺もなぜコミニュケーションが上手くいっていないのか、なぜデモ直前のテストで問題が多発するのかとか、ちゃんと原因を調べてプロセスに組み込んでいかないといけないなぁ。
+if ARGV...</pre></div><div class="read-more"><a href="/2008/01/12/ruby_tumblr_getimages_2nd/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2008/01/11/ruby_tumblr_getimages/">Tumblrの全画像を取得するRubyスクリプトを書いた・・・けど</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2008-01-11 00:00:00 UTC" pubdate="pubdate">January 11 2008</time></div><div class="article-tags"></div><div class="article-summary">今じゃほとんどTumblrは使ってないんだけど、なんとなく画像を取得するスクリプトを書いてみた。iPod touchに放り込んでみようかなとか思ったのよ。
 
-ちなみに僕が再発防止の仕組みをプロセスに組込まないなといけないなと思ったのは<a href="http://www.amazon.co.jp/gp/product/482228350X?linkCode=shr&camp=1207&creative=8411&tag=ukstudio0c-22">リーン開発の本質 ソフトウエア開発に活かす7つの原則</a>がきっかけ。リーンが何かと言うのはまだまだちゃんと理解しきれていないけれど、現状を色々考えさせてくれるいい本でした。
-</div></article><article><h1><a href="/2010/12/14/rspec_japanize/">2010-12-14 RSpec日本語化計画</a></h1><hr /><div class="article-body">やっぱ僕達は日本人なので仕様記述的と言うからには日本語で書きたい。とりあえずRubyは日本語を一応識別子に使えるのでその辺で適当にやってみた。<del datetime="2010-12-14T10:26:03+00:00">shouldが鬼門すぎるのだがどうしたもんか。「it should_not 空であること」って明らかにおかしすぎる。</del>@takaiさんが少し修正してくれた。
+とりあえずコード。
+<pre lang="ruby">
+require 'open-uri'
+require 'rexml/document'
+require 'FileUtils'
 
-<script src="https://gist.github.com/740240.js?file=hoge_spec.rb"></script>
+res = open(url)
+doc = REXML::Document.new(res.read)
+total = REXML::XPath.first(doc, "/tumblr...</pre></div><div class="read-more"><a href="/2008/01/11/ruby_tumblr_getimages/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2008/01/09/2007_history/">2007年はTwitterが中心の1年でした</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2008-01-09 00:00:00 UTC" pubdate="pubdate">January 09 2008</time></div><div class="article-tags"></div><div class="article-summary">今更感があふれるエントリですね。
 
-本当はもっとちゃんとした記事を書くつもりだったんだけどなんか脇道にそれてしまった。
-</div></article><div class="pager"><ul><li class="previous"><a href="/page/7/">Prev</a></li><li class="next"><a href="/page/9/">Next</a></li></ul></div></div></body></html>
+<h2>1、2、3月</h2>
+<ul>
+<li>覚えてない</li>
+</ul>
+<h2>4月</h2>
+<ul>
+<li><a href="http://twitter.com/ukstudio/statuses/20520981">Twitterを始める</a></li>
+</ul>
+<h2>5月</h2>
+<ul>
+<li>CSS Nite LP3に参加</li>
+</ul>
+<h2>6月</h2>
+<ul>
+<li><a href="http://uk-studio.net/2007/06/21/twitter_offline_party/">amachang主催のついったーオフに参加</a></li>
+<li>miniturbo主催のモバイル勉強会に参加</li>
+<li><a href="http://uk-studio.net/2007/06/24/twitter_meganeoff/">ついったーメガネオフに参加</a></li>
+</ul>
+<h2>7月</h2>
+<ul>
+<li>amachang主催、JSを語り合う会に参加</li>
+<li><a href="http://uk-studio.net/2007/07/16/070714_js/">JS勉強会を主催</a></li>
+<li><a href="http://uk-studio.net/2007/07/08/start-macbook/">UK、マカーになる</a></li>
+<li>WEB標準の日々に参加</li>
+</ul>
+<h2>8月</h2>
+<ul>
+<li>ついったー盆フェスに参加</li>
+<li>LL魂に参加</li>
+<li>@youchan主催セキュリティ勉強会に参加</li>
+</ul>
+<h2>9月</h2>
+<ul>
+<li>PHP...</li>
+</ul></div><div class="read-more"><a href="/2008/01/09/2007_history/">READ MORE</a></div></article><div class="pager"><ul><li class="previous"><a href="/page/7/">Prev</a></li><li class="next"><a href="/page/9/">Next</a></li></ul></div></div></body></html>

@@ -8,134 +8,144 @@ _gaq.push(['_trackPageview']);
   var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
   ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
   var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-})();</script></head><body class="page page_10 page_10_index"><div class="cointainer-fluid"><div class="navbar navbar-default" role="navigation"><div class="container-fluid"><div class="navbar-header"><a class="navbar-brand" href="/">UKSTUDIO</a></div><div class="navbar-collapse collapse"><ul class="nav navbar-nav navbar-right"><li><a href="http://twitter.com/ukstudio">Twitter</a></li><li><a href="http://github.com/ukstudio">GitHub</a></li></ul></div></div></div></div><div class="container"><article><h1><a href="/2010/10/19/search_with_scope/">2010-10-19 scopeでお手軽検索</a></h1><hr /><div class="article-body">Rails3.0のscope(2系で言うnamed_scope)を使ったお手軽検索。モデルにextendして使う。やってることは渡されたパラメータのkeyのscopeを呼び出して、それらを全部チェインさせるだけ。お手軽だけど、scopeを定義するだけなので結構融通が効くし便利。
-<script src="http://gist.github.com/632769.js?file=searchable.rb"></script>
-</div></article><article><h1><a href="/2010/10/07/steak_stats/">2010-10-07 steakのspec/acceptanceをrake statsに反映させる</a></h1><hr /><div class="article-body"><strong>どうやらsteakで対応してるみたいです(コメント欄参照)。steakのgroupに:developmentを追加すればrake statsの結果にAcceptance specsと表示されます。</strong>
+})();</script></head><body class="page page_10 page_10_index"><div class="header"><div class="header-navigation"><ul><li><i class="fa fa-twitter"></i><a href="http://twitter.com/ukstudio">Twitter</a></li><li><i class="fa fa-github-alt"></i><a href="http://github.com/ukstudio">GitHub</a></li></ul></div><div class="header-title"><a href="/">UKSTUDIO</a></div></div><div class="container"><article class="article-content"><h1 class="article--title"><a href="/2007/10/28/ruby_fizzbuzz/">RubyでFizzBuzz</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2007-10-28 00:00:00 UTC" pubdate="pubdate">October 28 2007</time></div><div class="article-tags"></div><div class="article-summary">今更ながらにFizzBuzz問題をRubyで問いてみる。前は確かPHPだけで問いて、Rubyで問いてなかったと思うから。
 
-結論から言うとrakeファイルを追加して以下のように書けばOK。(Rails.root/lib/tasks/statistics.rakeとかね)
-<script src="http://gist.github.com/613641.js?file=statistics.rake"></script>
-task名がstatsetupなのはrspec-rails/lib/rspec/tasks/rspec.rakeでそうなっている為。cucumberでも同じ要領で大丈夫なはず。rake statsを実行するとちゃんと計算されている。
-<a href="http://ukstudio.jp/wp-content/uploads/2010/10/steak_stats.jpg"><img src="http://ukstudio.jp/wp-content/uploads/2010/10/steak_stats.jpg" alt="" title="steak_stats" width="531" height="240" class="alignnone size-full wp-image-719" /></a>
-</div></article><article><h1><a href="/2010/10/06/work/">2010-10-06 最近のお仕事まわりでツラツラと書く</a></h1><hr /><div class="article-body">今の仕事についてつらつらと書く。今漠然と思ってることを書き出しただけなので、そんなに意味のある内容でもないかも。
+<strong>ループ内で出力</strong>
+<pre lang="ruby">
+100.times(){|i|
+  i += 1
+  if i%5 == 0 &amp;&amp; i%3 == 0 then
+    puts "FizzBuzz"
+  elsif i%5 == 0
+    puts "Buzz"
+  elsif i%3 == 0
+    puts "Fizz"
+  else
+    puts i
+  end
+}</pre>
+<strong>配列を作ってそれ...</strong></div><div class="read-more"><a href="/2007/10/28/ruby_fizzbuzz/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2007/10/28/activerecord/">ActiveRecordを使ってみる</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2007-10-28 00:00:00 UTC" pubdate="pubdate">October 28 2007</time></div><div class="article-tags"></div><div class="article-summary">ActiveRecordはRubyOnRailsのO/Rマッパーとして有名ですが、Railsに依存しているわけではなく単体で使えます。
 
-<h2>アジャイル</h2>
-そもそも何をもってアジャイルと言うのか、中々難しいところではある。昨日から読んでる「<a href="http://amzn.to/a6ueou">間違いだらけのソフトウェア・アーキテクチャ</a>」では<q>僕はアジャイル(開発)というのは、できればアジャイル宣言を守るか、守る努力をしているものだけに、その名前を冠してほしいと思っているけど・・・。</q>とある。そういう意味だと改めてうちのチームでもアジャイル宣言を確認するべきかもしれない。
+<h2>DBを用意する</h2>
+なにはともあれ、DBがないと始まらないので適当に用意します。
 
-何はともあれ、今うちのチームではCTOのちゃんとアジャイルな開発をしていきたいという想いからいくつかのプラクティスを実践している。イテレーション、プランニングポーカー、バーンダウンチャートなど。まだまだチームとして未熟な為、見積りの精度ややり方が少しうまくいっていない気はするけどこの辺りは徐々に改善されそう。
+<pre lang="sql">create database ar;
+ use ar;
+ create table users (
+   id int unsigned not null auto_increment,
+   name varchar(50),
+   age int,
+   primary...</pre></div><div class="read-more"><a href="/2007/10/28/activerecord/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2007/10/26/programming_environment/">Re:あなたの最も実力を発揮できる開発環境を教えてください</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2007-10-26 00:00:00 UTC" pubdate="pubdate">October 26 2007</time></div><div class="article-tags"></div><div class="article-summary"><a href="http://ujihisa.nowa.jp/entry/720100065b">rubyneko -
+あなたの最も実力を発揮できる開発環境を教えてください</a>に反応してみる。
+<h2>開発まっしーん</h2>
+マシン: MacBook
+OS     : Mac OS X
+今年買ったMacBookの白が愛用機。サブディスプレイとかは無し。キーボードはJIS配列。ASCII配列にすればよかったと後悔している。日本語入力はAquaSKKを使用。
+<h2>使用ソフト</h2>
+<h3>Terminal.app</h3>
+iTermは重いから標準のTerminalを使用。
+<h3>vim</h3>
+EmacsよりVi派です。あまり使いこなせてないけど。...</div><div class="read-more"><a href="/2007/10/26/programming_environment/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2007/10/14/ipodtouch_hack_ruby/">iPod touchでRubyを動かす</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2007-10-14 00:00:00 UTC" pubdate="pubdate">October 14 2007</time></div><div class="article-tags"></div><div class="article-summary"><strong style="color: #ff0000">以下の作業は自己責任でお願いいたします。</strong>
+<h2>Installer.appをインストールする</h2>
+まずはRubyを入れるためにInstaller.appをiPod touchをインストールします。
+基本的に以下のリンク通りに作業すれば問題ないはずです。
 
-特にポイントを付けたことで、今週に終わらせないといけないポイント量や、バーンダウンチャートで間に合うのか間に合わないのかがわかるのがいい。現時点で正直色々と間に合っていないのだけど、納期と言うか1回目のリリースのタイミングは既に決まっていてそれはずらすことが出来ない。その代わり1回目のリリースに向けてストーリーを削れないかという交渉をしたりした。以前は(実は以前お世話になったところで個人として契約して仕事している)そもそもこう言う交渉すらなかったのでいい兆候だと思う。
+<a href="http://hostname.jp/wk/index.php?iPod%20Touch%20jailbreak%20for%20Windows">iPod Touch jailbreak for Windows</a>
+<a href="http://hostname.jp/wk/index.php?iPod%20Touch%20jailbreak%20for%20OSX">iPod Touch jailbreak for OSX </a>
+<h2>必要なアプリのインストール</h2>
+Installer.appから以下のアプリをインストールします。
+<ul>
+	<li>System &gt; BSD...</li>
+</ul></div><div class="read-more"><a href="/2007/10/14/ipodtouch_hack_ruby/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2007/10/06/mac_loginshell_zsh/">Macのログインシェルをzshに変更する</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2007-10-06 00:00:00 UTC" pubdate="pubdate">October 06 2007</time></div><div class="article-tags"></div><div class="article-summary"><a href="http://uk-studio.net/2007/07/08/start-macbook/">以前</a>に一度設定はしていたのですがちょっとおかしなところ(screenがうまく起動しない、日本語が入力できないとか)がいくつかあったので再設定しました。
+<h2>zsh-develをMacPortsでインストールする</h2>
+どうやら最初からインストールされているzshではバージョンの4.24のため日本語が入力できないみたいなのでMacPortsであらたに4.3以上のものをインストールしなおします。
+<pre>
+$sudu port install zsh-devel
+Enter password:</pre>
+インストールが終...</div><div class="read-more"><a href="/2007/10/06/mac_loginshell_zsh/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2007/09/28/rubyonrails_install_in_macbook/">MacBookにRubyOnRailsをインストールする</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2007-09-28 00:00:00 UTC" pubdate="pubdate">September 28 2007</time></div><div class="article-tags"></div><div class="article-summary">Railsを試すためにMacBookにRubyOnRailsをインストールしてみました。MacPortsは既にインストールされてるものとして話を進めるので、インストールしていない人はGoogleで調べるなりしてインストールしてくださいな。と言ってもRubyGemsのインストールでしか今回は使いませんけど。
+<h2>まずはRubyGemsをインストール</h2>
+MacPortsを利用してRubyGemsを入れます。rb-rubygemsという名前で登録されているはずです。
+<pre>% sudo port install...</pre></div><div class="read-more"><a href="/2007/09/28/rubyonrails_install_in_macbook/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2007/09/27/ukstudio_server_down/">UK STUDIOにアクセスできなかった件について</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2007-09-27 00:00:00 UTC" pubdate="pubdate">September 27 2007</time></div><div class="article-tags"></div><div class="article-summary">サーバ料金の払い忘れで20日からサーバを停められてしまい、http://uk-studio.net/にアクセスできない状態でした。今日のお昼頃、振込みを終わらせ今はちゃんとアクセスできる状態です。
 
-ただ、削ってもまだ間に合わないのでここは残業や土日でカバーをするしかないのが残念なところ。土日や残業で消化したポイントをベロシティに含むと正しいベロシティが出ないのかなと少し思ったけど、残業や土日作業は一時的なもの(リリースが今月)なので、そのうち誤差としておさまっていくのかな。
+当サイトをご覧いただいてる方々にご心配とご迷惑をおかけしてしまったた事をお詫びいたします。
+</div><div class="read-more"><a href="/2007/09/27/ukstudio_server_down/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2007/09/07/ipod_touch/">iPod touchを予約しました</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2007-09-07 00:00:00 UTC" pubdate="pubdate">September 07 2007</time></div><div class="article-tags"></div><div class="article-summary"><a href="http://www.amazon.co.jp/gp/redirect.html%3FASIN=B000IDHJ30%26tag=ukstudio0c-22%26lcode=xm2%26cID=2025%26ccmID=165953%26location=/o/ASIN/B000IDHJ30%253FSubscriptionId=1N9AHEAQ2F6SVD97BE02" title="Click and drag this image to the post editor"><img src="http://g-ec2.images-amazon.com/images/I/41eCukUobxL.jpg" width="500" /></a>
 
-最近コードを書くことに集中していたので改めてこの辺も勉強しなおすべきかなとちょっと思っている。とりあえず、「<a href="http://amzn.to/cxFXas">アジャイルな見積りと計画づくり</a>」を読み直そうと思う。
+各所で話題のiPod touchですが、僕も16GBのやつをApple Storeから予約しました。Classicの160GBと迷ったんですが、無線LANやSafari、その他もろもろの機能の誘惑に負けました。出荷日まであと20日ぐらいあるのがなんともじれったい。
 
-<h2>ネガティブな感情</h2>
-実は最近自分自身にあまり良くない兆候がある。漠然とだけど、汚いコードや落ちてるテストを見ると「なんでちゃんとやれないんだ」という少しネガティブな感情があることにここ数日気づいた。念の為言っておくと、「テスト落ちてますよー」と言えばすぐ直してコミットしてくれるし、汚いコードと言うのもエンジニア同士でよくネタにする「ひどいコード」みたいなものではなく、「もう少し上手く書けるよなー、これ」と言ったもの。
-
-つまり、コードの質に拘るあまり若干過敏になり過ぎてる部分がある気がしてる。もちろんコードは出来る限りきれいに書くべきだとは思う。ただ、そこに拘り過ぎて本来の目的を忘れちゃいけないと思う。今の目標は最初のリリースに間に合わせることで、細かいリファクタリングや修正はその後でも出来る。
-
-<h2>テスト駆動開発</h2>
-テストコードの量を見る限り少し不十分な部分もありそうだけど、少なくとも全くテストが無いって部分は無くなってきてる感じ。バグがあった場合も「再現するテストコード書いて修正してください」で済むのでいい感じ。TDDに関してはそれなりに習得していると思うので、チーム内で不十分だなと思ったところは上手くサポートしていきたい。例えば僕が率先してテストコードを書けばそのコードから他のメンバーも書き方を知ることができるみたいに。
-
-<h3>steak</h3>
-今回、受け入れテストをsteakで書いてる。今のところ僕が書いてるだけだけど。実はまだチーム内でcukeにするかsteakにするかハッキリ決まってない。と言うのももしかしたらcukeのシナリオをエンジニアじゃない人が書く可能性があるから。ただ、結局テストデータを用意する必要があったりとかで中々難しいのかなとも思う部分もある。この辺@moroさんとちょっと話してみたいな。
-
-<h2>git-svn小話</h2>
-git-svnについては<a href='http://ukstudio.jp/2010/09/13/git-svn/'>この間も記事にした</a>けど、少しだけ補足。
-
-<h3>topic branchをmergeする前にgit rebase master</h3>
-gitはmergeした時にmerge commitを作るときがある。コミットメッセージがデフォで「Merge branch 'hoge」みたいになっている奴。これをそのままgit svn dcommitするとその「Merge branch 'hoge'」のコミットだけsvn側に反映される。これだと他の人が具体的にどんなコミットかよくわからない。なので、branchをmergeする前にmasterでgit svn rebaseしてbranch側でgit rebase masterをすると良い。これで履歴が一直線になるのでmerge commitが作られずsvn側にもちゃんとbranch側の各コミットが反映される。
-
-<h3>topic branchは作業が終わるまでmasterの変更を取り込まない</h3>
-この辺の話は「<a href="http://amzn.to/cFOuty">入門Git</a>」に詳しく書いてあったので細かくは話さない。何となしに、作業中のbranchに最新のmasterをrebaseしたら落ちてるテストがコミットされててちょっと面倒だったので改めて思い直した次第。
-
-<h2>Rails3.0とRuby1.9.2</h2>
-今のところ目立って困ってる所はなし。主要なライブラリもRails3.0に対応してきたし、結構実務でも使えるのではなかろうか。ただ、日本語の情報があまりなくRailsGuides(僕は大体<a href='http://edgeguides.rubyonrails.org/'>edge</a>を見てる)や、<a href='http://railsapi.com/'>http://railsapi.com/</a>や海外のブログを見ながら手探りな感じの部分もあったのでその辺は少し大変かも。個人的には今後Rails2系を使う理由はないかなといった所。個人的にはArelがお気に入り。Arelについては@a_matsudaさんの<a href='http://gihyo.jp/dev/serial/01/ruby/0043'>Ruby Freaks Lounge 第43回 Rails 3を支える名脇役たち その1 - Arel -</a>や<a href='http://edgeguides.rubyonrails.org/active_record_querying.html'>Active Record Query Interface</a>を読むといいです。
-
-本当につらつらと書いただけになったけど、ここまで読んでくれた人ありがとうございました。
-</div></article><article><h1><a href="/2010/09/13/git-svn/">2010-09-13 Better Subversionとしてのgit-svn</a></h1><hr /><div class="article-body">普段のプログラミングにgitを使用しているのだけど、実際の現場ではまだまだsvnが主流だったりする。svnを直接使ってもいいのだけど、やはりローカル上でコミットしたいとか、複数のコミットを1つにまとめたいとか、トピックブランチを切りたいとかあるのでそれはsvn単体だと厳しい。そんなわけでBetter SVNとしてのgit svnの紹介、と言うよりメモ。
-
-<h2>リポジトリのクローン</h2>
-<code><pre>git svn clone repository_url</pre></code>
-これでsvnリポジトリをgitリポジトリとして取得できる。大きめのリポジトリだと結構時間がかかるのでのんびりと。svnリポジトリの構成がtrunk/branches/tagsという一般的な構成であればオプション-を付けるのがおすすめ。trunkをmaster、branches/tagsをremote branchとして扱うようになる。個別に指定する方法もあるのでhelp参照。
-<code><pre>git svn clone -s repository_url</pre></code>
-
-<h2>リポジトリの更新</h2>
-<code><pre>git svn rebase</pre></code>
-svn upに相当する。remote brancheのtrunkをgit coしてそれをmergeする方法もあるけど、基本はこれで問題ない。
-
-<h2>リポジトリへのコミット</h2>
-<code><pre>git svn dcommit</pre></code>
-これはsvn ciに相当するって言うと、少し違う気もするのだけどsvnリポジトリにコミットするっていう意味だと同じ。git pushの方がイメージに近い。ローカルにたまっているコミットをsvnリポジトリにpushする感じ。ローカルにコミットされていない変更があるとdcommitできないので、その時はgit stashする。
-<code><pre>git stash
-git svn dcommit
-git pop
-</pre></code>
-
-<h2>ブランチの作成</h2>
-<code><pre>git svn branch name</pre></code>
-trunk-masterでやり取りするだけだったら、上記さえ覚えておけば後は普通のgitリポジトリと同じ。gitのブランチを作るのは通常のgitリポジトリと同じだけど、svnのブランチを作るにはこのコマンドを叩く。この時点でsvnリポジトリにコミットされるので注意(--dry-runオプションはある)。-mオプションでコミットメッセージを書ける。指定しない場合は「Create branch name」となる。
-
-svnリポジトリの別のブランチや、ローカルのgitリポジトリのブランチから新しくブランチを作る場合には後ろに名前を指定する。
-<code><pre>git svn branch name remotes/branch
-git svn branch name local_branch</pre></code>
-
-<h2>ブランチのチェックアウト</h2>
-<code><pre>git co -b branch remotes/branch</pre></code>
-svn switchに相当。git svnはsvnのbranches/tagsをremote branchとして扱うのでそれをgit coすればいい。これは上記のgit svn branchで作成したものも同じ。
-
-<h2>ブランチ間のマージ</h2>
-<code><pre>git merge --no-ff branch_name
-git svn dcommit</pre></code>
-マージは通常のgitとほぼ同じ。注意しなくてはいけないのは--no-ffが必要なこと(参考: <a href='http://webtech-walker.com/archive/2010/03/26101332.html'>http://webtech-walker.com/archive/2010/03/26101332.html</a>)。
-
-<h2>ブランチの削除</h2>
-<code><pre>svn rm branches/name #svnリポジトリをcoしてそこで
-git branch -r -d name #git-svnのgitリポジトリ上で</pre></code>
-現時点(v1.7.0.6)ではsvnリポジトリのブランチを削除するコマンドは用意されていない模様。なので直接svn上でブランチを消して、git側のremote branchも直接消すしかないと思う。
-
-<h2>どのブランチにコミットされるのか</h2>
-<code><pre>git svn info</pre></code>
-もしかしたら、今いるgitリポジトリのブランチでgit svn dcommitしたらsvnリポジトリのどのブランチにコミットされるのかがわからなくなることもあるかもしれない。その時はgit svn infoで表示されるURLをみればよい。
-
-<h2>ignoreの設定</h2>
-<code><pre>git svn create-ignore</pre></code>
-ignoreは少しややこしいんだけど、svn側とgit側の2つ存在する。このコマンドはsvn側のignore設定を.gitignoreとして出力する。ちなみにsvn側のみignore設定してある場合、当然git側ではignoreされずgit svn dcommit出来てしまう。その場合、svn側のignoreも無視して通常通りコミットされてしまうので注意。
-
-<h2>まとめ</h2>
-git-svnでの開発はsvnの面倒なところをカバーしてくれたりするので非常にオススメ。もちろん全てがgit-svnで出来るわけでもないので、その辺は諦めて直接svnを使う必要もある。ある意味、最悪わからなくなったらいつでもsvnに戻ればいいのでとりあえず試してみるといいと思う。
-
-ちなみにgitに詳しくない人は濱野さんの入門Gitがおすすめです。
-
-<iframe src="http://rcm-jp.amazon.co.jp/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=ukstudio0c-22&o=9&p=8&l=as1&m=amazon&f=ifr&md=1X69VDGQCMF7Z30FM082&asins=4798023809" style="width:120px;height:240px;" scrolling="no" marginwidth="0" marginheight="0" frameborder="0"></iframe>
-
-</div></article><article><h1><a href="/2010/09/10/password_edit/">2010-09-10 パスワード変更の機能をどこにもたせるべきか</a></h1><hr /><div class="article-body">ちょっと色々わからなくなったので、誰かのアドバイスを期待してここに書く。
-
-簡単に前提を書くと、UserモデルのCRUDとは別にUserのパスワードを変更する画面が必要になった。Usersコントローラにpassword_editみたいなactionを書くのもあまりきれいじゃないなと思ってコントローラを分けることにした。
-
-<pre><code>resources :users do
-  resource :password
+<a href="http://code.google.com/p/mobileterminal/">http://code.google.com/p/mobileterminal/</a>これ動くのかなぁ？
+</div><div class="read-more"><a href="/2007/09/07/ipod_touch/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2007/09/05/codeblock/">コードブロックとyield文</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2007-09-05 00:00:00 UTC" pubdate="pubdate">September 05 2007</time></div><div class="article-tags"></div><div class="article-summary">メソッド内でyield文を使うことでメソッドからコードブロックを呼び出すことができます。yield文が呼び出されるたびに、ブロックに処理が移り、処理が終わるとyieldの直後の処理に移ります。
+<pre lang="ruby">def exec_block
+  yield
+  puts "hoge"
 end
-</code></pre>
 
-確実にUserのレコードは必要になるので上記の用にネストさせることにした。ここで気になるのがpasswordのコントローラ名。通常PasswordsControllerになる。ただ、PasswordsController内の処理は確実にUserに依存する処理が入るため、これはこれであまりしっくりこない。別にPasswordsControllerを他で使う予定があるわけじゃないけど、User::PasswordsControllerの方がいい気がする。
+exec_block{ puts "Hello,World"}
 
-<pre><code>resources :users do
-  resource :password, :only => :edit, :module => 'user'
-end
-</code></pre>
+-----
+Hello,Wold
+hoge</pre>
+ブロックで引数を使いたいときはこんな感じ。yield文に値を与えることでブロックからその値を変数として呼ぶ...</div><div class="read-more"><a href="/2007/09/05/codeblock/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2007/08/22/job_change/">職場を変えようと思います</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2007-08-22 00:00:00 UTC" pubdate="pubdate">August 22 2007</time></div><div class="article-tags"></div><div class="article-summary">一部の人にはちらほら話してますけど、ちょっと職場を変えることを検討してます。できれば今年中には現在の職場に伝えて何らかの就職活動は行いたいところ。
 
-<pre><code># app/controllers/user/passwords_controller.rb
-module User
-  PasswordController < ApplicationController::Base
-</code></pre>
+職場を変えようと思った理由は、もっとコードを書きたい、刺激のある職場に行きたいってところですかね。今の職場はあまりプログラミングに専念できる職場じゃないですし、ついったーの人たちの様にWebが好き!プログラミングが好き!って人がいないんですよね。
 
-ただ、たかがあるモデルのカラムの為にここまでする必要があるのか?そもそもリソースじゃないよなと思ったりもするわけで。やっぱりUsersコントローラにactionを用意する程度に留めるべきなのだろうか。
+今の環境が不満なら周りを変えるよう努力してみたら?っていう人もいるかもしれません。けれども僕は...</div><div class="read-more"><a href="/2007/08/22/job_change/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2007/08/09/sicp_002/">SICP第1章 手続きによる抽象の構築(1)</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2007-08-09 00:00:00 UTC" pubdate="pubdate">August 09 2007</time></div><div class="article-tags"></div><div class="article-summary"><h2>1.1 プログラムの要素</h2>
+<dl> <dt>基本式</dt> <dd>言語が関わる最も単純なものを表す</dd> <dt>組合せ法</dt> <dd>より単純なものから合成物を作る</dd> <dt>抽象化法</dt> <dd>合成物に名をつけ、単一のものとして扱う</dd> </dl>
+<h3>1.1.1式</h3>
+schemeでは前置記法を採用している。慣れるまでが大変かも？
+<pre lang="scheme">
+(+ 137 349)
+;;137 + 349
 
-<h3>追記:10/09/11</h3>
-やっぱりコントローラを作る(というよりresourcesを追加するのが)がおかしいと思いはじめ、結局気にしてるのはURLなので以下のようにしてみようかなと思う。
-<pre><code>resources :user do
-  match 'password/edit' => 'users#password_edit'
-end
-</code></pre>
-</div></article><div class="pager"><ul><li class="previous"><a href="/page/9/">Prev</a></li><li class="next"><a href="/page/11/">Next</a></li></ul></div></div></body></html>
+(+ 21 35 12 7)
+;;21 + 35 + 12 + 7
+
+(+ (* 3 5) (- 10 6))
+;;(3 * 5) + (10 - 6)</pre>
+<h3>1.1.2 組合せの評価</h3>
+defineをつかっ...</div><div class="read-more"><a href="/2007/08/09/sicp_002/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2007/08/03/sicp_001/">いい加減SICPを読み始めることにした</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2007-08-03 00:00:00 UTC" pubdate="pubdate">August 03 2007</time></div><div class="article-tags"></div><div class="article-summary"><h2>宣言</h2>
+いつ買ったのかわからないSICPをいい加減読むことにしました。どっかで宣言しないといつまでもやらなそうなので、エントリーで宣言して無理にでもやろうという魂胆。一応、成果はブログで書いていくつもりなので更新なかったら「さっさと読めよ、カス」って言ってやってください。
+
+<h2>読もうとおもった理由</h2>
+<ul>
+	<li>個人的にすごいなって思う人は大抵SICPを読んでるっぽい</li>
+	<li> 再帰とかクロージャとかよくわからない</li>
+	<li>プログラミングの基礎がない</li>
+	<li>schemeに興味がある</li>
+	<li>若いうちに読んどくべきな気がする</li>
+</ul></div><div class="read-more"><a href="/2007/08/03/sicp_001/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2007/07/16/070714_js/">初心者向けJavaScript勉強会の資料公開と補足</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2007-07-16 00:00:00 UTC" pubdate="pubdate">July 16 2007</time></div><div class="article-tags"></div><div class="article-summary">とある理由で僕主催の初心者向けのJavaScript勉強会 を14日行いました。とある理由はforestkさんのエントリーを参照ください(<a href="http://blog.livedoor.jp/forestk/archives/50357381.html">UK 主催の初心者向け Javascript 勉強会が生まれた経緯</a>)
+
+会場は<a href="http://www.knocking.co.jp/">株式会社ノッキングオン</a>様にご提供いただきました。借りたい人ははてなキーワードの<a href="http://d.hatena.ne.jp/keyword/%A5%CE%A5%C3%A5%AD%A5%F3%A5%B0%A5%AA%A5%F3%A4%CE%B2%F1%B5%C4%BC%BC%BB%C8%A4%A4%A4%BF%A4%A4%21">ノッキングオンの会議室使いたい!</a>を利用するといいと思います。東麻布でプロジェクター &amp; ネット環境あり(優先ですがアクセスポイントを持参すれば無線も利用可能みたいです)の好環境ですのでかなりおすすめの...</div><div class="read-more"><a href="/2007/07/16/070714_js/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2007/07/08/start-macbook/">MacBook始めました</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2007-07-08 00:00:00 UTC" pubdate="pubdate">July 08 2007</time></div><div class="article-tags"></div><div class="article-summary">普段使っていたノートPC(Win) がどうやら逝ってしまったみたいなのでこの機会に念願のMacBookを手に入れました。
+<table border="0" cellpadding="5">
+<tr>
+<td valign="top"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/B000QUIURY/ukstudio0c-22/" target="_top"><img src="http://g-ec2.images-amazon.com/images/I/11Cbr66vqlL.jpg" alt="Apple MacBook White 2.16GHz Core 2 Duo/13.3/1G/120G/8x SuperDrive DL/Gigabit/BT/DVI MB062J/A" border="0"></a></td>
+<td valign="top">
+<font size="-1"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/B000QUIURY/ukstudio0c-22/" target="_top">Apple MacBook White 2.16GHz Core 2 Duo/13.3/1G/120G/8x SuperDrive DL/Gigabit/BT/DVI MB062J/A</a></font><font size="-1">アップルコンピュータ  2007-05-16
+売り上げランキング : 3083</font><font size="-1"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/B000QUIURY/ukstudio0c-22/" target="_top">Amazonで詳しく見る</a></font><font size="-2"> by <a href="http://www.goodpic.com/mt/aws/index.html">G-Tools</a></font>
+</td>
+</tr>
+</table>
+MacBookを起動して行った設定のメモ
+<h3>Vimの日...</h3></div><div class="read-more"><a href="/2007/07/08/start-macbook/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2007/07/06/kanto_twitter/">関東Twitter用Googleカレンダー</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2007-07-06 00:00:00 UTC" pubdate="pubdate">July 06 2007</time></div><div class="article-tags"></div><div class="article-summary">Twitterがきっかけのイベントが多くて追いきれなくなってきたので専用のGoogleカレンダー作りました。全員に公開してるので気軽に登録してくださいな。
+
+<a href="http://www.google.com/calendar/render?cid=dt9a336kkbl6jdm6pr2kooced0%40group.calendar.google.com" target="_blank"><img src="http://www.google.com/calendar/images/ext/gc_button1_ja.gif" border="0" /></a>
+
+なにかのイベントの幹事とかで書き込み権限が欲しい人はyuki.0w0[at]gmail.com、もしくは<a href="http://twitter.com/ukstudio/">http://twitter.com/ukstudio/</a>まで連絡くださいな。
+</div><div class="read-more"><a href="/2007/07/06/kanto_twitter/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2007/06/24/twitter_meganeoff/">Twitterメガネオフに参加してきました</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2007-06-24 00:00:00 UTC" pubdate="pubdate">June 24 2007</time></div><div class="article-tags"></div><div class="article-summary">昨日(23日)、<a href="http://twitter.com/crema">crema</a>さん主催のTwitterメガネオフに参加してきました。cremaさんが<a href="http://twitter.com/crema/statuses/110880622">期間限定メガネ</a>発言をしたあと、メガネ好きがすかさず反応。じゃぁメガネオフしようという流れで開催されました。
+<blockquote> woopsdez: <a href="http://twitter.com/woopsdez/statuses/110886312">@crema Twitter メガネオフ？？</a>
+
+crema: <a href="http://twitter.com/crema/statuses/110890892">@woopsdez メガネオフ！いいかもですね（笑）</a>
+
+ukstudio: <a href="http://twitter.com/ukstudio/statuses/110891732">   	 @crema @woopsdez メガネオフ参加したーいｗ *Tw*</a>
+</blockquote>
+当日の集合は渋谷のZOFF。せっかくなので何人かに...</div><div class="read-more"><a href="/2007/06/24/twitter_meganeoff/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2007/06/23/domscripting/">DOM Scripting 標準ガイドブックを買ってみた</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2007-06-23 00:00:00 UTC" pubdate="pubdate">June 23 2007</time></div><div class="article-tags"></div><div class="article-summary"><a href="http://www.amazon.co.jp/gp/redirect.html%3FASIN=4839922373%26tag=ukstudio0c-22%26lcode=xm2%26cID=2025%26ccmID=165953%26location=/o/ASIN/4839922373%253FSubscriptionId=1N9AHEAQ2F6SVD97BE02" title="Click and drag this image to the post editor"><img src="http://ec1.images-amazon.com/images/I/41ER9SJujTL.jpg" width="389" /></a>
+
+ロクナナの中村享介さんが<strike>訳した</strike>監修した本です。こういう表紙は結構好きだなぁ。中は２色刷りで余白や行間がちょうど良く見やすい感じ。
+
+デザイナーさんが、こういうJavaScriptやDOMの本からプログラミングに興味もってもらえるとうれしいなー。デザイナーもプログラマーももっとお互いのことを理解したほうがいいと思うんだよね。
+</div><div class="read-more"><a href="/2007/06/23/domscripting/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2007/06/21/twitter_offline_party/">twitterオフ会に参加してきました</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2007-06-21 00:00:00 UTC" pubdate="pubdate">June 21 2007</time></div><div class="article-tags"></div><div class="article-summary">エントリー書くのおせぇよ!っていう突っ込みはスルーです。
+
+6月の15日にamachang主催のtwitterオフ会があったので参加してきました。集合が18:30-19:00ってことで、明らかに職場の定時より早いので思わず有給とっちゃいました。
+
+集合時間より結構早く行って青い看板？っていうか紙もってたらsunitiに写真とられて<a href="http://blog.grayash.com/archives/518">ブログにアップされた!</a>コレでオレも有名人だ!!
+
+参加人数はなんと70人越え!!そんな大規模なオフなんて初めてでかなり緊張。誰が誰だかわからないかなぁとか思ってた...</div><div class="read-more"><a href="/2007/06/21/twitter_offline_party/">READ MORE</a></div></article><div class="pager"><ul><li class="previous"><a href="/page/9/">Prev</a></li></ul></div></div></body></html>
