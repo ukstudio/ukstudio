@@ -4,10 +4,24 @@
   <id>http://ukstudio.jp</id>
   <link href="http://ukstudio.jp"/>
   <link href="http://ukstudio.jp/feed.xml" rel="self"/>
-  <updated>2015-01-29T10:54:00Z</updated>
+  <updated>2015-03-20T20:20:00Z</updated>
   <author>
     <name>AKAMATSU Yuki</name>
   </author>
+  <entry>
+    <title>Vue.js便利</title>
+    <link rel="alternate" href="http://ukstudio.jp/2015/03/20/vuejs/"/>
+    <id>http://ukstudio.jp/2015/03/20/vuejs/</id>
+    <published>2015-03-20T20:20:00Z</published>
+    <updated>2015-03-21T05:23:44+09:00</updated>
+    <author>
+      <name>AKAMATSU Yuki</name>
+    </author>
+    <content type="html">&lt;p&gt;今のプロダクトにちょっと前からVue.jsを採用しているんだけど、少しずつうまく使えるようになってきていてすごく便利だなーと感じる。コンポーネントについても大体わかってきた。&lt;/p&gt;
+
+&lt;p&gt;RailsアプリケーションにVue.jsを採用してどう変えてきたかみたいな記事をそのうち &lt;a href="http://blog.spicelife.jp/"&gt;スパイスな人生&lt;/a&gt; の方に投稿したいと思う。お楽しみに。&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>TEX Yodaが届いたので使い始めた</title>
     <link rel="alternate" href="http://ukstudio.jp/2015/01/29/tex_yoda/"/>
@@ -340,72 +354,6 @@
 &lt;p&gt;今あるテスト資産をそのまんまpower assert対応にはできないのが悲しいところではあるけれども、このassertを使う方法でもexpectation部分以外はrspecの機能そのまま使えるのでそこまで悪くはないかなと思う。&lt;/p&gt;
 
 &lt;p&gt;まだpower_assert gemの実装を理解できていないので、もしかしたらうまいことやれるかもしれないけどとりあえずここでギブアップ…&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
-    <title>Arelあれこれ</title>
-    <link rel="alternate" href="http://ukstudio.jp/2014/09/05/arel/"/>
-    <id>http://ukstudio.jp/2014/09/05/arel/</id>
-    <published>2014-09-05T08:51:00Z</published>
-    <updated>2015-02-15T23:46:05+09:00</updated>
-    <author>
-      <name>AKAMATSU Yuki</name>
-    </author>
-    <content type="html">&lt;h2 id="model.arel_table-を読みづらいと感じる"&gt;Model.arel_table を読みづらいと感じる&lt;/h2&gt;
-
-&lt;p&gt;例えばこういうコード。&lt;/p&gt;
-&lt;pre class="highlight ruby"&gt;&lt;span class="no"&gt;Post&lt;/span&gt;&lt;span class="nf"&gt;.joins&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="ss"&gt;:comments&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="nf"&gt;.order&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="no"&gt;Comment&lt;/span&gt;&lt;span class="nf"&gt;.arel_table&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="ss"&gt;:created_at&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="nf"&gt;.desc&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/pre&gt;
-&lt;p&gt;発行されるSQLはこんな感じ。&lt;/p&gt;
-&lt;pre class="highlight sql"&gt;&lt;span class="k"&gt;SELECT&lt;/span&gt; &lt;span class="nv"&gt;&amp;quot;posts&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="k"&gt;FROM&lt;/span&gt; &lt;span class="nv"&gt;&amp;quot;posts&amp;quot;&lt;/span&gt; &lt;span class="k"&gt;INNER&lt;/span&gt; &lt;span class="k"&gt;JOIN&lt;/span&gt; &lt;span class="nv"&gt;&amp;quot;comments&amp;quot;&lt;/span&gt; &lt;span class="k"&gt;ON&lt;/span&gt; &lt;span class="nv"&gt;&amp;quot;comments&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nv"&gt;&amp;quot;post_id&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;&amp;quot;posts&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nv"&gt;&amp;quot;id&amp;quot;&lt;/span&gt;  &lt;span class="k"&gt;ORDER&lt;/span&gt; &lt;span class="k"&gt;BY&lt;/span&gt; &lt;span class="nv"&gt;&amp;quot;comments&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nv"&gt;&amp;quot;created_at&amp;quot;&lt;/span&gt; &lt;span class="k"&gt;DESC&lt;/span&gt;
-&lt;/pre&gt;
-&lt;p&gt;こちらの方が個人的には読みやすい。&lt;/p&gt;
-&lt;pre class="highlight ruby"&gt;&lt;span class="no"&gt;Post&lt;/span&gt;&lt;span class="nf"&gt;.joins&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="ss"&gt;:comments&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="nf"&gt;.order&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;comments.created_at desc&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/pre&gt;
-&lt;h2 id="問題もある"&gt;問題もある&lt;/h2&gt;
-
-&lt;h3 id="テーブル名を変えてしまったとき"&gt;テーブル名を変えてしまったとき&lt;/h3&gt;
-
-&lt;p&gt;仮にテーブル名がかわったら後者の場合はエラーになる。&lt;/p&gt;
-&lt;pre class="highlight sql"&gt;&lt;span class="k"&gt;SELECT&lt;/span&gt; &lt;span class="nv"&gt;&amp;quot;posts&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="k"&gt;FROM&lt;/span&gt; &lt;span class="nv"&gt;&amp;quot;posts&amp;quot;&lt;/span&gt; &lt;span class="k"&gt;INNER&lt;/span&gt; &lt;span class="k"&gt;JOIN&lt;/span&gt; &lt;span class="nv"&gt;&amp;quot;new_comments&amp;quot;&lt;/span&gt; &lt;span class="k"&gt;ON&lt;/span&gt; &lt;span class="nv"&gt;&amp;quot;new_comments&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nv"&gt;&amp;quot;post_id&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;&amp;quot;posts&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nv"&gt;&amp;quot;id&amp;quot;&lt;/span&gt;  &lt;span class="k"&gt;ORDER&lt;/span&gt; &lt;span class="k"&gt;BY&lt;/span&gt; &lt;span class="n"&gt;comments&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;created_at&lt;/span&gt; &lt;span class="k"&gt;DESC&lt;/span&gt;
-&lt;span class="n"&gt;SQLite3&lt;/span&gt;&lt;span class="p"&gt;::&lt;/span&gt;&lt;span class="k"&gt;SQLException&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="k"&gt;no&lt;/span&gt; &lt;span class="n"&gt;such&lt;/span&gt; &lt;span class="k"&gt;column&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;comments&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;created_at&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="k"&gt;SELECT&lt;/span&gt; &lt;span class="nv"&gt;&amp;quot;posts&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="k"&gt;FROM&lt;/span&gt; &lt;span class="nv"&gt;&amp;quot;posts&amp;quot;&lt;/span&gt; &lt;span class="k"&gt;INNER&lt;/span&gt; &lt;span class="k"&gt;JOIN&lt;/span&gt; &lt;span class="nv"&gt;&amp;quot;new_comments&amp;quot;&lt;/span&gt; &lt;span class="k"&gt;ON&lt;/span&gt; &lt;span class="nv"&gt;&amp;quot;new_comments&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nv"&gt;&amp;quot;post_id&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;&amp;quot;posts&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nv"&gt;&amp;quot;id&amp;quot;&lt;/span&gt;  &lt;span class="k"&gt;ORDER&lt;/span&gt; &lt;span class="k"&gt;BY&lt;/span&gt; &lt;span class="n"&gt;comments&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;created_at&lt;/span&gt; &lt;span class="n"&gt;D&lt;/span&gt;
-&lt;span class="n"&gt;ESC&lt;/span&gt;
-&lt;span class="n"&gt;ActiveRecord&lt;/span&gt;&lt;span class="p"&gt;::&lt;/span&gt;&lt;span class="n"&gt;StatementInvalid&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;SQLite3&lt;/span&gt;&lt;span class="p"&gt;::&lt;/span&gt;&lt;span class="k"&gt;SQLException&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="k"&gt;no&lt;/span&gt; &lt;span class="n"&gt;such&lt;/span&gt; &lt;span class="k"&gt;column&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;comments&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;created_at&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="k"&gt;SELECT&lt;/span&gt; &lt;span class="nv"&gt;&amp;quot;posts&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="k"&gt;FROM&lt;/span&gt; &lt;span class="nv"&gt;&amp;quot;posts&amp;quot;&lt;/span&gt; &lt;span class="k"&gt;INNER&lt;/span&gt; &lt;span class="k"&gt;JOIN&lt;/span&gt; &lt;span class="nv"&gt;&amp;quot;new_comments&amp;quot;&lt;/span&gt; &lt;span class="k"&gt;ON&lt;/span&gt; &lt;span class="nv"&gt;&amp;quot;new_comments&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nv"&gt;&amp;quot;post_id&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;&amp;quot;posts&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nv"&gt;&amp;quot;id&amp;quot;&lt;/span&gt;
-  &lt;span class="k"&gt;ORDER&lt;/span&gt; &lt;span class="k"&gt;BY&lt;/span&gt; &lt;span class="n"&gt;comments&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;created_at&lt;/span&gt; &lt;span class="k"&gt;DESC&lt;/span&gt;
-
-&lt;/pre&gt;
-&lt;p&gt;前者はモデルの方でテーブル名を変更すれば動作する。&lt;/p&gt;
-&lt;pre class="highlight ruby"&gt;&lt;span class="k"&gt;class &lt;/span&gt;&lt;span class="nc"&gt;Comment&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt; &lt;span class="no"&gt;ActiveRecord&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="no"&gt;Base&lt;/span&gt;
-  &lt;span class="nb"&gt;self&lt;/span&gt;&lt;span class="nf"&gt;.table_name&lt;/span&gt;  &lt;span class="ss"&gt;:new_comments&lt;/span&gt;
-&lt;span class="k"&gt;end&lt;/span&gt;
-&lt;/pre&gt;
-&lt;h3 id="scopeでmergeしたいとき"&gt;scopeでmergeしたいとき&lt;/h3&gt;
-&lt;pre class="highlight ruby"&gt;&lt;span class="k"&gt;class &lt;/span&gt;&lt;span class="nc"&gt;Comment&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt; &lt;span class="no"&gt;ActiveRecord&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="no"&gt;Base&lt;/span&gt;
-  &lt;span class="n"&gt;scope&lt;/span&gt; &lt;span class="ss"&gt;:recent&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="n"&gt;where&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;created_at &amp;gt; ?&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="nf"&gt;.days.ago&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;}&lt;/span&gt;
-&lt;span class="k"&gt;end&lt;/span&gt;
-
-&lt;span class="no"&gt;Post&lt;/span&gt;&lt;span class="nf"&gt;.joins&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="ss"&gt;:comments&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="nf"&gt;.merge&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="no"&gt;Comment&lt;/span&gt;&lt;span class="nf"&gt;.recent&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/pre&gt;
-&lt;p&gt;これだとCommentのcreated_atが解決できなくてコケる。&lt;/p&gt;
-&lt;pre class="highlight sql"&gt;&lt;span class="k"&gt;SELECT&lt;/span&gt; &lt;span class="nv"&gt;&amp;quot;posts&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="k"&gt;FROM&lt;/span&gt; &lt;span class="nv"&gt;&amp;quot;posts&amp;quot;&lt;/span&gt; &lt;span class="k"&gt;INNER&lt;/span&gt; &lt;span class="k"&gt;JOIN&lt;/span&gt; &lt;span class="nv"&gt;&amp;quot;comments&amp;quot;&lt;/span&gt; &lt;span class="k"&gt;ON&lt;/span&gt; &lt;span class="nv"&gt;&amp;quot;comments&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nv"&gt;&amp;quot;post_id&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;&amp;quot;posts&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nv"&gt;&amp;quot;id&amp;quot;&lt;/span&gt; &lt;span class="k"&gt;WHERE&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;created_at&lt;/span&gt; &lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;2014-08-26 09:16:45.106691&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="n"&gt;SQLite3&lt;/span&gt;&lt;span class="p"&gt;::&lt;/span&gt;&lt;span class="k"&gt;SQLException&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;ambiguous&lt;/span&gt; &lt;span class="k"&gt;column&lt;/span&gt; &lt;span class="n"&gt;name&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;created_at&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="k"&gt;SELECT&lt;/span&gt; &lt;span class="nv"&gt;&amp;quot;posts&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="k"&gt;FROM&lt;/span&gt; &lt;span class="nv"&gt;&amp;quot;posts&amp;quot;&lt;/span&gt; &lt;span class="k"&gt;INNER&lt;/span&gt; &lt;span class="k"&gt;JOIN&lt;/span&gt; &lt;span class="nv"&gt;&amp;quot;comments&amp;quot;&lt;/span&gt; &lt;span class="k"&gt;ON&lt;/span&gt; &lt;span class="nv"&gt;&amp;quot;comments&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nv"&gt;&amp;quot;post_id&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;&amp;quot;posts&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nv"&gt;&amp;quot;id&amp;quot;&lt;/span&gt; &lt;span class="k"&gt;WHERE&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;created_at&lt;/span&gt; &lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;2014-08-26 09:16:45.
-106691&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="n"&gt;ActiveRecord&lt;/span&gt;&lt;span class="p"&gt;::&lt;/span&gt;&lt;span class="n"&gt;StatementInvalid&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;SQLite3&lt;/span&gt;&lt;span class="p"&gt;::&lt;/span&gt;&lt;span class="k"&gt;SQLException&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;ambiguous&lt;/span&gt; &lt;span class="k"&gt;column&lt;/span&gt; &lt;span class="n"&gt;name&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;created_at&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="k"&gt;SELECT&lt;/span&gt; &lt;span class="nv"&gt;&amp;quot;posts&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="k"&gt;FROM&lt;/span&gt; &lt;span class="nv"&gt;&amp;quot;posts&amp;quot;&lt;/span&gt; &lt;span class="k"&gt;INNER&lt;/span&gt; &lt;span class="k"&gt;JOIN&lt;/span&gt; &lt;span class="nv"&gt;&amp;quot;comments&amp;quot;&lt;/span&gt; &lt;span class="k"&gt;ON&lt;/span&gt; &lt;span class="nv"&gt;&amp;quot;comments&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nv"&gt;&amp;quot;post_id&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;&amp;quot;posts&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nv"&gt;&amp;quot;id&amp;quot;&lt;/span&gt; &lt;span class="k"&gt;WHERE&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;cr&lt;/span&gt;
-&lt;span class="n"&gt;eated_at&lt;/span&gt; &lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;2014-08-26 09:16:45.106691&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/pre&gt;
-&lt;p&gt;正しくはこう。&lt;/p&gt;
-&lt;pre class="highlight ruby"&gt;&lt;span class="k"&gt;class &lt;/span&gt;&lt;span class="nc"&gt;Comment&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt; &lt;span class="no"&gt;ActiveRecord&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="no"&gt;Base&lt;/span&gt;
-  &lt;span class="n"&gt;scope&lt;/span&gt; &lt;span class="ss"&gt;:recent&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="n"&gt;where&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;self&lt;/span&gt;&lt;span class="nf"&gt;.arel_table&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="ss"&gt;:created_at&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="nf"&gt;.gt&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="nf"&gt;.days.ago&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt; &lt;span class="p"&gt;}&lt;/span&gt;
-&lt;span class="k"&gt;end&lt;/span&gt;
-&lt;/pre&gt;&lt;pre class="highlight sql"&gt;&lt;span class="k"&gt;SELECT&lt;/span&gt; &lt;span class="nv"&gt;&amp;quot;posts&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="k"&gt;FROM&lt;/span&gt; &lt;span class="nv"&gt;&amp;quot;posts&amp;quot;&lt;/span&gt; &lt;span class="k"&gt;INNER&lt;/span&gt; &lt;span class="k"&gt;JOIN&lt;/span&gt; &lt;span class="nv"&gt;&amp;quot;comments&amp;quot;&lt;/span&gt; &lt;span class="k"&gt;ON&lt;/span&gt; &lt;span class="nv"&gt;&amp;quot;comments&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nv"&gt;&amp;quot;post_id&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;&amp;quot;posts&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nv"&gt;&amp;quot;id&amp;quot;&lt;/span&gt; &lt;span class="k"&gt;WHERE&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;&amp;quot;comments&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nv"&gt;&amp;quot;created_at&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;2014-08-26 09:19:17.406299&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/pre&gt;
-&lt;h2 id="僕個人の結論"&gt;僕個人の結論&lt;/h2&gt;
-
-&lt;p&gt;Model.arel_tableはできる限り隠したい(読みづらいから)。そしてmergeを使いたいケースではArelを使っておく。その変わりmergeが必要になるまでは無理にArelを使わない。&lt;/p&gt;
-
-&lt;p&gt;さっきのComment#recentの例でいうなら最初は&lt;code&gt;where(&amp;#39;created_at &amp;gt; ?&amp;#39;, 10.days.ago)&lt;/code&gt;で書いておく。merged使いたい時になったらArelの方で書き直す。&lt;/p&gt;
-
-&lt;p&gt;テーブル名の変更のリスクは気にしない。そもそもあまりテーブル変更しないし…。既にあるDBの上にRailsアプリケーションを構築する場合はDBリファクタリングのことを考えてArel使いまくった方がいいのかもしれない。&lt;/p&gt;
 </content>
   </entry>
 </feed>

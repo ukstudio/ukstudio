@@ -8,7 +8,15 @@ _gaq.push(['_trackPageview']);
   var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
   ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
   var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-})();</script></head><body class="page page_8 page_8_index"><div class="header"><div class="header-navigation"><ul><li><i class="fa fa-twitter"></i><a href="http://twitter.com/ukstudio">Twitter</a></li><li><i class="fa fa-github-alt"></i><a href="http://github.com/ukstudio">GitHub</a></li></ul></div><div class="header-title"><a href="/">UKSTUDIO</a></div></div><div class="container"><article class="article-content"><h1 class="article--title"><a href="/2008/07/15/iphone-developer-program/">iPhone Developer Programに登録しました。</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2008-07-15 00:00:00 UTC" pubdate="pubdate">July 15 2008</time></div><div class="article-tags"></div><div class="article-summary">結論から言うと、まだ実機検証も配布もできてない段階です。そもそもアプリ作れてないですしね。ただ、米国在住者じゃないと登録できないってことはないですね。とりあえず登録はできたっぽいので。
+})();</script></head><body class="page page_8 page_8_index"><div class="header"><div class="header-navigation"><ul><li><i class="fa fa-twitter"></i><a href="http://twitter.com/ukstudio">Twitter</a></li><li><i class="fa fa-github-alt"></i><a href="http://github.com/ukstudio">GitHub</a></li></ul></div><div class="header-title"><a href="/">UKSTUDIO</a></div></div><div class="container"><article class="article-content"><h1 class="article--title"><a href="/2008/07/18/amazon_crossreview/">Amazon商品ページにcrossreviewのレビューを表示するgreasemonkeyスクリプト書いた</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2008-07-18 00:00:00 UTC" pubdate="pubdate">July 18 2008</time></div><div class="article-tags"></div><div class="article-summary">初グリモン。結構適当に書いたけど、とりあえず動くのでよし。codereposに上げたのでいじりたい人はご自由にどうぞー。
+
+<a href="http://coderepos.org/share/browser/lang/javascript/userscripts/amazon_crossreview.user.js?">amazon_crossreview.user.js</a>
+
+現状、取得できるレビュー数が7件までなのは仕様です。ごめんなさい!
+
+サンプル画像
+<img src="http://img.skitch.com/20080718-bs6mqgs1nrjggarixunr4wgmdd.jpg" alt="greasemonkey_for_crossreview"/>
+</div><div class="read-more"><a href="/2008/07/18/amazon_crossreview/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2008/07/15/iphone-developer-program/">iPhone Developer Programに登録しました。</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2008-07-15 00:00:00 UTC" pubdate="pubdate">July 15 2008</time></div><div class="article-tags"></div><div class="article-summary">結論から言うと、まだ実機検証も配布もできてない段階です。そもそもアプリ作れてないですしね。ただ、米国在住者じゃないと登録できないってことはないですね。とりあえず登録はできたっぽいので。
 
 端的に今の状況を説明すると、
 
@@ -185,40 +193,4 @@ require 'FileUtils'
 
 res = open(url)
 doc = REXML::Document.new(res.read)
-total = REXML::XPath.first(doc, "/tumblr...</pre></div><div class="read-more"><a href="/2008/01/11/ruby_tumblr_getimages/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2008/01/09/2007_history/">2007年はTwitterが中心の1年でした</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2008-01-09 00:00:00 UTC" pubdate="pubdate">January 09 2008</time></div><div class="article-tags"></div><div class="article-summary">今更感があふれるエントリですね。
-
-<h2>1、2、3月</h2>
-<ul>
-<li>覚えてない</li>
-</ul>
-<h2>4月</h2>
-<ul>
-<li><a href="http://twitter.com/ukstudio/statuses/20520981">Twitterを始める</a></li>
-</ul>
-<h2>5月</h2>
-<ul>
-<li>CSS Nite LP3に参加</li>
-</ul>
-<h2>6月</h2>
-<ul>
-<li><a href="http://uk-studio.net/2007/06/21/twitter_offline_party/">amachang主催のついったーオフに参加</a></li>
-<li>miniturbo主催のモバイル勉強会に参加</li>
-<li><a href="http://uk-studio.net/2007/06/24/twitter_meganeoff/">ついったーメガネオフに参加</a></li>
-</ul>
-<h2>7月</h2>
-<ul>
-<li>amachang主催、JSを語り合う会に参加</li>
-<li><a href="http://uk-studio.net/2007/07/16/070714_js/">JS勉強会を主催</a></li>
-<li><a href="http://uk-studio.net/2007/07/08/start-macbook/">UK、マカーになる</a></li>
-<li>WEB標準の日々に参加</li>
-</ul>
-<h2>8月</h2>
-<ul>
-<li>ついったー盆フェスに参加</li>
-<li>LL魂に参加</li>
-<li>@youchan主催セキュリティ勉強会に参加</li>
-</ul>
-<h2>9月</h2>
-<ul>
-<li>PHP...</li>
-</ul></div><div class="read-more"><a href="/2008/01/09/2007_history/">READ MORE</a></div></article><div class="pager"><ul><li class="previous"><a href="/page/7/">Prev</a></li><li class="next"><a href="/page/9/">Next</a></li></ul></div></div></body></html>
+total = REXML::XPath.first(doc, "/tumblr...</pre></div><div class="read-more"><a href="/2008/01/11/ruby_tumblr_getimages/">READ MORE</a></div></article><div class="pager"><ul><li class="previous"><a href="/page/7/">Prev</a></li><li class="next"><a href="/page/9/">Next</a></li></ul></div></div></body></html>
