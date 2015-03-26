@@ -4,10 +4,39 @@
   <id>http://ukstudio.jp</id>
   <link href="http://ukstudio.jp"/>
   <link href="http://ukstudio.jp/feed.xml" rel="self"/>
-  <updated>2015-03-20T20:20:00Z</updated>
+  <updated>2015-03-26T12:18:00Z</updated>
   <author>
     <name>AKAMATSU Yuki</name>
   </author>
+  <entry>
+    <title>特定のコミットが含まれるGitHub Pull Requestを開く</title>
+    <link rel="alternate" href="http://ukstudio.jp/2015/03/26/open_pull_request/"/>
+    <id>http://ukstudio.jp/2015/03/26/open_pull_request/</id>
+    <published>2015-03-26T12:18:00Z</published>
+    <updated>2015-03-26T21:27:25+09:00</updated>
+    <author>
+      <name>AKAMATSU Yuki</name>
+    </author>
+    <content type="html">&lt;p&gt;今日たまたまあるコミットが含まれているGitHubのPull Requestをサクッと探したい事案が発生した。というのも自分が以前書いたコードがどうしてこうなっているのかというのを知りたかったんだけど、commit messageだけじゃよくわからんかった(〜を実装したみたいなことを英語で書いてあっただけ)。&lt;/p&gt;
+
+&lt;p&gt;Pull Requestは割と丁寧に説明を書いているのできっとPull Requestのdescriptionを見ればわかりそうという感じはしたのだけれどパッとそれを開く手段がわからず、色々ググったりtwitterで教えてもらったりした結果下のようなfunctionをzshrcに書いた。&lt;/p&gt;
+&lt;pre class="highlight shell"&gt;&lt;span class="k"&gt;function &lt;/span&gt;find-pr&lt;span class="o"&gt;()&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+  &lt;span class="nb"&gt;local &lt;/span&gt;&lt;span class="nv"&gt;parent&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$2&lt;/span&gt;&lt;span class="o"&gt;||&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;master&amp;#39;&lt;/span&gt;
+  git log &lt;span class="nv"&gt;$1&lt;/span&gt;..&lt;span class="nv"&gt;$2&lt;/span&gt; --merges --ancestry-path --reverse --oneline | head -n1
+&lt;span class="o"&gt;}&lt;/span&gt;
+
+&lt;span class="k"&gt;function &lt;/span&gt;find-pr-open&lt;span class="o"&gt;()&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+  &lt;span class="nb"&gt;local &lt;/span&gt;&lt;span class="nv"&gt;pr&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;find-pr &lt;span class="nv"&gt;$1&lt;/span&gt; &lt;span class="nv"&gt;$2&lt;/span&gt; | awk &lt;span class="s1"&gt;&amp;#39;{print substr($5, 2)}&amp;#39;&lt;/span&gt;&lt;span class="k"&gt;)&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;
+  &lt;span class="nb"&gt;local &lt;/span&gt;&lt;span class="nv"&gt;repo&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;git config --get remote.origin.url | sed &lt;span class="s1"&gt;&amp;#39;s/git@github.com://&amp;#39;&lt;/span&gt; | sed &lt;span class="s1"&gt;&amp;#39;s/\.git$//&amp;#39;&lt;/span&gt;&lt;span class="k"&gt;)&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;
+  open &lt;span class="s2"&gt;&amp;quot;https://github.com/&lt;/span&gt;&lt;span class="k"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;repo&lt;/span&gt;&lt;span class="k"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;/pull/&lt;/span&gt;&lt;span class="k"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;pr&lt;/span&gt;&lt;span class="k"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;
+&lt;span class="o"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;pre class="highlight text"&gt;find-pr-open REVISION
+&lt;/pre&gt;
+&lt;p&gt;あまりシェルは得意ではないのでそこらへんは大目に見て欲しい。やってることはfind-prで該当のcommitが含まれているMerge commitを探してcommit messageからGitHub Pull Requestの番号を取り出している。リポジトリ名はgit configから取得して余計な文字はsedで削除。あとはURLを組み立ててブラウザで開くだけ。多分これでPull Requestを開けるはず。&lt;/p&gt;
+
+&lt;p&gt;なんにせよcommit messageはもうちょっと丁寧に書こうと思いました。&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>Vue.js便利</title>
     <link rel="alternate" href="http://ukstudio.jp/2015/03/20/vuejs/"/>
@@ -189,171 +218,6 @@
 &lt;p&gt;ここ2ヶ月弱の追い込みにプログラマとして開発に関わらせて頂いてます(今後も関わっていく予定です)。実は自分のブログで関わってます！って言えるサービスは初めてだと思うので、期間はまだ短いですがちょっと感慨深いものがあります。&lt;/p&gt;
 
 &lt;p&gt;結婚式や誕生日のお祝いや日頃の感謝などにご活用ください。&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
-    <title>RSpecでPower Assertをやるには</title>
-    <link rel="alternate" href="http://ukstudio.jp/2014/09/21/rspec_power_assert/"/>
-    <id>http://ukstudio.jp/2014/09/21/rspec_power_assert/</id>
-    <published>2014-09-21T06:12:00Z</published>
-    <updated>2015-02-15T23:46:05+09:00</updated>
-    <author>
-      <name>AKAMATSU Yuki</name>
-    </author>
-    <content type="html">&lt;p&gt;RubyKaigi 2014でpower assertの話を聞いてrspecでどうにかならんかちょっと考えてみました。まず結論だけ書くとrspecでpower assertを使いたければ以下の様に書けばOK。&lt;/p&gt;
-&lt;pre class="highlight ruby"&gt;&lt;span class="nb"&gt;require&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;rspec&amp;#39;&lt;/span&gt;
-&lt;span class="nb"&gt;require&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;minitest&amp;#39;&lt;/span&gt;
-&lt;span class="nb"&gt;require&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;minitest-power_assert&amp;#39;&lt;/span&gt;
-
-&lt;span class="k"&gt;module&lt;/span&gt; &lt;span class="nn"&gt;Minitest&lt;/span&gt;
-  &lt;span class="k"&gt;module&lt;/span&gt; &lt;span class="nn"&gt;Assertions&lt;/span&gt;
-    &lt;span class="n"&gt;prepend&lt;/span&gt;  &lt;span class="no"&gt;Minitest&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="no"&gt;PowerAssert&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="no"&gt;Assertions&lt;/span&gt;
-  &lt;span class="k"&gt;end&lt;/span&gt;
-&lt;span class="k"&gt;end&lt;/span&gt;
-
-&lt;span class="no"&gt;RSpec&lt;/span&gt;&lt;span class="nf"&gt;.configure&lt;/span&gt; &lt;span class="k"&gt;do&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;&lt;span class="n"&gt;config&lt;/span&gt;&lt;span class="o"&gt;|&lt;/span&gt;
-  &lt;span class="n"&gt;config&lt;/span&gt;&lt;span class="nf"&gt;.expect_with&lt;/span&gt; &lt;span class="ss"&gt;:minitest&lt;/span&gt;
-&lt;span class="k"&gt;end&lt;/span&gt;
-
-&lt;span class="n"&gt;describe&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;Test&amp;#39;&lt;/span&gt; &lt;span class="k"&gt;do&lt;/span&gt;
-  &lt;span class="n"&gt;it&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;test&amp;#39;&lt;/span&gt; &lt;span class="k"&gt;do&lt;/span&gt;
-    &lt;span class="n"&gt;assert&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="nf"&gt;.to_s.class&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="nf"&gt;.to_i.class&lt;/span&gt; &lt;span class="p"&gt;}&lt;/span&gt;
-  &lt;span class="k"&gt;end&lt;/span&gt;
-&lt;span class="k"&gt;end&lt;/span&gt;
-&lt;/pre&gt;
-&lt;p&gt;これを&lt;/p&gt;
-&lt;pre class="highlight shell"&gt;&lt;span class="gp"&gt;$ &lt;/span&gt;rspec --color -rpower_assert power_assert.rb
-&lt;/pre&gt;
-&lt;p&gt;で実行するとこんな感じ。power_assertは事前にrequireした方が情報量がちょっと増える。&lt;/p&gt;
-&lt;pre class="highlight text"&gt;Failures:
-
-  1) Test test
-     Failure/Error: assert { 1.to_s.class == 1.to_i.class }
-     Minitest::Assertion:
-
-           assert { 1.to_s.class == 1.to_i.class }
-                      |    |     |    |    |
-                      |    |     |    |    Fixnum
-                      |    |     |    1
-                      |    |     false
-                      |    String
-                      &amp;quot;1&amp;quot;
-&lt;/pre&gt;
-&lt;h2 id="letとsubject"&gt;letとsubject&lt;/h2&gt;
-
-&lt;p&gt;power&lt;em&gt;assertの0.1.3だとdefined&lt;/em&gt;methodで定義されたメソッドの値が取れていないらしく、letやsubjectの値が表示されない。現時点でのmasterの0.1.4devだと修正されているとのことなのでちゃんと表示される。&lt;/p&gt;
-&lt;pre class="highlight ruby"&gt;&lt;span class="n"&gt;describe&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;Test&amp;#39;&lt;/span&gt; &lt;span class="k"&gt;do&lt;/span&gt;
-  &lt;span class="n"&gt;let&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="ss"&gt;:klass&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="nf"&gt;.to_s.class&lt;/span&gt; &lt;span class="p"&gt;}&lt;/span&gt;
-  &lt;span class="n"&gt;it&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;test&amp;#39;&lt;/span&gt; &lt;span class="k"&gt;do&lt;/span&gt;
-    &lt;span class="n"&gt;assert&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="n"&gt;klass&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="nf"&gt;.to_i.class&lt;/span&gt; &lt;span class="p"&gt;}&lt;/span&gt;
-  &lt;span class="k"&gt;end&lt;/span&gt;
-&lt;span class="k"&gt;end&lt;/span&gt;
-&lt;/pre&gt;
-&lt;p&gt;これを実行すると&lt;/p&gt;
-&lt;pre class="highlight text"&gt;Failures:
-
-  1) Test test
-     Failure/Error: assert { klass == 1.to_i.class }
-     Minitest::Assertion:
-
-           assert { klass == 1.to_i.class }
-                    |     |    |    |
-                    |     |    |    Fixnum
-                    |     |    1
-                    |     false
-                    String
-&lt;/pre&gt;
-&lt;p&gt;こんな感じ。subjectも大体おなじ。&lt;/p&gt;
-
-&lt;h2 id="expectとマッチャ"&gt;expectとマッチャ&lt;/h2&gt;
-
-&lt;p&gt;この方法はMinitestのadapterとminitest-power_assertを使うようにしているので無理。&lt;/p&gt;
-
-&lt;p&gt;ちなみに &lt;a href="https://gist.github.com/mizoR/3cf068eeae033bd5db5a"&gt;rspec で 手軽に power_assert 出力できるようにする&lt;/a&gt; の方法でexpectを使ってみると&lt;/p&gt;
-&lt;pre class="highlight ruby"&gt;&lt;span class="nb"&gt;require&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;rspec/core&amp;#39;&lt;/span&gt;
-&lt;span class="nb"&gt;require&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;power_assert&amp;#39;&lt;/span&gt;
-
-&lt;span class="k"&gt;module&lt;/span&gt; &lt;span class="nn"&gt;RSpec&lt;/span&gt;
-  &lt;span class="k"&gt;module&lt;/span&gt; &lt;span class="nn"&gt;PowerAssert&lt;/span&gt;
-    &lt;span class="k"&gt;def &lt;/span&gt;&lt;span class="nf"&gt;power_assert&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="n"&gt;block&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-      &lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="no"&gt;PowerAssert&lt;/span&gt;&lt;span class="nf"&gt;.start&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;block&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;do&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;&lt;span class="n"&gt;pa&lt;/span&gt;&lt;span class="o"&gt;|&lt;/span&gt;
-        &lt;span class="k"&gt;begin&lt;/span&gt;
-          &lt;span class="n"&gt;pa&lt;/span&gt;&lt;span class="nf"&gt;.yield&lt;/span&gt;
-        &lt;span class="k"&gt;rescue&lt;/span&gt; &lt;span class="no"&gt;RSpec&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="no"&gt;Expectations&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="no"&gt;ExpectationNotMetError&lt;/span&gt; &lt;span class="o"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;e&lt;/span&gt;
-          &lt;span class="n"&gt;e&lt;/span&gt;&lt;span class="nf"&gt;.message&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="se"&gt;\n&lt;/span&gt;&lt;span class="s2"&gt;PowerAssert:&lt;/span&gt;&lt;span class="se"&gt;\n&lt;/span&gt;&lt;span class="si"&gt;#{&lt;/span&gt;&lt;span class="n"&gt;pa&lt;/span&gt;&lt;span class="nf"&gt;.message_proc.call&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;
-          &lt;span class="k"&gt;raise&lt;/span&gt; &lt;span class="n"&gt;e&lt;/span&gt;
-        &lt;span class="k"&gt;end&lt;/span&gt;
-      &lt;span class="k"&gt;end&lt;/span&gt;
-    &lt;span class="k"&gt;end&lt;/span&gt;
-  &lt;span class="k"&gt;end&lt;/span&gt;
-&lt;span class="k"&gt;end&lt;/span&gt;
-
-&lt;span class="k"&gt;class &lt;/span&gt;&lt;span class="nc"&gt;RSpec&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="no"&gt;Core&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="no"&gt;ExampleGroup&lt;/span&gt;
-  &lt;span class="kp"&gt;include&lt;/span&gt; &lt;span class="no"&gt;RSpec&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="no"&gt;PowerAssert&lt;/span&gt;
-&lt;span class="k"&gt;end&lt;/span&gt;
-
-&lt;span class="n"&gt;describe&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;Test&amp;#39;&lt;/span&gt; &lt;span class="k"&gt;do&lt;/span&gt;
-  &lt;span class="n"&gt;it&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;test&amp;#39;&lt;/span&gt; &lt;span class="k"&gt;do&lt;/span&gt;
-    &lt;span class="n"&gt;power_assert&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-      &lt;span class="n"&gt;expect&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="nf"&gt;.to_s.class&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="nf"&gt;.to&lt;/span&gt; &lt;span class="n"&gt;eq&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="nf"&gt;.to_i.class&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-    &lt;span class="p"&gt;}&lt;/span&gt;
-  &lt;span class="k"&gt;end&lt;/span&gt;
-&lt;span class="k"&gt;end&lt;/span&gt;
-&lt;/pre&gt;
-&lt;p&gt;これは&lt;/p&gt;
-&lt;pre class="highlight text"&gt;       PowerAssert:
-             expect(1.to_s.class).to eq(1.to_i.class)
-             |        |    |      |  |    |    |
-             |        |    |      |  |    |    Fixnum
-             |        |    |      |  |    1
-             |        |    |      |  #&amp;lt;RSpec::Matchers::BuiltIn::Eq:0x007f0850c91d78 @expected=Fixnum, @actual=String&amp;gt;
-             |        |    |      nil
-             |        |    String
-             |        &amp;quot;1&amp;quot;
-             #&amp;lt;RSpec::Expectations::ExpectationTarget:0x007f0850caa170 @target=String&amp;gt;
-
-&lt;/pre&gt;
-&lt;p&gt;こうなってしまう。この場合、expectの@targetにStringという結果が入っているのでそれを取り出すようにして、eqの方も@expectedに期待するものがはいってるのでそれを取りだすようにすればいいのかなぁ。&lt;/p&gt;
-
-&lt;p&gt;もしくはexpectとeqの中の値さえわかれば良いといえば良いのでいっそ値をださなくてもいいのかも? 例えばこんな感じ。&lt;/p&gt;
-&lt;pre class="highlight text"&gt;       PowerAssert:
-             expect(1.to_s.class).to eq(1.to_i.class)
-                      |    |              |    |
-                      |    |              |    Fixnum
-                      |    |              1
-                      |    |
-                      |    |
-                      |    String
-                     &amp;quot;1&amp;quot;
-
-
-&lt;/pre&gt;
-&lt;p&gt;別の例としてbe_falseyだとこんな感じ。&lt;/p&gt;
-&lt;pre class="highlight text"&gt;     Failure/Error: expect(nil.to_s.to_i).to be_falsey
-       expected: falsey value
-            got: 0
-       PowerAssert:
-             expect(nil.to_s.to_i).to be_falsey
-             |          |    |     |  |
-             |          |    |     |  #&amp;lt;RSpec::Matchers::BuiltIn::BeFalsey:0x007fa84b53bb00 @actual=0&amp;gt;
-             |          |    |     nil
-             |          |    0
-             |          &amp;quot;&amp;quot;
-             #&amp;lt;RSpec::Expectations::ExpectationTarget:0x007fa84b3e02b0 @target=0&amp;gt;
-&lt;/pre&gt;
-&lt;p&gt;これに関していうとbe&lt;em&gt;falseyにはfalseが欲しいという情報がない。be&lt;/em&gt;falseyを見れば求めてるものはわかるって話かもしれないけど… 更に言うとRSpec3でComposable Matcherが入ったりとか、以前からあるCustom Matcherとかがあったりして、それら全部対応するのは厳しいなーという感じ(そもそも対応できるのかもよくわからない…)&lt;/p&gt;
-
-&lt;p&gt;そもそもの話をするとそういったマッチャというか、たくさんあるassertion methodを使い分けしたくないからpower assertをつかうわけで別にマッチャとか使わなくていいのではという気持ちがある。&lt;/p&gt;
-
-&lt;p&gt;なのでexpectとかカスタムマッチャとかは(power assertを使う部分では)諦めてassertですませるのがよさそうかなと個人的には思う。&lt;/p&gt;
-&lt;pre class="highlight ruby"&gt;&lt;span class="n"&gt;config&lt;/span&gt;&lt;span class="nf"&gt;.expect_with&lt;/span&gt; &lt;span class="ss"&gt;:minitest&lt;/span&gt;
-&lt;span class="n"&gt;config&lt;/span&gt;&lt;span class="nf"&gt;.expect_with&lt;/span&gt; &lt;span class="ss"&gt;:rspec&lt;/span&gt;
-&lt;/pre&gt;
-&lt;p&gt;spec&lt;em&gt;helper.rbにminitestもrspecも両方使うよう書けばpower&lt;/em&gt;assertを使いたいところと、rspecを使いたいところで分けることができるのでどうしてもマッチャを使いたいところは素直にマッチャを書いてpower assertは諦めるしかない。&lt;/p&gt;
-
-&lt;p&gt;今あるテスト資産をそのまんまpower assert対応にはできないのが悲しいところではあるけれども、このassertを使う方法でもexpectation部分以外はrspecの機能そのまま使えるのでそこまで悪くはないかなと思う。&lt;/p&gt;
-
-&lt;p&gt;まだpower_assert gemの実装を理解できていないので、もしかしたらうまいことやれるかもしれないけどとりあえずここでギブアップ…&lt;/p&gt;
 </content>
   </entry>
 </feed>

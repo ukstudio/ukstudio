@@ -52,17 +52,6 @@ LeopardからSafariで見ているページをDashboardにクリップできる�
 <h3>ユーティリティ</h3>
 <li>QuickSilver</li>
 <li>Chemr</li></ul>
-</article><hr /><article><h2><a href="/2007/12/26/rhg-strikes-back/">2007-12-26 「RHG片手にRuby 1.9の実装を読む集い」に参加する予定</a></h2><a href="http://qwik.jp/rhg-strikes-back/">The RHG Strikes Back - RHG片手にRuby 1.9の実装を読む集い</a>
-
-RHG持ってないけど・・・
-
-Twitterでyuguiさんが「<a href="http://twitter.com/yugui/statuses/531123082">1月からRHGを片手に1.9を読む会を始めます</a>」と言っていたのでせっかくなので参加表明。
-
-正直、他の方々のレベルについていける自信はない。最後にC言語を使ったのいつだろう・・・
-
-まぁでも、個人的にいつか処理系を実装を読んでみたいと思ってたし、他のRubyistと交流をとるいい機会なので思い切って参加表明。なんとかなるだろう、多分。
-
-参加者を見た限りじゃ会ったことある人の名前がちらほら。集いでお会いしたときはどうぞよろしくです。
 </article><hr /><article><h2><a href="/2007/12/26/ikebukuro_faultier/">2007-12-26 仕事帰りの池袋にて</a></h2>仕事帰りに池袋のジュンク堂に寄ってアジャイルプラクティスとRESTfulWebサービスを購入。アジャイルの方の在庫が心配だったけど、なんとか2冊残ってた。薄いし、通勤途中で読もうと思う。やっぱ表紙がかっこいい。
 
 <table class="g-tools_table"><tr><td colspan="2"><span class="g-tools_title"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4274066940/ukstudio0c-22/" target="_top">アジャイルプラクティス 達人プログラマに学ぶ現場開発者の習慣</a></span></td></tr><tr><td valign="top"><span class="g-tools_img"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4274066940/ukstudio0c-22/" target="_top"><img src="http://ecx.images-amazon.com/images/I/31paqWCAEVL.jpg"  alt="アジャイルプラクティス 達人プログラマに学ぶ現場開発者の習慣" /></a></span></td><td valign="top"><span class="g-tools_body">Venkat Subramaniam Andy Hunt 木下 史彦 <br /><br /><br /><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4274066940/ukstudio0c-22/" target="_top">Amazonで詳しく見る</a></span><span class="g-tools_by"> by <a href="http://www.goodpic.com/mt/aws/index.html" >G-Tools</a></span></td></tr></table>
@@ -89,6 +78,17 @@ Twitterでyuguiさんが「<a href="http://twitter.com/yugui/statuses/531123082"
 
 <strong>12/26 追記</strong>
 10代後半をターゲットに入れてるくせに飲み会とか意味わかんないですね。そこらへんは追い追い考えときます・・・
+</article><hr /><article><h2><a href="/2007/12/26/rhg-strikes-back/">2007-12-26 「RHG片手にRuby 1.9の実装を読む集い」に参加する予定</a></h2><a href="http://qwik.jp/rhg-strikes-back/">The RHG Strikes Back - RHG片手にRuby 1.9の実装を読む集い</a>
+
+RHG持ってないけど・・・
+
+Twitterでyuguiさんが「<a href="http://twitter.com/yugui/statuses/531123082">1月からRHGを片手に1.9を読む会を始めます</a>」と言っていたのでせっかくなので参加表明。
+
+正直、他の方々のレベルについていける自信はない。最後にC言語を使ったのいつだろう・・・
+
+まぁでも、個人的にいつか処理系を実装を読んでみたいと思ってたし、他のRubyistと交流をとるいい機会なので思い切って参加表明。なんとかなるだろう、多分。
+
+参加者を見た限りじゃ会ったことある人の名前がちらほら。集いでお会いしたときはどうぞよろしくです。
 </article><hr /><article><h2><a href="/2007/12/20/tanoshi_ruby_sec10_practice/">2007-12-20 たのしいRuby 第10章 練習問題</a></h2>たのしいRuby 第10章 数値(Numeric)クラスの練習問題をやってみた。
 
 (1)と(2)は華氏を摂氏、もしくは逆の摂氏を華氏に変換するプログラムを書けと言う問題。小数点以下を求める為に引数をFloat()で囲む。そんなに難しい問題じゃないので、テストはかなり適当。
@@ -188,6 +188,31 @@ yappo coderepos 添削用は coderepos.org/share/dan 以下で
 とのことなので、coderepos.org/share/dan/ruby/tanoshi_ruby/とか作ろうと思います。yappoさん、ありがとう。
 
 あとプロジェクトメンバーがちょこっと増えてた。わっほい。
+</article><hr /><article><h2><a href="/2007/12/05/ruby_array_operator/">2007-12-05 RubyのArrayの演算子はちょっとおもしろい</a></h2>Arrayの「+」「-」「&」「|」演算子がちょっとおもしろい。
+<h2>+演算子</h2>
+お互いを連結した新しい配列を返す。
+<pre lang="ruby">
+[1, 2, 3] + [4, 5, 6] #=> [1, 2, 3, 4, 5, 6]
+</pre>
+
+<h2>-演算子</h2>
+重複した要素を取り除いた新しい配列を返す。
+<pre lang="ruby">
+[1, 2, 3, 4, 5] - [1, 3, 5] #=> [2, 4]
+</pre>
+
+<h2>&演算子</h2>
+重複した要素からなる新しい配列を返す。
+<pre lang="ruby">
+[1, 2, 3, 4, 5] & [1, 3, 5] #=> [1, 3, 5]
+</pre>
+
+<h2>|演算子</h2>
+どちらかに含まれている要素からなる新しい配列を返す。
+<pre lang="ruby">
+[1, 2, 3, 4, 5] | [1, 3, 5, 7, 9] #=> [1, 2, 3, 4, 5, 7, 9]
+[1, 3, 5] | [1, 2, 3, 4, 5] #=> [1, 3, 5, 2, 4]
+</pre>
 </article><hr /><article><h2><a href="/2007/12/05/install_retrospectiva/">2007-12-05 RetrospectivaをMacBookに設置してみた</a></h2><a href="http://retrospectiva.org/blog">blog . retrospectiva</a>
 
 どんなものか試しに設置してみた。あくまで試しなのでSQLite、WEBrickで。まずは必要なソフトのインストールから。
@@ -240,31 +265,6 @@ IDとパスワードを聞かれるので admin / passwordを入力。
 <img src="http://farm3.static.flickr.com/2067/2086299815_6a6030a3b6.jpg?v=0"/>
 
 SVNの連携とかはまたそのうち。Rails環境があれば、とりあえず起動するのはラクチン。
-</article><hr /><article><h2><a href="/2007/12/05/ruby_array_operator/">2007-12-05 RubyのArrayの演算子はちょっとおもしろい</a></h2>Arrayの「+」「-」「&」「|」演算子がちょっとおもしろい。
-<h2>+演算子</h2>
-お互いを連結した新しい配列を返す。
-<pre lang="ruby">
-[1, 2, 3] + [4, 5, 6] #=> [1, 2, 3, 4, 5, 6]
-</pre>
-
-<h2>-演算子</h2>
-重複した要素を取り除いた新しい配列を返す。
-<pre lang="ruby">
-[1, 2, 3, 4, 5] - [1, 3, 5] #=> [2, 4]
-</pre>
-
-<h2>&演算子</h2>
-重複した要素からなる新しい配列を返す。
-<pre lang="ruby">
-[1, 2, 3, 4, 5] & [1, 3, 5] #=> [1, 3, 5]
-</pre>
-
-<h2>|演算子</h2>
-どちらかに含まれている要素からなる新しい配列を返す。
-<pre lang="ruby">
-[1, 2, 3, 4, 5] | [1, 3, 5, 7, 9] #=> [1, 2, 3, 4, 5, 7, 9]
-[1, 3, 5] | [1, 2, 3, 4, 5] #=> [1, 3, 5, 2, 4]
-</pre>
 </article><hr /><article><h2><a href="/2007/12/01/ruby_rpn_ujihisa_sixeight/">2007-12-01 後置記法のコードを添削してもらっちゃいました</a></h2><a href="http://ujihisa.nowa.jp/entry/60c2b3fcf9">rubyneko - Re: UK STUDIO 後置記法での計算</a>
 <a href="http://d.hatena.ne.jp/Sixeight/20071130/1196438912">後置記法での計算の添削に便乗してみた - チナミニ</a>
 

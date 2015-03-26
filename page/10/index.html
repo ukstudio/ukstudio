@@ -8,7 +8,15 @@ _gaq.push(['_trackPageview']);
   var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
   ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
   var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-})();</script></head><body class="page page_10 page_10_index"><div class="header"><div class="header-navigation"><ul><li><i class="fa fa-twitter"></i><a href="http://twitter.com/ukstudio">Twitter</a></li><li><i class="fa fa-github-alt"></i><a href="http://github.com/ukstudio">GitHub</a></li></ul></div><div class="header-title"><a href="/">UKSTUDIO</a></div></div><div class="container"><article class="article-content"><h1 class="article--title"><a href="/2007/10/30/ruby_prime/">Rubyで素数を求めるプログラムを書いた</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2007-10-30 00:00:00 UTC" pubdate="pubdate">October 30 2007</time></div><div class="article-tags"></div><div class="article-summary">引数に入れた値までの素数を配列で返すRubyのクラスを書いてみた。アルゴリズムは<a href="http://ja.wikipedia.org/wiki/%E3%82%A8%E3%83%A9%E3%83%88%E3%82%B9%E3%83%86%E3%83%8D%E3%82%B9%E3%81%AE%E7%AF%A9">エラトステネスの篩</a>を使用。
+})();</script></head><body class="page page_10 page_10_index"><div class="header"><div class="header-navigation"><ul><li><i class="fa fa-twitter"></i><a href="http://twitter.com/ukstudio">Twitter</a></li><li><i class="fa fa-github-alt"></i><a href="http://github.com/ukstudio">GitHub</a></li></ul></div><div class="header-title"><a href="/">UKSTUDIO</a></div></div><div class="container"><article class="article-content"><h1 class="article--title"><a href="/2007/11/01/ruby_fizzbuzz_2/">RubyでFizzBuzz #2</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2007-11-01 00:00:00 UTC" pubdate="pubdate">November 01 2007</time></div><div class="article-tags"></div><div class="article-summary"><a href="http://uk-studio.net/2007/10/28/ruby_fizzbuzz/">RubyでFizzBuzz</a>の第二弾。大分スッキリしたと思うんだけどどでしょ。
+<pre lang="ruby">
+fizzbuzz = (1..100).map{|i|
+if i%5 == 0 && i%3 == 0 : "FizzBuzz"
+elsif i%5 == 0 : "Buzz"
+elsif i%3 == 0 : "Fizz"
+else i end
+}</pre>
+</div><div class="read-more"><a href="/2007/11/01/ruby_fizzbuzz_2/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2007/10/30/ruby_prime/">Rubyで素数を求めるプログラムを書いた</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2007-10-30 00:00:00 UTC" pubdate="pubdate">October 30 2007</time></div><div class="article-tags"></div><div class="article-summary">引数に入れた値までの素数を配列で返すRubyのクラスを書いてみた。アルゴリズムは<a href="http://ja.wikipedia.org/wiki/%E3%82%A8%E3%83%A9%E3%83%88%E3%82%B9%E3%83%86%E3%83%8D%E3%82%B9%E3%81%AE%E7%AF%A9">エラトステネスの篩</a>を使用。
 <strong>generate_prime.rb</strong>
 <pre lang="ruby">
 class GeneratePrime
@@ -16,7 +24,18 @@ class GeneratePrime
     if max_num  (prime_list[-1] * prime_list[-1])
 
     # 素数リスト及び、探索リストに最後まで残っていた数が素数
-    return prime_list.concat(search_list...</pre></div><div class="read-more"><a href="/2007/10/30/ruby_prime/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2007/10/28/ruby_fizzbuzz/">RubyでFizzBuzz</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2007-10-28 00:00:00 UTC" pubdate="pubdate">October 28 2007</time></div><div class="article-tags"></div><div class="article-summary">今更ながらにFizzBuzz問題をRubyで問いてみる。前は確かPHPだけで問いて、Rubyで問いてなかったと思うから。
+    return prime_list.concat(search_list...</pre></div><div class="read-more"><a href="/2007/10/30/ruby_prime/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2007/10/28/activerecord/">ActiveRecordを使ってみる</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2007-10-28 00:00:00 UTC" pubdate="pubdate">October 28 2007</time></div><div class="article-tags"></div><div class="article-summary">ActiveRecordはRubyOnRailsのO/Rマッパーとして有名ですが、Railsに依存しているわけではなく単体で使えます。
+
+<h2>DBを用意する</h2>
+なにはともあれ、DBがないと始まらないので適当に用意します。
+
+<pre lang="sql">create database ar;
+ use ar;
+ create table users (
+   id int unsigned not null auto_increment,
+   name varchar(50),
+   age int,
+   primary...</pre></div><div class="read-more"><a href="/2007/10/28/activerecord/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2007/10/28/ruby_fizzbuzz/">RubyでFizzBuzz</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2007-10-28 00:00:00 UTC" pubdate="pubdate">October 28 2007</time></div><div class="article-tags"></div><div class="article-summary">今更ながらにFizzBuzz問題をRubyで問いてみる。前は確かPHPだけで問いて、Rubyで問いてなかったと思うから。
 
 <strong>ループ内で出力</strong>
 <pre lang="ruby">
@@ -32,18 +51,7 @@ class GeneratePrime
     puts i
   end
 }</pre>
-<strong>配列を作ってそれ...</strong></div><div class="read-more"><a href="/2007/10/28/ruby_fizzbuzz/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2007/10/28/activerecord/">ActiveRecordを使ってみる</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2007-10-28 00:00:00 UTC" pubdate="pubdate">October 28 2007</time></div><div class="article-tags"></div><div class="article-summary">ActiveRecordはRubyOnRailsのO/Rマッパーとして有名ですが、Railsに依存しているわけではなく単体で使えます。
-
-<h2>DBを用意する</h2>
-なにはともあれ、DBがないと始まらないので適当に用意します。
-
-<pre lang="sql">create database ar;
- use ar;
- create table users (
-   id int unsigned not null auto_increment,
-   name varchar(50),
-   age int,
-   primary...</pre></div><div class="read-more"><a href="/2007/10/28/activerecord/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2007/10/26/programming_environment/">Re:あなたの最も実力を発揮できる開発環境を教えてください</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2007-10-26 00:00:00 UTC" pubdate="pubdate">October 26 2007</time></div><div class="article-tags"></div><div class="article-summary"><a href="http://ujihisa.nowa.jp/entry/720100065b">rubyneko -
+<strong>配列を作ってそれ...</strong></div><div class="read-more"><a href="/2007/10/28/ruby_fizzbuzz/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2007/10/26/programming_environment/">Re:あなたの最も実力を発揮できる開発環境を教えてください</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2007-10-26 00:00:00 UTC" pubdate="pubdate">October 26 2007</time></div><div class="article-tags"></div><div class="article-summary"><a href="http://ujihisa.nowa.jp/entry/720100065b">rubyneko -
 あなたの最も実力を発揮できる開発環境を教えてください</a>に反応してみる。
 <h2>開発まっしーん</h2>
 マシン: MacBook

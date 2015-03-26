@@ -8,7 +8,7 @@ _gaq.push(['_trackPageview']);
   var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
   ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
   var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-})();</script></head><body class="2015 2015_03 2015_03_index"><div class="header"><div class="header-navigation"><ul><li><i class="fa fa-twitter"></i><a href="http://twitter.com/ukstudio">Twitter</a></li><li><i class="fa fa-github-alt"></i><a href="http://github.com/ukstudio">GitHub</a></li></ul></div><div class="header-title"><a href="/">UKSTUDIO</a></div></div><div class="container"><h1><Archive></Archive>Mar 2015</h1><article><h2><a href="/2015/03/26/open_pull_request/">2015-03-26 特定のコミットが含まれるGitHub Pull Requestを開く</a></h2><p>今日たまたまあるコミットが含まれているGitHubのPull Requestをサクッと探したい事案が発生した。というのも自分が以前書いたコードがどうしてこうなっているのかというのを知りたかったんだけど、commit messageだけじゃよくわからんかった(〜を実装したみたいなことを英語で書いてあっただけ)。</p>
+})();</script></head><body class="2015 2015_03 2015_03_26 2015_03_26_index"><div class="header"><div class="header-navigation"><ul><li><i class="fa fa-twitter"></i><a href="http://twitter.com/ukstudio">Twitter</a></li><li><i class="fa fa-github-alt"></i><a href="http://github.com/ukstudio">GitHub</a></li></ul></div><div class="header-title"><a href="/">UKSTUDIO</a></div></div><div class="container"><h1><Archive></Archive>Mar 26 2015</h1><article><h2><a href="/2015/03/26/open_pull_request/">2015-03-26 特定のコミットが含まれるGitHub Pull Requestを開く</a></h2><p>今日たまたまあるコミットが含まれているGitHubのPull Requestをサクッと探したい事案が発生した。というのも自分が以前書いたコードがどうしてこうなっているのかというのを知りたかったんだけど、commit messageだけじゃよくわからんかった(〜を実装したみたいなことを英語で書いてあっただけ)。</p>
 
 <p>Pull Requestは割と丁寧に説明を書いているのできっとPull Requestのdescriptionを見ればわかりそうという感じはしたのだけれどパッとそれを開く手段がわからず、色々ググったりtwitterで教えてもらったりした結果下のようなfunctionをzshrcに書いた。</p>
 <pre class="highlight shell"><span class="k">function </span>find-pr<span class="o">()</span> <span class="o">{</span>
@@ -26,7 +26,4 @@ _gaq.push(['_trackPageview']);
 <p>あまりシェルは得意ではないのでそこらへんは大目に見て欲しい。やってることはfind-prで該当のcommitが含まれているMerge commitを探してcommit messageからGitHub Pull Requestの番号を取り出している。リポジトリ名はgit configから取得して余計な文字はsedで削除。あとはURLを組み立ててブラウザで開くだけ。多分これでPull Requestを開けるはず。</p>
 
 <p>なんにせよcommit messageはもうちょっと丁寧に書こうと思いました。</p>
-</article><hr /><article><h2><a href="/2015/03/20/vuejs/">2015-03-20 Vue.js便利</a></h2><p>今のプロダクトにちょっと前からVue.jsを採用しているんだけど、少しずつうまく使えるようになってきていてすごく便利だなーと感じる。コンポーネントについても大体わかってきた。</p>
-
-<p>RailsアプリケーションにVue.jsを採用してどう変えてきたかみたいな記事をそのうち <a href="http://blog.spicelife.jp/">スパイスな人生</a> の方に投稿したいと思う。お楽しみに。</p>
 </article><hr /></div></body></html>
