@@ -8,7 +8,19 @@ _gaq.push(['_trackPageview']);
   var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
   ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
   var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-})();</script></head><body class="page page_8 page_8_index"><div class="header"><div class="header-navigation"><ul><li><i class="fa fa-twitter"></i><a href="http://twitter.com/ukstudio">Twitter</a></li><li><i class="fa fa-github-alt"></i><a href="http://github.com/ukstudio">GitHub</a></li></ul></div><div class="header-title"><a href="/">UKSTUDIO</a></div></div><div class="container"><article class="article-content"><h1 class="article--title"><a href="/2008/07/23/categories_and_tags_in_order/">カテゴリとタグを整理しました</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2008-07-23 00:00:00 UTC" pubdate="pubdate">July 23 2008</time></div><div class="article-tags"></div><div class="article-summary">なんかWordPressにいつのまにかタグ機能が実装されていたので、せっかくなので使ってみることにしました。
+})();</script></head><body class="page page_8 page_8_index"><div class="header"><div class="header-navigation"><ul><li><i class="fa fa-twitter"></i><a href="http://twitter.com/ukstudio">Twitter</a></li><li><i class="fa fa-github-alt"></i><a href="http://github.com/ukstudio">GitHub</a></li></ul></div><div class="header-title"><a href="/">UKSTUDIO</a></div></div><div class="container"><article class="article-content"><h1 class="article--title"><a href="/2008/07/27/ukstudio_controlled_git/">ukstudio.jpをgitで管理するようにしてみた</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2008-07-27 00:00:00 UTC" pubdate="pubdate">July 27 2008</time></div><div class="article-tags"></div><div class="article-summary">最近流行りのgitを使ってみようかなーってことでとりあえずukstudio.jpを全部gitで管理するようにした。
+
+最終的に以下のような構成になった。
+
+<a href="http://ukstudio.jp/wp-content/uploads/2008/07/git-ukstudio.png"><img src="http://ukstudio.jp/wp-content/uploads/2008/07/git-ukstudio.png" alt="" title="git-ukstudio" width="284" height="284" class="alignnone size-medium wp-image-145"></a>
+
+<h2>MacBookにgitをインストールする</h2>
+MacBookにgitをインストールするのは簡単だった。MacPortsですんなり入った。
+
+参考: <a href="http://d.hatena.ne.jp/from_kyushu/20080414/git_on_mac">MacPortsを使ってgitをインストールしてみた - Post-itみたいな</a>
+
+<h2>サーバにgitをインストールする</h2>
+サーバはslicehostのCentOS5.1を使用。インストールされて...</div><div class="read-more"><a href="/2008/07/27/ukstudio_controlled_git/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2008/07/23/categories_and_tags_in_order/">カテゴリとタグを整理しました</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2008-07-23 00:00:00 UTC" pubdate="pubdate">July 23 2008</time></div><div class="article-tags"></div><div class="article-summary">なんかWordPressにいつのまにかタグ機能が実装されていたので、せっかくなので使ってみることにしました。
 
 ベースはヤスヒサさんの<a href="http://www.yasuhisa.com/could/article/category-tag/">カテゴリとタグを上手に使い分ける</a>を参考にしています。
 
@@ -181,12 +193,4 @@ require 'open-uri'
 require 'rexml/document'
 require 'FileUtils'
 
-if ARGV...</pre></div><div class="read-more"><a href="/2008/01/12/ruby_tumblr_getimages_2nd/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2008/01/12/blog/">オレがブログを書く理由</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2008-01-12 00:00:00 UTC" pubdate="pubdate">January 12 2008</time></div><div class="article-tags"></div><div class="article-summary">まめこの「<a href="http://blog.woopsdez.jp/2008/01/post_294.php">車輪の再発明だとしても記事は書くべき</a>」に反応してみる。「記事をかくべき」というのには非常に同意。
-
-じゃあ、なぜ「かくべき」なのか。それは人それぞれになると思うけど、オレがブログを書く理由を簡単にまとめてみたのでよければ参考にしてほしい。
-
-<h2>ブログは自分の為に書く</h2>
-基本的にブログは自分の為に書いている。あまり他の人に役立つかどうかとか、誰か似たようなこと書いてるだろうなとかは気にしない。
-
-<h3>思考のツールとしてのブログ</h3>
-文章を書くということは、ある程度自分の思考を整理することになる...</div><div class="read-more"><a href="/2008/01/12/blog/">READ MORE</a></div></article><div class="pager"><ul><li class="previous"><a href="/page/7/">Prev</a></li><li class="next"><a href="/page/9/">Next</a></li></ul></div></div></body></html>
+if ARGV...</pre></div><div class="read-more"><a href="/2008/01/12/ruby_tumblr_getimages_2nd/">READ MORE</a></div></article><div class="pager"><ul><li class="previous"><a href="/page/7/">Prev</a></li><li class="next"><a href="/page/9/">Next</a></li></ul></div></div></body></html>

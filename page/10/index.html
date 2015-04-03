@@ -8,7 +8,22 @@ _gaq.push(['_trackPageview']);
   var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
   ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
   var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-})();</script></head><body class="page page_10 page_10_index"><div class="header"><div class="header-navigation"><ul><li><i class="fa fa-twitter"></i><a href="http://twitter.com/ukstudio">Twitter</a></li><li><i class="fa fa-github-alt"></i><a href="http://github.com/ukstudio">GitHub</a></li></ul></div><div class="header-title"><a href="/">UKSTUDIO</a></div></div><div class="container"><article class="article-content"><h1 class="article--title"><a href="/2007/11/01/ruby_fizzbuzz_2/">RubyでFizzBuzz #2</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2007-11-01 00:00:00 UTC" pubdate="pubdate">November 01 2007</time></div><div class="article-tags"></div><div class="article-summary"><a href="http://uk-studio.net/2007/10/28/ruby_fizzbuzz/">RubyでFizzBuzz</a>の第二弾。大分スッキリしたと思うんだけどどでしょ。
+})();</script></head><body class="page page_10 page_10_index"><div class="header"><div class="header-navigation"><ul><li><i class="fa fa-twitter"></i><a href="http://twitter.com/ukstudio">Twitter</a></li><li><i class="fa fa-github-alt"></i><a href="http://github.com/ukstudio">GitHub</a></li></ul></div><div class="header-title"><a href="/">UKSTUDIO</a></div></div><div class="container"><article class="article-content"><h1 class="article--title"><a href="/2007/11/16/coding_rule_ruby/">個人用のコーディング規約を書き始めたんよ</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2007-11-16 00:00:00 UTC" pubdate="pubdate">November 16 2007</time></div><div class="article-tags"></div><div class="article-summary"><a href="/coding_rule/">CodingRule</a>
+
+とりあえずはRubyから書き始めたんよ。思ったよりまとめるのが大変。
+
+と言うより、普段何も考えてないのがわかる。暗黙的というか、その場のフィーリングで決めてるようで以前のRubyプログラムを見なおしてみると、スペースの取り方とかメソッド・クラス名が結構バラバラ。
+
+以下の規約も参考にしつつ、少しずつまとめてみたいと思う。
+
+<ul>
+<li>前田さんの<a href="http://shugo.net/ruby-codeconv/codeconv.html">Rubyコーディング規約</a>
+</li>
+<li>青木さんの<a href="http://www.loveruby.net/w/RubyCodingStyle.html">RubyCodingStyle</a>
+</li>
+<li>id:cho45さんの<a href="http://lab.lowreal.net/trac/wiki/CodingRule/Ruby">Ruby Language Coding...</a>
+</li>
+</ul></div><div class="read-more"><a href="/2007/11/16/coding_rule_ruby/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2007/11/01/ruby_fizzbuzz_2/">RubyでFizzBuzz #2</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2007-11-01 00:00:00 UTC" pubdate="pubdate">November 01 2007</time></div><div class="article-tags"></div><div class="article-summary"><a href="http://uk-studio.net/2007/10/28/ruby_fizzbuzz/">RubyでFizzBuzz</a>の第二弾。大分スッキリしたと思うんだけどどでしょ。
 <pre lang="ruby">
 fizzbuzz = (1..100).map{|i|
 if i%5 == 0 && i%3 == 0 : "FizzBuzz"
@@ -158,10 +173,4 @@ ukstudio: <a href="http://twitter.com/ukstudio/statuses/110891732">   	 @crema @
 ロクナナの中村享介さんが<strike>訳した</strike>監修した本です。こういう表紙は結構好きだなぁ。中は２色刷りで余白や行間がちょうど良く見やすい感じ。
 
 デザイナーさんが、こういうJavaScriptやDOMの本からプログラミングに興味もってもらえるとうれしいなー。デザイナーもプログラマーももっとお互いのことを理解したほうがいいと思うんだよね。
-</div><div class="read-more"><a href="/2007/06/23/domscripting/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2007/06/21/twitter_offline_party/">twitterオフ会に参加してきました</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2007-06-21 00:00:00 UTC" pubdate="pubdate">June 21 2007</time></div><div class="article-tags"></div><div class="article-summary">エントリー書くのおせぇよ!っていう突っ込みはスルーです。
-
-6月の15日にamachang主催のtwitterオフ会があったので参加してきました。集合が18:30-19:00ってことで、明らかに職場の定時より早いので思わず有給とっちゃいました。
-
-集合時間より結構早く行って青い看板？っていうか紙もってたらsunitiに写真とられて<a href="http://blog.grayash.com/archives/518">ブログにアップされた!</a>コレでオレも有名人だ!!
-
-参加人数はなんと70人越え!!そんな大規模なオフなんて初めてでかなり緊張。誰が誰だかわからないかなぁとか思ってた...</div><div class="read-more"><a href="/2007/06/21/twitter_offline_party/">READ MORE</a></div></article><div class="pager"><ul><li class="previous"><a href="/page/9/">Prev</a></li></ul></div></div></body></html>
+</div><div class="read-more"><a href="/2007/06/23/domscripting/">READ MORE</a></div></article><div class="pager"><ul><li class="previous"><a href="/page/9/">Prev</a></li><li class="next"><a href="/page/11/">Next</a></li></ul></div></div></body></html>

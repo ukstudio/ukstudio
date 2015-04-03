@@ -8,7 +8,12 @@ _gaq.push(['_trackPageview']);
   var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
   ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
   var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-})();</script></head><body class="page page_7 page_7_index"><div class="header"><div class="header-navigation"><ul><li><i class="fa fa-twitter"></i><a href="http://twitter.com/ukstudio">Twitter</a></li><li><i class="fa fa-github-alt"></i><a href="http://github.com/ukstudio">GitHub</a></li></ul></div><div class="header-title"><a href="/">UKSTUDIO</a></div></div><div class="container"><article class="article-content"><h1 class="article--title"><a href="/2008/11/26/rails_22_i18n/">Rails2.2のi18n(国際化)を簡単に試してみた</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2008-11-26 00:00:00 UTC" pubdate="pubdate">November 26 2008</time></div><div class="article-tags"></div><div class="article-summary">11月21日にRails2.2が正式リリースされた。 RCなどでチェックしてた人は既に知っているかもしれないけど、2.2からデフォルトでi18n(国際化)対応がされている。
+})();</script></head><body class="page page_7 page_7_index"><div class="header"><div class="header-navigation"><ul><li><i class="fa fa-twitter"></i><a href="http://twitter.com/ukstudio">Twitter</a></li><li><i class="fa fa-github-alt"></i><a href="http://github.com/ukstudio">GitHub</a></li></ul></div><div class="header-title"><a href="/">UKSTUDIO</a></div></div><div class="container"><article class="article-content"><h1 class="article--title"><a href="/2008/11/27/mac_gem_install_mysql/">Macでgem install mysqlをする方法</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2008-11-27 00:00:00 UTC" pubdate="pubdate">November 27 2008</time></div><div class="article-tags"></div><div class="article-summary">Rails2.2からmysqlのアダプタが付属していないので各個人でインストールする必要があります。gemで入れようとするとエラーがでると思うので以下のように対応してください。
+
+<pre lang="bash">
+$ sudo gem install mysql
+$ cd /opt/local/lib/ruby/gems/1.8/gems/mysql-2.7/
+$ sudo ruby extconf.rb --with-mysql-config=/opt/local/lib/mysql5/bin/mysql_config...</pre></div><div class="read-more"><a href="/2008/11/27/mac_gem_install_mysql/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2008/11/26/rails_22_i18n/">Rails2.2のi18n(国際化)を簡単に試してみた</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2008-11-26 00:00:00 UTC" pubdate="pubdate">November 26 2008</time></div><div class="article-tags"></div><div class="article-summary">11月21日にRails2.2が正式リリースされた。 RCなどでチェックしてた人は既に知っているかもしれないけど、2.2からデフォルトでi18n(国際化)対応がされている。
 
 ちなみにi18nというのはinternationalizationの頭と後ろのiとn、文字数が18文字というところから来てるらしい。
 
@@ -175,16 +180,4 @@ localsでpartial側に値を渡す。partial側ではローカル変数titleで�
 <h2>ドキュメントみろ</h2>
 今回、話を聞いてきたことの大半は既にドキュメントとしてあるとのこと。英語だけど。なので英語がわかる人はそちらを読めばいいと思います。というか他にドキュメントがないので、英語読めなくても読まなきゃいけないんだけど。
 
-<a href="http://developer.apple.com/jp">http:/...</a></div><div class="read-more"><a href="/2008/07/29/iphone_seminar/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2008/07/27/ukstudio_controlled_git/">ukstudio.jpをgitで管理するようにしてみた</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2008-07-27 00:00:00 UTC" pubdate="pubdate">July 27 2008</time></div><div class="article-tags"></div><div class="article-summary">最近流行りのgitを使ってみようかなーってことでとりあえずukstudio.jpを全部gitで管理するようにした。
-
-最終的に以下のような構成になった。
-
-<a href="http://ukstudio.jp/wp-content/uploads/2008/07/git-ukstudio.png"><img src="http://ukstudio.jp/wp-content/uploads/2008/07/git-ukstudio.png" alt="" title="git-ukstudio" width="284" height="284" class="alignnone size-medium wp-image-145"></a>
-
-<h2>MacBookにgitをインストールする</h2>
-MacBookにgitをインストールするのは簡単だった。MacPortsですんなり入った。
-
-参考: <a href="http://d.hatena.ne.jp/from_kyushu/20080414/git_on_mac">MacPortsを使ってgitをインストールしてみた - Post-itみたいな</a>
-
-<h2>サーバにgitをインストールする</h2>
-サーバはslicehostのCentOS5.1を使用。インストールされて...</div><div class="read-more"><a href="/2008/07/27/ukstudio_controlled_git/">READ MORE</a></div></article><div class="pager"><ul><li class="previous"><a href="/page/6/">Prev</a></li><li class="next"><a href="/page/8/">Next</a></li></ul></div></div></body></html>
+<a href="http://developer.apple.com/jp">http:/...</a></div><div class="read-more"><a href="/2008/07/29/iphone_seminar/">READ MORE</a></div></article><div class="pager"><ul><li class="previous"><a href="/page/6/">Prev</a></li><li class="next"><a href="/page/8/">Next</a></li></ul></div></div></body></html>

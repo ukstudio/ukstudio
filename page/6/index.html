@@ -8,7 +8,13 @@ _gaq.push(['_trackPageview']);
   var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
   ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
   var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-})();</script></head><body class="page page_6 page_6_index"><div class="header"><div class="header-navigation"><ul><li><i class="fa fa-twitter"></i><a href="http://twitter.com/ukstudio">Twitter</a></li><li><i class="fa fa-github-alt"></i><a href="http://github.com/ukstudio">GitHub</a></li></ul></div><div class="header-title"><a href="/">UKSTUDIO</a></div></div><div class="container"><article class="article-content"><h1 class="article--title"><a href="/2009/07/13/android_ht_03a/">DoCoMoのAndroid携帯「HT-03A」を買って3日たったので適当にレビューする</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2009-07-13 00:00:00 UTC" pubdate="pubdate">July 13 2009</time></div><div class="article-tags"></div><div class="article-summary">買いました、DoCoMoのAndroid携帯「HT-03A」。本当は買わないつもりだったんですけど。以下レビューです。画像はない上にそれなりに長文です。
+})();</script></head><body class="page page_6 page_6_index"><div class="header"><div class="header-navigation"><ul><li><i class="fa fa-twitter"></i><a href="http://twitter.com/ukstudio">Twitter</a></li><li><i class="fa fa-github-alt"></i><a href="http://github.com/ukstudio">GitHub</a></li></ul></div><div class="header-title"><a href="/">UKSTUDIO</a></div></div><div class="container"><article class="article-content"><h1 class="article--title"><a href="/2009/07/14/rails_oauth_twitter/">RailsからOAuthを利用してTwitterにポストする</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2009-07-14 00:00:00 UTC" pubdate="pubdate">July 14 2009</time></div><div class="article-tags"></div><div class="article-summary">OAuthの細かい説明は抜き。
+
+まず、OAuthを使うためにはTwitterでアプリケーションの登録が必要なので、<a href="http://twitter.com/oauth_clients">http://twitter.com/oauth_clients</a>で登録をしておいてください。 以下のコードの6行目の部分を取得したConsumer keyとConsumer secretをに置き換えてください。
+
+<script src="http://gist.github.com/146684.js"></script>
+
+適当なところからverifyアクションにリダイレクトしてくると、さらにTwitterにリダイレクトします。その後、callbackアクションに戻ってくるので、そ...</div><div class="read-more"><a href="/2009/07/14/rails_oauth_twitter/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2009/07/13/android_ht_03a/">DoCoMoのAndroid携帯「HT-03A」を買って3日たったので適当にレビューする</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2009-07-13 00:00:00 UTC" pubdate="pubdate">July 13 2009</time></div><div class="article-tags"></div><div class="article-summary">買いました、DoCoMoのAndroid携帯「HT-03A」。本当は買わないつもりだったんですけど。以下レビューです。画像はない上にそれなりに長文です。
 
 <h2>契約</h2>
 発売日前日の夜に急にむらむらきまして、発売日、新宿ヨドバシに開店時間に行ったら在庫があるとのことなのでその場で契約。新規契約だったので、具体的な金額は忘れましたが2万数千円ってとこでした。ヨドバシはポイントがつくので、その場で一括支払い。
@@ -161,9 +167,4 @@ id:hrkt0115311さんもすすめてたけど、たのしいRubyを読んだの�
 <a href="http://dist.codehaus.org/jruby/">http://dist.codehaus.org/jruby/</a>からjruby-bin-1.1.5.tar.gz(バージョンは適宜読み替え)をダウンロード。現時点では1.1.5をインストールしておけば大丈夫だろう。解凍したら適当な位置に移動。
 
 <pre lang="bash">
-$ tar zxvf jruby-bin-1.1.5...</pre></div><div class="read-more"><a href="/2008/12/08/action-coding/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2008/11/27/mac_gem_install_mysql/">Macでgem install mysqlをする方法</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2008-11-27 00:00:00 UTC" pubdate="pubdate">November 27 2008</time></div><div class="article-tags"></div><div class="article-summary">Rails2.2からmysqlのアダプタが付属していないので各個人でインストールする必要があります。gemで入れようとするとエラーがでると思うので以下のように対応してください。
-
-<pre lang="bash">
-$ sudo gem install mysql
-$ cd /opt/local/lib/ruby/gems/1.8/gems/mysql-2.7/
-$ sudo ruby extconf.rb --with-mysql-config=/opt/local/lib/mysql5/bin/mysql_config...</pre></div><div class="read-more"><a href="/2008/11/27/mac_gem_install_mysql/">READ MORE</a></div></article><div class="pager"><ul><li class="previous"><a href="/page/5/">Prev</a></li><li class="next"><a href="/page/7/">Next</a></li></ul></div></div></body></html>
+$ tar zxvf jruby-bin-1.1.5...</pre></div><div class="read-more"><a href="/2008/12/08/action-coding/">READ MORE</a></div></article><div class="pager"><ul><li class="previous"><a href="/page/5/">Prev</a></li><li class="next"><a href="/page/7/">Next</a></li></ul></div></div></body></html>

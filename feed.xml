@@ -4,10 +4,48 @@
   <id>http://ukstudio.jp</id>
   <link href="http://ukstudio.jp"/>
   <link href="http://ukstudio.jp/feed.xml" rel="self"/>
-  <updated>2015-03-26T12:18:00Z</updated>
+  <updated>2015-04-03T17:22:00Z</updated>
   <author>
     <name>AKAMATSU Yuki</name>
   </author>
+  <entry>
+    <title>スクラム実践入門読み終わった</title>
+    <link rel="alternate" href="http://ukstudio.jp/2015/04/03/gihyo_scrum_book/"/>
+    <id>http://ukstudio.jp/2015/04/03/gihyo_scrum_book/</id>
+    <published>2015-04-03T17:22:00Z</published>
+    <updated>2015-04-04T02:24:32+09:00</updated>
+    <author>
+      <name>AKAMATSU Yuki</name>
+    </author>
+    <content type="html">&lt;p&gt;&lt;a href="http://www.amazon.co.jp/gp/product/4774172367?ie=UTF8&amp;amp;camp=1207&amp;amp;creative=8411&amp;amp;creativeASIN=4774172367&amp;amp;linkCode=shr&amp;amp;tag=ukstudio0c-22&amp;amp;qid=1428081771&amp;amp;sr=8-1&amp;amp;keywords=%E3%82%B9%E3%82%AF%E3%83%A9%E3%83%A0%E5%AE%9F%E8%B7%B5%E5%85%A5%E9%96%80"&gt;Amazon.co.jp： スクラム実践入門 ── 成果を生み出すアジャイルな開発プロセス (WEB+DB PRESS plus): 貝瀬 岳志, 原田 勝信, 和島 史典, 栗林 健太郎, 柴田 博志, 家永 英治: 本&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;2015/4/3に読了。&lt;/p&gt;
+
+&lt;p&gt;会社で購入してもらったのでざっと読み終えた。&lt;/p&gt;
+
+&lt;h2 id="ソフトウェアはどこにあるのか。そう、僕らの心のなかにあるんだよ…"&gt;ソフトウェアはどこにあるのか。そう、僕らの心のなかにあるんだよ…&lt;/h2&gt;
+
+&lt;p&gt;なんかふざけた見出しつけたけど、1章は結構好きで何回か読み直したいなという章だった。スクラムについて知るぞ〜と意気込む若者がよんだらちょっとびっくりするかもしれない。それでもまずは読んでみて自分なりに考えてほしいなぁと思う。僕もまだちょっと消化不良感あるので消化したい。&lt;/p&gt;
+
+&lt;h2 id="スクラムガイドのガイド"&gt;スクラムガイドのガイド&lt;/h2&gt;
+
+&lt;p&gt;2〜4章はスクラムガイドに基いてスクラムについてコンパクトに解説してくれる。この辺はスクラムについてある程度知識はあったのでうんうんという感じで読みました。&lt;/p&gt;
+
+&lt;p&gt;正直、スクラムガイドってあれだけ読んでもピンと来ない人ってそこそこいると思うんだよね。スクラムガイドだけじゃいまいちわからんって人はこれらの章を読むとある程度理解できると思う。&lt;/p&gt;
+
+&lt;h2 id="各社の事例と問題解決の道標。"&gt;各社の事例と問題解決の道標。&lt;/h2&gt;
+
+&lt;p&gt;この本でしか読めないと噂の6〜8章。それと問題とその解決策を提示してくれる9〜12章。&lt;/p&gt;
+
+&lt;p&gt;この辺りの章もよかった。特に僕の場合、日々の開発でなにかしらうまくいかないことがあってそれの答えとまではいかなくとも参考になるなにかが欲しいという動機でこの本を買ってもらったのですごく参考になった。&lt;/p&gt;
+
+&lt;h2 id="理論の前半、現場の後半"&gt;理論の前半、現場の後半&lt;/h2&gt;
+
+&lt;p&gt;前半と後半でそれぞれ読み応えがあるので、スクラムについて全然しらんという人でもスクラムについてある程度知ってたり経験があるっていう人でもなにかしら得るものがある本だなと思いました。&lt;/p&gt;
+
+&lt;p&gt;弊社でも1人、悩める人がいるのでその人には是非読んでもらおうかなと思います。&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>特定のコミットが含まれるGitHub Pull Requestを開く</title>
     <link rel="alternate" href="http://ukstudio.jp/2015/03/26/open_pull_request/"/>
@@ -195,29 +233,6 @@
 &lt;p&gt;そもそも仕様をesaに書くの?みたいな話ありそうだけど、実装の前にメンバーに仕様を共有するケースはそれなりにあるし、コードを読んでもWhyがわからないのでなぜこうしたのかみたいな部分はドキュメントに残したりもする。&lt;/p&gt;
 
 &lt;p&gt;それに今回は仕様の話を例にとったけど、例えばインフラまわりだと議事録でこういう構成にしたという話を残すのとは別に構成がかわったことによってデプロイ手順もかわったならそれはストックとして残したいという話もある。&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
-    <title>spotlights.jpが本日10時にリリースされました</title>
-    <link rel="alternate" href="http://ukstudio.jp/2014/11/27/spotlights-jp/"/>
-    <id>http://ukstudio.jp/2014/11/27/spotlights-jp/</id>
-    <published>2014-11-27T07:33:00Z</published>
-    <updated>2015-02-15T23:46:05+09:00</updated>
-    <author>
-      <name>AKAMATSU Yuki</name>
-    </author>
-    <content type="html">&lt;p&gt;&lt;a class="embedly-card" href="https://spotlights.jp"&gt;みんなで贈るソーシャルギフト・プレゼント ＼SPOTLIGHTS／（スポットライト）&lt;/a&gt;
-&lt;script async src="//cdn.embedly.com/widgets/platform.js" charset="UTF-8"&gt;&lt;/script&gt;&lt;/p&gt;
-
-&lt;div style="text-align: center"&gt;
-  &lt;iframe width="560" height="315" src="//www.youtube.com/embed/xP14KD2qIR8" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
-&lt;/div&gt;
-
-&lt;p&gt;今日の10時より&lt;a href="http://spicelife.jp/"&gt;株式会社spice life（スパイスライフ）&lt;/a&gt;からSPOTLIGHTSがリリースされました!!&lt;/p&gt;
-
-&lt;p&gt;ここ2ヶ月弱の追い込みにプログラマとして開発に関わらせて頂いてます(今後も関わっていく予定です)。実は自分のブログで関わってます！って言えるサービスは初めてだと思うので、期間はまだ短いですがちょっと感慨深いものがあります。&lt;/p&gt;
-
-&lt;p&gt;結婚式や誕生日のお祝いや日頃の感謝などにご活用ください。&lt;/p&gt;
 </content>
   </entry>
 </feed>
