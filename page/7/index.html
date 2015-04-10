@@ -8,7 +8,14 @@ _gaq.push(['_trackPageview']);
   var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
   ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
   var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-})();</script></head><body class="page page_7 page_7_index"><div class="header"><div class="header-navigation"><ul><li><i class="fa fa-twitter"></i><a href="http://twitter.com/ukstudio">Twitter</a></li><li><i class="fa fa-github-alt"></i><a href="http://github.com/ukstudio">GitHub</a></li></ul></div><div class="header-title"><a href="/">UKSTUDIO</a></div></div><div class="container"><article class="article-content"><h1 class="article--title"><a href="/2008/11/27/mac_gem_install_mysql/">Macでgem install mysqlをする方法</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2008-11-27 00:00:00 UTC" pubdate="pubdate">November 27 2008</time></div><div class="article-tags"></div><div class="article-summary">Rails2.2からmysqlのアダプタが付属していないので各個人でインストールする必要があります。gemで入れようとするとエラーがでると思うので以下のように対応してください。
+})();</script></head><body class="page page_7 page_7_index"><div class="header"><div class="header-navigation"><ul><li><i class="fa fa-twitter"></i><a href="http://twitter.com/ukstudio">Twitter</a></li><li><i class="fa fa-github-alt"></i><a href="http://github.com/ukstudio">GitHub</a></li></ul></div><div class="header-title"><a href="/">UKSTUDIO</a></div></div><div class="container"><article class="article-content"><h1 class="article--title"><a href="/2008/12/08/action-coding/">JRubyとProcessing1.1でaction-coding!</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2008-12-08 00:00:00 UTC" pubdate="pubdate">December 08 2008</time></div><div class="article-tags"></div><div class="article-summary">せっかくProcessingも正式版になったことだし、少しaction-codingで遊んでみる。
+
+まずはJRubyをインストール。面倒なのでバイナリで。環境はMac OSX 10.5.5。
+
+<a href="http://dist.codehaus.org/jruby/">http://dist.codehaus.org/jruby/</a>からjruby-bin-1.1.5.tar.gz(バージョンは適宜読み替え)をダウンロード。現時点では1.1.5をインストールしておけば大丈夫だろう。解凍したら適当な位置に移動。
+
+<pre lang="bash">
+$ tar zxvf jruby-bin-1.1.5...</pre></div><div class="read-more"><a href="/2008/12/08/action-coding/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2008/11/27/mac_gem_install_mysql/">Macでgem install mysqlをする方法</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2008-11-27 00:00:00 UTC" pubdate="pubdate">November 27 2008</time></div><div class="article-tags"></div><div class="article-summary">Rails2.2からmysqlのアダプタが付属していないので各個人でインストールする必要があります。gemで入れようとするとエラーがでると思うので以下のように対応してください。
 
 <pre lang="bash">
 $ sudo gem install mysql
@@ -100,17 +107,7 @@ class Integer
     ([[],[]].size...self).each do |i|
       return false if (self%i).zero?
     end
-    true...</pre></div><div class="read-more"><a href="/2008/09/19/no_use_number_prime/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2008/09/18/firefox_addon/">Firefoxの拡張の整理</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2008-09-18 00:00:00 UTC" pubdate="pubdate">September 18 2008</time></div><div class="article-tags"></div><div class="article-summary">1つ前の記事でプロファイルの使い分けの設定をしたけど、整理もかねて~/Library/Application Support/Firefoxを削除して、1から構築しなおした。
-
-<h2>拡張のインストール</h2>
-<h3>開発/普段共通</h3>
-<dl>
-<dt>Nightly Tester Tools</dt>
-<dd>今、メインに使っているのがShiretoko(Firefox3.1α2)なので、これを入れないと動かない拡張が多い</dd>
-<dt>Vimperator</dt>
-<dd>Firefoxをvimみたいに操作。もうこいつがないと生きていけない体になってしまった。</dd>
-<dt>XUL/Migemo</dt>
-</dl></div><div class="read-more"><a href="/2008/09/18/firefox_addon/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2008/09/18/firefox/">MacでFirefoxのプロファイルの使い分けと別バージョンの同時起動をする</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2008-09-18 00:00:00 UTC" pubdate="pubdate">September 18 2008</time></div><div class="article-tags"></div><div class="article-summary">Firefoxのプロファイルの使い分け(普段用/開発用)と別バージョン(2.0と3.1)の同時起動がしたかったのでちょっと設定してみた。
+    true...</pre></div><div class="read-more"><a href="/2008/09/19/no_use_number_prime/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2008/09/18/firefox/">MacでFirefoxのプロファイルの使い分けと別バージョンの同時起動をする</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2008-09-18 00:00:00 UTC" pubdate="pubdate">September 18 2008</time></div><div class="article-tags"></div><div class="article-summary">Firefoxのプロファイルの使い分け(普段用/開発用)と別バージョン(2.0と3.1)の同時起動がしたかったのでちょっと設定してみた。
 
 <h2>プロファイルの作成</h2>
 まずは使い分けるためのプロファイルを作成する。今回作成したのは以下の3つ。
@@ -123,7 +120,17 @@ class Integer
 プロファイルの作成の仕方はTerminalから-Pオプションを付けて、Firefoxを起動させればいい。
 
 <pre lang="bash">
-$ /Applications/Firefox.app...</pre></div><div class="read-more"><a href="/2008/09/18/firefox/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2008/09/09/firefox3_1/">Firefoxα2とβ1preを試してみた</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2008-09-09 00:00:00 UTC" pubdate="pubdate">September 09 2008</time></div><div class="article-tags"></div><div class="article-summary">いつのまにかFirefoxのα2とβ1preがリリースされてたので試してみた。個人的にVimpとかグリモンがないとどうにもならない体になってしまったので<a href="https://addons.mozilla.org/ja/firefox/addon/6543">Nightly Tester Tools</a>をインストール。これで3.01で動いていた拡張は大体動く模様。
+$ /Applications/Firefox.app...</pre></div><div class="read-more"><a href="/2008/09/18/firefox/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2008/09/18/firefox_addon/">Firefoxの拡張の整理</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2008-09-18 00:00:00 UTC" pubdate="pubdate">September 18 2008</time></div><div class="article-tags"></div><div class="article-summary">1つ前の記事でプロファイルの使い分けの設定をしたけど、整理もかねて~/Library/Application Support/Firefoxを削除して、1から構築しなおした。
+
+<h2>拡張のインストール</h2>
+<h3>開発/普段共通</h3>
+<dl>
+<dt>Nightly Tester Tools</dt>
+<dd>今、メインに使っているのがShiretoko(Firefox3.1α2)なので、これを入れないと動かない拡張が多い</dd>
+<dt>Vimperator</dt>
+<dd>Firefoxをvimみたいに操作。もうこいつがないと生きていけない体になってしまった。</dd>
+<dt>XUL/Migemo</dt>
+</dl></div><div class="read-more"><a href="/2008/09/18/firefox_addon/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2008/09/09/firefox3_1/">Firefoxα2とβ1preを試してみた</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2008-09-09 00:00:00 UTC" pubdate="pubdate">September 09 2008</time></div><div class="article-tags"></div><div class="article-summary">いつのまにかFirefoxのα2とβ1preがリリースされてたので試してみた。個人的にVimpとかグリモンがないとどうにもならない体になってしまったので<a href="https://addons.mozilla.org/ja/firefox/addon/6543">Nightly Tester Tools</a>をインストール。これで3.01で動いていた拡張は大体動く模様。
 
 それとTraceMonkeyを使えるようにするためabout:configを開いて、「jit」で検索。2項目ほどヒットするので、それぞれの値をfalseからtrueに変更する。これでTraceMonkeyはONになるみたい。
 
@@ -175,9 +182,4 @@ localsでpartial側に値を渡す。partial側ではローカル変数titleで�
 理由としては
 <ul>
 <li>いつも持ち歩いてるMOLESKINE...</li>
-</ul></div><div class="read-more"><a href="/2008/08/08/quill/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2008/07/29/iphone_seminar/">Apple主催のiPhoneアプリケーション開発入門セミナーに参加してきた</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2008-07-29 00:00:00 UTC" pubdate="pubdate">July 29 2008</time></div><div class="article-tags"></div><div class="article-summary">会場が家からすぐ近くだったので行ってきました。なるべく話しても大丈夫そうなところを選んで書きますが、場合によってはエントリーが消えることもあるかも。セミナーの内容が完全黙秘なのか、SDKの部分はダメなのかどっちかよくわからないので。英語苦手だ。
-
-<h2>ドキュメントみろ</h2>
-今回、話を聞いてきたことの大半は既にドキュメントとしてあるとのこと。英語だけど。なので英語がわかる人はそちらを読めばいいと思います。というか他にドキュメントがないので、英語読めなくても読まなきゃいけないんだけど。
-
-<a href="http://developer.apple.com/jp">http:/...</a></div><div class="read-more"><a href="/2008/07/29/iphone_seminar/">READ MORE</a></div></article><div class="pager"><ul><li class="previous"><a href="/page/6/">Prev</a></li><li class="next"><a href="/page/8/">Next</a></li></ul></div></div></body></html>
+</ul></div><div class="read-more"><a href="/2008/08/08/quill/">READ MORE</a></div></article><div class="pager"><ul><li class="previous"><a href="/page/6/">Prev</a></li><li class="next"><a href="/page/8/">Next</a></li></ul></div></div></body></html>

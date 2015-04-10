@@ -8,7 +8,24 @@ _gaq.push(['_trackPageview']);
   var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
   ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
   var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-})();</script></head><body class="2009 2009_07 2009_07_16 2009_07_16_index"><div class="header"><div class="header-navigation"><ul><li><i class="fa fa-twitter"></i><a href="http://twitter.com/ukstudio">Twitter</a></li><li><i class="fa fa-github-alt"></i><a href="http://github.com/ukstudio">GitHub</a></li></ul></div><div class="header-title"><a href="/">UKSTUDIO</a></div></div><div class="container"><h1><Archive></Archive>Jul 16 2009</h1><article><h2><a href="/2009/07/16/ht_03a_gtalk/">2009-07-16 HT-03AでGtalkまわりでハマッったのでメモ</a></h2>なんだか変なところではまるな、android。
+})();</script></head><body class="2009 2009_07 2009_07_16 2009_07_16_index"><div class="header"><div class="header-navigation"><ul><li><i class="fa fa-twitter"></i><a href="http://twitter.com/ukstudio">Twitter</a></li><li><i class="fa fa-github-alt"></i><a href="http://github.com/ukstudio">GitHub</a></li></ul></div><div class="header-title"><a href="/">UKSTUDIO</a></div></div><div class="container"><h1><Archive></Archive>Jul 16 2009</h1><article><h2><a href="/2009/07/16/android_alternative/">2009-07-16 HT-03AのGmailアプリからメールを送るとmultipart/alternativeになる</a></h2>先日もエントリを書いたように、今現在HT-03Aを使っているのですが、ひとつ問題が。
+
+まぁタイトルのまんまなのですが、標準のGmailアプリからメールを送るとヘッダがmultipart/alternativeになってしまいます。もちろんWebからだとtext/plainで送れます。multipart/alternativeについては詳しくは書きませんが、多分大抵の場合、HTMLメールとして受け取ることになると思います。
+
+<img src="http://img.skitch.com/20090716-e9kguk8wruw5t8p4a45qcruark.jpg" alt="alternative"/>
+
+それの何が問題かと言うと、携帯に送った場合それがデコメとして認識されて受け取った側が返信する際にデコメ作成画面になってしまうということです。
+
+要はメールを受けとる > 返信ボタンを押す > デコメ作成画面になる > 一々テキストメールに変更しなければならないといった感じに手間が増えてしまうのです。
+
+全部の携帯がそうかはわかりませんが、auのある携帯ではそういう動作になるようです(型番は忘れた)
+
+とりあえず、仕方がないので今のところは、Gmailアプリで受信(通知がくる) > メーラー(標準でついてくるGmail以外のメールを受信するやつ)でGmailを再度受信 > そっちで返信 とやるとなんとかtext/plainで送れます。非常に面倒です。他になにかいい方法があれば教えてください。
+
+ちなみに、この件でDoCoMoのサポセンに問合せたところ、「標準のGmailアプリではテキストメールしか送れません。細かいことはGmailのヘルプを参照してください。」と言われてしまいどうしたもんかなーといったところです。
+
+もし、誰か標準のGmailアプリでtext/plainでメールを送る方法をご存知でしたら教えてもらえるとありがたいです。
+</article><hr /><article><h2><a href="/2009/07/16/ht_03a_gtalk/">2009-07-16 HT-03AでGtalkまわりでハマッったのでメモ</a></h2>なんだか変なところではまるな、android。
 
 Gtalkでチャットをする時は大体クライアント側でその人を登録すると思うんですが、連絡帳にすでにその人が登録してあった場合、マージ的なことはしてくれません。具体的な例で説明した方がわかりやすいと思うので具体例しめします。
 
@@ -26,21 +43,4 @@ Gtalkでチャットをする時は大体クライアント側でその人を登
 ちなみに僕は一度Gtalkのフレンドリストが全部消えたのですが、多分連絡帳整理の際に一度連絡先を全て消したためだと思います。Gtalkのフレンドリストが消えないようにするには、上記のようにフレンド登録されたアカウントはそのまま残しておかないとダメなんだと思います。
 
 ちなみに、僕が知ってる範囲ですが、フレンド登録されているアカウントかどうかの区別はチャットができるかできないかでしか判断できないと思います。具体的に言うと連絡帳をWebで見たときに「チャット」のリンクがあるかどうかぐらいだと思います。
-</article><hr /><article><h2><a href="/2009/07/16/android_alternative/">2009-07-16 HT-03AのGmailアプリからメールを送るとmultipart/alternativeになる</a></h2>先日もエントリを書いたように、今現在HT-03Aを使っているのですが、ひとつ問題が。
-
-まぁタイトルのまんまなのですが、標準のGmailアプリからメールを送るとヘッダがmultipart/alternativeになってしまいます。もちろんWebからだとtext/plainで送れます。multipart/alternativeについては詳しくは書きませんが、多分大抵の場合、HTMLメールとして受け取ることになると思います。
-
-<img src="http://img.skitch.com/20090716-e9kguk8wruw5t8p4a45qcruark.jpg" alt="alternative"/>
-
-それの何が問題かと言うと、携帯に送った場合それがデコメとして認識されて受け取った側が返信する際にデコメ作成画面になってしまうということです。
-
-要はメールを受けとる > 返信ボタンを押す > デコメ作成画面になる > 一々テキストメールに変更しなければならないといった感じに手間が増えてしまうのです。
-
-全部の携帯がそうかはわかりませんが、auのある携帯ではそういう動作になるようです(型番は忘れた)
-
-とりあえず、仕方がないので今のところは、Gmailアプリで受信(通知がくる) > メーラー(標準でついてくるGmail以外のメールを受信するやつ)でGmailを再度受信 > そっちで返信 とやるとなんとかtext/plainで送れます。非常に面倒です。他になにかいい方法があれば教えてください。
-
-ちなみに、この件でDoCoMoのサポセンに問合せたところ、「標準のGmailアプリではテキストメールしか送れません。細かいことはGmailのヘルプを参照してください。」と言われてしまいどうしたもんかなーといったところです。
-
-もし、誰か標準のGmailアプリでtext/plainでメールを送る方法をご存知でしたら教えてもらえるとありがたいです。
 </article><hr /></div></body></html>

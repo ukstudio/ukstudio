@@ -8,7 +8,13 @@ _gaq.push(['_trackPageview']);
   var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
   ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
   var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-})();</script></head><body class="page page_5 page_5_index"><div class="header"><div class="header-navigation"><ul><li><i class="fa fa-twitter"></i><a href="http://twitter.com/ukstudio">Twitter</a></li><li><i class="fa fa-github-alt"></i><a href="http://github.com/ukstudio">GitHub</a></li></ul></div><div class="header-title"><a href="/">UKSTUDIO</a></div></div><div class="container"><article class="article-content"><h1 class="article--title"><a href="/2010/01/31/opensocial-ruby-client/">opensocial-ruby-clientでmixiのRESTful APIを使ってみた</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2010-01-31 00:00:00 UTC" pubdate="pubdate">January 31 2010</time></div><div class="article-tags"></div><div class="article-summary">opensocial-ruby-clientのドキュメントがあまり無くて結構苦労した。
+})();</script></head><body class="page page_5 page_5_index"><div class="header"><div class="header-navigation"><ul><li><i class="fa fa-twitter"></i><a href="http://twitter.com/ukstudio">Twitter</a></li><li><i class="fa fa-github-alt"></i><a href="http://github.com/ukstudio">GitHub</a></li></ul></div><div class="header-title"><a href="/">UKSTUDIO</a></div></div><div class="container"><article class="article-content"><h1 class="article--title"><a href="/2010/01/31/programmer_is_severe_job/">プログラマという職業は「ふつう」の人には厳しくないか</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2010-01-31 00:00:00 UTC" pubdate="pubdate">January 31 2010</time></div><div class="article-tags"></div><div class="article-summary">最近、実はプログラマという職業が「ふつう」の人には厳しいなーと思っていたりする。
+
+業務外にコードを書いたり、技術書などを読むというのは素晴らしいことだと思う。けど、会社側がもし「業務時間外にコードを書いたり、技術書を読んだり、勉強会に参加しなさい」と言ったら、それは業務時間外労働と変わらないと思う。個人のたのしみとは別に会社側がそれらを求めたらそれは業務だ。
+
+しかし、僕が思うにはそういう業務時間外に自主的に勉強をしないと、正直いってまともな品質なソフトウェアを作るのは難しい。
+
+例えば...</div><div class="read-more"><a href="/2010/01/31/programmer_is_severe_job/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2010/01/31/opensocial-ruby-client/">opensocial-ruby-clientでmixiのRESTful APIを使ってみた</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2010-01-31 00:00:00 UTC" pubdate="pubdate">January 31 2010</time></div><div class="article-tags"></div><div class="article-summary">opensocial-ruby-clientのドキュメントがあまり無くて結構苦労した。
 
 まず、opensocial-ruby-clientはRailsありきなんだけど、そこで修正が必要。
 <script src="http://gist.github.com/291049.js?file=action_controller_request.rb"></script>
@@ -123,16 +129,7 @@ OAuthは難しい話を抜きにしてしまえば、期限つきパスワード
 メンテナンスと言うか、設定を一からやりなおしたかったのと、CentOSに飽きたのでたまには違うディストリビューションにしたかったので、Gentooでビルドしなおしてました。
 
 ブログのテーマとかも追々直していきますが、とりあえず見れるところまで。
-</div><div class="read-more"><a href="/2009/07/27/server_maintenance/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2009/07/16/ht_03a_gtalk/">HT-03AでGtalkまわりでハマッったのでメモ</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2009-07-16 00:00:00 UTC" pubdate="pubdate">July 16 2009</time></div><div class="article-tags"></div><div class="article-summary">なんだか変なところではまるな、android。
-
-Gtalkでチャットをする時は大体クライアント側でその人を登録すると思うんですが、連絡帳にすでにその人が登録してあった場合、マージ的なことはしてくれません。具体的な例で説明した方がわかりやすいと思うので具体例しめします。
-
-<ol>
-<li>連絡帳にすでにAさんが登録してあり、携帯アドレスとGmailアドレスが登録されています</li>
-<li>その人とGtalkで会話したいのですが、連絡帳に登録してあっても一度フレンド登録しないといけなません</li>
-<li>なのでフレンド登録する</li>
-<li>無事...</li>
-</ol></div><div class="read-more"><a href="/2009/07/16/ht_03a_gtalk/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2009/07/16/android_alternative/">HT-03AのGmailアプリからメールを送るとmultipart/alternativeになる</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2009-07-16 00:00:00 UTC" pubdate="pubdate">July 16 2009</time></div><div class="article-tags"></div><div class="article-summary">先日もエントリを書いたように、今現在HT-03Aを使っているのですが、ひとつ問題が。
+</div><div class="read-more"><a href="/2009/07/27/server_maintenance/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2009/07/16/android_alternative/">HT-03AのGmailアプリからメールを送るとmultipart/alternativeになる</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2009-07-16 00:00:00 UTC" pubdate="pubdate">July 16 2009</time></div><div class="article-tags"></div><div class="article-summary">先日もエントリを書いたように、今現在HT-03Aを使っているのですが、ひとつ問題が。
 
 まぁタイトルのまんまなのですが、標準のGmailアプリからメールを送るとヘッダがmultipart/alternativeになってしまいます。もちろんWebからだとtext/plainで送れます。multipart/alternativeについては詳しくは書きませんが、多分大抵の場合、HTMLメールとして受け取ることになると思います。
 

@@ -8,7 +8,16 @@ _gaq.push(['_trackPageview']);
   var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
   ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
   var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-})();</script></head><body class="page page_6 page_6_index"><div class="header"><div class="header-navigation"><ul><li><i class="fa fa-twitter"></i><a href="http://twitter.com/ukstudio">Twitter</a></li><li><i class="fa fa-github-alt"></i><a href="http://github.com/ukstudio">GitHub</a></li></ul></div><div class="header-title"><a href="/">UKSTUDIO</a></div></div><div class="container"><article class="article-content"><h1 class="article--title"><a href="/2009/07/14/rails_oauth_twitter/">RailsからOAuthを利用してTwitterにポストする</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2009-07-14 00:00:00 UTC" pubdate="pubdate">July 14 2009</time></div><div class="article-tags"></div><div class="article-summary">OAuthの細かい説明は抜き。
+})();</script></head><body class="page page_6 page_6_index"><div class="header"><div class="header-navigation"><ul><li><i class="fa fa-twitter"></i><a href="http://twitter.com/ukstudio">Twitter</a></li><li><i class="fa fa-github-alt"></i><a href="http://github.com/ukstudio">GitHub</a></li></ul></div><div class="header-title"><a href="/">UKSTUDIO</a></div></div><div class="container"><article class="article-content"><h1 class="article--title"><a href="/2009/07/16/ht_03a_gtalk/">HT-03AでGtalkまわりでハマッったのでメモ</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2009-07-16 00:00:00 UTC" pubdate="pubdate">July 16 2009</time></div><div class="article-tags"></div><div class="article-summary">なんだか変なところではまるな、android。
+
+Gtalkでチャットをする時は大体クライアント側でその人を登録すると思うんですが、連絡帳にすでにその人が登録してあった場合、マージ的なことはしてくれません。具体的な例で説明した方がわかりやすいと思うので具体例しめします。
+
+<ol>
+<li>連絡帳にすでにAさんが登録してあり、携帯アドレスとGmailアドレスが登録されています</li>
+<li>その人とGtalkで会話したいのですが、連絡帳に登録してあっても一度フレンド登録しないといけなません</li>
+<li>なのでフレンド登録する</li>
+<li>無事...</li>
+</ol></div><div class="read-more"><a href="/2009/07/16/ht_03a_gtalk/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2009/07/14/rails_oauth_twitter/">RailsからOAuthを利用してTwitterにポストする</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2009-07-14 00:00:00 UTC" pubdate="pubdate">July 14 2009</time></div><div class="article-tags"></div><div class="article-summary">OAuthの細かい説明は抜き。
 
 まず、OAuthを使うためにはTwitterでアプリケーションの登録が必要なので、<a href="http://twitter.com/oauth_clients">http://twitter.com/oauth_clients</a>で登録をしておいてください。 以下のコードの6行目の部分を取得したConsumer keyとConsumer secretをに置き換えてください。
 
@@ -69,15 +78,15 @@ email_specはgithubをsourceに指定してインストールすることがで�
 <blockquote>
 Foobar Hacksが出版されている昨今、是非Vim Hacksを出そうではないか! という訳で、手始めに有志を募って各々のVim Hacksをvim-users.jpにて認め、頃合いを見計らって企画を持ちかけよう! という計画。</blockquote>
 
-とりあえず僕も参加します。僕の記事は29日0時に公開予定です。現在5人のローテーションで1hack/2day...</div><div class="read-more"><a href="/2009/04/28/vim_hacks_project/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2009/04/20/cucumber/">Cucumberの登場でRailsのテスティング環境が変わった</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2009-04-20 00:00:00 UTC" pubdate="pubdate">April 20 2009</time></div><div class="article-tags"></div><div class="article-summary">ちょっと大げさなタイトルかもしれないですが、個人的にはそれぐらいの感動。「これで勝つる!」な気分。何に勝つのか知らないけれど。
-
-今までのRailsのテストはもっぱらRSpecで書いてて、確かにこれはこれで素晴らしい。採用当初はバグが減ってその時も「これで勝つる!」な気分でした。でもやっぱり受け入れテストがネックになるんですよね。Seleniumとかも使ったりしてましたけど、ブラウザががちゃがちゃ動くし、なんとなく面倒で結局手動で確認という感じになってしまいました。
-
-そこでCucumber...</div><div class="read-more"><a href="/2009/04/20/cucumber/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2009/04/20/atmarkit_1986/">@ITの86世代の記事に載りました</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2009-04-20 00:00:00 UTC" pubdate="pubdate">April 20 2009</time></div><div class="article-tags"></div><div class="article-summary">今月頭に<a href="http://jibun.atmarkit.co.jp/ljibun01/cs/200904/05/01.html">「ハチロク世代」がIT業界を変える日</a>という記事の取材を受けてて、先日その記事が公開されました。頭ぼさぼさの人が僕です。
+とりあえず僕も参加します。僕の記事は29日0時に公開予定です。現在5人のローテーションで1hack/2day...</div><div class="read-more"><a href="/2009/04/28/vim_hacks_project/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2009/04/20/atmarkit_1986/">@ITの86世代の記事に載りました</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2009-04-20 00:00:00 UTC" pubdate="pubdate">April 20 2009</time></div><div class="article-tags"></div><div class="article-summary">今月頭に<a href="http://jibun.atmarkit.co.jp/ljibun01/cs/200904/05/01.html">「ハチロク世代」がIT業界を変える日</a>という記事の取材を受けてて、先日その記事が公開されました。頭ぼさぼさの人が僕です。
 
 まぁ大したことは話してないので、補足とかは特にないんですが、実際のところはタイトルに反して当の本人達は「おれたちがIT業界を変えるぞ!」っていう感じではないのかなーと。少なくとも自分自身と近しい86世代の人達は。(あくまでおれの印象だけど)
 
-個人的な感覚としては同年代の頑張りをみて「おれもがんばるぞ!」的なモチベーションにつながればいいかなって感じ。なんだかん...</div><div class="read-more"><a href="/2009/04/20/atmarkit_1986/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2009/04/14/accepts_nested_attributes_for/">accepts_nested_attributes_forしたモデルの日本語化</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2009-04-14 00:00:00 UTC" pubdate="pubdate">April 14 2009</time></div><div class="article-tags"></div><div class="article-summary">名前、長いよね。accepts_nested_attributes_for。以下、ネストしたって言います。長いので。
+個人的な感覚としては同年代の頑張りをみて「おれもがんばるぞ!」的なモチベーションにつながればいいかなって感じ。なんだかん...</div><div class="read-more"><a href="/2009/04/20/atmarkit_1986/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2009/04/20/cucumber/">Cucumberの登場でRailsのテスティング環境が変わった</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2009-04-20 00:00:00 UTC" pubdate="pubdate">April 20 2009</time></div><div class="article-tags"></div><div class="article-summary">ちょっと大げさなタイトルかもしれないですが、個人的にはそれぐらいの感動。「これで勝つる!」な気分。何に勝つのか知らないけれど。
+
+今までのRailsのテストはもっぱらRSpecで書いてて、確かにこれはこれで素晴らしい。採用当初はバグが減ってその時も「これで勝つる!」な気分でした。でもやっぱり受け入れテストがネックになるんですよね。Seleniumとかも使ったりしてましたけど、ブラウザががちゃがちゃ動くし、なんとなく面倒で結局手動で確認という感じになってしまいました。
+
+そこでCucumber...</div><div class="read-more"><a href="/2009/04/20/cucumber/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2009/04/14/accepts_nested_attributes_for/">accepts_nested_attributes_forしたモデルの日本語化</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2009-04-14 00:00:00 UTC" pubdate="pubdate">April 14 2009</time></div><div class="article-tags"></div><div class="article-summary">名前、長いよね。accepts_nested_attributes_for。以下、ネストしたって言います。長いので。
 
 最近はもっぱら日本語化はi18nにしてるんですが、今回ちょこっとこのネスト関係ではまったのでメモ。
 
@@ -160,11 +169,4 @@ id:hrkt0115311さんもすすめてたけど、たのしいRubyを読んだの�
 おれのだ!
 
 当日はtwitterの関西忘年会の二次会真っ最中な気がするけど、イーモバイルで繋げられそうだったら繋げよう。
-</div><div class="read-more"><a href="/2008/12/18/vimrc_reading/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2008/12/08/action-coding/">JRubyとProcessing1.1でaction-coding!</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2008-12-08 00:00:00 UTC" pubdate="pubdate">December 08 2008</time></div><div class="article-tags"></div><div class="article-summary">せっかくProcessingも正式版になったことだし、少しaction-codingで遊んでみる。
-
-まずはJRubyをインストール。面倒なのでバイナリで。環境はMac OSX 10.5.5。
-
-<a href="http://dist.codehaus.org/jruby/">http://dist.codehaus.org/jruby/</a>からjruby-bin-1.1.5.tar.gz(バージョンは適宜読み替え)をダウンロード。現時点では1.1.5をインストールしておけば大丈夫だろう。解凍したら適当な位置に移動。
-
-<pre lang="bash">
-$ tar zxvf jruby-bin-1.1.5...</pre></div><div class="read-more"><a href="/2008/12/08/action-coding/">READ MORE</a></div></article><div class="pager"><ul><li class="previous"><a href="/page/5/">Prev</a></li><li class="next"><a href="/page/7/">Next</a></li></ul></div></div></body></html>
+</div><div class="read-more"><a href="/2008/12/18/vimrc_reading/">READ MORE</a></div></article><div class="pager"><ul><li class="previous"><a href="/page/5/">Prev</a></li><li class="next"><a href="/page/7/">Next</a></li></ul></div></div></body></html>
