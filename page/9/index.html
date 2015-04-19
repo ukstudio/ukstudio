@@ -8,7 +8,18 @@ _gaq.push(['_trackPageview']);
   var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
   ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
   var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-})();</script></head><body class="page page_9 page_9_index"><div class="header"><div class="header-navigation"><ul><li><i class="fa fa-twitter"></i><a href="http://twitter.com/ukstudio">Twitter</a></li><li><i class="fa fa-github-alt"></i><a href="http://github.com/ukstudio">GitHub</a></li></ul></div><div class="header-title"><a href="/">UKSTUDIO</a></div></div><div class="container"><article class="article-content"><h1 class="article--title"><a href="/2008/01/12/ruby_tumblr_getimages_2nd/">Tumblrの全画像を取得するRubyスクリプト改</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2008-01-12 00:00:00 UTC" pubdate="pubdate">January 12 2008</time></div><div class="article-tags"></div><div class="article-summary"><a href="http://uk-studio.net/2008/01/11/ruby_tumblr_getimages/">Tumblrの全画像を取得するRubyスクリプトを書いた・・・けど</a>
+})();</script></head><body class="page page_9 page_9_index"><div class="header"><div class="header-navigation"><ul><li><i class="fa fa-twitter"></i><a href="http://twitter.com/ukstudio">Twitter</a></li><li><i class="fa fa-github-alt"></i><a href="http://github.com/ukstudio">GitHub</a></li></ul></div><div class="header-title"><a href="/">UKSTUDIO</a></div></div><div class="container"><article class="article-content"><h1 class="article--title"><a href="/2008/01/22/yaboo/">野望新年会に参加してきました</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2008-01-22 00:00:00 UTC" pubdate="pubdate">January 22 2008</time></div><div class="article-tags"></div><div class="article-summary">書くのが遅くなっちゃいましたが、なんとかエントリーアップです。
+
+
+<a href="http://www.yabooo.org/archives/13">いずれにせよ野望新年会2008</a>
+
+19日、pinkmacさん主催の野望新年会に乗り込んできました。きっかけとしてはpinkmacさんの1981sでのエントリー。(<a href="http://born1981.g.hatena.ne.jp/pinkmac/20080108/1199798490">いま、日本のITは変わるかもしれない</a>)
+
+
+1986って書いてあったので、せっかくだから行ってみるかーぐらいのノリ。こっそり1986sの方で<a href="http://generation1986.g.hatena.ne.jp/ukstudio/20080111/1200060303">宣伝</a>してたわけだけど、86sの人に聞いたら結構これを見て知ったって人が何人かいた。よかったよかった。
+
+
+参加者は大体20人...</div><div class="read-more"><a href="/2008/01/22/yaboo/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2008/01/12/ruby_tumblr_getimages_2nd/">Tumblrの全画像を取得するRubyスクリプト改</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2008-01-12 00:00:00 UTC" pubdate="pubdate">January 12 2008</time></div><div class="article-tags"></div><div class="article-summary"><a href="http://uk-studio.net/2008/01/11/ruby_tumblr_getimages/">Tumblrの全画像を取得するRubyスクリプトを書いた・・・けど</a>
 
 上のエントリーのコードを書き直した。これで10kb未満の画像でも問題ないはず。それとTumblrのIDを引数で与えるようにも修正した。独自ドメインのやつには対応してないです。ごめんなさい。
 
@@ -247,20 +258,4 @@ class BrainFuck
 
       case @code[@code_ptr]
       when ?&gt;
-        @mem_ptr...</pre></div><div class="read-more"><a href="/2007/11/24/ruby_brainfuck/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2007/11/22/re_startruby/">Re: Try Ruby! 第1章</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2007-11-22 00:00:00 UTC" pubdate="pubdate">November 22 2007</time></div><div class="article-tags"></div><div class="article-summary">msngさんがstartRubyというブログを始めたようです。せっかくなんで少しだけ補足しとこうかな。
-
-<a href="http://startruby.com/20071122.html">Try Ruby! 第1章</a>
-
-<h2>演算子(一部除く)は再定義可能なメソッド</h2>
-Rubyの演算子は一部を除いて再定義可能なメソッド。例えば「+」演算子をメソッド呼び出しと同じ構文で書くことができる。
-<pre lang="ruby">
-1 + 1
-#=&gt; 2
-1.+(1)
-#=. 2
-</pre>
-メソッド呼び出しの構文
-<blockquote>
-オブジェクト.メソッド名(引数1, 引数2,  ....)
-</blockquote>
-ちなみにこの構文のオブジェクトのことをレシーバって言い...</div><div class="read-more"><a href="/2007/11/22/re_startruby/">READ MORE</a></div></article><div class="pager"><ul><li class="previous"><a href="/page/8/">Prev</a></li><li class="next"><a href="/page/10/">Next</a></li></ul></div></div></body></html>
+        @mem_ptr...</pre></div><div class="read-more"><a href="/2007/11/24/ruby_brainfuck/">READ MORE</a></div></article><div class="pager"><ul><li class="previous"><a href="/page/8/">Prev</a></li><li class="next"><a href="/page/10/">Next</a></li></ul></div></div></body></html>

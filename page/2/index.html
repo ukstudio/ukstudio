@@ -8,7 +8,17 @@ _gaq.push(['_trackPageview']);
   var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
   ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
   var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-})();</script></head><body class="page page_2 page_2_index"><div class="header"><div class="header-navigation"><ul><li><i class="fa fa-twitter"></i><a href="http://twitter.com/ukstudio">Twitter</a></li><li><i class="fa fa-github-alt"></i><a href="http://github.com/ukstudio">GitHub</a></li></ul></div><div class="header-title"><a href="/">UKSTUDIO</a></div></div><div class="container"><article class="article-content"><h1 class="article--title"><a href="/2012/04/09/tddconf2012/">TDDカンファレンスでLTしてきたのでその補足</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2012-04-09 00:00:00 UTC" pubdate="pubdate">April 09 2012</time></div><div class="article-tags"></div><div class="article-summary">4月の6日の<a href="http://atnd.org/events/26808">TDDカンファレンス</a>に参加&amp;LT発表してきた。参加といっても遅刻していったのでほとんど話を聞けていないのだけれど。
+})();</script></head><body class="page page_2 page_2_index"><div class="header"><div class="header-navigation"><ul><li><i class="fa fa-twitter"></i><a href="http://twitter.com/ukstudio">Twitter</a></li><li><i class="fa fa-github-alt"></i><a href="http://github.com/ukstudio">GitHub</a></li></ul></div><div class="header-title"><a href="/">UKSTUDIO</a></div></div><div class="container"><article class="article-content"><h1 class="article--title"><a href="/2012/09/11/validates_presence_of/">validates :foo_id, :presence => trueを追う</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2012-09-11 00:00:00 UTC" pubdate="pubdate">September 11 2012</time></div><div class="article-tags"></div><div class="article-summary">チームメンバーから「validates_presence_of :user_idはそのuser_idが存在するか確かめてくれる」という情報を得て、そんな隠れ仕様あんの?とおもってちょっと調べてみた。
+
+結論だけまず言うと
+<pre>
+validates :user_id, :presence =&gt; true
+validates_presence_of :user_id
+</pre>
+ではなく、
+<pre>
+validates :user, :presence =&gt; true
+validates_presence_of...</pre></div><div class="read-more"><a href="/2012/09/11/validates_presence_of/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2012/04/09/tddconf2012/">TDDカンファレンスでLTしてきたのでその補足</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2012-04-09 00:00:00 UTC" pubdate="pubdate">April 09 2012</time></div><div class="article-tags"></div><div class="article-summary">4月の6日の<a href="http://atnd.org/events/26808">TDDカンファレンス</a>に参加&amp;LT発表してきた。参加といっても遅刻していったのでほとんど話を聞けていないのだけれど。
 
 とりあえず資料は<a href="http://ukstudio.github.com/tddconf_20120406/">こちら</a>。読み直してみたら途中の話の飛躍がこれはひどい。当日もかなり短い発表の上に色々内容を省いてしまったので色々と補足しておく。(当日聞いていただいた方に申し訳ないし、あまりこういうのはよくないね。パブリックスピーカー読んででなおします。)
 
@@ -19,15 +29,7 @@ Facebookには届出を出した時点で結婚したことを書いたんです
 今のところ式は予定していないので、近いうちにパーティ的なことはしたいなと考えています。その時は改めて近しい皆様にはご招待させていただきます。
 
 以上、簡単ではありますが結婚のご報告でした。
-...</div><div class="read-more"><a href="/2012/04/02/married/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2012/02/20/study_ruby_at_spicelife/">ruby勉強会@spicelife</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2012-02-20 00:00:00 UTC" pubdate="pubdate">February 20 2012</time></div><div class="article-tags"></div><div class="article-summary"><a href="http://twitter.com/holygrail" target="_blank">@holygrail</a>に何か話してよと頼まれたので適当に話してきた。
-
-<a href="http://ukstudio.github.com/ruby-study-2012-02-17/" target="_blank">資料</a>
-
-なんか当日、話す時に使った資料は古いやつだったみたい。どおりで何か違和感があると思った。
-
-うっかり対象者を<a href="http://www.amazon.co.jp/gp/product/4873113679?ie=UTF8&amp;tag=ukstudio0c-22&amp;linkCode=shr&amp;camp=1207&amp;creative=8411&amp;creativeASIN=4873113679&amp;ref_=sr_1_1&amp;qid=1329744986&amp;sr=8-1" target="_blank">初めてのRuby</a>を読んだ人ぐらいを対象にしてたけど全然そんなことなかった。「define_methodをsendで呼び出すとわかると思うんですけど」「まずはsendがわからないんじゃない?」みたいな。結構早口だったし、資料も大分内容が薄いので大半の人はわからなかったかも。大変申し訳ない。
-
-...</div><div class="read-more"><a href="/2012/02/20/study_ruby_at_spicelife/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2012/02/20/motivation_benkyo-ka/">勉強会とかで話す時のモチベーション</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2012-02-20 00:00:00 UTC" pubdate="pubdate">February 20 2012</time></div><div class="article-tags"></div><div class="article-summary"><ul>
+...</div><div class="read-more"><a href="/2012/04/02/married/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2012/02/20/motivation_benkyo-ka/">勉強会とかで話す時のモチベーション</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2012-02-20 00:00:00 UTC" pubdate="pubdate">February 20 2012</time></div><div class="article-tags"></div><div class="article-summary"><ul>
 <li>その勉強会やコミュニティから得たものがあるので、恩返ししたい</li>
 <li>主催者もしくは声をかけてくれた人にお世話になったことがあるので恩返ししたい</li>
 <li>勉強会の目的・主旨に賛同し、何らかの協力をしたい</li>
@@ -37,7 +39,15 @@ Facebookには届出を出した時点で結婚したことを書いたんです
 </ul>
 
 ぐだぐだ言ったけど、最終的には気分である。
-</div><div class="read-more"><a href="/2012/02/20/motivation_benkyo-ka/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2012/01/11/rails3_primary_key_foreign_key_big_int/">rails3でprimary keyとforeign keyをbig intにする</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2012-01-11 00:00:00 UTC" pubdate="pubdate">January 11 2012</time></div><div class="article-tags"></div><div class="article-summary">以下は、PostgreSQLの例。
+</div><div class="read-more"><a href="/2012/02/20/motivation_benkyo-ka/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2012/02/20/study_ruby_at_spicelife/">ruby勉強会@spicelife</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2012-02-20 00:00:00 UTC" pubdate="pubdate">February 20 2012</time></div><div class="article-tags"></div><div class="article-summary"><a href="http://twitter.com/holygrail" target="_blank">@holygrail</a>に何か話してよと頼まれたので適当に話してきた。
+
+<a href="http://ukstudio.github.com/ruby-study-2012-02-17/" target="_blank">資料</a>
+
+なんか当日、話す時に使った資料は古いやつだったみたい。どおりで何か違和感があると思った。
+
+うっかり対象者を<a href="http://www.amazon.co.jp/gp/product/4873113679?ie=UTF8&amp;tag=ukstudio0c-22&amp;linkCode=shr&amp;camp=1207&amp;creative=8411&amp;creativeASIN=4873113679&amp;ref_=sr_1_1&amp;qid=1329744986&amp;sr=8-1" target="_blank">初めてのRuby</a>を読んだ人ぐらいを対象にしてたけど全然そんなことなかった。「define_methodをsendで呼び出すとわかると思うんですけど」「まずはsendがわからないんじゃない?」みたいな。結構早口だったし、資料も大分内容が薄いので大半の人はわからなかったかも。大変申し訳ない。
+
+...</div><div class="read-more"><a href="/2012/02/20/study_ruby_at_spicelife/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2012/01/11/rails3_primary_key_foreign_key_big_int/">rails3でprimary keyとforeign keyをbig intにする</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2012-01-11 00:00:00 UTC" pubdate="pubdate">January 11 2012</time></div><div class="article-tags"></div><div class="article-summary">以下は、PostgreSQLの例。
 <code><pre>ActiveRecord::ConnectionAdapters::PostgreSQLAdapter::NATIVE_DATABASE_TYPES[:primary_key] = 'bigserial primary key' </pre></code>
 外部キーの場合、<code>t.references :user</code>とか書いてると、ActiveRecord側でintegerがハードコーディングされているのでlimitオプションを付けるしかなさそう。
 <code><pre>t.references :user...</pre></code></div><div class="read-more"><a href="/2012/01/11/rails3_primary_key_foreign_key_big_int/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2011/10/12/lvm_kvm/">LVMを使っているKVMのディスクイメージの容量を追加する</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2011-10-12 00:00:00 UTC" pubdate="pubdate">October 12 2011</time></div><div class="article-tags"></div><div class="article-summary">KVMのディスクイメージの容量を増やしたのでメモ。
@@ -132,11 +142,4 @@ $ ./configure --enable-multibyte --prefix=$HOME/local --enable-rubyinterp</code>
 幸いなことにarchive.orgに記事のアーカイブが残っている。ただ、このarchive.orgが検索でまともにヒットしないので、せめて今後この記事を探す人がいた時のことを考えてここにリンクを貼っておく。
 
 <a href="http://web.archive.org/web/20080803072849/www.biwa.ne.jp/~mmura/SoftwareDevelopment/WhatIsSoftwareDesignJ.html"> ソフトウェア設計とは何か?</a>
-</div><div class="read-more"><a href="/2011/01/20/what_is_software_design/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2011/01/01/2010_retrospective/">2010年のふりかえり</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2011-01-01 00:00:00 UTC" pubdate="pubdate">January 01 2011</time></div><div class="article-tags"></div><div class="article-summary">新年あけましておめでとうございます。今年もどうぞよろしくお願い致します。
-
-去年のふりかえりの記事を去年中に書けなかったので、新年早々ブログを書いております。
-
-<h2>お仕事</h2>
-去年頭からフリーランスとして働きはじめてるけどまずは1年過ごせた。特に営業をせずともいくつかお仕事の紹介を頂いたり、実際にお手伝いさせてもらったりできるのは本当にありがたいことだなぁと思う。もし愛想つかしていらっしゃなければ今年もどうぞよろしくお願い致します。
-
-あと去年執筆したWEB+DBの記事は、思いの外...</div><div class="read-more"><a href="/2011/01/01/2010_retrospective/">READ MORE</a></div></article><div class="pager"><ul><li class="previous"><a href="/">Prev</a></li><li class="next"><a href="/page/3/">Next</a></li></ul></div></div></body></html>
+</div><div class="read-more"><a href="/2011/01/20/what_is_software_design/">READ MORE</a></div></article><div class="pager"><ul><li class="previous"><a href="/">Prev</a></li><li class="next"><a href="/page/3/">Next</a></li></ul></div></div></body></html>

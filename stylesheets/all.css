@@ -2281,10 +2281,18 @@ pre {
       .article-tags ul li a {
         text-decoration: none; }
 
-/* line 184, /Users/ukstudio/.ghq/github.com/ukstudio/ukstudio.github.io/source/stylesheets/all.css.scss */
+/* line 182, /Users/ukstudio/.ghq/github.com/ukstudio/ukstudio.github.io/source/stylesheets/all.css.scss */
+.article-summary img {
+  width: 90%; }
+
+/* line 188, /Users/ukstudio/.ghq/github.com/ukstudio/ukstudio.github.io/source/stylesheets/all.css.scss */
+.article-body img {
+  width: 90%; }
+
+/* line 193, /Users/ukstudio/.ghq/github.com/ukstudio/ukstudio.github.io/source/stylesheets/all.css.scss */
 .read-more {
   text-align: center; }
-  /* line 186, /Users/ukstudio/.ghq/github.com/ukstudio/ukstudio.github.io/source/stylesheets/all.css.scss */
+  /* line 195, /Users/ukstudio/.ghq/github.com/ukstudio/ukstudio.github.io/source/stylesheets/all.css.scss */
   .read-more a {
     display: inline-block;
     background-origin: border-box;

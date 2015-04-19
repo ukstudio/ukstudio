@@ -4,10 +4,28 @@
   <id>http://ukstudio.jp</id>
   <link href="http://ukstudio.jp"/>
   <link href="http://ukstudio.jp/feed.xml" rel="self"/>
-  <updated>2015-04-10T05:08:00Z</updated>
+  <updated>2015-04-19T15:20:00Z</updated>
   <author>
     <name>AKAMATSU Yuki</name>
   </author>
+  <entry>
+    <title>特定のGemの更新情報を追う</title>
+    <link rel="alternate" href="http://ukstudio.jp/2015/04/19/follow-update-of-gem/"/>
+    <id>http://ukstudio.jp/2015/04/19/follow-update-of-gem/</id>
+    <published>2015-04-19T15:20:00Z</published>
+    <updated>2015-04-20T00:31:42+09:00</updated>
+    <author>
+      <name>AKAMATSU Yuki</name>
+    </author>
+    <content type="html">&lt;p&gt;コード自体を追うなら大体GitHubで事足りるけど、Gemがリリースされたのを追いたいときにはRubyGems.orgのSubscribe使えばよさそうだったのでメモ。&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt="Click subscribe link" src="/images/2015-04-20-follow-update-of-gem-01.png" /&gt;&lt;/p&gt;
+
+&lt;p&gt;RubyGems.orgの適当なGemのページを開くと右下の方にSubscribeというリンクがある。このリンクをクリックするとDashboardにそのGemの更新情報が表示される。あとはそこに表示されているRSSを追えばOK。&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt="Get dashboard's rss" src="/images/2015-04-20-follow-update-of-gem-02.png" /&gt;&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>「マイクロソフトを辞めて、オフィスのない会社で働いてみた」読了した</title>
     <link rel="alternate" href="http://ukstudio.jp/2015/04/10/the_year_without_pants/"/>
@@ -182,32 +200,6 @@
 &lt;p&gt;タッチ感だけど、音はクリア軸のせいかTEX Yodaがそうなのかわからないけど、ちょっとちゃっちい音のような気もする。クリック感は個人的には大分気に入っていて、HHK、KinesisとTEX Yoda(クリア軸)だったらTEX Yodaが一番好み。ちなみにAlphaGripは俺の中では黒歴史化している。&lt;/p&gt;
 
 &lt;p&gt;今massdropをみると$199までもうちょいなので、興味ある人は買っていきましょう。ハンダ付けも$25でやってくれる模様。買って損はしないキーボードだと思います。実物みないと…という人は弊社に2つあるので遊びにくるとよいですよ。&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
-    <title>株式会社spice lifeに入社しました</title>
-    <link rel="alternate" href="http://ukstudio.jp/2015/01/01/joined_spicelife/"/>
-    <id>http://ukstudio.jp/2015/01/01/joined_spicelife/</id>
-    <published>2015-01-01T01:01:00Z</published>
-    <updated>2015-01-01T11:46:01+09:00</updated>
-    <author>
-      <name>AKAMATSU Yuki</name>
-    </author>
-    <content type="html">&lt;p&gt;あけましておめでとうございます。今年もどうぞよろしくお願いいたします。&lt;/p&gt;
-
-&lt;p&gt;さて、タイトル通りではありますが、&lt;strong&gt;本日2015年1月1日から株式会社spice lifeに入社しました&lt;/strong&gt;。社員です。&lt;/p&gt;
-
-&lt;blockquote style='text-align: center' class="twitter-tweet" lang="en"&gt;&lt;p&gt;入社&lt;/p&gt;&amp;mdash; ゆーけー/赤松 祐希 (@ukstudio) &lt;a href="https://twitter.com/ukstudio/status/550306578851569668"&gt;December 31, 2014&lt;/a&gt;&lt;/blockquote&gt;
-
-&lt;script async src="//platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;
-
-&lt;p&gt;なので2010年(だったかな)から続いていたフリーランス業も一旦終わりになります。フリーランスの時には様々な人にお世話になりました。本当に感謝の言葉しかでてきません。一部の方々にはご迷惑をお掛けしてしまったこともあります。本来直接伝えることなのでしょうがここで簡単にでもお詫びと感謝の気持ちを述べさせてください。本当にありがとうございました。&lt;/p&gt;
-
-&lt;p&gt;spice lifeには6月の終わり頃からフリーランスとして契約させてもらっていてとりあえず半年契約しましょう、その後はその半年働いてよかったら再契約しましょう、という感じでした。ところがどっこい、再契約どころか正式に入社という運びとなりました。元々社員に近い形で働いていたので働き方的にはあまり大きく変わりはしませんが、4年程度フリーランスをしていたのでちょっと感慨深くあります。&lt;/p&gt;
-
-&lt;p&gt;ここ最近はリリースの時にもこのブログで&lt;a href="/2014/11/27/spotlights-jp/"&gt;お知らせ&lt;/a&gt;した&lt;a href="https://spotlights.jp/"&gt;SPOTLIGHTS&lt;/a&gt;というサービスの開発に携わっています。もうしばらく携わっていく予定ですので何卒よろしくおねがいします。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href="http://amzn.to/ukstudio"&gt;ｳｨｯｽﾘｽﾄ&lt;/a&gt;&lt;/p&gt;
 </content>
   </entry>
 </feed>
