@@ -8,7 +8,19 @@ _gaq.push(['_trackPageview']);
   var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
   ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
   var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-})();</script></head><body class="page page_8 page_8_index"><div class="header"><div class="header-navigation"><ul><li><i class="fa fa-twitter"></i><a href="http://twitter.com/ukstudio">Twitter</a></li><li><i class="fa fa-github-alt"></i><a href="http://github.com/ukstudio">GitHub</a></li></ul></div><div class="header-title"><a href="/">UKSTUDIO</a></div></div><div class="container"><article class="article-content"><h1 class="article--title"><a href="/2008/08/08/quill/">Quillリリースおめでとうございます</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2008-08-08 00:00:00 UTC" pubdate="pubdate">August 08 2008</time></div><div class="article-tags"></div><div class="article-summary"><a href="http://quill.to/">Quill [羽根のように軽い、メモメモwebサービス]</a>
+})();</script></head><body class="page page_8 page_8_index"><div class="header"><div class="header-navigation"><ul><li><i class="fa fa-twitter"></i><a href="http://twitter.com/ukstudio">Twitter</a></li><li><i class="fa fa-github-alt"></i><a href="http://github.com/ukstudio">GitHub</a></li></ul></div><div class="header-title"><a href="/">UKSTUDIO</a></div></div><div class="container"><article class="article-content"><h1 class="article--title"><a href="/2008/08/13/ruby_on_rails_partial/">Railsのpartialの使い方</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2008-08-13 00:00:00 UTC" pubdate="pubdate">August 13 2008</time></div><div class="article-tags"></div><div class="article-summary">あまりpartialをちゃんと使いこなせていない気がするので(いつもインスタンス変数で適当に値わたしてる)使い方をちょっとメモ。
+
+<pre lang="ruby">
+render :partial =&gt; 'entry'
+</pre>
+
+一番基本となるpartialの使い方。_entry.html.erbを描画。
+
+<pre lang="ruby">
+render :partial =&gt; 'entry', :locals =&gt; {:title =&gt; "タイトル"}
+</pre>
+
+localsでpartial側に値を渡す。partial側ではローカル変数titleで文字列"タイト...</div><div class="read-more"><a href="/2008/08/13/ruby_on_rails_partial/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2008/08/08/quill/">Quillリリースおめでとうございます</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2008-08-08 00:00:00 UTC" pubdate="pubdate">August 08 2008</time></div><div class="article-tags"></div><div class="article-summary"><a href="http://quill.to/">Quill [羽根のように軽い、メモメモwebサービス]</a>
 <a href="http://blog.inafog.jp/archives/314">blog in a fog &gt;&gt; Quillリリースしました</a>
 <a href="http://blog.woopsdez.jp/?p=841">ウープスデザインブログ &gt;&gt; 羽根のように軽いメモメモwebサービス 「Quill」公開されました</a>
 
@@ -181,10 +193,4 @@ vim-ruby-install.rbを実行するとインストール先の選択肢が表示�
 「いい嫁」程度のお遊びのつもりでいたら、結構な騒ぎになっちゃっいました。とりあえずあのまとめを見ても、初心者の人は混乱してしまうと思うので自分なりに初心者さんへのメッセージもこめてエントリーを書いてみました。
 
 <h2>簡単な流れの説明</h2>
-一応簡単に今回の流れを説明しておくと、「初心者用言語」の流れの発端はまつもとさんの「<a href="http://www.rubyist.net/~matz/20080204.html#p01">初心者向けの言語</a>」。その後に、amachangの「<a href="http://d.hatena.ne.jp/amachang/20080204/1202096633">最もタメになる「初心者用言語」はJavaScript</a></div><div class="read-more"><a href="/2008/02/07/programming_for_beginner/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2008/02/02/doukaku_lifegame/">Rubyでライフゲーム書いた</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2008-02-02 00:00:00 UTC" pubdate="pubdate">February 02 2008</time></div><div class="article-tags"></div><div class="article-summary"><a href="http://ja.doukaku.org/comment/5581/">どう書く?org #5581</a>
-
-久々にどう書くorgに投稿してみた。1個1個セルの周り調べてくのも面白みがないなと思って、生きてるセルの周りをスコア付けしてくやり方でやってみた。
-
-生きてるセルに+10し、生きてるセルの周りに+1していく。最終的にスコアが3(まわりに3つの生きてるセルがある)のセルは次世代で誕生するセルと判断。スコアが12もしくは13の(今の世代で生きてるセルで、まわりに2つもしくは3つの生きてるセルがある)のセルは次世代も維持するセルと判断。
-
-テストはWikipedia...</div><div class="read-more"><a href="/2008/02/02/doukaku_lifegame/">READ MORE</a></div></article><div class="pager"><ul><li class="previous"><a href="/page/7/">Prev</a></li><li class="next"><a href="/page/9/">Next</a></li></ul></div></div></body></html>
+一応簡単に今回の流れを説明しておくと、「初心者用言語」の流れの発端はまつもとさんの「<a href="http://www.rubyist.net/~matz/20080204.html#p01">初心者向けの言語</a>」。その後に、amachangの「<a href="http://d.hatena.ne.jp/amachang/20080204/1202096633">最もタメになる「初心者用言語」はJavaScript</a></div><div class="read-more"><a href="/2008/02/07/programming_for_beginner/">READ MORE</a></div></article><div class="pager"><ul><li class="previous"><a href="/page/7/">Prev</a></li><li class="next"><a href="/page/9/">Next</a></li></ul></div></div></body></html>

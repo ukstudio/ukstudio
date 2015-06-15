@@ -8,7 +8,12 @@ _gaq.push(['_trackPageview']);
   var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
   ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
   var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-})();</script></head><body class="page page_5 page_5_index"><div class="header"><div class="header-navigation"><ul><li><i class="fa fa-twitter"></i><a href="http://twitter.com/ukstudio">Twitter</a></li><li><i class="fa fa-github-alt"></i><a href="http://github.com/ukstudio">GitHub</a></li></ul></div><div class="header-title"><a href="/">UKSTUDIO</a></div></div><div class="container"><article class="article-content"><h1 class="article--title"><a href="/2010/01/31/tork03/">東京Ruby会議#3公式サイト&amp;受付開始</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2010-01-31 00:00:00 UTC" pubdate="pubdate">January 31 2010</time></div><div class="article-tags"></div><div class="article-summary"><a href="http://regional.rubykaigi.org/tokyo03">東京Ruby会議03 - Regional RubyKaigi -</a>
+})();</script></head><body class="page page_5 page_5_index"><div class="header"><div class="header-navigation"><ul><li><i class="fa fa-twitter"></i><a href="http://twitter.com/ukstudio">Twitter</a></li><li><i class="fa fa-github-alt"></i><a href="http://github.com/ukstudio">GitHub</a></li></ul></div><div class="header-title"><a href="/">UKSTUDIO</a></div></div><div class="container"><article class="article-content"><h1 class="article--title"><a href="/2010/02/04/googe_data_api-clientlogin-ruby/">Google Data APIの認証をClientLogin + Rubyで</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2010-02-04 00:00:00 UTC" pubdate="pubdate">February 04 2010</time></div><div class="article-tags"></div><div class="article-summary"><script src="http://gist.github.com/294044.js?file=google_client_login.rb"></script>
+
+とりあえずGoogle Mapで。他のサービスもservice変数を書き換えれば認証までは通るはず。クエリのPasswdをPasswordにしてて結構はまった。Unix文化め。
+
+参考: <a href="http://code.google.com/intl/ja/apis/gdata/">Google Data API - Google Code</a>
+</div><div class="read-more"><a href="/2010/02/04/googe_data_api-clientlogin-ruby/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2010/01/31/tork03/">東京Ruby会議#3公式サイト&amp;受付開始</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2010-01-31 00:00:00 UTC" pubdate="pubdate">January 31 2010</time></div><div class="article-tags"></div><div class="article-summary"><a href="http://regional.rubykaigi.org/tokyo03">東京Ruby会議03 - Regional RubyKaigi -</a>
 
 先程、公開しました。受付けも開始してるのでそちらから申し込みください。多分、右側の開発概要はこれから詳細が公開されていくと思います。
 
@@ -130,9 +135,4 @@ Kinesisはキーの部分が、おわんの形にへこんでおり、かつ各�
 <h2>OAuthは安全か</h2>
 まず、 OAuthでよく言われてるようにみえるパスワードをサービスに渡さないから安全ということに関して。簡単に言うと、「パスワード渡すよりは安全だけどまぁ信用していいかどうかの判断は必要だよね」ってところ。
 
-OAuthは難しい話を抜きにしてしまえば、期限つきパスワード(Twitterは無期限っぽいですが)をサービスごとに発行するようなものだと思う。パ...</div><div class="read-more"><a href="/2009/08/11/oauth/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2009/07/27/server_maintenance/">サーバのメンテナンスしてました</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2009-07-27 00:00:00 UTC" pubdate="pubdate">July 27 2009</time></div><div class="article-tags"></div><div class="article-summary">事後報告になってしまいますが、先週の金曜から今日にかけてサーバのメンテナンスしてました。サイトが見れなくて困った人がいたら申し訳ないです。
-
-メンテナンスと言うか、設定を一からやりなおしたかったのと、CentOSに飽きたのでたまには違うディストリビューションにしたかったので、Gentooでビルドしなおしてました。
-
-ブログのテーマとかも追々直していきますが、とりあえず見れるところまで。
-</div><div class="read-more"><a href="/2009/07/27/server_maintenance/">READ MORE</a></div></article><div class="pager"><ul><li class="previous"><a href="/page/4/">Prev</a></li><li class="next"><a href="/page/6/">Next</a></li></ul></div></div></body></html>
+OAuthは難しい話を抜きにしてしまえば、期限つきパスワード(Twitterは無期限っぽいですが)をサービスごとに発行するようなものだと思う。パ...</div><div class="read-more"><a href="/2009/08/11/oauth/">READ MORE</a></div></article><div class="pager"><ul><li class="previous"><a href="/page/4/">Prev</a></li><li class="next"><a href="/page/6/">Next</a></li></ul></div></div></body></html>

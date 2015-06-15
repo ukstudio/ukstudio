@@ -8,7 +8,13 @@ _gaq.push(['_trackPageview']);
   var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
   ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
   var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-})();</script></head><body class="page page_9 page_9_index"><div class="header"><div class="header-navigation"><ul><li><i class="fa fa-twitter"></i><a href="http://twitter.com/ukstudio">Twitter</a></li><li><i class="fa fa-github-alt"></i><a href="http://github.com/ukstudio">GitHub</a></li></ul></div><div class="header-title"><a href="/">UKSTUDIO</a></div></div><div class="container"><article class="article-content"><h1 class="article--title"><a href="/2008/01/22/yaboo/">野望新年会に参加してきました</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2008-01-22 00:00:00 UTC" pubdate="pubdate">January 22 2008</time></div><div class="article-tags"></div><div class="article-summary">書くのが遅くなっちゃいましたが、なんとかエントリーアップです。
+})();</script></head><body class="page page_9 page_9_index"><div class="header"><div class="header-navigation"><ul><li><i class="fa fa-twitter"></i><a href="http://twitter.com/ukstudio">Twitter</a></li><li><i class="fa fa-github-alt"></i><a href="http://github.com/ukstudio">GitHub</a></li></ul></div><div class="header-title"><a href="/">UKSTUDIO</a></div></div><div class="container"><article class="article-content"><h1 class="article--title"><a href="/2008/02/02/doukaku_lifegame/">Rubyでライフゲーム書いた</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2008-02-02 00:00:00 UTC" pubdate="pubdate">February 02 2008</time></div><div class="article-tags"></div><div class="article-summary"><a href="http://ja.doukaku.org/comment/5581/">どう書く?org #5581</a>
+
+久々にどう書くorgに投稿してみた。1個1個セルの周り調べてくのも面白みがないなと思って、生きてるセルの周りをスコア付けしてくやり方でやってみた。
+
+生きてるセルに+10し、生きてるセルの周りに+1していく。最終的にスコアが3(まわりに3つの生きてるセルがある)のセルは次世代で誕生するセルと判断。スコアが12もしくは13の(今の世代で生きてるセルで、まわりに2つもしくは3つの生きてるセルがある)のセルは次世代も維持するセルと判断。
+
+テストはWikipedia...</div><div class="read-more"><a href="/2008/02/02/doukaku_lifegame/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2008/01/22/yaboo/">野望新年会に参加してきました</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2008-01-22 00:00:00 UTC" pubdate="pubdate">January 22 2008</time></div><div class="article-tags"></div><div class="article-summary">書くのが遅くなっちゃいましたが、なんとかエントリーアップです。
 
 
 <a href="http://www.yabooo.org/archives/13">いずれにせよ野望新年会2008</a>
@@ -245,17 +251,4 @@ Amazonさんから届いた。結構軽い本だから電車とかで読むの�
 The Five Rules
 <dl>
 <dt>The Law of Car</dt>
-</dl></div><div class="read-more"><a href="/2007/11/24/the_little_schemer/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2007/11/24/ruby_brainfuck/">RubyでBrainFuck処理系を書いてみた</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2007-11-24 00:00:00 UTC" pubdate="pubdate">November 24 2007</time></div><div class="article-tags"></div><div class="article-summary"><pre lang="ruby">
-class BrainFuck
-  def convert(code)
-    @code = code
-    @memory = Array.new
-    @code_ptr = @mem_ptr = 0
-    @output = ""
-
-    while @code.size &gt; @code_ptr
-      @memory[@mem_ptr] ||= 0
-
-      case @code[@code_ptr]
-      when ?&gt;
-        @mem_ptr...</pre></div><div class="read-more"><a href="/2007/11/24/ruby_brainfuck/">READ MORE</a></div></article><div class="pager"><ul><li class="previous"><a href="/page/8/">Prev</a></li><li class="next"><a href="/page/10/">Next</a></li></ul></div></div></body></html>
+</dl></div><div class="read-more"><a href="/2007/11/24/the_little_schemer/">READ MORE</a></div></article><div class="pager"><ul><li class="previous"><a href="/page/8/">Prev</a></li><li class="next"><a href="/page/10/">Next</a></li></ul></div></div></body></html>

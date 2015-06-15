@@ -4,10 +4,30 @@
   <id>http://ukstudio.jp</id>
   <link href="http://ukstudio.jp"/>
   <link href="http://ukstudio.jp/feed.xml" rel="self"/>
-  <updated>2015-04-19T15:20:00Z</updated>
+  <updated>2015-06-15T12:32:00Z</updated>
   <author>
     <name>AKAMATSU Yuki</name>
   </author>
+  <entry>
+    <title>UX概論に参加した</title>
+    <link rel="alternate" href="http://ukstudio.jp/2015/06/15/ux_introduction/"/>
+    <id>http://ukstudio.jp/2015/06/15/ux_introduction/</id>
+    <published>2015-06-15T12:32:00Z</published>
+    <updated>2015-06-15T21:43:36+09:00</updated>
+    <author>
+      <name>AKAMATSU Yuki</name>
+    </author>
+    <content type="html">&lt;p&gt;&lt;a href="https://atnd.org/events/66918"&gt;【満席のため受付終了】UX概論　〜UXデザインの基礎を学ぶ勉強会〜 : ATND&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;この間の土曜日に参加してきた。ミニワークショップいれて3時間弱の勉強会だったけど、思ってた以上にUXに対する知識が浅かったなぁと通関した。すごく勉強になりました。講師の浅野先生、運営の倉光さん、その他スタッフのみなさん、本当にありがとうございます。&lt;/p&gt;
+
+&lt;p&gt;勉強会の内容だけど、UX自体はそんなにおおごとじゃないけど、じゃあどうやってそれを実現するの(つまりUXデザインの部分)ってなるとかなり大変そうだなぁという印象を受けました。ペルソナからしてちょっと甘くみてた感じです。&lt;/p&gt;
+
+&lt;p&gt;今後の課題としては社内のプロジェクト(とりあえず自分のチームだけでも)にUXデザインをどう取り込むかかなぁ。講師の方にアドバイスもらったけど外部の専門家でも雇って一緒にやって覚えるというのがよさそう。あとはいくつかの会社合同でワークショップをやるといいみたいな話もあったのでどこかのタイミングでやれたらな。&lt;/p&gt;
+
+&lt;p&gt;がんばるぞい&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>特定のGemの更新情報を追う</title>
     <link rel="alternate" href="http://ukstudio.jp/2015/04/19/follow-update-of-gem/"/>
@@ -133,73 +153,6 @@
     <content type="html">&lt;p&gt;今のプロダクトにちょっと前からVue.jsを採用しているんだけど、少しずつうまく使えるようになってきていてすごく便利だなーと感じる。コンポーネントについても大体わかってきた。&lt;/p&gt;
 
 &lt;p&gt;RailsアプリケーションにVue.jsを採用してどう変えてきたかみたいな記事をそのうち &lt;a href="http://blog.spicelife.jp/"&gt;スパイスな人生&lt;/a&gt; の方に投稿したいと思う。お楽しみに。&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
-    <title>TEX Yodaが届いたので使い始めた</title>
-    <link rel="alternate" href="http://ukstudio.jp/2015/01/29/tex_yoda/"/>
-    <id>http://ukstudio.jp/2015/01/29/tex_yoda/</id>
-    <published>2015-01-29T10:54:00Z</published>
-    <updated>2015-02-15T23:46:05+09:00</updated>
-    <author>
-      <name>AKAMATSU Yuki</name>
-    </author>
-    <content type="html">&lt;p&gt;&lt;a href="https://www.massdrop.com/buy/tex-yoda?mode=guest_open"&gt;TEX Yoda TrackPoint Keyboard - Massdrop&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;一部で話題のTEX Yodaが先週の金曜日に届いたので今週から使っている。&lt;/p&gt;
-
-&lt;blockquote class="instagram-media" data-instgrm-captioned data-instgrm-version="4" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:250px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"&gt;&lt;div style="padding:8px;"&gt; &lt;div style=" background:#F8F8F8; line-height:0; margin-top:40px; padding:50% 0; text-align:center; width:100%;"&gt; &lt;div style=" background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAsCAMAAAApWqozAAAAGFBMVEUiIiI9PT0eHh4gIB4hIBkcHBwcHBwcHBydr+JQAAAACHRSTlMABA4YHyQsM5jtaMwAAADfSURBVDjL7ZVBEgMhCAQBAf//42xcNbpAqakcM0ftUmFAAIBE81IqBJdS3lS6zs3bIpB9WED3YYXFPmHRfT8sgyrCP1x8uEUxLMzNWElFOYCV6mHWWwMzdPEKHlhLw7NWJqkHc4uIZphavDzA2JPzUDsBZziNae2S6owH8xPmX8G7zzgKEOPUoYHvGz1TBCxMkd3kwNVbU0gKHkx+iZILf77IofhrY1nYFnB/lQPb79drWOyJVa/DAvg9B/rLB4cC+Nqgdz/TvBbBnr6GBReqn/nRmDgaQEej7WhonozjF+Y2I/fZou/qAAAAAElFTkSuQmCC); display:block; height:44px; margin:0 auto -44px; position:relative; top:-22px; width:44px;"&gt;&lt;/div&gt;&lt;/div&gt; &lt;p style=" margin:8px 0 0 0; padding:0 4px;"&gt; &lt;a href="https://instagram.com/p/yUmhN8xXLR/" style=" color:#000; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none; word-wrap:break-word;" target="_top"&gt;とりあえずできた&lt;/a&gt;&lt;/p&gt; &lt;p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;"&gt;AKAMATSU Yukiさん(@ukstudio)が投稿した写真 - &lt;time style=" font-family:Arial,sans-serif; font-size:14px; line-height:17px;" datetime="2015-01-26T15:18:07+00:00"&gt;2015 1月 26 7:18午前 PST&lt;/time&gt;&lt;/p&gt;&lt;/div&gt;&lt;/blockquote&gt;
-
-&lt;script async defer src="//platform.instagram.com/en_US/embeds.js"&gt;&lt;/script&gt;
-
-&lt;h2 id="ハンダ付け"&gt;ハンダ付け&lt;/h2&gt;
-
-&lt;p&gt;久々のハンダ付けだけど、MXスイッチの足と基板をつけるだけだし、オフィスに&lt;a href="http://asonas.hatenablog.com/entry/2015/01/24/173920"&gt;先に組み立て済みの同僚&lt;/a&gt;もいたのでそんなに難しいこともなく終了。といっても幾つかミスもあったわけだけど。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;LEDを付ける前に基板をネジ止めした&lt;/li&gt;
-&lt;li&gt;ハンダ付けしわすれた箇所があった&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;TEX YodaにはLEDつけるところがあるんだけど、そのLEDがキートップのパーツと同じ袋に入ってる。なので基板にひと通りスイッチつけて、満足してネジ止めして「さー、キートップつけるぞ」と思い袋あけるとそこからLEDがでてきて悲しい感じになる。ハンダ付けするときにLEDの話を同僚としていたのにこれだよ。&lt;/p&gt;
-
-&lt;p&gt;ハンダ付けしわすれたのは完全に自分のミス。ひと通り組み立て終わったあとに0のキーが効かず、ハンダ付けのときに基板壊したかなとすごい焦ったけど開けてみたら普通にハンダがついてなかったというオチ。ちなみに現状、左下のFnキーも動いてないのでそこも忘れてる可能性ある。&lt;/p&gt;
-
-&lt;blockquote class="instagram-media" data-instgrm-captioned data-instgrm-version="4" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:250px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"&gt;&lt;div style="padding:8px;"&gt; &lt;div style=" background:#F8F8F8; line-height:0; margin-top:40px; padding:50% 0; text-align:center; width:100%;"&gt; &lt;div style=" background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAsCAMAAAApWqozAAAAGFBMVEUiIiI9PT0eHh4gIB4hIBkcHBwcHBwcHBydr+JQAAAACHRSTlMABA4YHyQsM5jtaMwAAADfSURBVDjL7ZVBEgMhCAQBAf//42xcNbpAqakcM0ftUmFAAIBE81IqBJdS3lS6zs3bIpB9WED3YYXFPmHRfT8sgyrCP1x8uEUxLMzNWElFOYCV6mHWWwMzdPEKHlhLw7NWJqkHc4uIZphavDzA2JPzUDsBZziNae2S6owH8xPmX8G7zzgKEOPUoYHvGz1TBCxMkd3kwNVbU0gKHkx+iZILf77IofhrY1nYFnB/lQPb79drWOyJVa/DAvg9B/rLB4cC+Nqgdz/TvBbBnr6GBReqn/nRmDgaQEej7WhonozjF+Y2I/fZou/qAAAAAElFTkSuQmCC); display:block; height:44px; margin:0 auto -44px; position:relative; top:-22px; width:44px;"&gt;&lt;/div&gt;&lt;/div&gt; &lt;p style=" margin:8px 0 0 0; padding:0 4px;"&gt; &lt;a href="https://instagram.com/p/yV0z5CxXIt/" style=" color:#000; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none; word-wrap:break-word;" target="_top"&gt;ゼロのキー動かんと思ったらこれですよ&lt;/a&gt;&lt;/p&gt; &lt;p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;"&gt;AKAMATSU Yukiさん(@ukstudio)が投稿した写真 - &lt;time style=" font-family:Arial,sans-serif; font-size:14px; line-height:17px;" datetime="2015-01-27T02:42:15+00:00"&gt;2015 1月 26 6:42午後 PST&lt;/time&gt;&lt;/p&gt;&lt;/div&gt;&lt;/blockquote&gt;
-
-&lt;script async defer src="//platform.instagram.com/en_US/embeds.js"&gt;&lt;/script&gt;
-
-&lt;h2 id="選んだ軸"&gt;選んだ軸&lt;/h2&gt;
-
-&lt;p&gt;実は買って届くまでMXスイッチの軸の色の意味を知らなかったんだけど、買うときに一番値段が高かったクリア軸にした。わからないときはとりあえず高いのにしておく精神。調べてみると茶軸に近い感じということらしい。茶軸使ったことないからそう言われてもわからないけど…。他にも色々な軸があるので試してみたい気がする。緑とか気になる。&lt;/p&gt;
-
-&lt;h2 id="ちょっとしたカスタマイズ"&gt;ちょっとしたカスタマイズ&lt;/h2&gt;
-
-&lt;p&gt;MXスイッチ互換のキートップが売ってたりするので適当に変えてみたりした。PCゲーマーではおなじみのWASD。あとIJKLを赤に。これらはFnを押すとカーソルキーの動きをしてくれる。あとはなんとなくスペースも赤にしたら顔みたいになった。&lt;/p&gt;
-
-&lt;blockquote class="instagram-media" data-instgrm-captioned data-instgrm-version="4" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:250px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"&gt;&lt;div style="padding:8px;"&gt; &lt;div style=" background:#F8F8F8; line-height:0; margin-top:40px; padding:50% 0; text-align:center; width:100%;"&gt; &lt;div style=" background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAsCAMAAAApWqozAAAAGFBMVEUiIiI9PT0eHh4gIB4hIBkcHBwcHBwcHBydr+JQAAAACHRSTlMABA4YHyQsM5jtaMwAAADfSURBVDjL7ZVBEgMhCAQBAf//42xcNbpAqakcM0ftUmFAAIBE81IqBJdS3lS6zs3bIpB9WED3YYXFPmHRfT8sgyrCP1x8uEUxLMzNWElFOYCV6mHWWwMzdPEKHlhLw7NWJqkHc4uIZphavDzA2JPzUDsBZziNae2S6owH8xPmX8G7zzgKEOPUoYHvGz1TBCxMkd3kwNVbU0gKHkx+iZILf77IofhrY1nYFnB/lQPb79drWOyJVa/DAvg9B/rLB4cC+Nqgdz/TvBbBnr6GBReqn/nRmDgaQEej7WhonozjF+Y2I/fZou/qAAAAAElFTkSuQmCC); display:block; height:44px; margin:0 auto -44px; position:relative; top:-22px; width:44px;"&gt;&lt;/div&gt;&lt;/div&gt; &lt;p style=" margin:8px 0 0 0; padding:0 4px;"&gt; &lt;a href="https://instagram.com/p/yY9zPMxXH1/" style=" color:#000; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none; word-wrap:break-word;" target="_top"&gt;顔っぽい&lt;/a&gt;&lt;/p&gt; &lt;p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;"&gt;AKAMATSU Yukiさん(@ukstudio)が投稿した写真 - &lt;time style=" font-family:Arial,sans-serif; font-size:14px; line-height:17px;" datetime="2015-01-28T07:58:31+00:00"&gt;2015 1月 27 11:58午後 PST&lt;/time&gt;&lt;/p&gt;&lt;/div&gt;&lt;/blockquote&gt;
-
-&lt;script async defer src="//platform.instagram.com/en_US/embeds.js"&gt;&lt;/script&gt;
-
-&lt;h2 id="キーレイアウト"&gt;キーレイアウト&lt;/h2&gt;
-
-&lt;p&gt;現時点のレイアウトはDIPスイッチの１，３，５がオフ、２，４，６がオンになっている。それぞれの意味はマニュアル参照。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href="https://docs.google.com/file/d/0B7TuRf3KQe7GdjJwNXMwdHZIUm8/edit"&gt;TKB-600i-Datasheet_14-0603-Rev 1.0.pdf - Google ドライブ&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;大体よくあるレイアウトだとは思うけど、珍しいのはESCと`~が同じキーでどちらかをFnキー押しながらじゃないと入力できない(DIPスイッチの3番参照)。&lt;/p&gt;
-
-&lt;p&gt;最初は普通に入力したらESCにして`~をFnキー押すようにしていたのだけど~がShiftも押さなきゃいけないのがあまりに不便すぎてやめた。VimmerとしてはESCはコード書くときそんなに使わないし、普段もMacユーザーなのでKarabinerでctrl-[をESC扱いにするようにしてESC単体で押す必要をなくして無事解決。&lt;/p&gt;
-
-&lt;h2 id="総評"&gt;総評&lt;/h2&gt;
-
-&lt;p&gt;概ね使い心地には満足している。元々ThinkPad使っていたのでトラックポイントも違和感なく、机からマウスを排除できたし、むしろマウスのためだけに腕を動かさなくなったが大分よい。実はHHKで一番気に入らなかったのがDELETEの位置で、TEX Yodaではそこが\になったのも良い。&lt;/p&gt;
-
-&lt;p&gt;本体の重さがそれなりにある。その気になれば撲殺できそうな程度には。なので持ち歩くつもりでいるならHHKの方がよいかなと思う。俺はあまりキーボードを持ち歩く人間ではないので問題ない。&lt;/p&gt;
-
-&lt;p&gt;タッチ感だけど、音はクリア軸のせいかTEX Yodaがそうなのかわからないけど、ちょっとちゃっちい音のような気もする。クリック感は個人的には大分気に入っていて、HHK、KinesisとTEX Yoda(クリア軸)だったらTEX Yodaが一番好み。ちなみにAlphaGripは俺の中では黒歴史化している。&lt;/p&gt;
-
-&lt;p&gt;今massdropをみると$199までもうちょいなので、興味ある人は買っていきましょう。ハンダ付けも$25でやってくれる模様。買って損はしないキーボードだと思います。実物みないと…という人は弊社に2つあるので遊びにくるとよいですよ。&lt;/p&gt;
 </content>
   </entry>
 </feed>
