@@ -1,6 +1,4 @@
-<!DOCTYPE html><html><head><meta charset="utf-8" /><!--Always force latest IE rendering engine or request Chrome Frame--><meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" /><!--Use title if it's in the page YAML frontmatter--><title>ukstudio.jp</title><link href="http://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet" type="text/css" /><link href="http://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet" type="text/css" /><link href="/stylesheets/normalize.css" media="screen" rel="stylesheet" type="text/css" />
-<link href="/stylesheets/all.css" media="screen" rel="stylesheet" type="text/css" />
-<link href="/stylesheets/highlight.css" media="screen" rel="stylesheet" type="text/css" /><script src="/javascripts/all.js" type="text/javascript"></script><link href="/feed.xml" rel="alternate" title="atom" type="application/atom+xml" /><script type="text/javascript">var _gaq = _gaq || [];
+<!DOCTYPE html><html><head><meta charset="utf-8" /><!--Always force latest IE rendering engine or request Chrome Frame--><meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" /><title>ukstudio.jp</title><link href="/stylesheets/dist/normalize.css" rel="stylesheet" /><link href="/stylesheets/dist/skeleton.css" rel="stylesheet" /><link href="/stylesheets/all.css" rel="stylesheet" /><script src="/javascripts/all.js"></script><link href="/feed.xml" rel="alternate" title="atom" type="application/atom+xml" /><script>var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-12755601-1']);
 _gaq.push(['_trackPageview']);
 
@@ -8,14 +6,14 @@ _gaq.push(['_trackPageview']);
   var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
   ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
   var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-})();</script></head><body class="tags tags_rspec tags_rspec_index"><div class="header"><div class="header-navigation"><ul><li><i class="fa fa-twitter"></i><a href="http://twitter.com/ukstudio">Twitter</a></li><li><i class="fa fa-github-alt"></i><a href="http://github.com/ukstudio">GitHub</a></li></ul></div><div class="header-title"><a href="/">UKSTUDIO</a></div></div><div class="container"><article class="article-content"><h1 class="article--title"><a href="/2014/09/21/rspec_power_assert/">RSpecでPower Assertをやるには</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2014-09-21 06:12:00 UTC" pubdate="pubdate">September 21 2014</time></div><div class="article-tags"><ul><li><i class="fa fa-tag"></i><a href="/tags/testing/">testing</a></li><li><i class="fa fa-tag"></i><a href="/tags/rspec/">rspec</a></li><li><i class="fa fa-tag"></i><a href="/tags/power-assert/">power-assert</a></li></ul></div><div class="article-summary"><p>RubyKaigi 2014でpower assertの話を聞いてrspecでどうにかならんかちょっと考えてみました。まず結論だけ書くとrspecでpower assertを使いたければ以下の様に書けばOK。</p>
-<pre class="highlight ruby"><span class="nb">require</span> <span class="s1">'rspec'</span>
+})();</script></head><body class="tags tags_rspec tags_rspec_index"><div class="header"><div class="header-title"><h1><a href="/">ukstudio</a></h1></div></div><div class="container"><article class="article-content"><h1 class="article--title"><a href="/2014/09/21/rspec_power_assert/">RSpecでPower Assertをやるには</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2014-09-21 06:12:00 UTC" pubdate="pubdate">September 21 2014</time></div><div class="article-tags"><ul><li><i class="fa fa-tag"></i><a href="/tags/testing/">testing</a></li><li><i class="fa fa-tag"></i><a href="/tags/rspec/">rspec</a></li><li><i class="fa fa-tag"></i><a href="/tags/power-assert/">power-assert</a></li></ul></div><div class="article-summary"><p>RubyKaigi 2014でpower assertの話を聞いてrspecでどうにかならんかちょっと考えてみました。まず結論だけ書くとrspecでpower assertを使いたければ以下の様に書けばOK。</p>
+<pre class="highlight ruby"><code><span class="nb">require</span> <span class="s1">'rspec'</span>
 <span class="nb">require</span> <span class="s1">'minitest'</span>
 <span class="nb">require</span> <span class="s1">'minitest-power_assert'</span>
 
 <span class="k">module</span> <span class="nn">Minitest</span>
   <span class="k">module</span> <span class="nn">Assertions</span>
-    <span class="n">prepend</span>  <span class="no">Minitest</span><span class="o">::</span><span class="no">PowerAssert</span><span class="o">::</span><span class="no">Assertions</span></pre></div><div class="read-more"><a href="/2014/09/21/rspec_power_assert/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2014/04/18/rspec_ctags/">Vim(TagBar)でRSpecのctagsを扱う</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2014-04-18 09:20:00 UTC" pubdate="pubdate">April 18 2014</time></div><div class="article-tags"><ul><li><i class="fa fa-tag"></i><a href="/tags/rspec/">rspec</a></li><li><i class="fa fa-tag"></i><a href="/tags/vim/">vim</a></li></ul></div><div class="article-summary"><p><img alt="rspec ctags" src="/images/2014-04-18-vim-rspec-ctags.png"></p>
+    <span class="n">prepend</span>  <span class="no">Minitest</span><span class="o">::</span><span class="no">PowerAssert</span><span class="o">::</span><span class="no">Assertions</span></code></pre></div><div class="read-more"><a href="/2014/09/21/rspec_power_assert/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2014/04/18/rspec_ctags/">Vim(TagBar)でRSpecのctagsを扱う</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2014-04-18 09:20:00 UTC" pubdate="pubdate">April 18 2014</time></div><div class="article-tags"><ul><li><i class="fa fa-tag"></i><a href="/tags/rspec/">rspec</a></li><li><i class="fa fa-tag"></i><a href="/tags/vim/">vim</a></li></ul></div><div class="article-summary"><p><img src="/images/2014-04-18-vim-rspec-ctags.png" alt="rspec ctags"></p>
 
 <p>unite-outlineとかを使う人には不要なのかもしれないけど、あいにくuniteユーザではないのでctagsでなんとかできないか調べてみた。</p>
 
@@ -25,7 +23,7 @@ _gaq.push(['_trackPageview']);
 
 <p>インストール場所はお好みで。個人的には手で入れる系のものは$HOME/localにインストールするのが好きなのでそこにインストールした。あとはTagBarの方でこのctagsを使うよう設定する...</p></div><div class="read-more"><a href="/2014/04/18/rspec_ctags/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2011/07/02/bdd/">BDDについて自分なりにまとめてみた</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2011-07-02 00:00:00 UTC" pubdate="pubdate">July 02 2011</time></div><div class="article-tags"><ul><li><i class="fa fa-tag"></i><a href="/tags/rspec/">rspec</a></li><li><i class="fa fa-tag"></i><a href="/tags/testing/">testing</a></li></ul></div><div class="article-summary"><p>BDDという言葉も割と人によって指すものが違うようなので「俺の中でのBDDはこうだよ」って内容のエントリ。別に絶対的なものでもないと思うので参考までに</p>
 
-<h2 id="結論から">結論から</h2>
+<h2>結論から</h2>
 
 <p>とりあえず結論だけ知りたい人向けに。</p>
 
@@ -35,6 +33,6 @@ _gaq.push(['_trackPageview']);
 <li>2. ATDD(受け入れテスト)でのBDD(ユーザ寄り)</li>
 </ul>
 
-<h2 id="振る舞い">振る舞い</h2>
+<h2>振る舞い</h2>
 
 <p>BDDは振る舞い駆動開発と言われたりするように、テストという言葉のかわりに<strong>振る舞い</strong>という言葉を使う。日本語的には仕様と言うほうがわかりやす...</p></div><div class="read-more"><a href="/2011/07/02/bdd/">READ MORE</a></div></article><div class="pager"><ul></ul></div></div></body></html>

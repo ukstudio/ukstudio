@@ -1,6 +1,4 @@
-<!DOCTYPE html><html><head><meta charset="utf-8" /><!--Always force latest IE rendering engine or request Chrome Frame--><meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" /><!--Use title if it's in the page YAML frontmatter--><title>ukstudio.jp</title><link href="http://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet" type="text/css" /><link href="http://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet" type="text/css" /><link href="/stylesheets/normalize.css" media="screen" rel="stylesheet" type="text/css" />
-<link href="/stylesheets/all.css" media="screen" rel="stylesheet" type="text/css" />
-<link href="/stylesheets/highlight.css" media="screen" rel="stylesheet" type="text/css" /><script src="/javascripts/all.js" type="text/javascript"></script><link href="/feed.xml" rel="alternate" title="atom" type="application/atom+xml" /><script type="text/javascript">var _gaq = _gaq || [];
+<!DOCTYPE html><html><head><meta charset="utf-8" /><!--Always force latest IE rendering engine or request Chrome Frame--><meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" /><title>ukstudio.jp</title><link href="/stylesheets/dist/normalize.css" rel="stylesheet" /><link href="/stylesheets/dist/skeleton.css" rel="stylesheet" /><link href="/stylesheets/all.css" rel="stylesheet" /><script src="/javascripts/all.js"></script><link href="/feed.xml" rel="alternate" title="atom" type="application/atom+xml" /><script>var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-12755601-1']);
 _gaq.push(['_trackPageview']);
 
@@ -8,21 +6,36 @@ _gaq.push(['_trackPageview']);
   var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
   ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
   var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-})();</script></head><body class="page page_8 page_8_index"><div class="header"><div class="header-navigation"><ul><li><i class="fa fa-twitter"></i><a href="http://twitter.com/ukstudio">Twitter</a></li><li><i class="fa fa-github-alt"></i><a href="http://github.com/ukstudio">GitHub</a></li></ul></div><div class="header-title"><a href="/">UKSTUDIO</a></div></div><div class="container"><article class="article-content"><h1 class="article--title"><a href="/2008/08/13/ruby_on_rails_partial/">Railsのpartialの使い方</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2008-08-13 00:00:00 UTC" pubdate="pubdate">August 13 2008</time></div><div class="article-tags"></div><div class="article-summary">あまりpartialをちゃんと使いこなせていない気がするので(いつもインスタンス変数で適当に値わたしてる)使い方をちょっとメモ。
+})();</script></head><body class="page page_8 page_8_index"><div class="header"><div class="header-title"><h1><a href="/">ukstudio</a></h1></div></div><div class="container"><article><h1 class="article-title"><a href="/2008/08/13/ruby_on_rails_partial/">Railsのpartialの使い方</a></h1><div class="article-time"><time dateMime="2008-08-13 00:00:00 UTC" pubdate="pubdate">August 13 2008</time></div><div class="article-body">あまりpartialをちゃんと使いこなせていない気がするので(いつもインスタンス変数で適当に値わたしてる)使い方をちょっとメモ。
 
 <pre lang="ruby">
-render :partial =&gt; 'entry'
+render :partial => 'entry'
 </pre>
 
 一番基本となるpartialの使い方。_entry.html.erbを描画。
 
 <pre lang="ruby">
-render :partial =&gt; 'entry', :locals =&gt; {:title =&gt; "タイトル"}
+render :partial => 'entry', :locals => {:title => "タイトル"}
 </pre>
 
-localsでpartial側に値を渡す。partial側ではローカル変数titleで文字列"タイト...</div><div class="read-more"><a href="/2008/08/13/ruby_on_rails_partial/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2008/08/08/quill/">Quillリリースおめでとうございます</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2008-08-08 00:00:00 UTC" pubdate="pubdate">August 08 2008</time></div><div class="article-tags"></div><div class="article-summary"><a href="http://quill.to/">Quill [羽根のように軽い、メモメモwebサービス]</a>
-<a href="http://blog.inafog.jp/archives/314">blog in a fog &gt;&gt; Quillリリースしました</a>
-<a href="http://blog.woopsdez.jp/?p=841">ウープスデザインブログ &gt;&gt; 羽根のように軽いメモメモwebサービス 「Quill」公開されました</a>
+localsでpartial側に値を渡す。partial側ではローカル変数titleで文字列"タイトル"を参照できる。
+
+<pre lang="ruby">
+render :partial => 'entry', :object => @object
+render :partial => @entry # インスタンス変数で単数形
+</pre>
+
+objectでpartial側に値を渡す。@objectの内容をpartial側でローカル変数entryで参照できる。
+
+<pre lang="ruby">
+render :partial => 'entry', :collection => @objects
+render :partial => @entries # インスタンス変数で複数形
+</pre>
+
+collectionで値を渡す。@objectsの値を1つずつ、partial側でentryとして参照できる。もちろん描画は@objects分繰り返される。
+</div></article><article><h1 class="article-title"><a href="/2008/08/08/quill/">Quillリリースおめでとうございます</a></h1><div class="article-time"><time dateMime="2008-08-08 00:00:00 UTC" pubdate="pubdate">August 08 2008</time></div><div class="article-body"><a href="http://quill.to/">Quill [羽根のように軽い、メモメモwebサービス]</a>
+<a href="http://blog.inafog.jp/archives/314">blog in a fog >> Quillリリースしました</a>
+<a href="http://blog.woopsdez.jp/?p=841">ウープスデザインブログ >> 羽根のように軽いメモメモwebサービス 「Quill」公開されました</a>
 
 と言うわけで、どうやら知り合いの人が開発に携わっているようなので、おめでとうございますエントリー。
 
@@ -30,17 +43,88 @@ localsでpartial側に値を渡す。partial側ではローカル変数titleで�
 
 理由としては
 <ul>
-<li>いつも持ち歩いてるMOLESKINE...</li>
-</ul></div><div class="read-more"><a href="/2008/08/08/quill/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2008/07/29/iphone_seminar/">Apple主催のiPhoneアプリケーション開発入門セミナーに参加してきた</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2008-07-29 00:00:00 UTC" pubdate="pubdate">July 29 2008</time></div><div class="article-tags"></div><div class="article-summary">会場が家からすぐ近くだったので行ってきました。なるべく話しても大丈夫そうなところを選んで書きますが、場合によってはエントリーが消えることもあるかも。セミナーの内容が完全黙秘なのか、SDKの部分はダメなのかどっちかよくわからないので。英語苦手だ。
+<li>いつも持ち歩いてるMOLESKINEにメモする</li>
+<li>ちょっとしたメモ(ToDoとかお買い物リスト的な)ものは付箋とかに書く</li>
+<li>長めの文章はTerminalでVimで書く</li>
+</ul>
+と言った感じかなぁ。
+
+多分、オンラインのメモってどこでも見れるってのが利点なんだろうけど、正直そこらへんはアナログで事足りちゃってる。それに携帯(WILLCOMユーザです)の通信速度があまり早くないからサッと見れない。まぁこれはある程度仕方ないけれど。と言うか、モバイル対応はまだしてないっぽいね。
+
+あとは、メモを書くのをもうちょいストレスフリーにしたい。例えば、おれがメモをするシーンは、「ネットで調べ物」とか「電話対応」とかなんだけど、ネットしてるときは当然ブラウザは別のページをみてるので、ブラウザでメモするのはちょっと手間。わざわざFxのウィンドウを2つにするのもいやだし。電話対応は片手が塞がるので、片手でメモできるペン・紙がラク。
+
+理想を言えば、QuickSilverでアプリを起動するのと同じぐらいスムーズに入力したいw まぁクライアントを提供するまではいかなくても、APIとかがあれば適当にQuickSilverやVimperatorのプラグインとかも自作できるだろうし。
+
+あ、でも新規入力の検索はいいね。開きたいメモをサッと検索できて、サッと編集に移れる。それとなんやかんや言ってますが、あくまで僕のスタイルにうまくハマらないってだけなので、別にサービス自体が悪いってわけではないです。実際かなりサクサク動いてますし、かなりシンプルなので使い方は人それぞれって感じかと。
+
+それとなんかショートカットキーが充実してるってことなのでJS読んで勝手に暴いてみた。ショートカットがあるのは一覧だけなのかな。JSの前半しか見てないんだけれども。
+
+<dl>
+<dt>j</dt>
+<dd>メモの選択を下に移動</dd>
+<dt>k</dt>
+<dd>メモの選択を上に移動</dd>
+<dt>x</dt>
+<dd>選択してるメモにチェックボックスのオン/オフ</dd>
+<dt>d</dt>
+<dd>チェックボックスがオンのメモを削除</dd>
+<dt>o</dt>
+<dd>選択してるメモを開く</dd>
+<dt>e<dt>
+<dd>選択してるメモを編集する</dd>
+<dt>Enter/Return</dt>
+<dd>選択してるメモを編集する</dd>
+<dt>s</dt>
+<dd>選択してるメモの星のオン/オフ</dd>
+<dt>c</dt>
+<dd>選択してるメモのラベル(鳥?)の変更</dd>
+</dl>
+
+多分、大体こんな感じかなー。間違ってたらごめんなさい。
+</div></article><article><h1 class="article-title"><a href="/2008/07/29/iphone_seminar/">Apple主催のiPhoneアプリケーション開発入門セミナーに参加してきた</a></h1><div class="article-time"><time dateMime="2008-07-29 00:00:00 UTC" pubdate="pubdate">July 29 2008</time></div><div class="article-body">会場が家からすぐ近くだったので行ってきました。なるべく話しても大丈夫そうなところを選んで書きますが、場合によってはエントリーが消えることもあるかも。セミナーの内容が完全黙秘なのか、SDKの部分はダメなのかどっちかよくわからないので。英語苦手だ。
 
 <h2>ドキュメントみろ</h2>
 今回、話を聞いてきたことの大半は既にドキュメントとしてあるとのこと。英語だけど。なので英語がわかる人はそちらを読めばいいと思います。というか他にドキュメントがないので、英語読めなくても読まなきゃいけないんだけど。
 
-<a href="http://developer.apple.com/jp">http:/...</a></div><div class="read-more"><a href="/2008/07/29/iphone_seminar/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2008/07/27/ukstudio_controlled_git/">ukstudio.jpをgitで管理するようにしてみた</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2008-07-27 00:00:00 UTC" pubdate="pubdate">July 27 2008</time></div><div class="article-tags"></div><div class="article-summary">最近流行りのgitを使ってみようかなーってことでとりあえずukstudio.jpを全部gitで管理するようにした。
+<a href="http://developer.apple.com/jp">http://developer.apple.com/jp</a>
+
+<h2>iPhoneでできないこと(と言うよりはやっちゃいけないこと)</h2>
+いくつかAppleから「これはできない」と言われたアプリがあります。
+
+<ul>
+<li>リアルタイムにルーティングするもの(カーナビとか。位置情報のみはOK)</li>
+<li>インストーラー、インタプリタは無理。(エグゼキュータブルは無理って言ってた)</li>
+<li>データの読み書きはバンドル内のみ(バンドル = アプリケーションの実行フォルダ)</li>
+</ul>
+
+ちなみにOpenURLでアプリケーションを立ち上げるのは大丈夫らしいです。
+
+<h2>開発手順</h2>
+ほぼドキュメントそのままなので省きます。
+
+<h2>App Storeへの登録</h2>
+個人的な印象からすると、無料・個人であれば、そこまでハードルは高くなさそうな感じ。
+
+無料・個人であれば、アプリ情報を登録し、公開条件や配布する国の指定のみで大丈夫そうです。法人に関しては場合によっては登記標本が必要かもしれません。
+
+それに加えて有料の場合は、なんか書類を送る必要があります。ちょっとこの辺り聞き損ねてしまいましたが、特別ハードルが高いって程でもなさそうです。
+
+アプリの審査に関して言えば、現状は「実物を見て、評価し、判断する」のが前提だそうです。つまり、「これはダメ」という線引きが曖昧で実際に審査をお願いしてみないと何とも言えないとのこと。もちろん、上に書いた「できないこと」は即はじかれるのかもしれませんが。brainfuckインタプリタを「翻訳アプリ」とか言えば、もしかしたら通るのかもしれないですけどw とりあえずはApp Storeに登録されてるものから判断するしかなさそうです。
+
+<h2>アプリのアップデート</h2>
+アプリのアップデートは機能としてあるそうです。つまり、アップデートをするのにお金がかかったり、特別な作業が必要というわけではなさそうです。ただ、アップデートが差分アップデートではなく、丸ごととりかえるそうです。
+
+Q&Aで「例えばテキストエディタなのでバンドルに保存されてるデータはアップロード時どうなるのか?」と言った質問がありましたが「確かバックアップの仕組みがあったはずだが、確認してみないとわからない」とのこと。
+
+<h2>アプリのローカライズ</h2>
+どこの国に配布するにせよ、登録するバイナリは1つです。つまり1つのバイナリをローカライズするってことかと。翻訳の仕組みは・・・聞き損ねたか、忘れました。確かビルド時に「single binary supporting multiple languages」を選ぶとかそんなん。これ書いちゃまずいのかな。まぁいいや。
+
+まぁ、大体こんな感じです。他にも色々聞いてますが、ほとんどドキュメントに書いてあるようなことばかりでした。ここに書いた内容がちょっと際どいので、さっきも書きましたがエントリが消えてる可能性もあります。その時はごめんなさい。
+</div></article><article><h1 class="article-title"><a href="/2008/07/27/ukstudio_controlled_git/">ukstudio.jpをgitで管理するようにしてみた</a></h1><div class="article-time"><time dateMime="2008-07-27 00:00:00 UTC" pubdate="pubdate">July 27 2008</time></div><div class="article-body">最近流行りのgitを使ってみようかなーってことでとりあえずukstudio.jpを全部gitで管理するようにした。
 
 最終的に以下のような構成になった。
 
-<a href="http://ukstudio.jp/wp-content/uploads/2008/07/git-ukstudio.png"><img src="http://ukstudio.jp/wp-content/uploads/2008/07/git-ukstudio.png" alt="" title="git-ukstudio" width="284" height="284" class="alignnone size-medium wp-image-145"></a>
+<a href="http://ukstudio.jp/wp-content/uploads/2008/07/git-ukstudio.png"><img src="http://ukstudio.jp/wp-content/uploads/2008/07/git-ukstudio.png" alt="" title="git-ukstudio" width="284" height="284" class="alignnone size-medium wp-image-145" /></a>
 
 <h2>MacBookにgitをインストールする</h2>
 MacBookにgitをインストールするのは簡単だった。MacPortsですんなり入った。
@@ -48,13 +132,108 @@ MacBookにgitをインストールするのは簡単だった。MacPortsです�
 参考: <a href="http://d.hatena.ne.jp/from_kyushu/20080414/git_on_mac">MacPortsを使ってgitをインストールしてみた - Post-itみたいな</a>
 
 <h2>サーバにgitをインストールする</h2>
-サーバはslicehostのCentOS5.1を使用。インストールされて...</div><div class="read-more"><a href="/2008/07/27/ukstudio_controlled_git/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2008/07/23/categories_and_tags_in_order/">カテゴリとタグを整理しました</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2008-07-23 00:00:00 UTC" pubdate="pubdate">July 23 2008</time></div><div class="article-tags"></div><div class="article-summary">なんかWordPressにいつのまにかタグ機能が実装されていたので、せっかくなので使ってみることにしました。
+サーバはslicehostのCentOS5.1を使用。インストールされてるsvnが1.4なのでこちらは一旦remove。
+
+<pre lang="bash">
+$ yum remove subversion
+</pre>
+
+gitはyumの標準リポジトリでは管理されてないので、外部リポジトリ(<a href="http://dag.wieers.com/rpm/">DAG</a>)を登録してそこからインストールした。
+
+<pre lang="bash">
+$ wget http://dag.wieers.com/packages/rpmforge-release/rpmforge-release-$0.3.6-1.el5.rf.i386.rpm
+$ rpm -ivh rpmforge-release-0.3.6-1.el5.rf.i386.rpm
+$ yum install git
+</pre>
+
+<h2>リポジトリを作る</h2>
+とりあえずコミットする人の名前とメールアドレスを登録しないといけないらしいので登録。これはサーバの方も同じ。
+
+<pre lang="bash">
+$ git config --global user.email yuki.0w0[at]gmail.com
+$ git config --global user.name YukiAkamatsu
+</pre>
+
+次にローカルのファイル群をcommitする。
+<pre lang="bash">
+$ cd ~/ukstudio.jp
+$ git init
+$ git add .
+$ git commit -m "first commit"
+</pre>
+
+この状態だとまだローカル内での変更のみ。なので、この変更をサーバ側で受け取れるようにする。
+
+<pre lang="bash">
+# ukstudio.jpにログインした状態
+[ukstudio.jp]$ mkdir /var/git/ukstudio.jp
+[ukstudio.jp]$ cd /var/git/ukstudio.jp
+[ukstudio.jp]$ git init-db
+</pre>
+
+んで、またローカルに戻ってさっきcommitしたのをpushして反映させる。
+
+<pre lang="bash">
+$ git remote add ukstudio.jp ssh://ukstudio@ukstudio.jp/var/git/ukstudio.jp
+$ git push ukstudio.jp ukstudio.jp master
+</pre>
+
+最後に外部から見れるように配置する。
+
+<pre lang="bash">
+# ukstudio.jp
+[ukstudio.jp]$ cd /var/www/vhost/
+[ukstudio.jp]$ git clone /var/git/ukstudio.jp
+</pre>
+
+これで/var/www/vhost/ukstudio.jpが作成されて、そこにずらーっとファイルができてるはず。とりあえずこれでukstudio.jpをgitで管理できるようになった。(と思う)
+
+<h2>ローカルで変更を加えてみる</h2>
+本当にうまく管理できているのか、適当なファイルを作って確かめてみたいと思う。
+
+<pre lang="bash">
+$ cd ~/ukstudio.jp
+$ touch hoge.txt
+$ git add hoge.txt
+$ git commit -m "commit test"
+$ git push ukstudio.jp master
+
+#ukstudio.jp
+[ukstudio.jp]$ cd ~/var/www/vhost/ukstudio.jp
+[ukstudio.jp]$ git pull
+</pre>
+
+これでhoge.txtがあれば、うまく管理できてることになると思う。
+
+そんな感じで、とりあえずしばらくはgitを使ってみようかなーと思う。「git log -p」とやるとコミットログがdiff付きでみれて便利。
+
+<h3>参考</h3>
+<a href="http://www8.atwiki.jp/git_jp/pub/Documentation.ja/user-manual.html">Git ユーザマニュアル(1.5.3以降)</a>
+<a href="http://www8.atwiki.jp/git_jp/pub/Documentation.ja/tutorial.html">Gitチュートリアル(1.5.1以降)</a>
+<a href="http://www.nofuture.tv/index.rb?GitMemo">Gitメモ</a>
+<a href="http://blog.champierre.com/archives/670">せっかちな人のためのgit入門</a>
+<a href="http://www.kaeruspoon.net/articles/477">バージョン管理をsubversionからgitに移行してみた</a>
+
+<h2>SSHについて補足</h2>
+サーバへのSSH接続は鍵認証でやっています。秘密鍵を~/.ssh/id_dsa_ukstudio.jpで保存して、~/.ssh/configに以下のように書いています。
+
+<pre lang="bash">
+Host ukstudio.jp
+IdentityFile ~/.ssh/id_dsa_ukstudio.jp
+Protocol 2,1
+</pre>
+</div></article><article><h1 class="article-title"><a href="/2008/07/23/categories_and_tags_in_order/">カテゴリとタグを整理しました</a></h1><div class="article-time"><time dateMime="2008-07-23 00:00:00 UTC" pubdate="pubdate">July 23 2008</time></div><div class="article-body">なんかWordPressにいつのまにかタグ機能が実装されていたので、せっかくなので使ってみることにしました。
 
 ベースはヤスヒサさんの<a href="http://www.yasuhisa.com/could/article/category-tag/">カテゴリとタグを上手に使い分ける</a>を参考にしています。
 
 ヤスヒサさんの記事を読んだあと、自分なりに色々考えて、カテゴリを廃止しタグのみにすることも検討したんですが、今まで書いたエントリーを見直して、タグだけじゃカバーしきれないなと思ったので、結局カテゴリも使ってみることにしました。
 
-カテゴリは、「プログラミング」「日記」「告知」の3種類にしようとも思ったん...</div><div class="read-more"><a href="/2008/07/23/categories_and_tags_in_order/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2008/07/18/amazon_crossreview/">Amazon商品ページにcrossreviewのレビューを表示するgreasemonkeyスクリプト書いた</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2008-07-18 00:00:00 UTC" pubdate="pubdate">July 18 2008</time></div><div class="article-tags"></div><div class="article-summary">初グリモン。結構適当に書いたけど、とりあえず動くのでよし。codereposに上げたのでいじりたい人はご自由にどうぞー。
+カテゴリは、「プログラミング」「日記」「告知」の3種類にしようとも思ったんですが、そうすると例えばHTMLの話題やWeb全般に関する話題はどのカテゴリにも該当しないことに気づいたので、「記事」「日記」「告知」の3種類に最終的に決定しました。
+
+基本的にこのブログはRSS、検索、はてブ経由で来る人が多いので、1つの記事から関連のある他の記事に辿れることを重視しています。現状、デザインを修正してないのでわからないと思いますが・・・例えば、カテゴリ・タグをベースに関連エントリなど他のエントリとの繋りを作るといった感じですかね。カテゴリやタグ以外にははてブ数や時間とかもちょっと考慮に入れてます。
+
+今までは、1つのエントリで完結させてましたが、今後は「他にもこんな記事があるよ」と言ったことができたらなぁと思っています。
+</div></article><article><h1 class="article-title"><a href="/2008/07/18/amazon_crossreview/">Amazon商品ページにcrossreviewのレビューを表示するgreasemonkeyスクリプト書いた</a></h1><div class="article-time"><time dateMime="2008-07-18 00:00:00 UTC" pubdate="pubdate">July 18 2008</time></div><div class="article-body">初グリモン。結構適当に書いたけど、とりあえず動くのでよし。codereposに上げたのでいじりたい人はご自由にどうぞー。
 
 <a href="http://coderepos.org/share/browser/lang/javascript/userscripts/amazon_crossreview.user.js?">amazon_crossreview.user.js</a>
 
@@ -62,7 +241,7 @@ MacBookにgitをインストールするのは簡単だった。MacPortsです�
 
 サンプル画像
 <img src="http://img.skitch.com/20080718-bs6mqgs1nrjggarixunr4wgmdd.jpg" alt="greasemonkey_for_crossreview"/>
-</div><div class="read-more"><a href="/2008/07/18/amazon_crossreview/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2008/07/15/iphone-developer-program/">iPhone Developer Programに登録しました。</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2008-07-15 00:00:00 UTC" pubdate="pubdate">July 15 2008</time></div><div class="article-tags"></div><div class="article-summary">結論から言うと、まだ実機検証も配布もできてない段階です。そもそもアプリ作れてないですしね。ただ、米国在住者じゃないと登録できないってことはないですね。とりあえず登録はできたっぽいので。
+</div></article><article><h1 class="article-title"><a href="/2008/07/15/iphone-developer-program/">iPhone Developer Programに登録しました。</a></h1><div class="article-time"><time dateMime="2008-07-15 00:00:00 UTC" pubdate="pubdate">July 15 2008</time></div><div class="article-body">結論から言うと、まだ実機検証も配布もできてない段階です。そもそもアプリ作れてないですしね。ただ、米国在住者じゃないと登録できないってことはないですね。とりあえず登録はできたっぽいので。
 
 端的に今の状況を説明すると、
 
@@ -70,13 +249,52 @@ MacBookにgitをインストールするのは簡単だった。MacPortsです�
 <li>iPhone Developer Program(Standardの方、$99)を日本のオンラインApple Storeから注文する</li>
 <li>activate codeがメールで届く</li>
 <li><blockquote>
-We are unable to activate your iPhone Developer...</blockquote></li>
-</ul></div><div class="read-more"><a href="/2008/07/15/iphone-developer-program/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2008/07/03/release_crossreview/">crossreviewがリリースされました!</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2008-07-03 00:00:00 UTC" pubdate="pubdate">July 03 2008</time></div><div class="article-tags"></div><div class="article-summary">今日、<a href="http://crossreview.jp/">crossreview</a>というサービスがリリースしました。smashmediaの河野さんのアイディアと元に、僕の勤め先であるRAWHIDE.が開発を手伝わさせていただきました。
+We are unable to activate your iPhone Developer Program membership because we are unable to successfully verify your identity. Please contact us and reference Enrollment ID#xxxxxxx for further assistance.</blockquote></li>
+<li>activateできねーよ!って日本語と英語でADC(Apple Developer Connection)のcontact usから送信</li>
+<li>数時間後、「あんたのアカウント情報調整したからもっかい試してみ」って返事がくる(日本語できた)</li>
+<li>めでたくactivate完了</li>
+</ul>
+
+そんな感じでとりあえずDeveloper Programには登録できましたーと。んで、そのあとも実機検証までデバイスの登録とか証明書の作成とか色々ある。やり方は一応英語でドキュメントがあるけれど、なんかキレイにまとまってない。とりあえずはProgram Portal(activate後、ログインできるページ)のメニューを順番にやっていけばいいんじゃないかねー。各メニューにHow Toがあるからそれに従えばいいはず。
+
+おれがやったのは
+
+<ul>
+<li>Certificatesの追加</li>
+<li>Devicesの追加</li>
+<li>App IDsの追加</li>
+<li>Provisioningの追加</li>
+<li>xcodeのオーガナイザ上で、iPod Touchのrestore</li>
+<li>オーガナイザでTouchにProvisionを追加</li>
+<li>xcodeのプロジェクトのinfoでDeviceを選択しようにも選択肢にでない! <- ｲﾏｺｺ</li>
+</ul>
+
+正直、手順が悪かったのか何が悪かったのかがよくわからない。AppleIDに登録してある情報が日本語だからから至るところで文字化けしてるし。証明書のコモンネームまで文字化けしてる。
+
+xcodeのinfoでiPhoneDeveloper:<firstname><lastname>を入力するところがあるんだけど、そこに証明書のコモンネームを書けってドキュメントに書いてあったけど、上で書いたようにコモンネームが文字化けしてるのでどうしたもんかなーと。
+
+んで、証明書を作りなおししまくってたら、Errorがでるようになって追加できなくなってしまった。んで、またメールでなんとかしてーって連絡したところ。
+
+そんな感じでまだiPod Touchで自作appを作るところまではいってない。これからやる人は英語のApple ID作った方がいい気がする。その方が問題なさそう。ただ、あれって日本の住所でも英語で登録できたっけ・・・
+
+とりあえずまた進展があったらエントリ書く。
+
+<h2>追記</h2>
+どうやら大抵の人は一発でactivateできてないっぽいですね(We are unable to activate your iPhone...ってやつ)。そう言うときはとりあえずメールでなんとかしてくれーと頼むのがいいんじゃないですかね。
+
+実機で動かすまでが長いですなぁ。
+</div></article><article><h1 class="article-title"><a href="/2008/07/03/release_crossreview/">crossreviewがリリースされました!</a></h1><div class="article-time"><time dateMime="2008-07-03 00:00:00 UTC" pubdate="pubdate">July 03 2008</time></div><div class="article-body">今日、<a href="http://crossreview.jp/">crossreview</a>というサービスがリリースしました。smashmediaの河野さんのアイディアと元に、僕の勤め先であるRAWHIDE.が開発を手伝わさせていただきました。
 
 <a href="http://blog.crossreview.jp/plessrelease">プレスリリース</a>
 <a href="http://smashmedia.jp/blog/2008/07/001654.html">ぼくとcrossreviewの誕生日</a>
 
-Amazonの商品をレビューするサイトなのですが、Twitterみたいに気軽にレビューできます。他にもお気に入り機能(Twitterでいうfollowみたいなもの)があるので、似た趣味の人のレビューを追ったりすると色々とおもしろいんじゃないかと思います。...</div><div class="read-more"><a href="/2008/07/03/release_crossreview/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2008/06/30/song_for_autotest/">autotestの結果をMacのsayコマンドで通知する</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2008-06-30 00:00:00 UTC" pubdate="pubdate">June 30 2008</time></div><div class="article-tags"></div><div class="article-summary">かなりネタなエントリー。
+Amazonの商品をレビューするサイトなのですが、Twitterみたいに気軽にレビューできます。他にもお気に入り機能(Twitterでいうfollowみたいなもの)があるので、似た趣味の人のレビューを追ったりすると色々とおもしろいんじゃないかと思います。
+
+ちなみに僕のページは<a href="http://crossreview.jp/ukstudio/">http://crossreview.jp/ukstudio/</a>ですよー。
+
+
+ブログパーツ、横のもほしいなぁー。あとで要望だしちゃおう。
+</div></article><article><h1 class="article-title"><a href="/2008/06/30/song_for_autotest/">autotestの結果をMacのsayコマンドで通知する</a></h1><div class="article-time"><time dateMime="2008-06-30 00:00:00 UTC" pubdate="pubdate">June 30 2008</time></div><div class="article-body">かなりネタなエントリー。
 
 Macにはsayコマンドと言うものがあって、入力した英単語とかをしゃべらせることができる。詳細はMacの手書き説明書さんが最近エントリー書いているのでそちらを見てくださいな。
 
@@ -84,7 +302,32 @@ Macにはsayコマンドと言うものがあって、入力した英単語と�
 
 んで、今回はそのsayコマンドを使って、autotestの結果をしゃべらせよう!というネタ企画。実用性はほぼ皆無。
 
-まずは~/.autotestを修正。最下行に以下を追記する。既にgrowlの通知などの設定がある場合はそこにsayコマン...</div><div class="read-more"><a href="/2008/06/30/song_for_autotest/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2008/06/13/rails2_1min/">Ruby on Rails 2.0アプリを10秒で作る2.0</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2008-06-13 00:00:00 UTC" pubdate="pubdate">June 13 2008</time></div><div class="article-tags"></div><div class="article-summary"><ul>
+まずは~/.autotestを修正。最下行に以下を追記する。既にgrowlの通知などの設定がある場合はそこにsayコマンドの実行文を追記すればOK。
+
+<pre lang="ruby">
+module Autotest::Growl
+  Autotest.add_hook :ran_command do |at|
+    results = [at.results].flatten.flatten.join("\n")
+    output = results.slice(/(\d+)\s+examples?,\s*(\d+)\s+failures?(,\s*(\d+)\s+not implemented)?/)
+    if output
+      if $~[2].to_i > 0
+        `say -v bad faild`
+      else
+        `say -v good success!`
+      end
+    end
+  end
+end
+</pre>
+
+`で括っている2箇所でsayコマンドを実行している。失敗したときはbadな声で、成功したときはgoodな声で結果を通知する。他にも色んな声があるらしいので、そこらへんは好みで。
+
+<pre lang="bash">
+ls /System/Library/Speech/Voices
+</pre>
+
+とすると声の一覧がでるっぽい。
+</div></article><article><h1 class="article-title"><a href="/2008/06/13/rails2_1min/">Ruby on Rails 2.0アプリを10秒で作る2.0</a></h1><div class="article-time"><time dateMime="2008-06-13 00:00:00 UTC" pubdate="pubdate">June 13 2008</time></div><div class="article-body"><ul>
 <li>Railsのインストールは作業時間に含みません</li>
 <li>shファイル作る時間も含みません</li>
 <li>筆者の環境がMacBookなのでそれ以外の環境は適当に脳内変換すべし</li>
@@ -102,11 +345,74 @@ rake db:migrate
 
 <pre lang="bash">
 $ chmod 775 hoge.sh
-#別に775じゃなくてもとりあえず実行権限あ...</pre></div><div class="read-more"><a href="/2008/06/13/rails2_1min/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2008/06/05/rails_vim_rspec/">rails.vimのファイル切り替えをRSpecに対応させる(仮)</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2008-06-05 00:00:00 UTC" pubdate="pubdate">June 05 2008</time></div><div class="article-tags"></div><div class="article-summary">rails.vimをインストールすると、RcontrollerとかRmodelコマンドでRSpecファイルからControllerやModelファイルに切り替えることができるんだけど、その逆ができないので対応させた。仮なのはVimスクリプトをちゃんと書けなくてコピペのごまかしだから。
+#別に775じゃなくてもとりあえず実行権限あたえればおk
+</pre>
+
+んじゃ、こっからスタート。以下の3行を10秒でうちこむ。Tabキー使えば余裕でしょ。あと、hoge.shの実行時間とserverの起動は考慮してないから。
+<pre lang="bash">
+$ ./hoge.sh
+$ cd itpro
+$ ruby ./script/server
+</pre>
+
+んで、http://localhost:3000/itprosにブラウザからアクセス。表示されればおk。
+
+<a href="http://itpro.nikkeibp.co.jp/article/COLUMN/20080606/306873/">Ruby on Rails 2.0アプリを1分で作る : IT Pro</a>
+</div></article><article><h1 class="article-title"><a href="/2008/06/05/rails_vim_rspec/">rails.vimのファイル切り替えをRSpecに対応させる(仮)</a></h1><div class="article-time"><time dateMime="2008-06-05 00:00:00 UTC" pubdate="pubdate">June 05 2008</time></div><div class="article-body">rails.vimをインストールすると、RcontrollerとかRmodelコマンドでRSpecファイルからControllerやModelファイルに切り替えることができるんだけど、その逆ができないので対応させた。仮なのはVimスクリプトをちゃんと書けなくてコピペのごまかしだから。
 
 書きかえるファイルは~/.vim/autoload/rails.vim。一応行数も書いたけどもしかしたらズレてるかもしれないので参考程度に。あと、バージョンは2.0使ってる。
 
-まずは、:Rspec、:Rspeccontroller...</div><div class="read-more"><a href="/2008/06/05/rails_vim_rspec/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2008/06/04/rails_for_beginner/">RE:Rails初心者はどうやって他人のRailsコードを読めばいいか</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2008-06-04 00:00:00 UTC" pubdate="pubdate">June 04 2008</time></div><div class="article-tags"></div><div class="article-summary">オレもRailsを初めて3ヶ月(もうちょいあるかも)たったので、ある程度オレの経験を元にまとめてみる。参考になるといいなー。
+まずは、:Rspec、:Rspeccontroller、:Rspecmodelを呼び出せるようにする。
+<pre lang="vim">
+1777   call s:addfilecmds("integrationtest")
+1778   call s:addfilecmds("spec")
+1779   call s:addfilecmds("speccontroller")
+1780   call s:addfilecmds("specmodel")
+1781   call s:addfilecmds("stylesheet")
+</pre>
+なんでわざわざ3つあるのかと言うと、「:Rspec hoge」ってやった時にControllerのスペックなのか、Modelのスペックなのか判断する方法がわからなかったから。だからとりあえず「:Rspec」とやったときは、今開いているファイルに対応するスペックファイルを開き、個別に指定して開きたいときは「:Rspeccontroller hoge」もしくは「:Rspecmodel hoge」で明示的にControllerかModelかを指定するようにした。
+
+次に「:Rspeccontroller [tab]」や「:Rspecmodel [tab]」としたときに、スペック名を補完できるようにfunctionを追加する。
+<pre lang="vim">
+1941 function! s:speccontrollerList(A,L,P)
+1942   return s:autocamelize(s:relglob("spec/controllers/",s:recurse,"_controller_spec.rb"),a:A)
+1943 endfunction
+1944
+1945 function! s:specmodelList(A,L,P)
+1946   return s:autocamelize(s:relglob("spec/models/",s:recurse,"_spec.rb"),a:A)
+1947 endfunction
+</pre>
+
+最後に実際にファイルを開く部分。2331、2334、2340、2345の"spec"、"speccontroller"、"specmodel"が最初に設定したaddfilecmdsの引数と対応するっぽい。なのでfunction名はなんでもいいと思うけど、とりあえず他のに合わせた。
+
+specEditは「:Rspec」に対応していて、開いたファイルがControllerかModelかで開くスペックファイルもかわる。speccontrollerEditとspecmodelEditはControllerかModelどちらか決まったものしか開かない。
+
+<pre lang="vim">
+2328 function! s:specEdit(bang,cmd,...)
+2329   if s:model() != ''
+2330     let f = s:model()
+2331     return s:EditSimpleRb(a:bang,a:cmd,"spec",f,"spec/models/","_spec.rb")
+2332   else
+2333     let f = s:controller()
+2334     return s:EditSimpleRb(a:bang,a:cmd,"spec",f,"spec/controllers/","_controller_spec.rb")
+2335   endif
+2336 endfunction
+2337
+2338 function! s:speccontrollerEdit(bang,cmd,...)
+2339   let f = s:controller()
+2340   return s:EditSimpleRb(a:bang,a:cmd,"speccontroller",f,"spec/controllers/","_controller_spec.rb")
+2341 endfunction
+2342
+2343 function! s:specmodelEdit(bang,cmd,...)
+2344   let f = s:model()
+2345   return s:EditSimpleRb(a:bang,a:cmd,"specmodel",f,"spec/models/","_spec.rb")
+2346 endfunction
+</pre>
+
+とりあえず、現状の設定で簡易的にRSpecに対応させることができる。「:Rspec」の存在が気持ち悪いのであれば、それは消して開いているファイルがControllerかModelか自分で判断して「:Rspeccontroller」か「:Rspecmodel」を使いわければいいと思う。「:Rspec [tab]」でエラーが出るし個人的には気持ちわるいんだけど、対応させたスペックを開くことの方がおおいし、その時は短いコマンドの方が都合がいいのでここらへんは妥協。今回Viewには対応させていないけれど、同じ要領でできるはず。
+
+rails.vimを少しよんだだけだし、実際の動作もまともに検証してないので変な動作したらごめんなさい。まぁ致命的な問題は起きないだろうけど。正式にrails.vimがRSpecに対応してくれるといいんだけどね。
+</div></article><article><h1 class="article-title"><a href="/2008/06/04/rails_for_beginner/">RE:Rails初心者はどうやって他人のRailsコードを読めばいいか</a></h1><div class="article-time"><time dateMime="2008-06-04 00:00:00 UTC" pubdate="pubdate">June 04 2008</time></div><div class="article-body">オレもRailsを初めて3ヶ月(もうちょいあるかも)たったので、ある程度オレの経験を元にまとめてみる。参考になるといいなー。
 
 <h2>1. まずはアプリケーションを実際に動作させる</h2>
 <pre lang="bash">
@@ -115,11 +421,62 @@ $ chmod 775 hoge.sh
 とりあえずコード読む前にそのアプリケーションがどんなものを把握するのが重要。コード読んでもわかるだろうけど、実際にブラウザでいじくりまわした方がはやく理解できると思う。その時にコントローラー名とアクション名もみといた方がよさげ。
 
 <h2>2. モデル図を書く</h2>
-これはid:Hash...</div><div class="read-more"><a href="/2008/06/04/rails_for_beginner/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2008/05/27/rawhide-designer/">RAWHIDE.ではデザイナを募集しています。</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2008-05-27 00:00:00 UTC" pubdate="pubdate">May 27 2008</time></div><div class="article-tags"></div><div class="article-summary">ども、お久しぶりです。久々のエントリで求人ってのも微妙な感じですが、できるだけ色んな人に見てもらいたいですからねー。そもそもこのブログをデザイナが見てるのかどうかが微妙なのかもしれませんが。
+これはid:Hash本人も重要って書いてたけど、ほんとに重要。そんなにキレイな図とかじゃなくていいから、紙とかに多対多なのか1対多なのかとか、参照名はなにかとかぐらいメモがてら書いておくと吉。モデルの関連さえ把握できれば、そのRailsアプリの半分以上理解できたも同然ってぐらい重要。
+
+<h2>3. Logをみる</h2>
+<pre lang="bash">
+% tail -f log/development.log
+</pre>
+開発時にも言えることだけどなるべくLogはみた方がいい。log/の下にdevelopment.log(多分ないと思うけど、productionで動作させてるならproduction.log)があるのでtailコマンドとかでみるといい。フォームのsubmit時のパラメータが見れたり、あとはlogger.infoで出力をチェックしたりとかできる。
+
+<h2>4. script/consoleを使う</h2>
+<pre lang="bash">
+% ruby ./script/console
+</pre>
+基本的な使い勝手はirbと同じ。irbと違うのはRails環境があらかじめロードされていること。例えば、モデルのメソッド名を呼び出したりとか。メソッドレベルで動作をみたい場合に便利。あと、2.0以降からモデル名を入力するとカラムの一覧も表示される。
+
+<pre lang="ruby">
+>> User
+=> User(id: integer,  created_at: datetime, updated_at: datetime)
+>> User.find(:all)
+=> []
+>> user = User.new
+=> #<user id: nil, created_at: nil, updated_at: nil>
+</pre>
+
+<h2>test(or spec)があれば見る *追記08/06/04*</h2>
+<blockquote>
+できれば「test(or spec)があれば、見ろ」も入れて欲しい。
+あれは「どういう挙動をして欲しいか」=「どう使うか」が書いてあるんだから、
+どんな構造のアプリなんだか理解する助けになるよ。
+てか、ならないなら書く意味ないもの。
+</blockquote>
+コメント欄での指摘。このエントリを書こうと決めたときは書くつもりだったのに、実際に書いたら忘れてたっていう。
+
+thx、faultier。
+
+<h2>まとめとオマケ</h2>
+なんかTips的なエントリになったけど、とりあえずざっと思いついたのはこんな感じ。あとはコントローラのアクションからスタートして、モデルのメソッドや一連の流れを追えばいいんじゃないかな。コントローラーのアクションも上から順に読むよりは、機能ごとの流れで追った方がいいと思う。例えば、new->create->showとかedit->update->showとか。実際はもうちょい複雑な場合もあるだろうけど。実際の流れがどんな風になってるかは実際にアプリを動かしながらURLを確認したり、ログの出力やビューのフォームのアクションを見れば大体わかるはず。
+
+あとはオマケ的な指摘だけど、Railsが2系であればビューファイルの拡張子は「.rhtml」より「.html.erb」の方がいい。この辺はActionPackのマルチビューに関係してる。この辺は初心者のうちはとりあえず「.html.erb」にしとくぐらいでいいと思うし、なによりオレがマルチビューについてまだちゃんと理解してないので詳細ははぶく。ｻｰｾﾝ｡
+
+respond_toは1つのアクションで複数のフォーマットを出力するときに使う。
+<pre lang="ruby">
+respond_to do |format|
+  format.html
+  format.xml { render :xml => @user }
+end
+</pre>
+上記のように書くと、ブラウザからの通常アクセス時はhtmlを、WebサービスなどでXMLを指定された場合はXMLを出力する。Webアプリは、例えばブラウザからのアクセスとAPIでのアクセスで、処理は同じだけど出力が違うなんてことがあったりする。そういうときにrespond_toで指定してやることで無闇にアクションを増やさなくてすむ。
+
+<table  border="0" cellpadding="5"><tr><td colspan="2"><a href="http://www.amazon.co.jp/gp/redirect.html%3FASIN=4797336625%26tag=2004-05-22%26lcode=xm2%26cID=2025%26ccmID=165953%26location=/o/ASIN/4797336625%253FSubscriptionId=0G91FPYVW6ZGWBH4Y9G2" target="_top">Railsレシピブック 183の技</a><img src='http://www.assoc-amazon.jp/e/ir?t=2004-05-22&l=ur2&o=9' width='1' height='1' border='0' alt='' /></td></tr><tr><td valign="top"><a href="http://www.amazon.co.jp/gp/redirect.html%3FASIN=4797336625%26tag=2004-05-22%26lcode=xm2%26cID=2025%26ccmID=165953%26location=/o/ASIN/4797336625%253FSubscriptionId=0G91FPYVW6ZGWBH4Y9G2" target="_top"><img src="http://ecx.images-amazon.com/images/I/419FtZYCmyL._SL160_.jpg" border="0" alt="Railsレシピブック 183の技" /></a></td><td valign="top"><font size="-1">高橋 征義<br /><br />ソフトバンククリエイティブ  2008-05-31<br />売り上げランキング : 1080<br /><br /><br /><a href="http://www.amazon.co.jp/gp/redirect.html%3FASIN=4797336625%26tag=2004-05-22%26lcode=xm2%26cID=2025%26ccmID=165953%26location=/o/ASIN/4797336625%253FSubscriptionId=0G91FPYVW6ZGWBH4Y9G2" target="_top">Amazonで詳しく見る</a></font><font size="-2"> by <a href="http://www.goodpic.com/mt/aws/index.html" >G-Tools</a></font></td></tr></table>
+
+<table  border="0" cellpadding="5"><tr><td colspan="2"><a href="http://www.amazon.co.jp/gp/redirect.html%3FASIN=4274066967%26tag=2004-05-22%26lcode=xm2%26cID=2025%26ccmID=165953%26location=/o/ASIN/4274066967%253FSubscriptionId=0G91FPYVW6ZGWBH4Y9G2" target="_top">RailsによるアジャイルWebアプリケーション開発 第2版</a><img src='http://www.assoc-amazon.jp/e/ir?t=2004-05-22&l=ur2&o=9' width='1' height='1' border='0' alt='' /></td></tr><tr><td valign="top"><a href="http://www.amazon.co.jp/gp/redirect.html%3FASIN=4274066967%26tag=2004-05-22%26lcode=xm2%26cID=2025%26ccmID=165953%26location=/o/ASIN/4274066967%253FSubscriptionId=0G91FPYVW6ZGWBH4Y9G2" target="_top"><img src="http://ecx.images-amazon.com/images/I/51Y%2BviLzM5L._SL160_.jpg" border="0" alt="RailsによるアジャイルWebアプリケーション開発 第2版" /></a></td><td valign="top"><font size="-1">前田 修吾 <br /><br />オーム社  2007-10-26<br />売り上げランキング : 8708<br /><br /><strong>おすすめ平均  </strong><img src="http://g-images.amazon.com/images/G/01/detail/stars-5-0.gif" alt="star" /><br /><img src="http://g-images.amazon.com/images/G/01/detail/stars-5-0.gif" alt="star" />充実した内容でわかりやすい<br /><img src="http://g-images.amazon.com/images/G/01/detail/stars-5-0.gif" alt="star" />railsが良いのかrubyが良いのか本が良いのか<br /><img src="http://g-images.amazon.com/images/G/01/detail/stars-5-0.gif" alt="star" />１日に少しの時間で成果が分かる１冊<br /><br /><a href="http://www.amazon.co.jp/gp/redirect.html%3FASIN=4274066967%26tag=2004-05-22%26lcode=xm2%26cID=2025%26ccmID=165953%26location=/o/ASIN/4274066967%253FSubscriptionId=0G91FPYVW6ZGWBH4Y9G2" target="_top">Amazonで詳しく見る</a></font><font size="-2"> by <a href="http://www.goodpic.com/mt/aws/index.html" >G-Tools</a></font></td></tr></table>
+</div></article><article><h1 class="article-title"><a href="/2008/05/27/rawhide-designer/">RAWHIDE.ではデザイナを募集しています。</a></h1><div class="article-time"><time dateMime="2008-05-27 00:00:00 UTC" pubdate="pubdate">May 27 2008</time></div><div class="article-body">ども、お久しぶりです。久々のエントリで求人ってのも微妙な感じですが、できるだけ色んな人に見てもらいたいですからねー。そもそもこのブログをデザイナが見てるのかどうかが微妙なのかもしれませんが。
 
 そんな感じでどうぞよろしくですよー(0w0)
 
-<a href="http://blog.raw-hide.jp/wp/?p=371">FIGHT! THE RAWHIDE★ » デザイナー募集のお知らせ</a>
+<a href="http://blog.raw-hide.jp/wp/?p=371">FIGHT! THE RAWHIDE★ &raquo; デザイナー募集のお知らせ</a>
 
 <h3>募集する職種</h3>
 <p>
@@ -128,7 +485,49 @@ $ chmod 775 hoge.sh
 <h3>仕事内容</h3>
 <p>
 企画ごとに編成されるチームの一員として、立ち上げから制作、監修までの一連の業務。
-※当面は、ディレクション担当者とともに制作進行して...</p></div><div class="read-more"><a href="/2008/05/27/rawhide-designer/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2008/03/14/autotest_for_macbook/">MacBookにRailsの自動テスト環境を構築した</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2008-03-14 00:00:00 UTC" pubdate="pubdate">March 14 2008</time></div><div class="article-tags"></div><div class="article-summary">なんかautotestが流行りつつある今日この頃ですが、みなさまいかがお過ごしでしょうか。とりあえず丁度うちの会社でも自動テストしようかーみたいな話がでてたので構築してみましたよ!
+※当面は、ディレクション担当者とともに制作進行していただきます。
+</p>
+<p>
+主に平面デザインが主体です。サイトデザイン、ブログパーツデザイン、キャラクターデザイン、など、企画にあがったプロダクト全般のデザインを担当していただきます。
+</p>
+<p>
+FlashオーサリングやHTML+CSSコーディングなどはチームメンバーに担当者がおりますので経験なくとも協力しながら作業をすすめることが可能です。
+</p>
+<h3>対象となる方</h3>
+<p>
+専門学校、短大、大学にてグラフィックデザインの教育を受けたデザインの経験者。（アシスタント経験も可）
+WEB制作ソフト、グラフィック制作ソフトの知識経験は必須です。
+</p>
+<h3>ご用意いただくもの</h3>
+<ul>
+<li>エントリーシート（履歴書・職務経歴書など）</li>
+<li>ポートフォリオ（作品集）</li>
+</ul>
+
+<h4>ポートフォリオ（作品集）について</h4>
+<p>
+CD-RかDVDのデータ、または出力書類にてA3サイズまでの封筒で提出してください。
+WEBの場合は、URLをエントリーシート内に明記してください。
+もしくは画面キャプチャをプリントしてご用意ください。
+</p>
+<p>
+作品については返却しませんので大切なものはコピーなど複製したものをご提出ください。
+</p>
+
+<h3>個人情報の取り扱いについて</h3>
+<p>応募者情報につきましては、厳重に管理いたします。</p>
+<p>
+当該個人情報は、採用選考および入社手続きに必要な範囲で利用し、
+法令で定められる場合、安全管理処置を講じた委託先に業務委託をする場合をのぞき、
+ご本人の同意なく、他の目的では利用することはありません。
+</p>
+<p>
+なお、お送りいただいた各種書類およびデータは、返却いたしませんのでご了承ください。
+</p>
+<p>
+不採用とさせていただいた場合は、選考終了後適切な方法にて破棄いたします。
+</p>
+</div></article><article><h1 class="article-title"><a href="/2008/03/14/autotest_for_macbook/">MacBookにRailsの自動テスト環境を構築した</a></h1><div class="article-time"><time dateMime="2008-03-14 00:00:00 UTC" pubdate="pubdate">March 14 2008</time></div><div class="article-body">なんかautotestが流行りつつある今日この頃ですが、みなさまいかがお過ごしでしょうか。とりあえず丁度うちの会社でも自動テストしようかーみたいな話がでてたので構築してみましたよ!
 
 <h2>ZenTestのインストール</h2>
 とりあえずは定番のZenTest(autotest)とRedGreen(結果の色付け)をインストールします。
@@ -138,14 +537,144 @@ $ sudo gem install ZenTest
 $ sudo gem install RedGreen
 </pre>
 
-次にautotestの設定ファイルの作成。example_dot_autotest...</div><div class="read-more"><a href="/2008/03/14/autotest_for_macbook/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2008/03/04/from_unittest_to_rspec/">test/unitで書いたテストにRSpecでテストを追記する方法</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2008-03-04 00:00:00 UTC" pubdate="pubdate">March 04 2008</time></div><div class="article-tags"></div><div class="article-summary">10分ぐらい調べて試してみただけだけど。
+次にautotestの設定ファイルの作成。example_dot_autotest.rbのパスは人によって違うと思うので適当に読み替えてください。
+
+<pre lang="bash">
+cp /opt/local/lib/ruby/gems/1.8/gems/ZenTest-3.9.1/example_dot_autotest.rb ~/.autotest
+</pre>
+
+~/.autotestの15行目のコメントアウトを解除。
+
+<pre lang="ruby">
+require 'autotest/redgreen'
+</pre>
+
+RAILS_ROOTでautotestを実行。起動時に全部のテストを実行するのでちょっとだけ重くなるかもしれません。それ以降はテストファイルやモデル、コントローラファイルなどを修正する度に該当のテストが走ります。
+
+<pre lang="bash">
+$ cd RAILS_ROOT
+$ autotest
+</pre>
+
+実行するテストはtest/unit、もしくはRailsにRSpecが入れてあればRspecのテストを実行します。
+
+なんかspec_serverを立ち上げておくと処理が早くなるらしいですがよくわかってないです。まぁとりあえず設定しといて損はなさそうです。
+
+<pre lang="bash">
+$ vi spec/spec.opts # 最下行に --drb を追記。drbでテスト用サーバへ繋ぐようになります。
+$ ruby script/spec_server
+</pre>
+
+テストの結果は成功なら緑色のバーが、失敗なら赤色のバーが表示されます。
+
+<h2>結果通知用にGrowlとScreenの設定をする</h2>
+
+これでも自動テストは走るので問題ないですが、結果を見るのがちょっと面倒ですね。ということでGrowlとScreenで結果が見えるようにしましょう。
+
+screenの場合は<a href="http://kakutani.com/20070912.html#p02">角谷さんのエントリーを</a>見るといいと思います。基本的にそのまま~/.autotestにコピペするだけで問題ないはずです。
+
+<pre lang="ruby">
+require 'autotest/screen'   # コメントアウトを外す
+
+Autotest::HOOKS.delete(:interrupt)
+Autotest::Screen.statusline = %q[|%c %m/%d|%w %=]
+
+class Autotest::Screen
+  SCREEN_COLOR[:green] = 'gw'
+  SCREEN_COLOR[:yellow] = 'yk'
+
+  Autotest.add_hook :run_command do |at|
+    message 'Running' if execute?
+  end
+
+  Autotest.add_hook :quit do |at|
+    clear if execute?
+  end
+
+  Autotest.add_hook :ran_command do |at|
+    return unless execute?
+    results = [at.results].flatten.join("¥n")
+    output = results.slice(/(¥d+)¥sexamples?,¥s*(¥d+)¥s.*failures?(?:,¥s*(¥d+)¥s.*pendings?)?/)
+    if output
+      ex,fail,pend = $~.captures.map {|e| e.to_i}
+      if 0 < fail
+        message "FAIL #{ex}ex, F:#{fail} ", :red
+      elsif 0 < pend
+        message "Pend #{ex}ex, F:#{fail} P:#{pend}", :yellow
+      else
+        message "All Green #{ex}ex", :green
+      end
+    end
+  end
+end
+</pre>
+
+この設定でscreenとautotestを起動しておくと、ステータスバーの右側にテストの結果が表示されます。
+
+<img src="http://img.skitch.com/20080314-d6gq6bsmbbxh99ynx349bfcckf.jpg" alt="autotest"/>
+
+これ貼ってから気づいたけど、Terminalから透けてみえる絵がなんかあれですなw
+
+次にGlowlの設定ですが、Leopardではruby-growlのインストールが必要っぽいです。とりあえずmacportsからインストールしておきましょう。それとGrowlの設定でリモートを許可しておきましょう。
+
+<pre lang="bash">
+$ sudo port install ruby-glowl
+</pre>
+
+<img src="http://img.skitch.com/20080314-r92e97nip77qfj7u4p2a1ch8e6.jpg" alt="Growl"/>
+
+Growlで結果を通知するにはgrowlnotifyのインストールが必要です。もしインストールしていなければ<a href="http://growl.info/">本家</a>からdmgファイルをDLし、その中にあるinstall.shを実行します。
+
+<pre lang="bash">
+$ cp -r /Volumes/Growl\ 1.1.2/Extras/growlnotify ~/tmp
+$ cd ~/tmp/growlnotify
+$ sudo ./install.sh
+$ growlnotify -m "hoge" # growlの通知が表示されればインストール完了
+</pre>
+
+~/.autotestを修正し、glowlで結果が通知されるようにします。
+
+<pre lang="ruby">
+require 'autotest/glowl' # コメントアウトを解除
+</pre>
+
+これでテストが失敗したとき、失敗から成功になったときにGrowlが通知してくれます。Growlの見た目を変更しようと思ったけれど、個人的にscreenだけで十分だったので今回はナシ。
+
+とりあえず自動テストはテストを書くのが楽しくなりますな。オススメ。
+</div></article><article><h1 class="article-title"><a href="/2008/03/04/from_unittest_to_rspec/">test/unitで書いたテストにRSpecでテストを追記する方法</a></h1><div class="article-time"><time dateMime="2008-03-04 00:00:00 UTC" pubdate="pubdate">March 04 2008</time></div><div class="article-body">10分ぐらい調べて試してみただけだけど。
 
 <pre lang="ruby">
 require 'rubygems'
 require 'test/unit'
 require 'spec'
 
-class TestArray 
+class TestArray < Test::Unit::TestCase
+
+  # test/unit
+  def test_1
+    assert_equal(0, Array.new.size)
+  end
+
+  # rspec
+  describe Array, "when empty" do
+    before do
+      @empty_array = []
+    end
+
+    it "should be empty" do
+      @empty_array.should be_empty
+    end
+
+    it "should size 0" do
+      @empty_array.size.should == 0
+    end
+
+    after do
+      @empty_array = nil
+    end
+  end
+end
+</pre>
 
 <pre lang="bash">
 $ ruby test.rb
@@ -158,7 +687,8 @@ Finished in 0.007974 seconds
 
 RSpecの方のテストはるびまの角谷さんの<a href="http://jp.rubyist.net/magazine/?0021-Rspec">記事</a>から拝借しました。
 
-spceをrequireして、クラスに書きこんでいけばよさそう。仕事だとtest...</pre></div><div class="read-more"><a href="/2008/03/04/from_unittest_to_rspec/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2008/03/01/rawhide/">RAWHIDE.入社のお知らせ</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2008-03-01 00:00:00 UTC" pubdate="pubdate">March 01 2008</time></div><div class="article-tags"></div><div class="article-summary">こんばんわ、UKです。
+spceをrequireして、クラスに書きこんでいけばよさそう。仕事だとtest/unitで書いてしまったテストも多いだろうから、test/unitからRSpecに移行するのにいいかもしれない。
+</div></article><article><h1 class="article-title"><a href="/2008/03/01/rawhide/">RAWHIDE.入社のお知らせ</a></h1><div class="article-time"><time dateMime="2008-03-01 00:00:00 UTC" pubdate="pubdate">March 01 2008</time></div><div class="article-body">こんばんわ、UKです。
 
 実は2月22日に今まで勤務していた会社を退職しました。ついったーやmixiでつながっている人達は知ってたかもですが。
 
@@ -168,17 +698,237 @@ spceをrequireして、クラスに書きこんでいけばよさそう。仕事
 
 早くRAWHIDE.の一員、戦力として役立てるよう頑張る所存です。よろしくお願いします。
 
-<a href="http://twitter.com/Hamachiya2/statuses/742737192">オマ...</a></div><div class="read-more"><a href="/2008/03/01/rawhide/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2008/02/27/haskell_sec3/">ふつケル第3章</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2008-02-27 00:00:00 UTC" pubdate="pubdate">February 27 2008</time></div><div class="article-tags"></div><div class="article-summary"><h2>型と値</h2>
+<a href="http://twitter.com/Hamachiya2/statuses/742737192">オマケ</a>: こないだ出社したときの話です。ふふふ・・・
+</div></article><article><h1 class="article-title"><a href="/2008/02/27/haskell_sec3/">ふつケル第3章</a></h1><div class="article-time"><time dateMime="2008-02-27 00:00:00 UTC" pubdate="pubdate">February 27 2008</time></div><div class="article-body"><h2>型と値</h2>
 Haskellには<strong>型推論</strong>という機能がある。型推論は処理系の方で型を推測し、<strong>矛盾なく全ての式が型づけできればコンパイル時にエラーにはならない</strong>。Haskell以外にも、OCaml、Scala、MLなど静的型付け関数型言語のほとんどが型推論の機能を供えている。
 
-Haskellの型には、<strong>Int(整数値)、Char(文字)、String(文字列)、Bool(真偽値)</strong>がある。Intは最低30ビット幅の符号付き整数値を意味する。CharやStringで扱う文字(列)のエンコードにはUnicode...</div><div class="read-more"><a href="/2008/02/27/haskell_sec3/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2008/02/25/haskell_sec2/">ふつケル第2章</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2008-02-25 00:00:00 UTC" pubdate="pubdate">February 25 2008</time></div><div class="article-tags"></div><div class="article-summary"><h2>ハロー、ワールド</h2>
+Haskellの型には、<strong>Int(整数値)、Char(文字)、String(文字列)、Bool(真偽値)</strong>がある。Intは最低30ビット幅の符号付き整数値を意味する。CharやStringで扱う文字(列)のエンコードにはUnicodeを採用しているが、GHCの実装は中途半端で入出力でのエンコーディング変換などが実装されていない。
+
+また、Int型のリスト、Char型のリストと言う風にリストの型を表現し、Int型のリストの各要素はInt型になる。<strong>ソースコード上では[Int]や[Char]と書く</strong>。文字列は文字のリストなので[Char]ということになり、別名として上記したString型が用意されている。
+
+関数の型をは引数の型と返り値の型を組合せて表現する。例えば、<strong>String -> [String]というのは第1引数の型がString(文字列)で、返り値の型が[String](文字列のリスト)となる</strong>。
+
+<pre lang="haskell">
+第1引数の型 -> 第2引数の型 -> ・・・ -> 返り値の型
+</pre>
+
+では、引数の型が決まっていない場合どうするのかと言うと、<strong>型変数</strong>と言うものを使う。型変数はアルファベット小文字であらわし、アルファベット小文字の部分は好きな型に読み替えてよい。
+
+<pre lang="haskell">
+[a] -> Int
+Int -> [a] -> [a]
+</pre>
+
+上記の場合だと、1行目は任意の型のリストを引数にもち、Intを返す関数。2行目はIntを第1引数、任意の型のリストを第2引数にもち、第2引数と同じ型のリストを返す関数という意味になる。
+
+<strong>関数の型を宣言</strong>するには、先程関数の型を表現したものに少し付け足せばいい。Haskellは型推論の機能をもつので必ずしも型の宣言が必要というわけではないが、なるべく宣言しておくのが好ましい。
+
+<pre lang="haskell">
+関数名 :: 第1引数の型 -> 第2引数の型 -> ・・・ -> 返り値の型
+</pre>
+
+<h2>高階関数</h2>
+高階関数とは<strong>引数に関数をとる関数</strong>のこと。
+
+<pre lang="haskell">
+main = do cs < - getContents
+          putStr $ expand cs
+
+expand :: String -> string
+expand cs = map translate cs
+
+translate :: Char -> Char
+translate c = if c == '\t' then '@' else c
+</pre>
+
+このプログラムでは5行目で高階関数のmap関数が使われている。map translate csと言うのは、<strong>translate関数そのものにmapを適用しているのであって、translateの結果にmapを適用しているわけではない</strong>。
+
+mapの型は
+<pre lang="haskell">
+map :: (a -> b) -> [a] -> [b]
+</pre>
+となっており、<strong>(a -> b)は「a型の値を引数にとりb型の値を返す関数」</strong>を意味する。今回の場合だと、translate関数の型が Char -> Char となっているので、「Char型の値を引数にとりChar型の値を返す関数」と読み替えることができる。更にいうと(a -> b) -> [a] -> [b] は (Char -> Char) -> [Char] -> [Char]となる。
+
+<pre lang="haskell">
+main = do cs < - getContents
+          putStr $ expand cs
+
+expand :: String -> String
+expand cs = concat $ map expandTab cs
+
+expandTab :: Char -> String
+expandTab c = if c == '\t' then "        " else [c]
+</pre>
+
+この辺はちょっとややこしくなってくるが、ちゃんと順に考えていけば問題ない。
+
+<h2>パターンマッチ(1)</h2>
+
+<pre lang="haskell">
+tabStop = 8
+
+main = do cs < - getContents
+          putStr $ expand cs
+
+expand :: String -> String
+expand cs = concatMap expandTab cs
+
+expandTab :: Char -> String
+expandTab '\t' = replicate tabStop ' '
+expandTab c = [c]
+</pre>
+
+個人的にtabStopがグローバル変数みたいでなんか気持ち悪い。定数と考えればいいのかな。まぁ今はとりあえず置いておこう。
+
+今回のプログラムの最後2行で<strong>パターンマッチ</strong>を使用している。下から2行目が引数が「\t」の時に使われる定義。最後の行は仮引数が使われているので、「どんな値」にもマッチする。<strong>パターンマッチは上に書いたものが優先され、マッチするパターンが無い場合には実行時にエラーが発生する</strong>。
+
+<pre lang="haskell">
+関数名 第1引数のパターン 第2引数のパターン ・・・・ = 定義1
+関数名 第1引数のパターン 第2引数のパターン ・・・・ = 定義2
+関数名 第1引数のパターン 第2引数のパターン ・・・・ = 定義3
+</pre>
+
+<h2>パターンマッチ(2)</h2>
+<pre lang="haskell">
+map :: (a -> b) -> [a] -> [b]
+map f []     = []
+map f (x:xs) = f x : map f xs
+</pre>
+
+2行目のパターンマッチは空リストに一致する。つまりmapの第2引数が[]だった場合、必ず[]を返すと言うことになる。
+
+3行目の(x:xs)もリストに対するパターンで、空リスト以外のリストにマッチする。<strong>リストの最初の要素がxに束縛され、残りの要素がxsに束縛される</strong>。まぁSchemeのcarやcdrみたいなものかな。
+
+3行目での定義ではまたさらにmapを適用している。つまり、<strong>再帰を用いて処理している</strong>。Haskellには<strong>ループを扱う構文は存在しない</strong>為である。
+
+<pre lang="haskell">
+map length ["abc", "de", "f"]
+  length "abc" : map length ["de", "f"]
+    length "de" : map length ["f"]
+      length "f" : map length []
+      (1 : [])
+    (2 : [1])
+  (3:[2,1])
+[3, 2, 1]
+</pre>
+
+例えば「map length ["abc", "de", "f"」だと多分こんな感じ。<strong>「:」演算子はリストを生成する演算子で(y:ys)ならリストysの先頭に要素yを追加する</strong>。
+
+<h2>練習問題</h2>
+<pre lang="haskell">
+main = do cs < - getContents
+          putStr $ swapa cs
+
+swapa :: String -> String
+swapa cs = map replaceA cs
+
+replaceA :: Char -> Char
+replaceA 'a' = 'A'
+replaceA 'A' = 'a'
+replaceA c = c
+</pre>
+
+とりあえず動く。
+
+<h2>追記(08/02/27)</h2>
+<pre lang="haskell">
+main = do cs < - getContents
+          putStr $ map swapa cs
+
+swapa :: Char -> Char
+swapa 'a' = 'A'
+swapa 'A' = 'a'
+swapa c = c
+</pre>
+
+書き直した。この方が短い。
+</div></article><article><h1 class="article-title"><a href="/2008/02/25/haskell_sec2/">ふつケル第2章</a></h1><div class="article-time"><time dateMime="2008-02-25 00:00:00 UTC" pubdate="pubdate">February 25 2008</time></div><div class="article-body"><h2>ハロー、ワールド</h2>
 <pre lang="haskell">
 main = putStrLn "Hello, World!"
 </pre>
 
 「main = 」は変数mainの定義. 「putStrLn "Hello, World!"」が変数mainの値となる。putStrLnは標準出力に文字列と開業を出力する時に使う関数で、正確に言うと<strong>文字列を1つ受けとり、その文字列と改行を出力するアクションを返す関数</strong>.
 
-「putStrLn "Hello, World!"」の式を、Haskellでは<strong>"Hello,World!"にputStrLn関数を適用...</strong></div><div class="read-more"><a href="/2008/02/25/haskell_sec2/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2008/02/15/vim_ruby_on_rails/">VimでRuby on Railsの開発する為の環境構築</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2008-02-15 00:00:00 UTC" pubdate="pubdate">February 15 2008</time></div><div class="article-tags"></div><div class="article-summary">ちょこっとだけ環境整えたので忘備録エントリとして。
+「putStrLn "Hello, World!"」の式を、Haskellでは<strong>"Hello,World!"にputStrLn関数を適用する</strong>と言うらしいけど、今一ピンとこないな. 普段Rubyやってるからかな. putStrLn関数を"Hello,World!"にあてはめて用いると言いなおせばまだわかるかな. ・・・あんまり変わらないか.
+
+<h2>cat</h2>
+<pre lang="haskell">
+main = do cs < - getContents
+          putStr cs
+</pre>
+
+1行目のcs < - getContentsとputStr csの2つの式が揃っているのには意味があるらしい。インデントに意味があるなんてPythonみたいなやつだ。複数の式のインデントを揃えることで、do式で1つのブロックに束ねることができる。この規則をレイアウトやオフサイドルールと言う。<strong>複数のアクションをdo式でまとめると上から下へ実行されることが保証される</strong>。
+
+アクションの結果を得るときに「< -」を使う。このサンプルの場合だと、getContentsアクションで入力した文字列が変数csに結びつき、それを「<strong>変数を値(アクションの結果)に束縛する(bind)</strong>」と言う。値が変数を束縛するのか。値は寂しがりやさんだな。
+
+このサンプルには遅延評価も関連してるが、ここではあまり詳しく触れてないのでスルー。
+
+<h2>countline</h2>
+</pre><pre lang="haskell">
+main = do cs < - getContents
+          print $ length $ lines cs
+</pre>
+
+Haskellにおいてリストはかなり重要。Haskellでは<strong>文字列もリスト</strong>となっている。リストには<strong>一種類の値しか入れられない</strong>。このあたりはRuby、JavaScriptあたりをやっていると忘れがちなので注意。
+
+</pre><pre lang="haskell">
+['a', 'b', 'c'] => "abc"
+[1, 2, 'a'] => NG
+</pre>
+
+$演算子は+や-と同じような二項演算子。ここでは<strong>式を区切る</strong>ために使われている。$を()に置き換えると以下のようになる。
+
+<pre lang="haskell">
+main = do cs < - getContents
+          print (length (lines cs))
+</pre>
+
+<h2>head</h2>
+</pre><pre lang="haskell">
+main = do cs < - getContents
+          putStr $ firstNLines 10 cs
+
+firstNLines n cs = unlines $ take n $ lines cs
+</pre>
+
+4行目のfirstNLinesは関数の定義。基本的にmainの時と同じだけど、今回は仮引数が登場している。nとcsがそれぞれ第1仮引数、第2引数。
+
+</pre><pre lang="haskell">
+関数名 仮引数1 仮引数2・・・ = 関数本体
+</pre>
+
+<h2>tail</h2>
+<pre lang="haskell">
+main = do cs < - getContents
+          putStr $ lastNLines 10 cs
+
+lastNLines n cs = unlines $ takeLast n $ lines cs
+takeLast n ss = reverse $ take n $ reverse ss
+</pre>
+
+今迄に登場したものだけを使っているので、特別なことはなし。
+
+<h2>練習問題</h2>
+
+countbyte.hs
+</pre><pre lang="haskell">
+main = do cs < - getContents
+          print $ length cs
+</pre>
+
+countword.hs
+</pre><pre lang="haskell">
+main = do cs < - getContents
+          print $ length $ words cs
+</pre>
+
+とりあえずチャチャっと書いてみた。countword.hsは単語数だから問題ないと思うけど、countbyte.hsは日本語の全角文字とかも1byte扱いすると思う。と思ったらちゃんと計算してくれた。でも、ghciで"あ"のlengthをとると1が返ってくる。よくわからん。
+
+</pre><pre lang="haskell">
+Prelude> length "あ"
+1
+</pre>
+</div></article><article><h1 class="article-title"><a href="/2008/02/15/vim_ruby_on_rails/">VimでRuby on Railsの開発する為の環境構築</a></h1><div class="article-time"><time dateMime="2008-02-15 00:00:00 UTC" pubdate="pubdate">February 15 2008</time></div><div class="article-body">ちょこっとだけ環境整えたので忘備録エントリとして。
 
 <h2>Vim/Rubyのインストール</h2>
 Ruby(.rb)とeruby(.rhtml)ファイルでシンタックスハイライトとオムニ補完が有効になる拡張。gemからインストール可能。
@@ -188,9 +938,106 @@ $ sudo gem install vim-ruby
 $ vim-ruby-install.rb
 </pre>
 
-vim-ruby-install.rbを実行するとインストール先の選択肢が表示される。1が自分のみ、2が全体へのインストールになる。基本的にどちらでもいいと思うけ...</div><div class="read-more"><a href="/2008/02/15/vim_ruby_on_rails/">READ MORE</a></div></article><article class="article-content"><h1 class="article--title"><a href="/2008/02/07/programming_for_beginner/">そろそろ「初心者用言語」について一言いっておくか</a></h1><div class="article--time"><i class="fa fa-calendar"></i><time dateMime="2008-02-07 00:00:00 UTC" pubdate="pubdate">February 07 2008</time></div><div class="article-tags"></div><div class="article-summary"><a href="http://generation1986.g.hatena.ne.jp/ukstudio/20080204/1202113687">最もタメになる「初心者用言語」まとめ UK is not Britonish</a>
+vim-ruby-install.rbを実行するとインストール先の選択肢が表示される。1が自分のみ、2が全体へのインストールになる。基本的にどちらでもいいと思うけど、今回は1を選択しといた。
+
+オムニ補完の<c -X></c><c -O>の入力が面倒なのと、補完がRailsのメソッド名にも対応するように.vimrcを修正する。タブで補完できるInsertTabWrapper()は<a href="http://subtech.g.hatena.ne.jp/cho45/20071108/1194475703">Vim の自動補完候補表示 - 冬通りに消え行く制服ガールは、夢物語にリアルを求めない。 - subtech</a>よりコピペ。
+
+<pre>
+set nocompatible
+
+syntax on
+
+"omni
+function InsertTabWrapper()
+  if pumvisible()
+    return "\<c -n>"
+  endif
+  let col = col('.') - 1
+  if !col || getline('.')[col -1] !~ '\k\|< \|/'
+    return "\<tab>"
+  elseif exists('&omnifunc') && &omnifunc == ''
+    return "\</c><c -n>"
+  else
+    return "\</c><c -x>\</c><c -o>"
+  endif
+endfunction
+inoremap <tab> <c -r>=InsertTabWrapper()<cr>
+
+" rubycomplete.vim
+let g:rubycomplete_buffer_loading = 1
+let g:rubycomplete_rails = 1
+let g:rubycomplete_classes_in_global = 1
+</cr></c></tab></c></pre>
+
+<h2>Rails.vimのインストール</h2>
+<a href="http://d.hatena.ne.jp/secondlife/20061222/1166781841">rails.vim まとめ - 川o・-・）＜2nd life</a>を参考にインストール。インストール方法は・・・リンク先参照でw
+
+.vimrcに以下を追記。
+
+<pre>
+" rails.vim
+let g:rails_level=4
+let g:rails_default_file="app/controllers/application.rb"
+</pre>
+
+対応ファイル切り替えがかなり便利。
+
+まだ補完と対応ファイル切り替えぐらいしか機能を使えてないので、追々使い方を学んでいこうと思う。
+
+<h2>追記: 2/18 omni補完でvimが落ちる問題</h2>
+omni補完をするとvimが落ちる問題が発生している。
+
+<pre lang="bash">
+im: Caught deadly signal ABRT
+Vim: preserving files...
+Vim: Finished.
+</pre>
+
+普通のRubyプログラム上では問題なく補完できる。(例えば10.toで<tab>10.to_sに補完とか)問題はRailsの方の補完で例えばmodelでvalida</tab><tab>とすると上記のエラーと共にvimが落ちる。とりあえず、rails.vimを外すとちゃんと補完できるようだけど、ファイル切り替えが便利なので悩み所。うまく共存させる方法はないのかな。</tab></c>
+</div></article><article><h1 class="article-title"><a href="/2008/02/07/programming_for_beginner/">そろそろ「初心者用言語」について一言いっておくか</a></h1><div class="article-time"><time dateMime="2008-02-07 00:00:00 UTC" pubdate="pubdate">February 07 2008</time></div><div class="article-body"><a href="http://generation1986.g.hatena.ne.jp/ukstudio/20080204/1202113687">最もタメになる「初心者用言語」まとめ UK is not Britonish</a>
 
 「いい嫁」程度のお遊びのつもりでいたら、結構な騒ぎになっちゃっいました。とりあえずあのまとめを見ても、初心者の人は混乱してしまうと思うので自分なりに初心者さんへのメッセージもこめてエントリーを書いてみました。
 
 <h2>簡単な流れの説明</h2>
-一応簡単に今回の流れを説明しておくと、「初心者用言語」の流れの発端はまつもとさんの「<a href="http://www.rubyist.net/~matz/20080204.html#p01">初心者向けの言語</a>」。その後に、amachangの「<a href="http://d.hatena.ne.jp/amachang/20080204/1202096633">最もタメになる「初心者用言語」はJavaScript</a></div><div class="read-more"><a href="/2008/02/07/programming_for_beginner/">READ MORE</a></div></article><div class="pager"><ul><li class="previous"><a href="/page/7/">Prev</a></li><li class="next"><a href="/page/9/">Next</a></li></ul></div></div></body></html>
+一応簡単に今回の流れを説明しておくと、「初心者用言語」の流れの発端はまつもとさんの「<a href="http://www.rubyist.net/~matz/20080204.html#p01">初心者向けの言語</a>」。その後に、amachangの「<a href="http://d.hatena.ne.jp/amachang/20080204/1202096633">最もタメになる「初心者用言語」はJavaScript</a>」、西尾さんの「<a href="http://d.hatena.ne.jp/nishiohirokazu/20080204/1202104617">最もタメになる「初心者用言語」はPython!</a>」、hayamizの「<a href="http://d.hatena.ne.jp/hayamiz/20080204/1202108447">最もタメになる「初心者用言語」はScheme!</a>」と続く。後続の人達は彼等のエントリーや、オレのまとめを見て流れにのったんだと思う。
+
+<h2>初心者の定義</h2>
+流石に後の方になって「初心者とは具体的にどのような人を指すのか」という指摘がチラホラ出てきた。確かに今回の祭り全体を通して「初心者」の定義が曖昧で、エントリーを書いている人が想定している初心者像は各人それぞれな感じ。
+
+今更「初心者」の定義をここでしたところで時既に遅しなのと、プログラマ経験者達が一般に言う「初心者」が多様なので、その辺りはあまり拘らずに話をすすめたいと思う。
+
+<h2>何がしたいのか</h2>
+今更言うことでもないのかもしれないけど、プログラミング言語はあくまでツールであり、プログラミングは手段。(まぁオレの場合、プログラミングそのものが目的になってる時も多いけど)
+
+ツールである以上、<strong>達成したい目的に合わせて言語は選ぶべき。</strong>
+
+その為にはまず<strong>自分が何がしたいのか</strong>を考えた方がいい。仕事でプログラミングを覚える必要があるなら、仕事で使う言語を選ぶべきだろうし、Webアプリを作りたいのであれば、PHP、Perl、Rubyあたりになると思う。そこからさらに開発環境や使えるサーバーから絞り込んでいけばいい。
+
+もし、特に目的がなく漠然と「プログラミングしてみたい」と思っているとしたら、それこそ言語は何でもいいと思う。ただ、最初からプログラミングを目的してるとなんとなく挫折しやすい様にも思える。
+とりあえず何でもいいから目的(ブログを作りたい、Twitterクライアントを作りたい、etc...)があった方が、モチベーションも保つし、自ずと方向性も決まってくるから学習しやすいと思う。
+
+<h2>まわりに教えてくれる人がいるか</h2>
+それと出来ればまわりに教えてくれる人がいる言語を選んで欲しい。もちろん、本やネットの情報だけで独学することも可能と言えば可能だけど、<strong>やっぱり身近に質問ができる人、アドバイスをしてくれる人がいるっていうのは大きい。</strong>
+
+<blockquote>
+そのジャンルにおける本当の初心者にとっては助けてくれる人の存在がかなり大事だと思う。
+</blockquote>
+<a href="http://www.akiyan.com/blog/archives/2008/02/post_106.html">あなたがプログラミングの初心者なら、友人知人が使っている言語にするといい</a>
+
+<h2>興味があれば他の言語にも触れてみて</h2>
+「達人プログラマー - システム開発の職人から名匠への道 -」では「<strong>毎年少なくとも一つの言語を学習する</strong>」ことを薦めている。
+
+<blockquote>
+言語が異なると、同じ問題でも違った解決方法が採用されます。つまり、いくつかの異なったアプローチを学習することにより、幅広い思考ができるようになるわけです。
+</blockquote>
+
+例えば、普段使っている言語がPHPだとしたら、低レベルかつ静的型付けのCや、関数型言語のHaskell、Lisp(Common Lisp、Scheme)などに手を出してみるといいと思う。
+
+参考:<a href="http://itpro.nikkeibp.co.jp/article/COLUMN/20070618/275142/">総論 複数のプログラミング言語を学ぶ意義 - IT Pro</a>
+参考:<a href="http://d.hatena.ne.jp/yuki_neko_nyan/20071011/1192069372">「関数型言語を学ばないといけませんか?」- 猫的怠惰生活Days</a>
+
+<table border="0" cellpadding="5"><tr><td valign="top"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4894712741/ukstudio0c-22/" target="_top"><img src="http://ecx.images-amazon.com/images/I/119HY1S5M2L.jpg" border="0" alt="達人プログラマー―システム開発の職人から名匠への道" /></a></td><td valign="top"><font size="-1"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4894712741/ukstudio0c-22/" target="_top">達人プログラマー―システム開発の職人から名匠への道</a><br />アンドリュー ハント デビッド トーマス Andrew Hunt <br /><br />ピアソンエデュケーション  2000-11<br />売り上げランキング : 8641<br /><br /><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4894712741/ukstudio0c-22/" target="_top">Amazonで詳しく見る</a></font><font size="-2"> by <a href="http://www.goodpic.com/mt/aws/index.html" >G-Tools</a></font></td></tr></table>
+
+<h2>なにより楽しむ</h2>
+色々書き並べてみましたが、一番大事なのは<strong>あなたがプログラミングを楽しむことです。</strong> 仕事でも趣味でも大いにプログラミングを楽しんで下さい。
+</div></article><div class="pager"><ul><li class="previous"><a href="/page/7/">Prev</a></li><li class="next"><a href="/page/9/">Next</a></li></ul></div></div></body></html>

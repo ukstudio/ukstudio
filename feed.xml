@@ -4,7 +4,7 @@
   <id>http://ukstudio.jp</id>
   <link href="http://ukstudio.jp"/>
   <link href="http://ukstudio.jp/feed.xml" rel="self"/>
-  <updated>2015-06-15T12:32:00Z</updated>
+  <updated>2015-06-15T21:32:00+09:00</updated>
   <author>
     <name>AKAMATSU Yuki</name>
   </author>
@@ -12,8 +12,8 @@
     <title>UX概論に参加した</title>
     <link rel="alternate" href="http://ukstudio.jp/2015/06/15/ux_introduction/"/>
     <id>http://ukstudio.jp/2015/06/15/ux_introduction/</id>
-    <published>2015-06-15T12:32:00Z</published>
-    <updated>2015-06-15T21:43:36+09:00</updated>
+    <published>2015-06-15T21:32:00+09:00</published>
+    <updated>2016-10-20T01:32:52+09:00</updated>
     <author>
       <name>AKAMATSU Yuki</name>
     </author>
@@ -32,26 +32,26 @@
     <title>特定のGemの更新情報を追う</title>
     <link rel="alternate" href="http://ukstudio.jp/2015/04/19/follow-update-of-gem/"/>
     <id>http://ukstudio.jp/2015/04/19/follow-update-of-gem/</id>
-    <published>2015-04-19T15:20:00Z</published>
-    <updated>2015-04-20T00:31:42+09:00</updated>
+    <published>2015-04-20T00:20:00+09:00</published>
+    <updated>2016-10-20T01:32:52+09:00</updated>
     <author>
       <name>AKAMATSU Yuki</name>
     </author>
     <content type="html">&lt;p&gt;コード自体を追うなら大体GitHubで事足りるけど、Gemがリリースされたのを追いたいときにはRubyGems.orgのSubscribe使えばよさそうだったのでメモ。&lt;/p&gt;
 
-&lt;p&gt;&lt;img alt="Click subscribe link" src="/images/2015-04-20-follow-update-of-gem-01.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="/images/2015-04-20-follow-update-of-gem-01.png" alt="Click subscribe link" /&gt;&lt;/p&gt;
 
 &lt;p&gt;RubyGems.orgの適当なGemのページを開くと右下の方にSubscribeというリンクがある。このリンクをクリックするとDashboardにそのGemの更新情報が表示される。あとはそこに表示されているRSSを追えばOK。&lt;/p&gt;
 
-&lt;p&gt;&lt;img alt="Get dashboard's rss" src="/images/2015-04-20-follow-update-of-gem-02.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="/images/2015-04-20-follow-update-of-gem-02.png" alt="Get dashboard's rss" /&gt;&lt;/p&gt;
 </content>
   </entry>
   <entry>
     <title>「マイクロソフトを辞めて、オフィスのない会社で働いてみた」読了した</title>
     <link rel="alternate" href="http://ukstudio.jp/2015/04/10/the_year_without_pants/"/>
     <id>http://ukstudio.jp/2015/04/10/the_year_without_pants/</id>
-    <published>2015-04-10T05:08:00Z</published>
-    <updated>2015-04-10T14:11:28+09:00</updated>
+    <published>2015-04-10T14:08:00+09:00</published>
+    <updated>2016-10-20T01:32:52+09:00</updated>
     <author>
       <name>AKAMATSU Yuki</name>
     </author>
@@ -78,8 +78,8 @@
     <title>スクラム実践入門読み終わった</title>
     <link rel="alternate" href="http://ukstudio.jp/2015/04/03/gihyo_scrum_book/"/>
     <id>http://ukstudio.jp/2015/04/03/gihyo_scrum_book/</id>
-    <published>2015-04-03T17:22:00Z</published>
-    <updated>2015-04-04T02:24:32+09:00</updated>
+    <published>2015-04-04T02:22:00+09:00</published>
+    <updated>2016-10-20T01:32:52+09:00</updated>
     <author>
       <name>AKAMATSU Yuki</name>
     </author>
@@ -89,23 +89,23 @@
 
 &lt;p&gt;会社で購入してもらったのでざっと読み終えた。&lt;/p&gt;
 
-&lt;h2 id="ソフトウェアはどこにあるのか。そう、僕らの心のなかにあるんだよ…"&gt;ソフトウェアはどこにあるのか。そう、僕らの心のなかにあるんだよ…&lt;/h2&gt;
+&lt;h2&gt;ソフトウェアはどこにあるのか。そう、僕らの心のなかにあるんだよ…&lt;/h2&gt;
 
 &lt;p&gt;なんかふざけた見出しつけたけど、1章は結構好きで何回か読み直したいなという章だった。スクラムについて知るぞ〜と意気込む若者がよんだらちょっとびっくりするかもしれない。それでもまずは読んでみて自分なりに考えてほしいなぁと思う。僕もまだちょっと消化不良感あるので消化したい。&lt;/p&gt;
 
-&lt;h2 id="スクラムガイドのガイド"&gt;スクラムガイドのガイド&lt;/h2&gt;
+&lt;h2&gt;スクラムガイドのガイド&lt;/h2&gt;
 
 &lt;p&gt;2〜4章はスクラムガイドに基いてスクラムについてコンパクトに解説してくれる。この辺はスクラムについてある程度知識はあったのでうんうんという感じで読みました。&lt;/p&gt;
 
 &lt;p&gt;正直、スクラムガイドってあれだけ読んでもピンと来ない人ってそこそこいると思うんだよね。スクラムガイドだけじゃいまいちわからんって人はこれらの章を読むとある程度理解できると思う。&lt;/p&gt;
 
-&lt;h2 id="各社の事例と問題解決の道標。"&gt;各社の事例と問題解決の道標。&lt;/h2&gt;
+&lt;h2&gt;各社の事例と問題解決の道標。&lt;/h2&gt;
 
 &lt;p&gt;この本でしか読めないと噂の6〜8章。それと問題とその解決策を提示してくれる9〜12章。&lt;/p&gt;
 
 &lt;p&gt;この辺りの章もよかった。特に僕の場合、日々の開発でなにかしらうまくいかないことがあってそれの答えとまではいかなくとも参考になるなにかが欲しいという動機でこの本を買ってもらったのですごく参考になった。&lt;/p&gt;
 
-&lt;h2 id="理論の前半、現場の後半"&gt;理論の前半、現場の後半&lt;/h2&gt;
+&lt;h2&gt;理論の前半、現場の後半&lt;/h2&gt;
 
 &lt;p&gt;前半と後半でそれぞれ読み応えがあるので、スクラムについて全然しらんという人でもスクラムについてある程度知ってたり経験があるっていう人でもなにかしら得るものがある本だなと思いました。&lt;/p&gt;
 
@@ -116,26 +116,28 @@
     <title>特定のコミットが含まれるGitHub Pull Requestを開く</title>
     <link rel="alternate" href="http://ukstudio.jp/2015/03/26/open_pull_request/"/>
     <id>http://ukstudio.jp/2015/03/26/open_pull_request/</id>
-    <published>2015-03-26T12:18:00Z</published>
-    <updated>2015-03-26T21:27:25+09:00</updated>
+    <published>2015-03-26T21:18:00+09:00</published>
+    <updated>2016-10-20T01:32:52+09:00</updated>
     <author>
       <name>AKAMATSU Yuki</name>
     </author>
     <content type="html">&lt;p&gt;今日たまたまあるコミットが含まれているGitHubのPull Requestをサクッと探したい事案が発生した。というのも自分が以前書いたコードがどうしてこうなっているのかというのを知りたかったんだけど、commit messageだけじゃよくわからんかった(〜を実装したみたいなことを英語で書いてあっただけ)。&lt;/p&gt;
 
 &lt;p&gt;Pull Requestは割と丁寧に説明を書いているのできっとPull Requestのdescriptionを見ればわかりそうという感じはしたのだけれどパッとそれを開く手段がわからず、色々ググったりtwitterで教えてもらったりした結果下のようなfunctionをzshrcに書いた。&lt;/p&gt;
-&lt;pre class="highlight shell"&gt;&lt;span class="k"&gt;function &lt;/span&gt;find-pr&lt;span class="o"&gt;()&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
-  &lt;span class="nb"&gt;local &lt;/span&gt;&lt;span class="nv"&gt;parent&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$2&lt;/span&gt;&lt;span class="o"&gt;||&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;master&amp;#39;&lt;/span&gt;
+&lt;pre class="highlight shell"&gt;&lt;code&gt;&lt;span class="k"&gt;function &lt;/span&gt;find-pr&lt;span class="o"&gt;()&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+  &lt;span class="nb"&gt;local &lt;/span&gt;&lt;span class="nv"&gt;parent&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$2&lt;/span&gt;&lt;span class="o"&gt;||&lt;/span&gt;&lt;span class="s1"&gt;'master'&lt;/span&gt;
   git log &lt;span class="nv"&gt;$1&lt;/span&gt;..&lt;span class="nv"&gt;$2&lt;/span&gt; --merges --ancestry-path --reverse --oneline | head -n1
 &lt;span class="o"&gt;}&lt;/span&gt;
 
 &lt;span class="k"&gt;function &lt;/span&gt;find-pr-open&lt;span class="o"&gt;()&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
-  &lt;span class="nb"&gt;local &lt;/span&gt;&lt;span class="nv"&gt;pr&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;find-pr &lt;span class="nv"&gt;$1&lt;/span&gt; &lt;span class="nv"&gt;$2&lt;/span&gt; | awk &lt;span class="s1"&gt;&amp;#39;{print substr($5, 2)}&amp;#39;&lt;/span&gt;&lt;span class="k"&gt;)&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;
-  &lt;span class="nb"&gt;local &lt;/span&gt;&lt;span class="nv"&gt;repo&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;git config --get remote.origin.url | sed &lt;span class="s1"&gt;&amp;#39;s/git@github.com://&amp;#39;&lt;/span&gt; | sed &lt;span class="s1"&gt;&amp;#39;s/\.git$//&amp;#39;&lt;/span&gt;&lt;span class="k"&gt;)&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;
-  open &lt;span class="s2"&gt;&amp;quot;https://github.com/&lt;/span&gt;&lt;span class="k"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;repo&lt;/span&gt;&lt;span class="k"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;/pull/&lt;/span&gt;&lt;span class="k"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;pr&lt;/span&gt;&lt;span class="k"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;
+  &lt;span class="nb"&gt;local &lt;/span&gt;&lt;span class="nv"&gt;pr&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;find-pr &lt;span class="nv"&gt;$1&lt;/span&gt; &lt;span class="nv"&gt;$2&lt;/span&gt; | awk &lt;span class="s1"&gt;'{print substr($5, 2)}'&lt;/span&gt;&lt;span class="k"&gt;)&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt;
+  &lt;span class="nb"&gt;local &lt;/span&gt;&lt;span class="nv"&gt;repo&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;git config --get remote.origin.url | sed &lt;span class="s1"&gt;'s/git@github.com://'&lt;/span&gt; | sed &lt;span class="s1"&gt;'s/\.git$//'&lt;/span&gt;&lt;span class="k"&gt;)&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt;
+  open &lt;span class="s2"&gt;"https://github.com/&lt;/span&gt;&lt;span class="k"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;repo&lt;/span&gt;&lt;span class="k"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;/pull/&lt;/span&gt;&lt;span class="k"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;pr&lt;/span&gt;&lt;span class="k"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt;
 &lt;span class="o"&gt;}&lt;/span&gt;
-&lt;/pre&gt;&lt;pre class="highlight text"&gt;find-pr-open REVISION
-&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class="highlight plaintext"&gt;&lt;code&gt;find-pr-open REVISION
+&lt;/code&gt;&lt;/pre&gt;
+
 &lt;p&gt;あまりシェルは得意ではないのでそこらへんは大目に見て欲しい。やってることはfind-prで該当のcommitが含まれているMerge commitを探してcommit messageからGitHub Pull Requestの番号を取り出している。リポジトリ名はgit configから取得して余計な文字はsedで削除。あとはURLを組み立ててブラウザで開くだけ。多分これでPull Requestを開けるはず。&lt;/p&gt;
 
 &lt;p&gt;なんにせよcommit messageはもうちょっと丁寧に書こうと思いました。&lt;/p&gt;
@@ -145,8 +147,8 @@
     <title>Vue.js便利</title>
     <link rel="alternate" href="http://ukstudio.jp/2015/03/20/vuejs/"/>
     <id>http://ukstudio.jp/2015/03/20/vuejs/</id>
-    <published>2015-03-20T20:20:00Z</published>
-    <updated>2015-03-21T05:23:44+09:00</updated>
+    <published>2015-03-21T05:20:00+09:00</published>
+    <updated>2016-10-20T01:32:52+09:00</updated>
     <author>
       <name>AKAMATSU Yuki</name>
     </author>

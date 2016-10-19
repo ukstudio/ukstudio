@@ -1,6 +1,4 @@
-<!DOCTYPE html><html><head><meta charset="utf-8" /><!--Always force latest IE rendering engine or request Chrome Frame--><meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" /><!--Use title if it's in the page YAML frontmatter--><title>The Middleman</title><link href="http://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet" type="text/css" /><link href="http://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet" type="text/css" /><link href="/stylesheets/normalize.css" media="screen" rel="stylesheet" type="text/css" />
-<link href="/stylesheets/all.css" media="screen" rel="stylesheet" type="text/css" />
-<link href="/stylesheets/highlight.css" media="screen" rel="stylesheet" type="text/css" /><script src="/javascripts/all.js" type="text/javascript"></script><link href="/feed.xml" rel="alternate" title="atom" type="application/atom+xml" /><script type="text/javascript">var _gaq = _gaq || [];
+<!DOCTYPE html><html><head><meta charset="utf-8" /><!--Always force latest IE rendering engine or request Chrome Frame--><meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" /><title></title><link href="/stylesheets/dist/normalize.css" rel="stylesheet" /><link href="/stylesheets/dist/skeleton.css" rel="stylesheet" /><link href="/stylesheets/all.css" rel="stylesheet" /><script src="/javascripts/all.js"></script><link href="/feed.xml" rel="alternate" title="atom" type="application/atom+xml" /><script>var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-12755601-1']);
 _gaq.push(['_trackPageview']);
 
@@ -8,7 +6,7 @@ _gaq.push(['_trackPageview']);
   var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
   ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
   var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-})();</script></head><body class="2014 2014_04 2014_04_index"><div class="header"><div class="header-navigation"><ul><li><i class="fa fa-twitter"></i><a href="http://twitter.com/ukstudio">Twitter</a></li><li><i class="fa fa-github-alt"></i><a href="http://github.com/ukstudio">GitHub</a></li></ul></div><div class="header-title"><a href="/">UKSTUDIO</a></div></div><div class="container"><h1><Archive></Archive>Apr 2014</h1><article><h2><a href="/2014/04/18/rspec_ctags/">2014-04-18 Vim(TagBar)でRSpecのctagsを扱う</a></h2><p><img alt="rspec ctags" src="/images/2014-04-18-vim-rspec-ctags.png" /></p>
+})();</script></head><body class="x2014 x2014_04 x2014_04_index"><div class="header"><div class="header-title"><h1><a href="/">ukstudio</a></h1></div></div><div class="container"><h1><Archive></Archive>Apr 2014</h1><article><h2><a href="/2014/04/18/rspec_ctags/">2014-04-18 Vim(TagBar)でRSpecのctagsを扱う</a></h2><p><img src="/images/2014-04-18-vim-rspec-ctags.png" alt="rspec ctags" /></p>
 
 <p>unite-outlineとかを使う人には不要なのかもしれないけど、あいにくuniteユーザではないのでctagsでなんとかできないか調べてみた。</p>
 
@@ -17,17 +15,18 @@ _gaq.push(['_trackPageview']);
 <p><a href="https://github.com/fishman/ctags">fishman/ctags</a></p>
 
 <p>インストール場所はお好みで。個人的には手で入れる系のものは$HOME/localにインストールするのが好きなのでそこにインストールした。あとはTagBarの方でこのctagsを使うよう設定する。</p>
-<pre class="highlight viml"><span class="k">let</span> <span class="nv">g:tagbar_ctags_bin</span><span class="p">=</span><span class="s2">&quot;/home/ukstudio/local/bin/ctags&quot;</span>
+<pre class="highlight viml"><code><span class="k">let</span> <span class="nv">g:tagbar_ctags_bin</span><span class="p">=</span><span class="s2">"/home/ukstudio/local/bin/ctags"</span>
 <span class="k">let</span> <span class="nv">g:tagbar_type_ruby</span> <span class="p">=</span> <span class="p">{</span>
-<span class="se">    \</span> <span class="s1">&#39;kinds&#39;</span> <span class="p">:</span> <span class="p">[</span>
-<span class="se">        \</span> <span class="s1">&#39;m:modules&#39;</span><span class="p">,</span>
-<span class="se">        \</span> <span class="s1">&#39;c:classes&#39;</span><span class="p">,</span>
-<span class="se">        \</span> <span class="s1">&#39;d:describes&#39;</span><span class="p">,</span>
-<span class="se">        \</span> <span class="s1">&#39;C:contexts&#39;</span><span class="p">,</span>
-<span class="se">        \</span> <span class="s1">&#39;f:methods&#39;</span><span class="p">,</span>
-<span class="se">        \</span> <span class="s1">&#39;F:singleton methods&#39;</span>
+<span class="se">    \</span> <span class="s1">'kinds'</span> <span class="p">:</span> <span class="p">[</span>
+<span class="se">        \</span> <span class="s1">'m:modules'</span><span class="p">,</span>
+<span class="se">        \</span> <span class="s1">'c:classes'</span><span class="p">,</span>
+<span class="se">        \</span> <span class="s1">'d:describes'</span><span class="p">,</span>
+<span class="se">        \</span> <span class="s1">'C:contexts'</span><span class="p">,</span>
+<span class="se">        \</span> <span class="s1">'f:methods'</span><span class="p">,</span>
+<span class="se">        \</span> <span class="s1">'F:singleton methods'</span>
 <span class="se">    \</span> <span class="p">]</span>
 <span class="se">\</span> <span class="p">}</span>
-</pre>
+</code></pre>
+
 <p>これで上の画像のような感じでTagBarに表示されるようになるはず。</p>
 </article><hr /></div></body></html>
