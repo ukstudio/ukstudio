@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head><meta charset="utf-8" /><!--Always force latest IE rendering engine or request Chrome Frame--><meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" /><title>ukstudio.jp</title><link href="/stylesheets/dist/normalize.css" rel="stylesheet" /><link href="/stylesheets/dist/skeleton.css" rel="stylesheet" /><link href="/stylesheets/all.css" rel="stylesheet" /><script src="/javascripts/all.js"></script><link href="/feed.xml" rel="alternate" title="atom" type="application/atom+xml" /><script>var _gaq = _gaq || [];
+<!DOCTYPE html><html><head><meta charset="utf-8" /><!--Always force latest IE rendering engine or request Chrome Frame--><meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" /><meta content="width=device-width,initial-scale=1.0" name="viewport" /><title>ukstudio.jp</title><link href="/stylesheets/dist/normalize.css" rel="stylesheet" /><link href="/stylesheets/dist/skeleton.css" rel="stylesheet" /><link href="/stylesheets/all.css" rel="stylesheet" /><script src="/javascripts/all.js"></script><link href="/feed.xml" rel="alternate" title="atom" type="application/atom+xml" /><script>var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-12755601-1']);
 _gaq.push(['_trackPageview']);
 
@@ -6,7 +6,7 @@ _gaq.push(['_trackPageview']);
   var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
   ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
   var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-})();</script></head><body class="page page_9 page_9_index"><div class="header"><div class="header-title"><h1><a href="/">ukstudio</a></h1></div></div><div class="container"><article><h1 class="article-title"><a href="/2008/02/02/doukaku_lifegame/">Rubyでライフゲーム書いた</a></h1><div class="article-time"><time dateMime="2008-02-02 00:00:00 UTC" pubdate="pubdate">February 02 2008</time></div><div class="article-body"><a href="http://ja.doukaku.org/comment/5581/">どう書く?org #5581</a>
+})();</script></head><body class="page page_9 page_9_index"><div class="header"><div class="header-title"><h1><a href="/">ukstudio</a></h1></div></div><div class="container"><div class="row"><article class="one"><h1 class="article-title"><a href="/2008/02/02/doukaku_lifegame/">Rubyでライフゲーム書いた</a></h1><div class="article-time"><time dateMime="2008-02-02 00:00:00 UTC" pubdate="pubdate">February 02 2008</time></div><div class="article-body"><a href="http://ja.doukaku.org/comment/5581/">どう書く?org #5581</a>
 
 久々にどう書くorgに投稿してみた。1個1個セルの周り調べてくのも面白みがないなと思って、生きてるセルの周りをスコア付けしてくやり方でやってみた。
 
@@ -112,7 +112,7 @@ if __FILE__ == $0
   end
 end
 </pre></pre>
-</div></article><article><h1 class="article-title"><a href="/2008/01/22/yaboo/">野望新年会に参加してきました</a></h1><div class="article-time"><time dateMime="2008-01-22 00:00:00 UTC" pubdate="pubdate">January 22 2008</time></div><div class="article-body">書くのが遅くなっちゃいましたが、なんとかエントリーアップです。
+</div></article><article class="one"><h1 class="article-title"><a href="/2008/01/22/yaboo/">野望新年会に参加してきました</a></h1><div class="article-time"><time dateMime="2008-01-22 00:00:00 UTC" pubdate="pubdate">January 22 2008</time></div><div class="article-body">書くのが遅くなっちゃいましたが、なんとかエントリーアップです。
 
 
 <a href="http://www.yabooo.org/archives/13">いずれにせよ野望新年会2008</a>
@@ -135,7 +135,7 @@ LTの詳細は各人の資料やエントリーにまかせたいと思うけど
 そんなわけで、無事「野望新年会」おわりました。pinkmacさんをはじめ、事務局の皆さん、参加者の皆さん、お疲れ様でした。とても楽しかったです。なんか色々これからもおもしろそうなことがありそうな集まりなので、ちょこちょこ参加していけたらいいなぁと思います。
 
 どうぞよろしく!!
-</div></article><article><h1 class="article-title"><a href="/2008/01/12/ruby_tumblr_getimages_2nd/">Tumblrの全画像を取得するRubyスクリプト改</a></h1><div class="article-time"><time dateMime="2008-01-12 00:00:00 UTC" pubdate="pubdate">January 12 2008</time></div><div class="article-body"><a href="http://uk-studio.net/2008/01/11/ruby_tumblr_getimages/">Tumblrの全画像を取得するRubyスクリプトを書いた・・・けど</a>
+</div></article><article class="one"><h1 class="article-title"><a href="/2008/01/12/ruby_tumblr_getimages_2nd/">Tumblrの全画像を取得するRubyスクリプト改</a></h1><div class="article-time"><time dateMime="2008-01-12 00:00:00 UTC" pubdate="pubdate">January 12 2008</time></div><div class="article-body"><a href="http://uk-studio.net/2008/01/11/ruby_tumblr_getimages/">Tumblrの全画像を取得するRubyスクリプトを書いた・・・けど</a>
 
 上のエントリーのコードを書き直した。これで10kb未満の画像でも問題ないはず。それとTumblrのIDを引数で与えるようにも修正した。独自ドメインのやつには対応してないです。ごめんなさい。
 
@@ -173,7 +173,7 @@ total = REXML::XPath.first(doc, "/tumblr/posts").attributes['total'].to_i
   }
 }
 </pre></pre>
-</div></article><article><h1 class="article-title"><a href="/2008/01/12/blog/">オレがブログを書く理由</a></h1><div class="article-time"><time dateMime="2008-01-12 00:00:00 UTC" pubdate="pubdate">January 12 2008</time></div><div class="article-body">まめこの「<a href="http://blog.woopsdez.jp/2008/01/post_294.php">車輪の再発明だとしても記事は書くべき</a>」に反応してみる。「記事をかくべき」というのには非常に同意。
+</div></article><article class="one"><h1 class="article-title"><a href="/2008/01/12/blog/">オレがブログを書く理由</a></h1><div class="article-time"><time dateMime="2008-01-12 00:00:00 UTC" pubdate="pubdate">January 12 2008</time></div><div class="article-body">まめこの「<a href="http://blog.woopsdez.jp/2008/01/post_294.php">車輪の再発明だとしても記事は書くべき</a>」に反応してみる。「記事をかくべき」というのには非常に同意。
 
 じゃあ、なぜ「かくべき」なのか。それは人それぞれになると思うけど、オレがブログを書く理由を簡単にまとめてみたのでよければ参考にしてほしい。
 
@@ -205,7 +205,7 @@ total = REXML::XPath.first(doc, "/tumblr/posts").attributes['total'].to_i
 
 <h2>「書くべき」は言い過ぎかもしれないけど</h2>
 最初に同意しといてここで言い過ぎと言うのはおかしいかもしれないけど、そもそも強制されるようなものでもないと思うので。ただ、少なくともオレはブログを書くことで色々得るものが多いと思うので「ブログイイヨー、オススメダヨー」ぐらいのノリでオススメしておきます。
-</div></article><article><h1 class="article-title"><a href="/2008/01/11/ruby_tumblr_getimages/">Tumblrの全画像を取得するRubyスクリプトを書いた・・・けど</a></h1><div class="article-time"><time dateMime="2008-01-11 00:00:00 UTC" pubdate="pubdate">January 11 2008</time></div><div class="article-body">今じゃほとんどTumblrは使ってないんだけど、なんとなく画像を取得するスクリプトを書いてみた。iPod touchに放り込んでみようかなとか思ったのよ。
+</div></article><article class="one"><h1 class="article-title"><a href="/2008/01/11/ruby_tumblr_getimages/">Tumblrの全画像を取得するRubyスクリプトを書いた・・・けど</a></h1><div class="article-time"><time dateMime="2008-01-11 00:00:00 UTC" pubdate="pubdate">January 11 2008</time></div><div class="article-body">今じゃほとんどTumblrは使ってないんだけど、なんとなく画像を取得するスクリプトを書いてみた。iPod touchに放り込んでみようかなとか思ったのよ。
 
 とりあえずコード。
 <pre lang="ruby">
@@ -293,7 +293,7 @@ tumblrのIDとか取得の開始地点、1回で取得する件数とかその�
 <h2>追記 08/01/12 1:27</h2>
 コードを修正しました。
 <a href="http://uk-studio.net/2008/01/12/ruby_tumblr_getimages_2nd/">Tumblrの全画像を取得するRubyスクリプト改</a>
-</div></article><article><h1 class="article-title"><a href="/2008/01/09/2007_history/">2007年はTwitterが中心の1年でした</a></h1><div class="article-time"><time dateMime="2008-01-09 00:00:00 UTC" pubdate="pubdate">January 09 2008</time></div><div class="article-body">今更感があふれるエントリですね。
+</div></article><article class="one"><h1 class="article-title"><a href="/2008/01/09/2007_history/">2007年はTwitterが中心の1年でした</a></h1><div class="article-time"><time dateMime="2008-01-09 00:00:00 UTC" pubdate="pubdate">January 09 2008</time></div><div class="article-body">今更感があふれるエントリですね。
 
 <h2>1、2、3月</h2>
 <ul>
@@ -362,7 +362,7 @@ tumblrのIDとか取得の開始地点、1回で取得する件数とかその�
 あと忘れちゃいけないのが、ついったーの開発陣ですね。遅延だのメンテだの色々あったけれど、ついったーがあって本当によかったと思います。ありがとう。
 
 そんなわけで2007年はなかなか忘れられない年になりそうです。2008年はどんな年にしようかな。
-</div></article><article><h1 class="article-title"><a href="/2008/01/06/1986s/">86世代あつまれー</a></h1><div class="article-time"><time dateMime="2008-01-06 00:00:00 UTC" pubdate="pubdate">January 06 2008</time></div><div class="article-body">ちょこちょこと一部で話題にあがってた同世代のエンジニアで集まってみようの件だけど、yuyarinさんがはてなグループを作ってくれました。
+</div></article><article class="one"><h1 class="article-title"><a href="/2008/01/06/1986s/">86世代あつまれー</a></h1><div class="article-time"><time dateMime="2008-01-06 00:00:00 UTC" pubdate="pubdate">January 06 2008</time></div><div class="article-body">ちょこちょこと一部で話題にあがってた同世代のエンジニアで集まってみようの件だけど、yuyarinさんがはてなグループを作ってくれました。
 
 <a href="http://d.hatena.ne.jp/yuyarin/20071221/1198240756">IT＆IS系の'86世代でちょっと集まってみませんか？＠東京</a>
 <a href="http://generation1986.g.hatena.ne.jp/yuyarin/20071230/1199018717">1986のはてなグループ作ったよー</a>
@@ -375,7 +375,7 @@ tumblrのIDとか取得の開始地点、1回で取得する件数とかその�
 <a href="http://twitter.com/_tad_/statuses/565676282">都市伝説と思われていたujihisaさん</a>もいるよ!
 
 それにしても、年上だと思ってた人が結構いるんだよなぁ。なんか「若い」ってことを言い訳にできない気がした。
-</div></article><article><h1 class="article-title"><a href="/2008/01/02/agile_practice/">アジャイルプラクティス - 達人プログラマに学ぶ現場開発者の習慣</a></h1><div class="article-time"><time dateMime="2008-01-02 00:00:00 UTC" pubdate="pubdate">January 02 2008</time></div><div class="article-body"><a href="http://fkino.net/">木下さん</a>と<a href="http://kakutani.com/">角谷さん</a>が監訳したアジャイル本。なんとか年内に読み終わった。このエントリーを書くのは2008年になってしまったけど。
+</div></article><article class="one"><h1 class="article-title"><a href="/2008/01/02/agile_practice/">アジャイルプラクティス - 達人プログラマに学ぶ現場開発者の習慣</a></h1><div class="article-time"><time dateMime="2008-01-02 00:00:00 UTC" pubdate="pubdate">January 02 2008</time></div><div class="article-body"><a href="http://fkino.net/">木下さん</a>と<a href="http://kakutani.com/">角谷さん</a>が監訳したアジャイル本。なんとか年内に読み終わった。このエントリーを書くのは2008年になってしまったけど。
 
 <h2>アジャイルな開発者もそうでない開発者も</h2>
 今までアジャイルな開発とは無縁だった人達も、既にアジャイルな開発手法を採用している人達、どちらの人達にも得るものがある本だと思う。前者の人達にはこれからの道標として、後者の人達には振り返りとして。ちなみに私は前者。
@@ -396,14 +396,14 @@ tumblrのIDとか取得の開始地点、1回で取得する件数とかその�
 この辺に関しては「第9章 終章：アジャイルへ踏み出す」を読んでもらえればいいと思う。アジャイルへ踏み出すと言うタイトルからもわかるように、この本を読んで終わりじゃいけない。むしろ読み終わってからが本番なのだろう。
 
 <table border="0" cellpadding="5"><tr><td colspan="2"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4274066940/ukstudio0c-22/" target="_top">アジャイルプラクティス 達人プログラマに学ぶ現場開発者の習慣</a></td></tr><tr><td valign="top"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4274066940/ukstudio0c-22/" target="_top"><img src="http://ecx.images-amazon.com/images/I/31paqWCAEVL.jpg" border="0" alt="アジャイルプラクティス 達人プログラマに学ぶ現場開発者の習慣" /></a></td><td valign="top"><font size="-1">Venkat Subramaniam Andy Hunt 木下 史彦 <br /><br />オーム社  2007-12-22<br />売り上げランキング : 16000<br /><br /><strong>おすすめ平均  </strong><img src="http://g-images.amazon.com/images/G/01/detail/stars-5-0.gif" alt="star" /><br /><img src="http://g-images.amazon.com/images/G/01/detail/stars-5-0.gif" alt="star" />迷える開発者への最初の一歩となる本<br /><br /><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4274066940/ukstudio0c-22/" target="_top">Amazonで詳しく見る</a></font><font size="-2"> by <a href="http://www.goodpic.com/mt/aws/index.html" >G-Tools</a></font></td></tr></table>
-</div></article><article><h1 class="article-title"><a href="/2007/12/30/rubycocoa_brainfuckinterpreter/">RubyCocoaでBrainFuckインタプリタっぽいものを作ってみた</a></h1><div class="article-time"><time dateMime="2007-12-30 00:00:00 UTC" pubdate="pubdate">December 30 2007</time></div><div class="article-body">初めてのRubyCocoaでのプログラミング。以前作ったBrainfuckのコードを処理するRubyプログラムを流用した。主に参考にしたのは<a href="http://limechat.net/rubycocoa/tutorial/">RubyCocoa 入門</a>。と言うか、ここしか見てない。
+</div></article><article class="one"><h1 class="article-title"><a href="/2007/12/30/rubycocoa_brainfuckinterpreter/">RubyCocoaでBrainFuckインタプリタっぽいものを作ってみた</a></h1><div class="article-time"><time dateMime="2007-12-30 00:00:00 UTC" pubdate="pubdate">December 30 2007</time></div><div class="article-body">初めてのRubyCocoaでのプログラミング。以前作ったBrainfuckのコードを処理するRubyプログラムを流用した。主に参考にしたのは<a href="http://limechat.net/rubycocoa/tutorial/">RubyCocoa 入門</a>。と言うか、ここしか見てない。
 
 <img src="http://farm3.static.flickr.com/2055/2148748886_48f93983a6.jpg?v=0"/>
 
 上のテキストフィールドにBrainfuckのコードを入力して、executeのボタンを押すと変換された文字列が下のフィールドに表示される。キャプチャのBrainfuckのコードは途切れてるだけで、実際はもっと長い。本当はテキストエリアみたいなのにしたかったんだけれど、オブジェクトがどれだかわからなかった。
 
 以前、Objective-Cで少しだけCocoaプログラミングをした時も同じことを思ったけど、Interface BuilderはやっぱりUIを設計していく上で優秀だと思う。コントローラクラスとオブジェクトを関連づける操作もかなり直感的でさすがAppleと言ったところか。
-</div></article><article><h1 class="article-title"><a href="/2007/12/28/mac_leopard/">Leopardをインストール</a></h1><div class="article-time"><time dateMime="2007-12-28 00:00:00 UTC" pubdate="pubdate">December 28 2007</time></div><div class="article-body">来年から仕事でMacBookを使う可能性がでてきたのもあって、OSをLeopardに入れ替えた。仕事で使い始めると入れ替えるタイミングが難しくなるからね。
+</div></article><article class="one"><h1 class="article-title"><a href="/2007/12/28/mac_leopard/">Leopardをインストール</a></h1><div class="article-time"><time dateMime="2007-12-28 00:00:00 UTC" pubdate="pubdate">December 28 2007</time></div><div class="article-body">来年から仕事でMacBookを使う可能性がでてきたのもあって、OSをLeopardに入れ替えた。仕事で使い始めると入れ替えるタイミングが難しくなるからね。
 
 <h2>Webクリップウィジェット</h2>
 LeopardからSafariで見ているページをDashboardにクリップできるようになった。試しに<a href="http://suztomo.net/fuwatter/">Fuwatter</a>をクリップしてみた。特に重たい感じもなく、普通に動く。
@@ -440,7 +440,7 @@ LeopardからSafariで見ているページをDashboardにクリップできる�
 <h3>ユーティリティ</h3>
 <li>QuickSilver</li>
 <li>Chemr</li></ul>
-</div></article><article><h1 class="article-title"><a href="/2007/12/26/ikebukuro_faultier/">仕事帰りの池袋にて</a></h1><div class="article-time"><time dateMime="2007-12-26 00:00:00 UTC" pubdate="pubdate">December 26 2007</time></div><div class="article-body">仕事帰りに池袋のジュンク堂に寄ってアジャイルプラクティスとRESTfulWebサービスを購入。アジャイルの方の在庫が心配だったけど、なんとか2冊残ってた。薄いし、通勤途中で読もうと思う。やっぱ表紙がかっこいい。
+</div></article><article class="one"><h1 class="article-title"><a href="/2007/12/26/ikebukuro_faultier/">仕事帰りの池袋にて</a></h1><div class="article-time"><time dateMime="2007-12-26 00:00:00 UTC" pubdate="pubdate">December 26 2007</time></div><div class="article-body">仕事帰りに池袋のジュンク堂に寄ってアジャイルプラクティスとRESTfulWebサービスを購入。アジャイルの方の在庫が心配だったけど、なんとか2冊残ってた。薄いし、通勤途中で読もうと思う。やっぱ表紙がかっこいい。
 
 <table class="g-tools_table"><tr><td colspan="2"><span class="g-tools_title"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4274066940/ukstudio0c-22/" target="_top">アジャイルプラクティス 達人プログラマに学ぶ現場開発者の習慣</a></span></td></tr><tr><td valign="top"><span class="g-tools_img"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4274066940/ukstudio0c-22/" target="_top"><img src="http://ecx.images-amazon.com/images/I/31paqWCAEVL.jpg"  alt="アジャイルプラクティス 達人プログラマに学ぶ現場開発者の習慣" /></a></span></td><td valign="top"><span class="g-tools_body">Venkat Subramaniam Andy Hunt 木下 史彦 <br /><br /><br /><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4274066940/ukstudio0c-22/" target="_top">Amazonで詳しく見る</a></span><span class="g-tools_by"> by <a href="http://www.goodpic.com/mt/aws/index.html" >G-Tools</a></span></td></tr></table>
 
@@ -466,7 +466,7 @@ LeopardからSafariで見ているページをDashboardにクリップできる�
 
 <strong>12/26 追記</strong>
 10代後半をターゲットに入れてるくせに飲み会とか意味わかんないですね。そこらへんは追い追い考えときます・・・
-</div></article><article><h1 class="article-title"><a href="/2007/12/26/rhg-strikes-back/">「RHG片手にRuby 1.9の実装を読む集い」に参加する予定</a></h1><div class="article-time"><time dateMime="2007-12-26 00:00:00 UTC" pubdate="pubdate">December 26 2007</time></div><div class="article-body"><a href="http://qwik.jp/rhg-strikes-back/">The RHG Strikes Back - RHG片手にRuby 1.9の実装を読む集い</a>
+</div></article><article class="one"><h1 class="article-title"><a href="/2007/12/26/rhg-strikes-back/">「RHG片手にRuby 1.9の実装を読む集い」に参加する予定</a></h1><div class="article-time"><time dateMime="2007-12-26 00:00:00 UTC" pubdate="pubdate">December 26 2007</time></div><div class="article-body"><a href="http://qwik.jp/rhg-strikes-back/">The RHG Strikes Back - RHG片手にRuby 1.9の実装を読む集い</a>
 
 RHG持ってないけど・・・
 
@@ -477,7 +477,7 @@ Twitterでyuguiさんが「<a href="http://twitter.com/yugui/statuses/531123082"
 まぁでも、個人的にいつか処理系を実装を読んでみたいと思ってたし、他のRubyistと交流をとるいい機会なので思い切って参加表明。なんとかなるだろう、多分。
 
 参加者を見た限りじゃ会ったことある人の名前がちらほら。集いでお会いしたときはどうぞよろしくです。
-</div></article><article><h1 class="article-title"><a href="/2007/12/20/tanoshi_ruby_sec10_practice/">たのしいRuby 第10章 練習問題</a></h1><div class="article-time"><time dateMime="2007-12-20 00:00:00 UTC" pubdate="pubdate">December 20 2007</time></div><div class="article-body">たのしいRuby 第10章 数値(Numeric)クラスの練習問題をやってみた。
+</div></article><article class="one"><h1 class="article-title"><a href="/2007/12/20/tanoshi_ruby_sec10_practice/">たのしいRuby 第10章 練習問題</a></h1><div class="article-time"><time dateMime="2007-12-20 00:00:00 UTC" pubdate="pubdate">December 20 2007</time></div><div class="article-body">たのしいRuby 第10章 数値(Numeric)クラスの練習問題をやってみた。
 
 (1)と(2)は華氏を摂氏、もしくは逆の摂氏を華氏に変換するプログラムを書けと言う問題。小数点以下を求める為に引数をFloat()で囲む。そんなに難しい問題じゃないので、テストはかなり適当。
 
@@ -556,7 +556,7 @@ end
 書いたコードはCodeReposにCommitしてみた(<a href="http://coderepos.org/share/browser/dan/ruby/tanoshi_ruby/sec10_numeric">/dan/ruby/tanoshi_ruby/sec10_numeric/</a>)。突っ込み、添削大歓迎です。これぐらいの規模のプログラムだと添削とかしづらいかもですが。
 
 <table class="g-tools_table"><tr><td colspan="2"><span class="g-tools_title"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4797336617/ukstudio0c-22/" target="_top">たのしいRuby 第2版 Rubyではじめる気軽なプログラミング</a></span></td></tr><tr><td valign="top"><span class="g-tools_img"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4797336617/ukstudio0c-22/" target="_top"><img src="http://ecx.images-amazon.com/images/I/11FDBHKSKWL.jpg"  alt="たのしいRuby 第2版 Rubyではじめる気軽なプログラミング" /></a></span></td><td valign="top"><span class="g-tools_body">高橋 征義 後藤 裕蔵 <br /><br /><strong>おすすめ平均</strong> <img src="http://g-images.amazon.com/images/G/01/detail/stars-3-5.gif" /><br /><img src="http://g-images.amazon.com/images/G/01/detail/stars-4-0.gif" alt="stars" />プログラミング初心者にとっては少し難易度が高いかも<br /><img src="http://g-images.amazon.com/images/G/01/detail/stars-4-0.gif" alt="stars" />変数のスコープと寿命について詳しく書いて欲しかった<br /><img src="http://g-images.amazon.com/images/G/01/detail/stars-4-0.gif" alt="stars" />練習問題の内容にやや難あり<br /><img src="http://g-images.amazon.com/images/G/01/detail/stars-4-0.gif" alt="stars" />Rubyをこれから覚える方は必読かも<br /><img src="http://g-images.amazon.com/images/G/01/detail/stars-1-0.gif" alt="stars" />読みやすいだけ<br /><br /><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4797336617/ukstudio0c-22/" target="_top">Amazonで詳しく見る</a></span><span class="g-tools_by"> by <a href="http://www.goodpic.com/mt/aws/index.html" >G-Tools</a></span></td></tr></table></pre>
-</div></article><article><h1 class="article-title"><a href="/2007/12/20/fixdap_ruby_project/">fixdap.jpに「Rubyを極める」プロジェクトを作ってみました</a></h1><div class="article-time"><time dateMime="2007-12-20 00:00:00 UTC" pubdate="pubdate">December 20 2007</time></div><div class="article-body"><a href="http://fixdap.com/p/Ruby/">Rubyを極める - fixdap</a>
+</div></article><article class="one"><h1 class="article-title"><a href="/2007/12/20/fixdap_ruby_project/">fixdap.jpに「Rubyを極める」プロジェクトを作ってみました</a></h1><div class="article-time"><time dateMime="2007-12-20 00:00:00 UTC" pubdate="pubdate">December 20 2007</time></div><div class="article-body"><a href="http://fixdap.com/p/Ruby/">Rubyを極める - fixdap</a>
 
 @mobcovが<a href="http://fixdap.com/p/RubyCocoa/">RubyCocoaを極める - fixdap</a>を。@faultierが<a href="http://fixdap.com/p/rspec/">RSpecを極める - fixdap</a>を作っていたので、それらの姉妹プロジェクトってことで。
 
@@ -576,7 +576,7 @@ yappo coderepos 添削用は coderepos.org/share/dan 以下で
 とのことなので、coderepos.org/share/dan/ruby/tanoshi_ruby/とか作ろうと思います。yappoさん、ありがとう。
 
 あとプロジェクトメンバーがちょこっと増えてた。わっほい。
-</div></article><article><h1 class="article-title"><a href="/2007/12/05/ruby_array_operator/">RubyのArrayの演算子はちょっとおもしろい</a></h1><div class="article-time"><time dateMime="2007-12-05 00:00:00 UTC" pubdate="pubdate">December 05 2007</time></div><div class="article-body">Arrayの「+」「-」「&」「|」演算子がちょっとおもしろい。
+</div></article><article class="one"><h1 class="article-title"><a href="/2007/12/05/ruby_array_operator/">RubyのArrayの演算子はちょっとおもしろい</a></h1><div class="article-time"><time dateMime="2007-12-05 00:00:00 UTC" pubdate="pubdate">December 05 2007</time></div><div class="article-body">Arrayの「+」「-」「&」「|」演算子がちょっとおもしろい。
 <h2>+演算子</h2>
 お互いを連結した新しい配列を返す。
 <pre lang="ruby">
@@ -601,7 +601,7 @@ yappo coderepos 添削用は coderepos.org/share/dan 以下で
 [1, 2, 3, 4, 5] | [1, 3, 5, 7, 9] #=> [1, 2, 3, 4, 5, 7, 9]
 [1, 3, 5] | [1, 2, 3, 4, 5] #=> [1, 3, 5, 2, 4]
 </pre>
-</div></article><article><h1 class="article-title"><a href="/2007/12/05/install_retrospectiva/">RetrospectivaをMacBookに設置してみた</a></h1><div class="article-time"><time dateMime="2007-12-05 00:00:00 UTC" pubdate="pubdate">December 05 2007</time></div><div class="article-body"><a href="http://retrospectiva.org/blog">blog . retrospectiva</a>
+</div></article><article class="one"><h1 class="article-title"><a href="/2007/12/05/install_retrospectiva/">RetrospectivaをMacBookに設置してみた</a></h1><div class="article-time"><time dateMime="2007-12-05 00:00:00 UTC" pubdate="pubdate">December 05 2007</time></div><div class="article-body"><a href="http://retrospectiva.org/blog">blog . retrospectiva</a>
 
 どんなものか試しに設置してみた。あくまで試しなのでSQLite、WEBrickで。まずは必要なソフトのインストールから。
 
@@ -653,7 +653,7 @@ IDとパスワードを聞かれるので admin / passwordを入力。
 <img src="http://farm3.static.flickr.com/2067/2086299815_6a6030a3b6.jpg?v=0"/>
 
 SVNの連携とかはまたそのうち。Rails環境があれば、とりあえず起動するのはラクチン。
-</div></article><article><h1 class="article-title"><a href="/2007/12/01/ruby_rpn_ujihisa_sixeight/">後置記法のコードを添削してもらっちゃいました</a></h1><div class="article-time"><time dateMime="2007-12-01 00:00:00 UTC" pubdate="pubdate">December 01 2007</time></div><div class="article-body"><a href="http://ujihisa.nowa.jp/entry/60c2b3fcf9">rubyneko - Re: UK STUDIO 後置記法での計算</a>
+</div></article><article class="one"><h1 class="article-title"><a href="/2007/12/01/ruby_rpn_ujihisa_sixeight/">後置記法のコードを添削してもらっちゃいました</a></h1><div class="article-time"><time dateMime="2007-12-01 00:00:00 UTC" pubdate="pubdate">December 01 2007</time></div><div class="article-body"><a href="http://ujihisa.nowa.jp/entry/60c2b3fcf9">rubyneko - Re: UK STUDIO 後置記法での計算</a>
 <a href="http://d.hatena.ne.jp/Sixeight/20071130/1196438912">後置記法での計算の添削に便乗してみた - チナミニ</a>
 
 ujihisaさんとSixeightさんには感謝です。せっかくなんで添削してもらったコードを自分なりにちゃんと理解しときたいと思います。
@@ -791,7 +791,7 @@ class String
 end
 </pre>
 ujihisaさんのコードをほとんど反映させた感じ。例外処理とか考えてないよ。あとスタックにある数値も全部計算する仕様のまま。</pre>
-</div></article><article><h1 class="article-title"><a href="/2007/11/29/ruby_rpn/">後置記法での計算</a></h1><div class="article-time"><time dateMime="2007-11-29 00:00:00 UTC" pubdate="pubdate">November 29 2007</time></div><div class="article-body"><a href="http://ja.wikipedia.org/wiki/逆ポーランド記法">後置記法</a>の文字列を計算するようStringクラスを拡張してみた。
+</div></article><article class="one"><h1 class="article-title"><a href="/2007/11/29/ruby_rpn/">後置記法での計算</a></h1><div class="article-time"><time dateMime="2007-11-29 00:00:00 UTC" pubdate="pubdate">November 29 2007</time></div><div class="article-body"><a href="http://ja.wikipedia.org/wiki/逆ポーランド記法">後置記法</a>の文字列を計算するようStringクラスを拡張してみた。
 <strong>rpn.rb</strong>
 <pre lang="ruby">
 class String
@@ -834,7 +834,7 @@ require 'rpn.rb'
 あとはcalcメソッドの中がなんか汚いのも気になるなぁ。
 
 全然関係ないけど、後置記法よりSchemeみたいな前置記法の方がわかりやすいと思った。
-</div></article><article><h1 class="article-title"><a href="/2007/11/27/ruby_euclid/">ユークリッドの互除法をRubyで書いた</a></h1><div class="article-time"><time dateMime="2007-11-27 00:00:00 UTC" pubdate="pubdate">November 27 2007</time></div><div class="article-body"><pre lang="ruby">
+</div></article><article class="one"><h1 class="article-title"><a href="/2007/11/27/ruby_euclid/">ユークリッドの互除法をRubyで書いた</a></h1><div class="article-time"><time dateMime="2007-11-27 00:00:00 UTC" pubdate="pubdate">November 27 2007</time></div><div class="article-body"><pre lang="ruby">
 def euclid(a, b)
   return nil if a < b
   return (a%b).zero? ? b : euclid(b, a%b)
@@ -842,7 +842,7 @@ end
 </pre>
 
 Rubyは三項演算子でもちゃんと値返すから3行目みたいな書き方が出来るからラクだ。</pre>
-</div></article><article><h1 class="article-title"><a href="/2007/11/24/the_little_schemer/">The Little Schemer</a></h1><div class="article-time"><time dateMime="2007-11-24 00:00:00 UTC" pubdate="pubdate">November 24 2007</time></div><div class="article-body"><table class="g-tools_table"><tr><td colspan="2"><span class="g-tools_title"><a href="http://www.amazon.co.jp/gp/redirect.html%3FASIN=0262560992%26tag=ukstudio0c-22%26lcode=xm2%26cID=2025%26ccmID=165953%26location=/o/ASIN/0262560992%253FSubscriptionId=0G91FPYVW6ZGWBH4Y9G2" target="_top">The Little Schemer</a></span></td></tr><tr><td valign="top"><span class="g-tools_img"><a href="http://www.amazon.co.jp/gp/redirect.html%3FASIN=0262560992%26tag=ukstudio0c-22%26lcode=xm2%26cID=2025%26ccmID=165953%26location=/o/ASIN/0262560992%253FSubscriptionId=0G91FPYVW6ZGWBH4Y9G2" target="_top"><img src="http://ecx.images-amazon.com/images/I/115J0Y2ZQBL.jpg"  alt="The Little Schemer" /></a></span></td><td valign="top"><span class="g-tools_body">Daniel P. Friedman Matthias Felleisen Duane Bibby <br /><br /><strong>おすすめ平均</strong> <img src="http://g-images.amazon.com/images/G/01/detail/stars-5-0.gif" /><br /><img src="http://g-images.amazon.com/images/G/01/detail/stars-5-0.gif" alt="stars" />Schemeが好きになります<br /><img src="http://g-images.amazon.com/images/G/01/detail/stars-5-0.gif" alt="stars" />英語であるのが苦痛にならない楽しさ<br /><img src="http://g-images.amazon.com/images/G/01/detail/stars-5-0.gif" alt="stars" />面白いスタイル<br /><br /><a href="http://www.amazon.co.jp/gp/redirect.html%3FASIN=0262560992%26tag=ukstudio0c-22%26lcode=xm2%26cID=2025%26ccmID=165953%26location=/o/ASIN/0262560992%253FSubscriptionId=0G91FPYVW6ZGWBH4Y9G2" target="_top">Amazonで詳しく見る</a></span><span class="g-tools_by"> by <a href="http://www.goodpic.com/mt/aws/index.html" >G-Tools</a></span></td></tr></table>
+</div></article><article class="one"><h1 class="article-title"><a href="/2007/11/24/the_little_schemer/">The Little Schemer</a></h1><div class="article-time"><time dateMime="2007-11-24 00:00:00 UTC" pubdate="pubdate">November 24 2007</time></div><div class="article-body"><table class="g-tools_table"><tr><td colspan="2"><span class="g-tools_title"><a href="http://www.amazon.co.jp/gp/redirect.html%3FASIN=0262560992%26tag=ukstudio0c-22%26lcode=xm2%26cID=2025%26ccmID=165953%26location=/o/ASIN/0262560992%253FSubscriptionId=0G91FPYVW6ZGWBH4Y9G2" target="_top">The Little Schemer</a></span></td></tr><tr><td valign="top"><span class="g-tools_img"><a href="http://www.amazon.co.jp/gp/redirect.html%3FASIN=0262560992%26tag=ukstudio0c-22%26lcode=xm2%26cID=2025%26ccmID=165953%26location=/o/ASIN/0262560992%253FSubscriptionId=0G91FPYVW6ZGWBH4Y9G2" target="_top"><img src="http://ecx.images-amazon.com/images/I/115J0Y2ZQBL.jpg"  alt="The Little Schemer" /></a></span></td><td valign="top"><span class="g-tools_body">Daniel P. Friedman Matthias Felleisen Duane Bibby <br /><br /><strong>おすすめ平均</strong> <img src="http://g-images.amazon.com/images/G/01/detail/stars-5-0.gif" /><br /><img src="http://g-images.amazon.com/images/G/01/detail/stars-5-0.gif" alt="stars" />Schemeが好きになります<br /><img src="http://g-images.amazon.com/images/G/01/detail/stars-5-0.gif" alt="stars" />英語であるのが苦痛にならない楽しさ<br /><img src="http://g-images.amazon.com/images/G/01/detail/stars-5-0.gif" alt="stars" />面白いスタイル<br /><br /><a href="http://www.amazon.co.jp/gp/redirect.html%3FASIN=0262560992%26tag=ukstudio0c-22%26lcode=xm2%26cID=2025%26ccmID=165953%26location=/o/ASIN/0262560992%253FSubscriptionId=0G91FPYVW6ZGWBH4Y9G2" target="_top">Amazonで詳しく見る</a></span><span class="g-tools_by"> by <a href="http://www.goodpic.com/mt/aws/index.html" >G-Tools</a></span></td></tr></table>
 
 Amazonさんから届いた。結構軽い本だから電車とかで読むのも悪くないかもしれない。洋書だけど、そんな難しい英語はなさそうだからそんなに苦労はなさそう。
 
@@ -859,4 +859,4 @@ The Five Rules
 <dt>The Law of Eq?</dt>
 <dd>The primitive eq? takes two arguments. Each must be a non-numeric atom.</dd>
 </dl>
-</div></article><div class="pager"><ul><li class="previous"><a href="/page/8/">Prev</a></li><li class="next"><a href="/page/10/">Next</a></li></ul></div></div></body></html>
+</div></article></div><div class="row"><div class="pager one"><ul><li class="previous"><a href="/page/8/">Prev</a></li><li class="next"><a href="/page/10/">Next</a></li></ul></div></div></div></body></html>

@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head><meta charset="utf-8" /><!--Always force latest IE rendering engine or request Chrome Frame--><meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" /><title>ukstudio.jp</title><link href="/stylesheets/dist/normalize.css" rel="stylesheet" /><link href="/stylesheets/dist/skeleton.css" rel="stylesheet" /><link href="/stylesheets/all.css" rel="stylesheet" /><script src="/javascripts/all.js"></script><link href="/feed.xml" rel="alternate" title="atom" type="application/atom+xml" /><script>var _gaq = _gaq || [];
+<!DOCTYPE html><html><head><meta charset="utf-8" /><!--Always force latest IE rendering engine or request Chrome Frame--><meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" /><meta content="width=device-width,initial-scale=1.0" name="viewport" /><title>ukstudio.jp</title><link href="/stylesheets/dist/normalize.css" rel="stylesheet" /><link href="/stylesheets/dist/skeleton.css" rel="stylesheet" /><link href="/stylesheets/all.css" rel="stylesheet" /><script src="/javascripts/all.js"></script><link href="/feed.xml" rel="alternate" title="atom" type="application/atom+xml" /><script>var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-12755601-1']);
 _gaq.push(['_trackPageview']);
 
@@ -6,7 +6,7 @@ _gaq.push(['_trackPageview']);
   var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
   ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
   var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-})();</script></head><body class="page page_10 page_10_index"><div class="header"><div class="header-title"><h1><a href="/">ukstudio</a></h1></div></div><div class="container"><article><h1 class="article-title"><a href="/2007/11/24/ruby_brainfuck/">RubyでBrainFuck処理系を書いてみた</a></h1><div class="article-time"><time dateMime="2007-11-24 00:00:00 UTC" pubdate="pubdate">November 24 2007</time></div><div class="article-body"><pre lang="ruby">
+})();</script></head><body class="page page_10 page_10_index"><div class="header"><div class="header-title"><h1><a href="/">ukstudio</a></h1></div></div><div class="container"><div class="row"><article class="one"><h1 class="article-title"><a href="/2007/11/24/ruby_brainfuck/">RubyでBrainFuck処理系を書いてみた</a></h1><div class="article-time"><time dateMime="2007-11-24 00:00:00 UTC" pubdate="pubdate">November 24 2007</time></div><div class="article-body"><pre lang="ruby">
 class BrainFuck
   def convert(code)
     @code = code
@@ -77,7 +77,7 @@ p bf.convert(hello) #=> Hello
 </pre>
 
 [と]の処理内容が似てるのが気になる。似てるっていうかほとんど一緒なんだよね。なんかこううまく抽象化することはできないものか。あと無意味にインスタンス変数使い過ぎだな。
-</div></article><article><h1 class="article-title"><a href="/2007/11/22/re_startruby/">Re: Try Ruby! 第1章</a></h1><div class="article-time"><time dateMime="2007-11-22 00:00:00 UTC" pubdate="pubdate">November 22 2007</time></div><div class="article-body">msngさんがstartRubyというブログを始めたようです。せっかくなんで少しだけ補足しとこうかな。
+</div></article><article class="one"><h1 class="article-title"><a href="/2007/11/22/re_startruby/">Re: Try Ruby! 第1章</a></h1><div class="article-time"><time dateMime="2007-11-22 00:00:00 UTC" pubdate="pubdate">November 22 2007</time></div><div class="article-body">msngさんがstartRubyというブログを始めたようです。せっかくなんで少しだけ補足しとこうかな。
 
 <a href="http://startruby.com/20071122.html">Try Ruby! 第1章</a>
 
@@ -116,7 +116,7 @@ classメソッドはオブジェクトが何のクラスのオブジェクトな
 <a href="http://www.ruby-lang.org/ja/man/">Rubyリファレンス</a>
 
 UK STUDIOはstartRubyを応援しています。
-</div></article><article><h1 class="article-title"><a href="/2007/11/18/ruby_amazon/">Ruby/Amazonライブラリ</a></h1><div class="article-time"><time dateMime="2007-11-18 00:00:00 UTC" pubdate="pubdate">November 18 2007</time></div><div class="article-body">URL:<a href="http://www.caliban.org/ruby/ruby-amazon.shtml">http://www.caliban.org/ruby/ruby-amazon.shtml</a>
+</div></article><article class="one"><h1 class="article-title"><a href="/2007/11/18/ruby_amazon/">Ruby/Amazonライブラリ</a></h1><div class="article-time"><time dateMime="2007-11-18 00:00:00 UTC" pubdate="pubdate">November 18 2007</time></div><div class="article-body">URL:<a href="http://www.caliban.org/ruby/ruby-amazon.shtml">http://www.caliban.org/ruby/ruby-amazon.shtml</a>
 
 ちょっとAWSを使うプログラムを書こうと思ったので、準備としてRuby/Amazonライブラリを試してみた。
 <h2>Ruby/Amazonのインストール</h2>
@@ -203,7 +203,7 @@ WEB+DB PRESS Vol.38
 <pre lang="bash">
 /opt/local/lib/ruby/site_ruby/1.8/amazon/search.rb:1172:in `get_args': There are no exact matches for the search. (Amazon::Search::Request::SearchError)
 </pre>
-</div></article><article><h1 class="article-title"><a href="/2007/11/16/coding_rule_ruby/">個人用のコーディング規約を書き始めたんよ</a></h1><div class="article-time"><time dateMime="2007-11-16 00:00:00 UTC" pubdate="pubdate">November 16 2007</time></div><div class="article-body"><a href="/coding_rule/">CodingRule</a>
+</div></article><article class="one"><h1 class="article-title"><a href="/2007/11/16/coding_rule_ruby/">個人用のコーディング規約を書き始めたんよ</a></h1><div class="article-time"><time dateMime="2007-11-16 00:00:00 UTC" pubdate="pubdate">November 16 2007</time></div><div class="article-body"><a href="/coding_rule/">CodingRule</a>
 
 とりあえずはRubyから書き始めたんよ。思ったよりまとめるのが大変。
 
@@ -218,7 +218,7 @@ WEB+DB PRESS Vol.38
 </ul>
 
 追記(07/11/18): CodingRuleページ内のリンクが間違ってたから修正した
-</div></article><article><h1 class="article-title"><a href="/2007/11/01/ruby_fizzbuzz_2/">RubyでFizzBuzz #2</a></h1><div class="article-time"><time dateMime="2007-11-01 00:00:00 UTC" pubdate="pubdate">November 01 2007</time></div><div class="article-body"><a href="http://uk-studio.net/2007/10/28/ruby_fizzbuzz/">RubyでFizzBuzz</a>の第二弾。大分スッキリしたと思うんだけどどでしょ。
+</div></article><article class="one"><h1 class="article-title"><a href="/2007/11/01/ruby_fizzbuzz_2/">RubyでFizzBuzz #2</a></h1><div class="article-time"><time dateMime="2007-11-01 00:00:00 UTC" pubdate="pubdate">November 01 2007</time></div><div class="article-body"><a href="http://uk-studio.net/2007/10/28/ruby_fizzbuzz/">RubyでFizzBuzz</a>の第二弾。大分スッキリしたと思うんだけどどでしょ。
 <pre lang="ruby">
 fizzbuzz = (1..100).map{|i|
 if i%5 == 0 && i%3 == 0 : "FizzBuzz"
@@ -226,7 +226,7 @@ elsif i%5 == 0 : "Buzz"
 elsif i%3 == 0 : "Fizz"
 else i end
 }</pre>
-</div></article><article><h1 class="article-title"><a href="/2007/10/30/ruby_prime/">Rubyで素数を求めるプログラムを書いた</a></h1><div class="article-time"><time dateMime="2007-10-30 00:00:00 UTC" pubdate="pubdate">October 30 2007</time></div><div class="article-body">引数に入れた値までの素数を配列で返すRubyのクラスを書いてみた。アルゴリズムは<a href="http://ja.wikipedia.org/wiki/%E3%82%A8%E3%83%A9%E3%83%88%E3%82%B9%E3%83%86%E3%83%8D%E3%82%B9%E3%81%AE%E7%AF%A9">エラトステネスの篩</a>を使用。
+</div></article><article class="one"><h1 class="article-title"><a href="/2007/10/30/ruby_prime/">Rubyで素数を求めるプログラムを書いた</a></h1><div class="article-time"><time dateMime="2007-10-30 00:00:00 UTC" pubdate="pubdate">October 30 2007</time></div><div class="article-body">引数に入れた値までの素数を配列で返すRubyのクラスを書いてみた。アルゴリズムは<a href="http://ja.wikipedia.org/wiki/%E3%82%A8%E3%83%A9%E3%83%88%E3%82%B9%E3%83%86%E3%83%8D%E3%82%B9%E3%81%AE%E7%AF%A9">エラトステネスの篩</a>を使用。
 <strong>generate_prime.rb</strong>
 <pre lang="ruby">
 class GeneratePrime
@@ -276,7 +276,7 @@ Finished in 0.000454 seconds.
 
 1 tests, 3 assertions, 0 failures, 0 errors</pre>
 テストが不十分な気もするけど多分大丈夫なはず。・・・多分。
-</div></article><article><h1 class="article-title"><a href="/2007/10/28/activerecord/">ActiveRecordを使ってみる</a></h1><div class="article-time"><time dateMime="2007-10-28 00:00:00 UTC" pubdate="pubdate">October 28 2007</time></div><div class="article-body">ActiveRecordはRubyOnRailsのO/Rマッパーとして有名ですが、Railsに依存しているわけではなく単体で使えます。
+</div></article><article class="one"><h1 class="article-title"><a href="/2007/10/28/activerecord/">ActiveRecordを使ってみる</a></h1><div class="article-time"><time dateMime="2007-10-28 00:00:00 UTC" pubdate="pubdate">October 28 2007</time></div><div class="article-body">ActiveRecordはRubyOnRailsのO/Rマッパーとして有名ですが、Railsに依存しているわけではなく単体で使えます。
 
 <h2>DBを用意する</h2>
 なにはともあれ、DBがないと始まらないので適当に用意します。
@@ -443,7 +443,7 @@ user.destory # name が "UK"のデータを削除
 それにしてもコードがみづらいことこの上ないですね・・・そのうちなんとかしたいところです。
 
 <a href="http://www.amazon.com/gp/redirect.html%3FASIN=1590598474%26tag=ukstudio0c-22%26lcode=xm2%26cID=2025%26ccmID=165953%26location=/o/ASIN/1590598474%253FSubscriptionId=1N9AHEAQ2F6SVD97BE02" title="Click and drag this image to the post editor"><img src="http://ecx.images-amazon.com/images/I/21rVApqb6cL.jpg" width="121" /></a>
-</div></article><article><h1 class="article-title"><a href="/2007/10/28/ruby_fizzbuzz/">RubyでFizzBuzz</a></h1><div class="article-time"><time dateMime="2007-10-28 00:00:00 UTC" pubdate="pubdate">October 28 2007</time></div><div class="article-body">今更ながらにFizzBuzz問題をRubyで問いてみる。前は確かPHPだけで問いて、Rubyで問いてなかったと思うから。
+</div></article><article class="one"><h1 class="article-title"><a href="/2007/10/28/ruby_fizzbuzz/">RubyでFizzBuzz</a></h1><div class="article-time"><time dateMime="2007-10-28 00:00:00 UTC" pubdate="pubdate">October 28 2007</time></div><div class="article-body">今更ながらにFizzBuzz問題をRubyで問いてみる。前は確かPHPだけで問いて、Rubyで問いてなかったと思うから。
 
 <strong>ループ内で出力</strong>
 <pre lang="ruby">
@@ -479,7 +479,7 @@ puts fizzbuzz</pre>
 if文のところはもうちょっとなんとかなる気もするけど、コードゴルフしてるわけでもないし、これでいいかな。再帰で書けって言われたら多分できないけど。
 
 精進ですなー。
-</div></article><article><h1 class="article-title"><a href="/2007/10/26/programming_environment/">Re:あなたの最も実力を発揮できる開発環境を教えてください</a></h1><div class="article-time"><time dateMime="2007-10-26 00:00:00 UTC" pubdate="pubdate">October 26 2007</time></div><div class="article-body"><a href="http://ujihisa.nowa.jp/entry/720100065b">rubyneko -
+</div></article><article class="one"><h1 class="article-title"><a href="/2007/10/26/programming_environment/">Re:あなたの最も実力を発揮できる開発環境を教えてください</a></h1><div class="article-time"><time dateMime="2007-10-26 00:00:00 UTC" pubdate="pubdate">October 26 2007</time></div><div class="article-body"><a href="http://ujihisa.nowa.jp/entry/720100065b">rubyneko -
 あなたの最も実力を発揮できる開発環境を教えてください</a>に反応してみる。
 <h2>開発まっしーん</h2>
 マシン: MacBook
@@ -511,7 +511,7 @@ MacBookを買った時に、zshを薦められて以来使用。こっちも使�
 コード管理はSVN。テストが通っていないものはCommitしない方針。
 <h2>オマケ</h2>
 作業につまると、意味もなくViで:wをしたり、シェルでlsやpwdをしがち。
-</div></article><article><h1 class="article-title"><a href="/2007/10/14/ipodtouch_hack_ruby/">iPod touchでRubyを動かす</a></h1><div class="article-time"><time dateMime="2007-10-14 00:00:00 UTC" pubdate="pubdate">October 14 2007</time></div><div class="article-body"><strong style="color: #ff0000">以下の作業は自己責任でお願いいたします。</strong>
+</div></article><article class="one"><h1 class="article-title"><a href="/2007/10/14/ipodtouch_hack_ruby/">iPod touchでRubyを動かす</a></h1><div class="article-time"><time dateMime="2007-10-14 00:00:00 UTC" pubdate="pubdate">October 14 2007</time></div><div class="article-body"><strong style="color: #ff0000">以下の作業は自己責任でお願いいたします。</strong>
 <h2>Installer.appをインストールする</h2>
 まずはRubyを入れるためにInstaller.appをiPod touchをインストールします。
 基本的に以下のリンク通りに作業すれば問題ないはずです。
@@ -575,7 +575,7 @@ eval.rbはサンプルとしてRubyにくっついてると思うから探せば
 <h2>追記 2007/10/26</h2>
 <a href="http://d.hatena.ne.jp/faultier/20071025/1193293222">[iPod touch][プログラミング]iPod touchでRubyを使うのはちょっと厳しいかも</a>
 irbが動かない件をfaultierさんが検証していた様です。irbだけじゃなくて標準ライブラリもダメだったのね・・・
-</div></article><article><h1 class="article-title"><a href="/2007/10/06/mac_loginshell_zsh/">Macのログインシェルをzshに変更する</a></h1><div class="article-time"><time dateMime="2007-10-06 00:00:00 UTC" pubdate="pubdate">October 06 2007</time></div><div class="article-body"><a href="http://uk-studio.net/2007/07/08/start-macbook/">以前</a>に一度設定はしていたのですがちょっとおかしなところ(screenがうまく起動しない、日本語が入力できないとか)がいくつかあったので再設定しました。
+</div></article><article class="one"><h1 class="article-title"><a href="/2007/10/06/mac_loginshell_zsh/">Macのログインシェルをzshに変更する</a></h1><div class="article-time"><time dateMime="2007-10-06 00:00:00 UTC" pubdate="pubdate">October 06 2007</time></div><div class="article-body"><a href="http://uk-studio.net/2007/07/08/start-macbook/">以前</a>に一度設定はしていたのですがちょっとおかしなところ(screenがうまく起動しない、日本語が入力できないとか)がいくつかあったので再設定しました。
 <h2>zsh-develをMacPortsでインストールする</h2>
 どうやら最初からインストールされているzshではバージョンの4.24のため日本語が入力できないみたいなのでMacPortsであらたに4.3以上のものをインストールしなおします。
 <pre>
@@ -626,7 +626,7 @@ export LANG=ja_JP.UTF-8</pre>
 	<li>echo 日本語など日本語が入力でき、かつちゃんと出力される</li>
 	<li>lsを発行したときに日本語のファイルやディレクトリが文字化けしていない</li>
 </ol>
-</div></article><article><h1 class="article-title"><a href="/2007/09/28/rubyonrails_install_in_macbook/">MacBookにRubyOnRailsをインストールする</a></h1><div class="article-time"><time dateMime="2007-09-28 00:00:00 UTC" pubdate="pubdate">September 28 2007</time></div><div class="article-body">Railsを試すためにMacBookにRubyOnRailsをインストールしてみました。MacPortsは既にインストールされてるものとして話を進めるので、インストールしていない人はGoogleで調べるなりしてインストールしてくださいな。と言ってもRubyGemsのインストールでしか今回は使いませんけど。
+</div></article><article class="one"><h1 class="article-title"><a href="/2007/09/28/rubyonrails_install_in_macbook/">MacBookにRubyOnRailsをインストールする</a></h1><div class="article-time"><time dateMime="2007-09-28 00:00:00 UTC" pubdate="pubdate">September 28 2007</time></div><div class="article-body">Railsを試すためにMacBookにRubyOnRailsをインストールしてみました。MacPortsは既にインストールされてるものとして話を進めるので、インストールしていない人はGoogleで調べるなりしてインストールしてくださいな。と言ってもRubyGemsのインストールでしか今回は使いませんけど。
 <h2>まずはRubyGemsをインストール</h2>
 MacPortsを利用してRubyGemsを入れます。rb-rubygemsという名前で登録されているはずです。
 <pre>% sudo port install rb-rubygems</pre>
@@ -650,15 +650,15 @@ gemをインストールしてしまえば、コマンド一発でRailsがイン
 gemでRailsをインストールしたら、プロジェクトを作ってみましょう。helloというディレクトリが出来て、その中にappディレクトリやRakefileとかが作られていれば問題ありません。ちなみにhelloというのはプロジェクト名です。
 <h3>おまけ</h3>
 キャプチャのMelchiorっていうのはエヴァネタです。マギシステムの。痛い子ですみません。
-</div></article><article><h1 class="article-title"><a href="/2007/09/27/ukstudio_server_down/">UK STUDIOにアクセスできなかった件について</a></h1><div class="article-time"><time dateMime="2007-09-27 00:00:00 UTC" pubdate="pubdate">September 27 2007</time></div><div class="article-body">サーバ料金の払い忘れで20日からサーバを停められてしまい、http://uk-studio.net/にアクセスできない状態でした。今日のお昼頃、振込みを終わらせ今はちゃんとアクセスできる状態です。
+</div></article><article class="one"><h1 class="article-title"><a href="/2007/09/27/ukstudio_server_down/">UK STUDIOにアクセスできなかった件について</a></h1><div class="article-time"><time dateMime="2007-09-27 00:00:00 UTC" pubdate="pubdate">September 27 2007</time></div><div class="article-body">サーバ料金の払い忘れで20日からサーバを停められてしまい、http://uk-studio.net/にアクセスできない状態でした。今日のお昼頃、振込みを終わらせ今はちゃんとアクセスできる状態です。
 
 当サイトをご覧いただいてる方々にご心配とご迷惑をおかけしてしまったた事をお詫びいたします。
-</div></article><article><h1 class="article-title"><a href="/2007/09/07/ipod_touch/">iPod touchを予約しました</a></h1><div class="article-time"><time dateMime="2007-09-07 00:00:00 UTC" pubdate="pubdate">September 07 2007</time></div><div class="article-body"><a href="http://www.amazon.co.jp/gp/redirect.html%3FASIN=B000IDHJ30%26tag=ukstudio0c-22%26lcode=xm2%26cID=2025%26ccmID=165953%26location=/o/ASIN/B000IDHJ30%253FSubscriptionId=1N9AHEAQ2F6SVD97BE02" title="Click and drag this image to the post editor"><img src="http://g-ec2.images-amazon.com/images/I/41eCukUobxL.jpg" width="500" /></a>
+</div></article><article class="one"><h1 class="article-title"><a href="/2007/09/07/ipod_touch/">iPod touchを予約しました</a></h1><div class="article-time"><time dateMime="2007-09-07 00:00:00 UTC" pubdate="pubdate">September 07 2007</time></div><div class="article-body"><a href="http://www.amazon.co.jp/gp/redirect.html%3FASIN=B000IDHJ30%26tag=ukstudio0c-22%26lcode=xm2%26cID=2025%26ccmID=165953%26location=/o/ASIN/B000IDHJ30%253FSubscriptionId=1N9AHEAQ2F6SVD97BE02" title="Click and drag this image to the post editor"><img src="http://g-ec2.images-amazon.com/images/I/41eCukUobxL.jpg" width="500" /></a>
 
 各所で話題のiPod touchですが、僕も16GBのやつをApple Storeから予約しました。Classicの160GBと迷ったんですが、無線LANやSafari、その他もろもろの機能の誘惑に負けました。出荷日まであと20日ぐらいあるのがなんともじれったい。
 
 <a href="http://code.google.com/p/mobileterminal/">http://code.google.com/p/mobileterminal/</a>これ動くのかなぁ？
-</div></article><article><h1 class="article-title"><a href="/2007/09/05/codeblock/">コードブロックとyield文</a></h1><div class="article-time"><time dateMime="2007-09-05 00:00:00 UTC" pubdate="pubdate">September 05 2007</time></div><div class="article-body">メソッド内でyield文を使うことでメソッドからコードブロックを呼び出すことができます。yield文が呼び出されるたびに、ブロックに処理が移り、処理が終わるとyieldの直後の処理に移ります。
+</div></article><article class="one"><h1 class="article-title"><a href="/2007/09/05/codeblock/">コードブロックとyield文</a></h1><div class="article-time"><time dateMime="2007-09-05 00:00:00 UTC" pubdate="pubdate">September 05 2007</time></div><div class="article-body">メソッド内でyield文を使うことでメソッドからコードブロックを呼び出すことができます。yield文が呼び出されるたびに、ブロックに処理が移り、処理が終わるとyieldの直後の処理に移ります。
 <pre lang="ruby">def exec_block
   yield
   puts "hoge"
@@ -682,7 +682,7 @@ foofoofoo</pre>
 ちなみに当たり前ですが、ブロックはブレース{}でなくても、do endでも問題ありません。１行のブロックの場合にはブレース、複数行の場合にdo endが一般的なようです。
 
 コードブロックを使うとイテレータが実装できますけど、大抵は組み込みのもので事足りるのであまり自分でイテレータを作るっていうのは少ないのかもしれないですね。ま、Rubyの経験が少ないのでよくわかりませんが。
-</div></article><article><h1 class="article-title"><a href="/2007/08/22/job_change/">職場を変えようと思います</a></h1><div class="article-time"><time dateMime="2007-08-22 00:00:00 UTC" pubdate="pubdate">August 22 2007</time></div><div class="article-body">一部の人にはちらほら話してますけど、ちょっと職場を変えることを検討してます。できれば今年中には現在の職場に伝えて何らかの就職活動は行いたいところ。
+</div></article><article class="one"><h1 class="article-title"><a href="/2007/08/22/job_change/">職場を変えようと思います</a></h1><div class="article-time"><time dateMime="2007-08-22 00:00:00 UTC" pubdate="pubdate">August 22 2007</time></div><div class="article-body">一部の人にはちらほら話してますけど、ちょっと職場を変えることを検討してます。できれば今年中には現在の職場に伝えて何らかの就職活動は行いたいところ。
 
 職場を変えようと思った理由は、もっとコードを書きたい、刺激のある職場に行きたいってところですかね。今の職場はあまりプログラミングに専念できる職場じゃないですし、ついったーの人たちの様にWebが好き!プログラミングが好き!って人がいないんですよね。
 
@@ -695,7 +695,7 @@ foofoofoo</pre>
 ちなみに特に行きたい会社っていうのはないです。できればRubyを仕事にしてみたいなとは思いますけど。そんなわけでちょっと知り合いに貸してたピッケル本を今日返してもらいました。SICPと並行して読み進めていくつもりです。
 
 実は就職活動とかせずに今の職場に就職したので(アルバイト-&gt;正社員)いまいち職場を変えるにあたってどうしたらいいのかとか、何に気をつけたらいいのかとかわかりません。知り合いの方にはいろいろ相談するかもしれませんが、よろしくお願いします。うちで雇ってもいいよ、っていう人がいらっしゃったら気軽にご連絡くださいw
-</div></article><article><h1 class="article-title"><a href="/2007/08/09/sicp_002/">SICP第1章 手続きによる抽象の構築(1)</a></h1><div class="article-time"><time dateMime="2007-08-09 00:00:00 UTC" pubdate="pubdate">August 09 2007</time></div><div class="article-body"><h2>1.1 プログラムの要素</h2>
+</div></article><article class="one"><h1 class="article-title"><a href="/2007/08/09/sicp_002/">SICP第1章 手続きによる抽象の構築(1)</a></h1><div class="article-time"><time dateMime="2007-08-09 00:00:00 UTC" pubdate="pubdate">August 09 2007</time></div><div class="article-body"><h2>1.1 プログラムの要素</h2>
 <dl> <dt>基本式</dt> <dd>言語が関わる最も単純なものを表す</dd> <dt>組合せ法</dt> <dd>より単純なものから合成物を作る</dd> <dt>抽象化法</dt> <dd>合成物に名をつけ、単一のものとして扱う</dd> </dl>
 <h3>1.1.1式</h3>
 schemeでは前置記法を採用している。慣れるまでが大変かも？
@@ -775,7 +775,7 @@ a = 3, b = 2
 (test 0 (p))
 (if( (= 0 0)) 0 p))
 (= 0 0)が#tだから0を返す</pre>
-</div></article><article><h1 class="article-title"><a href="/2007/08/03/sicp_001/">いい加減SICPを読み始めることにした</a></h1><div class="article-time"><time dateMime="2007-08-03 00:00:00 UTC" pubdate="pubdate">August 03 2007</time></div><div class="article-body"><h2>宣言</h2>
+</div></article><article class="one"><h1 class="article-title"><a href="/2007/08/03/sicp_001/">いい加減SICPを読み始めることにした</a></h1><div class="article-time"><time dateMime="2007-08-03 00:00:00 UTC" pubdate="pubdate">August 03 2007</time></div><div class="article-body"><h2>宣言</h2>
 いつ買ったのかわからないSICPをいい加減読むことにしました。どっかで宣言しないといつまでもやらなそうなので、エントリーで宣言して無理にでもやろうという魂胆。一応、成果はブログで書いていくつもりなので更新なかったら「さっさと読めよ、カス」って言ってやってください。
 
 <h2>読もうとおもった理由</h2>
@@ -799,7 +799,7 @@ a = 3, b = 2
 <pre>
 sudo port install gauche
 </pre>
-</div></article><article><h1 class="article-title"><a href="/2007/07/16/070714_js/">初心者向けJavaScript勉強会の資料公開と補足</a></h1><div class="article-time"><time dateMime="2007-07-16 00:00:00 UTC" pubdate="pubdate">July 16 2007</time></div><div class="article-body">とある理由で僕主催の初心者向けのJavaScript勉強会 を14日行いました。とある理由はforestkさんのエントリーを参照ください(<a href="http://blog.livedoor.jp/forestk/archives/50357381.html">UK 主催の初心者向け Javascript 勉強会が生まれた経緯</a>)
+</div></article><article class="one"><h1 class="article-title"><a href="/2007/07/16/070714_js/">初心者向けJavaScript勉強会の資料公開と補足</a></h1><div class="article-time"><time dateMime="2007-07-16 00:00:00 UTC" pubdate="pubdate">July 16 2007</time></div><div class="article-body">とある理由で僕主催の初心者向けのJavaScript勉強会 を14日行いました。とある理由はforestkさんのエントリーを参照ください(<a href="http://blog.livedoor.jp/forestk/archives/50357381.html">UK 主催の初心者向け Javascript 勉強会が生まれた経緯</a>)
 
 会場は<a href="http://www.knocking.co.jp/">株式会社ノッキングオン</a>様にご提供いただきました。借りたい人ははてなキーワードの<a href="http://d.hatena.ne.jp/keyword/%A5%CE%A5%C3%A5%AD%A5%F3%A5%B0%A5%AA%A5%F3%A4%CE%B2%F1%B5%C4%BC%BC%BB%C8%A4%A4%A4%BF%A4%A4%21">ノッキングオンの会議室使いたい!</a>を利用するといいと思います。東麻布でプロジェクター &amp; ネット環境あり(優先ですがアクセスポイントを持参すれば無線も利用可能みたいです)の好環境ですのでかなりおすすめの物件となっております:-P
 
@@ -898,7 +898,7 @@ aの宣言のところで演算子は = , + , *の３つがあります。この
 発表する側に立ってみて思ったことですが、あらためてアウトプットは大事だなと。本を読んだり、話を聞くよりも何倍も勉強になった気がします。デザイン勉強会の話もでてるみたいなので、もし発表するか迷ってる人はとりあえずやってみることをおすすめします。いろいろ不安もあると思いますが、みんないい人なのでなんとかなります、きっとw
 
 あ、あと全体のまとめはちょっと書ききれなかったので<a href="http://www.hamashun.com/blog/2007/07/javascript.html">hamashun</a>さんのブログをみるよーに。
-</div></article><article><h1 class="article-title"><a href="/2007/07/08/start-macbook/">MacBook始めました</a></h1><div class="article-time"><time dateMime="2007-07-08 00:00:00 UTC" pubdate="pubdate">July 08 2007</time></div><div class="article-body">普段使っていたノートPC(Win) がどうやら逝ってしまったみたいなのでこの機会に念願のMacBookを手に入れました。
+</div></article><article class="one"><h1 class="article-title"><a href="/2007/07/08/start-macbook/">MacBook始めました</a></h1><div class="article-time"><time dateMime="2007-07-08 00:00:00 UTC" pubdate="pubdate">July 08 2007</time></div><div class="article-body">普段使っていたノートPC(Win) がどうやら逝ってしまったみたいなのでこの機会に念願のMacBookを手に入れました。
 <table border="0" cellpadding="5">
 <tr>
 <td valign="top"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/B000QUIURY/ukstudio0c-22/" target="_top"><img src="http://g-ec2.images-amazon.com/images/I/11Cbr66vqlL.jpg" alt="Apple MacBook White 2.16GHz Core 2 Duo/13.3/1G/120G/8x SuperDrive DL/Gigabit/BT/DVI MB062J/A" border="0" /></a></td>
@@ -928,4 +928,4 @@ Terminalの設定変更。
 これでターミナル起動時のシェルがzshになります。zshインストールしないといけないと思ってたらデフォルトでインストールされてた。
 
 あとは、FirefoxとFirebugとGoogleBrowserSyncとかのAdd-onを少々。
-</div></article><div class="pager"><ul><li class="previous"><a href="/page/9/">Prev</a></li><li class="next"><a href="/page/11/">Next</a></li></ul></div></div></body></html>
+</div></article></div><div class="row"><div class="pager one"><ul><li class="previous"><a href="/page/9/">Prev</a></li><li class="next"><a href="/page/11/">Next</a></li></ul></div></div></div></body></html>

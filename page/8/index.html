@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head><meta charset="utf-8" /><!--Always force latest IE rendering engine or request Chrome Frame--><meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" /><title>ukstudio.jp</title><link href="/stylesheets/dist/normalize.css" rel="stylesheet" /><link href="/stylesheets/dist/skeleton.css" rel="stylesheet" /><link href="/stylesheets/all.css" rel="stylesheet" /><script src="/javascripts/all.js"></script><link href="/feed.xml" rel="alternate" title="atom" type="application/atom+xml" /><script>var _gaq = _gaq || [];
+<!DOCTYPE html><html><head><meta charset="utf-8" /><!--Always force latest IE rendering engine or request Chrome Frame--><meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" /><meta content="width=device-width,initial-scale=1.0" name="viewport" /><title>ukstudio.jp</title><link href="/stylesheets/dist/normalize.css" rel="stylesheet" /><link href="/stylesheets/dist/skeleton.css" rel="stylesheet" /><link href="/stylesheets/all.css" rel="stylesheet" /><script src="/javascripts/all.js"></script><link href="/feed.xml" rel="alternate" title="atom" type="application/atom+xml" /><script>var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-12755601-1']);
 _gaq.push(['_trackPageview']);
 
@@ -6,7 +6,7 @@ _gaq.push(['_trackPageview']);
   var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
   ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
   var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-})();</script></head><body class="page page_8 page_8_index"><div class="header"><div class="header-title"><h1><a href="/">ukstudio</a></h1></div></div><div class="container"><article><h1 class="article-title"><a href="/2008/08/13/ruby_on_rails_partial/">Railsのpartialの使い方</a></h1><div class="article-time"><time dateMime="2008-08-13 00:00:00 UTC" pubdate="pubdate">August 13 2008</time></div><div class="article-body">あまりpartialをちゃんと使いこなせていない気がするので(いつもインスタンス変数で適当に値わたしてる)使い方をちょっとメモ。
+})();</script></head><body class="page page_8 page_8_index"><div class="header"><div class="header-title"><h1><a href="/">ukstudio</a></h1></div></div><div class="container"><div class="row"><article class="one"><h1 class="article-title"><a href="/2008/08/13/ruby_on_rails_partial/">Railsのpartialの使い方</a></h1><div class="article-time"><time dateMime="2008-08-13 00:00:00 UTC" pubdate="pubdate">August 13 2008</time></div><div class="article-body">あまりpartialをちゃんと使いこなせていない気がするので(いつもインスタンス変数で適当に値わたしてる)使い方をちょっとメモ。
 
 <pre lang="ruby">
 render :partial => 'entry'
@@ -33,7 +33,7 @@ render :partial => @entries # インスタンス変数で複数形
 </pre>
 
 collectionで値を渡す。@objectsの値を1つずつ、partial側でentryとして参照できる。もちろん描画は@objects分繰り返される。
-</div></article><article><h1 class="article-title"><a href="/2008/08/08/quill/">Quillリリースおめでとうございます</a></h1><div class="article-time"><time dateMime="2008-08-08 00:00:00 UTC" pubdate="pubdate">August 08 2008</time></div><div class="article-body"><a href="http://quill.to/">Quill [羽根のように軽い、メモメモwebサービス]</a>
+</div></article><article class="one"><h1 class="article-title"><a href="/2008/08/08/quill/">Quillリリースおめでとうございます</a></h1><div class="article-time"><time dateMime="2008-08-08 00:00:00 UTC" pubdate="pubdate">August 08 2008</time></div><div class="article-body"><a href="http://quill.to/">Quill [羽根のように軽い、メモメモwebサービス]</a>
 <a href="http://blog.inafog.jp/archives/314">blog in a fog >> Quillリリースしました</a>
 <a href="http://blog.woopsdez.jp/?p=841">ウープスデザインブログ >> 羽根のように軽いメモメモwebサービス 「Quill」公開されました</a>
 
@@ -81,7 +81,7 @@ collectionで値を渡す。@objectsの値を1つずつ、partial側でentryと�
 </dl>
 
 多分、大体こんな感じかなー。間違ってたらごめんなさい。
-</div></article><article><h1 class="article-title"><a href="/2008/07/29/iphone_seminar/">Apple主催のiPhoneアプリケーション開発入門セミナーに参加してきた</a></h1><div class="article-time"><time dateMime="2008-07-29 00:00:00 UTC" pubdate="pubdate">July 29 2008</time></div><div class="article-body">会場が家からすぐ近くだったので行ってきました。なるべく話しても大丈夫そうなところを選んで書きますが、場合によってはエントリーが消えることもあるかも。セミナーの内容が完全黙秘なのか、SDKの部分はダメなのかどっちかよくわからないので。英語苦手だ。
+</div></article><article class="one"><h1 class="article-title"><a href="/2008/07/29/iphone_seminar/">Apple主催のiPhoneアプリケーション開発入門セミナーに参加してきた</a></h1><div class="article-time"><time dateMime="2008-07-29 00:00:00 UTC" pubdate="pubdate">July 29 2008</time></div><div class="article-body">会場が家からすぐ近くだったので行ってきました。なるべく話しても大丈夫そうなところを選んで書きますが、場合によってはエントリーが消えることもあるかも。セミナーの内容が完全黙秘なのか、SDKの部分はダメなのかどっちかよくわからないので。英語苦手だ。
 
 <h2>ドキュメントみろ</h2>
 今回、話を聞いてきたことの大半は既にドキュメントとしてあるとのこと。英語だけど。なので英語がわかる人はそちらを読めばいいと思います。というか他にドキュメントがないので、英語読めなくても読まなきゃいけないんだけど。
@@ -120,7 +120,7 @@ Q&Aで「例えばテキストエディタなのでバンドルに保存され�
 どこの国に配布するにせよ、登録するバイナリは1つです。つまり1つのバイナリをローカライズするってことかと。翻訳の仕組みは・・・聞き損ねたか、忘れました。確かビルド時に「single binary supporting multiple languages」を選ぶとかそんなん。これ書いちゃまずいのかな。まぁいいや。
 
 まぁ、大体こんな感じです。他にも色々聞いてますが、ほとんどドキュメントに書いてあるようなことばかりでした。ここに書いた内容がちょっと際どいので、さっきも書きましたがエントリが消えてる可能性もあります。その時はごめんなさい。
-</div></article><article><h1 class="article-title"><a href="/2008/07/27/ukstudio_controlled_git/">ukstudio.jpをgitで管理するようにしてみた</a></h1><div class="article-time"><time dateMime="2008-07-27 00:00:00 UTC" pubdate="pubdate">July 27 2008</time></div><div class="article-body">最近流行りのgitを使ってみようかなーってことでとりあえずukstudio.jpを全部gitで管理するようにした。
+</div></article><article class="one"><h1 class="article-title"><a href="/2008/07/27/ukstudio_controlled_git/">ukstudio.jpをgitで管理するようにしてみた</a></h1><div class="article-time"><time dateMime="2008-07-27 00:00:00 UTC" pubdate="pubdate">July 27 2008</time></div><div class="article-body">最近流行りのgitを使ってみようかなーってことでとりあえずukstudio.jpを全部gitで管理するようにした。
 
 最終的に以下のような構成になった。
 
@@ -222,7 +222,7 @@ Host ukstudio.jp
 IdentityFile ~/.ssh/id_dsa_ukstudio.jp
 Protocol 2,1
 </pre>
-</div></article><article><h1 class="article-title"><a href="/2008/07/23/categories_and_tags_in_order/">カテゴリとタグを整理しました</a></h1><div class="article-time"><time dateMime="2008-07-23 00:00:00 UTC" pubdate="pubdate">July 23 2008</time></div><div class="article-body">なんかWordPressにいつのまにかタグ機能が実装されていたので、せっかくなので使ってみることにしました。
+</div></article><article class="one"><h1 class="article-title"><a href="/2008/07/23/categories_and_tags_in_order/">カテゴリとタグを整理しました</a></h1><div class="article-time"><time dateMime="2008-07-23 00:00:00 UTC" pubdate="pubdate">July 23 2008</time></div><div class="article-body">なんかWordPressにいつのまにかタグ機能が実装されていたので、せっかくなので使ってみることにしました。
 
 ベースはヤスヒサさんの<a href="http://www.yasuhisa.com/could/article/category-tag/">カテゴリとタグを上手に使い分ける</a>を参考にしています。
 
@@ -233,7 +233,7 @@ Protocol 2,1
 基本的にこのブログはRSS、検索、はてブ経由で来る人が多いので、1つの記事から関連のある他の記事に辿れることを重視しています。現状、デザインを修正してないのでわからないと思いますが・・・例えば、カテゴリ・タグをベースに関連エントリなど他のエントリとの繋りを作るといった感じですかね。カテゴリやタグ以外にははてブ数や時間とかもちょっと考慮に入れてます。
 
 今までは、1つのエントリで完結させてましたが、今後は「他にもこんな記事があるよ」と言ったことができたらなぁと思っています。
-</div></article><article><h1 class="article-title"><a href="/2008/07/18/amazon_crossreview/">Amazon商品ページにcrossreviewのレビューを表示するgreasemonkeyスクリプト書いた</a></h1><div class="article-time"><time dateMime="2008-07-18 00:00:00 UTC" pubdate="pubdate">July 18 2008</time></div><div class="article-body">初グリモン。結構適当に書いたけど、とりあえず動くのでよし。codereposに上げたのでいじりたい人はご自由にどうぞー。
+</div></article><article class="one"><h1 class="article-title"><a href="/2008/07/18/amazon_crossreview/">Amazon商品ページにcrossreviewのレビューを表示するgreasemonkeyスクリプト書いた</a></h1><div class="article-time"><time dateMime="2008-07-18 00:00:00 UTC" pubdate="pubdate">July 18 2008</time></div><div class="article-body">初グリモン。結構適当に書いたけど、とりあえず動くのでよし。codereposに上げたのでいじりたい人はご自由にどうぞー。
 
 <a href="http://coderepos.org/share/browser/lang/javascript/userscripts/amazon_crossreview.user.js?">amazon_crossreview.user.js</a>
 
@@ -241,7 +241,7 @@ Protocol 2,1
 
 サンプル画像
 <img src="http://img.skitch.com/20080718-bs6mqgs1nrjggarixunr4wgmdd.jpg" alt="greasemonkey_for_crossreview"/>
-</div></article><article><h1 class="article-title"><a href="/2008/07/15/iphone-developer-program/">iPhone Developer Programに登録しました。</a></h1><div class="article-time"><time dateMime="2008-07-15 00:00:00 UTC" pubdate="pubdate">July 15 2008</time></div><div class="article-body">結論から言うと、まだ実機検証も配布もできてない段階です。そもそもアプリ作れてないですしね。ただ、米国在住者じゃないと登録できないってことはないですね。とりあえず登録はできたっぽいので。
+</div></article><article class="one"><h1 class="article-title"><a href="/2008/07/15/iphone-developer-program/">iPhone Developer Programに登録しました。</a></h1><div class="article-time"><time dateMime="2008-07-15 00:00:00 UTC" pubdate="pubdate">July 15 2008</time></div><div class="article-body">結論から言うと、まだ実機検証も配布もできてない段階です。そもそもアプリ作れてないですしね。ただ、米国在住者じゃないと登録できないってことはないですね。とりあえず登録はできたっぽいので。
 
 端的に今の状況を説明すると、
 
@@ -283,7 +283,7 @@ xcodeのinfoでiPhoneDeveloper:<firstname><lastname>を入力するところが�
 どうやら大抵の人は一発でactivateできてないっぽいですね(We are unable to activate your iPhone...ってやつ)。そう言うときはとりあえずメールでなんとかしてくれーと頼むのがいいんじゃないですかね。
 
 実機で動かすまでが長いですなぁ。
-</div></article><article><h1 class="article-title"><a href="/2008/07/03/release_crossreview/">crossreviewがリリースされました!</a></h1><div class="article-time"><time dateMime="2008-07-03 00:00:00 UTC" pubdate="pubdate">July 03 2008</time></div><div class="article-body">今日、<a href="http://crossreview.jp/">crossreview</a>というサービスがリリースしました。smashmediaの河野さんのアイディアと元に、僕の勤め先であるRAWHIDE.が開発を手伝わさせていただきました。
+</div></article><article class="one"><h1 class="article-title"><a href="/2008/07/03/release_crossreview/">crossreviewがリリースされました!</a></h1><div class="article-time"><time dateMime="2008-07-03 00:00:00 UTC" pubdate="pubdate">July 03 2008</time></div><div class="article-body">今日、<a href="http://crossreview.jp/">crossreview</a>というサービスがリリースしました。smashmediaの河野さんのアイディアと元に、僕の勤め先であるRAWHIDE.が開発を手伝わさせていただきました。
 
 <a href="http://blog.crossreview.jp/plessrelease">プレスリリース</a>
 <a href="http://smashmedia.jp/blog/2008/07/001654.html">ぼくとcrossreviewの誕生日</a>
@@ -294,7 +294,7 @@ Amazonの商品をレビューするサイトなのですが、Twitterみたい�
 
 
 ブログパーツ、横のもほしいなぁー。あとで要望だしちゃおう。
-</div></article><article><h1 class="article-title"><a href="/2008/06/30/song_for_autotest/">autotestの結果をMacのsayコマンドで通知する</a></h1><div class="article-time"><time dateMime="2008-06-30 00:00:00 UTC" pubdate="pubdate">June 30 2008</time></div><div class="article-body">かなりネタなエントリー。
+</div></article><article class="one"><h1 class="article-title"><a href="/2008/06/30/song_for_autotest/">autotestの結果をMacのsayコマンドで通知する</a></h1><div class="article-time"><time dateMime="2008-06-30 00:00:00 UTC" pubdate="pubdate">June 30 2008</time></div><div class="article-body">かなりネタなエントリー。
 
 Macにはsayコマンドと言うものがあって、入力した英単語とかをしゃべらせることができる。詳細はMacの手書き説明書さんが最近エントリー書いているのでそちらを見てくださいな。
 
@@ -327,7 +327,7 @@ ls /System/Library/Speech/Voices
 </pre>
 
 とすると声の一覧がでるっぽい。
-</div></article><article><h1 class="article-title"><a href="/2008/06/13/rails2_1min/">Ruby on Rails 2.0アプリを10秒で作る2.0</a></h1><div class="article-time"><time dateMime="2008-06-13 00:00:00 UTC" pubdate="pubdate">June 13 2008</time></div><div class="article-body"><ul>
+</div></article><article class="one"><h1 class="article-title"><a href="/2008/06/13/rails2_1min/">Ruby on Rails 2.0アプリを10秒で作る2.0</a></h1><div class="article-time"><time dateMime="2008-06-13 00:00:00 UTC" pubdate="pubdate">June 13 2008</time></div><div class="article-body"><ul>
 <li>Railsのインストールは作業時間に含みません</li>
 <li>shファイル作る時間も含みません</li>
 <li>筆者の環境がMacBookなのでそれ以外の環境は適当に脳内変換すべし</li>
@@ -358,7 +358,7 @@ $ ruby ./script/server
 んで、http://localhost:3000/itprosにブラウザからアクセス。表示されればおk。
 
 <a href="http://itpro.nikkeibp.co.jp/article/COLUMN/20080606/306873/">Ruby on Rails 2.0アプリを1分で作る : IT Pro</a>
-</div></article><article><h1 class="article-title"><a href="/2008/06/05/rails_vim_rspec/">rails.vimのファイル切り替えをRSpecに対応させる(仮)</a></h1><div class="article-time"><time dateMime="2008-06-05 00:00:00 UTC" pubdate="pubdate">June 05 2008</time></div><div class="article-body">rails.vimをインストールすると、RcontrollerとかRmodelコマンドでRSpecファイルからControllerやModelファイルに切り替えることができるんだけど、その逆ができないので対応させた。仮なのはVimスクリプトをちゃんと書けなくてコピペのごまかしだから。
+</div></article><article class="one"><h1 class="article-title"><a href="/2008/06/05/rails_vim_rspec/">rails.vimのファイル切り替えをRSpecに対応させる(仮)</a></h1><div class="article-time"><time dateMime="2008-06-05 00:00:00 UTC" pubdate="pubdate">June 05 2008</time></div><div class="article-body">rails.vimをインストールすると、RcontrollerとかRmodelコマンドでRSpecファイルからControllerやModelファイルに切り替えることができるんだけど、その逆ができないので対応させた。仮なのはVimスクリプトをちゃんと書けなくてコピペのごまかしだから。
 
 書きかえるファイルは~/.vim/autoload/rails.vim。一応行数も書いたけどもしかしたらズレてるかもしれないので参考程度に。あと、バージョンは2.0使ってる。
 
@@ -412,7 +412,7 @@ specEditは「:Rspec」に対応していて、開いたファイルがControlle
 とりあえず、現状の設定で簡易的にRSpecに対応させることができる。「:Rspec」の存在が気持ち悪いのであれば、それは消して開いているファイルがControllerかModelか自分で判断して「:Rspeccontroller」か「:Rspecmodel」を使いわければいいと思う。「:Rspec [tab]」でエラーが出るし個人的には気持ちわるいんだけど、対応させたスペックを開くことの方がおおいし、その時は短いコマンドの方が都合がいいのでここらへんは妥協。今回Viewには対応させていないけれど、同じ要領でできるはず。
 
 rails.vimを少しよんだだけだし、実際の動作もまともに検証してないので変な動作したらごめんなさい。まぁ致命的な問題は起きないだろうけど。正式にrails.vimがRSpecに対応してくれるといいんだけどね。
-</div></article><article><h1 class="article-title"><a href="/2008/06/04/rails_for_beginner/">RE:Rails初心者はどうやって他人のRailsコードを読めばいいか</a></h1><div class="article-time"><time dateMime="2008-06-04 00:00:00 UTC" pubdate="pubdate">June 04 2008</time></div><div class="article-body">オレもRailsを初めて3ヶ月(もうちょいあるかも)たったので、ある程度オレの経験を元にまとめてみる。参考になるといいなー。
+</div></article><article class="one"><h1 class="article-title"><a href="/2008/06/04/rails_for_beginner/">RE:Rails初心者はどうやって他人のRailsコードを読めばいいか</a></h1><div class="article-time"><time dateMime="2008-06-04 00:00:00 UTC" pubdate="pubdate">June 04 2008</time></div><div class="article-body">オレもRailsを初めて3ヶ月(もうちょいあるかも)たったので、ある程度オレの経験を元にまとめてみる。参考になるといいなー。
 
 <h2>1. まずはアプリケーションを実際に動作させる</h2>
 <pre lang="bash">
@@ -472,7 +472,7 @@ end
 <table  border="0" cellpadding="5"><tr><td colspan="2"><a href="http://www.amazon.co.jp/gp/redirect.html%3FASIN=4797336625%26tag=2004-05-22%26lcode=xm2%26cID=2025%26ccmID=165953%26location=/o/ASIN/4797336625%253FSubscriptionId=0G91FPYVW6ZGWBH4Y9G2" target="_top">Railsレシピブック 183の技</a><img src='http://www.assoc-amazon.jp/e/ir?t=2004-05-22&l=ur2&o=9' width='1' height='1' border='0' alt='' /></td></tr><tr><td valign="top"><a href="http://www.amazon.co.jp/gp/redirect.html%3FASIN=4797336625%26tag=2004-05-22%26lcode=xm2%26cID=2025%26ccmID=165953%26location=/o/ASIN/4797336625%253FSubscriptionId=0G91FPYVW6ZGWBH4Y9G2" target="_top"><img src="http://ecx.images-amazon.com/images/I/419FtZYCmyL._SL160_.jpg" border="0" alt="Railsレシピブック 183の技" /></a></td><td valign="top"><font size="-1">高橋 征義<br /><br />ソフトバンククリエイティブ  2008-05-31<br />売り上げランキング : 1080<br /><br /><br /><a href="http://www.amazon.co.jp/gp/redirect.html%3FASIN=4797336625%26tag=2004-05-22%26lcode=xm2%26cID=2025%26ccmID=165953%26location=/o/ASIN/4797336625%253FSubscriptionId=0G91FPYVW6ZGWBH4Y9G2" target="_top">Amazonで詳しく見る</a></font><font size="-2"> by <a href="http://www.goodpic.com/mt/aws/index.html" >G-Tools</a></font></td></tr></table>
 
 <table  border="0" cellpadding="5"><tr><td colspan="2"><a href="http://www.amazon.co.jp/gp/redirect.html%3FASIN=4274066967%26tag=2004-05-22%26lcode=xm2%26cID=2025%26ccmID=165953%26location=/o/ASIN/4274066967%253FSubscriptionId=0G91FPYVW6ZGWBH4Y9G2" target="_top">RailsによるアジャイルWebアプリケーション開発 第2版</a><img src='http://www.assoc-amazon.jp/e/ir?t=2004-05-22&l=ur2&o=9' width='1' height='1' border='0' alt='' /></td></tr><tr><td valign="top"><a href="http://www.amazon.co.jp/gp/redirect.html%3FASIN=4274066967%26tag=2004-05-22%26lcode=xm2%26cID=2025%26ccmID=165953%26location=/o/ASIN/4274066967%253FSubscriptionId=0G91FPYVW6ZGWBH4Y9G2" target="_top"><img src="http://ecx.images-amazon.com/images/I/51Y%2BviLzM5L._SL160_.jpg" border="0" alt="RailsによるアジャイルWebアプリケーション開発 第2版" /></a></td><td valign="top"><font size="-1">前田 修吾 <br /><br />オーム社  2007-10-26<br />売り上げランキング : 8708<br /><br /><strong>おすすめ平均  </strong><img src="http://g-images.amazon.com/images/G/01/detail/stars-5-0.gif" alt="star" /><br /><img src="http://g-images.amazon.com/images/G/01/detail/stars-5-0.gif" alt="star" />充実した内容でわかりやすい<br /><img src="http://g-images.amazon.com/images/G/01/detail/stars-5-0.gif" alt="star" />railsが良いのかrubyが良いのか本が良いのか<br /><img src="http://g-images.amazon.com/images/G/01/detail/stars-5-0.gif" alt="star" />１日に少しの時間で成果が分かる１冊<br /><br /><a href="http://www.amazon.co.jp/gp/redirect.html%3FASIN=4274066967%26tag=2004-05-22%26lcode=xm2%26cID=2025%26ccmID=165953%26location=/o/ASIN/4274066967%253FSubscriptionId=0G91FPYVW6ZGWBH4Y9G2" target="_top">Amazonで詳しく見る</a></font><font size="-2"> by <a href="http://www.goodpic.com/mt/aws/index.html" >G-Tools</a></font></td></tr></table>
-</div></article><article><h1 class="article-title"><a href="/2008/05/27/rawhide-designer/">RAWHIDE.ではデザイナを募集しています。</a></h1><div class="article-time"><time dateMime="2008-05-27 00:00:00 UTC" pubdate="pubdate">May 27 2008</time></div><div class="article-body">ども、お久しぶりです。久々のエントリで求人ってのも微妙な感じですが、できるだけ色んな人に見てもらいたいですからねー。そもそもこのブログをデザイナが見てるのかどうかが微妙なのかもしれませんが。
+</div></article><article class="one"><h1 class="article-title"><a href="/2008/05/27/rawhide-designer/">RAWHIDE.ではデザイナを募集しています。</a></h1><div class="article-time"><time dateMime="2008-05-27 00:00:00 UTC" pubdate="pubdate">May 27 2008</time></div><div class="article-body">ども、お久しぶりです。久々のエントリで求人ってのも微妙な感じですが、できるだけ色んな人に見てもらいたいですからねー。そもそもこのブログをデザイナが見てるのかどうかが微妙なのかもしれませんが。
 
 そんな感じでどうぞよろしくですよー(0w0)
 
@@ -527,7 +527,7 @@ WEBの場合は、URLをエントリーシート内に明記してください�
 <p>
 不採用とさせていただいた場合は、選考終了後適切な方法にて破棄いたします。
 </p>
-</div></article><article><h1 class="article-title"><a href="/2008/03/14/autotest_for_macbook/">MacBookにRailsの自動テスト環境を構築した</a></h1><div class="article-time"><time dateMime="2008-03-14 00:00:00 UTC" pubdate="pubdate">March 14 2008</time></div><div class="article-body">なんかautotestが流行りつつある今日この頃ですが、みなさまいかがお過ごしでしょうか。とりあえず丁度うちの会社でも自動テストしようかーみたいな話がでてたので構築してみましたよ!
+</div></article><article class="one"><h1 class="article-title"><a href="/2008/03/14/autotest_for_macbook/">MacBookにRailsの自動テスト環境を構築した</a></h1><div class="article-time"><time dateMime="2008-03-14 00:00:00 UTC" pubdate="pubdate">March 14 2008</time></div><div class="article-body">なんかautotestが流行りつつある今日この頃ですが、みなさまいかがお過ごしでしょうか。とりあえず丁度うちの会社でも自動テストしようかーみたいな話がでてたので構築してみましたよ!
 
 <h2>ZenTestのインストール</h2>
 とりあえずは定番のZenTest(autotest)とRedGreen(結果の色付け)をインストールします。
@@ -641,7 +641,7 @@ require 'autotest/glowl' # コメントアウトを解除
 これでテストが失敗したとき、失敗から成功になったときにGrowlが通知してくれます。Growlの見た目を変更しようと思ったけれど、個人的にscreenだけで十分だったので今回はナシ。
 
 とりあえず自動テストはテストを書くのが楽しくなりますな。オススメ。
-</div></article><article><h1 class="article-title"><a href="/2008/03/04/from_unittest_to_rspec/">test/unitで書いたテストにRSpecでテストを追記する方法</a></h1><div class="article-time"><time dateMime="2008-03-04 00:00:00 UTC" pubdate="pubdate">March 04 2008</time></div><div class="article-body">10分ぐらい調べて試してみただけだけど。
+</div></article><article class="one"><h1 class="article-title"><a href="/2008/03/04/from_unittest_to_rspec/">test/unitで書いたテストにRSpecでテストを追記する方法</a></h1><div class="article-time"><time dateMime="2008-03-04 00:00:00 UTC" pubdate="pubdate">March 04 2008</time></div><div class="article-body">10分ぐらい調べて試してみただけだけど。
 
 <pre lang="ruby">
 require 'rubygems'
@@ -688,7 +688,7 @@ Finished in 0.007974 seconds
 RSpecの方のテストはるびまの角谷さんの<a href="http://jp.rubyist.net/magazine/?0021-Rspec">記事</a>から拝借しました。
 
 spceをrequireして、クラスに書きこんでいけばよさそう。仕事だとtest/unitで書いてしまったテストも多いだろうから、test/unitからRSpecに移行するのにいいかもしれない。
-</div></article><article><h1 class="article-title"><a href="/2008/03/01/rawhide/">RAWHIDE.入社のお知らせ</a></h1><div class="article-time"><time dateMime="2008-03-01 00:00:00 UTC" pubdate="pubdate">March 01 2008</time></div><div class="article-body">こんばんわ、UKです。
+</div></article><article class="one"><h1 class="article-title"><a href="/2008/03/01/rawhide/">RAWHIDE.入社のお知らせ</a></h1><div class="article-time"><time dateMime="2008-03-01 00:00:00 UTC" pubdate="pubdate">March 01 2008</time></div><div class="article-body">こんばんわ、UKです。
 
 実は2月22日に今まで勤務していた会社を退職しました。ついったーやmixiでつながっている人達は知ってたかもですが。
 
@@ -699,7 +699,7 @@ spceをrequireして、クラスに書きこんでいけばよさそう。仕事
 早くRAWHIDE.の一員、戦力として役立てるよう頑張る所存です。よろしくお願いします。
 
 <a href="http://twitter.com/Hamachiya2/statuses/742737192">オマケ</a>: こないだ出社したときの話です。ふふふ・・・
-</div></article><article><h1 class="article-title"><a href="/2008/02/27/haskell_sec3/">ふつケル第3章</a></h1><div class="article-time"><time dateMime="2008-02-27 00:00:00 UTC" pubdate="pubdate">February 27 2008</time></div><div class="article-body"><h2>型と値</h2>
+</div></article><article class="one"><h1 class="article-title"><a href="/2008/02/27/haskell_sec3/">ふつケル第3章</a></h1><div class="article-time"><time dateMime="2008-02-27 00:00:00 UTC" pubdate="pubdate">February 27 2008</time></div><div class="article-body"><h2>型と値</h2>
 Haskellには<strong>型推論</strong>という機能がある。型推論は処理系の方で型を推測し、<strong>矛盾なく全ての式が型づけできればコンパイル時にエラーにはならない</strong>。Haskell以外にも、OCaml、Scala、MLなど静的型付け関数型言語のほとんどが型推論の機能を供えている。
 
 Haskellの型には、<strong>Int(整数値)、Char(文字)、String(文字列)、Bool(真偽値)</strong>がある。Intは最低30ビット幅の符号付き整数値を意味する。CharやStringで扱う文字(列)のエンコードにはUnicodeを採用しているが、GHCの実装は中途半端で入出力でのエンコーディング変換などが実装されていない。
@@ -842,7 +842,7 @@ swapa c = c
 </pre>
 
 書き直した。この方が短い。
-</div></article><article><h1 class="article-title"><a href="/2008/02/25/haskell_sec2/">ふつケル第2章</a></h1><div class="article-time"><time dateMime="2008-02-25 00:00:00 UTC" pubdate="pubdate">February 25 2008</time></div><div class="article-body"><h2>ハロー、ワールド</h2>
+</div></article><article class="one"><h1 class="article-title"><a href="/2008/02/25/haskell_sec2/">ふつケル第2章</a></h1><div class="article-time"><time dateMime="2008-02-25 00:00:00 UTC" pubdate="pubdate">February 25 2008</time></div><div class="article-body"><h2>ハロー、ワールド</h2>
 <pre lang="haskell">
 main = putStrLn "Hello, World!"
 </pre>
@@ -928,7 +928,7 @@ main = do cs < - getContents
 Prelude> length "あ"
 1
 </pre>
-</div></article><article><h1 class="article-title"><a href="/2008/02/15/vim_ruby_on_rails/">VimでRuby on Railsの開発する為の環境構築</a></h1><div class="article-time"><time dateMime="2008-02-15 00:00:00 UTC" pubdate="pubdate">February 15 2008</time></div><div class="article-body">ちょこっとだけ環境整えたので忘備録エントリとして。
+</div></article><article class="one"><h1 class="article-title"><a href="/2008/02/15/vim_ruby_on_rails/">VimでRuby on Railsの開発する為の環境構築</a></h1><div class="article-time"><time dateMime="2008-02-15 00:00:00 UTC" pubdate="pubdate">February 15 2008</time></div><div class="article-body">ちょこっとだけ環境整えたので忘備録エントリとして。
 
 <h2>Vim/Rubyのインストール</h2>
 Ruby(.rb)とeruby(.rhtml)ファイルでシンタックスハイライトとオムニ補完が有効になる拡張。gemからインストール可能。
@@ -994,7 +994,7 @@ Vim: Finished.
 </pre>
 
 普通のRubyプログラム上では問題なく補完できる。(例えば10.toで<tab>10.to_sに補完とか)問題はRailsの方の補完で例えばmodelでvalida</tab><tab>とすると上記のエラーと共にvimが落ちる。とりあえず、rails.vimを外すとちゃんと補完できるようだけど、ファイル切り替えが便利なので悩み所。うまく共存させる方法はないのかな。</tab></c>
-</div></article><article><h1 class="article-title"><a href="/2008/02/07/programming_for_beginner/">そろそろ「初心者用言語」について一言いっておくか</a></h1><div class="article-time"><time dateMime="2008-02-07 00:00:00 UTC" pubdate="pubdate">February 07 2008</time></div><div class="article-body"><a href="http://generation1986.g.hatena.ne.jp/ukstudio/20080204/1202113687">最もタメになる「初心者用言語」まとめ UK is not Britonish</a>
+</div></article><article class="one"><h1 class="article-title"><a href="/2008/02/07/programming_for_beginner/">そろそろ「初心者用言語」について一言いっておくか</a></h1><div class="article-time"><time dateMime="2008-02-07 00:00:00 UTC" pubdate="pubdate">February 07 2008</time></div><div class="article-body"><a href="http://generation1986.g.hatena.ne.jp/ukstudio/20080204/1202113687">最もタメになる「初心者用言語」まとめ UK is not Britonish</a>
 
 「いい嫁」程度のお遊びのつもりでいたら、結構な騒ぎになっちゃっいました。とりあえずあのまとめを見ても、初心者の人は混乱してしまうと思うので自分なりに初心者さんへのメッセージもこめてエントリーを書いてみました。
 
@@ -1040,4 +1040,4 @@ Vim: Finished.
 
 <h2>なにより楽しむ</h2>
 色々書き並べてみましたが、一番大事なのは<strong>あなたがプログラミングを楽しむことです。</strong> 仕事でも趣味でも大いにプログラミングを楽しんで下さい。
-</div></article><div class="pager"><ul><li class="previous"><a href="/page/7/">Prev</a></li><li class="next"><a href="/page/9/">Next</a></li></ul></div></div></body></html>
+</div></article></div><div class="row"><div class="pager one"><ul><li class="previous"><a href="/page/7/">Prev</a></li><li class="next"><a href="/page/9/">Next</a></li></ul></div></div></div></body></html>
