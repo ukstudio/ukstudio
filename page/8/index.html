@@ -6,7 +6,71 @@ _gaq.push(['_trackPageview']);
   var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
   ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
   var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-})();</script></head><body class="page page_8 page_8_index"><div class="header"><div class="header-title"><h1><a href="/">ukstudio</a></h1></div></div><div class="container"><div class="row"><article class="one"><h1 class="article-title"><a href="/2008/08/13/ruby_on_rails_partial/">Railsのpartialの使い方</a></h1><div class="article-time"><time dateMime="2008-08-13 00:00:00 UTC" pubdate="pubdate">August 13 2008</time></div><div class="article-body">あまりpartialをちゃんと使いこなせていない気がするので(いつもインスタンス変数で適当に値わたしてる)使い方をちょっとメモ。
+})();</script></head><body class="page page_8 page_8_index"><div class="header"><div class="header-title"><h1><a href="/">ukstudio</a></h1></div></div><div class="container"><div class="row"><article class="one"><h1 class="article-title"><a href="/2008/08/25/selenium_on_rspec/">Selenium on Rspecを軽く試してみた</a></h1><div class="article-time"><time dateMime="2008-08-25 00:00:00 UTC" pubdate="pubdate">August 25 2008</time></div><div class="article-body">とりあえずはScaffoldで簡単なアプリを作って、そのテストケースを作成、実行してみるところまで。そんな難しいことはしない。Railsは2.0.2を使用。2.1だとSeleniumにパッチを当てなきゃいけないので面倒。2.1の人は<a href="http://clearspace.openqa.org/docs/DOC-1072">Selenium on Rails patch for RoR 2.1</a>からパッチをあててください。
+
+<h3>準備</h3>
+まずは準備としてプラグインのインストールと、Scaffoldで簡単なアプリを作成する。
+<pre lang="ruby">
+$ rails _2.0.2_ blog
+$ cd blog
+$ ruby script/plugin install http://svn.openqa.org/svn/selenium-on-rails/selenium-on-rails
+$ ruby script/generate scaffold entry title:string description:text
+$ rake db:migrate
+</pre>
+
+ここまでできたらtest環境でサーバーを起動し、seleniumがちゃんと起動するか確認する。
+<pre lang="ruby">
+$ ruby script/server -e test
+</pre>
+
+そうすると下記エラーがでるが、sessionをデータベースであつかうように変更するととりあえず回避できる。原因はよくわかんない。
+<blockquote>
+CGI::Session::CookieStore::TamperedWithCookie in SeleniumController#support_file
+</blockquote>
+
+sessionをデータベースで扱うようにするにはconfig/environment.rbの47行目のコメントアウトをはずし、migrateする。
+<pre lang="ruby">
+config.action_controller.session_store = :active_record_store
+</pre>
+
+<pre lang="bash">
+$ rake db:sessions:create
+$ rake db:migrate
+$ rake db:test:prepare
+$ ruby script/server -e test
+</pre>
+
+ブラウザでhttp://localhost:3000/selenium/を表示して以下のような画面になればOK。
+
+[caption id="attachment_171" align="alignnone" width="300" caption="Selenium初期画面"]<a href="http://ukstudio.jp/wp-content/uploads/2008/08/init-selenium.jpg"><img src="http://ukstudio.jp/wp-content/uploads/2008/08/init-selenium.jpg" alt="Selenium初期画面" title="Selenium初期画面" width="300" height="240" class="size-medium wp-image-171" /></a>[/caption]
+
+<h3>テストケースの作成</h3>
+次にテストケースを作成する。SeleniumはテストケースをHTMLで書くので手書きでも書けるけど、面倒なのでFirefoxのaddonの1つ、<a href="https://addons.mozilla.org/ja/firefox/addon/2079">Selenium IDE</a>を使用する。
+
+Selenium IDEを使用すると、自分の操作を記録しそのままテストケースに変換できるので非常にラク。Selenium IDEを開き、右上の赤いボタンを押すと操作の記録が始まる。あとはテストしたい操作を手動で行なえばいい。
+
+[caption id="attachment_177" align="aligncenter" width="242" caption="Selenium IDE"]<a href="http://ukstudio.jp/wp-content/uploads/2008/08/selenium-ide.jpg"><img src="http://ukstudio.jp/wp-content/uploads/2008/08/selenium-ide.jpg" alt="Selenium IDE" title="Selenium IDE" width="242" height="300" class="size-medium wp-image-177" /></a>[/caption]
+
+今回のテストは「/entriesにアクセスし、そこから/entries/newに移動、タイトルと詳細を入力・保存し、/entries/showでタイトルが実際に表示されている」という内容にした。基本的には記録ボタンを押し、そのまま普通に入力していけばいい。最期の「タイトルが実際に表示されている」というものに関しては文言を範囲選択し、右クリックしverifyTextPresentを選択すればいい。
+
+[caption id="attachment_180" align="aligncenter" width="251" caption="verityTextPresent"]<a href="http://ukstudio.jp/wp-content/uploads/2008/08/selenium-ide-veritytextpresent1.jpg"><img src="http://ukstudio.jp/wp-content/uploads/2008/08/selenium-ide-veritytextpresent1.jpg" alt="verityTextPresent" title="verityTextPresent" width="251" height="300" class="size-medium wp-image-180" /></a>[/caption]
+
+ここまでできたらもう一度赤いボタンを押し、操作の記録を終了させる。最期に今の操作をテストケースとして出力させればいい。
+
+出力方法はIDEのウィンドウにフォーカスを合わせて、ファイル > テストケースに名前をつけて保存。ここではファイル名はadd_entryとしといた。本来なら命名規約的なものもあった方がいいかもしれないけどここでは気にしないことにする。保存先はseleniumに読み込ませるため、RAILS_ROOT/test/selenium/以下に保存。
+
+以上でテストケースの作成は完了。
+
+<h3>テストの実行</h3>
+もう一度http://localhost:3000/selenium/を開くと、今つくったテストケースが読み込まれているはず。あとはそのテストを右側のSelenium TestRunnerから実行すると、ブラウザがガチャガチャ動いてテストケースを実行してくれる。
+
+今回はさっきのテストケースを作ってから何も変更を加えていないので、オールグリーンになるはず。
+
+<h3>まとめ</h3>
+かなり単純なケースだけど、大体テストケースの作成から実行までを試してみた。まぁとりあえず導入してみるには丁度いいレベルかなと。Selenium IDEを使用すればプログラマ/エンジニアじゃなくてもテスト書けそうだし。
+
+あとは確かSelenium on Railsの機能にfixturesのロード機能とかあった気がするので、その辺りも調べていきたいと思う。
+</div></article><article class="one"><h1 class="article-title"><a href="/2008/08/13/ruby_on_rails_partial/">Railsのpartialの使い方</a></h1><div class="article-time"><time dateMime="2008-08-13 00:00:00 UTC" pubdate="pubdate">August 13 2008</time></div><div class="article-body">あまりpartialをちゃんと使いこなせていない気がするので(いつもインスタンス変数で適当に値わたしてる)使い方をちょっとメモ。
 
 <pre lang="ruby">
 render :partial => 'entry'
@@ -994,50 +1058,4 @@ Vim: Finished.
 </pre>
 
 普通のRubyプログラム上では問題なく補完できる。(例えば10.toで<tab>10.to_sに補完とか)問題はRailsの方の補完で例えばmodelでvalida</tab><tab>とすると上記のエラーと共にvimが落ちる。とりあえず、rails.vimを外すとちゃんと補完できるようだけど、ファイル切り替えが便利なので悩み所。うまく共存させる方法はないのかな。</tab></c>
-</div></article><article class="one"><h1 class="article-title"><a href="/2008/02/07/programming_for_beginner/">そろそろ「初心者用言語」について一言いっておくか</a></h1><div class="article-time"><time dateMime="2008-02-07 00:00:00 UTC" pubdate="pubdate">February 07 2008</time></div><div class="article-body"><a href="http://generation1986.g.hatena.ne.jp/ukstudio/20080204/1202113687">最もタメになる「初心者用言語」まとめ UK is not Britonish</a>
-
-「いい嫁」程度のお遊びのつもりでいたら、結構な騒ぎになっちゃっいました。とりあえずあのまとめを見ても、初心者の人は混乱してしまうと思うので自分なりに初心者さんへのメッセージもこめてエントリーを書いてみました。
-
-<h2>簡単な流れの説明</h2>
-一応簡単に今回の流れを説明しておくと、「初心者用言語」の流れの発端はまつもとさんの「<a href="http://www.rubyist.net/~matz/20080204.html#p01">初心者向けの言語</a>」。その後に、amachangの「<a href="http://d.hatena.ne.jp/amachang/20080204/1202096633">最もタメになる「初心者用言語」はJavaScript</a>」、西尾さんの「<a href="http://d.hatena.ne.jp/nishiohirokazu/20080204/1202104617">最もタメになる「初心者用言語」はPython!</a>」、hayamizの「<a href="http://d.hatena.ne.jp/hayamiz/20080204/1202108447">最もタメになる「初心者用言語」はScheme!</a>」と続く。後続の人達は彼等のエントリーや、オレのまとめを見て流れにのったんだと思う。
-
-<h2>初心者の定義</h2>
-流石に後の方になって「初心者とは具体的にどのような人を指すのか」という指摘がチラホラ出てきた。確かに今回の祭り全体を通して「初心者」の定義が曖昧で、エントリーを書いている人が想定している初心者像は各人それぞれな感じ。
-
-今更「初心者」の定義をここでしたところで時既に遅しなのと、プログラマ経験者達が一般に言う「初心者」が多様なので、その辺りはあまり拘らずに話をすすめたいと思う。
-
-<h2>何がしたいのか</h2>
-今更言うことでもないのかもしれないけど、プログラミング言語はあくまでツールであり、プログラミングは手段。(まぁオレの場合、プログラミングそのものが目的になってる時も多いけど)
-
-ツールである以上、<strong>達成したい目的に合わせて言語は選ぶべき。</strong>
-
-その為にはまず<strong>自分が何がしたいのか</strong>を考えた方がいい。仕事でプログラミングを覚える必要があるなら、仕事で使う言語を選ぶべきだろうし、Webアプリを作りたいのであれば、PHP、Perl、Rubyあたりになると思う。そこからさらに開発環境や使えるサーバーから絞り込んでいけばいい。
-
-もし、特に目的がなく漠然と「プログラミングしてみたい」と思っているとしたら、それこそ言語は何でもいいと思う。ただ、最初からプログラミングを目的してるとなんとなく挫折しやすい様にも思える。
-とりあえず何でもいいから目的(ブログを作りたい、Twitterクライアントを作りたい、etc...)があった方が、モチベーションも保つし、自ずと方向性も決まってくるから学習しやすいと思う。
-
-<h2>まわりに教えてくれる人がいるか</h2>
-それと出来ればまわりに教えてくれる人がいる言語を選んで欲しい。もちろん、本やネットの情報だけで独学することも可能と言えば可能だけど、<strong>やっぱり身近に質問ができる人、アドバイスをしてくれる人がいるっていうのは大きい。</strong>
-
-<blockquote>
-そのジャンルにおける本当の初心者にとっては助けてくれる人の存在がかなり大事だと思う。
-</blockquote>
-<a href="http://www.akiyan.com/blog/archives/2008/02/post_106.html">あなたがプログラミングの初心者なら、友人知人が使っている言語にするといい</a>
-
-<h2>興味があれば他の言語にも触れてみて</h2>
-「達人プログラマー - システム開発の職人から名匠への道 -」では「<strong>毎年少なくとも一つの言語を学習する</strong>」ことを薦めている。
-
-<blockquote>
-言語が異なると、同じ問題でも違った解決方法が採用されます。つまり、いくつかの異なったアプローチを学習することにより、幅広い思考ができるようになるわけです。
-</blockquote>
-
-例えば、普段使っている言語がPHPだとしたら、低レベルかつ静的型付けのCや、関数型言語のHaskell、Lisp(Common Lisp、Scheme)などに手を出してみるといいと思う。
-
-参考:<a href="http://itpro.nikkeibp.co.jp/article/COLUMN/20070618/275142/">総論 複数のプログラミング言語を学ぶ意義 - IT Pro</a>
-参考:<a href="http://d.hatena.ne.jp/yuki_neko_nyan/20071011/1192069372">「関数型言語を学ばないといけませんか?」- 猫的怠惰生活Days</a>
-
-<table border="0" cellpadding="5"><tr><td valign="top"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4894712741/ukstudio0c-22/" target="_top"><img src="http://ecx.images-amazon.com/images/I/119HY1S5M2L.jpg" border="0" alt="達人プログラマー―システム開発の職人から名匠への道" /></a></td><td valign="top"><font size="-1"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4894712741/ukstudio0c-22/" target="_top">達人プログラマー―システム開発の職人から名匠への道</a><br />アンドリュー ハント デビッド トーマス Andrew Hunt <br /><br />ピアソンエデュケーション  2000-11<br />売り上げランキング : 8641<br /><br /><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4894712741/ukstudio0c-22/" target="_top">Amazonで詳しく見る</a></font><font size="-2"> by <a href="http://www.goodpic.com/mt/aws/index.html" >G-Tools</a></font></td></tr></table>
-
-<h2>なにより楽しむ</h2>
-色々書き並べてみましたが、一番大事なのは<strong>あなたがプログラミングを楽しむことです。</strong> 仕事でも趣味でも大いにプログラミングを楽しんで下さい。
 </div></article></div><div class="row"><div class="pager one"><ul><li class="previous"><a href="/page/7/">Prev</a></li><li class="next"><a href="/page/9/">Next</a></li></ul></div></div></div></body></html>

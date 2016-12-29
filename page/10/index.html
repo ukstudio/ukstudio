@@ -6,7 +6,24 @@ _gaq.push(['_trackPageview']);
   var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
   ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
   var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-})();</script></head><body class="page page_10 page_10_index"><div class="header"><div class="header-title"><h1><a href="/">ukstudio</a></h1></div></div><div class="container"><div class="row"><article class="one"><h1 class="article-title"><a href="/2007/11/24/ruby_brainfuck/">RubyでBrainFuck処理系を書いてみた</a></h1><div class="article-time"><time dateMime="2007-11-24 00:00:00 UTC" pubdate="pubdate">November 24 2007</time></div><div class="article-body"><pre lang="ruby">
+})();</script></head><body class="page page_10 page_10_index"><div class="header"><div class="header-title"><h1><a href="/">ukstudio</a></h1></div></div><div class="container"><div class="row"><article class="one"><h1 class="article-title"><a href="/2007/11/24/the_little_schemer/">The Little Schemer</a></h1><div class="article-time"><time dateMime="2007-11-24 00:00:00 UTC" pubdate="pubdate">November 24 2007</time></div><div class="article-body"><table class="g-tools_table"><tr><td colspan="2"><span class="g-tools_title"><a href="http://www.amazon.co.jp/gp/redirect.html%3FASIN=0262560992%26tag=ukstudio0c-22%26lcode=xm2%26cID=2025%26ccmID=165953%26location=/o/ASIN/0262560992%253FSubscriptionId=0G91FPYVW6ZGWBH4Y9G2" target="_top">The Little Schemer</a></span></td></tr><tr><td valign="top"><span class="g-tools_img"><a href="http://www.amazon.co.jp/gp/redirect.html%3FASIN=0262560992%26tag=ukstudio0c-22%26lcode=xm2%26cID=2025%26ccmID=165953%26location=/o/ASIN/0262560992%253FSubscriptionId=0G91FPYVW6ZGWBH4Y9G2" target="_top"><img src="http://ecx.images-amazon.com/images/I/115J0Y2ZQBL.jpg"  alt="The Little Schemer" /></a></span></td><td valign="top"><span class="g-tools_body">Daniel P. Friedman Matthias Felleisen Duane Bibby <br /><br /><strong>おすすめ平均</strong> <img src="http://g-images.amazon.com/images/G/01/detail/stars-5-0.gif" /><br /><img src="http://g-images.amazon.com/images/G/01/detail/stars-5-0.gif" alt="stars" />Schemeが好きになります<br /><img src="http://g-images.amazon.com/images/G/01/detail/stars-5-0.gif" alt="stars" />英語であるのが苦痛にならない楽しさ<br /><img src="http://g-images.amazon.com/images/G/01/detail/stars-5-0.gif" alt="stars" />面白いスタイル<br /><br /><a href="http://www.amazon.co.jp/gp/redirect.html%3FASIN=0262560992%26tag=ukstudio0c-22%26lcode=xm2%26cID=2025%26ccmID=165953%26location=/o/ASIN/0262560992%253FSubscriptionId=0G91FPYVW6ZGWBH4Y9G2" target="_top">Amazonで詳しく見る</a></span><span class="g-tools_by"> by <a href="http://www.goodpic.com/mt/aws/index.html" >G-Tools</a></span></td></tr></table>
+
+Amazonさんから届いた。結構軽い本だから電車とかで読むのも悪くないかもしれない。洋書だけど、そんな難しい英語はなさそうだからそんなに苦労はなさそう。
+
+The Five Rules
+<dl>
+<dt>The Law of Car</dt>
+<dd>The primitive car is defined only for non-empty lists.</dd>
+<dt>The Law of Cdr</dt>
+<dd>The primitive cdr is defined only for non-empty lists. The cdr of any non-empty list is always another list.</dd>
+<dt>The Law of Cons</dt>
+<dd>The primitive cons takes two arguments. The second argument to cons must be a list. The result is a list.</dd>
+<dt>The Law of Null?</dt>
+<dd>The primitive null? is defined only for lists.</dd>
+<dt>The Law of Eq?</dt>
+<dd>The primitive eq? takes two arguments. Each must be a non-numeric atom.</dd>
+</dl>
+</div></article><article class="one"><h1 class="article-title"><a href="/2007/11/24/ruby_brainfuck/">RubyでBrainFuck処理系を書いてみた</a></h1><div class="article-time"><time dateMime="2007-11-24 00:00:00 UTC" pubdate="pubdate">November 24 2007</time></div><div class="article-body"><pre lang="ruby">
 class BrainFuck
   def convert(code)
     @code = code
@@ -898,34 +915,4 @@ aの宣言のところで演算子は = , + , *の３つがあります。この
 発表する側に立ってみて思ったことですが、あらためてアウトプットは大事だなと。本を読んだり、話を聞くよりも何倍も勉強になった気がします。デザイン勉強会の話もでてるみたいなので、もし発表するか迷ってる人はとりあえずやってみることをおすすめします。いろいろ不安もあると思いますが、みんないい人なのでなんとかなります、きっとw
 
 あ、あと全体のまとめはちょっと書ききれなかったので<a href="http://www.hamashun.com/blog/2007/07/javascript.html">hamashun</a>さんのブログをみるよーに。
-</div></article><article class="one"><h1 class="article-title"><a href="/2007/07/08/start-macbook/">MacBook始めました</a></h1><div class="article-time"><time dateMime="2007-07-08 00:00:00 UTC" pubdate="pubdate">July 08 2007</time></div><div class="article-body">普段使っていたノートPC(Win) がどうやら逝ってしまったみたいなのでこの機会に念願のMacBookを手に入れました。
-<table border="0" cellpadding="5">
-<tr>
-<td valign="top"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/B000QUIURY/ukstudio0c-22/" target="_top"><img src="http://g-ec2.images-amazon.com/images/I/11Cbr66vqlL.jpg" alt="Apple MacBook White 2.16GHz Core 2 Duo/13.3/1G/120G/8x SuperDrive DL/Gigabit/BT/DVI MB062J/A" border="0" /></a></td>
-<td valign="top"><font size="-1"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/B000QUIURY/ukstudio0c-22/" target="_top">Apple MacBook White 2.16GHz Core 2 Duo/13.3/1G/120G/8x SuperDrive DL/Gigabit/BT/DVI MB062J/A</a></font><font size="-1">アップルコンピュータ  2007-05-16
-売り上げランキング : 3083</font><font size="-1"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/B000QUIURY/ukstudio0c-22/" target="_top">Amazonで詳しく見る</a></font><font size="-2"> by <a href="http://www.goodpic.com/mt/aws/index.html">G-Tools</a></font></td>
-</tr>
-</table>
-MacBookを起動して行った設定のメモ
-<h3>Vimの日本語対応</h3>
-~/.vimrcを作り以下のように設定
-<pre>
-:set enc=utf-8
-
-:set fenc=utf-8
-
-:set fencs=iso-2022-jp,euc-jp,cp932</pre>
-Terminalの設定変更。
-<ol>
-	<li>ファイル-&gt;情報をみる</li>
-	<li>エミューレーション-&gt;非ascii文字をエスケープするのチェックをはずす</li>
-</ol>
-<h3>シェルをzshに変更</h3>
-<ol>
-	<li>ターミナル-&gt;環境設定</li>
-	<li>｢このコマンドを実行する｣にチェック。パスに｢/bin/zsh」</li>
-</ol>
-これでターミナル起動時のシェルがzshになります。zshインストールしないといけないと思ってたらデフォルトでインストールされてた。
-
-あとは、FirefoxとFirebugとGoogleBrowserSyncとかのAdd-onを少々。
 </div></article></div><div class="row"><div class="pager one"><ul><li class="previous"><a href="/page/9/">Prev</a></li><li class="next"><a href="/page/11/">Next</a></li></ul></div></div></div></body></html>

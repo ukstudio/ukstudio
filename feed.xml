@@ -4,16 +4,30 @@
   <id>http://ukstudio.jp</id>
   <link href="http://ukstudio.jp"/>
   <link href="http://ukstudio.jp/feed.xml" rel="self"/>
-  <updated>2015-06-15T21:32:00+09:00</updated>
+  <updated>2016-12-29T22:23:00+09:00</updated>
   <author>
     <name>AKAMATSU Yuki</name>
   </author>
+  <entry>
+    <title>Japan Product Manager Conferenceの資料公開</title>
+    <link rel="alternate" href="http://ukstudio.jp/2016/12/29/pmconfjp/"/>
+    <id>http://ukstudio.jp/2016/12/29/pmconfjp/</id>
+    <published>2016-12-29T22:23:00+09:00</published>
+    <updated>2016-12-29T22:25:20+09:00</updated>
+    <author>
+      <name>AKAMATSU Yuki</name>
+    </author>
+    <content type="html">&lt;p&gt;大分時間がたってしまったけど &lt;a href="http://pmconf.jp/"&gt;プロダクトマネージャーカンファレンス 2016&lt;/a&gt;の資料を公開した。&lt;/p&gt;
+
+&lt;script async class="speakerdeck-embed" data-id="6ee8a1eefaef4f29a8908b5f8c8e3bfb" data-ratio="1.33333333333333" src="//speakerdeck.com/assets/embed.js"&gt;&lt;/script&gt;
+</content>
+  </entry>
   <entry>
     <title>UX概論に参加した</title>
     <link rel="alternate" href="http://ukstudio.jp/2015/06/15/ux_introduction/"/>
     <id>http://ukstudio.jp/2015/06/15/ux_introduction/</id>
     <published>2015-06-15T21:32:00+09:00</published>
-    <updated>2016-11-02T23:56:32+09:00</updated>
+    <updated>2016-12-29T22:23:00+09:00</updated>
     <author>
       <name>AKAMATSU Yuki</name>
     </author>
@@ -33,7 +47,7 @@
     <link rel="alternate" href="http://ukstudio.jp/2015/04/19/follow-update-of-gem/"/>
     <id>http://ukstudio.jp/2015/04/19/follow-update-of-gem/</id>
     <published>2015-04-20T00:20:00+09:00</published>
-    <updated>2016-11-02T23:56:32+09:00</updated>
+    <updated>2016-12-29T22:23:00+09:00</updated>
     <author>
       <name>AKAMATSU Yuki</name>
     </author>
@@ -51,7 +65,7 @@
     <link rel="alternate" href="http://ukstudio.jp/2015/04/10/the_year_without_pants/"/>
     <id>http://ukstudio.jp/2015/04/10/the_year_without_pants/</id>
     <published>2015-04-10T14:08:00+09:00</published>
-    <updated>2016-11-02T23:56:32+09:00</updated>
+    <updated>2016-12-29T22:23:00+09:00</updated>
     <author>
       <name>AKAMATSU Yuki</name>
     </author>
@@ -79,7 +93,7 @@
     <link rel="alternate" href="http://ukstudio.jp/2015/04/03/gihyo_scrum_book/"/>
     <id>http://ukstudio.jp/2015/04/03/gihyo_scrum_book/</id>
     <published>2015-04-04T02:22:00+09:00</published>
-    <updated>2016-11-02T23:56:32+09:00</updated>
+    <updated>2016-12-29T22:23:00+09:00</updated>
     <author>
       <name>AKAMATSU Yuki</name>
     </author>
@@ -117,7 +131,7 @@
     <link rel="alternate" href="http://ukstudio.jp/2015/03/26/open_pull_request/"/>
     <id>http://ukstudio.jp/2015/03/26/open_pull_request/</id>
     <published>2015-03-26T21:18:00+09:00</published>
-    <updated>2016-11-02T23:56:32+09:00</updated>
+    <updated>2016-12-29T22:23:00+09:00</updated>
     <author>
       <name>AKAMATSU Yuki</name>
     </author>
@@ -141,20 +155,6 @@
 &lt;p&gt;あまりシェルは得意ではないのでそこらへんは大目に見て欲しい。やってることはfind-prで該当のcommitが含まれているMerge commitを探してcommit messageからGitHub Pull Requestの番号を取り出している。リポジトリ名はgit configから取得して余計な文字はsedで削除。あとはURLを組み立ててブラウザで開くだけ。多分これでPull Requestを開けるはず。&lt;/p&gt;
 
 &lt;p&gt;なんにせよcommit messageはもうちょっと丁寧に書こうと思いました。&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
-    <title>Vue.js便利</title>
-    <link rel="alternate" href="http://ukstudio.jp/2015/03/20/vuejs/"/>
-    <id>http://ukstudio.jp/2015/03/20/vuejs/</id>
-    <published>2015-03-21T05:20:00+09:00</published>
-    <updated>2016-11-02T23:56:32+09:00</updated>
-    <author>
-      <name>AKAMATSU Yuki</name>
-    </author>
-    <content type="html">&lt;p&gt;今のプロダクトにちょっと前からVue.jsを採用しているんだけど、少しずつうまく使えるようになってきていてすごく便利だなーと感じる。コンポーネントについても大体わかってきた。&lt;/p&gt;
-
-&lt;p&gt;RailsアプリケーションにVue.jsを採用してどう変えてきたかみたいな記事をそのうち &lt;a href="http://blog.spicelife.jp/"&gt;スパイスな人生&lt;/a&gt; の方に投稿したいと思う。お楽しみに。&lt;/p&gt;
 </content>
   </entry>
 </feed>

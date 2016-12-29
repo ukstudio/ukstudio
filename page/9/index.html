@@ -6,7 +6,53 @@ _gaq.push(['_trackPageview']);
   var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
   ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
   var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-})();</script></head><body class="page page_9 page_9_index"><div class="header"><div class="header-title"><h1><a href="/">ukstudio</a></h1></div></div><div class="container"><div class="row"><article class="one"><h1 class="article-title"><a href="/2008/02/02/doukaku_lifegame/">Rubyでライフゲーム書いた</a></h1><div class="article-time"><time dateMime="2008-02-02 00:00:00 UTC" pubdate="pubdate">February 02 2008</time></div><div class="article-body"><a href="http://ja.doukaku.org/comment/5581/">どう書く?org #5581</a>
+})();</script></head><body class="page page_9 page_9_index"><div class="header"><div class="header-title"><h1><a href="/">ukstudio</a></h1></div></div><div class="container"><div class="row"><article class="one"><h1 class="article-title"><a href="/2008/02/07/programming_for_beginner/">そろそろ「初心者用言語」について一言いっておくか</a></h1><div class="article-time"><time dateMime="2008-02-07 00:00:00 UTC" pubdate="pubdate">February 07 2008</time></div><div class="article-body"><a href="http://generation1986.g.hatena.ne.jp/ukstudio/20080204/1202113687">最もタメになる「初心者用言語」まとめ UK is not Britonish</a>
+
+「いい嫁」程度のお遊びのつもりでいたら、結構な騒ぎになっちゃっいました。とりあえずあのまとめを見ても、初心者の人は混乱してしまうと思うので自分なりに初心者さんへのメッセージもこめてエントリーを書いてみました。
+
+<h2>簡単な流れの説明</h2>
+一応簡単に今回の流れを説明しておくと、「初心者用言語」の流れの発端はまつもとさんの「<a href="http://www.rubyist.net/~matz/20080204.html#p01">初心者向けの言語</a>」。その後に、amachangの「<a href="http://d.hatena.ne.jp/amachang/20080204/1202096633">最もタメになる「初心者用言語」はJavaScript</a>」、西尾さんの「<a href="http://d.hatena.ne.jp/nishiohirokazu/20080204/1202104617">最もタメになる「初心者用言語」はPython!</a>」、hayamizの「<a href="http://d.hatena.ne.jp/hayamiz/20080204/1202108447">最もタメになる「初心者用言語」はScheme!</a>」と続く。後続の人達は彼等のエントリーや、オレのまとめを見て流れにのったんだと思う。
+
+<h2>初心者の定義</h2>
+流石に後の方になって「初心者とは具体的にどのような人を指すのか」という指摘がチラホラ出てきた。確かに今回の祭り全体を通して「初心者」の定義が曖昧で、エントリーを書いている人が想定している初心者像は各人それぞれな感じ。
+
+今更「初心者」の定義をここでしたところで時既に遅しなのと、プログラマ経験者達が一般に言う「初心者」が多様なので、その辺りはあまり拘らずに話をすすめたいと思う。
+
+<h2>何がしたいのか</h2>
+今更言うことでもないのかもしれないけど、プログラミング言語はあくまでツールであり、プログラミングは手段。(まぁオレの場合、プログラミングそのものが目的になってる時も多いけど)
+
+ツールである以上、<strong>達成したい目的に合わせて言語は選ぶべき。</strong>
+
+その為にはまず<strong>自分が何がしたいのか</strong>を考えた方がいい。仕事でプログラミングを覚える必要があるなら、仕事で使う言語を選ぶべきだろうし、Webアプリを作りたいのであれば、PHP、Perl、Rubyあたりになると思う。そこからさらに開発環境や使えるサーバーから絞り込んでいけばいい。
+
+もし、特に目的がなく漠然と「プログラミングしてみたい」と思っているとしたら、それこそ言語は何でもいいと思う。ただ、最初からプログラミングを目的してるとなんとなく挫折しやすい様にも思える。
+とりあえず何でもいいから目的(ブログを作りたい、Twitterクライアントを作りたい、etc...)があった方が、モチベーションも保つし、自ずと方向性も決まってくるから学習しやすいと思う。
+
+<h2>まわりに教えてくれる人がいるか</h2>
+それと出来ればまわりに教えてくれる人がいる言語を選んで欲しい。もちろん、本やネットの情報だけで独学することも可能と言えば可能だけど、<strong>やっぱり身近に質問ができる人、アドバイスをしてくれる人がいるっていうのは大きい。</strong>
+
+<blockquote>
+そのジャンルにおける本当の初心者にとっては助けてくれる人の存在がかなり大事だと思う。
+</blockquote>
+<a href="http://www.akiyan.com/blog/archives/2008/02/post_106.html">あなたがプログラミングの初心者なら、友人知人が使っている言語にするといい</a>
+
+<h2>興味があれば他の言語にも触れてみて</h2>
+「達人プログラマー - システム開発の職人から名匠への道 -」では「<strong>毎年少なくとも一つの言語を学習する</strong>」ことを薦めている。
+
+<blockquote>
+言語が異なると、同じ問題でも違った解決方法が採用されます。つまり、いくつかの異なったアプローチを学習することにより、幅広い思考ができるようになるわけです。
+</blockquote>
+
+例えば、普段使っている言語がPHPだとしたら、低レベルかつ静的型付けのCや、関数型言語のHaskell、Lisp(Common Lisp、Scheme)などに手を出してみるといいと思う。
+
+参考:<a href="http://itpro.nikkeibp.co.jp/article/COLUMN/20070618/275142/">総論 複数のプログラミング言語を学ぶ意義 - IT Pro</a>
+参考:<a href="http://d.hatena.ne.jp/yuki_neko_nyan/20071011/1192069372">「関数型言語を学ばないといけませんか?」- 猫的怠惰生活Days</a>
+
+<table border="0" cellpadding="5"><tr><td valign="top"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4894712741/ukstudio0c-22/" target="_top"><img src="http://ecx.images-amazon.com/images/I/119HY1S5M2L.jpg" border="0" alt="達人プログラマー―システム開発の職人から名匠への道" /></a></td><td valign="top"><font size="-1"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4894712741/ukstudio0c-22/" target="_top">達人プログラマー―システム開発の職人から名匠への道</a><br />アンドリュー ハント デビッド トーマス Andrew Hunt <br /><br />ピアソンエデュケーション  2000-11<br />売り上げランキング : 8641<br /><br /><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4894712741/ukstudio0c-22/" target="_top">Amazonで詳しく見る</a></font><font size="-2"> by <a href="http://www.goodpic.com/mt/aws/index.html" >G-Tools</a></font></td></tr></table>
+
+<h2>なにより楽しむ</h2>
+色々書き並べてみましたが、一番大事なのは<strong>あなたがプログラミングを楽しむことです。</strong> 仕事でも趣味でも大いにプログラミングを楽しんで下さい。
+</div></article><article class="one"><h1 class="article-title"><a href="/2008/02/02/doukaku_lifegame/">Rubyでライフゲーム書いた</a></h1><div class="article-time"><time dateMime="2008-02-02 00:00:00 UTC" pubdate="pubdate">February 02 2008</time></div><div class="article-body"><a href="http://ja.doukaku.org/comment/5581/">どう書く?org #5581</a>
 
 久々にどう書くorgに投稿してみた。1個1個セルの周り調べてくのも面白みがないなと思って、生きてるセルの周りをスコア付けしてくやり方でやってみた。
 
@@ -842,21 +888,4 @@ end
 </pre>
 
 Rubyは三項演算子でもちゃんと値返すから3行目みたいな書き方が出来るからラクだ。</pre>
-</div></article><article class="one"><h1 class="article-title"><a href="/2007/11/24/the_little_schemer/">The Little Schemer</a></h1><div class="article-time"><time dateMime="2007-11-24 00:00:00 UTC" pubdate="pubdate">November 24 2007</time></div><div class="article-body"><table class="g-tools_table"><tr><td colspan="2"><span class="g-tools_title"><a href="http://www.amazon.co.jp/gp/redirect.html%3FASIN=0262560992%26tag=ukstudio0c-22%26lcode=xm2%26cID=2025%26ccmID=165953%26location=/o/ASIN/0262560992%253FSubscriptionId=0G91FPYVW6ZGWBH4Y9G2" target="_top">The Little Schemer</a></span></td></tr><tr><td valign="top"><span class="g-tools_img"><a href="http://www.amazon.co.jp/gp/redirect.html%3FASIN=0262560992%26tag=ukstudio0c-22%26lcode=xm2%26cID=2025%26ccmID=165953%26location=/o/ASIN/0262560992%253FSubscriptionId=0G91FPYVW6ZGWBH4Y9G2" target="_top"><img src="http://ecx.images-amazon.com/images/I/115J0Y2ZQBL.jpg"  alt="The Little Schemer" /></a></span></td><td valign="top"><span class="g-tools_body">Daniel P. Friedman Matthias Felleisen Duane Bibby <br /><br /><strong>おすすめ平均</strong> <img src="http://g-images.amazon.com/images/G/01/detail/stars-5-0.gif" /><br /><img src="http://g-images.amazon.com/images/G/01/detail/stars-5-0.gif" alt="stars" />Schemeが好きになります<br /><img src="http://g-images.amazon.com/images/G/01/detail/stars-5-0.gif" alt="stars" />英語であるのが苦痛にならない楽しさ<br /><img src="http://g-images.amazon.com/images/G/01/detail/stars-5-0.gif" alt="stars" />面白いスタイル<br /><br /><a href="http://www.amazon.co.jp/gp/redirect.html%3FASIN=0262560992%26tag=ukstudio0c-22%26lcode=xm2%26cID=2025%26ccmID=165953%26location=/o/ASIN/0262560992%253FSubscriptionId=0G91FPYVW6ZGWBH4Y9G2" target="_top">Amazonで詳しく見る</a></span><span class="g-tools_by"> by <a href="http://www.goodpic.com/mt/aws/index.html" >G-Tools</a></span></td></tr></table>
-
-Amazonさんから届いた。結構軽い本だから電車とかで読むのも悪くないかもしれない。洋書だけど、そんな難しい英語はなさそうだからそんなに苦労はなさそう。
-
-The Five Rules
-<dl>
-<dt>The Law of Car</dt>
-<dd>The primitive car is defined only for non-empty lists.</dd>
-<dt>The Law of Cdr</dt>
-<dd>The primitive cdr is defined only for non-empty lists. The cdr of any non-empty list is always another list.</dd>
-<dt>The Law of Cons</dt>
-<dd>The primitive cons takes two arguments. The second argument to cons must be a list. The result is a list.</dd>
-<dt>The Law of Null?</dt>
-<dd>The primitive null? is defined only for lists.</dd>
-<dt>The Law of Eq?</dt>
-<dd>The primitive eq? takes two arguments. Each must be a non-numeric atom.</dd>
-</dl>
 </div></article></div><div class="row"><div class="pager one"><ul><li class="previous"><a href="/page/8/">Prev</a></li><li class="next"><a href="/page/10/">Next</a></li></ul></div></div></div></body></html>
