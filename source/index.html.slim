@@ -1,0 +1,23 @@
+---
+title: ukstudio.jp
+pageable: true
+per_page: 20
+---
+
+.row
+  - page_articles.each do |article|
+    article.one
+      h1.article-title= link_to article.title, article.url
+      .article-time
+        time(dateMime="#{article.date}" pubdate='pubdate')= article.date.strftime('%B %d %Y')
+      .article-body
+        = article.body
+
+- if paginate
+  .row
+    .pager.one
+      ul
+        - if prev_page
+          li.previous= link_to 'Prev', prev_page
+        - if next_page
+          li.next= link_to 'Next', next_page
