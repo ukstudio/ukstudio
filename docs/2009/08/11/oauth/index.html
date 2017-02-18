@@ -1,0 +1,38 @@
+<!DOCTYPE html><html><head><meta charset="utf-8" /><!--Always force latest IE rendering engine or request Chrome Frame--><meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" /><meta content="width=device-width,initial-scale=1.0" name="viewport" /><!--Use title if it's in the page YAML frontmatter--><title>OAuthを使ってみた雑感</title><link href="/stylesheets/dist/normalize.css" rel="stylesheet" /><link href="/stylesheets/dist/skeleton.css" rel="stylesheet" /><link href="/stylesheets/all.css" rel="stylesheet" /><script src="/javascripts/all.js"></script><link href="/feed.xml" rel="alternate" title="atom" type="application/atom+xml" /><script>var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-12755601-1']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();</script></head><body class="x2009 x2009_08 x2009_08_11 x2009_08_11_oauth x2009_08_11_oauth_index"><div class="header"><div class="header-title"><h1><a href="/">ukstudio</a></h1></div></div><div class="container"><article><h1>OAuthを使ってみた雑感</h1><hr /><div class="article-body">最近、TwitterのDMスパムなどで話題のOAuthですが、仕事で使ってみて色々思うところもあるのでまとめておく。
+
+<h2>OAuthは安全か</h2>
+まず、 OAuthでよく言われてるようにみえるパスワードをサービスに渡さないから安全ということに関して。簡単に言うと、「パスワード渡すよりは安全だけどまぁ信用していいかどうかの判断は必要だよね」ってところ。
+
+OAuthは難しい話を抜きにしてしまえば、期限つきパスワード(Twitterは無期限っぽいですが)をサービスごとに発行するようなものだと思う。パスワードを渡した場合と違って、パスワードを書き換えられてログインできなくなるということはないが、APIで実行できることは基本的に出来るのでOAuthにもそれなりのリスクはある。
+
+リスクと言ってもパスワードを第三者に渡すよりははるかに安全。先程述べたようにパスワードを書き換えられる心配もないし、仮に第三者のサービスからトークンが流出したとしても、トークンは無効化できるし、同一のパスワードを使っているサービスへの影響もない。(他のサービスと同じパスワードを使うのはどうなの?云々は置いておいて)
+
+<h2>セキュリティより利便性</h2>
+上記で述べたようにセキュリティ的にはパスワードを渡すより安全だが、ユーザ視点からみた場合のOAuthの利点はセキュリティ云々より利便性なんだと思う。
+
+まず、パスワードの入力の手間が省ける。実際にIDとパスワードを入力してみればわかると思うけど、クリックで認証が済んでしまうOAuthの方が大分ラク。この辺は実装の詳細は違えど、利便性という意味では携帯の簡単ログインに近い。
+
+また、パスワードを第三者のサービスに渡さないことでTwitterのパスワードを変更をする場合、Twitterのパスワードを変更するだけで済む。Twitterのパスワードを変える人がどれだけいるのか知らないけど。
+
+<h2>サービス提供側としてOAuthを使うべきか</h2>
+実際のところ、OAuthを使ったところでやることはあまりかわらない。当然、OAuthで取得したトークンが外部に漏れてしまえば、そのトークンを使用してTwitterへの発言やFollowingのremoveなどができてしまう。よってトークンが外に漏れないよう管理する必要がある。まぁそもそもデータが外部に漏れるということ自体があってはいけないことだけど。
+
+だけどパスワードを預かるよりはユーザにとっても自分達にとっても安全なのは間違いないし、自分達の責任が限定されるという点からもOAuthを使うべき。その方がリスクが少ない。
+
+例えば、他の同一パスワードを使用しているサービスで不正があった場合に、OAuthであればパスワードを持っていないので自分達のデータからパスワードが漏れるということがないし、そういう疑いをかけられることもない。
+
+OAuthを使う際、サービス内部にOAuthを使用してなにをするのかを明記しておくといい。OAuthの仕組みなどを説明する必要はないが、自分達がTwitterに対してなにをするのかぐらいは書いておく方がユーザも安心できる。
+
+現状、TwitterのOAuthの認可のページがかなり不親切かつほとんど英語なので、そのあたりは自分達でうまくサポートするしかない。
+
+<h2>まとめ</h2>
+パスワード使うよりはユーザにとってもサービスを提供する側にとってもメリットがあるのでOAuthが使えるなら使っておきましょう。
+</div></article></div></body></html>

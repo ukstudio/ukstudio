@@ -1,0 +1,456 @@
+<!DOCTYPE html><html><head><meta charset="utf-8" /><!--Always force latest IE rendering engine or request Chrome Frame--><meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" /><meta content="width=device-width,initial-scale=1.0" name="viewport" /><title></title><link href="/stylesheets/dist/normalize.css" rel="stylesheet" /><link href="/stylesheets/dist/skeleton.css" rel="stylesheet" /><link href="/stylesheets/all.css" rel="stylesheet" /><script src="/javascripts/all.js"></script><link href="/feed.xml" rel="alternate" title="atom" type="application/atom+xml" /><script>var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-12755601-1']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();</script></head><body class="x2008 x2008_02 x2008_02_index"><div class="header"><div class="header-title"><h1><a href="/">ukstudio</a></h1></div></div><div class="container"><h1><Archive></Archive>Feb 2008</h1><article><h2><a href="/2008/02/27/haskell_sec3/">2008-02-27 ふつケル第3章</a></h2><h2>型と値</h2>
+Haskellには<strong>型推論</strong>という機能がある。型推論は処理系の方で型を推測し、<strong>矛盾なく全ての式が型づけできればコンパイル時にエラーにはならない</strong>。Haskell以外にも、OCaml、Scala、MLなど静的型付け関数型言語のほとんどが型推論の機能を供えている。
+
+Haskellの型には、<strong>Int(整数値)、Char(文字)、String(文字列)、Bool(真偽値)</strong>がある。Intは最低30ビット幅の符号付き整数値を意味する。CharやStringで扱う文字(列)のエンコードにはUnicodeを採用しているが、GHCの実装は中途半端で入出力でのエンコーディング変換などが実装されていない。
+
+また、Int型のリスト、Char型のリストと言う風にリストの型を表現し、Int型のリストの各要素はInt型になる。<strong>ソースコード上では[Int]や[Char]と書く</strong>。文字列は文字のリストなので[Char]ということになり、別名として上記したString型が用意されている。
+
+関数の型をは引数の型と返り値の型を組合せて表現する。例えば、<strong>String -> [String]というのは第1引数の型がString(文字列)で、返り値の型が[String](文字列のリスト)となる</strong>。
+
+<pre lang="haskell">
+第1引数の型 -> 第2引数の型 -> ・・・ -> 返り値の型
+</pre>
+
+では、引数の型が決まっていない場合どうするのかと言うと、<strong>型変数</strong>と言うものを使う。型変数はアルファベット小文字であらわし、アルファベット小文字の部分は好きな型に読み替えてよい。
+
+<pre lang="haskell">
+[a] -> Int
+Int -> [a] -> [a]
+</pre>
+
+上記の場合だと、1行目は任意の型のリストを引数にもち、Intを返す関数。2行目はIntを第1引数、任意の型のリストを第2引数にもち、第2引数と同じ型のリストを返す関数という意味になる。
+
+<strong>関数の型を宣言</strong>するには、先程関数の型を表現したものに少し付け足せばいい。Haskellは型推論の機能をもつので必ずしも型の宣言が必要というわけではないが、なるべく宣言しておくのが好ましい。
+
+<pre lang="haskell">
+関数名 :: 第1引数の型 -> 第2引数の型 -> ・・・ -> 返り値の型
+</pre>
+
+<h2>高階関数</h2>
+高階関数とは<strong>引数に関数をとる関数</strong>のこと。
+
+<pre lang="haskell">
+main = do cs < - getContents
+          putStr $ expand cs
+
+expand :: String -> string
+expand cs = map translate cs
+
+translate :: Char -> Char
+translate c = if c == '\t' then '@' else c
+</pre>
+
+このプログラムでは5行目で高階関数のmap関数が使われている。map translate csと言うのは、<strong>translate関数そのものにmapを適用しているのであって、translateの結果にmapを適用しているわけではない</strong>。
+
+mapの型は
+<pre lang="haskell">
+map :: (a -> b) -> [a] -> [b]
+</pre>
+となっており、<strong>(a -> b)は「a型の値を引数にとりb型の値を返す関数」</strong>を意味する。今回の場合だと、translate関数の型が Char -> Char となっているので、「Char型の値を引数にとりChar型の値を返す関数」と読み替えることができる。更にいうと(a -> b) -> [a] -> [b] は (Char -> Char) -> [Char] -> [Char]となる。
+
+<pre lang="haskell">
+main = do cs < - getContents
+          putStr $ expand cs
+
+expand :: String -> String
+expand cs = concat $ map expandTab cs
+
+expandTab :: Char -> String
+expandTab c = if c == '\t' then "        " else [c]
+</pre>
+
+この辺はちょっとややこしくなってくるが、ちゃんと順に考えていけば問題ない。
+
+<h2>パターンマッチ(1)</h2>
+
+<pre lang="haskell">
+tabStop = 8
+
+main = do cs < - getContents
+          putStr $ expand cs
+
+expand :: String -> String
+expand cs = concatMap expandTab cs
+
+expandTab :: Char -> String
+expandTab '\t' = replicate tabStop ' '
+expandTab c = [c]
+</pre>
+
+個人的にtabStopがグローバル変数みたいでなんか気持ち悪い。定数と考えればいいのかな。まぁ今はとりあえず置いておこう。
+
+今回のプログラムの最後2行で<strong>パターンマッチ</strong>を使用している。下から2行目が引数が「\t」の時に使われる定義。最後の行は仮引数が使われているので、「どんな値」にもマッチする。<strong>パターンマッチは上に書いたものが優先され、マッチするパターンが無い場合には実行時にエラーが発生する</strong>。
+
+<pre lang="haskell">
+関数名 第1引数のパターン 第2引数のパターン ・・・・ = 定義1
+関数名 第1引数のパターン 第2引数のパターン ・・・・ = 定義2
+関数名 第1引数のパターン 第2引数のパターン ・・・・ = 定義3
+</pre>
+
+<h2>パターンマッチ(2)</h2>
+<pre lang="haskell">
+map :: (a -> b) -> [a] -> [b]
+map f []     = []
+map f (x:xs) = f x : map f xs
+</pre>
+
+2行目のパターンマッチは空リストに一致する。つまりmapの第2引数が[]だった場合、必ず[]を返すと言うことになる。
+
+3行目の(x:xs)もリストに対するパターンで、空リスト以外のリストにマッチする。<strong>リストの最初の要素がxに束縛され、残りの要素がxsに束縛される</strong>。まぁSchemeのcarやcdrみたいなものかな。
+
+3行目での定義ではまたさらにmapを適用している。つまり、<strong>再帰を用いて処理している</strong>。Haskellには<strong>ループを扱う構文は存在しない</strong>為である。
+
+<pre lang="haskell">
+map length ["abc", "de", "f"]
+  length "abc" : map length ["de", "f"]
+    length "de" : map length ["f"]
+      length "f" : map length []
+      (1 : [])
+    (2 : [1])
+  (3:[2,1])
+[3, 2, 1]
+</pre>
+
+例えば「map length ["abc", "de", "f"」だと多分こんな感じ。<strong>「:」演算子はリストを生成する演算子で(y:ys)ならリストysの先頭に要素yを追加する</strong>。
+
+<h2>練習問題</h2>
+<pre lang="haskell">
+main = do cs < - getContents
+          putStr $ swapa cs
+
+swapa :: String -> String
+swapa cs = map replaceA cs
+
+replaceA :: Char -> Char
+replaceA 'a' = 'A'
+replaceA 'A' = 'a'
+replaceA c = c
+</pre>
+
+とりあえず動く。
+
+<h2>追記(08/02/27)</h2>
+<pre lang="haskell">
+main = do cs < - getContents
+          putStr $ map swapa cs
+
+swapa :: Char -> Char
+swapa 'a' = 'A'
+swapa 'A' = 'a'
+swapa c = c
+</pre>
+
+書き直した。この方が短い。
+</article><hr /><article><h2><a href="/2008/02/25/haskell_sec2/">2008-02-25 ふつケル第2章</a></h2><h2>ハロー、ワールド</h2>
+<pre lang="haskell">
+main = putStrLn "Hello, World!"
+</pre>
+
+「main = 」は変数mainの定義. 「putStrLn "Hello, World!"」が変数mainの値となる。putStrLnは標準出力に文字列と開業を出力する時に使う関数で、正確に言うと<strong>文字列を1つ受けとり、その文字列と改行を出力するアクションを返す関数</strong>.
+
+「putStrLn "Hello, World!"」の式を、Haskellでは<strong>"Hello,World!"にputStrLn関数を適用する</strong>と言うらしいけど、今一ピンとこないな. 普段Rubyやってるからかな. putStrLn関数を"Hello,World!"にあてはめて用いると言いなおせばまだわかるかな. ・・・あんまり変わらないか.
+
+<h2>cat</h2>
+<pre lang="haskell">
+main = do cs < - getContents
+          putStr cs
+</pre>
+
+1行目のcs < - getContentsとputStr csの2つの式が揃っているのには意味があるらしい。インデントに意味があるなんてPythonみたいなやつだ。複数の式のインデントを揃えることで、do式で1つのブロックに束ねることができる。この規則をレイアウトやオフサイドルールと言う。<strong>複数のアクションをdo式でまとめると上から下へ実行されることが保証される</strong>。
+
+アクションの結果を得るときに「< -」を使う。このサンプルの場合だと、getContentsアクションで入力した文字列が変数csに結びつき、それを「<strong>変数を値(アクションの結果)に束縛する(bind)</strong>」と言う。値が変数を束縛するのか。値は寂しがりやさんだな。
+
+このサンプルには遅延評価も関連してるが、ここではあまり詳しく触れてないのでスルー。
+
+<h2>countline</h2>
+</pre><pre lang="haskell">
+main = do cs < - getContents
+          print $ length $ lines cs
+</pre>
+
+Haskellにおいてリストはかなり重要。Haskellでは<strong>文字列もリスト</strong>となっている。リストには<strong>一種類の値しか入れられない</strong>。このあたりはRuby、JavaScriptあたりをやっていると忘れがちなので注意。
+
+</pre><pre lang="haskell">
+['a', 'b', 'c'] => "abc"
+[1, 2, 'a'] => NG
+</pre>
+
+$演算子は+や-と同じような二項演算子。ここでは<strong>式を区切る</strong>ために使われている。$を()に置き換えると以下のようになる。
+
+<pre lang="haskell">
+main = do cs < - getContents
+          print (length (lines cs))
+</pre>
+
+<h2>head</h2>
+</pre><pre lang="haskell">
+main = do cs < - getContents
+          putStr $ firstNLines 10 cs
+
+firstNLines n cs = unlines $ take n $ lines cs
+</pre>
+
+4行目のfirstNLinesは関数の定義。基本的にmainの時と同じだけど、今回は仮引数が登場している。nとcsがそれぞれ第1仮引数、第2引数。
+
+</pre><pre lang="haskell">
+関数名 仮引数1 仮引数2・・・ = 関数本体
+</pre>
+
+<h2>tail</h2>
+<pre lang="haskell">
+main = do cs < - getContents
+          putStr $ lastNLines 10 cs
+
+lastNLines n cs = unlines $ takeLast n $ lines cs
+takeLast n ss = reverse $ take n $ reverse ss
+</pre>
+
+今迄に登場したものだけを使っているので、特別なことはなし。
+
+<h2>練習問題</h2>
+
+countbyte.hs
+</pre><pre lang="haskell">
+main = do cs < - getContents
+          print $ length cs
+</pre>
+
+countword.hs
+</pre><pre lang="haskell">
+main = do cs < - getContents
+          print $ length $ words cs
+</pre>
+
+とりあえずチャチャっと書いてみた。countword.hsは単語数だから問題ないと思うけど、countbyte.hsは日本語の全角文字とかも1byte扱いすると思う。と思ったらちゃんと計算してくれた。でも、ghciで"あ"のlengthをとると1が返ってくる。よくわからん。
+
+</pre><pre lang="haskell">
+Prelude> length "あ"
+1
+</pre>
+</article><hr /><article><h2><a href="/2008/02/15/vim_ruby_on_rails/">2008-02-15 VimでRuby on Railsの開発する為の環境構築</a></h2>ちょこっとだけ環境整えたので忘備録エントリとして。
+
+<h2>Vim/Rubyのインストール</h2>
+Ruby(.rb)とeruby(.rhtml)ファイルでシンタックスハイライトとオムニ補完が有効になる拡張。gemからインストール可能。
+
+<pre lang="bash">
+$ sudo gem install vim-ruby
+$ vim-ruby-install.rb
+</pre>
+
+vim-ruby-install.rbを実行するとインストール先の選択肢が表示される。1が自分のみ、2が全体へのインストールになる。基本的にどちらでもいいと思うけど、今回は1を選択しといた。
+
+オムニ補完の<c -X></c><c -O>の入力が面倒なのと、補完がRailsのメソッド名にも対応するように.vimrcを修正する。タブで補完できるInsertTabWrapper()は<a href="http://subtech.g.hatena.ne.jp/cho45/20071108/1194475703">Vim の自動補完候補表示 - 冬通りに消え行く制服ガールは、夢物語にリアルを求めない。 - subtech</a>よりコピペ。
+
+<pre>
+set nocompatible
+
+syntax on
+
+"omni
+function InsertTabWrapper()
+  if pumvisible()
+    return "\<c -n>"
+  endif
+  let col = col('.') - 1
+  if !col || getline('.')[col -1] !~ '\k\|< \|/'
+    return "\<tab>"
+  elseif exists('&omnifunc') && &omnifunc == ''
+    return "\</c><c -n>"
+  else
+    return "\</c><c -x>\</c><c -o>"
+  endif
+endfunction
+inoremap <tab> <c -r>=InsertTabWrapper()<cr>
+
+" rubycomplete.vim
+let g:rubycomplete_buffer_loading = 1
+let g:rubycomplete_rails = 1
+let g:rubycomplete_classes_in_global = 1
+</cr></c></tab></c></pre>
+
+<h2>Rails.vimのインストール</h2>
+<a href="http://d.hatena.ne.jp/secondlife/20061222/1166781841">rails.vim まとめ - 川o・-・）＜2nd life</a>を参考にインストール。インストール方法は・・・リンク先参照でw
+
+.vimrcに以下を追記。
+
+<pre>
+" rails.vim
+let g:rails_level=4
+let g:rails_default_file="app/controllers/application.rb"
+</pre>
+
+対応ファイル切り替えがかなり便利。
+
+まだ補完と対応ファイル切り替えぐらいしか機能を使えてないので、追々使い方を学んでいこうと思う。
+
+<h2>追記: 2/18 omni補完でvimが落ちる問題</h2>
+omni補完をするとvimが落ちる問題が発生している。
+
+<pre lang="bash">
+im: Caught deadly signal ABRT
+Vim: preserving files...
+Vim: Finished.
+</pre>
+
+普通のRubyプログラム上では問題なく補完できる。(例えば10.toで<tab>10.to_sに補完とか)問題はRailsの方の補完で例えばmodelでvalida</tab><tab>とすると上記のエラーと共にvimが落ちる。とりあえず、rails.vimを外すとちゃんと補完できるようだけど、ファイル切り替えが便利なので悩み所。うまく共存させる方法はないのかな。</tab></c>
+</article><hr /><article><h2><a href="/2008/02/07/programming_for_beginner/">2008-02-07 そろそろ「初心者用言語」について一言いっておくか</a></h2><a href="http://generation1986.g.hatena.ne.jp/ukstudio/20080204/1202113687">最もタメになる「初心者用言語」まとめ UK is not Britonish</a>
+
+「いい嫁」程度のお遊びのつもりでいたら、結構な騒ぎになっちゃっいました。とりあえずあのまとめを見ても、初心者の人は混乱してしまうと思うので自分なりに初心者さんへのメッセージもこめてエントリーを書いてみました。
+
+<h2>簡単な流れの説明</h2>
+一応簡単に今回の流れを説明しておくと、「初心者用言語」の流れの発端はまつもとさんの「<a href="http://www.rubyist.net/~matz/20080204.html#p01">初心者向けの言語</a>」。その後に、amachangの「<a href="http://d.hatena.ne.jp/amachang/20080204/1202096633">最もタメになる「初心者用言語」はJavaScript</a>」、西尾さんの「<a href="http://d.hatena.ne.jp/nishiohirokazu/20080204/1202104617">最もタメになる「初心者用言語」はPython!</a>」、hayamizの「<a href="http://d.hatena.ne.jp/hayamiz/20080204/1202108447">最もタメになる「初心者用言語」はScheme!</a>」と続く。後続の人達は彼等のエントリーや、オレのまとめを見て流れにのったんだと思う。
+
+<h2>初心者の定義</h2>
+流石に後の方になって「初心者とは具体的にどのような人を指すのか」という指摘がチラホラ出てきた。確かに今回の祭り全体を通して「初心者」の定義が曖昧で、エントリーを書いている人が想定している初心者像は各人それぞれな感じ。
+
+今更「初心者」の定義をここでしたところで時既に遅しなのと、プログラマ経験者達が一般に言う「初心者」が多様なので、その辺りはあまり拘らずに話をすすめたいと思う。
+
+<h2>何がしたいのか</h2>
+今更言うことでもないのかもしれないけど、プログラミング言語はあくまでツールであり、プログラミングは手段。(まぁオレの場合、プログラミングそのものが目的になってる時も多いけど)
+
+ツールである以上、<strong>達成したい目的に合わせて言語は選ぶべき。</strong>
+
+その為にはまず<strong>自分が何がしたいのか</strong>を考えた方がいい。仕事でプログラミングを覚える必要があるなら、仕事で使う言語を選ぶべきだろうし、Webアプリを作りたいのであれば、PHP、Perl、Rubyあたりになると思う。そこからさらに開発環境や使えるサーバーから絞り込んでいけばいい。
+
+もし、特に目的がなく漠然と「プログラミングしてみたい」と思っているとしたら、それこそ言語は何でもいいと思う。ただ、最初からプログラミングを目的してるとなんとなく挫折しやすい様にも思える。
+とりあえず何でもいいから目的(ブログを作りたい、Twitterクライアントを作りたい、etc...)があった方が、モチベーションも保つし、自ずと方向性も決まってくるから学習しやすいと思う。
+
+<h2>まわりに教えてくれる人がいるか</h2>
+それと出来ればまわりに教えてくれる人がいる言語を選んで欲しい。もちろん、本やネットの情報だけで独学することも可能と言えば可能だけど、<strong>やっぱり身近に質問ができる人、アドバイスをしてくれる人がいるっていうのは大きい。</strong>
+
+<blockquote>
+そのジャンルにおける本当の初心者にとっては助けてくれる人の存在がかなり大事だと思う。
+</blockquote>
+<a href="http://www.akiyan.com/blog/archives/2008/02/post_106.html">あなたがプログラミングの初心者なら、友人知人が使っている言語にするといい</a>
+
+<h2>興味があれば他の言語にも触れてみて</h2>
+「達人プログラマー - システム開発の職人から名匠への道 -」では「<strong>毎年少なくとも一つの言語を学習する</strong>」ことを薦めている。
+
+<blockquote>
+言語が異なると、同じ問題でも違った解決方法が採用されます。つまり、いくつかの異なったアプローチを学習することにより、幅広い思考ができるようになるわけです。
+</blockquote>
+
+例えば、普段使っている言語がPHPだとしたら、低レベルかつ静的型付けのCや、関数型言語のHaskell、Lisp(Common Lisp、Scheme)などに手を出してみるといいと思う。
+
+参考:<a href="http://itpro.nikkeibp.co.jp/article/COLUMN/20070618/275142/">総論 複数のプログラミング言語を学ぶ意義 - IT Pro</a>
+参考:<a href="http://d.hatena.ne.jp/yuki_neko_nyan/20071011/1192069372">「関数型言語を学ばないといけませんか?」- 猫的怠惰生活Days</a>
+
+<table border="0" cellpadding="5"><tr><td valign="top"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4894712741/ukstudio0c-22/" target="_top"><img src="http://ecx.images-amazon.com/images/I/119HY1S5M2L.jpg" border="0" alt="達人プログラマー―システム開発の職人から名匠への道" /></a></td><td valign="top"><font size="-1"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4894712741/ukstudio0c-22/" target="_top">達人プログラマー―システム開発の職人から名匠への道</a><br />アンドリュー ハント デビッド トーマス Andrew Hunt <br /><br />ピアソンエデュケーション  2000-11<br />売り上げランキング : 8641<br /><br /><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4894712741/ukstudio0c-22/" target="_top">Amazonで詳しく見る</a></font><font size="-2"> by <a href="http://www.goodpic.com/mt/aws/index.html" >G-Tools</a></font></td></tr></table>
+
+<h2>なにより楽しむ</h2>
+色々書き並べてみましたが、一番大事なのは<strong>あなたがプログラミングを楽しむことです。</strong> 仕事でも趣味でも大いにプログラミングを楽しんで下さい。
+</article><hr /><article><h2><a href="/2008/02/02/doukaku_lifegame/">2008-02-02 Rubyでライフゲーム書いた</a></h2><a href="http://ja.doukaku.org/comment/5581/">どう書く?org #5581</a>
+
+久々にどう書くorgに投稿してみた。1個1個セルの周り調べてくのも面白みがないなと思って、生きてるセルの周りをスコア付けしてくやり方でやってみた。
+
+生きてるセルに+10し、生きてるセルの周りに+1していく。最終的にスコアが3(まわりに3つの生きてるセルがある)のセルは次世代で誕生するセルと判断。スコアが12もしくは13の(今の世代で生きてるセルで、まわりに2つもしくは3つの生きてるセルがある)のセルは次世代も維持するセルと判断。
+
+テストはWikipediaの<a href="http://ja.wikipedia.org/wiki/ライフゲーム">ライフゲームのページ</a>から振動型(ブリンカー、ヒキガエルなど)を試しただけで、テストコードすら書いてない。だからもしかしたら間違ってるかもしれない。許せ。
+
+<pre lang="ruby">
+require 'curses'
+
+module LifeGame
+  class World
+    def initialize(map)
+      @map = map
+    end
+
+    def to_s
+      str = ""
+      @map.each do |line|
+        line.each do |cell|
+          str += "[#{cell}]"
+        end
+        str += "¥n"
+      end
+
+      str
+    end
+
+    def next
+      ranking.each_with_index do |line, h|
+        @map[h] = line.map {|cell| [3, 12, 13].include?(cell) ? '*' : ' ' }
+      end
+    end
+
+    private
+    def live_list
+      list = []
+      @map.each_with_index do |line, h|
+        line.each_with_index {|cell, w| list < < [h,w] if cell == '*'}
+      end
+
+      list
+    end
+
+    def set_score(rank_map, live)
+      (-1..1).each do |x|
+        (-1..1).each do |y|
+          score = x == y && y  == 0 ? 10 : 1
+          rank_map[live[0]+x][live[1]+y] = rank_map[live[0]+x][live[1]+y] + score
+        end
+      end
+    end
+
+    def ranking
+      rank_map = List.new
+      @map.size.times { rank_map << List.new(@map[0].size, 0) }
+
+      live_list.each do |live|
+        set_score(rank_map.clone, live)
+      end
+
+      rank_map
+    end
+  end
+
+  class List < Array
+    alias original_get []
+    alias original_set []=
+
+      def [](index)
+        original_get(index % size)
+      end
+
+    def []=(index, value)
+      original_set(index % size, value)
+    end
+  end
+end
+
+if __FILE__ == $0
+  begin
+    game = LifeGame::World.new([
+                                [' ', '*', ' ', ' ', ' ', ' ', '*', '*', '*', ' '],
+                                [' ', ' ', ' ', ' ', '*', ' ', ' ', '*', '*', ' '],
+                                [' ', ' ', ' ', '*', ' ', ' ', '*', ' ', '*', ' '],
+                                ['*', ' ', '*', '*', ' ', ' ', '*', ' ', ' ', ' '],
+                                [' ', '*', ' ', ' ', ' ', ' ', ' ', ' ', '*', ' '],
+                                ['*', ' ', ' ', ' ', '*', ' ', '*', '*', ' ', '*'],
+                                [' ', '*', ' ', ' ', ' ', ' ', '*', ' ', ' ', ' '],
+                                [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', '*'],
+                                ['*', ' ', ' ', ' ', ' ', ' ', '*', ' ', ' ', '*'],
+                                [' ', ' ', ' ', ' ', '*', '*', ' ', ' ', '*', ' ']])
+
+    window = Curses::Window.new(Curses.lines, Curses.cols, 0, 0)
+    loop do
+      window.setpos(0, 0)
+      window.addstr(game.to_s)
+      game.next
+      window.getch
+    end
+  ensure
+    window.close
+  end
+end
+</pre></pre>
+</article><hr /></div></body></html>

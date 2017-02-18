@@ -1,0 +1,181 @@
+<!DOCTYPE html><html><head><meta charset="utf-8" /><!--Always force latest IE rendering engine or request Chrome Frame--><meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" /><meta content="width=device-width,initial-scale=1.0" name="viewport" /><title></title><link href="/stylesheets/dist/normalize.css" rel="stylesheet" /><link href="/stylesheets/dist/skeleton.css" rel="stylesheet" /><link href="/stylesheets/all.css" rel="stylesheet" /><script src="/javascripts/all.js"></script><link href="/feed.xml" rel="alternate" title="atom" type="application/atom+xml" /><script>var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-12755601-1']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();</script></head><body class="x2008 x2008_03 x2008_03_index"><div class="header"><div class="header-title"><h1><a href="/">ukstudio</a></h1></div></div><div class="container"><h1><Archive></Archive>Mar 2008</h1><article><h2><a href="/2008/03/14/autotest_for_macbook/">2008-03-14 MacBookにRailsの自動テスト環境を構築した</a></h2>なんかautotestが流行りつつある今日この頃ですが、みなさまいかがお過ごしでしょうか。とりあえず丁度うちの会社でも自動テストしようかーみたいな話がでてたので構築してみましたよ!
+
+<h2>ZenTestのインストール</h2>
+とりあえずは定番のZenTest(autotest)とRedGreen(結果の色付け)をインストールします。
+
+<pre lang="bash">
+$ sudo gem install ZenTest
+$ sudo gem install RedGreen
+</pre>
+
+次にautotestの設定ファイルの作成。example_dot_autotest.rbのパスは人によって違うと思うので適当に読み替えてください。
+
+<pre lang="bash">
+cp /opt/local/lib/ruby/gems/1.8/gems/ZenTest-3.9.1/example_dot_autotest.rb ~/.autotest
+</pre>
+
+~/.autotestの15行目のコメントアウトを解除。
+
+<pre lang="ruby">
+require 'autotest/redgreen'
+</pre>
+
+RAILS_ROOTでautotestを実行。起動時に全部のテストを実行するのでちょっとだけ重くなるかもしれません。それ以降はテストファイルやモデル、コントローラファイルなどを修正する度に該当のテストが走ります。
+
+<pre lang="bash">
+$ cd RAILS_ROOT
+$ autotest
+</pre>
+
+実行するテストはtest/unit、もしくはRailsにRSpecが入れてあればRspecのテストを実行します。
+
+なんかspec_serverを立ち上げておくと処理が早くなるらしいですがよくわかってないです。まぁとりあえず設定しといて損はなさそうです。
+
+<pre lang="bash">
+$ vi spec/spec.opts # 最下行に --drb を追記。drbでテスト用サーバへ繋ぐようになります。
+$ ruby script/spec_server
+</pre>
+
+テストの結果は成功なら緑色のバーが、失敗なら赤色のバーが表示されます。
+
+<h2>結果通知用にGrowlとScreenの設定をする</h2>
+
+これでも自動テストは走るので問題ないですが、結果を見るのがちょっと面倒ですね。ということでGrowlとScreenで結果が見えるようにしましょう。
+
+screenの場合は<a href="http://kakutani.com/20070912.html#p02">角谷さんのエントリーを</a>見るといいと思います。基本的にそのまま~/.autotestにコピペするだけで問題ないはずです。
+
+<pre lang="ruby">
+require 'autotest/screen'   # コメントアウトを外す
+
+Autotest::HOOKS.delete(:interrupt)
+Autotest::Screen.statusline = %q[|%c %m/%d|%w %=]
+
+class Autotest::Screen
+  SCREEN_COLOR[:green] = 'gw'
+  SCREEN_COLOR[:yellow] = 'yk'
+
+  Autotest.add_hook :run_command do |at|
+    message 'Running' if execute?
+  end
+
+  Autotest.add_hook :quit do |at|
+    clear if execute?
+  end
+
+  Autotest.add_hook :ran_command do |at|
+    return unless execute?
+    results = [at.results].flatten.join("¥n")
+    output = results.slice(/(¥d+)¥sexamples?,¥s*(¥d+)¥s.*failures?(?:,¥s*(¥d+)¥s.*pendings?)?/)
+    if output
+      ex,fail,pend = $~.captures.map {|e| e.to_i}
+      if 0 < fail
+        message "FAIL #{ex}ex, F:#{fail} ", :red
+      elsif 0 < pend
+        message "Pend #{ex}ex, F:#{fail} P:#{pend}", :yellow
+      else
+        message "All Green #{ex}ex", :green
+      end
+    end
+  end
+end
+</pre>
+
+この設定でscreenとautotestを起動しておくと、ステータスバーの右側にテストの結果が表示されます。
+
+<img src="http://img.skitch.com/20080314-d6gq6bsmbbxh99ynx349bfcckf.jpg" alt="autotest"/>
+
+これ貼ってから気づいたけど、Terminalから透けてみえる絵がなんかあれですなw
+
+次にGlowlの設定ですが、Leopardではruby-growlのインストールが必要っぽいです。とりあえずmacportsからインストールしておきましょう。それとGrowlの設定でリモートを許可しておきましょう。
+
+<pre lang="bash">
+$ sudo port install ruby-glowl
+</pre>
+
+<img src="http://img.skitch.com/20080314-r92e97nip77qfj7u4p2a1ch8e6.jpg" alt="Growl"/>
+
+Growlで結果を通知するにはgrowlnotifyのインストールが必要です。もしインストールしていなければ<a href="http://growl.info/">本家</a>からdmgファイルをDLし、その中にあるinstall.shを実行します。
+
+<pre lang="bash">
+$ cp -r /Volumes/Growl\ 1.1.2/Extras/growlnotify ~/tmp
+$ cd ~/tmp/growlnotify
+$ sudo ./install.sh
+$ growlnotify -m "hoge" # growlの通知が表示されればインストール完了
+</pre>
+
+~/.autotestを修正し、glowlで結果が通知されるようにします。
+
+<pre lang="ruby">
+require 'autotest/glowl' # コメントアウトを解除
+</pre>
+
+これでテストが失敗したとき、失敗から成功になったときにGrowlが通知してくれます。Growlの見た目を変更しようと思ったけれど、個人的にscreenだけで十分だったので今回はナシ。
+
+とりあえず自動テストはテストを書くのが楽しくなりますな。オススメ。
+</article><hr /><article><h2><a href="/2008/03/04/from_unittest_to_rspec/">2008-03-04 test/unitで書いたテストにRSpecでテストを追記する方法</a></h2>10分ぐらい調べて試してみただけだけど。
+
+<pre lang="ruby">
+require 'rubygems'
+require 'test/unit'
+require 'spec'
+
+class TestArray < Test::Unit::TestCase
+
+  # test/unit
+  def test_1
+    assert_equal(0, Array.new.size)
+  end
+
+  # rspec
+  describe Array, "when empty" do
+    before do
+      @empty_array = []
+    end
+
+    it "should be empty" do
+      @empty_array.should be_empty
+    end
+
+    it "should size 0" do
+      @empty_array.size.should == 0
+    end
+
+    after do
+      @empty_array = nil
+    end
+  end
+end
+</pre>
+
+<pre lang="bash">
+$ ruby test.rb
+....
+
+Finished in 0.007974 seconds
+
+4 examples, 0 failures
+</pre>
+
+RSpecの方のテストはるびまの角谷さんの<a href="http://jp.rubyist.net/magazine/?0021-Rspec">記事</a>から拝借しました。
+
+spceをrequireして、クラスに書きこんでいけばよさそう。仕事だとtest/unitで書いてしまったテストも多いだろうから、test/unitからRSpecに移行するのにいいかもしれない。
+</article><hr /><article><h2><a href="/2008/03/01/rawhide/">2008-03-01 RAWHIDE.入社のお知らせ</a></h2>こんばんわ、UKです。
+
+実は2月22日に今まで勤務していた会社を退職しました。ついったーやmixiでつながっている人達は知ってたかもですが。
+
+で、新しい職場ですが実は年末から話がすすんでおり(これも一部の人達は知ってたかもですね)、この度3月1日付けで正式にRAWHIDE.に入社することになりました。わーい。
+
+<a href="http://blog.raw-hide.jp/wp/?p=336">FIGHT! THE RAWHIDE★ » RAWHIDE.に入社しました。</a>
+
+早くRAWHIDE.の一員、戦力として役立てるよう頑張る所存です。よろしくお願いします。
+
+<a href="http://twitter.com/Hamachiya2/statuses/742737192">オマケ</a>: こないだ出社したときの話です。ふふふ・・・
+</article><hr /></div></body></html>

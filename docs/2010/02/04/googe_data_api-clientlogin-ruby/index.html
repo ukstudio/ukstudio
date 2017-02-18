@@ -1,0 +1,14 @@
+<!DOCTYPE html><html><head><meta charset="utf-8" /><!--Always force latest IE rendering engine or request Chrome Frame--><meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" /><meta content="width=device-width,initial-scale=1.0" name="viewport" /><!--Use title if it's in the page YAML frontmatter--><title>Google Data APIの認証をClientLogin + Rubyで</title><link href="/stylesheets/dist/normalize.css" rel="stylesheet" /><link href="/stylesheets/dist/skeleton.css" rel="stylesheet" /><link href="/stylesheets/all.css" rel="stylesheet" /><script src="/javascripts/all.js"></script><link href="/feed.xml" rel="alternate" title="atom" type="application/atom+xml" /><script>var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-12755601-1']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();</script></head><body class="x2010 x2010_02 x2010_02_04 x2010_02_04_googe_data_api-clientlogin-ruby x2010_02_04_googe_data_api-clientlogin-ruby_index"><div class="header"><div class="header-title"><h1><a href="/">ukstudio</a></h1></div></div><div class="container"><article><h1>Google Data APIの認証をClientLogin + Rubyで</h1><hr /><div class="article-body"><script src="http://gist.github.com/294044.js?file=google_client_login.rb"></script>
+
+とりあえずGoogle Mapで。他のサービスもservice変数を書き換えれば認証までは通るはず。クエリのPasswdをPasswordにしてて結構はまった。Unix文化め。
+
+参考: <a href="http://code.google.com/intl/ja/apis/gdata/">Google Data API - Google Code</a>
+</div></article></div></body></html>

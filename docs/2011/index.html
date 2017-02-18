@@ -1,0 +1,493 @@
+<!DOCTYPE html><html><head><meta charset="utf-8" /><!--Always force latest IE rendering engine or request Chrome Frame--><meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" /><meta content="width=device-width,initial-scale=1.0" name="viewport" /><title></title><link href="/stylesheets/dist/normalize.css" rel="stylesheet" /><link href="/stylesheets/dist/skeleton.css" rel="stylesheet" /><link href="/stylesheets/all.css" rel="stylesheet" /><script src="/javascripts/all.js"></script><link href="/feed.xml" rel="alternate" title="atom" type="application/atom+xml" /><script>var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-12755601-1']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();</script></head><body class="x2011 x2011_index"><div class="header"><div class="header-title"><h1><a href="/">ukstudio</a></h1></div></div><div class="container"><h1><Archive></Archive>2011</h1><article><h2><a href="/2011/10/12/lvm_kvm/">2011-10-12 LVMを使っているKVMのディスクイメージの容量を追加する</a></h2>KVMのディスクイメージの容量を増やしたのでメモ。
+
+<h2>イメージファイルの拡張</h2>
+まずはイメージのフォーマットを確認する。qemu-imgのinfoでわかる。
+
+<pre>$ qemu-img info vm.img</pre>
+
+今回はqcow2になっていたのでrawに変換する。
+
+<pre>$ qemu-img convert -f qcow2 vm.img -O raw vm.raw</pre>
+
+ddのseekを使って末尾に領域を追加する。10GBのイメージに5GB追加するならこんな感じ。
+
+<pre>$ dd if=/dev/zero ov=vm.raw bs=1G count=5 seek=10</pre>
+
+フォーマットを元に戻す。
+
+<pre>$ qemu-img convert -f raw vm.raw -O qcow2 vm.img</pre>
+
+<h2>仮想マシンのパーティションの修正</h2>
+その後、イメージを立ち上げてパーティションを修正する。今回のパーティションは/dev/hda1がboot、/dev/hda2がlvmになっていたので/dev/hda2の方を修正する。
+
+<pre>$ fdisk /dev/hda
+> d
+> 2 # /dev/hda2を一旦削除
+> n
+> p
+> 2
+> Enter
+> Enter # /dev/hda2を作りなおす。デフォルトでサイズが拡大するはず。
+> t
+> 2
+> 8e # /dev/hda2のパーティションタイプをLVMにする
+> w
+> q # 書きこんで終了
+$ reboot
+</pre>
+
+<h2>ボリュームの追加</h2>
+<pre>$ vgextend VolGroup00 /dev/sda2
+$ lvextend -L +5GB /dev/VolGroup00/LogVol00
+$ resize2fs /dev/VolGroup00/LogVol00
+</pre>
+
+思い出しながら書いてるから細かいところで違うかもしれないけど、だいたいこんな感じで容量の追加が完了。
+</article><hr /><article><h2><a href="/2011/09/29/debut_gentoo/">2011-09-29 Gentooデビューしました</a></h2>メインの開発マシンのOSをUbuntuからGentooにしました。Gentooにした理由は割となんとなくだけど、強いて言うならGentooいいよっていう人の気持ちを知りたいのと、あとPortageは割と好きだからかな。Ubuntuに不満があったわけでもない。Unityは好きじゃないけど、どうせXMonad使うし。
+
+インストールは<a href="http://atnd.org/events/19056">第2回 Gentoo Linux インストール講習会 : ATND</a>に参加したおかげで起動するまでは割とすんなり(Thanks @ursm, @kenchan)。Funtooもいれて、実際起動するところまでは持っていったけど無線LANの設定とかがGentooのドキュメント通りじゃなくて混乱したので今回はやめた。
+
+Gentooのインストールは色々と勉強になった。パーティション切るのも中学生の時に本に従ってLinuxいれた時以来だし、GRUBに至っては触ったことなかったし。ほかにもカーネルやXとかの設定とか、普段は動くものがすぐそこにあるだけだから意外に知らないのよね。
+
+とりあえず今はXfce4 + XMonadの環境を作った。XMonad単体の方がいいんだけど、PDFリーダとかメッセンジャーとか何使ったらいいかわからなかったからとりあえずXfce4を使うようにした。GNOME3いれようとしたけど挫折。
+<a href="http://ukstudio.jp/wp-content/uploads/2011/09/gentoo.png"><img src="http://ukstudio.jp/wp-content/uploads/2011/09/gentoo.png" alt="" title="gentoo" width="478" class="alignnone size-full wp-image-904" /></a>
+
+そんなわけでしばらくはGentoo生活を送ります。
+</article><hr /><article><h2><a href="/2011/08/25/ipv6hackathon/">2011-08-25 IPv6 Hackathonに参加してきた</a></h2>この間のLL PlanetsでIPv6 Hackathonとやらに参加してきた。Ruby組は僕と @sugamasao と @takano32 の3人でチーム組んだ。
+
+<h2>RailsはIPv6でも大丈夫っぽい</h2>
+大丈夫っぽいっていうのは軽くさわった程度なので断言できるほどでもないため。IPv6でRailsを立ち上げたかったら上記のように--bを指定すれば大丈夫です。
+
+<pre><code>rails server --b="::"  -p 3000</code></pre>
+
+Unicornの場合もオプションで大丈夫。
+
+<pre><code>unicorn_rails -l '[::]:3000'</code></pre>
+
+あとはApacheは対応してるし一応なんとかなるのではないか。Nginxとかthinは調べてないのでわからないです。あとMySQLはIPv6に対応していないらしいけど、データベースはWebサーバから見えれば大丈夫だし何とかなるでしょう。きっと。
+
+<h2>github.comやrubygems.orgはAAAAレコードがない</h2>
+digコマンド叩けばわかるけど、みんな大好きgithub.comとrubygems.orgにはAAAAレコードがありません。ということで、IPv6オンリーな環境だと使えないと思うのでトンネル掘るなりなんなりの対応が必要っぽい。
+
+<h2>今回作ったもの</h2>
+ネタアプリを作っただけなので実装としてはそんなにおもしろいものでもないかな。
+
+ひとつは、twitterの発言ひとつに対してIPv6のアドレスをひとつ割り振って、そのIPv6にリクエストがきたらそれに対応するtwitterの発言を表示させるというもの。ただのアドレスの無駄遣いですね。
+
+あと1時間ぐらい僕の時間があまったので、その1時間でIPv6アドレスをキーとするストレージっぽいものを作った。あるIPv6に対してPOSTするとbodyの内容が保存されて、GETすると保存された内容が取得できるみたいな。更新はPUTだろっていう話もあったけど、時間が足りなかったのでした。
+
+発表資料がそのうち公開されると思います。
+<a href="http://ll.jus.or.jp/2011/slide.html">Lightweight Language Planets : 公開資料</a>
+<h2>Net::HTTPとURI</h2>
+そのストレージのテストをするのにRubyでNet::HTTPとURIを使って画像をPOSTするコードを書いた。その時にちょっとハマったことがあるので説明しておく。
+
+<script src="https://gist.github.com/1170083.js?file=ipv6.rb"></script>
+
+IPv6は:を使ってアドレスを区切るので、ポート部とわけるために[]を使うことがある。そのアドレスをURI.parseしたあとにURI::HTTP#hostで値を取得すると[]が残ったままになり、Net::HTTPは[]があるとどうやらダメっぽくてエラーがでる。パッと見コードに何も問題がなさそうに見えるので知っておかないとハマる人はハマりそう。実際に僕はハマりました。
+
+で、たまたまURI::HTTP#hostnameというメソッドがみつけてこっちは[]を取り除く。このURI::HTTP#hostnameはるりまを見るとどこにも乗ってなくて、挙動の違いはバグかとも思ったりしたんだけどどうやら違うみたい。
+
+Rubyのuri/generic.rbを見ると以下のように書いてあった。
+
+<blockquote>
+# Since IPv6 addresses are wrapped by brackets in URIs,
+# this method returns IPv6 addresses wrapped by brackets.
+# This form is not appropriate to pass socket methods such as TCPSocket.open.
+# If unwrapped host names are required, use "hostname" method.
+#
+#   URI("http://[::1]/bar/baz").host #=> "[::1]"
+#   URI("http://[::1]/bar/baz").hostname #=> "::1"
+</blockquote>
+
+ということで、hostnameメソッドを使いましょうという話でした。
+</article><hr /><article><h2><a href="/2011/08/04/tddbc_tokyo_1_6/">2011-08-04 TDDBC 東京 1.6でサポートスタッフをやってきました</a></h2><a href="http://www.zusaar.com/event/agZ6dXNhYXJyDQsSBUV2ZW50GPGlAww">TDD Boot Camp 東京 1.6</a>にRubyのサポートスタッフとして参加してきた。
+
+当初の予定ではあくまでサポートなのでペアプロには参加しない予定だったけど、Rubyのグループが5人で人数が奇数になってしまったので急遽ペアプロに参加することにした。
+
+この辺は@t_wadaさんや主催の@pocketberserkerさんとも相談してペアとトリオのふたつに分けるっていう話もあったけれど、僕が「せっかくだからペアプロして帰ってもらいたい」と思ったので若干の迷いはあれどペアプロに参加することにしたのでした。Ruby組は@takahashimさんや@1syoさん、@kwappaさんたちが参加されていて彼らなら付きっ切りでサポートしなくても大丈夫そうというのも理由のひとつ。
+
+コードレビューを見た感じだと一応はうまくいったんじゃないかなと思う。特に@1syoさんと@takahashimさんのペア(ダブル高橋!)は積極的に質問をしてくれたので、僕としても教えがいがあった(えらそう)。ただ、質問を受けると僕の方のペアプロが一時的に中断してしまうし、僕としても頭の切り替えが結構大変だったので出来ることならやはり参加者同士でペアが組めるといいんだろうなぁ。理想を言うと全部のペアをスタッフ+参加者にすることなんだろうけど、あまり現実的じゃなさそう。
+
+今回、最初に僕とペアを組んだ方が(お名前を聞くのを忘れてしまった...)モダンなテストの書き方を知りたいと言うので、ある程度xUnit的なテストの書き方でペアプロを進めた後、がっつりRSpec的な書き方にリファクタリングするということをやってみた。他のペアもRSpecは初期の<code>it "なんちゃらかんちゃら"</code>の書き方をされていたので、コードレビュー時に共有できたのはよかったのかな。RSpecの書き方については言っちゃいけないということはないだろうから言っちゃうけどそのうちるびまの方に書く予定なのでお楽しみに。
+
+Ruby組は全体的にTDDのサイクル自体はできていた感じで、内容としてはテストの書き方にフォーカスが移っていたように感じる。例えば、標準出力が絡むテストのやり方とか、システム時刻が絡むテストのやり方とかdescribe/contextの切り方とか。多分、TDDBCも回数が増えていくにつれ、こういう人達がどんどん増えてくると思うからTDDBCの次の道をしめせるといいんじゃないかと思った。参考図書はいくつかあるけど、例えばxUTPとかTDDBCからのジャンプアップがヘビーすぎるなぁという気もする。(もちろんいきなりあれを全部読めという話でもないんだけれど)
+
+話は変わって当日のお題を再度ひとりで実装してみたので、コードを公開しておきます。
+
+<a href="https://github.com/ukstudio/tddbc1.6">ukstudio/tddbc1.6 - GitHub</a>
+
+あまりじっくり書いたって感じでもないので仕様漏れとかありそうだけど、テストコードの書き方の参考にはなるかと思います。@bleisさんみたいに細かに解説しようと思ったけど気力がないのでした。
+
+そういえば今回のスタッフも若手が多いな。@bleisさんと俺が86世代、@kyonn_mmさんと@pocketberserkerさんがひとつだかふたつだか年下だっけ? 同世代の人が頑張ってるのはとても刺激になります。
+
+最後に、主催の@pocketberserkerさん、講演をしてくださった@t_wadaさんをはじめ、スタッフの方々どうもお疲れ様でした。参加者のみなさま、どうもありがとうございました。
+
+特に@pocketberserkerさんは佐賀の人なのにもかかわらず東京でTDDBC主催とか、そのパワフルさを見習いたい感じです。本当にお疲れ様でした。
+
+おまけ
+<script src="https://gist.github.com/1124762.js"> </script>
+</article><hr /><article><h2><a href="/2011/07/02/bdd/">2011-07-02 BDDについて自分なりにまとめてみた</a></h2><p>BDDという言葉も割と人によって指すものが違うようなので「俺の中でのBDDはこうだよ」って内容のエントリ。別に絶対的なものでもないと思うので参考までに</p>
+
+<h2>結論から</h2>
+
+<p>とりあえず結論だけ知りたい人向けに。</p>
+
+<ul>
+<li>BDDにはふたつの種類がある</li>
+<li>1. TDDの言い換えのBDD(開発寄り)</li>
+<li>2. ATDD(受け入れテスト)でのBDD(ユーザ寄り)</li>
+</ul>
+
+<h2>振る舞い</h2>
+
+<p>BDDは振る舞い駆動開発と言われたりするように、テストという言葉のかわりに<strong>振る舞い</strong>という言葉を使う。日本語的には仕様と言うほうがわかりやすいかもしれない。多分、BDDのイメージが掴みにくいのはこの振る舞いという言葉にあると思う。と言うのも振る舞いと言うのは、人の立場よって変わるからだ。例えば、プログラマがあるクラスを実装している時に言う振る舞いはそのクラスのメソッドとかの仕様になる。逆にユーザレベルの人が言う振る舞いはアプリケーションの要件・動作を言うだろう。 つまり、BDDという言葉はTDDからATDDの両方にかかるので文脈によって指すものがかわってくる。この辺は<a href="http://twitter.com/#!/t_wada">@t_wada</a>さんの言う「誰のためのテストか」を考える方がわかりやすいだろう。</p>
+
+<div style="width:425px" id="__ss_7353562"> <strong style="display:block;margin:12px 0 4px"><a href="http://www.slideshare.net/t_wada/tddbc-fukuoka-day1" title="TDDBC Fukuoka Day1" target="_blank">TDDBC Fukuoka Day1</a></strong> <iframe src="http://www.slideshare.net/slideshow/embed_code/7353562?startSlide=24" width="425" height="355" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe> <div style="padding:5px 0 12px"> View more <a href="http://www.slideshare.net/" target="_blank">presentations</a> from <a href="http://www.slideshare.net/t_wada" target="_blank">Takuto Wada</a> </div> </div>
+
+<h2>TDDの別名としてのBDD</h2>
+
+<p>TDDにかかるBDD、つまりプログラマの為のBDDについて説明する。そもそもBDDという言葉が生まれた背景にはTDDに対する誤解がある。いわゆる「TDDのテストはテストじゃないよ」ってやつ。その誤解を避けるために生まれたのがBDD。多分「誤解を避ける」というのもあまり適切な表現ではない。と言うのもこの表現だとTDDを実践していない人の誤解を避けるために生まれた印象をうける 実際はテストという言葉を使うことでTDDを実践する(しようとする)<strong>プログラマ自身にもよくない影響がある。</strong>例えばTDDの場合先にテストコードを書くので当然テストを書くときにテスト対象が存在しない。これは不自然だ。テスト対象がないことで、TDDに慣れていない人は「何をテストすればいいの?」と思うことも少なくない。</p>
+
+<p>BDDではテストという言葉の変わりに<strong>振る舞い</strong>という言葉を使うと先程書いた。振る舞いという言葉を使うことで、テストという言葉から受ける違和感はなくなる。テスト対象が存在しなうちにテストを書くのは不自然だけど、なにかを実装する前に振る舞い(仕様)を決めるのは自然だ。 また、振る舞いに着目することでより良い設計ができるようになる。少なくとも僕はそう感じている。TDDでも先にテストコードを書くのでインターフェースに注意を向けることができるが、BDDの語彙を使うことでより実装と振る舞いを分離して考えられるからだと思う。</p>
+
+<p>とは言え結局のところやることはTDDと変わらない。はたから見たら、TDDをしているのかBDDをしているのか区別つかないだろう。なのでここでひとつめの結論<strong>BDDはTDDの言い換え</strong>になる。もちろん使う言葉が違いプログラマに与える影響が違う以上、厳密にはTDDとBDDは違うものなのかもしれない。けれど個人的にはそこまでTDDとBDDの違いに厳密性を求めてないし、求める必要もないと思うので、<strong>プログラマ視点で見たときはほぼ同じ</strong>という結論。</p>
+
+<h2>ATDDとBDD</h2>
+
+<p>ATDDはAcceptance Test Driven Developmentの略でAcceptance Testというのは受け入れテストのこと。TDDのよりレイヤの高いものだと思えばいい。<a href="http://t.co/MKI3PST">Growing Object-Oriented Software, Guided by Tes</a>tの画像がわかりやすいので拝借。</p>
+
+<p><img src="/images/2011-07-02-growing-circle.png"></p>
+
+<p>ATDDのひとつのサイクルでひとつの受け入れテストが完了し、それを繰り返すことでアプリケーションを実装していく。<strong>受け入れテストはどちらかと言えば顧客のためのテスト。</strong>受け入れという名の通り、このテストがパスすればその機能は実装が完了したとわかり、顧客の立場からすると要件が正しく実装されていること、進捗が管理しやすいなどの利点がある。</p>
+
+<p>これとBDDに何が関係するのかと言うと、上で書いたように<strong>BDDの振る舞いはユーザレベルで見たときはアプリケーションの要件・動作を指す。</strong>顧客は大抵の場合、ユーザレベルなのでこの場合での振る舞いは受け入れ条件となり得る。つまり、ATDDをBDDでやることは可能と言える。ATDDをBDDでやるメリットは、BDDでは振る舞いの言葉を使うのでより顧客・ユーザに近い言葉で受け入れテストを記述できるようになる(例:<a href="http://cukes.info/">cucumber</a>の日本語での記述とか)。</p>
+
+<p>これがふたつめの結論の<strong>ATDDでのBDD</strong>。</p>
+
+<p>ちなみにATDD自体も結構あやふやなやつで、何をテストするのかは受け入れ基準による。もし受け入れ基準が「とあるクラスに正しくメソッドが実装されていること」だとしたらどうなるか。これはややこしいけれど、ATDDのサイクルとTDDのサイクルの距離が大分近くなると思う。場合によってはTDDで書いたテストコードがそのまま受け入れ基準となり得ることもある。それでもTDDとATDDは目的が違うのでその辺は意識した方がいい。</p>
+
+<h2>Outside-In</h2>
+
+<p>BDDは上で説明したように、コンテキストで「振る舞い」が指すものが変わる。とは言え、根源となる思想はあってそのひとつがOutside-In。Outside-Inと言うのは<strong>外側から見た振る舞いを軸に内部を作りこんでいく</strong>ということ。人によって見る位置が違うので「外側」がどこか変わってくる。プログラマならメソッドやクラスの外だし、ユーザならアプリケーションの外側。なので、BDDがなにかを一言で答えるとしたら<strong>振る舞いに着目して、それを軸に内側を作りこんでいくこと</strong>になるのかなぁ。</p>
+
+<h2>再び結論</h2>
+
+<p>長々と書いて逆に混乱してきた人もいるかもしれないのでさくっとまとめ。</p>
+
+<ul>
+<li>結局は&#39;誰が&#39;、&#39;誰の為に&#39;、&#39;何を&#39;テストしているのかが重要である</li>
+<li>TDDはDeveloper Testing。つまり僕達のためのもの。</li>
+<li>ATDDはCustomer Testing。つまり顧客のためのもの。</li>
+<li>BDDは振る舞いに着目する。状況・目的によって「振る舞い」が指すものが変わる。それに合わせて語彙も変わる。</li>
+</ul>
+
+<p>なんちゃらDDはいっぱいあって、しかもそれらが色々な軸で交わったりしてすごいややこしい。TDD/BDD/ATDDと誰かが言った時は、大抵の場合暗黙のコンテキストがあるのでそこに気をつけよう。わからなかったら聞こう。<strong>「それは誰の為のテストで何をテストしているんですか?」</strong></p>
+
+<p>個人的にはBDDという言葉を使わないのは誰の為のテストかわかりづらいから。なので大体の場合はTDDとATDDのふたつを使うことが多い。BDDが僕達にくれたものは大きいけれど、その知見はTDD/ATDDに十分反映されている(もしくはされつつある)ので、<strong>普通にTDD/ATDDと言えばいいじゃないか</strong>って意見。BDDって言葉を使うとややこしくなるので僕は使いません。</p>
+
+<p>おまえの言うBDDは間違ってる!!という人は突っ込みいただけるとありがたいです。</p>
+
+<h2>See also</h2>
+
+<ul>
+<li><a href="http://d.hatena.ne.jp/digitalsoul/20090819/1250686015">BDDの導入 - Dan North - Digital Romanticism</a></li>
+<li><a href="http://d.hatena.ne.jp/digitalsoul/20090928/1254147487">ストーリーについて - Dan North - Digital Romanticism</a></li>
+<li><a href="http://www.slideshare.net/haru01/xpcustomertesting">XP Customer Testing</a></li>
+</ul>
+</article><hr /><article><h2><a href="/2011/05/14/mongodb_nodejs/">2011-05-14 mongodb + node.js を軽く試した</a></h2><h2>mongodbのインストール</h2>
+<pre class='sunlight-hilight-bash'>$ sudo aptitude install mongodb
+$ mkdir /path/to/data
+$ mongod --dbpath /path/to/data</pre>
+
+<h2>mongooseのインストール</h2>
+<pre>$ npm install -g mongoose</pre>
+node.jsでmongodb扱うのに他にもライブラリあるみたいだけど、とりあえずnpmでサクッと使えるmongooseを使ってみる。
+<h2>サンプル</h2>
+軽く試しただけなので、詳細は <a href="https://github.com/LearnBoost/mongoose">LearnBoost/mongoose - GitHub</a> を参照。
+<script src="https://gist.github.com/971943.js"> </script>
+実行するとmongodbの中身はこんな感じ。
+
+<pre>> db.users.find()
+{ "_id" : ObjectId("4dce0fb5bad67a145c000001"), "name" : "AKAMATSU Yuki", "age" : 24 }</pre>
+
+印象としてはActiveRecordっぽいというかORMっぽいというか。mongodb自体をそんなに触ってないからこのアプローチが正しいのかどうかはわからないけど、馴染みやすくはある。
+</article><hr /><article><h2><a href="/2011/05/10/duostack_nodejs/">2011-05-10 duostackでnode.jsアプリを動かすまで</a></h2><h2>node.jsのインストール</h2>
+何はともあれnode.jsのインストール。aptではなくgithubからリポジトリをcloneしてmakeした。最近はapt以外のものは$HOME/localに入れるルールでやってるのでnode.jsも同様に。node.jsをsudoで入れると結構ハマるみたいな話を聞くので特に理由がなければaptとかで入れるか$HOME以下に入れるのがよさそう。
+
+<pre>$ git clone git://github.com/joyent/node.git
+$ cd node
+$ ./configure --prefix=$HOME/local
+$ make
+$ make install
+$ which node
+/home/ukstuido/local/bin/node</pre>
+
+<h2>npmのインストール</h2>
+duostackを使うのにnpmが必要なのでnpmもインストール。curl使う方じゃなくてmakeしてインストールした。curl ... | sh の形式があまり好きじゃない程度の理由。
+
+<pre>$ git clone git://github.com/isaacs/npm.git
+$ cd npm
+$ make install
+$ which npm
+/home/ukstudio/local/bin/npm</pre>
+
+npmがインストールされる場所は特に指定しなくても$HOME/localに入った。node.jsの位置でも見てるんだろうか。よくわからない。
+
+<h2>duostackのインストール</h2>
+あらかじめ、<a href="https://www.duostack.com/">Duostack</a>のアカウントは取っておくこと。結構すぐ登録確認メールが来る。
+
+duostackのインストールは-gオプションを付けないとnode_modulesディレクトリがカレントディレクトリに出来る。最初-gオプションを知らなくて困惑した。
+
+<pre>$ npm install -g duostack
+$ which duostack
+/home/ukstudio/local/bin/duostack</pre>
+
+
+<h2>アプリの作成とデプロイ</h2>
+ここまで来ると<a href="http://docs.duostack.com/node/quick-start-guide#create-a-new-node-app">Duostack · Docs: Quick Start Guide</a>に従うだけでOK。
+
+適当なディレクトリを作ってそこにserver.jsを置く。
+
+<pre>$ mkdir sample
+$ cd sample
+$ vim server.js</pre>
+<script src="http://gist.github.com/963569.js?file=gistfile1.js"></script>
+
+git initしてやる。
+
+<pre>$ git init
+$ git add .
+$ git commit -m 'init'</pre>
+
+duostackコマンドでアプリケーションを登録。ここで指定したアプリ名がそのままドメインになる。
+
+<pre>$ duostack create ukstudio
+$ git push duostack master</pre>
+
+無事にpushできればURLが表示されているはずなのでブラウザで確認する。今回の例だと<a href = "http://ukstudio.duostack.net/">http://ukstudio.duostack.net/</a>になる。
+
+こんな感じでduostackでnode.jsアプリを動かすところまで試してみた。herokuとかもそうだけど、こうサクッとアプリが動かせる環境があるのはうれしい。
+
+次はnode.js + CoffeeScriptとか、もうちょっとアプリらしいアプリを作ってみようかな。
+
+<h2>追記: duostackでCoffeeScriptを動かす</h2>
+CoffeeScriptからコンパイルしたJavaScriptを乗せるんじゃなくて、CoffeeScriptそのものを乗せる方法。server.jsは必要っぽいのでそこからrequireする形にした。CoffeeScriptはアプリの中にインストールしておく。 これで一応動くことは動く。
+
+<pre>$ npm install coffee-script</pre>
+
+<script src="https://gist.github.com/964149.js"> </script>
+</article><hr /><article><h2><a href="/2011/05/09/build_vim/">2011-05-09 Vimをソースからビルド</a></h2>aptで入れたvimのrubyインターフェースのバージョンが1.8.6なのが気にいらなくてvimをソースからビルドした。
+
+<pre><code>$ hg clone https://vim.googlecode.com/hg/ vim
+$ hg update vim73
+
+$ cd vim
+$ ./configure --enable-multibyte --prefix=$HOME/local --enable-rubyinterp</code></pre>
+
+これでOK。aptで入れたvimも一応残しておきたかったのでprefixで$HOME以下にビルドするようにした。Rubyインターフェースはrvmで入れた1.9.2を見るようになっていたのでとりあえずよしとする。何でrvmの奴を見にいったのかはよくわからない。
+</article><hr /><article><h2><a href="/2011/04/19/coffeescript-qunit/">2011-04-19 CoffeeScript + QUnitでTDD環境作ったよ</a></h2>Rails3.1からCoffeeScriptがデフォルトで入ってるとかなんとかで、とりあえずCoffeeScriptだけで少し触ってみた。とりあえずQUnit自体もCoffeeScriptで書けるようなTDD環境を作ってみた。
+
+とりあえず、UbuntuにCoffeeScriptをインストールするわけだけどaptの方が古いしせっかくだから最新のを触るかと思ったのでgithubからCoffeeScriptとnode.jsのリポジトリをcloneしてインストール。
+
+<pre>$ git clone git://github.com/joyent/node.git 
+$ cd node
+$ ./configure
+$ make
+$ sudo make install
+$ node -v
+v0.5.0-pre</code></pre>
+
+<pre><code>$ git clone git://github.com/jashkenas/coffee-script.git
+$ cd coffee-script
+$ sudo bin/cake install
+$ coffee -v
+CoffeeScript version 1.1.0-pre</code></pre>
+
+ディレクトリ構成はこんな感じ。coffeeにCoffeeScriptに入れて生成されたJavaScriptはsrcにいれるルール。test/index.htmlはQUnitの結果を見るため。test/qunitはずばりQUnitそのもの。
+
+<pre>./coffee/hello.coffee
+./src/hello.js
+./test/index.html
+./test/qunit/qunit.css
+./test/qunit/qunit.js
+./test/coffee/test-hello.coffee
+./test/src/test-hello.js</pre>
+
+CoffeeScriptは-wでファイルの変更を監視してコンパイルしなおすことができるので,以下の用に実行しておけばそれぞれ変更があったらコンパイルしてくれる。CoffeeScriptはデフォルトでfunction(){}();で囲って外部からアクセスできなくなるので,-bを付けてトップレベルにJavaScriptを生成するようにする。
+
+<pre>$ coffee -w -b -o src/ -c coffee</pre>
+<pre>$ coffee -w -b -o test/src -c test/coffee</pre>
+
+これでテストコードもしくは本体のコードを修正すれば勝手にコンパイルするのでtest/index.htmlを見ればよい。後はもうちょい頑張ってブラウザを勝手にリロードするか,Rhinoとか使えばindex.htmlを用意しなくてもCUIでテスト結果をみれそう。
+
+一式は以下のgistに置いた。(Qunitはライセンス見てないので外してある)
+<a href="https://gist.github.com/925753">CoffeeScript+QUnit — Gist</a>
+</article><hr /><article><h2><a href="/2011/04/11/odrk01/">2011-04-11 大江戸Ruby会議01で発表してきました</a></h2>昨日は大江戸Ruby会議という名のasakusa.rbの生活発表会があったので、普段の生活で考えてることを発表してきた。ちなみに実はasakusa.rbの参加回数はそんなに多くなかったりする。当日のスライドと動画はこちら。KaigiFreaksは仕事がはやくてすごい。いつもありがとうございます!
+
+
+
+<a href="http://vimeo.com/channels/oedorubykaigi01">大江戸Ruby会議01 on Vimeo</a>
+
+この発表について何か僕にもの申したい人がいたら@ukstudioかy.akamatsu[at]ukstudio.jpまで頂けるとありがたいです。
+
+発表内容についてちょこっとだけ書いておこうかな。<a href="http://www.amazon.co.jp/gp/product/487311473X?ie=UTF8&ref_=sr_1_1&qid=1302526992&sr=8-1&linkCode=shr&camp=1207&creative=8411&tag=ukstudio0c-22">パブリックスピーカーの告白</a>で言う「講演家がこう話せばよかったと思うスピーチ」にあたる部分。
+
+タイトルに戦略ってあるけど、正直そもそもそういったものがあるのかよくわからない。CIとかは環境の話だし、TDDとかリファクタリングとかはスキルだしでそれらが「戦略」かと言われると違う気がする。
+
+結局のところ、継続的に改善していくしかないと思うんだよなぁ。そうなると後はもう手を動かすか動かさないかの話になる。そんなことを考えたら終始「熱意を持って頑張って」みたいな話になってしまった。これはこれで妙に好評だったけど(母数80ぐらいのうちサンプリング5ぐらい)。ちなみに熱意がなくとも仕事だと割り切って手を動かしてももちろんいいと思います。
+
+で、手を動かす前提となるとClean Codeを保てるかは個々の設計能力に依存してくる。そういうわけでRubyでClean Codeってどう実現するんだろうね?というところをSOLID原則を取り出して話をしたつもり。
+
+終わった後に@t_wadaさんからRubyConfで似た話をした人がいるから動画を見た方がいいと言われ、今日twitterで動画を教えてもらった。
+
+<a href="http://confreaks.net/videos/185-rubyconf2009-solid-ruby">SOLID Ruby - Jim Weirich - Ruby Conference 2009</a>
+
+資料も豪快にgithubにあがっていて、こっちは@kakutaniさんに教えてもらった。お二人共ありがとうございます。
+
+<a href="https://github.com/jimweirich/presentation_solid_ruby">jimweirich/presentation_solid_ruby - GitHub</a>
+
+まだ資料をざっと見ただけなんだけど、僕より全然良くできてるので皆さんこっちを見るといいです。まだまだ精進が足りない。
+
+Rubyらしい設計って色々とまだ手探りなんだけど、参考になったのは<a href="http://www.amazon.co.jp/gp/product/4894712857?ie=UTF8&ref_=sr_1_1&s=books&qid=1302526019&sr=8-1&linkCode=shr&camp=1207&creative=8411&tag=ukstudio0c-22">Rubyによるデザインパターン</a>とか<a href="http://www.amazon.co.jp/gp/product/4048678841?ie=UTF8&ref_=sr_1_2&s=books&qid=1302526019&sr=8-2&linkCode=shr&camp=1207&creative=8411&tag=ukstudio0c-22">リファクタリング:Rubyエディション</a>あたりかなぁ。
+
+後はJavaだけど、<a href="http://www.amazon.co.jp/gp/product/4048676881?ie=UTF8&ref_=sr_1_1&s=books&qid=1302526151&sr=1-1&linkCode=shr&camp=1207&creative=8411&tag=ukstudio0c-22">Clean Code</a>とか<a href="http://www.amazon.co.jp/gp/product/4797347783?ie=UTF8&ref_=sr_1_2&s=books&qid=1302526151&sr=1-2&linkCode=shr&camp=1207&creative=8411&tag=ukstudio0c-22">Amazon.co.jp： アジャイルソフトウェア開発の奥義</a>とか。両方とも結構ヘビーな本だけど勉強になる。
+
+大江戸Ruby会議の全体的な感想は他のWeb日記力の高い人におまかせしたいと思うのでそちらをどうぞ。と言うのも、発表が最後の方だったので会議中ずっとそわそわしてたため、文章にまとめられるほどまだ消化できてないのだ。この辺はなかなか難しいところだけど、あの空気感の一旦を担えた(と思いたい)と言うことでよしとする。
+
+最後に。発起人の@a_matsudaさん、実行委員長の@kakutaniさんを始め、スタッフ、発表者、参加者のみなさん、どうもありがとうございました!
+</article><hr /><article><h2><a href="/2011/03/24/activity/">2011-03-24 近況</a></h2><h3>個人事業主になりました</h3>
+<a href="http://ukstudio.jp/wp-content/uploads/2011/03/FxCam_1300951372227.jpg"><img src="http://ukstudio.jp/wp-content/uploads/2011/03/FxCam_1300951372227.jpg" alt="" title="FxCam_1300951372227" width="720" height="480" class="alignnone size-full wp-image-824" /></a>
+この間の確定申告の際に、個人事業主届けを出してきた。去年は出さずに1年働いていたけど、今年は確定申告を青にしたのでそのついでに。届出の提出はすごいあっけなくて、改めて個人事業主なんてそんな大層なものじゃないなーと思った。
+
+屋号は「UKSTUDIO」にした。屋号を取ったから何が変わるってわけでもないけど、本名とukstudioっていうIDの間にある溝を埋めるぐらいの意味はあるかな。
+
+<h3>4月下旬からスケールアウトでお仕事</h3>
+<a href='http://twitter.com/yamaz'>@yamaz</a>さんからお声がかかって、4月下旬からスケールアウトで働くことになった。正社員ではなく1年の契約です。
+
+一応、別の仕事も請けることは可能だけど最初から複数の仕事をまわせる気がしないし当分はお仕事の依頼は請けられないと思います。あしからず。
+
+「パフォーマンスを出してください」と言われたので頑張りたいと思います。よろしくお願いします。
+</article><hr /><article><h2><a href="/2011/03/21/tddbc-fukuoka/">2011-03-21 TDDBC福岡に参加してきた</a></h2><a href="http://ukstudio.jp/wp-content/uploads/2011/03/2011-03-19-09.24.06.jpg"><img src="http://ukstudio.jp/wp-content/uploads/2011/03/2011-03-19-09.24.06.jpg" alt="" title="博多駅" class="alignnone size-full wp-image-815" style='width: 100%;'/></a>
+
+福岡TDDBCに参加してきた。今回で3回目の参加(1回目は東京、2回目は東北)。
+
+3回は割と多めの参加回数だと思うけど、参加者層が地域によって違ったり、当然ペアプロする相手も違うわけでいつも違う刺激をもらってる。
+
+今回は@mzpさんが参加するとのことなので普段使ってるRubyではなくOCamlで参加。OCaml組は2ペア(4人)いて、1日目の前半を@suerさん、1日目の後半と2日目を@mzpさんとペアを組んでやった。OCamlは初心者もいいところなので2人には大分お世話になりました。どうもありがとうございます。
+
+コンパイルが必要な言語でTDDをやるとコンパイルがテンポを崩しがちなんだけれど、OMakeが結構よく出来ていてautotestみたいなことも出来るし、その辺は特に不自由ない感じ。OCamlの型付けの強さはなかなか慣れないけれど、コンパイルが通った時点で型の間違いがないって言うのは割と安心かも。
+
+慣れない言語でTDDをやって一番実感したのは、普段Rubyの時は「こういうインターフェースで使いたい」と振る舞いの視点からテストケースを考えられるのに、OCamlだと「今回正規表現が必要そうだけどOCamlだとどうやるの?」といった具合で先に実装の詳細について考えはじめてしまうこと。本来は実装は置いておいてテストケースを考えるべきなのについつい実装の方を考えてしまった。
+
+ただ、言語を習得していく過程でTDDが出来ないかと言うとそんなことはないとも思う。ペアプロの時はたまたま僕にとってオーバーペースだっただけで、落ち着いてbaby stepで刻んでいけば逆に習得しやすくなるかもしれない。今回はRubyと同じテンポでやろうとした俺のミスだなー。
+
+後、ここ最近新しい言語を習得できないなーと思っていたけどこういうイベントで挑戦するのは悪くない。普段だとついついRubyに逃げちゃうんだけど、ペアプロだと逃げようがない。あとは@mzpさんのコードを書くところを横でみれたのは大きいと思う。こう書くのかーって発見がいっぱいあった。
+
+2日目の休憩時間に@mzpさんがAsakusaSatelliteのテストコードを修正していて、RSpecで書かれていたので「ここはこう書けるよ」「こうした方がRSpecっぽいよ」と横で口出ししていたら@mzpさんと@suerさんにRSpecの魅力が伝わったようでよかった。
+
+ここ最近、RSpecに興味はあるけどどう書いたらいいかわからないみたいな話を良くきく。構文だけだったらドキュメントみればいいんだけど、それをどう活用するのかみたいな話はなかなかまとまってないからかな。結構需要がありそうなのでそのうちるびまあたりに寄稿してみようかな。最近やっとletの使い方が見えてきたよ。
+
+そう言えば、今回は結構若い人が多かった気がする。@mzpさんは1つ上らしいし、@bleisさんは同い年だった。主催の@pocketfberserkerさんも年下。<del>講師の1人の@akinekoさんは俺より1つ2つ年下だったと思うし</del>(年上だそうです)。こういうイベントで同世代や自分より若い人がいるとなんかうれしいなー。
+
+今回のTDDBCもなかなか刺激的で楽しかった。次のTDDBCもいくつか開催決まってるっぽいし、今回で動きだす地域もあるみたいだし楽しみ。
+
+最後に、主催の@pocketfberserkerさんを始め、今回のTDDBCの運営に携わっていた方々、どうもありがとうございました!
+<a href="http://togetter.com/li/114056">Togetter - 「TDD Boot Camp福岡」</a>
+</article><hr /><article><h2><a href="/2011/01/23/bought_galaxy_tab/">2011-01-23 Galaxy Tabを購入した</a></h2>HT-03AからGalaxy Tabに機種変した。と言っても電話はこれしか持っておらず、さすがにGalaxy Tabで通話するのは不便なので機種変した後SIMを抜いてHT-03Aに戻した。Galaxy TabはWi-Fiメインで使う予定。今のところ外でGalaxy Tabからネットに繋ぐことはあまり考えてない。とは言え繋げるにこしたことはないので、今持っているイーモバをPocketWiFiにするか、b-mobileを契約するかぐらいのことは検討している。
+
+<h2>Galaxy Tabを購入した目的</h2>
+Galaxy Tabを購入した最大の目的は電子書籍。本については基本的に紙で読みたい派なのでちょっと前は「別に電子書籍とかいいや」と思っていたけど、仕事中に「あの本に書いてあった気がする。けど手元にない」みたいなことは結構良くあるので、その辺りのメリットを考慮して踏み切った。
+
+仕事中にという限定で言えば別に端末を買わずともPCにデータを入れておけばいいだけだ。にも関わらず端末を買ったのは本の大きさが原因で読む機会を減らしている物があること。例えば通勤中とかで本を読むのだけど、ある一定以上の大きさになると鞄から出すのが億劫になったり、そもそも鞄に入らないことが多い為。
+
+あともう1つの理由は、PCはやはりじっくり本を読むにはあまり適していないため。つまりは電子書籍買ったり自炊するんだったら、読み終わった本をデータとして持ち歩くだけでなく、最初から読むことも考えたかった。
+
+<h3>電子書籍としてのGalaxy Tabの評価</h3>
+評価と言っても他の端末を使っていないのであまり比較したものは言えないけど、僕からすると「必要十分」と言ったところ。PDFやepubのデータで読んでいるけど速度的には十分。流石に紙の本みたいにあるキーワードを探しながらペラペラめくるというのは厳しい。ただ、せっかくのデジタルなのでそこらへんは検索でカバーしたいところ。
+
+ちなみにPDFを読む為に使っているアプリはezPDF Readerと言うアプリ。有料だけど$1ぐらいだったと思うので問題ない。このアプリを使っている理由はブックマーク機能と文壇合わせ機能があること。Adobe Readerで読んでいる時はPDFの余白が結構邪魔で、端末のサイズが小さめのこともあって拡大を適宜調節するのがちょっと面倒だった。ezPDF Readerの文壇合わせは文章のブロックごとに余白を詰めてくれるので拡大をわざわざする必要がない。この機能が今のところezPDF Reader以外見当らなかったのでこれを使用している。
+
+端末のサイズ的には電車内で片手持ちをするならこのサイズが限界と言ったところか(人にもよるし女性だと辛いかもしれない)。逆に単純に電子書籍端末として考えると少し小さい気もする。この辺のバランスは人によって違うだろうから何とも言えない。個人的には満足してるし、現状販売されている端末の中だとこのサイズがベストだったと思う。
+
+<h2>Galaxy Tabを買って最初にやったこと</h2>
+<h3>root権の取得</h3>
+Galaxy Tabでrootを取得するには<a href="http://forum.xda-developers.com/showthread.php?t=833953">[APP] z4root - xda-developers</a>からz4rootのapkを取得してインストールすればいい(要会員登録)。インストールや使い方の詳細は検索すれば出てくると思うので割愛するが、とても簡単にroot化できる。root化は自己責任で。
+
+<h3>システムフォントをTakaoフォントに</h3>
+個人的にTakaoフォントが気に入っているのでGalaxy TabのシステムフォントをTakaoフォントにすることにした。手順はちょっと面倒だが以下の通り。ちなみにパソコンがUbuntu 10.10前提の話。
+
+まずは、Android SDKを用意してadbコマンドを使えるようにする。Galaxy TabはそのままだとDeviceとして認識されないので/etc/udev/rules.d/51.andorid.rulesにlsusbからidVendorとidProductというパラメータを記述しなければならない。この辺はDev Phoneと同じ問題っぽいので詳しくはDev Phoneについて検索するといいかも。
+
+<pre>SUBSYSTEM='usb', ATTRS{idVendor}=="04e8", ATTRS{idProduct}=="681c", MODE=="0666"</pre>
+
+ファイルを保存したら<code>sudo service udev restart</code>してやる。
+
+これだけでもまだadbで繋ぐには不十分でadbのserverをsudoで立ち上げてやらないといけない。
+
+<pre>
+$ adb kill-server
+$ sudo adb start-server
+$ adb devices # ここでdeviceが?????とかじゃなくちゃんと表示されていればOK
+</pre>
+
+adb shellで無事端末につなげたらフォントを書き換える為にsuしなくてはならない。suするとGalaxy Tab側でx4rootのアプリがrootを許可するかポップアップを出しているので許可してやる。システムフォントは/system/fonts以下に入っている。日本語フォントはDroidSansJapanese.ttfで、英語はDroidSans.ttfとDroidSans-Bold.ttf。他にもあるかもしれないけど今回書き換えたのはこの3つ。ちゃんとバックアップ取っておくこと。ハードリセットしても元には戻らない。
+
+/system以下がread onlyになっていたら再マウントする必要がある。最初にmountを叩いてどのデバイスがsystemにマウントされているか確認して再マウントしよう。
+
+<pre>
+# mount
+# mount -o remount,rw /dev/block/stl9 /system
+</pre>
+
+インストールするフォントはadbからpushするなり、USB接続してコピペするなりして転送する。僕は一旦/sdcardに置いてから、busyboxのcpで/system/fontsに移した(mvだとうまく出来なかったので)。busyboxはマーケットからインストールすることが出来る。日本語のフォントはサイズが大きいのでrenameしたものを3つ用意するよりは1つ置いてシンボリックリンクを貼るといい。リンク先は必ずsystem以下に置こう。/sdcard以下だとUSB接続した時とかにリンクが切れて、フォントを見つけられなくなったGalaxy Tabが延々と再起動を繰り返したりしてリセットせざるを得なくなる。
+
+<pre>
+# busybox cp /sdcard/TakaoGothic.ttf /system/fonts/
+# cd /system/fonts
+# ln -s TakaoGothic.ttf DroidSansJapanese.ttf
+</pre>
+
+これで端末の方でフォントを「標準フォント」に変更すればOK。
+
+<h2>全体的な使用感</h2>
+これもまた比較する端末がHT-03Aになるので何とも言えないけど、少なくともそこそこ快適に動作する。特にもたつきもないので、HT-03Aが余計に苦痛に感じられる程。画面サイズはTwitterやFacebook、Gmailなどのアプリを使うには非常に快適で、ブラウザでPCサイトも拡大・縮小がピンチイン・ピンチアウトでラクなのでそこそこ快適。ネットする程度ならPC起動する必要がないぐらい。ニコニコ動画はブラウザでもアプリでも見れてない。ブラウザはFlashがうまくうごいてない気がする。アプリはローディングが遅い(最初に全部読み込もうとしてるっぽい)から挫折しただけでもしかしたらちゃんと見れるかもしれない。
+
+そんな感じでGalaxy Tabは非常に満足している。今はちょうどキャンペーン中で4万しないぐらいで購入できた。値段的には割引価格後で個人的にはちょうどいいかなぁって感じ。もし買うなら今だし、買わないならせっかくなら他のタブレットが販売されるのを待った方がいいかもしれない。
+</article><hr /><article><h2><a href="/2011/01/20/what_is_software_design/">2011-01-20 ソフトウェア設計とは何か?(ソフトウェア工学とは何か?)</a></h2>ソフトウェア設計とは何か?というとても良い論文の翻訳があるのだけど、いつのまにか記事が無くなっていた。手元にあるテキストデータを公開しようにも翻訳者の方との連絡手段がない。
+
+幸いなことにarchive.orgに記事のアーカイブが残っている。ただ、このarchive.orgが検索でまともにヒットしないので、せめて今後この記事を探す人がいた時のことを考えてここにリンクを貼っておく。
+
+<a href="http://web.archive.org/web/20080803072849/www.biwa.ne.jp/~mmura/SoftwareDevelopment/WhatIsSoftwareDesignJ.html"> ソフトウェア設計とは何か?</a>
+</article><hr /><article><h2><a href="/2011/01/01/2010_retrospective/">2011-01-01 2010年のふりかえり</a></h2>新年あけましておめでとうございます。今年もどうぞよろしくお願い致します。
+
+去年のふりかえりの記事を去年中に書けなかったので、新年早々ブログを書いております。
+
+<h2>お仕事</h2>
+去年頭からフリーランスとして働きはじめてるけどまずは1年過ごせた。特に営業をせずともいくつかお仕事の紹介を頂いたり、実際にお手伝いさせてもらったりできるのは本当にありがたいことだなぁと思う。もし愛想つかしていらっしゃなければ今年もどうぞよろしくお願い致します。
+
+あと去年執筆したWEB+DBの記事は、思いの外好評で結構色々な人からお褒めを頂きました。たまに自分で読み直すけど、結構良く書けてるなぁと我ながら思う。あの時の自分すごい。この記事がきっかけでもう1つ進んでいるものがあるのだけれど、こっちも良いものにしたいなぁ。来年の夏頃にはお見せできるはずです。
+
+<h2>プログラミング</h2>
+去年はずっと自分なりのClean Codeを考えてたおかげか、ここ最近書くコードは以前に比べると大分マシになったと思う。あとはTDDを含めたTestingについても考えてるけど、この辺はまだまだ勉強不足な部分はあるなぁ。TDDそのもののやり方は大分馴染んできたけど、テストコードの書き方とか受け入れテストやモック/スタブの使い方がまだまだ。
+
+あとは使えるプログラミング言語が去年は増やせなかったなぁ。興味ある言語だけなら結構あるんだけど。今年はSmalltalkと関数型言語を何か1つ勉強したいなぁ。あとDCIやドメインモデルあたりの勉強もしたいな。去年中に理解することが出来なかったと言うか、そもそも勉強できてないというか。
+
+<h2>英語</h2>
+英語は去年も本当にだめだった。1年でそこそこ話せることを目標にしてたけど途中で頓挫した。今年こそはと意気込んでも多分また頓挫するので、ちゃんと計画を立てよう。これは英語に限らず。普段仕事で計画とか見積りとかやってる割には普段の私生活はそういうことあまりしてないのは良くないな。
+
+<h2>人とのつながり</h2>
+あと、去年一番強く意識したのが「人とのつながり」。Ruby会議やオブラブ、RailsDevConで会った人達、他にもasakusarb、mitakarb、ブログやWEB+DBの記事を見てお仕事を依頼してくれた人達、前々から知り合ってた人達。本当に色んな人に会ったと思う。色々な人とのつながりのおかげでできたことも多いし、人と合うことで新しい刺激と自分を見つめ直すことができた。去年は本当に色んな人から色んなものをもらえた、すごい良い年でした。
+
+<h2>今年</h2>
+去年は本当に良い年だったけど、それでもやっぱりいくつか出来なかったこともあるし、自分の未熟さを痛感することも多かったのでその辺は今年ちゃんとしたいな。毎年、あれやりたいこれが必要だをその場で判断してきてて、それはそれでそれなりに上手くまわっていたけど、今年はもうちょっと計画をたてていきたい。
+
+あとはRubyConfは今年こそ行こう。行きたいなーだと行かなそうなので、行くよ!とここに書いておこう。んで、現状のままで行っても英語よくわかりませんでしたで帰ってきそうなので、やっぱり諸々計画立てて動かないといけないのだ。
+</article><hr /></div></body></html>

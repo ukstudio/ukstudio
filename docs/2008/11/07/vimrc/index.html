@@ -1,0 +1,30 @@
+<!DOCTYPE html><html><head><meta charset="utf-8" /><!--Always force latest IE rendering engine or request Chrome Frame--><meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" /><meta content="width=device-width,initial-scale=1.0" name="viewport" /><!--Use title if it's in the page YAML frontmatter--><title>「地味に便利なVim設定」をもうちょい地味に便利にする</title><link href="/stylesheets/dist/normalize.css" rel="stylesheet" /><link href="/stylesheets/dist/skeleton.css" rel="stylesheet" /><link href="/stylesheets/all.css" rel="stylesheet" /><script src="/javascripts/all.js"></script><link href="/feed.xml" rel="alternate" title="atom" type="application/atom+xml" /><script>var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-12755601-1']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();</script></head><body class="x2008 x2008_11 x2008_11_07 x2008_11_07_vimrc x2008_11_07_vimrc_index"><div class="header"><div class="header-title"><h1><a href="/">ukstudio</a></h1></div></div><div class="container"><article><h1>「地味に便利なVim設定」をもうちょい地味に便利にする</h1><hr /><div class="article-body"><a href="http://blog.blueblack.net/item_317">地味に便利なVim設定 - ナレッジエース</a>
+
+いくつかもうちょい便利にできるよーってところがあったので書いてみる。
+
+<h2>スペース + wで保存</h2>
+別に¥¥で保存でもいいと思うけど、ちょっと指が遠い気がする。ので僕はスペース + wで保存してる。同じ要領でquitも。
+<pre lang="vim">
+nnoremap <space>w :<c-u>write<cr>
+nnoremap <space>q :<c-u>quit<cr>
+</pre>
+
+<h2>jとkでカーソルキーを中心に保ってスクロール</h2>
+わざわざスペースを使わなくてもできる。gj、gkにしておくと表示行で上下に移動できるので折り返しの行があるときとかに便利。
+<pre lang="vim">
+nnoremap j gjzz
+nnoremap k gkzz
+</pre>
+
+ちなみに僕のvimrcはgithubに公開してあるのでよかったら参考にどうぞ。そんな大したものでもないですが。
+
+<a href="http://github.com/ukstudio/config/tree/master">.vimrc at master from ukstudio's config - GitHub</a>
+</div></article></div></body></html>

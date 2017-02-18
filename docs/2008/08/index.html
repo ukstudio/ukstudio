@@ -1,0 +1,157 @@
+<!DOCTYPE html><html><head><meta charset="utf-8" /><!--Always force latest IE rendering engine or request Chrome Frame--><meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" /><meta content="width=device-width,initial-scale=1.0" name="viewport" /><title></title><link href="/stylesheets/dist/normalize.css" rel="stylesheet" /><link href="/stylesheets/dist/skeleton.css" rel="stylesheet" /><link href="/stylesheets/all.css" rel="stylesheet" /><script src="/javascripts/all.js"></script><link href="/feed.xml" rel="alternate" title="atom" type="application/atom+xml" /><script>var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-12755601-1']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();</script></head><body class="x2008 x2008_08 x2008_08_index"><div class="header"><div class="header-title"><h1><a href="/">ukstudio</a></h1></div></div><div class="container"><h1><Archive></Archive>Aug 2008</h1><article><h2><a href="/2008/08/31/web_design_questionnaire/">2008-08-31 wuたんのWebデザインに関するアンケートにご協力を。</a></h2><strong>結果が公開されています</strong>
+<a href="http://3ping.org/2008/08/31/0120">Webデザインに関するアンケート結果</a>
+<hr />
+
+<a href="http://3ping.org/2008/08/31/0120">Web デザインに関するアンケートにご協力ください - 3ping.org</a>
+
+このブログはWebデザイナよりは、プログラマ、エンジニアと言った方が多いと思うのですが、よろしかったらご協力お願いします。以下のフォームからでも回答可能です。結果は公開してもらえるようです。よろしくお願いします。
+
+<div style="margin: 1em 20px; border: 7px solid #eee; padding: 20px;"><iframe src="http://spreadsheets.google.com/embeddedform?key=pqZ008056mIlxmXskWwiMbg" width="310" height="1319" frameborder="0" marginheight="0" marginwidth="0">読込中...</iframe></div>
+</article><hr /><article><h2><a href="/2008/08/25/selenium_on_rspec/">2008-08-25 Selenium on Rspecを軽く試してみた</a></h2>とりあえずはScaffoldで簡単なアプリを作って、そのテストケースを作成、実行してみるところまで。そんな難しいことはしない。Railsは2.0.2を使用。2.1だとSeleniumにパッチを当てなきゃいけないので面倒。2.1の人は<a href="http://clearspace.openqa.org/docs/DOC-1072">Selenium on Rails patch for RoR 2.1</a>からパッチをあててください。
+
+<h3>準備</h3>
+まずは準備としてプラグインのインストールと、Scaffoldで簡単なアプリを作成する。
+<pre lang="ruby">
+$ rails _2.0.2_ blog
+$ cd blog
+$ ruby script/plugin install http://svn.openqa.org/svn/selenium-on-rails/selenium-on-rails
+$ ruby script/generate scaffold entry title:string description:text
+$ rake db:migrate
+</pre>
+
+ここまでできたらtest環境でサーバーを起動し、seleniumがちゃんと起動するか確認する。
+<pre lang="ruby">
+$ ruby script/server -e test
+</pre>
+
+そうすると下記エラーがでるが、sessionをデータベースであつかうように変更するととりあえず回避できる。原因はよくわかんない。
+<blockquote>
+CGI::Session::CookieStore::TamperedWithCookie in SeleniumController#support_file
+</blockquote>
+
+sessionをデータベースで扱うようにするにはconfig/environment.rbの47行目のコメントアウトをはずし、migrateする。
+<pre lang="ruby">
+config.action_controller.session_store = :active_record_store
+</pre>
+
+<pre lang="bash">
+$ rake db:sessions:create
+$ rake db:migrate
+$ rake db:test:prepare
+$ ruby script/server -e test
+</pre>
+
+ブラウザでhttp://localhost:3000/selenium/を表示して以下のような画面になればOK。
+
+[caption id="attachment_171" align="alignnone" width="300" caption="Selenium初期画面"]<a href="http://ukstudio.jp/wp-content/uploads/2008/08/init-selenium.jpg"><img src="http://ukstudio.jp/wp-content/uploads/2008/08/init-selenium.jpg" alt="Selenium初期画面" title="Selenium初期画面" width="300" height="240" class="size-medium wp-image-171" /></a>[/caption]
+
+<h3>テストケースの作成</h3>
+次にテストケースを作成する。SeleniumはテストケースをHTMLで書くので手書きでも書けるけど、面倒なのでFirefoxのaddonの1つ、<a href="https://addons.mozilla.org/ja/firefox/addon/2079">Selenium IDE</a>を使用する。
+
+Selenium IDEを使用すると、自分の操作を記録しそのままテストケースに変換できるので非常にラク。Selenium IDEを開き、右上の赤いボタンを押すと操作の記録が始まる。あとはテストしたい操作を手動で行なえばいい。
+
+[caption id="attachment_177" align="aligncenter" width="242" caption="Selenium IDE"]<a href="http://ukstudio.jp/wp-content/uploads/2008/08/selenium-ide.jpg"><img src="http://ukstudio.jp/wp-content/uploads/2008/08/selenium-ide.jpg" alt="Selenium IDE" title="Selenium IDE" width="242" height="300" class="size-medium wp-image-177" /></a>[/caption]
+
+今回のテストは「/entriesにアクセスし、そこから/entries/newに移動、タイトルと詳細を入力・保存し、/entries/showでタイトルが実際に表示されている」という内容にした。基本的には記録ボタンを押し、そのまま普通に入力していけばいい。最期の「タイトルが実際に表示されている」というものに関しては文言を範囲選択し、右クリックしverifyTextPresentを選択すればいい。
+
+[caption id="attachment_180" align="aligncenter" width="251" caption="verityTextPresent"]<a href="http://ukstudio.jp/wp-content/uploads/2008/08/selenium-ide-veritytextpresent1.jpg"><img src="http://ukstudio.jp/wp-content/uploads/2008/08/selenium-ide-veritytextpresent1.jpg" alt="verityTextPresent" title="verityTextPresent" width="251" height="300" class="size-medium wp-image-180" /></a>[/caption]
+
+ここまでできたらもう一度赤いボタンを押し、操作の記録を終了させる。最期に今の操作をテストケースとして出力させればいい。
+
+出力方法はIDEのウィンドウにフォーカスを合わせて、ファイル > テストケースに名前をつけて保存。ここではファイル名はadd_entryとしといた。本来なら命名規約的なものもあった方がいいかもしれないけどここでは気にしないことにする。保存先はseleniumに読み込ませるため、RAILS_ROOT/test/selenium/以下に保存。
+
+以上でテストケースの作成は完了。
+
+<h3>テストの実行</h3>
+もう一度http://localhost:3000/selenium/を開くと、今つくったテストケースが読み込まれているはず。あとはそのテストを右側のSelenium TestRunnerから実行すると、ブラウザがガチャガチャ動いてテストケースを実行してくれる。
+
+今回はさっきのテストケースを作ってから何も変更を加えていないので、オールグリーンになるはず。
+
+<h3>まとめ</h3>
+かなり単純なケースだけど、大体テストケースの作成から実行までを試してみた。まぁとりあえず導入してみるには丁度いいレベルかなと。Selenium IDEを使用すればプログラマ/エンジニアじゃなくてもテスト書けそうだし。
+
+あとは確かSelenium on Railsの機能にfixturesのロード機能とかあった気がするので、その辺りも調べていきたいと思う。
+</article><hr /><article><h2><a href="/2008/08/13/ruby_on_rails_partial/">2008-08-13 Railsのpartialの使い方</a></h2>あまりpartialをちゃんと使いこなせていない気がするので(いつもインスタンス変数で適当に値わたしてる)使い方をちょっとメモ。
+
+<pre lang="ruby">
+render :partial => 'entry'
+</pre>
+
+一番基本となるpartialの使い方。_entry.html.erbを描画。
+
+<pre lang="ruby">
+render :partial => 'entry', :locals => {:title => "タイトル"}
+</pre>
+
+localsでpartial側に値を渡す。partial側ではローカル変数titleで文字列"タイトル"を参照できる。
+
+<pre lang="ruby">
+render :partial => 'entry', :object => @object
+render :partial => @entry # インスタンス変数で単数形
+</pre>
+
+objectでpartial側に値を渡す。@objectの内容をpartial側でローカル変数entryで参照できる。
+
+<pre lang="ruby">
+render :partial => 'entry', :collection => @objects
+render :partial => @entries # インスタンス変数で複数形
+</pre>
+
+collectionで値を渡す。@objectsの値を1つずつ、partial側でentryとして参照できる。もちろん描画は@objects分繰り返される。
+</article><hr /><article><h2><a href="/2008/08/08/quill/">2008-08-08 Quillリリースおめでとうございます</a></h2><a href="http://quill.to/">Quill [羽根のように軽い、メモメモwebサービス]</a>
+<a href="http://blog.inafog.jp/archives/314">blog in a fog >> Quillリリースしました</a>
+<a href="http://blog.woopsdez.jp/?p=841">ウープスデザインブログ >> 羽根のように軽いメモメモwebサービス 「Quill」公開されました</a>
+
+と言うわけで、どうやら知り合いの人が開発に携わっているようなので、おめでとうございますエントリー。
+
+とりあえず簡単に使ってみて、なんやかんや言ってみようと思ったんだけれどちょっと問題が。自分、オンラインのメモって使わないんだよね。
+
+理由としては
+<ul>
+<li>いつも持ち歩いてるMOLESKINEにメモする</li>
+<li>ちょっとしたメモ(ToDoとかお買い物リスト的な)ものは付箋とかに書く</li>
+<li>長めの文章はTerminalでVimで書く</li>
+</ul>
+と言った感じかなぁ。
+
+多分、オンラインのメモってどこでも見れるってのが利点なんだろうけど、正直そこらへんはアナログで事足りちゃってる。それに携帯(WILLCOMユーザです)の通信速度があまり早くないからサッと見れない。まぁこれはある程度仕方ないけれど。と言うか、モバイル対応はまだしてないっぽいね。
+
+あとは、メモを書くのをもうちょいストレスフリーにしたい。例えば、おれがメモをするシーンは、「ネットで調べ物」とか「電話対応」とかなんだけど、ネットしてるときは当然ブラウザは別のページをみてるので、ブラウザでメモするのはちょっと手間。わざわざFxのウィンドウを2つにするのもいやだし。電話対応は片手が塞がるので、片手でメモできるペン・紙がラク。
+
+理想を言えば、QuickSilverでアプリを起動するのと同じぐらいスムーズに入力したいw まぁクライアントを提供するまではいかなくても、APIとかがあれば適当にQuickSilverやVimperatorのプラグインとかも自作できるだろうし。
+
+あ、でも新規入力の検索はいいね。開きたいメモをサッと検索できて、サッと編集に移れる。それとなんやかんや言ってますが、あくまで僕のスタイルにうまくハマらないってだけなので、別にサービス自体が悪いってわけではないです。実際かなりサクサク動いてますし、かなりシンプルなので使い方は人それぞれって感じかと。
+
+それとなんかショートカットキーが充実してるってことなのでJS読んで勝手に暴いてみた。ショートカットがあるのは一覧だけなのかな。JSの前半しか見てないんだけれども。
+
+<dl>
+<dt>j</dt>
+<dd>メモの選択を下に移動</dd>
+<dt>k</dt>
+<dd>メモの選択を上に移動</dd>
+<dt>x</dt>
+<dd>選択してるメモにチェックボックスのオン/オフ</dd>
+<dt>d</dt>
+<dd>チェックボックスがオンのメモを削除</dd>
+<dt>o</dt>
+<dd>選択してるメモを開く</dd>
+<dt>e<dt>
+<dd>選択してるメモを編集する</dd>
+<dt>Enter/Return</dt>
+<dd>選択してるメモを編集する</dd>
+<dt>s</dt>
+<dd>選択してるメモの星のオン/オフ</dd>
+<dt>c</dt>
+<dd>選択してるメモのラベル(鳥?)の変更</dd>
+</dl>
+
+多分、大体こんな感じかなー。間違ってたらごめんなさい。
+</article><hr /></div></body></html>

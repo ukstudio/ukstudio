@@ -1,0 +1,29 @@
+<!DOCTYPE html><html><head><meta charset="utf-8" /><!--Always force latest IE rendering engine or request Chrome Frame--><meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" /><meta content="width=device-width,initial-scale=1.0" name="viewport" /><title></title><link href="/stylesheets/dist/normalize.css" rel="stylesheet" /><link href="/stylesheets/dist/skeleton.css" rel="stylesheet" /><link href="/stylesheets/all.css" rel="stylesheet" /><script src="/javascripts/all.js"></script><link href="/feed.xml" rel="alternate" title="atom" type="application/atom+xml" /><script>var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-12755601-1']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();</script></head><body class="x2010 x2010_01 x2010_01_06 x2010_01_06_index"><div class="header"><div class="header-title"><h1><a href="/">ukstudio</a></h1></div></div><div class="container"><h1><Archive></Archive>Jan  6 2010</h1><article><h2><a href="/2010/01/06/tddbc/">2010-01-06 TDD Boot Campに参加してきました</a></h2>これまた、割と今更なエントリ。当日は@t_wadaさんのお誘いでRubyグループのコーチ役として参加したけどあまりコーチらしいことしてないな・・・申し訳ない。
+
+TDD Boot Camp(以下tddbc)では、午前中に @t_wada さんと Lasse氏 の講演、午後は各言語ごとにグループを作りペアプログラミング。朝から夜にかけてがっつりなイベントだった。TDDをやりたくてもやり方がわからない、やってみたはいいけど上手くいかないって人にはとてもいいイベントだったんじゃなかろうか。実際、僕も色々と得るものがあった。
+
+とりあえず、当日のお題をあとで自分で書いたものを晒しておく。スレッドセーフ以外の仕様変更まで取りこんである。
+
+<a href="http://github.com/ukstudio/LRUCache">http://github.com/ukstudio/LRUCache</a>
+
+これは1つのクラスにまとめてあるけど、結構複雑な感じになってきているので、CacheItemみたいな感じでもう1つ別のクラスを作ってそっちにキャッシュの保存期限とか持たせた方がいいかもしれない。仮にここからクラスを抽出するとしてこれだけテストが書いてあればそんなに苦労せずに抽出できるはず。テストがあるからこそクラスを抽出させるという変更も恐れることなく対応できる。
+
+Fixnum#seconds_laterはLasse氏のを参考にした。個人的にStubの影響をブロックの中だけに限定させたかったので少し修正してある。あとは、Rspecの機能で言うと、subjectやカスタムマッチャを使ってる。それぞれそんなに難しくないので使ってみることをおすすめする。
+
+最後にちょろっと感想を伸べておくと、tddbcはとても素晴しいイベントだったと思う。 @ebackyさんや、来日してくれたLasse氏をはじめ、スタッフのみなさん、今回このようなイベントを開催してくれて本当にありがとうございました。また参加された皆様からも色々な気づきを得られました。ありがとうございます。
+
+僕はTDDでプログラマの階段を更に1歩登れたように思う。ハッキリ言って、TDDを知る前と知った後のコードにはかなりの差がある。なにより、TDDでのプログラミングは楽しい。tddbcに参加された皆様もこの楽しさを知ってもらえればと思う。
+</article><hr /><article><h2><a href="/2010/01/06/oblove_bounen_2009/">2010-01-06 オブラブ忘年会2009でLTしてきた</a></h2>大分今更のエントリだけど、去年末にオブラブ忘年会2009に参加、LTで発表してきた。とりあえず資料はりつけ。永田さん、なんでiPhone買ってしもうたんや。
+
+資料を当日用意したので、色々とグダグダな発表だったけど楽しかったのでよしとする。酒を飲みながらのLTは初めてだけど、変なテンションであれはあれで良かったかも。
+
+オブラブ忘年会、楽しかったです。スタッフの皆様、本当にありがとうございました。
+</article><hr /></div></body></html>

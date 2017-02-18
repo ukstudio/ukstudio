@@ -1,0 +1,30 @@
+<!DOCTYPE html><html><head><meta charset="utf-8" /><!--Always force latest IE rendering engine or request Chrome Frame--><meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" /><meta content="width=device-width,initial-scale=1.0" name="viewport" /><title></title><link href="/stylesheets/dist/normalize.css" rel="stylesheet" /><link href="/stylesheets/dist/skeleton.css" rel="stylesheet" /><link href="/stylesheets/all.css" rel="stylesheet" /><script src="/javascripts/all.js"></script><link href="/feed.xml" rel="alternate" title="atom" type="application/atom+xml" /><script>var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-12755601-1']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();</script></head><body class="x2009 x2009_02 x2009_02_24 x2009_02_24_index"><div class="header"><div class="header-title"><h1><a href="/">ukstudio</a></h1></div></div><div class="container"><h1><Archive></Archive>Feb 24 2009</h1><article><h2><a href="/2009/02/24/file_column_name_error/">2009-02-24 Rails2.0.2から2.2.2に上げたらFileColumnがNameErrorだした。</a></h2>自分の担当している案件のRailsのバージョンを2.0.2から2.2.2に上げたら以下のようなエラーが発生。
+<blockquote>
+uninitialized constant FileColumn::ClassMethods::Inflector (NameError)
+</blockquote>
+
+これの対応は/vender/plugin/file_column/lib/file_column.rbの以下の部分を
+<pre lang="ruby">
+my_options = FileColumn::init_options(options,
+                                                 Inflector.underscore(self.name).to_s,
+                                                 attr.to_s)
+</pre>
+
+以下のように書き換えればとりあえず対応できる。
+
+<pre lang="ruby">
+my_options = FileColumn::init_options(options,
+                                                 self.name.to_s.underscore,
+                                                 attr.to_s)
+</pre>
+
+ちゃんちゃん。
+</article><hr /></div></body></html>

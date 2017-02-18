@@ -1,0 +1,174 @@
+<!DOCTYPE html><html><head><meta charset="utf-8" /><!--Always force latest IE rendering engine or request Chrome Frame--><meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" /><meta content="width=device-width,initial-scale=1.0" name="viewport" /><title></title><link href="/stylesheets/dist/normalize.css" rel="stylesheet" /><link href="/stylesheets/dist/skeleton.css" rel="stylesheet" /><link href="/stylesheets/all.css" rel="stylesheet" /><script src="/javascripts/all.js"></script><link href="/feed.xml" rel="alternate" title="atom" type="application/atom+xml" /><script>var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-12755601-1']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();</script></head><body class="x2012 x2012_index"><div class="header"><div class="header-title"><h1><a href="/">ukstudio</a></h1></div></div><div class="container"><h1><Archive></Archive>2012</h1><article><h2><a href="/2012/09/11/validates_presence_of/">2012-09-11 validates :foo_id, :presence => trueを追う</a></h2>チームメンバーから「validates_presence_of :user_idはそのuser_idが存在するか確かめてくれる」という情報を得て、そんな隠れ仕様あんの?とおもってちょっと調べてみた。
+
+結論だけまず言うと
+<pre>
+validates :user_id, :presence => true
+validates_presence_of :user_id
+</pre>
+ではなく、
+<pre>
+validates :user, :presence => true
+validates_presence_of :user, :presence => true
+</pre>
+の用に関連名を指定するとそれっぽい動作をしなくもない。
+
+とりあえずコードを追うとpresence系のバリデーション自体はActiveModel::Validations::PresenceValidatorで定義されている。
+
+<pre>module ActiveModel
+  # == Active Model Presence Validator
+  module Validations
+    class PresenceValidator < EachValidator
+      def validate(record)
+        record.errors.add_on_blank(attributes, options)
+</pre>
+
+次にadd_on_blankを見てみる。
+
+<pre># File activemodel/lib/active_model/errors.rb, line 251
+def add_on_blank(attributes, options = {})
+  [attributes].flatten.each do |attribute|
+    value = @base.send(:read_attribute_for_validation, attribute)
+    add(attribute, :blank, options) if value.blank?
+  end
+end
+</pre>
+
+add_on_blankメソッドはattributesの内容を走査してblankだったらerrorsに追加してるんだろうなーというのが読み取れる。じゃあ実際に値を取ってきてるであろう:read_attribute_for_validationは何なのだろう。api.rubyonrails.orgで検索してもヒットしない。仕方ないからgitリポジトリをgrepして探す。そうすると以下の様なコードがみつかる。
+
+<pre># activemodel/lib/active_model/validations.rb line 327
+alias :read_attribute_for_validation :send
+</pre>
+
+つまりただのsend。なので
+
+<pre>validates :user_id, :presence => true</pre>
+
+というコードは
+
+<pre>instance.send(:send, :user_id)</pre>
+
+となり、結局は普通に指定した属性の値を見るに過ぎない。
+
+
+で、最初の話に戻るが
+
+<pre>
+validates :user_id, :presence => true
+</pre>
+は普通にuser_idの値がblank?かどうかだけを見るので実際にそのuser_idでUserが存在するかチェックはしない。
+
+<pre>
+validates :user, :presence => true
+</pre>
+
+はどうかというと、instance.userがnilの状態でinstance.userを呼び出すとinstance.user_idでUserを取りにいく。そこでUserが存在しなければ[]が返ってくるのでblank?がtrueとなりこのバリデーションは失敗する。
+
+<pre>
+instance = Model.new
+instance.user_id = 111111111
+instance.valid? #=> false
+  User Load (3.4ms)  SELECT "users".* FROM "users" WHERE ""."id" = 111111111 LIMIT 1
+</pre>
+
+なので、このケースに限って言えばそのIDのレコードが存在するか確認する動作をしている。とは言え、あくまでisntance.userの値を見るだけなので
+
+<pre>
+instance = Model.new
+instance.user = User.new
+instance.valid? #=> true
+</pre>
+
+この様に直接値を入れてしまえばDBにselect文はなげない。
+
+なので、そういう動作をすることもあるだけで厳密にはそのIDのレコードが存在を確かめているわけではない。
+</article><hr /><article><h2><a href="/2012/09/11/ripping_cd_on_gentoo/">2012-09-11 GentooでCDをリッピングして聞く</a></h2>メモ
+
+CDをwavで一旦取り込んでflacに変換。
+<pre>
+$ sudo emerge cdrtools
+$ sudo emerge flac
+$ cdda2wav -H -B
+$ find . -name "*.wav" -print0 | xargs -0 flac
+</pre>
+
+
+<pre>
+# /etc/security/limits.conf
+@audio - rtprio 99
+@audio - memlock unlimited
+@audio - nice -10
+</pre>
+
+<pre>
+# /etc/portage/package.use
+media-sound/aqualung alsa cdda cddb ffmpeg flac mp3 oss wavpack jack
+media-sound/jack-audio-connection-kit alsa
+</pre>
+
+<pre>
+# mplayer で聞く
+$ mplayer *
+# aqualung & jackで聞く
+$ sudo emerge aqualung
+$ sudo emerge jack-audio-connection-kit
+$ jackd -R -d alsa
+$ aqualung -o jack --auto
+</pre>
+
+正直、JACKで何が変わってるのかよーわからん。
+</article><hr /><article><h2><a href="/2012/04/09/tddconf2012/">2012-04-09 TDDカンファレンスでLTしてきたのでその補足</a></h2>4月の6日の<a href='http://atnd.org/events/26808'>TDDカンファレンス</a>に参加&amp;LT発表してきた。参加といっても遅刻していったのでほとんど話を聞けていないのだけれど。
+
+とりあえず資料は<a href='http://ukstudio.github.com/tddconf_20120406/'>こちら</a>。読み直してみたら途中の話の飛躍がこれはひどい。当日もかなり短い発表の上に色々内容を省いてしまったので色々と補足しておく。(当日聞いていただいた方に申し訳ないし、あまりこういうのはよくないね。パブリックスピーカー読んででなおします。)
+
+今回の内容の発端は「TDDはテストではない」という言葉の暴力性というか、言い切りに何となく違和感を感じていたのがきっかけ。もちろん、誤解されたくないという意味では言い切るのは大事なんだろうけどちょっとだけ暴力的に感じる。暴力的に感じる理由は資料にも書いてあるけど、実際TDDで書いたユニットテストはテスト資産として流用している。それは副産物的なものかもしれないけれど、TDDの効果としては大きいんだから言い切っちゃうのはどうなんだろうという感じ。
+
+その上で動詞と名詞のテストという観点で考えると案外すっきりするんじゃないのってを思いついた。でも結局のところTDDで書いたユニットテストだけじゃ足りないのは皆わかってるんだから、TDDが何なのかに拘ってないで必要だと思うこと足りないことやればいいんじゃないの?という結論になったのが資料の最後の方。こうして文章にしてみると、動詞と名詞のテストってのは上手いこと言えた気がしたから資料にいれたけど話の流れとしては変だしいれなくてもよかったかも。
+
+まとめると「定義にこだわってないで必要だと思うことをやろう」です。名詞動詞とか「TDDはテストではない」という言葉の暴力性とか自分で言っておいて何だけど結構どうでもいい。「TDDはテストを目的としていないからテスト手法ではない」とか「TDDはいくらかテスト手法的な部分もあるのだからその断言はおかしい」とかつい議論しがちだけど、そんなことよりお互いにTDDだけでは足りない部分があるのはわかってるんだから、そこを考えようよってことです。
+</article><hr /><article><h2><a href="/2012/04/02/married/">2012-04-02 結婚いたしました</a></h2>この度4月1日付けで結婚いたしました。
+
+Facebookには届出を出した時点で結婚したことを書いたんですが、たくさんのイイネ!とおめでとうのお言葉ありがとうございます。書類をだしただけで特に何もかわっていないので今だに結婚した自覚がないんですが、そのうち自覚するものなんでしょうか。
+
+今のところ式は予定していないので、近いうちにパーティ的なことはしたいなと考えています。その時は改めて近しい皆様にはご招待させていただきます。
+
+以上、簡単ではありますが結婚のご報告でした。
+
+See also
+<a href="http://amzn.to/ukstudio">ukstudioの欲しいものリスト</a>
+<a href="http://www.amazon.co.jp/gp/registry/wishlist/16JI782TB8ZX7">新婚なのでなんかくださいリスト</a>
+</article><hr /><article><h2><a href="/2012/02/20/study_ruby_at_spicelife/">2012-02-20 ruby勉強会@spicelife</a></h2><a href='http://twitter.com/holygrail' target='_blank'>@holygrail</a>に何か話してよと頼まれたので適当に話してきた。
+
+<a href='http://ukstudio.github.com/ruby-study-2012-02-17/' target='_blank'>資料</a>
+
+なんか当日、話す時に使った資料は古いやつだったみたい。どおりで何か違和感があると思った。
+
+うっかり対象者を<a href='http://www.amazon.co.jp/gp/product/4873113679?ie=UTF8&tag=ukstudio0c-22&linkCode=shr&camp=1207&creative=8411&creativeASIN=4873113679&ref_=sr_1_1&qid=1329744986&sr=8-1' target='_blank'>初めてのRuby</a>を読んだ人ぐらいを対象にしてたけど全然そんなことなかった。「define_methodをsendで呼び出すとわかると思うんですけど」「まずはsendがわからないんじゃない?」みたいな。結構早口だったし、資料も大分内容が薄いので大半の人はわからなかったかも。大変申し訳ない。
+
+なんか初心者向けの勉強会って難しくて、当然入門本以上の話だと参加者が理解できない。かと言って、入門書の内容をするなら入門書読めばいいし。Railsの作法も最近僕自身はあまり気にしていない(というかそれなりに長いので割と感覚に近い感じになってきた)ので、作法ってなんだっけなって感じになってしまった。とりあえずRESTは重要だよなーと思いつつも、<a href='http://www.amazon.co.jp/gp/product/4774142042?ie=UTF8&tag=ukstudio0c-22&linkCode=shr&camp=1207&creative=8411&creativeASIN=4774142042&ref_=sr_1_1&qid=1329745527&sr=8-1' target='_blank'>Webを支える技術</a>を読めばいいしなーとも思うし。そんな感じで色々と迷走した結果がさきほどの資料です。
+
+今思うと、もうちょい別のアプローチもあったかなぁという気はする。これは対象者と話す内容を見誤った僕のミスだなぁ。あとは勉強会直前、結構忙しかったんだよね。忙しい時はやっぱり勉強会とか引き受けちゃダメだなぁ。申し訳ない。
+
+とりあえずこの間話した内容を理解するためのリソースは提示してあるので、やる気ある人は頑張ってください。既に資料から僕のアフィから買ってくれた人どうもありがとう。
+</article><hr /><article><h2><a href="/2012/02/20/motivation_benkyo-ka/">2012-02-20 勉強会とかで話す時のモチベーション</a></h2><ul>
+<li>その勉強会やコミュニティから得たものがあるので、恩返ししたい</li>
+<li>主催者もしくは声をかけてくれた人にお世話になったことがあるので恩返ししたい</li>
+<li>勉強会の目的・主旨に賛同し、何らかの協力をしたい</li>
+<li>たまたま自分が自主的に調べていた・勉強していた話題だった</li>
+<li>営業活動になりそう</li>
+<li>資料作りの時間を含めた上で、ある程度満足できる謝礼・報酬がでる</li>
+</ul>
+
+ぐだぐだ言ったけど、最終的には気分である。
+</article><hr /><article><h2><a href="/2012/01/11/rails3_primary_key_foreign_key_big_int/">2012-01-11 rails3でprimary keyとforeign keyをbig intにする</a></h2>以下は、PostgreSQLの例。
+<code><pre>ActiveRecord::ConnectionAdapters::PostgreSQLAdapter::NATIVE_DATABASE_TYPES[:primary_key] = 'bigserial primary key' </pre></code>
+外部キーの場合、<code>t.references :user</code>とか書いてると、ActiveRecord側でintegerがハードコーディングされているのでlimitオプションを付けるしかなさそう。
+<code><pre>t.references :user, :limit => 8</pre></code>
+</article><hr /></div></body></html>

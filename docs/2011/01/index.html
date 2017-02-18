@@ -1,0 +1,98 @@
+<!DOCTYPE html><html><head><meta charset="utf-8" /><!--Always force latest IE rendering engine or request Chrome Frame--><meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" /><meta content="width=device-width,initial-scale=1.0" name="viewport" /><title></title><link href="/stylesheets/dist/normalize.css" rel="stylesheet" /><link href="/stylesheets/dist/skeleton.css" rel="stylesheet" /><link href="/stylesheets/all.css" rel="stylesheet" /><script src="/javascripts/all.js"></script><link href="/feed.xml" rel="alternate" title="atom" type="application/atom+xml" /><script>var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-12755601-1']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();</script></head><body class="x2011 x2011_01 x2011_01_index"><div class="header"><div class="header-title"><h1><a href="/">ukstudio</a></h1></div></div><div class="container"><h1><Archive></Archive>Jan 2011</h1><article><h2><a href="/2011/01/23/bought_galaxy_tab/">2011-01-23 Galaxy Tabを購入した</a></h2>HT-03AからGalaxy Tabに機種変した。と言っても電話はこれしか持っておらず、さすがにGalaxy Tabで通話するのは不便なので機種変した後SIMを抜いてHT-03Aに戻した。Galaxy TabはWi-Fiメインで使う予定。今のところ外でGalaxy Tabからネットに繋ぐことはあまり考えてない。とは言え繋げるにこしたことはないので、今持っているイーモバをPocketWiFiにするか、b-mobileを契約するかぐらいのことは検討している。
+
+<h2>Galaxy Tabを購入した目的</h2>
+Galaxy Tabを購入した最大の目的は電子書籍。本については基本的に紙で読みたい派なのでちょっと前は「別に電子書籍とかいいや」と思っていたけど、仕事中に「あの本に書いてあった気がする。けど手元にない」みたいなことは結構良くあるので、その辺りのメリットを考慮して踏み切った。
+
+仕事中にという限定で言えば別に端末を買わずともPCにデータを入れておけばいいだけだ。にも関わらず端末を買ったのは本の大きさが原因で読む機会を減らしている物があること。例えば通勤中とかで本を読むのだけど、ある一定以上の大きさになると鞄から出すのが億劫になったり、そもそも鞄に入らないことが多い為。
+
+あともう1つの理由は、PCはやはりじっくり本を読むにはあまり適していないため。つまりは電子書籍買ったり自炊するんだったら、読み終わった本をデータとして持ち歩くだけでなく、最初から読むことも考えたかった。
+
+<h3>電子書籍としてのGalaxy Tabの評価</h3>
+評価と言っても他の端末を使っていないのであまり比較したものは言えないけど、僕からすると「必要十分」と言ったところ。PDFやepubのデータで読んでいるけど速度的には十分。流石に紙の本みたいにあるキーワードを探しながらペラペラめくるというのは厳しい。ただ、せっかくのデジタルなのでそこらへんは検索でカバーしたいところ。
+
+ちなみにPDFを読む為に使っているアプリはezPDF Readerと言うアプリ。有料だけど$1ぐらいだったと思うので問題ない。このアプリを使っている理由はブックマーク機能と文壇合わせ機能があること。Adobe Readerで読んでいる時はPDFの余白が結構邪魔で、端末のサイズが小さめのこともあって拡大を適宜調節するのがちょっと面倒だった。ezPDF Readerの文壇合わせは文章のブロックごとに余白を詰めてくれるので拡大をわざわざする必要がない。この機能が今のところezPDF Reader以外見当らなかったのでこれを使用している。
+
+端末のサイズ的には電車内で片手持ちをするならこのサイズが限界と言ったところか(人にもよるし女性だと辛いかもしれない)。逆に単純に電子書籍端末として考えると少し小さい気もする。この辺のバランスは人によって違うだろうから何とも言えない。個人的には満足してるし、現状販売されている端末の中だとこのサイズがベストだったと思う。
+
+<h2>Galaxy Tabを買って最初にやったこと</h2>
+<h3>root権の取得</h3>
+Galaxy Tabでrootを取得するには<a href="http://forum.xda-developers.com/showthread.php?t=833953">[APP] z4root - xda-developers</a>からz4rootのapkを取得してインストールすればいい(要会員登録)。インストールや使い方の詳細は検索すれば出てくると思うので割愛するが、とても簡単にroot化できる。root化は自己責任で。
+
+<h3>システムフォントをTakaoフォントに</h3>
+個人的にTakaoフォントが気に入っているのでGalaxy TabのシステムフォントをTakaoフォントにすることにした。手順はちょっと面倒だが以下の通り。ちなみにパソコンがUbuntu 10.10前提の話。
+
+まずは、Android SDKを用意してadbコマンドを使えるようにする。Galaxy TabはそのままだとDeviceとして認識されないので/etc/udev/rules.d/51.andorid.rulesにlsusbからidVendorとidProductというパラメータを記述しなければならない。この辺はDev Phoneと同じ問題っぽいので詳しくはDev Phoneについて検索するといいかも。
+
+<pre>SUBSYSTEM='usb', ATTRS{idVendor}=="04e8", ATTRS{idProduct}=="681c", MODE=="0666"</pre>
+
+ファイルを保存したら<code>sudo service udev restart</code>してやる。
+
+これだけでもまだadbで繋ぐには不十分でadbのserverをsudoで立ち上げてやらないといけない。
+
+<pre>
+$ adb kill-server
+$ sudo adb start-server
+$ adb devices # ここでdeviceが?????とかじゃなくちゃんと表示されていればOK
+</pre>
+
+adb shellで無事端末につなげたらフォントを書き換える為にsuしなくてはならない。suするとGalaxy Tab側でx4rootのアプリがrootを許可するかポップアップを出しているので許可してやる。システムフォントは/system/fonts以下に入っている。日本語フォントはDroidSansJapanese.ttfで、英語はDroidSans.ttfとDroidSans-Bold.ttf。他にもあるかもしれないけど今回書き換えたのはこの3つ。ちゃんとバックアップ取っておくこと。ハードリセットしても元には戻らない。
+
+/system以下がread onlyになっていたら再マウントする必要がある。最初にmountを叩いてどのデバイスがsystemにマウントされているか確認して再マウントしよう。
+
+<pre>
+# mount
+# mount -o remount,rw /dev/block/stl9 /system
+</pre>
+
+インストールするフォントはadbからpushするなり、USB接続してコピペするなりして転送する。僕は一旦/sdcardに置いてから、busyboxのcpで/system/fontsに移した(mvだとうまく出来なかったので)。busyboxはマーケットからインストールすることが出来る。日本語のフォントはサイズが大きいのでrenameしたものを3つ用意するよりは1つ置いてシンボリックリンクを貼るといい。リンク先は必ずsystem以下に置こう。/sdcard以下だとUSB接続した時とかにリンクが切れて、フォントを見つけられなくなったGalaxy Tabが延々と再起動を繰り返したりしてリセットせざるを得なくなる。
+
+<pre>
+# busybox cp /sdcard/TakaoGothic.ttf /system/fonts/
+# cd /system/fonts
+# ln -s TakaoGothic.ttf DroidSansJapanese.ttf
+</pre>
+
+これで端末の方でフォントを「標準フォント」に変更すればOK。
+
+<h2>全体的な使用感</h2>
+これもまた比較する端末がHT-03Aになるので何とも言えないけど、少なくともそこそこ快適に動作する。特にもたつきもないので、HT-03Aが余計に苦痛に感じられる程。画面サイズはTwitterやFacebook、Gmailなどのアプリを使うには非常に快適で、ブラウザでPCサイトも拡大・縮小がピンチイン・ピンチアウトでラクなのでそこそこ快適。ネットする程度ならPC起動する必要がないぐらい。ニコニコ動画はブラウザでもアプリでも見れてない。ブラウザはFlashがうまくうごいてない気がする。アプリはローディングが遅い(最初に全部読み込もうとしてるっぽい)から挫折しただけでもしかしたらちゃんと見れるかもしれない。
+
+そんな感じでGalaxy Tabは非常に満足している。今はちょうどキャンペーン中で4万しないぐらいで購入できた。値段的には割引価格後で個人的にはちょうどいいかなぁって感じ。もし買うなら今だし、買わないならせっかくなら他のタブレットが販売されるのを待った方がいいかもしれない。
+</article><hr /><article><h2><a href="/2011/01/20/what_is_software_design/">2011-01-20 ソフトウェア設計とは何か?(ソフトウェア工学とは何か?)</a></h2>ソフトウェア設計とは何か?というとても良い論文の翻訳があるのだけど、いつのまにか記事が無くなっていた。手元にあるテキストデータを公開しようにも翻訳者の方との連絡手段がない。
+
+幸いなことにarchive.orgに記事のアーカイブが残っている。ただ、このarchive.orgが検索でまともにヒットしないので、せめて今後この記事を探す人がいた時のことを考えてここにリンクを貼っておく。
+
+<a href="http://web.archive.org/web/20080803072849/www.biwa.ne.jp/~mmura/SoftwareDevelopment/WhatIsSoftwareDesignJ.html"> ソフトウェア設計とは何か?</a>
+</article><hr /><article><h2><a href="/2011/01/01/2010_retrospective/">2011-01-01 2010年のふりかえり</a></h2>新年あけましておめでとうございます。今年もどうぞよろしくお願い致します。
+
+去年のふりかえりの記事を去年中に書けなかったので、新年早々ブログを書いております。
+
+<h2>お仕事</h2>
+去年頭からフリーランスとして働きはじめてるけどまずは1年過ごせた。特に営業をせずともいくつかお仕事の紹介を頂いたり、実際にお手伝いさせてもらったりできるのは本当にありがたいことだなぁと思う。もし愛想つかしていらっしゃなければ今年もどうぞよろしくお願い致します。
+
+あと去年執筆したWEB+DBの記事は、思いの外好評で結構色々な人からお褒めを頂きました。たまに自分で読み直すけど、結構良く書けてるなぁと我ながら思う。あの時の自分すごい。この記事がきっかけでもう1つ進んでいるものがあるのだけれど、こっちも良いものにしたいなぁ。来年の夏頃にはお見せできるはずです。
+
+<h2>プログラミング</h2>
+去年はずっと自分なりのClean Codeを考えてたおかげか、ここ最近書くコードは以前に比べると大分マシになったと思う。あとはTDDを含めたTestingについても考えてるけど、この辺はまだまだ勉強不足な部分はあるなぁ。TDDそのもののやり方は大分馴染んできたけど、テストコードの書き方とか受け入れテストやモック/スタブの使い方がまだまだ。
+
+あとは使えるプログラミング言語が去年は増やせなかったなぁ。興味ある言語だけなら結構あるんだけど。今年はSmalltalkと関数型言語を何か1つ勉強したいなぁ。あとDCIやドメインモデルあたりの勉強もしたいな。去年中に理解することが出来なかったと言うか、そもそも勉強できてないというか。
+
+<h2>英語</h2>
+英語は去年も本当にだめだった。1年でそこそこ話せることを目標にしてたけど途中で頓挫した。今年こそはと意気込んでも多分また頓挫するので、ちゃんと計画を立てよう。これは英語に限らず。普段仕事で計画とか見積りとかやってる割には普段の私生活はそういうことあまりしてないのは良くないな。
+
+<h2>人とのつながり</h2>
+あと、去年一番強く意識したのが「人とのつながり」。Ruby会議やオブラブ、RailsDevConで会った人達、他にもasakusarb、mitakarb、ブログやWEB+DBの記事を見てお仕事を依頼してくれた人達、前々から知り合ってた人達。本当に色んな人に会ったと思う。色々な人とのつながりのおかげでできたことも多いし、人と合うことで新しい刺激と自分を見つめ直すことができた。去年は本当に色んな人から色んなものをもらえた、すごい良い年でした。
+
+<h2>今年</h2>
+去年は本当に良い年だったけど、それでもやっぱりいくつか出来なかったこともあるし、自分の未熟さを痛感することも多かったのでその辺は今年ちゃんとしたいな。毎年、あれやりたいこれが必要だをその場で判断してきてて、それはそれでそれなりに上手くまわっていたけど、今年はもうちょっと計画をたてていきたい。
+
+あとはRubyConfは今年こそ行こう。行きたいなーだと行かなそうなので、行くよ!とここに書いておこう。んで、現状のままで行っても英語よくわかりませんでしたで帰ってきそうなので、やっぱり諸々計画立てて動かないといけないのだ。
+</article><hr /></div></body></html>

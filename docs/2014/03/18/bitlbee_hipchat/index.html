@@ -1,0 +1,39 @@
+<!DOCTYPE html><html><head><meta charset="utf-8" /><!--Always force latest IE rendering engine or request Chrome Frame--><meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" /><meta content="width=device-width,initial-scale=1.0" name="viewport" /><!--Use title if it's in the page YAML frontmatter--><title>BitlBeeでHipChatに接続する</title><link href="/stylesheets/dist/normalize.css" rel="stylesheet" /><link href="/stylesheets/dist/skeleton.css" rel="stylesheet" /><link href="/stylesheets/all.css" rel="stylesheet" /><script src="/javascripts/all.js"></script><link href="/feed.xml" rel="alternate" title="atom" type="application/atom+xml" /><script>var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-12755601-1']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();</script></head><body class="x2014 x2014_03 x2014_03_18 x2014_03_18_bitlbee_hipchat x2014_03_18_bitlbee_hipchat_index"><div class="header"><div class="header-title"><h1><a href="/">ukstudio</a></h1></div></div><div class="container"><article><h1>BitlBeeでHipChatに接続する</h1><hr /><div class="article-body"><p>HipChatのLinuxクライアントは残念ながら日本語入力ができないのでかわりにIRCを使ってみる。
+HipChatはJabberが使えるのでBitlBeeを使ってJabber経由でIRCと繋ぐことにする。BitlBee自体の設定はなにもいらないので各環境にあわせて適当に入れて起動する。</p>
+<pre class="highlight plaintext"><code>sudo emerge bitlbee
+sudo /etc/init.d/bitlbee start
+</code></pre>
+
+<p>次にIRCクライアントでBitlBeeに接続する。BitlBeeはlocalhostに6667ポートで立ち上がっているので(コンフィグで修正していなければ)、そこに接続する。文字コードはUTF-8でOK。
+接続できたらbitlbeeの部屋でコマンドを入力し、アカウントを追加する。HipChatのJabberのアカウントは「Account Setting &gt; XMPP/Jabber info」にある。</p>
+<pre class="highlight plaintext"><code>account add jabber username@chat.hipchat.com 'password'
+</code></pre>
+
+<p>次に各ユーザがニックネームで表示されるように設定する。これをやらないと数字の羅列で誰が誰だかわからない状態になってしまう。</p>
+<pre class="highlight plaintext"><code>account hipchat set nick_source full_name
+</code></pre>
+
+<p>次にアカウントを有効化する。この時点で認証などもしているので失敗したらアカウント情報を見直すこと。</p>
+<pre class="highlight plaintext"><code>account hipchat on
+</code></pre>
+
+<p>有効化できたらすでに部屋に参加できるが数字の羅列が頭についているので使いにくい。別の名前を割り当てることができるので適当に自分が使いやすい名前をつける。</p>
+<pre class="highlight plaintext"><code>chat add hipchat room_jaber_name@conf.hipchat.com #channelname
+</code></pre>
+
+<p>ニックの設定次第だとHipChatから怒られるのでその場合HipCHatで使っている名前を設定する。</p>
+<pre class="highlight plaintext"><code>channel #channelname set nick 'room nickname'
+</code></pre>
+
+<p>無事、部屋にjoinしてログが流れてきたら終了。</p>
+<pre class="highlight plaintext"><code>/join #channelname
+</code></pre>
+</div></article></div></body></html>

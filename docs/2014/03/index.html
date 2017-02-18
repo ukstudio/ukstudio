@@ -1,0 +1,89 @@
+<!DOCTYPE html><html><head><meta charset="utf-8" /><!--Always force latest IE rendering engine or request Chrome Frame--><meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" /><meta content="width=device-width,initial-scale=1.0" name="viewport" /><title></title><link href="/stylesheets/dist/normalize.css" rel="stylesheet" /><link href="/stylesheets/dist/skeleton.css" rel="stylesheet" /><link href="/stylesheets/all.css" rel="stylesheet" /><script src="/javascripts/all.js"></script><link href="/feed.xml" rel="alternate" title="atom" type="application/atom+xml" /><script>var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-12755601-1']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();</script></head><body class="x2014 x2014_03 x2014_03_index"><div class="header"><div class="header-title"><h1><a href="/">ukstudio</a></h1></div></div><div class="container"><h1><Archive></Archive>Mar 2014</h1><article><h2><a href="/2014/03/27/erutaso_ebuild/">2014-03-27 lsと間違えてerutasoを打ってしまうGentoo/Funtooユーザーのみなさまへ</a></h2><p><a href="https://github.com/ukstudio/ukstudio-overlay/tree/master/app-shells/erutaso/">ebuild</a>を作ってみましたのでご活用ください。初めてのebuildなので不具合・不都合あればpull-reqを。ukstudioというoverlayを作りましたのでそこからインストールできるはずです。</p>
+
+<p><a href="https://github.com/ukstudio/ukstudio-overlay">https://github.com/ukstudio/ukstudio-overlay</a></p>
+<pre class="highlight shell"><code>curl https://raw.github.com/ukstudio/ukstudio-overlay/master/profiles/layman.xml &gt; /etc/layman/overlays/ukstudio-overlay.xml
+layman -f -a ukstudio
+
+emerge erutaso
+which erutaso <span class="c">#=&gt; /usr/bin/erutaso</span>
+
+erutaso
+</code></pre>
+
+<h2>See also</h2>
+
+<p><a href="https://twitter.com/sgymtic/status/448832543039574016">https://twitter.com/sgymtic/status/448832543039574016</a></p>
+</article><hr /><article><h2><a href="/2014/03/18/bitlbee_hipchat/">2014-03-18 BitlBeeでHipChatに接続する</a></h2><p>HipChatのLinuxクライアントは残念ながら日本語入力ができないのでかわりにIRCを使ってみる。
+HipChatはJabberが使えるのでBitlBeeを使ってJabber経由でIRCと繋ぐことにする。BitlBee自体の設定はなにもいらないので各環境にあわせて適当に入れて起動する。</p>
+<pre class="highlight plaintext"><code>sudo emerge bitlbee
+sudo /etc/init.d/bitlbee start
+</code></pre>
+
+<p>次にIRCクライアントでBitlBeeに接続する。BitlBeeはlocalhostに6667ポートで立ち上がっているので(コンフィグで修正していなければ)、そこに接続する。文字コードはUTF-8でOK。
+接続できたらbitlbeeの部屋でコマンドを入力し、アカウントを追加する。HipChatのJabberのアカウントは「Account Setting &gt; XMPP/Jabber info」にある。</p>
+<pre class="highlight plaintext"><code>account add jabber username@chat.hipchat.com 'password'
+</code></pre>
+
+<p>次に各ユーザがニックネームで表示されるように設定する。これをやらないと数字の羅列で誰が誰だかわからない状態になってしまう。</p>
+<pre class="highlight plaintext"><code>account hipchat set nick_source full_name
+</code></pre>
+
+<p>次にアカウントを有効化する。この時点で認証などもしているので失敗したらアカウント情報を見直すこと。</p>
+<pre class="highlight plaintext"><code>account hipchat on
+</code></pre>
+
+<p>有効化できたらすでに部屋に参加できるが数字の羅列が頭についているので使いにくい。別の名前を割り当てることができるので適当に自分が使いやすい名前をつける。</p>
+<pre class="highlight plaintext"><code>chat add hipchat room_jaber_name@conf.hipchat.com #channelname
+</code></pre>
+
+<p>ニックの設定次第だとHipChatから怒られるのでその場合HipCHatで使っている名前を設定する。</p>
+<pre class="highlight plaintext"><code>channel #channelname set nick 'room nickname'
+</code></pre>
+
+<p>無事、部屋にjoinしてログが流れてきたら終了。</p>
+<pre class="highlight plaintext"><code>/join #channelname
+</code></pre>
+</article><hr /><article><h2><a href="/2014/03/13/bittorrentsync_qnap_funtoo/">2014-03-13 BitTorrent SyncでQNAPとFuntooで同期する</a></h2><p>QNAPの一部のディレクトリ(主に電子書籍)とローカルのマシンで同期を取りたかったのでBitTorrent Syncで同期を取ってみる。NFSでもいいんだけど、電子書籍ぐらいならローカルにおけるぐらいのストレージ容量はあるので。</p>
+
+<h2>QNAPにBitTorrent Syncを入れる</h2>
+
+<p>基本的には<a href="http://www.qnap.com/useng/index.php?sn=9137">QNAPのドキュメント</a>を参照すれば問題ないと思う。簡単に説明しておくとQTSにBitTorrent Syncを追加し、BitTorrent SyncのWebUIを起動する。WebUIのアクセスユーザは途中で&quot;Please modify the Login ID / Password&quot;とか言われる画面でLogin IDとPasswordを入力し、Apply Changesをすればそのユーザで接続できる。</p>
+
+<p>次にBitTorrent SyncのWebUIが起動したらAdd Folderから該当のディレクトリを選択する。Secret KeyはここでGenerateしておく。(後でローカルの方の設定で使用する)。QNAP側はこれで終わり。</p>
+
+<h2>FuntooにBitTorrent Syncを入れる</h2>
+
+<p>FuntooはportageにBitTorrent Syncのebuildがあるのでそれを使う。</p>
+<pre class="highlight plaintext"><code>sudo emerge bittorrent sync
+</code></pre>
+
+<p>起動は<code>/etc/init.d/btsync start</code>だが、コンフィグの修正が必要。init.dで起動するとログがでないからわからないが、<code>/opt/btsync/btsync</code>で起動するとstorage_pathが存在しないと怒られるのがわかる。コンフィグは<code>/etc/btsync/config</code>がそう。</p>
+<pre class="highlight plaintext"><code>// "storage_path" : "/home/user/.sync",
+"storage_path" : "/home/ukstudio/.sync",
+</code></pre>
+
+<p>ディレクトリはお好みで。</p>
+
+<p><code>/etc/init.d/btsync start</code>で無事btsyncが起動したら、<a href="http://localhost:8888/gui%E3%81%A7WebUI%E3%81%AB%E3%82%A2%E3%82%AF%E3%82%BB%E3%82%B9%E3%81%A7%E3%81%8D%E3%82%8B%E3%80%82ID%E3%81%A8%E3%83%91%E3%82%B9%E3%81%AF&#x27;admin&#x27;%E3%81%A8&#x27;password&#x27;%E3%80%82">http://localhost:8888/guiでWebUIにアクセスできる。IDとパスは&#39;admin&#39;と&#39;password&#39;。</a></p>
+
+<p>WebUIにアクセスできたら、Add FolderでQNAPと同期させたいディレクトリを指定する。Secret Keyはここでは生成させず先程のQNAPのsecret keyをコピペする。保存し、WebUIのトップ画面で&quot;connected devices and status&quot;でダウンロード速度が表示されたら無事同期がはじまっている。</p>
+</article><hr /><article><h2><a href="/2014/03/13/openvpn_qnap_funtoo/">2014-03-13 FuntooからQNAPにOpenVPNでつなぐ</a></h2><p>まずはFuntooにOpenVPNを入れる。</p>
+<pre class="highlight plaintext"><code>sudo emerge openvpn
+</code></pre>
+
+<p>次にQNAPからOpenVPNの設定ファイルをダウンロードする。場所は「コントロール・パネル -&gt; アプリケーション -&gt; VPNサービス -&gt; 設定ファイルのダウンロード」にある。(QTS 4.0.3)</p>
+
+<p>zipが落ちてくるのでunzipするとca.crtとopenvpn.ovpnが展開されるので/etc/openvpnにmvする。他にOpenVPNで接続するところはないのでそのまま放りこむ。openvpn.opvnのままだと/etc/init.d/openvpn start時に怒られるのでopenvpn.confにリネーム。</p>
+<pre class="highlight plaintext"><code>/etc/init.d/openvpn start
+</code></pre>
+
+<p>で起動する。ユーザとパスを聞かれるのでadminで認証する。他のユーザーで認証したい場合はVPNサービスの設定からユーザを追加する。ローカルIPでQNAPに繋れば無事終了。</p>
+</article><hr /><article><h2><a href="/2014/03/05/kensington_slimblade/">2014-03-05 Kensingtonのslimbladeを導入</a></h2><p>ちょっと新しいマウスを捜してたのでこの機会にトラックボールに移行してみた。購入したのはKensingtonの<a href="http://www.amazon.co.jp/gp/product/B0024AFD42?ie=UTF8&amp;camp=1207&amp;creative=8411&amp;creativeASIN=B0024AFD42&amp;linkCode=shr&amp;tag=ukstudio0c-22">SlimBlade</a>。</p><p>昔はLinuxで使うと上の2つのボタンが使えなかったみたいだけど、今はパッチがあたったようで問題なく使える。なぜか右奥がバックボタンなのに左奥がミドルボタンだけど。この辺のリマップはxorg.confあたりでいいのかな。あまり困りはしないのでとりあえずは特に設定を変えずに使ってみることにする。</p></article><hr /></div></body></html>

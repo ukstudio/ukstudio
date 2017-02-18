@@ -1,0 +1,51 @@
+<!DOCTYPE html><html><head><meta charset="utf-8" /><!--Always force latest IE rendering engine or request Chrome Frame--><meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" /><meta content="width=device-width,initial-scale=1.0" name="viewport" /><title></title><link href="/stylesheets/dist/normalize.css" rel="stylesheet" /><link href="/stylesheets/dist/skeleton.css" rel="stylesheet" /><link href="/stylesheets/all.css" rel="stylesheet" /><script src="/javascripts/all.js"></script><link href="/feed.xml" rel="alternate" title="atom" type="application/atom+xml" /><script>var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-12755601-1']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();</script></head><body class="x2014 x2014_12 x2014_12_index"><div class="header"><div class="header-title"><h1><a href="/">ukstudio</a></h1></div></div><div class="container"><h1><Archive></Archive>Dec 2014</h1><article><h2><a href="/2014/12/14/esa_flow_stock/">2014-12-14 esaのストックとフローの絞り込みで(俺にとって)なにがうれしいのか</a></h2><p>そもそもesaのストックとフローの絞り込みってなに？っていう人は以下のリンクからどうぞ。</p>
+
+<p><a href="https://docs.esa.io/posts/31">release_note/2014/12/13/検索結果の絞り込み(Stock or Flow) - docs - esa.io</a></p>
+
+<p>簡単に説明するとesaではカテゴリに日付が入っている記事はフロー、入っていない記事はストックとして扱いそれらを分けて検索できるようになった。</p>
+
+<h2>結論から</h2>
+
+<p>たまには長い話をすっとばして結論を書く。簡単に言ってしまうと</p>
+
+<ul>
+<li>yy年mm月dd日にAの仕様を変更したよ</li>
+<li>現時点において最新の仕様はこうです</li>
+</ul>
+
+<p>という2種類の情報を前者はフロー、後者はストックとして分けて検索できるようになった。大体においてほしい情報というのは後者のストックなので個人的には非常にうれしい。</p>
+
+<h2>そもそもストックとフローとは</h2>
+
+<p>記事自体にストックとフローという概念をもたせるのは実はあまり新しい話でもなく、「wiki ブログ ストック フロー」で検索するとそれなりに記事がでてくる。要はwiki=ストック、ブログ=フローということだ。もちろん、wikiのあるページにフローの概念をもたせることもブログのある記事にストックの概念をもたせることも可能だけど大枠としてそういうことにする。<a href="http://jkondo.hatenablog.com/entry/2011/11/19/114109">ブログもストックっていう人もいるけど</a>、wikiとかブログとかはここではあまり重要ではないので置いておく。</p>
+
+<p>僕の捉え方でいうと、時系列にそって情報の流れがあるものはフロー、累積されていくようなものはストックと考えている(これなんの説明にもなっていないのでは…)</p>
+
+<h2>議事録はフロー</h2>
+
+<p>esaでそれなりの量の議事録を書いてきたけど、これらはMTGの日付をカテゴリに入れているのでフローだ。これらは日々の仕様の変更の流れをそのまま現しているのでフローとして扱うのは妥当だと思う。</p>
+
+<p><img src="/images/2014-12-14-flow.png" alt="flow.png" /></p>
+
+<p>こういった情報がフローだけだと困ることがある。議事録には変更の差分しか書かれていない。なので現時点であるべき仕様を議事録から読み解くのは大変だ。エンジニアにわかるようにいうとgitの各commitのdiffから現在のソースコードを想像しろというものだ。</p>
+
+<h2>そこでストック</h2>
+
+<p>つまり、フローである議事録とは別に今あるべき姿を累積する記事が必要になる。そこでesa上では日付の入っていない記事を作り、そこにあるべき姿を書いていく。重要なのはフローと違いストックはその記事をちゃんと更新する必要があるということだ。</p>
+
+<p>今まではこういう風にフローとストックの記事を分けてもうまく検索することができずにREADME.mdにリンクを貼っておくということしかできなかった。なのでそもそも人の目につかず、結果更新もされないという感じだったけれど、検索しやすくなったことで情報が古いことが目につきやすくなるので自然と更新も行われやすくなるのではないかと思う(みんな更新してね!)</p>
+
+<h2>おまけ</h2>
+
+<p>そもそも仕様をesaに書くの?みたいな話ありそうだけど、実装の前にメンバーに仕様を共有するケースはそれなりにあるし、コードを読んでもWhyがわからないのでなぜこうしたのかみたいな部分はドキュメントに残したりもする。</p>
+
+<p>それに今回は仕様の話を例にとったけど、例えばインフラまわりだと議事録でこういう構成にしたという話を残すのとは別に構成がかわったことによってデプロイ手順もかわったならそれはストックとして残したいという話もある。</p>
+</article><hr /></div></body></html>

@@ -1,0 +1,891 @@
+<!DOCTYPE html><html><head><meta charset="utf-8" /><!--Always force latest IE rendering engine or request Chrome Frame--><meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" /><meta content="width=device-width,initial-scale=1.0" name="viewport" /><title>ukstudio.jp</title><link href="/stylesheets/dist/normalize.css" rel="stylesheet" /><link href="/stylesheets/dist/skeleton.css" rel="stylesheet" /><link href="/stylesheets/all.css" rel="stylesheet" /><script src="/javascripts/all.js"></script><link href="/feed.xml" rel="alternate" title="atom" type="application/atom+xml" /><script>var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-12755601-1']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();</script></head><body class="page page_9 page_9_index"><div class="header"><div class="header-title"><h1><a href="/">ukstudio</a></h1></div></div><div class="container"><div class="row"><article class="one"><h1 class="article-title"><a href="/2008/02/07/programming_for_beginner/">そろそろ「初心者用言語」について一言いっておくか</a></h1><div class="article-time"><time dateMime="2008-02-07 00:00:00 UTC" pubdate="pubdate">February 07 2008</time></div><div class="article-body"><a href="http://generation1986.g.hatena.ne.jp/ukstudio/20080204/1202113687">最もタメになる「初心者用言語」まとめ UK is not Britonish</a>
+
+「いい嫁」程度のお遊びのつもりでいたら、結構な騒ぎになっちゃっいました。とりあえずあのまとめを見ても、初心者の人は混乱してしまうと思うので自分なりに初心者さんへのメッセージもこめてエントリーを書いてみました。
+
+<h2>簡単な流れの説明</h2>
+一応簡単に今回の流れを説明しておくと、「初心者用言語」の流れの発端はまつもとさんの「<a href="http://www.rubyist.net/~matz/20080204.html#p01">初心者向けの言語</a>」。その後に、amachangの「<a href="http://d.hatena.ne.jp/amachang/20080204/1202096633">最もタメになる「初心者用言語」はJavaScript</a>」、西尾さんの「<a href="http://d.hatena.ne.jp/nishiohirokazu/20080204/1202104617">最もタメになる「初心者用言語」はPython!</a>」、hayamizの「<a href="http://d.hatena.ne.jp/hayamiz/20080204/1202108447">最もタメになる「初心者用言語」はScheme!</a>」と続く。後続の人達は彼等のエントリーや、オレのまとめを見て流れにのったんだと思う。
+
+<h2>初心者の定義</h2>
+流石に後の方になって「初心者とは具体的にどのような人を指すのか」という指摘がチラホラ出てきた。確かに今回の祭り全体を通して「初心者」の定義が曖昧で、エントリーを書いている人が想定している初心者像は各人それぞれな感じ。
+
+今更「初心者」の定義をここでしたところで時既に遅しなのと、プログラマ経験者達が一般に言う「初心者」が多様なので、その辺りはあまり拘らずに話をすすめたいと思う。
+
+<h2>何がしたいのか</h2>
+今更言うことでもないのかもしれないけど、プログラミング言語はあくまでツールであり、プログラミングは手段。(まぁオレの場合、プログラミングそのものが目的になってる時も多いけど)
+
+ツールである以上、<strong>達成したい目的に合わせて言語は選ぶべき。</strong>
+
+その為にはまず<strong>自分が何がしたいのか</strong>を考えた方がいい。仕事でプログラミングを覚える必要があるなら、仕事で使う言語を選ぶべきだろうし、Webアプリを作りたいのであれば、PHP、Perl、Rubyあたりになると思う。そこからさらに開発環境や使えるサーバーから絞り込んでいけばいい。
+
+もし、特に目的がなく漠然と「プログラミングしてみたい」と思っているとしたら、それこそ言語は何でもいいと思う。ただ、最初からプログラミングを目的してるとなんとなく挫折しやすい様にも思える。
+とりあえず何でもいいから目的(ブログを作りたい、Twitterクライアントを作りたい、etc...)があった方が、モチベーションも保つし、自ずと方向性も決まってくるから学習しやすいと思う。
+
+<h2>まわりに教えてくれる人がいるか</h2>
+それと出来ればまわりに教えてくれる人がいる言語を選んで欲しい。もちろん、本やネットの情報だけで独学することも可能と言えば可能だけど、<strong>やっぱり身近に質問ができる人、アドバイスをしてくれる人がいるっていうのは大きい。</strong>
+
+<blockquote>
+そのジャンルにおける本当の初心者にとっては助けてくれる人の存在がかなり大事だと思う。
+</blockquote>
+<a href="http://www.akiyan.com/blog/archives/2008/02/post_106.html">あなたがプログラミングの初心者なら、友人知人が使っている言語にするといい</a>
+
+<h2>興味があれば他の言語にも触れてみて</h2>
+「達人プログラマー - システム開発の職人から名匠への道 -」では「<strong>毎年少なくとも一つの言語を学習する</strong>」ことを薦めている。
+
+<blockquote>
+言語が異なると、同じ問題でも違った解決方法が採用されます。つまり、いくつかの異なったアプローチを学習することにより、幅広い思考ができるようになるわけです。
+</blockquote>
+
+例えば、普段使っている言語がPHPだとしたら、低レベルかつ静的型付けのCや、関数型言語のHaskell、Lisp(Common Lisp、Scheme)などに手を出してみるといいと思う。
+
+参考:<a href="http://itpro.nikkeibp.co.jp/article/COLUMN/20070618/275142/">総論 複数のプログラミング言語を学ぶ意義 - IT Pro</a>
+参考:<a href="http://d.hatena.ne.jp/yuki_neko_nyan/20071011/1192069372">「関数型言語を学ばないといけませんか?」- 猫的怠惰生活Days</a>
+
+<table border="0" cellpadding="5"><tr><td valign="top"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4894712741/ukstudio0c-22/" target="_top"><img src="http://ecx.images-amazon.com/images/I/119HY1S5M2L.jpg" border="0" alt="達人プログラマー―システム開発の職人から名匠への道" /></a></td><td valign="top"><font size="-1"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4894712741/ukstudio0c-22/" target="_top">達人プログラマー―システム開発の職人から名匠への道</a><br />アンドリュー ハント デビッド トーマス Andrew Hunt <br /><br />ピアソンエデュケーション  2000-11<br />売り上げランキング : 8641<br /><br /><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4894712741/ukstudio0c-22/" target="_top">Amazonで詳しく見る</a></font><font size="-2"> by <a href="http://www.goodpic.com/mt/aws/index.html" >G-Tools</a></font></td></tr></table>
+
+<h2>なにより楽しむ</h2>
+色々書き並べてみましたが、一番大事なのは<strong>あなたがプログラミングを楽しむことです。</strong> 仕事でも趣味でも大いにプログラミングを楽しんで下さい。
+</div></article><article class="one"><h1 class="article-title"><a href="/2008/02/02/doukaku_lifegame/">Rubyでライフゲーム書いた</a></h1><div class="article-time"><time dateMime="2008-02-02 00:00:00 UTC" pubdate="pubdate">February 02 2008</time></div><div class="article-body"><a href="http://ja.doukaku.org/comment/5581/">どう書く?org #5581</a>
+
+久々にどう書くorgに投稿してみた。1個1個セルの周り調べてくのも面白みがないなと思って、生きてるセルの周りをスコア付けしてくやり方でやってみた。
+
+生きてるセルに+10し、生きてるセルの周りに+1していく。最終的にスコアが3(まわりに3つの生きてるセルがある)のセルは次世代で誕生するセルと判断。スコアが12もしくは13の(今の世代で生きてるセルで、まわりに2つもしくは3つの生きてるセルがある)のセルは次世代も維持するセルと判断。
+
+テストはWikipediaの<a href="http://ja.wikipedia.org/wiki/ライフゲーム">ライフゲームのページ</a>から振動型(ブリンカー、ヒキガエルなど)を試しただけで、テストコードすら書いてない。だからもしかしたら間違ってるかもしれない。許せ。
+
+<pre lang="ruby">
+require 'curses'
+
+module LifeGame
+  class World
+    def initialize(map)
+      @map = map
+    end
+
+    def to_s
+      str = ""
+      @map.each do |line|
+        line.each do |cell|
+          str += "[#{cell}]"
+        end
+        str += "¥n"
+      end
+
+      str
+    end
+
+    def next
+      ranking.each_with_index do |line, h|
+        @map[h] = line.map {|cell| [3, 12, 13].include?(cell) ? '*' : ' ' }
+      end
+    end
+
+    private
+    def live_list
+      list = []
+      @map.each_with_index do |line, h|
+        line.each_with_index {|cell, w| list < < [h,w] if cell == '*'}
+      end
+
+      list
+    end
+
+    def set_score(rank_map, live)
+      (-1..1).each do |x|
+        (-1..1).each do |y|
+          score = x == y && y  == 0 ? 10 : 1
+          rank_map[live[0]+x][live[1]+y] = rank_map[live[0]+x][live[1]+y] + score
+        end
+      end
+    end
+
+    def ranking
+      rank_map = List.new
+      @map.size.times { rank_map << List.new(@map[0].size, 0) }
+
+      live_list.each do |live|
+        set_score(rank_map.clone, live)
+      end
+
+      rank_map
+    end
+  end
+
+  class List < Array
+    alias original_get []
+    alias original_set []=
+
+      def [](index)
+        original_get(index % size)
+      end
+
+    def []=(index, value)
+      original_set(index % size, value)
+    end
+  end
+end
+
+if __FILE__ == $0
+  begin
+    game = LifeGame::World.new([
+                                [' ', '*', ' ', ' ', ' ', ' ', '*', '*', '*', ' '],
+                                [' ', ' ', ' ', ' ', '*', ' ', ' ', '*', '*', ' '],
+                                [' ', ' ', ' ', '*', ' ', ' ', '*', ' ', '*', ' '],
+                                ['*', ' ', '*', '*', ' ', ' ', '*', ' ', ' ', ' '],
+                                [' ', '*', ' ', ' ', ' ', ' ', ' ', ' ', '*', ' '],
+                                ['*', ' ', ' ', ' ', '*', ' ', '*', '*', ' ', '*'],
+                                [' ', '*', ' ', ' ', ' ', ' ', '*', ' ', ' ', ' '],
+                                [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', '*'],
+                                ['*', ' ', ' ', ' ', ' ', ' ', '*', ' ', ' ', '*'],
+                                [' ', ' ', ' ', ' ', '*', '*', ' ', ' ', '*', ' ']])
+
+    window = Curses::Window.new(Curses.lines, Curses.cols, 0, 0)
+    loop do
+      window.setpos(0, 0)
+      window.addstr(game.to_s)
+      game.next
+      window.getch
+    end
+  ensure
+    window.close
+  end
+end
+</pre></pre>
+</div></article><article class="one"><h1 class="article-title"><a href="/2008/01/22/yaboo/">野望新年会に参加してきました</a></h1><div class="article-time"><time dateMime="2008-01-22 00:00:00 UTC" pubdate="pubdate">January 22 2008</time></div><div class="article-body">書くのが遅くなっちゃいましたが、なんとかエントリーアップです。
+
+
+<a href="http://www.yabooo.org/archives/13">いずれにせよ野望新年会2008</a>
+
+19日、pinkmacさん主催の野望新年会に乗り込んできました。きっかけとしてはpinkmacさんの1981sでのエントリー。(<a href="http://born1981.g.hatena.ne.jp/pinkmac/20080108/1199798490">いま、日本のITは変わるかもしれない</a>)
+
+
+1986って書いてあったので、せっかくだから行ってみるかーぐらいのノリ。こっそり1986sの方で<a href="http://generation1986.g.hatena.ne.jp/ukstudio/20080111/1200060303">宣伝</a>してたわけだけど、86sの人に聞いたら結構これを見て知ったって人が何人かいた。よかったよかった。
+
+
+参加者は大体20人ほど。86世代から団塊世代(オレの40歳ぐらい年上!!)まで。学生や社会人、さらには外人の方まで!かなり多種多様な人達で構成されてました。実は参加者を事前に一切知らなくて、いざ集まってみたら、エロギークのyusukebeさんや先日はてなを退職し、百度にうつったid:mizuno_takaakiさんとかがいてびっくり。
+
+
+LTの詳細は各人の資料やエントリーにまかせたいと思うけど、印象としてはみんな色んなことしてるんだなぁって感じ。個人的に特に印象に残っているのは、<a href="http://d.hatena.ne.jp/earth2001y/">id:earth2001y</a>さんのC++でのFizzBuzz、<a href="http://yusukebe.com/">yusukebe</a>さんのYourAVHostの話、<a href="http://d.hatena.ne.jp/mizuno_takaaki/">id:mizuno_takaaki</a>さんの中国との開発の話(文字コードとか)がおもしろかった。
+
+
+で、結局「野望会」ってなんなの？って話なんだけど、正直うまく説明できない。そこで、みんなはレポどんなの書いてるわけと色々漁ってたら、yusukebeさんがうまく言い表してくれてた。<a href="http://yusukebe.com/archives/08/01/21/205726.html">「わからない」という求心力</a>。うまいなぁ・・・
+
+
+そんなわけで、無事「野望新年会」おわりました。pinkmacさんをはじめ、事務局の皆さん、参加者の皆さん、お疲れ様でした。とても楽しかったです。なんか色々これからもおもしろそうなことがありそうな集まりなので、ちょこちょこ参加していけたらいいなぁと思います。
+
+どうぞよろしく!!
+</div></article><article class="one"><h1 class="article-title"><a href="/2008/01/12/ruby_tumblr_getimages_2nd/">Tumblrの全画像を取得するRubyスクリプト改</a></h1><div class="article-time"><time dateMime="2008-01-12 00:00:00 UTC" pubdate="pubdate">January 12 2008</time></div><div class="article-body"><a href="http://uk-studio.net/2008/01/11/ruby_tumblr_getimages/">Tumblrの全画像を取得するRubyスクリプトを書いた・・・けど</a>
+
+上のエントリーのコードを書き直した。これで10kb未満の画像でも問題ないはず。それとTumblrのIDを引数で与えるようにも修正した。独自ドメインのやつには対応してないです。ごめんなさい。
+
+あとこっそり<a href="http://coderepos.org/share/browser/lang/ruby/misc/tumblr_getimages.rb">CodeReposにCommitした</a>ので、煮るなり焼くなりお好きにどうぞ。
+
+<pre lang="ruby">
+require 'open-uri'
+require 'rexml/document'
+require 'FileUtils'
+
+if ARGV.size != 1
+  puts "Usage: #{$0} [id] "
+  exit
+end
+
+id = ARGV[0]
+
+res = open(url)
+doc = REXML::Document.new(res.read)
+total = REXML::XPath.first(doc, "/tumblr/posts").attributes['total'].to_i
+
+0.step(total, 50){|n|
+  image_list = []
+  res = open(url + "&start=#{n}")
+  doc = REXML::Document.new(res.read)
+  data = REXML::XPath.match(doc, "/tumblr/posts/post")
+  data.each{|i| image_list < < i.elements['photo-url'].text }
+
+  image_list.each{|image_url|
+    open(image_url) do |image|
+      open(image_url.split(/\//).last, "w") do |local_image|
+        local_image.write(image.read)
+      end
+    end
+  }
+}
+</pre></pre>
+</div></article><article class="one"><h1 class="article-title"><a href="/2008/01/12/blog/">オレがブログを書く理由</a></h1><div class="article-time"><time dateMime="2008-01-12 00:00:00 UTC" pubdate="pubdate">January 12 2008</time></div><div class="article-body">まめこの「<a href="http://blog.woopsdez.jp/2008/01/post_294.php">車輪の再発明だとしても記事は書くべき</a>」に反応してみる。「記事をかくべき」というのには非常に同意。
+
+じゃあ、なぜ「かくべき」なのか。それは人それぞれになると思うけど、オレがブログを書く理由を簡単にまとめてみたのでよければ参考にしてほしい。
+
+<h2>ブログは自分の為に書く</h2>
+基本的にブログは自分の為に書いている。あまり他の人に役立つかどうかとか、誰か似たようなこと書いてるだろうなとかは気にしない。
+
+<h3>思考のツールとしてのブログ</h3>
+文章を書くということは、ある程度自分の思考を整理することになる。別にこれだけならブログでなくとも、ノートや日記帳、テキストファイルやローカルなWikiでもいい。けれど、公開してるブログにはそれらにない特徴がある。
+
+不特定多数の人に見られるということである。
+
+不特定多数に見られるということは、少なくとも自分が「人にみせてもいい」と思えるレベルになるまで文章を推古することになる。その過程で自分なりになるべく客観的に文章を判断しようとする。そうすることで今迄とはまた違った視点で物事を考えられるわけだ。
+
+また、不特定多数から何らかの反応(コメント、トラックバック、etc)があった場合、それはローカルな環境での記録ではなかなか得られないものだ。自分のノートに書いといただけでは、誰もそれについて考えるといったことはしない。
+
+<h3>最大の読者は自分</h3>
+当たり前の話だけど、過去の自分に会うことはできない。もちろん、昔に自分がどんなことを考え、どんなことをしていたのか覚えてるとも限らない。人は忘れる生き物だ。
+
+けれどブログに記事を書いておけば、その記事を見にいくことによって擬似的にだけど当時の自分と会うことができる。過去の自分は全くの別人なのではないかと思う時もある程、思考の違いに驚くことがある。過去のエントリと現在の自分の思考の違いから学ぶことも多いものだ。
+
+ある一定以上、ブログを続けているとそのうちデータベースとして機能するようになる。自分が何を考え、何に悩んでいたのか。そしてどんな行動をしてきたのか。それらが記録されているブログは後に貴重な財産となるはず。
+
+<h3>コラボレーション</h3>
+各人のアウトプットが1つのコラボレーションを生むことがある。最近の例で言えば、<a href="http://born1981.g.hatena.ne.jp/">1981s</a>がそうなのではないかと思う。
+
+<a href="http://d.hatena.ne.jp/kamawada/20071128/1196228938">ゆーすけべーさんが発案</a>し、<a href="http://d.hatena.ne.jp/amachang/20071128/1196241194">amachangが呼び掛ける</a>。実はあまり詳しい経緯を追ってないので間違ってたら申し訳ないけれど、少なくともゆーすけべーさんが記事をかかなければ1981sが存在しなかったのは確か。
+
+1981sに限らず、誰かがブログで言いだしたのがきっかけで生まれたものはたくさんあるんじゃないかと思う。
+
+<h2>「書くべき」は言い過ぎかもしれないけど</h2>
+最初に同意しといてここで言い過ぎと言うのはおかしいかもしれないけど、そもそも強制されるようなものでもないと思うので。ただ、少なくともオレはブログを書くことで色々得るものが多いと思うので「ブログイイヨー、オススメダヨー」ぐらいのノリでオススメしておきます。
+</div></article><article class="one"><h1 class="article-title"><a href="/2008/01/11/ruby_tumblr_getimages/">Tumblrの全画像を取得するRubyスクリプトを書いた・・・けど</a></h1><div class="article-time"><time dateMime="2008-01-11 00:00:00 UTC" pubdate="pubdate">January 11 2008</time></div><div class="article-body">今じゃほとんどTumblrは使ってないんだけど、なんとなく画像を取得するスクリプトを書いてみた。iPod touchに放り込んでみようかなとか思ったのよ。
+
+とりあえずコード。
+<pre lang="ruby">
+require 'open-uri'
+require 'rexml/document'
+require 'FileUtils'
+
+res = open(url)
+doc = REXML::Document.new(res.read)
+total = REXML::XPath.first(doc, "/tumblr/posts").attributes['total'].to_i
+
+0.step(total, 50){|n|
+  image_list = []
+  res = open(url + "&start=#{n}")
+  doc = REXML::Document.new(res.read)
+
+  data = REXML::XPath.match(doc, "/tumblr/posts/post")
+  data.each{|i| image_list < < i.elements['photo-url'].text }
+
+  image_list.each{|image|
+    tempfile = open(image)
+    FileUtils.cp(tempfile.path, image.split(/\//).last)
+  }
+}
+</pre>
+ちなみにXPathはどんなものかなんとなくは知っていたけれど使うのは初めて。
+
+処理内容としてはTumblr APIを使って50件ずつ画像のURLを取得して、1個ずつカレントディレクトリにコピーすると言う至極単純な方法を選んだ。人によっては1000単位で画像があるだろうから(ちなみにオレは1000ちょいだった)かなり時間がかかると思う。
+
+1つよくわからない現象が起きていて、とある画像を取得するタイミングで必ずエラーが発生する。どの画像かまでは調べてないけど、いつも同じ画像なのは確か。
+
+</pre><pre lang="bash">
+/opt/local/lib/ruby/1.8/FileUtils.rb:1407:in `fu_each_src_dest0': undefined method `to_str' for nil:NilClass (NoMethodError)
+        from /opt/local/lib/ruby/1.8/FileUtils.rb:1393:in `fu_each_src_dest'
+        from /opt/local/lib/ruby/1.8/FileUtils.rb:382:in `cp'
+        from tumblr_getimages.rb:19
+        from tumblr_getimages.rb:17:in `each'
+        from tumblr_getimages.rb:17
+        from tumblr_getimages.rb:10:in `step'
+        from tumblr_getimages.rb:10
+</pre>
+
+とりあえず、openで取得したtempfileとtempfile#pathをpで表示してみた。以下がその問題が起きる部分。なぜにStringIO・・・?
+<pre lang="bash">
+#<file :/var/folders/ni/niHXwO9-GoO0yPJpz3WMm++++TI/-Tmp-/open-uri.1153.4>
+"/var/folders/ni/niHXwO9-GoO0yPJpz3WMm++++TI/-Tmp-/open-uri.1153.4"
+#</file><file :/var/folders/ni/niHXwO9-GoO0yPJpz3WMm++++TI/-Tmp-/open-uri.1153.5>
+"/var/folders/ni/niHXwO9-GoO0yPJpz3WMm++++TI/-Tmp-/open-uri.1153.5"
+#<stringio :0x5c4af4>
+nil
+</stringio></file></pre>
+
+無理矢理な対処としてはコピーの処理の時にオブジェクトのクラスを調べて、StringIOを回避すればとりあえずは何とかなる。そのかわり、その画像はローカルに保存されないけれど。
+
+<pre lang="ruby">
+  FileUtils.cp(tempfile.path, image.split(/\//).last) if tempfile.kind_of?(Tempfile)
+</pre>
+
+ちなみに1000件も取得するのが途中で面倒になってしまったので最後まで取得できるかまでは試してない。一応100件ぐらいは取得できたけど。
+
+tumblrのIDとか取得の開始地点、1回で取得する件数とかそのまま直書きしちゃってるけど、コマンドラインの引数で与えるようにすればそれなりに使い勝手がよくなるかもしれない。
+
+本当はページ番号と1ページごとの件数を与えれば、そのページの画像を取得するようにするつもりだったんだけどね。他にもテキストとかがたんぶらってあったりすると画像の数が不確定で、そこらへんどううまく処理するかとか考えると結構時間かかりそうだったからやめた。
+
+<h2>追記: 08/01/11 6:13</h2>
+エラーが発生する画像を特定した。
+<a href="http://data.tumblr.com/14065003_500.jpg">http://data.tumblr.com/14065003_500.jpg</a>
+
+パっと見、普通の画像なんだけどな。試しにirbから取得してみる。
+<pre lang="ruby">
+>> require 'open-uri'
+=> true
+>> tempfile = open("http://data.tumblr.com/14065003_500.jpg")
+=> #<stringio :0x3d4384>
+</stringio></pre>
+やっぱり、StringIOオブジェクトだ・・・なんでー?
+
+<h2>追記: 08/01/11 10:25</h2>
+ちょっとググってみたらruby-listの過去ログが引っかかった。
+
+<a href="http://blade.nagaokaut.ac.jp/cgi-bin/scat.rb/ruby/ruby-list/40937">Re: multipartフォームから受け取ったオブジェクトにstatメソッドでエラー</a>
+
+上のリンクはcgi.rbの話だけど、open-uriでもどうやら10kb未満の画像だとTempfileではなく、StringIOになる模様。ちなみに該当の画像は8kbでした。こやつめ、ハハハ。
+
+<h2>追記 08/01/12 1:27</h2>
+コードを修正しました。
+<a href="http://uk-studio.net/2008/01/12/ruby_tumblr_getimages_2nd/">Tumblrの全画像を取得するRubyスクリプト改</a>
+</div></article><article class="one"><h1 class="article-title"><a href="/2008/01/09/2007_history/">2007年はTwitterが中心の1年でした</a></h1><div class="article-time"><time dateMime="2008-01-09 00:00:00 UTC" pubdate="pubdate">January 09 2008</time></div><div class="article-body">今更感があふれるエントリですね。
+
+<h2>1、2、3月</h2>
+<ul>
+<li>覚えてない</li>
+</ul>
+<h2>4月</h2>
+<ul>
+<li><a href="http://twitter.com/ukstudio/statuses/20520981">Twitterを始める</a></li>
+</ul>
+<h2>5月</h2>
+<ul>
+<li>CSS Nite LP3に参加</li>
+</ul>
+<h2>6月</h2>
+<ul>
+<li><a href="http://uk-studio.net/2007/06/21/twitter_offline_party/">amachang主催のついったーオフに参加</a></li>
+<li>miniturbo主催のモバイル勉強会に参加</li>
+<li><a href="http://uk-studio.net/2007/06/24/twitter_meganeoff/">ついったーメガネオフに参加</a></li>
+</ul>
+<h2>7月</h2>
+<ul>
+<li>amachang主催、JSを語り合う会に参加</li>
+<li><a href="http://uk-studio.net/2007/07/16/070714_js/">JS勉強会を主催</a></li>
+<li><a href="http://uk-studio.net/2007/07/08/start-macbook/">UK、マカーになる</a></li>
+<li>WEB標準の日々に参加</li>
+</ul>
+<h2>8月</h2>
+<ul>
+<li>ついったー盆フェスに参加</li>
+<li>LL魂に参加</li>
+<li>@youchan主催セキュリティ勉強会に参加</li>
+</ul>
+<h2>9月</h2>
+<ul>
+<li>PHPカンファレンス2007に参加</li>
+<li>Shibuya.js 24に参加</li>
+<li>ついったー写真部スタジオ勉強会に参加</li>
+<li>woopsdez主催デザイン勉強会に参加</li>
+<li><a href="http://uk-studio.net/2007/09/07/ipod_touch/">iPod touchを予約する</a></li>
+<li>Rubyを始めた気がする</li>
+</ul>
+<h2>10月</h2>
+<ul>
+<li>なんかのんびりしてた気がする</li>
+</ul>
+<h2>11月</h2>
+<ul>
+<li>ジョジョの奇妙な冒険にハマる</li>
+<li>某社面接</li>
+</ul>
+<h2>12月</h2>
+<ul>
+<li>ついったー忘年会に参加</li>
+<li><a href="http://uk-studio.net/2007/12/28/mac_leopard/">Leopard買った</a></li>
+<li><a href="http://generation1986.g.hatena.ne.jp/">1986's発足</a></li>
+<li>@yoshioriの家で年越し</li>
+</ul>
+<h2>ついったーで生活が一変</h2>
+いや、本当に変わりすぎだろっていうぐらい変わってるなぁ。特に6月から9月がやばい。かなりアクティブ。まさか勉強会まで主催するとは。上には書いてないけれど、他にも結構細々としたところで生活が変わってる。まさについったー中心の年でした。
+
+<h2>ありがとう。今年もよろしく</h2>
+ついったーで知り合ったとある数名(名前は出さないけど察しろ。約3名だ)は5、6月ぐらいからかなりお世話になってるわけだけど、本当にありがたいことです。かなりプライベートな面までお世話になってるような・・・色々迷惑かけてると思うけど今年もよろしくです。
+
+他にも直接面識はないけれど、ついったーを始めるきっかけになった100SHIKIの田口さんや、はじめてついったったーと会う勇気をくれた@amachang、@miniturbo。イベントを企画・主催してくれた人達や、勉強会の会場を提供してくれた@elfさん。本当に関西に住んでるんだかよくわからない某ぺんぎんをはじめ、たくさんのついったったーにもお世話になりました。ありがとうございます。
+
+あと忘れちゃいけないのが、ついったーの開発陣ですね。遅延だのメンテだの色々あったけれど、ついったーがあって本当によかったと思います。ありがとう。
+
+そんなわけで2007年はなかなか忘れられない年になりそうです。2008年はどんな年にしようかな。
+</div></article><article class="one"><h1 class="article-title"><a href="/2008/01/06/1986s/">86世代あつまれー</a></h1><div class="article-time"><time dateMime="2008-01-06 00:00:00 UTC" pubdate="pubdate">January 06 2008</time></div><div class="article-body">ちょこちょこと一部で話題にあがってた同世代のエンジニアで集まってみようの件だけど、yuyarinさんがはてなグループを作ってくれました。
+
+<a href="http://d.hatena.ne.jp/yuyarin/20071221/1198240756">IT＆IS系の'86世代でちょっと集まってみませんか？＠東京</a>
+<a href="http://generation1986.g.hatena.ne.jp/yuyarin/20071230/1199018717">1986のはてなグループ作ったよー</a>
+<a href="http://generation1986.g.hatena.ne.jp/">1986s</a>
+
+現時点のメンバーはこんな感じ↓
+<a href="http://generation1986.g.hatena.ne.jp/keyword/メンバー一覧">メンバー一覧</a>
+まだまだ少ないので参加者求む。
+
+<a href="http://twitter.com/_tad_/statuses/565676282">都市伝説と思われていたujihisaさん</a>もいるよ!
+
+それにしても、年上だと思ってた人が結構いるんだよなぁ。なんか「若い」ってことを言い訳にできない気がした。
+</div></article><article class="one"><h1 class="article-title"><a href="/2008/01/02/agile_practice/">アジャイルプラクティス - 達人プログラマに学ぶ現場開発者の習慣</a></h1><div class="article-time"><time dateMime="2008-01-02 00:00:00 UTC" pubdate="pubdate">January 02 2008</time></div><div class="article-body"><a href="http://fkino.net/">木下さん</a>と<a href="http://kakutani.com/">角谷さん</a>が監訳したアジャイル本。なんとか年内に読み終わった。このエントリーを書くのは2008年になってしまったけど。
+
+<h2>アジャイルな開発者もそうでない開発者も</h2>
+今までアジャイルな開発とは無縁だった人達も、既にアジャイルな開発手法を採用している人達、どちらの人達にも得るものがある本だと思う。前者の人達にはこれからの道標として、後者の人達には振り返りとして。ちなみに私は前者。
+
+そもそも本書での「アジャイル」の定義は以下のようになっている。
+<blockquote>
+開発がアジャイルであるということは、協調性を重んじる環境で、フィードバックに基づいた調整を行ない続けることである
+</blockquote>
+
+つまり、開発手法がXPとかScrumである必要はないし、極端な話、組織とかすら関係なく開発者が自分1人だけでもアジャイルな開発は行なえる。なぜなら、未来の自分に対してフィードバックをすればいい話だから。アジャイルプラクティスにも1人で実践できるプラクティスがいくつか載っている。
+
+<h2>悪魔の囁き、天使の助言</h2>
+各プラクティスの構成は、悪魔の囁きに打ち勝つべく天使の助言を授かるという形ですすめられている。まさに表紙の通り悪魔 VS 天使の構図なわけだ。悪魔の囁きはちょっと表現がオーバーな気もするけど、そこが悪魔っぽいと言えば確かに悪魔っぽい。仮に悪魔の囁きにピンとこなかったとしても、天使の助言は聞いとくべきだし、なんなら悪魔の囁きを自分なりに変えてみるのもいいと思う。
+
+<h2>まずは1つのプラクティスから</h2>
+いくら天使の助言を聞いたところで、それを習慣にしなければ意味がない。アジャイルプラクティスには全部で45のプラクティスが掲載されているが、流石に一度に全部実践しようと思ってもまず無理だ。とりあえず自分にとって重要なプラクティスを1つ選んで、それが習慣づいたところで次のプラクティスに進むのがいいと思う。(プラクティスによっては複数同時に実践できるかもしれない)
+
+この辺に関しては「第9章 終章：アジャイルへ踏み出す」を読んでもらえればいいと思う。アジャイルへ踏み出すと言うタイトルからもわかるように、この本を読んで終わりじゃいけない。むしろ読み終わってからが本番なのだろう。
+
+<table border="0" cellpadding="5"><tr><td colspan="2"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4274066940/ukstudio0c-22/" target="_top">アジャイルプラクティス 達人プログラマに学ぶ現場開発者の習慣</a></td></tr><tr><td valign="top"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4274066940/ukstudio0c-22/" target="_top"><img src="http://ecx.images-amazon.com/images/I/31paqWCAEVL.jpg" border="0" alt="アジャイルプラクティス 達人プログラマに学ぶ現場開発者の習慣" /></a></td><td valign="top"><font size="-1">Venkat Subramaniam Andy Hunt 木下 史彦 <br /><br />オーム社  2007-12-22<br />売り上げランキング : 16000<br /><br /><strong>おすすめ平均  </strong><img src="http://g-images.amazon.com/images/G/01/detail/stars-5-0.gif" alt="star" /><br /><img src="http://g-images.amazon.com/images/G/01/detail/stars-5-0.gif" alt="star" />迷える開発者への最初の一歩となる本<br /><br /><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4274066940/ukstudio0c-22/" target="_top">Amazonで詳しく見る</a></font><font size="-2"> by <a href="http://www.goodpic.com/mt/aws/index.html" >G-Tools</a></font></td></tr></table>
+</div></article><article class="one"><h1 class="article-title"><a href="/2007/12/30/rubycocoa_brainfuckinterpreter/">RubyCocoaでBrainFuckインタプリタっぽいものを作ってみた</a></h1><div class="article-time"><time dateMime="2007-12-30 00:00:00 UTC" pubdate="pubdate">December 30 2007</time></div><div class="article-body">初めてのRubyCocoaでのプログラミング。以前作ったBrainfuckのコードを処理するRubyプログラムを流用した。主に参考にしたのは<a href="http://limechat.net/rubycocoa/tutorial/">RubyCocoa 入門</a>。と言うか、ここしか見てない。
+
+<img src="http://farm3.static.flickr.com/2055/2148748886_48f93983a6.jpg?v=0"/>
+
+上のテキストフィールドにBrainfuckのコードを入力して、executeのボタンを押すと変換された文字列が下のフィールドに表示される。キャプチャのBrainfuckのコードは途切れてるだけで、実際はもっと長い。本当はテキストエリアみたいなのにしたかったんだけれど、オブジェクトがどれだかわからなかった。
+
+以前、Objective-Cで少しだけCocoaプログラミングをした時も同じことを思ったけど、Interface BuilderはやっぱりUIを設計していく上で優秀だと思う。コントローラクラスとオブジェクトを関連づける操作もかなり直感的でさすがAppleと言ったところか。
+</div></article><article class="one"><h1 class="article-title"><a href="/2007/12/28/mac_leopard/">Leopardをインストール</a></h1><div class="article-time"><time dateMime="2007-12-28 00:00:00 UTC" pubdate="pubdate">December 28 2007</time></div><div class="article-body">来年から仕事でMacBookを使う可能性がでてきたのもあって、OSをLeopardに入れ替えた。仕事で使い始めると入れ替えるタイミングが難しくなるからね。
+
+<h2>Webクリップウィジェット</h2>
+LeopardからSafariで見ているページをDashboardにクリップできるようになった。試しに<a href="http://suztomo.net/fuwatter/">Fuwatter</a>をクリップしてみた。特に重たい感じもなく、普通に動く。
+<img src="http://farm3.static.flickr.com/2120/2142228842_35d88c1b29.jpg?v=0" alt="fuwatter"/>
+
+<h2>Time Machine</h2>
+まだ未使用。使ってない外部HDDがあるからそのうち試そうと思う。
+
+<h2>デスクトップ</h2>
+とりあえずStack機能とやらを試してみた。表示の種類に「ファン」と「グリッド」とあるが、個人的にはグリッドの方が好き(キャプチャの方) ただ、ディレクトリにはTerminalからか、QuickSilverからアクセスすることがほとんどなので、有効活用するかどうかはまだちょっとわからない。
+<img src="http://farm3.static.flickr.com/2078/2142243412_77b80fabd7.jpg?v=0"/>
+
+あと、細かいことだけど画像ファイルのアイコンが、その画像を縮小したものになっているのが地味にうれしい。画像はファイル名が無意味なものが多いオレとしては探しやすくて非常に良い。
+
+<h2>Spaces</h2>
+今回の新機能で実はコレが一番うれしいかもしれない。とりあえず4つに分割してるけど、Spacesの切り替えが頭の切り替えと直結してる感じで若干集中力が増した様な気がする。気がするだけかもしれない。
+
+<img src="http://farm3.static.flickr.com/2403/2142274130_1e23c0dab0.jpg?v=0"/>
+
+<h2>インストールしたもの</h2>
+今回インストールしたアプリ。メモがてら。
+<h3>開発系</h3>
+<ul>
+<li>Xcode</li>
+<li>Dashcode</li>
+<li>MacPorts</li>
+<li>zsh-4.3.4(MacPortsで)</li>
+<li>Ruby、Perl(MacPortsで)</li>
+<li>vim(MacPortsで)</li>
+<h3>コミュニケーション系</h3>
+<li>Adium</li>
+<li>Skype</li>
+<li>LimeChat for Mac OS</li>
+<h3>ユーティリティ</h3>
+<li>QuickSilver</li>
+<li>Chemr</li></ul>
+</div></article><article class="one"><h1 class="article-title"><a href="/2007/12/26/ikebukuro_faultier/">仕事帰りの池袋にて</a></h1><div class="article-time"><time dateMime="2007-12-26 00:00:00 UTC" pubdate="pubdate">December 26 2007</time></div><div class="article-body">仕事帰りに池袋のジュンク堂に寄ってアジャイルプラクティスとRESTfulWebサービスを購入。アジャイルの方の在庫が心配だったけど、なんとか2冊残ってた。薄いし、通勤途中で読もうと思う。やっぱ表紙がかっこいい。
+
+<table class="g-tools_table"><tr><td colspan="2"><span class="g-tools_title"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4274066940/ukstudio0c-22/" target="_top">アジャイルプラクティス 達人プログラマに学ぶ現場開発者の習慣</a></span></td></tr><tr><td valign="top"><span class="g-tools_img"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4274066940/ukstudio0c-22/" target="_top"><img src="http://ecx.images-amazon.com/images/I/31paqWCAEVL.jpg"  alt="アジャイルプラクティス 達人プログラマに学ぶ現場開発者の習慣" /></a></span></td><td valign="top"><span class="g-tools_body">Venkat Subramaniam Andy Hunt 木下 史彦 <br /><br /><br /><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4274066940/ukstudio0c-22/" target="_top">Amazonで詳しく見る</a></span><span class="g-tools_by"> by <a href="http://www.goodpic.com/mt/aws/index.html" >G-Tools</a></span></td></tr></table>
+
+<table class="g-tools_table"><tr><td colspan="2"><span class="g-tools_title"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4873113539/ukstudio0c-22/" target="_top">RESTful Webサービス</a></span></td></tr><tr><td valign="top"><span class="g-tools_img"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4873113539/ukstudio0c-22/" target="_top"><img src="http://ecx.images-amazon.com/images/I/21RXsMNvdwL.jpg"  alt="RESTful Webサービス" /></a></span></td><td valign="top"><span class="g-tools_body">Leonard Richardson Sam Ruby 山本 陽平 <br /><br /><br /><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4873113539/ukstudio0c-22/" target="_top">Amazonで詳しく見る</a></span><span class="g-tools_by"> by <a href="http://www.goodpic.com/mt/aws/index.html" >G-Tools</a></span></td></tr></table>
+
+ついったーでfollowしている<a href="http://twitter.com/faultier">faultier</a>さんもジュンク堂にいて、お互い全く面識のないうちらはついったーで同じフロアにいることを知りつつもニアミスしまくり。結局、レジで支払いしたあと外の電話ボックスで合流。
+
+せっかくお会いできたので、一緒にご飯に行くことに。年齢が近いうえに(向こうが85'sでこっちが86's)お互いRubyが好きなので話がはずむはずむ。
+
+他の同世代のエンジニアの名前を上げて、悔しいだのなんだの。オレらも負けてられないねーとか。RubyCocoaでなんか作ってみたいねーだの。Twitterの話だの。1時間程度だけどかなり楽しかった。
+
+オレは高校の時、公立の情報技術科に通ってたんだけど、そこは授業でC言語プログラムをするわけ。でも、プログラムが好きな人なんてほとんどいないわけ。中学からC言語やってたオレはある程度の成績は残してたんだよね。少くともプログラムにおいては。
+
+そうするとなんか調子にのって、「この年代じゃあ自分は"できる"方だな」とか思ってたりしたんだよね。でも、ついったー始めて、色んな人に会ったり、ブログを読むうちに自分って大したことないな、天狗になっちゃいけないなって思い始めて・・・
+
+とか話してたら向こうも「わかる!」って言ってくれて、なんかそれがすごいうれしかった。似たような話を他の人にしたことがないわけじゃないけれど、同世代のプログラマに話したのは実は初めて。
+
+うん、まぁ。がんばろう。
+
+そういえば別れ際に「他の同世代のエンジニアとも話してみたいね」って2人で話してた。amacangの81'sオフじゃないけれど、10代後半や20代前半のエンジニアで集まってみるのも悪くないかも。<a href="http://uk-studio.net/2007/11/30/1986_engineer/">似たようなこと</a>を前にも言った気がするけどね。
+
+多分、似たようなことを思ってる人はそれなりにいるはず。今のところ具体的に何かしようとか思ってるわけじゃないけど、そのうち小・中規模(20人いかないぐらい)の飲み会ぐらいは開いてみたいね。
+
+<strong>12/26 追記</strong>
+10代後半をターゲットに入れてるくせに飲み会とか意味わかんないですね。そこらへんは追い追い考えときます・・・
+</div></article><article class="one"><h1 class="article-title"><a href="/2007/12/26/rhg-strikes-back/">「RHG片手にRuby 1.9の実装を読む集い」に参加する予定</a></h1><div class="article-time"><time dateMime="2007-12-26 00:00:00 UTC" pubdate="pubdate">December 26 2007</time></div><div class="article-body"><a href="http://qwik.jp/rhg-strikes-back/">The RHG Strikes Back - RHG片手にRuby 1.9の実装を読む集い</a>
+
+RHG持ってないけど・・・
+
+Twitterでyuguiさんが「<a href="http://twitter.com/yugui/statuses/531123082">1月からRHGを片手に1.9を読む会を始めます</a>」と言っていたのでせっかくなので参加表明。
+
+正直、他の方々のレベルについていける自信はない。最後にC言語を使ったのいつだろう・・・
+
+まぁでも、個人的にいつか処理系を実装を読んでみたいと思ってたし、他のRubyistと交流をとるいい機会なので思い切って参加表明。なんとかなるだろう、多分。
+
+参加者を見た限りじゃ会ったことある人の名前がちらほら。集いでお会いしたときはどうぞよろしくです。
+</div></article><article class="one"><h1 class="article-title"><a href="/2007/12/20/tanoshi_ruby_sec10_practice/">たのしいRuby 第10章 練習問題</a></h1><div class="article-time"><time dateMime="2007-12-20 00:00:00 UTC" pubdate="pubdate">December 20 2007</time></div><div class="article-body">たのしいRuby 第10章 数値(Numeric)クラスの練習問題をやってみた。
+
+(1)と(2)は華氏を摂氏、もしくは逆の摂氏を華氏に変換するプログラムを書けと言う問題。小数点以下を求める為に引数をFloat()で囲む。そんなに難しい問題じゃないので、テストはかなり適当。
+
+<pre lang="ruby">
+def cels2fahr(cels)
+  Float(cels) * 9 / 5 + 32
+end
+</pre>
+<pre lang="ruby">
+require 'test/unit'
+require 'cels2fahr'
+
+class TestCels2Fahr < Test::Unit::TestCase
+  def test_cels2fahr
+    assert_equal(50, cels2fahr(10))
+    assert_equal(77, cels2fahr(25))
+  end
+end
+</pre>
+</pre><pre lang="ruby">
+def fahr2cels(fahr)
+  (Float(fahr) - 32) * 5 / 9
+end
+</pre>
+<pre lang="ruby">
+require 'test/unit'
+require 'fahr2cels'
+
+class TestFahr2Cels < Test::Unit::TestCase
+  def test_fahr2cels
+    assert_equal(10, fahr2cels(50))
+    assert_equal(25, fahr2cels(77))
+  end
+end
+</pre>
+
+(3)は乱数の問題。1から6までの数字を出力するメソッドdiceを実装する。乱数のテストって何書いたらいいんだろう。今回はテストは用意しなかったけど、1から6までの数値かどうかのテストぐらいは用意するべきだったのかな。
+
+</pre><pre lang="ruby">
+def dice
+  rand(6) + 1
+end
+</pre>
+
+(4)は引数が素数かどうかを調べるメソッドの実装。2より小さい数(負数、0、1)は即falseを返す。それ以上の数は引数の平方根までの数で割り切れるか調べ、途中で割り切れたら素数ではないので、falseを返す。ループを抜けたら素数なのでtrueを返す。
+
+<pre lang="ruby">
+def prime?(num)
+  return false if num < 2
+  (2..Math.sqrt(num)).each do |i|
+    return false if (num % i).zero?
+  end
+
+  true
+end
+</pre>
+</pre><pre lang="ruby">
+require 'test/unit'
+require 'prime'
+
+class TestPrime < Test::Unit::TestCase
+  def test_prime
+    assert(!prime?(0))
+    assert(!prime?(1))
+    assert(prime?(2))
+    assert(prime?(3))
+    assert(!prime?(4))
+    assert(prime?(5))
+    assert(prime?(13))
+    assert(prime?(17))
+    assert(prime?(113))
+  end
+end
+</pre>
+
+書いたコードはCodeReposにCommitしてみた(<a href="http://coderepos.org/share/browser/dan/ruby/tanoshi_ruby/sec10_numeric">/dan/ruby/tanoshi_ruby/sec10_numeric/</a>)。突っ込み、添削大歓迎です。これぐらいの規模のプログラムだと添削とかしづらいかもですが。
+
+<table class="g-tools_table"><tr><td colspan="2"><span class="g-tools_title"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4797336617/ukstudio0c-22/" target="_top">たのしいRuby 第2版 Rubyではじめる気軽なプログラミング</a></span></td></tr><tr><td valign="top"><span class="g-tools_img"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4797336617/ukstudio0c-22/" target="_top"><img src="http://ecx.images-amazon.com/images/I/11FDBHKSKWL.jpg"  alt="たのしいRuby 第2版 Rubyではじめる気軽なプログラミング" /></a></span></td><td valign="top"><span class="g-tools_body">高橋 征義 後藤 裕蔵 <br /><br /><strong>おすすめ平均</strong> <img src="http://g-images.amazon.com/images/G/01/detail/stars-3-5.gif" /><br /><img src="http://g-images.amazon.com/images/G/01/detail/stars-4-0.gif" alt="stars" />プログラミング初心者にとっては少し難易度が高いかも<br /><img src="http://g-images.amazon.com/images/G/01/detail/stars-4-0.gif" alt="stars" />変数のスコープと寿命について詳しく書いて欲しかった<br /><img src="http://g-images.amazon.com/images/G/01/detail/stars-4-0.gif" alt="stars" />練習問題の内容にやや難あり<br /><img src="http://g-images.amazon.com/images/G/01/detail/stars-4-0.gif" alt="stars" />Rubyをこれから覚える方は必読かも<br /><img src="http://g-images.amazon.com/images/G/01/detail/stars-1-0.gif" alt="stars" />読みやすいだけ<br /><br /><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4797336617/ukstudio0c-22/" target="_top">Amazonで詳しく見る</a></span><span class="g-tools_by"> by <a href="http://www.goodpic.com/mt/aws/index.html" >G-Tools</a></span></td></tr></table></pre>
+</div></article><article class="one"><h1 class="article-title"><a href="/2007/12/20/fixdap_ruby_project/">fixdap.jpに「Rubyを極める」プロジェクトを作ってみました</a></h1><div class="article-time"><time dateMime="2007-12-20 00:00:00 UTC" pubdate="pubdate">December 20 2007</time></div><div class="article-body"><a href="http://fixdap.com/p/Ruby/">Rubyを極める - fixdap</a>
+
+@mobcovが<a href="http://fixdap.com/p/RubyCocoa/">RubyCocoaを極める - fixdap</a>を。@faultierが<a href="http://fixdap.com/p/rspec/">RSpecを極める - fixdap</a>を作っていたので、それらの姉妹プロジェクトってことで。
+
+とりあえず、あまり難しいことは考えてないので「こんな勉強をしてみよう」とか「Rubyで○○なプログラムを書いてみよう」とかちょっとしたことでもタスク作っちゃって欲しいなと思う今日この頃。
+
+丁度、近いうちに「たのしいRuby 第2版」の練習問題をちゃんとやろうと思ってたのでそのタスクを作ってみた。(<a href="http://fixdap.com/p/Ruby/1760/">http://fixdap.com/p/Ruby/1760/</a>)書いたプログラムはこのブログにでも貼りつけて、そのリンクをfixdapの方にコメントで書けばいいかな。
+
+もしくは、CodeReposにCommitしちゃうってのもありかなー。/lang/ruby/study/tanoshi_ruby/とかで。んで、もし添削したい人とかいたら勝手に修正してCommitしちゃえばいいし。あまりにも書き直すようであれば、fixdapのコメントで一言言うか、気にせずCommitして、svnのコメントになんかしら書いておけばいいし。
+
+プロジェクトメンバーがオレ１人なのが寂しいなー。作ったばかりだから仕方ないけどw
+
+<h2>追記 07/12/20</h2>
+yappoさんからブクマでコメントもらいました。
+<blockquote>
+yappo coderepos 添削用は coderepos.org/share/dan 以下で
+</blockquote>
+とのことなので、coderepos.org/share/dan/ruby/tanoshi_ruby/とか作ろうと思います。yappoさん、ありがとう。
+
+あとプロジェクトメンバーがちょこっと増えてた。わっほい。
+</div></article><article class="one"><h1 class="article-title"><a href="/2007/12/05/ruby_array_operator/">RubyのArrayの演算子はちょっとおもしろい</a></h1><div class="article-time"><time dateMime="2007-12-05 00:00:00 UTC" pubdate="pubdate">December 05 2007</time></div><div class="article-body">Arrayの「+」「-」「&」「|」演算子がちょっとおもしろい。
+<h2>+演算子</h2>
+お互いを連結した新しい配列を返す。
+<pre lang="ruby">
+[1, 2, 3] + [4, 5, 6] #=> [1, 2, 3, 4, 5, 6]
+</pre>
+
+<h2>-演算子</h2>
+重複した要素を取り除いた新しい配列を返す。
+<pre lang="ruby">
+[1, 2, 3, 4, 5] - [1, 3, 5] #=> [2, 4]
+</pre>
+
+<h2>&演算子</h2>
+重複した要素からなる新しい配列を返す。
+<pre lang="ruby">
+[1, 2, 3, 4, 5] & [1, 3, 5] #=> [1, 3, 5]
+</pre>
+
+<h2>|演算子</h2>
+どちらかに含まれている要素からなる新しい配列を返す。
+<pre lang="ruby">
+[1, 2, 3, 4, 5] | [1, 3, 5, 7, 9] #=> [1, 2, 3, 4, 5, 7, 9]
+[1, 3, 5] | [1, 2, 3, 4, 5] #=> [1, 3, 5, 2, 4]
+</pre>
+</div></article><article class="one"><h1 class="article-title"><a href="/2007/12/05/install_retrospectiva/">RetrospectivaをMacBookに設置してみた</a></h1><div class="article-time"><time dateMime="2007-12-05 00:00:00 UTC" pubdate="pubdate">December 05 2007</time></div><div class="article-body"><a href="http://retrospectiva.org/blog">blog . retrospectiva</a>
+
+どんなものか試しに設置してみた。あくまで試しなのでSQLite、WEBrickで。まずは必要なソフトのインストールから。
+
+<h2>SQLite3のインストール</h2>
+MacPortsを使ってSQLiteを、RubyGemsを使ってSQLiteを扱うライブラリをインストール。
+<pre lang="bash">
+% sudo port install sqlite3
+% sudo gem install sqlite3-ruby
+</pre>
+
+<h2>retrospectivaの設置</h2>
+<a href="http://retrospectiva.org/wiki/Quick+install">Quick Install - wiki . retrospectiva</a>を参考にしつつ。
+
+<pre lang="bash">
+% svn export http://retrospectiva.googlecode.com/svn/branches/1-0 retrospectiva
+% cd restrospectiva
+</pre>
+
+リポジトリからファイルを持ってきたら、DBの設定がMySQLになっているのでSQLiteの設定に変更。
+<pre lang="bash">
+% mv config/database.yml.todo config/database.yml
+% vim config/database.yml
+</pre>
+<strong>database.yml</strong>
+<pre lang="ruby">
+development:
+  adapter: sqlite3
+  database: retrospectiva_development
+
+test:
+  adapter: sqlite3
+  database: retrospectiva_test
+
+production:
+  adapter: sqlite3
+  database: retrospectiva
+</pre>
+
+rakeは試しなのでdevelopment(引数なし)で。特にエラーがでないようならWEBRickを起動してhttp://localhost:3000/にアクセス。
+
+<pre lang="bash">
+% rake db:retro:load
+% ruby script/server
+</pre>
+
+IDとパスワードを聞かれるので admin / passwordを入力。
+
+適当にプロジェクトを作ってみた感じが以下のキャプチャ。
+<img src="http://farm3.static.flickr.com/2067/2086299815_6a6030a3b6.jpg?v=0"/>
+
+SVNの連携とかはまたそのうち。Rails環境があれば、とりあえず起動するのはラクチン。
+</div></article><article class="one"><h1 class="article-title"><a href="/2007/12/01/ruby_rpn_ujihisa_sixeight/">後置記法のコードを添削してもらっちゃいました</a></h1><div class="article-time"><time dateMime="2007-12-01 00:00:00 UTC" pubdate="pubdate">December 01 2007</time></div><div class="article-body"><a href="http://ujihisa.nowa.jp/entry/60c2b3fcf9">rubyneko - Re: UK STUDIO 後置記法での計算</a>
+<a href="http://d.hatena.ne.jp/Sixeight/20071130/1196438912">後置記法での計算の添削に便乗してみた - チナミニ</a>
+
+ujihisaさんとSixeightさんには感謝です。せっかくなんで添削してもらったコードを自分なりにちゃんと理解しときたいと思います。
+
+<h2>ujihisaさんのコード</h2>
+
+<pre lang="ruby">
+class String
+  def rpn
+    expr = self.split(" ")
+    stack = []
+    operators = %w[+ - * /]
+
+    expr.each do |i|
+      if operators.include? i
+        stack = [calc(i, stack)]
+      else
+        stack < < i.to_i
+      end
+    end
+
+    stack[0]
+  end
+
+  private
+  def calc(operator, stack)
+    stack.inject {|result, i|
+      result.__send__(operator, i)
+    }
+  end
+end
+</pre>
+<h3>stackに文字列でなく数値を格納していく</h3>
+確かに所々でto_i使い過ぎだ。これだけで全然スッキリするなぁ・・・
+<h3>スコープは狭く</h3>
+ですよねぇ。なんでクラス変数にしたんだろう、おれは。猛省。
+<h3>Array.newを[]に</h3>
+個人的にはなんかArray.newがしっくりくるんですよね。「Arrayをnewする」みたいな感じで。[]だとあまりそんな感じがしない。
+
+まぁ慣れの問題な気もするので、[]も使っていこうと思います。
+
+<h3>returnは省略</h3>
+これはなんか個人的には解決してない問題でして。値を返すことを強調したいときはreturnをつけようとか思っていたんだけど。
+
+ただ、Rubyは必ず値が返ってくることを考えると、やっぱり基本的に省略なのかなぁ。
+
+ちなみにTwitterでぼそっとぼやいたらこんな反応が。
+<ul>
+<li><a href="http://twitter.com/yuki_neko_nyan/statuses/456843452">http://twitter.com/yuki_neko_nyan/statuses/456843452</a></li>
+<li><a href="http://twitter.com/natsutan/statuses/456852982">http://twitter.com/natsutan/statuses/456852982</a></li>
+</ul>
+
+<h3>Array(...)を[...]に</h3>
+[]で囲むのでもいいのか。知らなかった。
+
+<h3>calcがArrayを返すより、stackに入れるときにArrayにするべし</h3>
+説明がなんかHaskellerっぽいですな。
+
+calc::char->[int]->[int]ってどう言う意味だっけ。確か、第1引数の型->第2引数の型->返り値の型だったかな。[int]はintの配列ってことかな・・・
+
+確かにcalcの処理内容を考えると[int]よりintの方がわかりやすいな。ふむ。
+
+<h3> eachのブロックを{}からdo endに</h3>
+そもそも、自分のコーディング規約を守ってない件。複数行のブロックはdo...end使うって決めたのに!
+
+<q>副作用を目的としているケースでは、こちらのが直感的</q>とあるけど、何故だかちょっとわからない。直感的ってのもまた人それぞれな部分あるしなぁ。
+
+<h3>if i == "+" || i == "-" || i == "*" || i == "/"をArray#include?を使ってシンプルにまとめた</h3>
+このifは自分でも汚いなとは思ってた。各演算子を配列にまとめてinclude?で判断か。ブロック引数iの値が配列に含まれていればtrueを返すから、この場合だと"+", "-", "*", "/"のどれかだとtrueになると。
+
+<h3>calcについて</h3>
+</pre><pre lang="ruby">
+result.__send__(operator, i)
+</pre>
+って記述を見たとき、「あれ、resultに代入しなくていいの?」とか思ったんだけど、ちゃんと調べてみると途中のブロックの返り値は次の呼び出しの時にresultに渡されるんだとさ。ちゃんと調べろよって話ですね。
+
+
+ujihisaさんにはさらに短かくしたコードも書いてもらってるんだけどまだちょっと追えてない。これはまた後日こっそり調べとく。
+
+<h2>Sixeightさんのコード</h2>
+関係ないけどSixeightさんってtyoroの後輩だっけ?
+
+<pre lang="ruby">
+class String
+  # Reverse Polish Notation
+  # '4 5 +'.rpn => 4 + 5 = 9
+  def rpn
+    stack = []
+    opr = %q[ + - * / ]
+
+    split(' ').each do |i|
+      if opr.include? i
+        stack[-1] = stack[-2].__send__(i, stack.pop)
+      else
+        stack < < i.to_i
+      end
+    end
+    stack.first
+  end
+end
+</pre>
+一応、最終的なコードを見せてもらう。(もちろん、その前のコードも読みましたよ)全体的にSixeightさんもujihisaさんのコードを見たあとのせいか、基本的には上で書いたことと同じ感じかなー。
+
+ただ、演算の処理をメソッドで別にせず1行で済ませてますな。あとオレの場合はめんどくさくて、stackを全部上書きしちゃってるけど、Sixeightさんはpopで取り出してちゃんと処理してる。
+
+個人的にはstack[-1]とstack[-2]が気になるかな。インデックスの-が個人的に好きじゃないようで。まぁあんなcalcメソッド書いといて何言ってるんだって感じですよね。すみません。
+
+逆ポーランド記法の仕様についてはあまりちゃんと調べてなかったり。なんかSchemeの前置記法と似た感覚で複数の値も計算するもんだと思ってたけど違うのかな。
+
+<h3>追記</h3>
+はてブにSixeightさんのコメントが!
+<blockquote>
+インデックスの-は僕も否定派なんですが、スタックから取り出す順番をひっくり返すのが思い浮かばなくて＞＜精進しなきゃ
+</blockquote>
+やっぱ-は否定的なのかー。お互いがんばりまっしょい。
+
+<h2>書き直したコード</h2>
+</pre><pre lang="ruby">
+class String
+  def rpn
+    expr = self.split(" ")
+    stack = []
+    operators = %w[+ - * /]
+
+    expr.each do |i|
+      if operators.include? i
+        stack = [stack.inject{|result, item| result.__send__(i, item)}]
+      else
+        stack < < i.to_i
+      end
+    end
+
+    stack.first
+  end
+end
+</pre>
+ujihisaさんのコードをほとんど反映させた感じ。例外処理とか考えてないよ。あとスタックにある数値も全部計算する仕様のまま。</pre>
+</div></article><article class="one"><h1 class="article-title"><a href="/2007/11/29/ruby_rpn/">後置記法での計算</a></h1><div class="article-time"><time dateMime="2007-11-29 00:00:00 UTC" pubdate="pubdate">November 29 2007</time></div><div class="article-body"><a href="http://ja.wikipedia.org/wiki/逆ポーランド記法">後置記法</a>の文字列を計算するようStringクラスを拡張してみた。
+<strong>rpn.rb</strong>
+<pre lang="ruby">
+class String
+  def rpn
+    @expr = self.split(" ")
+    stack = Array.new
+
+    @expr.each {|i|
+      if i == "+" || i == "-" || i == "*" || i == "/"
+        stack = calc(i, stack)
+      else
+        stack < < i
+      end
+    }
+
+    return stack[0]
+  end
+
+  private
+  def calc(operator, stack)
+    return Array(stack[1..-1].inject(stack[0].to_i){|result, i|
+      reslut = result.__send__(operator, i.to_i)
+    })
+  end
+end
+</pre>
+</pre><pre lang="ruby">
+require 'rpn.rb'
+"2 8 +".rpn #=> 10
+"4 6 -".rpn #=> -2
+"81 9 /".rpn #=> 9
+"4 3 *".rpn => 12
+"3 7 + 10 20 + 2 * 10 + 80 -".rpn
+#=>10
+</pre>
+入力は文字列で返り値が数値なのが違和感あるかもしれないけど、String#hexもそんな感じだし別にいいかなと。
+
+最初はモジュールにして、それをStringクラスにincludeしようとか思ってたんだけど、モジュールにするとselfで自身の文字列を取得する方法がわからなくて断念。モジュールのselfだとモジュール自身を指しちゃうんだよね。
+
+あとはcalcメソッドの中がなんか汚いのも気になるなぁ。
+
+全然関係ないけど、後置記法よりSchemeみたいな前置記法の方がわかりやすいと思った。
+</div></article><article class="one"><h1 class="article-title"><a href="/2007/11/27/ruby_euclid/">ユークリッドの互除法をRubyで書いた</a></h1><div class="article-time"><time dateMime="2007-11-27 00:00:00 UTC" pubdate="pubdate">November 27 2007</time></div><div class="article-body"><pre lang="ruby">
+def euclid(a, b)
+  return nil if a < b
+  return (a%b).zero? ? b : euclid(b, a%b)
+end
+</pre>
+
+Rubyは三項演算子でもちゃんと値返すから3行目みたいな書き方が出来るからラクだ。</pre>
+</div></article></div><div class="row"><div class="pager one"><ul><li class="previous"><a href="/page/8/">Prev</a></li><li class="next"><a href="/page/10/">Next</a></li></ul></div></div></div></body></html>

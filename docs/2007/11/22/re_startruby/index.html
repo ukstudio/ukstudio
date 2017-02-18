@@ -1,0 +1,48 @@
+<!DOCTYPE html><html><head><meta charset="utf-8" /><!--Always force latest IE rendering engine or request Chrome Frame--><meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" /><meta content="width=device-width,initial-scale=1.0" name="viewport" /><!--Use title if it's in the page YAML frontmatter--><title>Re: Try Ruby! 第1章</title><link href="/stylesheets/dist/normalize.css" rel="stylesheet" /><link href="/stylesheets/dist/skeleton.css" rel="stylesheet" /><link href="/stylesheets/all.css" rel="stylesheet" /><script src="/javascripts/all.js"></script><link href="/feed.xml" rel="alternate" title="atom" type="application/atom+xml" /><script>var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-12755601-1']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();</script></head><body class="x2007 x2007_11 x2007_11_22 x2007_11_22_re_startruby x2007_11_22_re_startruby_index"><div class="header"><div class="header-title"><h1><a href="/">ukstudio</a></h1></div></div><div class="container"><article><h1>Re: Try Ruby! 第1章</h1><hr /><div class="article-body">msngさんがstartRubyというブログを始めたようです。せっかくなんで少しだけ補足しとこうかな。
+
+<a href="http://startruby.com/20071122.html">Try Ruby! 第1章</a>
+
+<h2>演算子(一部除く)は再定義可能なメソッド</h2>
+Rubyの演算子は一部を除いて再定義可能なメソッド。例えば「+」演算子をメソッド呼び出しと同じ構文で書くことができる。
+<pre lang="ruby">
+1 + 1
+#=> 2
+1.+(1)
+#=. 2
+</pre>
+メソッド呼び出しの構文
+<blockquote>
+オブジェクト.メソッド名(引数1, 引数2,  ....)
+</blockquote>
+ちなみにこの構文のオブジェクトのことをレシーバって言います。なぜかと言うと、メソッドを呼び出すことを「オブジェクトにメッセージを送る」と表現するので、オブジェクトはメッセージを受け取る(レシーブする)側なのでレシーバ。
+
+ちなみに一部のメソッドは組込み演算子なので再定義することは不可能です。=とか!とか&&とかは無理。そこらへんはリファレンスを見るように。
+
+<h2>mathオブジェクトとtextオブジェクト</h2>
+これは多分、Numeric(数値)クラスとString(文字列)クラスのオブジェクトって意味だと思う。
+<pre lang="ruby">
+1.class
+#=> Fixnum
+"aaa".class
+#=> String
+</pre>
+classメソッドはオブジェクトが何のクラスのオブジェクトなのかを調べるメソッド。つまり1はFixnumクラスのオブジェクト、文字列aaaはStringクラスのオブジェクトってこと。
+
+なんで最初にNumericクラスって言ってるのに、1のクラスがFixnumクラスなのかと言うとFixnumクラスはNumericクラスのサブクラスだから。他にもFloatクラスとかある。
+<img src="http://farm3.static.flickr.com/2257/2052393193_d80b5f873a.jpg?v=0"/>
+
+<h2>msngさんがんばって!</h2>
+そんなわけで適当に補足してみました。細かいところはリファレンスにも載ってるから一度見てみるといいと思う。最近503エラーがしょっちゅうでてるけどね・・・
+
+<a href="http://www.ruby-lang.org/ja/man/">Rubyリファレンス</a>
+
+UK STUDIOはstartRubyを応援しています。
+</div></article></div></body></html>

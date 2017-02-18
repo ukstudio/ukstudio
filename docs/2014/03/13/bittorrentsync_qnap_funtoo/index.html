@@ -1,0 +1,33 @@
+<!DOCTYPE html><html><head><meta charset="utf-8" /><!--Always force latest IE rendering engine or request Chrome Frame--><meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" /><meta content="width=device-width,initial-scale=1.0" name="viewport" /><!--Use title if it's in the page YAML frontmatter--><title>BitTorrent SyncでQNAPとFuntooで同期する</title><link href="/stylesheets/dist/normalize.css" rel="stylesheet" /><link href="/stylesheets/dist/skeleton.css" rel="stylesheet" /><link href="/stylesheets/all.css" rel="stylesheet" /><script src="/javascripts/all.js"></script><link href="/feed.xml" rel="alternate" title="atom" type="application/atom+xml" /><script>var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-12755601-1']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();</script></head><body class="x2014 x2014_03 x2014_03_13 x2014_03_13_bittorrentsync_qnap_funtoo x2014_03_13_bittorrentsync_qnap_funtoo_index"><div class="header"><div class="header-title"><h1><a href="/">ukstudio</a></h1></div></div><div class="container"><article><h1>BitTorrent SyncでQNAPとFuntooで同期する</h1><hr /><div class="article-body"><p>QNAPの一部のディレクトリ(主に電子書籍)とローカルのマシンで同期を取りたかったのでBitTorrent Syncで同期を取ってみる。NFSでもいいんだけど、電子書籍ぐらいならローカルにおけるぐらいのストレージ容量はあるので。</p>
+
+<h2>QNAPにBitTorrent Syncを入れる</h2>
+
+<p>基本的には<a href="http://www.qnap.com/useng/index.php?sn=9137">QNAPのドキュメント</a>を参照すれば問題ないと思う。簡単に説明しておくとQTSにBitTorrent Syncを追加し、BitTorrent SyncのWebUIを起動する。WebUIのアクセスユーザは途中で&quot;Please modify the Login ID / Password&quot;とか言われる画面でLogin IDとPasswordを入力し、Apply Changesをすればそのユーザで接続できる。</p>
+
+<p>次にBitTorrent SyncのWebUIが起動したらAdd Folderから該当のディレクトリを選択する。Secret KeyはここでGenerateしておく。(後でローカルの方の設定で使用する)。QNAP側はこれで終わり。</p>
+
+<h2>FuntooにBitTorrent Syncを入れる</h2>
+
+<p>FuntooはportageにBitTorrent Syncのebuildがあるのでそれを使う。</p>
+<pre class="highlight plaintext"><code>sudo emerge bittorrent sync
+</code></pre>
+
+<p>起動は<code>/etc/init.d/btsync start</code>だが、コンフィグの修正が必要。init.dで起動するとログがでないからわからないが、<code>/opt/btsync/btsync</code>で起動するとstorage_pathが存在しないと怒られるのがわかる。コンフィグは<code>/etc/btsync/config</code>がそう。</p>
+<pre class="highlight plaintext"><code>// "storage_path" : "/home/user/.sync",
+"storage_path" : "/home/ukstudio/.sync",
+</code></pre>
+
+<p>ディレクトリはお好みで。</p>
+
+<p><code>/etc/init.d/btsync start</code>で無事btsyncが起動したら、<a href="http://localhost:8888/gui%E3%81%A7WebUI%E3%81%AB%E3%82%A2%E3%82%AF%E3%82%BB%E3%82%B9%E3%81%A7%E3%81%8D%E3%82%8B%E3%80%82ID%E3%81%A8%E3%83%91%E3%82%B9%E3%81%AF&#x27;admin&#x27;%E3%81%A8&#x27;password&#x27;%E3%80%82">http://localhost:8888/guiでWebUIにアクセスできる。IDとパスは&#39;admin&#39;と&#39;password&#39;。</a></p>
+
+<p>WebUIにアクセスできたら、Add FolderでQNAPと同期させたいディレクトリを指定する。Secret Keyはここでは生成させず先程のQNAPのsecret keyをコピペする。保存し、WebUIのトップ画面で&quot;connected devices and status&quot;でダウンロード速度が表示されたら無事同期がはじまっている。</p>
+</div></article></div></body></html>

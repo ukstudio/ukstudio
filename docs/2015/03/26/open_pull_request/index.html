@@ -1,0 +1,29 @@
+<!DOCTYPE html><html><head><meta charset="utf-8" /><!--Always force latest IE rendering engine or request Chrome Frame--><meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" /><meta content="width=device-width,initial-scale=1.0" name="viewport" /><!--Use title if it's in the page YAML frontmatter--><title>特定のコミットが含まれるGitHub Pull Requestを開く</title><link href="/stylesheets/dist/normalize.css" rel="stylesheet" /><link href="/stylesheets/dist/skeleton.css" rel="stylesheet" /><link href="/stylesheets/all.css" rel="stylesheet" /><script src="/javascripts/all.js"></script><link href="/feed.xml" rel="alternate" title="atom" type="application/atom+xml" /><script>var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-12755601-1']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();</script></head><body class="x2015 x2015_03 x2015_03_26 x2015_03_26_open_pull_request x2015_03_26_open_pull_request_index"><div class="header"><div class="header-title"><h1><a href="/">ukstudio</a></h1></div></div><div class="container"><article><h1>特定のコミットが含まれるGitHub Pull Requestを開く</h1><hr /><div class="article-body"><p>今日たまたまあるコミットが含まれているGitHubのPull Requestをサクッと探したい事案が発生した。というのも自分が以前書いたコードがどうしてこうなっているのかというのを知りたかったんだけど、commit messageだけじゃよくわからんかった(〜を実装したみたいなことを英語で書いてあっただけ)。</p>
+
+<p>Pull Requestは割と丁寧に説明を書いているのできっとPull Requestのdescriptionを見ればわかりそうという感じはしたのだけれどパッとそれを開く手段がわからず、色々ググったりtwitterで教えてもらったりした結果下のようなfunctionをzshrcに書いた。</p>
+<pre class="highlight shell"><code><span class="k">function </span>find-pr<span class="o">()</span> <span class="o">{</span>
+  <span class="nb">local </span><span class="nv">parent</span><span class="o">=</span><span class="nv">$2</span><span class="o">||</span><span class="s1">'master'</span>
+  git log <span class="nv">$1</span>..<span class="nv">$2</span> --merges --ancestry-path --reverse --oneline | head -n1
+<span class="o">}</span>
+
+<span class="k">function </span>find-pr-open<span class="o">()</span> <span class="o">{</span>
+  <span class="nb">local </span><span class="nv">pr</span><span class="o">=</span><span class="s2">"</span><span class="k">$(</span>find-pr <span class="nv">$1</span> <span class="nv">$2</span> | awk <span class="s1">'{print substr($5, 2)}'</span><span class="k">)</span><span class="s2">"</span>
+  <span class="nb">local </span><span class="nv">repo</span><span class="o">=</span><span class="s2">"</span><span class="k">$(</span>git config --get remote.origin.url | sed <span class="s1">'s/git@github.com://'</span> | sed <span class="s1">'s/\.git$//'</span><span class="k">)</span><span class="s2">"</span>
+  open <span class="s2">"https://github.com/</span><span class="k">${</span><span class="nv">repo</span><span class="k">}</span><span class="s2">/pull/</span><span class="k">${</span><span class="nv">pr</span><span class="k">}</span><span class="s2">"</span>
+<span class="o">}</span>
+</code></pre>
+<pre class="highlight plaintext"><code>find-pr-open REVISION
+</code></pre>
+
+<p>あまりシェルは得意ではないのでそこらへんは大目に見て欲しい。やってることはfind-prで該当のcommitが含まれているMerge commitを探してcommit messageからGitHub Pull Requestの番号を取り出している。リポジトリ名はgit configから取得して余計な文字はsedで削除。あとはURLを組み立ててブラウザで開くだけ。多分これでPull Requestを開けるはず。</p>
+
+<p>なんにせよcommit messageはもうちょっと丁寧に書こうと思いました。</p>
+</div></article></div></body></html>
