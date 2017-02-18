@@ -1,0 +1,5 @@
+baseURL = "http://ukstudio.jp"
+title = "UKSTUDIO"
+author = "AKAMATSU Yuki"
+languagecode = 'ja'
+theme = 'beautifulhugo'
