@@ -1,6 +1,6 @@
 ---
 title: lsと間違えてerutasoを打ってしまうGentoo/Funtooユーザーのみなさまへ
-date: 2014-03-27 05:09 UTC
+
 tags: ebuild,gentoo,funtoo
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: 特定のコミットが含まれるGitHub Pull Requestを開く
-date: 2015-03-26 12:18 UTC
+
 tags: github,shell
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: Vue.js便利
-date: 2015-03-20 20:20 UTC
+
 tags: javascript,vue.js
 ---
 

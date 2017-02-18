@@ -1,6 +1,6 @@
 ---
 title: TEX Yodaが届いたので使い始めた
-date: 2015-01-29 10:54 UTC
+
 tags:
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: 株式会社spice lifeに入社しました
-date: 2015-01-01 01:01 UTC
+
 tags:
 ---
 

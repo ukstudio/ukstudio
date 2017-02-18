@@ -1,6 +1,6 @@
 ---
 title: Vim(TagBar)でRSpecのctagsを扱う
-date: 2014-04-18 09:20 UTC
+
 tags: rspec,vim
 ---
 

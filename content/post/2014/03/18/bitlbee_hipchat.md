@@ -1,6 +1,6 @@
 ---
 title: BitlBeeでHipChatに接続する
-date: 2014-03-18 05:33 UTC
+
 tags: bitlbee,hipchat
 ---
 

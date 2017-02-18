@@ -1,6 +1,6 @@
 ---
 title: 特定のGemの更新情報を追う
-date: 2015-04-19 15:20 UTC
+
 tags: ruby, rubygems
 ---
 

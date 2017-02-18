@@ -1,6 +1,6 @@
 ---
 title: UX概論に参加した
-date: 2015-06-15 12:32 UTC
+
 tags: UX
 ---
 

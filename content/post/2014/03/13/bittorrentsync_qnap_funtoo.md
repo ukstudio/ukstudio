@@ -1,6 +1,6 @@
 ---
 title: BitTorrent SyncでQNAPとFuntooで同期する
-date: 2014-03-13 03:23 UTC
+
 tags: bittorrentsync qnap funtoo
 ---
 

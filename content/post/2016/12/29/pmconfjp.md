@@ -1,6 +1,6 @@
 ---
 title: Japan Product Manager Conferenceの資料公開
-date: 2016-12-29 13:23 UTC
+
 tags:
 ---
 

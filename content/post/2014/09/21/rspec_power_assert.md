@@ -1,6 +1,6 @@
 ---
 title: RSpecでPower Assertをやるには
-date: 2014-09-21 06:12 UTC
+
 tags: testing,rspec,power-assert
 ---
 

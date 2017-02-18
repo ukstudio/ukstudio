@@ -1,6 +1,6 @@
 ---
 title: FuntooからQNAPにOpenVPNでつなぐ
-date: 2014-03-13 03:15 UTC
+
 tags: funtoo,openvpn,qnap
 ---
 

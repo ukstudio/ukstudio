@@ -1,6 +1,6 @@
 ---
 title: Arelあれこれ
-date: 2014-09-05 08:51 UTC
+
 tags: ruby,rails,arel
 ---
 
