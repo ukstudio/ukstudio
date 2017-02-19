@@ -1,5 +1,6 @@
 ---
 title: うっかりnetwork-manager-gnomeを消してネット繋がらなくなった
+date: 2010-12-17
 ---
 xubuntuを以前インストールしててもういらねーやと思って色々消してたら、気づいたらnetwork-manager-gnomeも消えていてインターネットに繋がらなくなったでござる。
 

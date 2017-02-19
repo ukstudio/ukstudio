@@ -1,5 +1,6 @@
 ---
 title: VimM#2でRails.vimについて話してきました
+date: 2008-09-07
 ---
 <a href="http://wiki.livedoor.jp/biowithit/d/VimM%232">VimM#2</a>
 

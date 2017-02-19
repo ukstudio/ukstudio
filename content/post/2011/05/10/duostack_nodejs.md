@@ -1,5 +1,6 @@
 ---
 title: duostackでnode.jsアプリを動かすまで
+date: 2011-05-10
 ---
 <h2>node.jsのインストール</h2>
 何はともあれnode.jsのインストール。aptではなくgithubからリポジトリをcloneしてmakeした。最近はapt以外のものは$HOME/localに入れるルールでやってるのでnode.jsも同様に。node.jsをsudoで入れると結構ハマるみたいな話を聞くので特に理由がなければaptとかで入れるか$HOME以下に入れるのがよさそう。

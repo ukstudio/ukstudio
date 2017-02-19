@@ -2,6 +2,7 @@
 title: UX概論に参加した
 
 tags: UX
+date: 2015-06-15
 ---
 
 [【満席のため受付終了】UX概論　〜UXデザインの基礎を学ぶ勉強会〜 : ATND](https://atnd.org/events/66918)

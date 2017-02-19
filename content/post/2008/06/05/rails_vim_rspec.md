@@ -1,5 +1,6 @@
 ---
 title: rails.vimのファイル切り替えをRSpecに対応させる(仮)
+date: 2008-06-05
 ---
 rails.vimをインストールすると、RcontrollerとかRmodelコマンドでRSpecファイルからControllerやModelファイルに切り替えることができるんだけど、その逆ができないので対応させた。仮なのはVimスクリプトをちゃんと書けなくてコピペのごまかしだから。
 

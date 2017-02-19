@@ -1,5 +1,6 @@
 ---
 title: JRubyとProcessing1.1でaction-coding!
+date: 2008-12-08
 ---
 せっかくProcessingも正式版になったことだし、少しaction-codingで遊んでみる。
 

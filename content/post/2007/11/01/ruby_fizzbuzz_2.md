@@ -1,5 +1,6 @@
 ---
-title: ! 'RubyでFizzBuzz #2'
+title: RubyでFizzBuzz #2
+date: 2007-11-01
 ---
 <a href="http://uk-studio.net/2007/10/28/ruby_fizzbuzz/">RubyでFizzBuzz</a>の第二弾。大分スッキリしたと思うんだけどどでしょ。
 <pre lang="ruby">

@@ -1,5 +1,6 @@
 ---
 title: DOM Scripting 標準ガイドブックを買ってみた
+date: 2007-06-23
 ---
 <a href="http://www.amazon.co.jp/gp/redirect.html%3FASIN=4839922373%26tag=ukstudio0c-22%26lcode=xm2%26cID=2025%26ccmID=165953%26location=/o/ASIN/4839922373%253FSubscriptionId=1N9AHEAQ2F6SVD97BE02" title="Click and drag this image to the post editor"><img src="http://ec1.images-amazon.com/images/I/41ER9SJujTL.jpg" width="389" /></a>
 

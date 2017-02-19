@@ -1,5 +1,6 @@
 ---
 title: Kinesisを2週間使ったのでレビューする
+date: 2009-08-20
 ---
 <a href="http://d.hatena.ne.jp/ursm">ursm</a>さんに2週間程、<a href="http://ja.wikipedia.org/wiki/Kinesis">Kinesis</a>をお借りしたのでレビューを書く。
 

@@ -1,5 +1,6 @@
 ---
 title: Gentoo+Passenger+rvm
+date: 2010-02-09
 ---
 <h2>rvmのインストール</h2>
 rvmのインストールはgithubからやった。(<a href='http://rvm.beginrescueend.com/install/'>rvm: Ruby Version Manager - Ways to install rvm.</a>)

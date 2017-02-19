@@ -1,5 +1,6 @@
 ---
 title: RailsからOAuthを利用してTwitterにポストする
+date: 2009-07-14
 ---
 OAuthの細かい説明は抜き。
 

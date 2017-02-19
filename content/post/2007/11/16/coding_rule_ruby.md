@@ -1,5 +1,6 @@
 ---
 title: 個人用のコーディング規約を書き始めたんよ
+date: 2007-11-16
 ---
 <a href="/coding_rule/">CodingRule</a>
 

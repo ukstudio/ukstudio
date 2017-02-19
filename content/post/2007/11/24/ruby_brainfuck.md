@@ -1,5 +1,6 @@
 ---
 title: RubyでBrainFuck処理系を書いてみた
+date: 2007-11-24
 ---
 <pre lang="ruby">
 class BrainFuck

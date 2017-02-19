@@ -1,5 +1,6 @@
 ---
 title: 第1回vimrc読書会が開催されるそうです。
+date: 2008-12-18
 ---
 <a href="http://vim.g.hatena.ne.jp/ka-nacht/20081218/1229529163">第1回vimrc読書会開催のお知らせ</a>
 

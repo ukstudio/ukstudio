@@ -1,5 +1,6 @@
 ---
 title: Rubyでライフゲーム書いた
+date: 2008-02-02
 ---
 <a href="http://ja.doukaku.org/comment/5581/">どう書く?org #5581</a>
 

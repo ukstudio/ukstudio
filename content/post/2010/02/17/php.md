@@ -1,5 +1,6 @@
 ---
 title: PHPについて適当に
+date: 2010-02-17
 ---
 <a href="http://redline.hippy.jp/lab/php/">RedLine Magazine : PHP</a>
 

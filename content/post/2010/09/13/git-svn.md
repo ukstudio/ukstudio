@@ -1,5 +1,6 @@
 ---
 title: Better Subversionとしてのgit-svn
+date: 2010-09-13
 ---
 普段のプログラミングにgitを使用しているのだけど、実際の現場ではまだまだsvnが主流だったりする。svnを直接使ってもいいのだけど、やはりローカル上でコミットしたいとか、複数のコミットを1つにまとめたいとか、トピックブランチを切りたいとかあるのでそれはsvn単体だと厳しい。そんなわけでBetter SVNとしてのgit svnの紹介、と言うよりメモ。
 
@@ -56,4 +57,3 @@ git-svnでの開発はsvnの面倒なところをカバーしてくれたりす�
 ちなみにgitに詳しくない人は濱野さんの入門Gitがおすすめです。
 
 <iframe src="http://rcm-jp.amazon.co.jp/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=ukstudio0c-22&o=9&p=8&l=as1&m=amazon&f=ifr&md=1X69VDGQCMF7Z30FM082&asins=4798023809" style="width:120px;height:240px;" scrolling="no" marginwidth="0" marginheight="0" frameborder="0"></iframe>
-

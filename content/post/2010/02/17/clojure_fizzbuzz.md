@@ -1,5 +1,6 @@
 ---
 title: ClojureでFizzBuzz
+date: 2010-02-17
 ---
 <script src="http://gist.github.com/306528.js?file=fizzbuzz.clj"></script>
 

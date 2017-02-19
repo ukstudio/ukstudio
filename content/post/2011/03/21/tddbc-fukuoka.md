@@ -1,5 +1,6 @@
 ---
 title: TDDBC福岡に参加してきた
+date: 2011-03-21
 ---
 <a href="http://ukstudio.jp/wp-content/uploads/2011/03/2011-03-19-09.24.06.jpg"><img src="http://ukstudio.jp/wp-content/uploads/2011/03/2011-03-19-09.24.06.jpg" alt="" title="博多駅" class="alignnone size-full wp-image-815" style='width: 100%;'/></a>
 

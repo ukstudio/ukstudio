@@ -1,5 +1,6 @@
 ---
 title: 本を頂きました
+date: 2010-05-31
 ---
 [caption id="attachment_645" align="aligncenter" width="240" caption="頂いた本"]<img src="http://173.230.148.68/wp-content/uploads/2010/05/2010-05-31-01.23.jpeg" alt="頂いた本" title="頂いた本" width="240" height="180" class="size-full wp-image-645" />[/caption]
 

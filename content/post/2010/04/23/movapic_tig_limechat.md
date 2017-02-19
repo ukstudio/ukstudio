@@ -1,5 +1,6 @@
 ---
 title: TIG+Limechatで携帯百景の画像をインライン展開する
+date: 2010-04-23
 ---
 <strong>公式の方でtwitpic, tweetphoto, yfrog, twitgoo, img.ly, movapic, f.hatena.ne.jpの画像展開がサポートされました。よって現在はこの方法を取らなくても大丈夫です。<a href="http://limechat.net/mac/ja.html">http://limechat.net/mac/ja.html</a></strong>
 

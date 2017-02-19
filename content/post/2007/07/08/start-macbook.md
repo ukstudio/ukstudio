@@ -1,5 +1,6 @@
 ---
 title: MacBook始めました
+date: 2007-07-08
 ---
 普段使っていたノートPC(Win) がどうやら逝ってしまったみたいなのでこの機会に念願のMacBookを手に入れました。
 <table border="0" cellpadding="5">

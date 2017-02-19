@@ -1,5 +1,6 @@
 ---
 title: pathogen.vimとneocomplcache.vimのスニペット機能
+date: 2010-11-25
 ---
 vimの環境を少し整理した。
 

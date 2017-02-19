@@ -1,5 +1,6 @@
 ---
 title: ActiveRecordを使ってみる
+date: 2007-10-28
 ---
 ActiveRecordはRubyOnRailsのO/Rマッパーとして有名ですが、Railsに依存しているわけではなく単体で使えます。
 

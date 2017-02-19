@@ -1,5 +1,6 @@
 ---
 title: iPod touchでRubyを動かす
+date: 2007-10-14
 ---
 <strong style="color: #ff0000">以下の作業は自己責任でお願いいたします。</strong>
 <h2>Installer.appをインストールする</h2>

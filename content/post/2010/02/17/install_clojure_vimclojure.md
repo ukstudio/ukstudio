@@ -1,5 +1,6 @@
 ---
 title: clojure+vimclojureのインストール
+date: 2010-02-17
 ---
 結構時間かかった。今日(正確には昨日)の夕方からずっといじってた。まとめるとそんな時間かかるようなものでもないんだけどね。clojureよりvimclojureで色々手間取った。ちなみに<a href='http://www.amazon.co.jp/gp/product/4274067890?linkCode=shr&camp=1207&creative=8411&tag=ukstudio0c-22' target='_blank'>プログラミング Clojure</a>のサンプルを動かすだけなら、サンプルコードの中にClojureの実行環境(REPL)が含まれてるので以下の設定をやる必要はなし。
 

@@ -1,5 +1,6 @@
 ---
 title: WEB+DB Vol.56に「コーディングの基礎知識」を書きました
+date: 2010-04-19
 ---
 [caption id="attachment_611" align="aligncenter" width="211" caption="WEB+DB Vol.56 表紙"]<img src="http://ukstudio.jp/wp-content/uploads/2010/04/WDBvol56-211x300.jpg" alt="WEB+DB Vol.56 表紙" title="WDBvol56" width="211" height="300" class="size-medium wp-image-611" />[/caption]
 

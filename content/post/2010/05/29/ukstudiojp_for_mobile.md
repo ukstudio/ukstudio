@@ -1,5 +1,6 @@
 ---
 title: ukstudio.jpを携帯対応させました
+date: 2010-05-29
 ---
 当ブログを携帯でも見れるようにしました。とは言っても、MobilePressとktai-styleを入れただけですが。
 

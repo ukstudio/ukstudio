@@ -2,6 +2,7 @@
 title: Arelあれこれ
 
 tags: ruby,rails,arel
+date: 2014-09-05
 ---
 
 ## Model.arel_table を読みづらいと感じる

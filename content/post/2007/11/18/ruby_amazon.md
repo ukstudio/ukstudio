@@ -1,5 +1,6 @@
 ---
 title: Ruby/Amazonライブラリ
+date: 2007-11-18
 ---
 URL:<a href="http://www.caliban.org/ruby/ruby-amazon.shtml">http://www.caliban.org/ruby/ruby-amazon.shtml</a>
 

@@ -1,5 +1,6 @@
 ---
 title: Cucumber+email_specでActionMailerのテストをする
+date: 2009-05-11
 ---
 今までメール(ActionMailer)のテストはどうにも面倒で、自分でブラウザから動かしてログを見てってやっていたんですが、Cucumberでメールのテストもできるっぽいので試してみました。
 

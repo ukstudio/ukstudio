@@ -1,5 +1,6 @@
 ---
 title: RubyでFizzBuzz
+date: 2007-10-28
 ---
 今更ながらにFizzBuzz問題をRubyで問いてみる。前は確かPHPだけで問いて、Rubyで問いてなかったと思うから。
 

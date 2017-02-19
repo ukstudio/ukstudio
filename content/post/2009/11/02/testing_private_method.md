@@ -1,5 +1,6 @@
 ---
 title: RSpecでprivateメソッドをテストする
+date: 2009-11-02
 ---
 <script src="http://gist.github.com/223674.js"></script>
 

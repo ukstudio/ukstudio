@@ -1,5 +1,6 @@
 ---
 title: ruby勉強会@spicelife
+date: 2012-02-20
 ---
 <a href='http://twitter.com/holygrail' target='_blank'>@holygrail</a>に何か話してよと頼まれたので適当に話してきた。
 

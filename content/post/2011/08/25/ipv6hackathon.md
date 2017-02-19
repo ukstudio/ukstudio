@@ -1,5 +1,6 @@
 ---
 title: IPv6 Hackathonに参加してきた
+date: 2011-08-25
 ---
 この間のLL PlanetsでIPv6 Hackathonとやらに参加してきた。Ruby組は僕と @sugamasao と @takano32 の3人でチーム組んだ。
 

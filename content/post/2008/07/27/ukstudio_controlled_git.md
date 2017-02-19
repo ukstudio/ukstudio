@@ -1,5 +1,6 @@
 ---
 title: ukstudio.jpをgitで管理するようにしてみた
+date: 2008-07-27
 ---
 最近流行りのgitを使ってみようかなーってことでとりあえずukstudio.jpを全部gitで管理するようにした。
 

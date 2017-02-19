@@ -1,5 +1,6 @@
 ---
-title: ! 'Re: Try Ruby! 第1章'
+title: "Re: Try Ruby! 第1章"
+date: 2007-11-22
 ---
 msngさんがstartRubyというブログを始めたようです。せっかくなんで少しだけ補足しとこうかな。
 

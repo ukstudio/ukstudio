@@ -1,5 +1,6 @@
 ---
 title: RetrospectivaをMacBookに設置してみた
+date: 2007-12-05
 ---
 <a href="http://retrospectiva.org/blog">blog . retrospectiva</a>
 

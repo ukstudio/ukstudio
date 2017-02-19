@@ -2,6 +2,7 @@
 title: BitlBeeでHipChatに接続する
 
 tags: bitlbee,hipchat
+date: 2014-03-18
 ---
 
 HipChatのLinuxクライアントは残念ながら日本語入力ができないのでかわりにIRCを使ってみる。
@@ -34,4 +35,3 @@ HipChatはJabberが使えるのでBitlBeeを使ってJabber経由でIRCと繋ぐ
 無事、部屋にjoinしてログが流れてきたら終了。
 
 	/join #channelname
-

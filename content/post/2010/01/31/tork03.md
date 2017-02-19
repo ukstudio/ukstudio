@@ -1,5 +1,6 @@
 ---
 title: 東京Ruby会議#3公式サイト&amp;受付開始
+date: 2010-01-31
 ---
 <a href="http://regional.rubykaigi.org/tokyo03">東京Ruby会議03 - Regional RubyKaigi -</a>
 

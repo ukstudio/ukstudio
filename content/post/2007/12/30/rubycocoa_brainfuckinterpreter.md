@@ -1,5 +1,6 @@
 ---
 title: RubyCocoaでBrainFuckインタプリタっぽいものを作ってみた
+date: 2007-12-30
 ---
 初めてのRubyCocoaでのプログラミング。以前作ったBrainfuckのコードを処理するRubyプログラムを流用した。主に参考にしたのは<a href="http://limechat.net/rubycocoa/tutorial/">RubyCocoa 入門</a>。と言うか、ここしか見てない。
 

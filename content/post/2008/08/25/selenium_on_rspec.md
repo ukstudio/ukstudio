@@ -1,5 +1,6 @@
 ---
 title: Selenium on Rspecを軽く試してみた
+date: 2008-08-25
 ---
 とりあえずはScaffoldで簡単なアプリを作って、そのテストケースを作成、実行してみるところまで。そんな難しいことはしない。Railsは2.0.2を使用。2.1だとSeleniumにパッチを当てなきゃいけないので面倒。2.1の人は<a href="http://clearspace.openqa.org/docs/DOC-1072">Selenium on Rails patch for RoR 2.1</a>からパッチをあててください。
 

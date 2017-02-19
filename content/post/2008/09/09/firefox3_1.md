@@ -1,5 +1,6 @@
 ---
 title: Firefoxα2とβ1preを試してみた
+date: 2008-09-09
 ---
 いつのまにかFirefoxのα2とβ1preがリリースされてたので試してみた。個人的にVimpとかグリモンがないとどうにもならない体になってしまったので<a href="https://addons.mozilla.org/ja/firefox/addon/6543">Nightly Tester Tools</a>をインストール。これで3.01で動いていた拡張は大体動く模様。
 

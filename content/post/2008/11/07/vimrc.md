@@ -1,5 +1,6 @@
 ---
 title: 「地味に便利なVim設定」をもうちょい地味に便利にする
+date: 2008-11-07
 ---
 <a href="http://blog.blueblack.net/item_317">地味に便利なVim設定 - ナレッジエース</a>
 

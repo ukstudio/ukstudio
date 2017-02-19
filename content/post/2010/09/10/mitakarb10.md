@@ -1,5 +1,6 @@
 ---
 title: mitaka.rb#10に参加してきました
+date: 2010-09-10
 ---
 9日に開催された<a href='http://atnd.org/events/7542'>mitaka.rb#10</a>に参加してきた。何だかんだで3回目の参加。今回のmitaka.rbは主催の<a href='http://twitter.com/ysakaki'>@ysakaki</a>さんと協賛の(株)HatchUpさんの圧倒的財力により、なんと3000円というお得な会でした。飲み放題だし、ご飯もとてもおいしかった。おかげで今日は若干二日酔いです。
 
