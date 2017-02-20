@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="utf-8">
+<meta name="generator" content="Hugo 0.17" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="//fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/github.min.css">
+<link rel="stylesheet" href="/css/normalize.css">
+<link rel="stylesheet" href="/css/skeleton.css">
+<link rel="stylesheet" href="/css/custom.css">
+<link rel="alternate" href="/index.xml" type="application/rss+xml" title="UKSTUDIO">
+<title>XSS対策に入力時エスケープは非常にややこしい - UKSTUDIO</title>
+</head>
+<body>
+
+<div class="container">
+
+	<header role="banner">
+		<div class="header-logo">
+			<a href="/"><img src="/images/icon.png" width="60" height="60" alt="UKSTUDIO"></a>
+		</div>
+		
+	</header>
+
+
+	<main role="main">
+		<article itemscope itemtype="http://schema.org/BlogPosting">
+			<h1 class="entry-title" itemprop="headline">XSS対策に入力時エスケープは非常にややこしい</h1>
+			<span class="entry-meta"><time itemprop="datePublished" datetime="2008-10-27">October 27, 2008</time></span>
+			<section itemprop="entry-text">
+				<p>to-Rさんの<a href="http://blog.webcreativepark.net/2008/10/24-201629.html">XSSの脆弱性を限りなくなくす方法</a>を読んでなんかもにょもにょしたのでエントリーを書く。多分、to-Rさんはこれから書くことに関して理解してて、あの対策を行なってるのかもしれないけど、それでも書く。自分の勉強も兼てるので変なところがあれば教えていただけるとありがたいです。</p>
+
+<p>入力時エスケープは非常に<strong>ややこしい</strong></p>
+
+<p>確かに、入力値に必ずエスケープしておけば、XSS対策漏れにはなるかもしれない。けれど非常にややこしいことになる。</p>
+
+<p>例えば、受け取ったデータの文字列に対して文字数制限のバリデーションを行なうときにわざわざアンエスケープの処理を行なわないといけないし、DBへの保存の際にもアンエスケープが必要になる。ブログとかでフォームから受け取ったデータのうち、一部のタグは許容するときとかもかな。</p>
+
+<blockquote>
+ベストの対策はアプリの性質に合わせたエスケープなんだけども、これって完全になくすにはかなりの几帳面さが必要になるんじゃないかなと思います。(規模が大きくなればなるほど)
+</blockquote>
+
+<p>とエントリーでは書かれているけど、この対策が大規模になればなるほどXSSに限らず色々な問題が発生する気がする。大規模であればあるほど、出力箇所をみて「対策されている」というのがわかるのが大事。</p>
+
+<p>コードを書きながら「DBに保存するからアンエスケープ・・・」「スクリプトとして出力するからアンエスケープ」って考えるよりは、「HTMLの出力時にエスケープ」の方がわかりやすいはず。出力時をみればいいんだから。</p>
+
+<p>ちなみにフレームワークやテンプレートエンジンが出力時のエスケープをデフォルトで行なうってのは賛成です。なぜなら使っているフレームワークまたはテンプレートエンジンがエスケープしているということが自明なら、エスケープの有無を確認する必要がなくなるから。PHPとかWeb特化とか言うぐらいなら、デフォルトでエスケープして出力すればいいのにと思う。</p>
+
+<p>なんかXSS対策とかエスケープって言い方がよくない気もするな。普通に「スクリプトを無効にする」とかで良い気がしてきた。スクリプトが有効になるのは、HTML出力時なんだからその時に無効化すればいいよね。</p>
+
+<p>というか、PHPの人はmagick quoteでこりたと思ってたんだけど。</p>
+
+<p><h2>追記</h2>
+ブクマコメ、高木さんより。
+<blockquote>
+「普通に「スクリプトを無効にする」とかで良い気がしてきた」&lt; XSSはスクリプトだけじゃない。&gt;iframe&lt;の挿入&lt;form&gt;の挿入を考えてみるよろし。CERT CA-2000-02ではXSSと呼ばず「Malicious HTML Tags Embedded in Client Web Requests」と呼んだ
+</blockquote></p>
+
+<p>あー、確かにそうですね。指摘ありがとうございます。Malicious HTML Tags Embedded in Client Web Requestsは初耳でした。</p>
+
+			</section>
+		</article>
+	</main>
+
+
+	<footer role="contentinfo">
+		<div class="hr"></div>
+		<div class="footer-link">
+			
+			<a href="https://twitter.com/ukstudio" target="_blank">Twitter</a>
+			
+			<a href="https://github.com/ukstudio" target="_blank">GitHub</a>
+		</div>
+		<div class="copyright">Copyright &copy; AKAMATSU Yuki All rights reserved</div>
+	</footer>
+
+</div>
+
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+</body>
+</html>

@@ -1,0 +1,656 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>UKSTUDIO</title>
+    <link>http://ukstudio.jp/index.xml</link>
+    <description>Recent content on UKSTUDIO</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>AKAMATSU Yuki All rights reserved</copyright>
+    <lastBuildDate>Thu, 29 Dec 2016 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://ukstudio.jp/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Japan Product Manager Conferenceの資料公開</title>
+      <link>http://ukstudio.jp/posts/2016/12/29/pmconfjp/</link>
+      <pubDate>Thu, 29 Dec 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://ukstudio.jp/posts/2016/12/29/pmconfjp/</guid>
+      <description>&lt;p&gt;大分時間がたってしまったけど &lt;a href=&#34;http://pmconf.jp/&#34;&gt;プロダクトマネージャーカンファレンス 2016&lt;/a&gt;の資料を公開した。&lt;/p&gt;
+
+&lt;script async class=&#34;speakerdeck-embed&#34; data-id=&#34;6ee8a1eefaef4f29a8908b5f8c8e3bfb&#34; data-ratio=&#34;1.33333333333333&#34; src=&#34;//speakerdeck.com/assets/embed.js&#34;&gt;&lt;/script&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>UX概論に参加した</title>
+      <link>http://ukstudio.jp/posts/2015/06/15/ux_introduction/</link>
+      <pubDate>Mon, 15 Jun 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://ukstudio.jp/posts/2015/06/15/ux_introduction/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://atnd.org/events/66918&#34;&gt;【満席のため受付終了】UX概論　〜UXデザインの基礎を学ぶ勉強会〜 : ATND&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;この間の土曜日に参加してきた。ミニワークショップいれて3時間弱の勉強会だったけど、思ってた以上にUXに対する知識が浅かったなぁと通関した。すごく勉強になりました。講師の浅野先生、運営の倉光さん、その他スタッフのみなさん、本当にありがとうございます。&lt;/p&gt;
+
+&lt;p&gt;勉強会の内容だけど、UX自体はそんなにおおごとじゃないけど、じゃあどうやってそれを実現するの(つまりUXデザインの部分)ってなるとかなり大変そうだなぁという印象を受けました。ペルソナからしてちょっと甘くみてた感じです。&lt;/p&gt;
+
+&lt;p&gt;今後の課題としては社内のプロジェクト(とりあえず自分のチームだけでも)にUXデザインをどう取り込むかかなぁ。講師の方にアドバイスもらったけど外部の専門家でも雇って一緒にやって覚えるというのがよさそう。あとはいくつかの会社合同でワークショップをやるといいみたいな話もあったのでどこかのタイミングでやれたらな。&lt;/p&gt;
+
+&lt;p&gt;がんばるぞい&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>特定のGemの更新情報を追う</title>
+      <link>http://ukstudio.jp/posts/2015/04/19/follow-update-of-gem/</link>
+      <pubDate>Sun, 19 Apr 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://ukstudio.jp/posts/2015/04/19/follow-update-of-gem/</guid>
+      <description>&lt;p&gt;コード自体を追うなら大体GitHubで事足りるけど、Gemがリリースされたのを追いたいときにはRubyGems.orgのSubscribe使えばよさそうだったのでメモ。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;images/2015-04-20-follow-update-of-gem-01.png&#34; alt=&#34;Click subscribe link&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;RubyGems.orgの適当なGemのページを開くと右下の方にSubscribeというリンクがある。このリンクをクリックするとDashboardにそのGemの更新情報が表示される。あとはそこに表示されているRSSを追えばOK。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;images/2015-04-20-follow-update-of-gem-02.png&#34; alt=&#34;Get dashboard&#39;s rss&#34; /&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>「マイクロソフトを辞めて、オフィスのない会社で働いてみた」読了した</title>
+      <link>http://ukstudio.jp/posts/2015/04/10/the_year_without_pants/</link>
+      <pubDate>Fri, 10 Apr 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://ukstudio.jp/posts/2015/04/10/the_year_without_pants/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;http://www.amazon.co.jp/gp/product/4105068318?ie=UTF8&amp;amp;camp=1207&amp;amp;creative=8411&amp;amp;creativeASIN=4105068318&amp;amp;linkCode=shr&amp;amp;tag=ukstudio0c-22&amp;amp;qid=1428640468&amp;amp;sr=8-1&amp;amp;keywords=%E3%83%9E%E3%82%A4%E3%82%AF%E3%83%AD%E3%82%BD%E3%83%95%E3%83%88%E3%82%92%E8%BE%9E%E3%82%81%E3%81%A6+%E3%82%AA%E3%83%95%E3%82%A3%E3%82%B9%E3%81%AE%E3%81%AA%E3%81%84%E4%BC%9A%E7%A4%BE%E3%81%A7%E5%83%8D%E3%81%84%E3%81%A6%E3%81%BF%E3%81%9F&#34;&gt;Amazon.co.jp： マイクロソフトを辞めて、オフィスのない会社で働いてみた: スコット・バークン, 依田卓巳: 本&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;会社で買ってもらった本読み終わった。おもしろかったのでサクサク読んだ。おすすめ。&lt;/p&gt;
+
+&lt;p&gt;この本はマイクロソフトでプロジェクトマネージャーをやっていて、現在経営コンサルのスコット・バークンが社員全員がリモート勤務しているオートマティック社(wordpress.com作ってるところ)に勤務したときの話が書かれてる。所謂ドキュメンタリーに近いのだけど、誰かが観察したとかではなくて実際に著者が働いた時の体験がベースになってる。&lt;/p&gt;
+
+&lt;p&gt;37signalsの「強いチームはオフィスを捨てる」もまぁそんなにつまらなくはなかったけどなんかキレイ事だけっぽい感じがするのと対象に、こっちは良かったこと悪いこと両方について書かれていて色々考えさせられる。強いチームはオフィスを捨てるより色々参考になるのでリモートに興味がある人は読むといいかも。&lt;/p&gt;
+
+&lt;p&gt;スコットのすごいところは今までチームという文化が全然なかったところに(締め切りもないし見積りもない)、チームという文化を導入して実績を残したところ。著者が言うように、ある文化で染まっているところに新しい文化を導入するのはそう簡単なことじゃない。&lt;/p&gt;
+
+&lt;p&gt;それとリモートはやっぱり難しいなというのが率直な感想で、今のメンバーを散り散りに働かしても多分成果は落ちる。スコットも作中で「リモートでも良い仕事ができたが、いつもそばにいれたらもっと良い仕事ができたと思う」みたいなことを言っていた。逆にオートマティックのCEOは全員リモートがとてもよい働き方だとも思っているらしい(成果より社員の満足度・幸福度を軸に考えているのかも)&lt;/p&gt;
+
+&lt;p&gt;じゃあなんでリモートするのかというと、居住地に縛られず人を雇えるのが大きいのかなと思う。例えばちょーやばいハッカーがいるけど俺はカリフォルニアから出る気がないぜ、という人だと東京で当然雇えないがリモートだったら雇える可能性がある。つまり距離という制限をなくして本当に働きたい人と働くことができる。&lt;/p&gt;
+
+&lt;p&gt;あとはやっぱりリモートで時間に縛られないことで社員の満足度があがるとか(自分の好きなところで働きたい、子供の世話を見なくてはいけない…etc)についても言及されていて、ここらへんはなんとなく感じている通りかなという印象。&lt;/p&gt;
+
+&lt;p&gt;この本はオートマティック社がフルリモートでどう仕事しているのかというのもおもしろいが、それ以上にスコットがカオスな会社にチームという文化を導入するまでの流れの方がおもしろいかな。おすすめです。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>スクラム実践入門読み終わった</title>
+      <link>http://ukstudio.jp/posts/2015/04/03/gihyo_scrum_book/</link>
+      <pubDate>Fri, 03 Apr 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://ukstudio.jp/posts/2015/04/03/gihyo_scrum_book/</guid>
+      <description>
+
+&lt;p&gt;&lt;a href=&#34;http://www.amazon.co.jp/gp/product/4774172367?ie=UTF8&amp;amp;camp=1207&amp;amp;creative=8411&amp;amp;creativeASIN=4774172367&amp;amp;linkCode=shr&amp;amp;tag=ukstudio0c-22&amp;amp;qid=1428081771&amp;amp;sr=8-1&amp;amp;keywords=%E3%82%B9%E3%82%AF%E3%83%A9%E3%83%A0%E5%AE%9F%E8%B7%B5%E5%85%A5%E9%96%80&#34;&gt;Amazon.co.jp： スクラム実践入門 ── 成果を生み出すアジャイルな開発プロセス (WEB+DB PRESS plus): 貝瀬 岳志, 原田 勝信, 和島 史典, 栗林 健太郎, 柴田 博志, 家永 英治: 本&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;2015/4/3に読了。&lt;/p&gt;
+
+&lt;p&gt;会社で購入してもらったのでざっと読み終えた。&lt;/p&gt;
+
+&lt;h2 id=&#34;ソフトウェアはどこにあるのか-そう-僕らの心のなかにあるんだよ&#34;&gt;ソフトウェアはどこにあるのか。そう、僕らの心のなかにあるんだよ…&lt;/h2&gt;
+
+&lt;p&gt;なんかふざけた見出しつけたけど、1章は結構好きで何回か読み直したいなという章だった。スクラムについて知るぞ〜と意気込む若者がよんだらちょっとびっくりするかもしれない。それでもまずは読んでみて自分なりに考えてほしいなぁと思う。僕もまだちょっと消化不良感あるので消化したい。&lt;/p&gt;
+
+&lt;h2 id=&#34;スクラムガイドのガイド&#34;&gt;スクラムガイドのガイド&lt;/h2&gt;
+
+&lt;p&gt;2〜4章はスクラムガイドに基いてスクラムについてコンパクトに解説してくれる。この辺はスクラムについてある程度知識はあったのでうんうんという感じで読みました。&lt;/p&gt;
+
+&lt;p&gt;正直、スクラムガイドってあれだけ読んでもピンと来ない人ってそこそこいると思うんだよね。スクラムガイドだけじゃいまいちわからんって人はこれらの章を読むとある程度理解できると思う。&lt;/p&gt;
+
+&lt;h2 id=&#34;各社の事例と問題解決の道標&#34;&gt;各社の事例と問題解決の道標。&lt;/h2&gt;
+
+&lt;p&gt;この本でしか読めないと噂の6〜8章。それと問題とその解決策を提示してくれる9〜12章。&lt;/p&gt;
+
+&lt;p&gt;この辺りの章もよかった。特に僕の場合、日々の開発でなにかしらうまくいかないことがあってそれの答えとまではいかなくとも参考になるなにかが欲しいという動機でこの本を買ってもらったのですごく参考になった。&lt;/p&gt;
+
+&lt;h2 id=&#34;理論の前半-現場の後半&#34;&gt;理論の前半、現場の後半&lt;/h2&gt;
+
+&lt;p&gt;前半と後半でそれぞれ読み応えがあるので、スクラムについて全然しらんという人でもスクラムについてある程度知ってたり経験があるっていう人でもなにかしら得るものがある本だなと思いました。&lt;/p&gt;
+
+&lt;p&gt;弊社でも1人、悩める人がいるのでその人には是非読んでもらおうかなと思います。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>特定のコミットが含まれるGitHub Pull Requestを開く</title>
+      <link>http://ukstudio.jp/posts/2015/03/26/open_pull_request/</link>
+      <pubDate>Thu, 26 Mar 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://ukstudio.jp/posts/2015/03/26/open_pull_request/</guid>
+      <description>&lt;p&gt;今日たまたまあるコミットが含まれているGitHubのPull Requestをサクッと探したい事案が発生した。というのも自分が以前書いたコードがどうしてこうなっているのかというのを知りたかったんだけど、commit messageだけじゃよくわからんかった(〜を実装したみたいなことを英語で書いてあっただけ)。&lt;/p&gt;
+
+&lt;p&gt;Pull Requestは割と丁寧に説明を書いているのできっとPull Requestのdescriptionを見ればわかりそうという感じはしたのだけれどパッとそれを開く手段がわからず、色々ググったりtwitterで教えてもらったりした結果下のようなfunctionをzshrcに書いた。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;function find-pr() {
+  local parent=$2||&#39;master&#39;
+  git log $1..$2 --merges --ancestry-path --reverse --oneline | head -n1
+}
+
+function find-pr-open() {
+  local pr=&amp;quot;$(find-pr $1 $2 | awk &#39;{print substr($5, 2)}&#39;)&amp;quot;
+  local repo=&amp;quot;$(git config --get remote.origin.url | sed &#39;s/git@github.com://&#39; | sed &#39;s/\.git$//&#39;)&amp;quot;
+  open &amp;quot;https://github.com/${repo}/pull/${pr}&amp;quot;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;find-pr-open REVISION
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;あまりシェルは得意ではないのでそこらへんは大目に見て欲しい。やってることはfind-prで該当のcommitが含まれているMerge commitを探してcommit messageからGitHub Pull Requestの番号を取り出している。リポジトリ名はgit configから取得して余計な文字はsedで削除。あとはURLを組み立ててブラウザで開くだけ。多分これでPull Requestを開けるはず。&lt;/p&gt;
+
+&lt;p&gt;なんにせよcommit messageはもうちょっと丁寧に書こうと思いました。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Vue.js便利</title>
+      <link>http://ukstudio.jp/posts/2015/03/20/vuejs/</link>
+      <pubDate>Fri, 20 Mar 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://ukstudio.jp/posts/2015/03/20/vuejs/</guid>
+      <description>&lt;p&gt;今のプロダクトにちょっと前からVue.jsを採用しているんだけど、少しずつうまく使えるようになってきていてすごく便利だなーと感じる。コンポーネントについても大体わかってきた。&lt;/p&gt;
+
+&lt;p&gt;RailsアプリケーションにVue.jsを採用してどう変えてきたかみたいな記事をそのうち &lt;a href=&#34;http://blog.spicelife.jp/&#34;&gt;スパイスな人生&lt;/a&gt; の方に投稿したいと思う。お楽しみに。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>TEX Yodaが届いたので使い始めた</title>
+      <link>http://ukstudio.jp/posts/2015/01/29/tex_yoda/</link>
+      <pubDate>Thu, 29 Jan 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://ukstudio.jp/posts/2015/01/29/tex_yoda/</guid>
+      <description>
+
+&lt;p&gt;&lt;a href=&#34;https://www.massdrop.com/buy/tex-yoda?mode=guest_open&#34;&gt;TEX Yoda TrackPoint Keyboard - Massdrop&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;一部で話題のTEX Yodaが先週の金曜日に届いたので今週から使っている。&lt;/p&gt;
+
+&lt;p&gt;&lt;blockquote class=&#34;instagram-media&#34; data-instgrm-captioned data-instgrm-version=&#34;4&#34; style=&#34; background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:250px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);&#34;&gt;&lt;div style=&#34;padding:8px;&#34;&gt; &lt;div style=&#34; background:#F8F8F8; line-height:0; margin-top:40px; padding:50% 0; text-align:center; width:100%;&#34;&gt; &lt;div style=&#34; background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAsCAMAAAApWqozAAAAGFBMVEUiIiI9PT0eHh4gIB4hIBkcHBwcHBwcHBydr+JQAAAACHRSTlMABA4YHyQsM5jtaMwAAADfSURBVDjL7ZVBEgMhCAQBAf//42xcNbpAqakcM0ftUmFAAIBE81IqBJdS3lS6zs3bIpB9WED3YYXFPmHRfT8sgyrCP1x8uEUxLMzNWElFOYCV6mHWWwMzdPEKHlhLw7NWJqkHc4uIZphavDzA2JPzUDsBZziNae2S6owH8xPmX8G7zzgKEOPUoYHvGz1TBCxMkd3kwNVbU0gKHkx+iZILf77IofhrY1nYFnB/lQPb79drWOyJVa/DAvg9B/rLB4cC+Nqgdz/TvBbBnr6GBReqn/nRmDgaQEej7WhonozjF+Y2I/fZou/qAAAAAElFTkSuQmCC); display:block; height:44px; margin:0 auto -44px; position:relative; top:-22px; width:44px;&#34;&gt;&lt;/div&gt;&lt;/div&gt; &lt;p style=&#34; margin:8px 0 0 0; padding:0 4px;&#34;&gt; &lt;a href=&#34;https://instagram.com/p/yUmhN8xXLR/&#34; style=&#34; color:#000; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none; word-wrap:break-word;&#34; target=&#34;_top&#34;&gt;とりあえずできた&lt;/a&gt;&lt;/p&gt; &lt;p style=&#34; color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;&#34;&gt;AKAMATSU Yukiさん(@ukstudio)が投稿した写真 - &lt;time style=&#34; font-family:Arial,sans-serif; font-size:14px; line-height:17px;&#34; datetime=&#34;2015-01-26T15:18:07+00:00&#34;&gt;2015 1月 26 7:18午前 PST&lt;/time&gt;&lt;/p&gt;&lt;/div&gt;&lt;/blockquote&gt;
+&lt;script async defer src=&#34;//platform.instagram.com/en_US/embeds.js&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;ハンダ付け&#34;&gt;ハンダ付け&lt;/h2&gt;
+
+&lt;p&gt;久々のハンダ付けだけど、MXスイッチの足と基板をつけるだけだし、オフィスに&lt;a href=&#34;http://asonas.hatenablog.com/entry/2015/01/24/173920&#34;&gt;先に組み立て済みの同僚&lt;/a&gt;もいたのでそんなに難しいこともなく終了。といっても幾つかミスもあったわけだけど。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;LEDを付ける前に基板をネジ止めした&lt;/li&gt;
+&lt;li&gt;ハンダ付けしわすれた箇所があった&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;TEX YodaにはLEDつけるところがあるんだけど、そのLEDがキートップのパーツと同じ袋に入ってる。なので基板にひと通りスイッチつけて、満足してネジ止めして「さー、キートップつけるぞ」と思い袋あけるとそこからLEDがでてきて悲しい感じになる。ハンダ付けするときにLEDの話を同僚としていたのにこれだよ。&lt;/p&gt;
+
+&lt;p&gt;ハンダ付けしわすれたのは完全に自分のミス。ひと通り組み立て終わったあとに0のキーが効かず、ハンダ付けのときに基板壊したかなとすごい焦ったけど開けてみたら普通にハンダがついてなかったというオチ。ちなみに現状、左下のFnキーも動いてないのでそこも忘れてる可能性ある。&lt;/p&gt;
+
+&lt;p&gt;&lt;blockquote class=&#34;instagram-media&#34; data-instgrm-captioned data-instgrm-version=&#34;4&#34; style=&#34; background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:250px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);&#34;&gt;&lt;div style=&#34;padding:8px;&#34;&gt; &lt;div style=&#34; background:#F8F8F8; line-height:0; margin-top:40px; padding:50% 0; text-align:center; width:100%;&#34;&gt; &lt;div style=&#34; background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAsCAMAAAApWqozAAAAGFBMVEUiIiI9PT0eHh4gIB4hIBkcHBwcHBwcHBydr+JQAAAACHRSTlMABA4YHyQsM5jtaMwAAADfSURBVDjL7ZVBEgMhCAQBAf//42xcNbpAqakcM0ftUmFAAIBE81IqBJdS3lS6zs3bIpB9WED3YYXFPmHRfT8sgyrCP1x8uEUxLMzNWElFOYCV6mHWWwMzdPEKHlhLw7NWJqkHc4uIZphavDzA2JPzUDsBZziNae2S6owH8xPmX8G7zzgKEOPUoYHvGz1TBCxMkd3kwNVbU0gKHkx+iZILf77IofhrY1nYFnB/lQPb79drWOyJVa/DAvg9B/rLB4cC+Nqgdz/TvBbBnr6GBReqn/nRmDgaQEej7WhonozjF+Y2I/fZou/qAAAAAElFTkSuQmCC); display:block; height:44px; margin:0 auto -44px; position:relative; top:-22px; width:44px;&#34;&gt;&lt;/div&gt;&lt;/div&gt; &lt;p style=&#34; margin:8px 0 0 0; padding:0 4px;&#34;&gt; &lt;a href=&#34;https://instagram.com/p/yV0z5CxXIt/&#34; style=&#34; color:#000; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none; word-wrap:break-word;&#34; target=&#34;_top&#34;&gt;ゼロのキー動かんと思ったらこれですよ&lt;/a&gt;&lt;/p&gt; &lt;p style=&#34; color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;&#34;&gt;AKAMATSU Yukiさん(@ukstudio)が投稿した写真 - &lt;time style=&#34; font-family:Arial,sans-serif; font-size:14px; line-height:17px;&#34; datetime=&#34;2015-01-27T02:42:15+00:00&#34;&gt;2015 1月 26 6:42午後 PST&lt;/time&gt;&lt;/p&gt;&lt;/div&gt;&lt;/blockquote&gt;
+&lt;script async defer src=&#34;//platform.instagram.com/en_US/embeds.js&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;選んだ軸&#34;&gt;選んだ軸&lt;/h2&gt;
+
+&lt;p&gt;実は買って届くまでMXスイッチの軸の色の意味を知らなかったんだけど、買うときに一番値段が高かったクリア軸にした。わからないときはとりあえず高いのにしておく精神。調べてみると茶軸に近い感じということらしい。茶軸使ったことないからそう言われてもわからないけど…。他にも色々な軸があるので試してみたい気がする。緑とか気になる。&lt;/p&gt;
+
+&lt;h2 id=&#34;ちょっとしたカスタマイズ&#34;&gt;ちょっとしたカスタマイズ&lt;/h2&gt;
+
+&lt;p&gt;MXスイッチ互換のキートップが売ってたりするので適当に変えてみたりした。PCゲーマーではおなじみのWASD。あとIJKLを赤に。これらはFnを押すとカーソルキーの動きをしてくれる。あとはなんとなくスペースも赤にしたら顔みたいになった。&lt;/p&gt;
+
+&lt;p&gt;&lt;blockquote class=&#34;instagram-media&#34; data-instgrm-captioned data-instgrm-version=&#34;4&#34; style=&#34; background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:250px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);&#34;&gt;&lt;div style=&#34;padding:8px;&#34;&gt; &lt;div style=&#34; background:#F8F8F8; line-height:0; margin-top:40px; padding:50% 0; text-align:center; width:100%;&#34;&gt; &lt;div style=&#34; background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAsCAMAAAApWqozAAAAGFBMVEUiIiI9PT0eHh4gIB4hIBkcHBwcHBwcHBydr+JQAAAACHRSTlMABA4YHyQsM5jtaMwAAADfSURBVDjL7ZVBEgMhCAQBAf//42xcNbpAqakcM0ftUmFAAIBE81IqBJdS3lS6zs3bIpB9WED3YYXFPmHRfT8sgyrCP1x8uEUxLMzNWElFOYCV6mHWWwMzdPEKHlhLw7NWJqkHc4uIZphavDzA2JPzUDsBZziNae2S6owH8xPmX8G7zzgKEOPUoYHvGz1TBCxMkd3kwNVbU0gKHkx+iZILf77IofhrY1nYFnB/lQPb79drWOyJVa/DAvg9B/rLB4cC+Nqgdz/TvBbBnr6GBReqn/nRmDgaQEej7WhonozjF+Y2I/fZou/qAAAAAElFTkSuQmCC); display:block; height:44px; margin:0 auto -44px; position:relative; top:-22px; width:44px;&#34;&gt;&lt;/div&gt;&lt;/div&gt; &lt;p style=&#34; margin:8px 0 0 0; padding:0 4px;&#34;&gt; &lt;a href=&#34;https://instagram.com/p/yY9zPMxXH1/&#34; style=&#34; color:#000; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none; word-wrap:break-word;&#34; target=&#34;_top&#34;&gt;顔っぽい&lt;/a&gt;&lt;/p&gt; &lt;p style=&#34; color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;&#34;&gt;AKAMATSU Yukiさん(@ukstudio)が投稿した写真 - &lt;time style=&#34; font-family:Arial,sans-serif; font-size:14px; line-height:17px;&#34; datetime=&#34;2015-01-28T07:58:31+00:00&#34;&gt;2015 1月 27 11:58午後 PST&lt;/time&gt;&lt;/p&gt;&lt;/div&gt;&lt;/blockquote&gt;
+&lt;script async defer src=&#34;//platform.instagram.com/en_US/embeds.js&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;キーレイアウト&#34;&gt;キーレイアウト&lt;/h2&gt;
+
+&lt;p&gt;現時点のレイアウトはDIPスイッチの１，３，５がオフ、２，４，６がオンになっている。それぞれの意味はマニュアル参照。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://docs.google.com/file/d/0B7TuRf3KQe7GdjJwNXMwdHZIUm8/edit&#34;&gt;TKB-600i-Datasheet_14-0603-Rev 1.0.pdf - Google ドライブ&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;大体よくあるレイアウトだとは思うけど、珍しいのはESCと`~が同じキーでどちらかをFnキー押しながらじゃないと入力できない(DIPスイッチの3番参照)。&lt;/p&gt;
+
+&lt;p&gt;最初は普通に入力したらESCにして`~をFnキー押すようにしていたのだけど~がShiftも押さなきゃいけないのがあまりに不便すぎてやめた。VimmerとしてはESCはコード書くときそんなに使わないし、普段もMacユーザーなのでKarabinerでctrl-[をESC扱いにするようにしてESC単体で押す必要をなくして無事解決。&lt;/p&gt;
+
+&lt;h2 id=&#34;総評&#34;&gt;総評&lt;/h2&gt;
+
+&lt;p&gt;概ね使い心地には満足している。元々ThinkPad使っていたのでトラックポイントも違和感なく、机からマウスを排除できたし、むしろマウスのためだけに腕を動かさなくなったが大分よい。実はHHKで一番気に入らなかったのがDELETEの位置で、TEX Yodaではそこが\になったのも良い。&lt;/p&gt;
+
+&lt;p&gt;本体の重さがそれなりにある。その気になれば撲殺できそうな程度には。なので持ち歩くつもりでいるならHHKの方がよいかなと思う。俺はあまりキーボードを持ち歩く人間ではないので問題ない。&lt;/p&gt;
+
+&lt;p&gt;タッチ感だけど、音はクリア軸のせいかTEX Yodaがそうなのかわからないけど、ちょっとちゃっちい音のような気もする。クリック感は個人的には大分気に入っていて、HHK、KinesisとTEX Yoda(クリア軸)だったらTEX Yodaが一番好み。ちなみにAlphaGripは俺の中では黒歴史化している。&lt;/p&gt;
+
+&lt;p&gt;今massdropをみると$199までもうちょいなので、興味ある人は買っていきましょう。ハンダ付けも$25でやってくれる模様。買って損はしないキーボードだと思います。実物みないと…という人は弊社に2つあるので遊びにくるとよいですよ。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>株式会社spice lifeに入社しました</title>
+      <link>http://ukstudio.jp/posts/2015/01/01/joined_spicelife/</link>
+      <pubDate>Thu, 01 Jan 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://ukstudio.jp/posts/2015/01/01/joined_spicelife/</guid>
+      <description>&lt;p&gt;あけましておめでとうございます。今年もどうぞよろしくお願いいたします。&lt;/p&gt;
+
+&lt;p&gt;さて、タイトル通りではありますが、&lt;strong&gt;本日2015年1月1日から株式会社spice lifeに入社しました&lt;/strong&gt;。社員です。&lt;/p&gt;
+
+&lt;p&gt;&lt;blockquote style=&#39;text-align: center&#39; class=&#34;twitter-tweet&#34; lang=&#34;en&#34;&gt;&lt;p&gt;入社&lt;/p&gt;&amp;mdash; ゆーけー/赤松 祐希 (@ukstudio) &lt;a href=&#34;https://twitter.com/ukstudio/status/550306578851569668&#34;&gt;December 31, 2014&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src=&#34;//platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;なので2010年(だったかな)から続いていたフリーランス業も一旦終わりになります。フリーランスの時には様々な人にお世話になりました。本当に感謝の言葉しかでてきません。一部の方々にはご迷惑をお掛けしてしまったこともあります。本来直接伝えることなのでしょうがここで簡単にでもお詫びと感謝の気持ちを述べさせてください。本当にありがとうございました。&lt;/p&gt;
+
+&lt;p&gt;spice lifeには6月の終わり頃からフリーランスとして契約させてもらっていてとりあえず半年契約しましょう、その後はその半年働いてよかったら再契約しましょう、という感じでした。ところがどっこい、再契約どころか正式に入社という運びとなりました。元々社員に近い形で働いていたので働き方的にはあまり大きく変わりはしませんが、4年程度フリーランスをしていたのでちょっと感慨深くあります。&lt;/p&gt;
+
+&lt;p&gt;ここ最近はリリースの時にもこのブログで&lt;a href=&#34;http://ukstudio.jp/2014/11/27/spotlights-jp/&#34;&gt;お知らせ&lt;/a&gt;した&lt;a href=&#34;https://spotlights.jp/&#34;&gt;SPOTLIGHTS&lt;/a&gt;というサービスの開発に携わっています。もうしばらく携わっていく予定ですので何卒よろしくおねがいします。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://amzn.to/ukstudio&#34;&gt;ｳｨｯｽﾘｽﾄ&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>esaのストックとフローの絞り込みで(俺にとって)なにがうれしいのか</title>
+      <link>http://ukstudio.jp/posts/2014/12/14/esa_flow_stock/</link>
+      <pubDate>Sun, 14 Dec 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://ukstudio.jp/posts/2014/12/14/esa_flow_stock/</guid>
+      <description>
+
+&lt;p&gt;そもそもesaのストックとフローの絞り込みってなに？っていう人は以下のリンクからどうぞ。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://docs.esa.io/posts/31&#34;&gt;release_note/2014/12/13/検索結果の絞り込み(Stock or Flow) - docs - esa.io&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;簡単に説明するとesaではカテゴリに日付が入っている記事はフロー、入っていない記事はストックとして扱いそれらを分けて検索できるようになった。&lt;/p&gt;
+
+&lt;h2 id=&#34;結論から&#34;&gt;結論から&lt;/h2&gt;
+
+&lt;p&gt;たまには長い話をすっとばして結論を書く。簡単に言ってしまうと&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;yy年mm月dd日にAの仕様を変更したよ&lt;/li&gt;
+&lt;li&gt;現時点において最新の仕様はこうです&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;という2種類の情報を前者はフロー、後者はストックとして分けて検索できるようになった。大体においてほしい情報というのは後者のストックなので個人的には非常にうれしい。&lt;/p&gt;
+
+&lt;h2 id=&#34;そもそもストックとフローとは&#34;&gt;そもそもストックとフローとは&lt;/h2&gt;
+
+&lt;p&gt;記事自体にストックとフローという概念をもたせるのは実はあまり新しい話でもなく、「wiki ブログ ストック フロー」で検索するとそれなりに記事がでてくる。要はwiki=ストック、ブログ=フローということだ。もちろん、wikiのあるページにフローの概念をもたせることもブログのある記事にストックの概念をもたせることも可能だけど大枠としてそういうことにする。&lt;a href=&#34;http://jkondo.hatenablog.com/entry/2011/11/19/114109&#34;&gt;ブログもストックっていう人もいるけど&lt;/a&gt;、wikiとかブログとかはここではあまり重要ではないので置いておく。&lt;/p&gt;
+
+&lt;p&gt;僕の捉え方でいうと、時系列にそって情報の流れがあるものはフロー、累積されていくようなものはストックと考えている(これなんの説明にもなっていないのでは…)&lt;/p&gt;
+
+&lt;h2 id=&#34;議事録はフロー&#34;&gt;議事録はフロー&lt;/h2&gt;
+
+&lt;p&gt;esaでそれなりの量の議事録を書いてきたけど、これらはMTGの日付をカテゴリに入れているのでフローだ。これらは日々の仕様の変更の流れをそのまま現しているのでフローとして扱うのは妥当だと思う。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://ukstudio.jp/images/2014-12-14-flow.png&#34; alt=&#34;flow.png&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;こういった情報がフローだけだと困ることがある。議事録には変更の差分しか書かれていない。なので現時点であるべき仕様を議事録から読み解くのは大変だ。エンジニアにわかるようにいうとgitの各commitのdiffから現在のソースコードを想像しろというものだ。&lt;/p&gt;
+
+&lt;h2 id=&#34;そこでストック&#34;&gt;そこでストック&lt;/h2&gt;
+
+&lt;p&gt;つまり、フローである議事録とは別に今あるべき姿を累積する記事が必要になる。そこでesa上では日付の入っていない記事を作り、そこにあるべき姿を書いていく。重要なのはフローと違いストックはその記事をちゃんと更新する必要があるということだ。&lt;/p&gt;
+
+&lt;p&gt;今まではこういう風にフローとストックの記事を分けてもうまく検索することができずにREADME.mdにリンクを貼っておくということしかできなかった。なのでそもそも人の目につかず、結果更新もされないという感じだったけれど、検索しやすくなったことで情報が古いことが目につきやすくなるので自然と更新も行われやすくなるのではないかと思う(みんな更新してね!)&lt;/p&gt;
+
+&lt;h2 id=&#34;おまけ&#34;&gt;おまけ&lt;/h2&gt;
+
+&lt;p&gt;そもそも仕様をesaに書くの?みたいな話ありそうだけど、実装の前にメンバーに仕様を共有するケースはそれなりにあるし、コードを読んでもWhyがわからないのでなぜこうしたのかみたいな部分はドキュメントに残したりもする。&lt;/p&gt;
+
+&lt;p&gt;それに今回は仕様の話を例にとったけど、例えばインフラまわりだと議事録でこういう構成にしたという話を残すのとは別に構成がかわったことによってデプロイ手順もかわったならそれはストックとして残したいという話もある。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>spotlights.jpが本日10時にリリースされました</title>
+      <link>http://ukstudio.jp/posts/2014/11/27/spotlights-jp/</link>
+      <pubDate>Thu, 27 Nov 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://ukstudio.jp/posts/2014/11/27/spotlights-jp/</guid>
+      <description>&lt;p&gt;&lt;a class=&#34;embedly-card&#34; href=&#34;https://spotlights.jp&#34;&gt;みんなで贈るソーシャルギフト・プレゼント ＼SPOTLIGHTS／（スポットライト）&lt;/a&gt;
+&lt;script async src=&#34;//cdn.embedly.com/widgets/platform.js&#34; charset=&#34;UTF-8&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;div style=&#34;text-align: center&#34;&gt;
+  &lt;iframe width=&#34;560&#34; height=&#34;315&#34; src=&#34;//www.youtube.com/embed/xP14KD2qIR8&#34; frameborder=&#34;0&#34; allowfullscreen&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;p&gt;今日の10時より&lt;a href=&#34;http://spicelife.jp/&#34;&gt;株式会社spice life（スパイスライフ）&lt;/a&gt;からSPOTLIGHTSがリリースされました!!&lt;/p&gt;
+
+&lt;p&gt;ここ2ヶ月弱の追い込みにプログラマとして開発に関わらせて頂いてます(今後も関わっていく予定です)。実は自分のブログで関わってます！って言えるサービスは初めてだと思うので、期間はまだ短いですがちょっと感慨深いものがあります。&lt;/p&gt;
+
+&lt;p&gt;結婚式や誕生日のお祝いや日頃の感謝などにご活用ください。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>RSpecでPower Assertをやるには</title>
+      <link>http://ukstudio.jp/posts/2014/09/21/rspec_power_assert/</link>
+      <pubDate>Sun, 21 Sep 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://ukstudio.jp/posts/2014/09/21/rspec_power_assert/</guid>
+      <description>
+
+&lt;p&gt;RubyKaigi 2014でpower assertの話を聞いてrspecでどうにかならんかちょっと考えてみました。まず結論だけ書くとrspecでpower assertを使いたければ以下の様に書けばOK。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-ruby&#34;&gt;require &#39;rspec&#39;
+require &#39;minitest&#39;
+require &#39;minitest-power_assert&#39;
+
+module Minitest
+  module Assertions
+    prepend  Minitest::PowerAssert::Assertions
+  end
+end
+
+RSpec.configure do |config|
+  config.expect_with :minitest
+end
+
+describe &#39;Test&#39; do
+  it &#39;test&#39; do
+    assert { 1.to_s.class == 1.to_i.class }
+  end
+end
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;これを&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;$ rspec --color -rpower_assert power_assert.rb
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;で実行するとこんな感じ。power_assertは事前にrequireした方が情報量がちょっと増える。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Failures:
+
+  1) Test test
+     Failure/Error: assert { 1.to_s.class == 1.to_i.class }
+     Minitest::Assertion:
+
+           assert { 1.to_s.class == 1.to_i.class }
+                      |    |     |    |    |
+                      |    |     |    |    Fixnum
+                      |    |     |    1
+                      |    |     false
+                      |    String
+                      &amp;quot;1&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;letとsubject&#34;&gt;letとsubject&lt;/h2&gt;
+
+&lt;p&gt;power_assertの0.1.3だとdefined_methodで定義されたメソッドの値が取れていないらしく、letやsubjectの値が表示されない。現時点でのmasterの0.1.4devだと修正されているとのことなのでちゃんと表示される。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-ruby&#34;&gt;describe &#39;Test&#39; do
+  let(:klass) { 1.to_s.class }
+  it &#39;test&#39; do
+    assert { klass == 1.to_i.class }
+  end
+end
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;これを実行すると&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Failures:
+
+  1) Test test
+     Failure/Error: assert { klass == 1.to_i.class }
+     Minitest::Assertion:
+
+           assert { klass == 1.to_i.class }
+                    |     |    |    |
+                    |     |    |    Fixnum
+                    |     |    1
+                    |     false
+                    String
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;こんな感じ。subjectも大体おなじ。&lt;/p&gt;
+
+&lt;h2 id=&#34;expectとマッチャ&#34;&gt;expectとマッチャ&lt;/h2&gt;
+
+&lt;p&gt;この方法はMinitestのadapterとminitest-power_assertを使うようにしているので無理。&lt;/p&gt;
+
+&lt;p&gt;ちなみに &lt;a href=&#34;https://gist.github.com/mizoR/3cf068eeae033bd5db5a&#34;&gt;rspec で 手軽に power_assert 出力できるようにする&lt;/a&gt; の方法でexpectを使ってみると&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-ruby&#34;&gt;require &#39;rspec/core&#39;
+require &#39;power_assert&#39;
+
+module RSpec
+  module PowerAssert
+    def power_assert(&amp;amp;block)
+      ::PowerAssert.start(block) do |pa|
+        begin
+          pa.yield
+        rescue RSpec::Expectations::ExpectationNotMetError =&amp;gt; e
+          e.message &amp;lt;&amp;lt; &amp;quot;\nPowerAssert:\n#{pa.message_proc.call}&amp;quot;
+          raise e
+        end
+      end
+    end
+  end
+end
+
+class RSpec::Core::ExampleGroup
+  include RSpec::PowerAssert
+end
+
+describe &#39;Test&#39; do
+  it &#39;test&#39; do
+    power_assert {
+      expect(1.to_s.class).to eq(1.to_i.class)
+    }
+  end
+end
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;これは&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;       PowerAssert:
+             expect(1.to_s.class).to eq(1.to_i.class)
+             |        |    |      |  |    |    |
+             |        |    |      |  |    |    Fixnum
+             |        |    |      |  |    1
+             |        |    |      |  #&amp;lt;RSpec::Matchers::BuiltIn::Eq:0x007f0850c91d78 @expected=Fixnum, @actual=String&amp;gt;
+             |        |    |      nil
+             |        |    String
+             |        &amp;quot;1&amp;quot;
+             #&amp;lt;RSpec::Expectations::ExpectationTarget:0x007f0850caa170 @target=String&amp;gt;
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;こうなってしまう。この場合、expectの@targetにStringという結果が入っているのでそれを取り出すようにして、eqの方も@expectedに期待するものがはいってるのでそれを取りだすようにすればいいのかなぁ。&lt;/p&gt;
+
+&lt;p&gt;もしくはexpectとeqの中の値さえわかれば良いといえば良いのでいっそ値をださなくてもいいのかも? 例えばこんな感じ。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;       PowerAssert:
+             expect(1.to_s.class).to eq(1.to_i.class)
+                      |    |              |    |
+                      |    |              |    Fixnum
+                      |    |              1
+                      |    |
+                      |    |
+                      |    String
+                     &amp;quot;1&amp;quot;
+
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;別の例としてbe_falseyだとこんな感じ。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;     Failure/Error: expect(nil.to_s.to_i).to be_falsey
+       expected: falsey value
+            got: 0
+       PowerAssert:
+             expect(nil.to_s.to_i).to be_falsey
+             |          |    |     |  |
+             |          |    |     |  #&amp;lt;RSpec::Matchers::BuiltIn::BeFalsey:0x007fa84b53bb00 @actual=0&amp;gt;
+             |          |    |     nil
+             |          |    0
+             |          &amp;quot;&amp;quot;
+             #&amp;lt;RSpec::Expectations::ExpectationTarget:0x007fa84b3e02b0 @target=0&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;これに関していうとbe_falseyにはfalseが欲しいという情報がない。be_falseyを見れば求めてるものはわかるって話かもしれないけど… 更に言うとRSpec3でComposable Matcherが入ったりとか、以前からあるCustom Matcherとかがあったりして、それら全部対応するのは厳しいなーという感じ(そもそも対応できるのかもよくわからない…)&lt;/p&gt;
+
+&lt;p&gt;そもそもの話をするとそういったマッチャというか、たくさんあるassertion methodを使い分けしたくないからpower assertをつかうわけで別にマッチャとか使わなくていいのではという気持ちがある。&lt;/p&gt;
+
+&lt;p&gt;なのでexpectとかカスタムマッチャとかは(power assertを使う部分では)諦めてassertですませるのがよさそうかなと個人的には思う。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-ruby&#34;&gt;config.expect_with :minitest
+config.expect_with :rspec
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;spec_helper.rbにminitestもrspecも両方使うよう書けばpower_assertを使いたいところと、rspecを使いたいところで分けることができるのでどうしてもマッチャを使いたいところは素直にマッチャを書いてpower assertは諦めるしかない。&lt;/p&gt;
+
+&lt;p&gt;今あるテスト資産をそのまんまpower assert対応にはできないのが悲しいところではあるけれども、このassertを使う方法でもexpectation部分以外はrspecの機能そのまま使えるのでそこまで悪くはないかなと思う。&lt;/p&gt;
+
+&lt;p&gt;まだpower_assert gemの実装を理解できていないので、もしかしたらうまいことやれるかもしれないけどとりあえずここでギブアップ…&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Arelあれこれ</title>
+      <link>http://ukstudio.jp/posts/2014/09/05/arel/</link>
+      <pubDate>Fri, 05 Sep 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://ukstudio.jp/posts/2014/09/05/arel/</guid>
+      <description>
+
+&lt;h2 id=&#34;model-arel-table-を読みづらいと感じる&#34;&gt;Model.arel_table を読みづらいと感じる&lt;/h2&gt;
+
+&lt;p&gt;例えばこういうコード。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-ruby&#34;&gt;Post.joins(:comments).order(Comment.arel_table[:created_at].desc)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;発行されるSQLはこんな感じ。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sql&#34;&gt;SELECT &amp;quot;posts&amp;quot;.* FROM &amp;quot;posts&amp;quot; INNER JOIN &amp;quot;comments&amp;quot; ON &amp;quot;comments&amp;quot;.&amp;quot;post_id&amp;quot; = &amp;quot;posts&amp;quot;.&amp;quot;id&amp;quot;  ORDER BY &amp;quot;comments&amp;quot;.&amp;quot;created_at&amp;quot; DESC
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;こちらの方が個人的には読みやすい。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-ruby&#34;&gt;Post.joins(:comments).order(&#39;comments.created_at desc&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;問題もある&#34;&gt;問題もある&lt;/h2&gt;
+
+&lt;h3 id=&#34;テーブル名を変えてしまったとき&#34;&gt;テーブル名を変えてしまったとき&lt;/h3&gt;
+
+&lt;p&gt;仮にテーブル名がかわったら後者の場合はエラーになる。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sql&#34;&gt;SELECT &amp;quot;posts&amp;quot;.* FROM &amp;quot;posts&amp;quot; INNER JOIN &amp;quot;new_comments&amp;quot; ON &amp;quot;new_comments&amp;quot;.&amp;quot;post_id&amp;quot; = &amp;quot;posts&amp;quot;.&amp;quot;id&amp;quot;  ORDER BY comments.created_at DESC
+SQLite3::SQLException: no such column: comments.created_at: SELECT &amp;quot;posts&amp;quot;.* FROM &amp;quot;posts&amp;quot; INNER JOIN &amp;quot;new_comments&amp;quot; ON &amp;quot;new_comments&amp;quot;.&amp;quot;post_id&amp;quot; = &amp;quot;posts&amp;quot;.&amp;quot;id&amp;quot;  ORDER BY comments.created_at D
+ESC
+ActiveRecord::StatementInvalid: SQLite3::SQLException: no such column: comments.created_at: SELECT &amp;quot;posts&amp;quot;.* FROM &amp;quot;posts&amp;quot; INNER JOIN &amp;quot;new_comments&amp;quot; ON &amp;quot;new_comments&amp;quot;.&amp;quot;post_id&amp;quot; = &amp;quot;posts&amp;quot;.&amp;quot;id&amp;quot;
+  ORDER BY comments.created_at DESC
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;前者はモデルの方でテーブル名を変更すれば動作する。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-ruby&#34;&gt;class Comment &amp;lt; ActiveRecord::Base
+  self.table_name  :new_comments
+end
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;scopeでmergeしたいとき&#34;&gt;scopeでmergeしたいとき&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-ruby&#34;&gt;class Comment &amp;lt; ActiveRecord::Base
+  scope :recent, -&amp;gt; { where(&#39;created_at &amp;gt; ?&#39;, 10.days.ago) }
+end
+
+Post.joins(:comments).merge(Comment.recent)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;これだとCommentのcreated_atが解決できなくてコケる。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sql&#34;&gt;SELECT &amp;quot;posts&amp;quot;.* FROM &amp;quot;posts&amp;quot; INNER JOIN &amp;quot;comments&amp;quot; ON &amp;quot;comments&amp;quot;.&amp;quot;post_id&amp;quot; = &amp;quot;posts&amp;quot;.&amp;quot;id&amp;quot; WHERE (created_at &amp;gt; &#39;2014-08-26 09:16:45.106691&#39;)
+SQLite3::SQLException: ambiguous column name: created_at: SELECT &amp;quot;posts&amp;quot;.* FROM &amp;quot;posts&amp;quot; INNER JOIN &amp;quot;comments&amp;quot; ON &amp;quot;comments&amp;quot;.&amp;quot;post_id&amp;quot; = &amp;quot;posts&amp;quot;.&amp;quot;id&amp;quot; WHERE (created_at &amp;gt; &#39;2014-08-26 09:16:45.
+106691&#39;)
+ActiveRecord::StatementInvalid: SQLite3::SQLException: ambiguous column name: created_at: SELECT &amp;quot;posts&amp;quot;.* FROM &amp;quot;posts&amp;quot; INNER JOIN &amp;quot;comments&amp;quot; ON &amp;quot;comments&amp;quot;.&amp;quot;post_id&amp;quot; = &amp;quot;posts&amp;quot;.&amp;quot;id&amp;quot; WHERE (cr
+eated_at &amp;gt; &#39;2014-08-26 09:16:45.106691&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;正しくはこう。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-ruby&#34;&gt;class Comment &amp;lt; ActiveRecord::Base
+  scope :recent, -&amp;gt; { where(self.arel_table[:created_at].gt(10.days.ago)) }
+end
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sql&#34;&gt;SELECT &amp;quot;posts&amp;quot;.* FROM &amp;quot;posts&amp;quot; INNER JOIN &amp;quot;comments&amp;quot; ON &amp;quot;comments&amp;quot;.&amp;quot;post_id&amp;quot; = &amp;quot;posts&amp;quot;.&amp;quot;id&amp;quot; WHERE (&amp;quot;comments&amp;quot;.&amp;quot;created_at&amp;quot; &amp;gt; &#39;2014-08-26 09:19:17.406299&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;僕個人の結論&#34;&gt;僕個人の結論&lt;/h2&gt;
+
+&lt;p&gt;Model.arel_tableはできる限り隠したい(読みづらいから)。そしてmergeを使いたいケースではArelを使っておく。その変わりmergeが必要になるまでは無理にArelを使わない。&lt;/p&gt;
+
+&lt;p&gt;さっきのComment#recentの例でいうなら最初は&lt;code&gt;where(&#39;created_at &amp;gt; ?&#39;, 10.days.ago)&lt;/code&gt;で書いておく。merged使いたい時になったらArelの方で書き直す。&lt;/p&gt;
+
+&lt;p&gt;テーブル名の変更のリスクは気にしない。そもそもあまりテーブル変更しないし…。既にあるDBの上にRailsアプリケーションを構築する場合はDBリファクタリングのことを考えてArel使いまくった方がいいのかもしれない。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Vim(TagBar)でRSpecのctagsを扱う</title>
+      <link>http://ukstudio.jp/posts/2014/04/18/rspec_ctags/</link>
+      <pubDate>Fri, 18 Apr 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://ukstudio.jp/posts/2014/04/18/rspec_ctags/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://ukstudio.jp/images/2014-04-18-vim-rspec-ctags.png&#34; alt=&#34;rspec ctags&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;unite-outlineとかを使う人には不要なのかもしれないけど、あいにくuniteユーザではないのでctagsでなんとかできないか調べてみた。&lt;/p&gt;
+
+&lt;p&gt;まず、Funtooで入るctagsではrspecのタグは生成できないのでforkされたctagsを使う必要がある。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/fishman/ctags&#34;&gt;fishman/ctags&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;インストール場所はお好みで。個人的には手で入れる系のものは$HOME/localにインストールするのが好きなのでそこにインストールした。あとはTagBarの方でこのctagsを使うよう設定する。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-vim&#34;&gt;let g:tagbar_ctags_bin=&amp;quot;/home/ukstudio/local/bin/ctags&amp;quot;
+let g:tagbar_type_ruby = {
+    \ &#39;kinds&#39; : [
+        \ &#39;m:modules&#39;,
+        \ &#39;c:classes&#39;,
+        \ &#39;d:describes&#39;,
+        \ &#39;C:contexts&#39;,
+        \ &#39;f:methods&#39;,
+        \ &#39;F:singleton methods&#39;
+    \ ]
+\ }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;これで上の画像のような感じでTagBarに表示されるようになるはず。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>lsと間違えてerutasoを打ってしまうGentoo/Funtooユーザーのみなさまへ</title>
+      <link>http://ukstudio.jp/posts/2014/03/27/erutaso_ebuild/</link>
+      <pubDate>Thu, 27 Mar 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://ukstudio.jp/posts/2014/03/27/erutaso_ebuild/</guid>
+      <description>
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/ukstudio/ukstudio-overlay/tree/master/app-shells/erutaso/&#34;&gt;ebuild&lt;/a&gt;を作ってみましたのでご活用ください。初めてのebuildなので不具合・不都合あればpull-reqを。ukstudioというoverlayを作りましたのでそこからインストールできるはずです。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/ukstudio/ukstudio-overlay&#34;&gt;https://github.com/ukstudio/ukstudio-overlay&lt;/a&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;curl https://raw.github.com/ukstudio/ukstudio-overlay/master/profiles/layman.xml &amp;gt; /etc/layman/overlays/ukstudio-overlay.xml
+layman -f -a ukstudio
+
+emerge erutaso
+which erutaso #=&amp;gt; /usr/bin/erutaso
+
+erutaso
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;see-also&#34;&gt;See also&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://twitter.com/sgymtic/status/448832543039574016&#34;&gt;https://twitter.com/sgymtic/status/448832543039574016&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

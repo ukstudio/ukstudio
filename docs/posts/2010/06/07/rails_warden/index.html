@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="utf-8">
+<meta name="generator" content="Hugo 0.17" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="//fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/github.min.css">
+<link rel="stylesheet" href="/css/normalize.css">
+<link rel="stylesheet" href="/css/skeleton.css">
+<link rel="stylesheet" href="/css/custom.css">
+<link rel="alternate" href="/index.xml" type="application/rss+xml" title="UKSTUDIO">
+<title>warden&#43;railsでパスワード認証 - UKSTUDIO</title>
+</head>
+<body>
+
+<div class="container">
+
+	<header role="banner">
+		<div class="header-logo">
+			<a href="/"><img src="/images/icon.png" width="60" height="60" alt="UKSTUDIO"></a>
+		</div>
+		
+	</header>
+
+
+	<main role="main">
+		<article itemscope itemtype="http://schema.org/BlogPosting">
+			<h1 class="entry-title" itemprop="headline">warden&#43;railsでパスワード認証</h1>
+			<span class="entry-meta"><time itemprop="datePublished" datetime="2010-06-07">June 07, 2010</time></span>
+			<section itemprop="entry-text">
+				<p>今作っているサービスが後々、OAuth、OpenIDあたりにも対応することになるかもしれないので、そのあたり柔軟に対応できそうなwardenを試してみました。</p>
+
+<p>必要なgemは<a href="http://github.com/hassox/warden">warden</a>と<a href="http://github.com/hassox/rails_warden">rails_warden</a>の2つ。</p>
+
+<p>Userモデルは以下のような感じで。
+<script src="http://gist.github.com/428559.js?file=20100602075944_create_users.rb"></script></p>
+
+<p>次に<a href="http://github.com/hassox/rails_warden">githubのページ</a>を参考にconfig/initializers/warden.rbを追加します。今回はパスワードで認証をしたいのでpasswordのstrategyを自分で追加します。(と言ってもほとんどサンプルと同じ)</p>
+
+<script src="http://gist.github.com/428563.js?file=warden.rb"></script>
+
+<p>この後はUser.authenticateの中身をfind_by_login_and_passwordとかで実装してもいいのですが、それだとパスワードが平文になってしまうのでrestful_authenticationのコードを少し拝借することにします。</p>
+
+<p><script src="http://gist.github.com/428567.js?file=user.rb"></script>
+includeいているものがrestful_authenticationのコードです。適当にコピーしてlibにでも置いておくといいと思います。</p>
+
+<p>これでpasswordとpassword_confirmationによるパスワードの確認、User#save時にパスワードをハッシュ化して保存してくれます。</p>
+
+<p>後、一応ログイン処理するコントローラも載せておきます。
+<script src="http://gist.github.com/428569.js?file=sessions_controller.rb"></script>
+unauthenticatedが認証に失敗したときに遷移するアクションです。</p>
+
+<p>正直、パスワード認証のことだけ考えるとちょっと面倒な気もします。パスワードの暗号化も自分で書かなければいけないし。ただ、上記のようにmoduleを別途用意しておけば作業の手間自体は結構軽減されので、そこまでは問題にならないかもしれません。</p>
+
+<p>Strategyまわりについてはほとんど検証していませんが、色々と融通は効きそうな気もします。この辺は追々。</p>
+
+<p>後は<a href="http://github.com/plataformatec/devise">devise</a>というwardenベースのライブラリもあるのでこれを試すのもありかなという気はします。ただ、deviseは色々とやり過ぎというか、多機能すぎてよくわからない感じもしますが・・・</p>
+
+			</section>
+		</article>
+	</main>
+
+
+	<footer role="contentinfo">
+		<div class="hr"></div>
+		<div class="footer-link">
+			
+			<a href="https://twitter.com/ukstudio" target="_blank">Twitter</a>
+			
+			<a href="https://github.com/ukstudio" target="_blank">GitHub</a>
+		</div>
+		<div class="copyright">Copyright &copy; AKAMATSU Yuki All rights reserved</div>
+	</footer>
+
+</div>
+
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+</body>
+</html>

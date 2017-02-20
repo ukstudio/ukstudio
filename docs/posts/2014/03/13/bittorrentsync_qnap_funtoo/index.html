@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="utf-8">
+<meta name="generator" content="Hugo 0.17" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="//fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/github.min.css">
+<link rel="stylesheet" href="/css/normalize.css">
+<link rel="stylesheet" href="/css/skeleton.css">
+<link rel="stylesheet" href="/css/custom.css">
+<link rel="alternate" href="/index.xml" type="application/rss+xml" title="UKSTUDIO">
+<title>BitTorrent SyncでQNAPとFuntooで同期する - UKSTUDIO</title>
+</head>
+<body>
+
+<div class="container">
+
+	<header role="banner">
+		<div class="header-logo">
+			<a href="/"><img src="/images/icon.png" width="60" height="60" alt="UKSTUDIO"></a>
+		</div>
+		
+	</header>
+
+
+	<main role="main">
+		<article itemscope itemtype="http://schema.org/BlogPosting">
+			<h1 class="entry-title" itemprop="headline">BitTorrent SyncでQNAPとFuntooで同期する</h1>
+			<span class="entry-meta"><time itemprop="datePublished" datetime="2014-03-13">March 13, 2014</time></span>
+			<section itemprop="entry-text">
+				
+
+<p>QNAPの一部のディレクトリ(主に電子書籍)とローカルのマシンで同期を取りたかったのでBitTorrent Syncで同期を取ってみる。NFSでもいいんだけど、電子書籍ぐらいならローカルにおけるぐらいのストレージ容量はあるので。</p>
+
+<h2 id="qnapにbittorrent-syncを入れる">QNAPにBitTorrent Syncを入れる</h2>
+
+<p>基本的には<a href="http://www.qnap.com/useng/index.php?sn=9137">QNAPのドキュメント</a>を参照すれば問題ないと思う。簡単に説明しておくとQTSにBitTorrent Syncを追加し、BitTorrent SyncのWebUIを起動する。WebUIのアクセスユーザは途中で&rdquo;Please modify the Login ID / Password&rdquo;とか言われる画面でLogin IDとPasswordを入力し、Apply Changesをすればそのユーザで接続できる。</p>
+
+<p>次にBitTorrent SyncのWebUIが起動したらAdd Folderから該当のディレクトリを選択する。Secret KeyはここでGenerateしておく。(後でローカルの方の設定で使用する)。QNAP側はこれで終わり。</p>
+
+<h2 id="funtooにbittorrent-syncを入れる">FuntooにBitTorrent Syncを入れる</h2>
+
+<p>FuntooはportageにBitTorrent Syncのebuildがあるのでそれを使う。</p>
+
+<pre><code>sudo emerge bittorrent sync
+</code></pre>
+
+<p>起動は<code>/etc/init.d/btsync start</code>だが、コンフィグの修正が必要。init.dで起動するとログがでないからわからないが、<code>/opt/btsync/btsync</code>で起動するとstorage_pathが存在しないと怒られるのがわかる。コンフィグは<code>/etc/btsync/config</code>がそう。</p>
+
+<pre><code>// &quot;storage_path&quot; : &quot;/home/user/.sync&quot;,
+&quot;storage_path&quot; : &quot;/home/ukstudio/.sync&quot;,
+</code></pre>
+
+<p>ディレクトリはお好みで。</p>
+
+<p><code>/etc/init.d/btsync start</code>で無事btsyncが起動したら、<a href="http://localhost:8888/guiでWebUIにアクセスできる。IDとパスは'admin'と'password'。">http://localhost:8888/guiでWebUIにアクセスできる。IDとパスは'admin'と'password'。</a></p>
+
+<p>WebUIにアクセスできたら、Add FolderでQNAPと同期させたいディレクトリを指定する。Secret Keyはここでは生成させず先程のQNAPのsecret keyをコピペする。保存し、WebUIのトップ画面で&rdquo;connected devices and status&rdquo;でダウンロード速度が表示されたら無事同期がはじまっている。</p>
+
+			</section>
+		</article>
+	</main>
+
+
+	<footer role="contentinfo">
+		<div class="hr"></div>
+		<div class="footer-link">
+			
+			<a href="https://twitter.com/ukstudio" target="_blank">Twitter</a>
+			
+			<a href="https://github.com/ukstudio" target="_blank">GitHub</a>
+		</div>
+		<div class="copyright">Copyright &copy; AKAMATSU Yuki All rights reserved</div>
+	</footer>
+
+</div>
+
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+</body>
+</html>

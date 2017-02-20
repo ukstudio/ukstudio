@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="utf-8">
+<meta name="generator" content="Hugo 0.17" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="//fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/github.min.css">
+<link rel="stylesheet" href="/css/normalize.css">
+<link rel="stylesheet" href="/css/skeleton.css">
+<link rel="stylesheet" href="/css/custom.css">
+<link rel="alternate" href="/index.xml" type="application/rss+xml" title="UKSTUDIO">
+<title>Rubyでライフゲーム書いた - UKSTUDIO</title>
+</head>
+<body>
+
+<div class="container">
+
+	<header role="banner">
+		<div class="header-logo">
+			<a href="/"><img src="/images/icon.png" width="60" height="60" alt="UKSTUDIO"></a>
+		</div>
+		
+	</header>
+
+
+	<main role="main">
+		<article itemscope itemtype="http://schema.org/BlogPosting">
+			<h1 class="entry-title" itemprop="headline">Rubyでライフゲーム書いた</h1>
+			<span class="entry-meta"><time itemprop="datePublished" datetime="2008-02-02">February 02, 2008</time></span>
+			<section itemprop="entry-text">
+				<p><a href="http://ja.doukaku.org/comment/5581/">どう書く?org #5581</a></p>
+
+<p>久々にどう書くorgに投稿してみた。1個1個セルの周り調べてくのも面白みがないなと思って、生きてるセルの周りをスコア付けしてくやり方でやってみた。</p>
+
+<p>生きてるセルに+10し、生きてるセルの周りに+1していく。最終的にスコアが3(まわりに3つの生きてるセルがある)のセルは次世代で誕生するセルと判断。スコアが12もしくは13の(今の世代で生きてるセルで、まわりに2つもしくは3つの生きてるセルがある)のセルは次世代も維持するセルと判断。</p>
+
+<p>テストはWikipediaの<a href="http://ja.wikipedia.org/wiki/ライフゲーム">ライフゲームのページ</a>から振動型(ブリンカー、ヒキガエルなど)を試しただけで、テストコードすら書いてない。だからもしかしたら間違ってるかもしれない。許せ。</p>
+
+<pre lang="ruby">
+require 'curses'
+
+module LifeGame
+  class World
+    def initialize(map)
+      @map = map
+    end
+
+    def to_s
+      str = ""
+      @map.each do |line|
+        line.each do |cell|
+          str += "[#{cell}]"
+        end
+        str += "¥n"
+      end
+
+      str
+    end
+
+    def next
+      ranking.each_with_index do |line, h|
+        @map[h] = line.map {|cell| [3, 12, 13].include?(cell) ? '*' : ' ' }
+      end
+    end
+
+    private
+    def live_list
+      list = []
+      @map.each_with_index do |line, h|
+        line.each_with_index {|cell, w| list < < [h,w] if cell == '*'}
+      end
+
+      list
+    end
+
+    def set_score(rank_map, live)
+      (-1..1).each do |x|
+        (-1..1).each do |y|
+          score = x == y && y  == 0 ? 10 : 1
+          rank_map[live[0]+x][live[1]+y] = rank_map[live[0]+x][live[1]+y] + score
+        end
+      end
+    end
+
+    def ranking
+      rank_map = List.new
+      @map.size.times { rank_map << List.new(@map[0].size, 0) }
+
+      live_list.each do |live|
+        set_score(rank_map.clone, live)
+      end
+
+      rank_map
+    end
+  end
+
+  class List < Array
+    alias original_get []
+    alias original_set []=
+
+      def [](index)
+        original_get(index % size)
+      end
+
+    def []=(index, value)
+      original_set(index % size, value)
+    end
+  end
+end
+
+if __FILE__ == $0
+  begin
+    game = LifeGame::World.new([
+                                [' ', '*', ' ', ' ', ' ', ' ', '*', '*', '*', ' '],
+                                [' ', ' ', ' ', ' ', '*', ' ', ' ', '*', '*', ' '],
+                                [' ', ' ', ' ', '*', ' ', ' ', '*', ' ', '*', ' '],
+                                ['*', ' ', '*', '*', ' ', ' ', '*', ' ', ' ', ' '],
+                                [' ', '*', ' ', ' ', ' ', ' ', ' ', ' ', '*', ' '],
+                                ['*', ' ', ' ', ' ', '*', ' ', '*', '*', ' ', '*'],
+                                [' ', '*', ' ', ' ', ' ', ' ', '*', ' ', ' ', ' '],
+                                [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', '*'],
+                                ['*', ' ', ' ', ' ', ' ', ' ', '*', ' ', ' ', '*'],
+                                [' ', ' ', ' ', ' ', '*', '*', ' ', ' ', '*', ' ']])
+
+    window = Curses::Window.new(Curses.lines, Curses.cols, 0, 0)
+    loop do
+      window.setpos(0, 0)
+      window.addstr(game.to_s)
+      game.next
+      window.getch
+    end
+  ensure
+    window.close
+  end
+end
+</pre></pre>
+
+			</section>
+		</article>
+	</main>
+
+
+	<footer role="contentinfo">
+		<div class="hr"></div>
+		<div class="footer-link">
+			
+			<a href="https://twitter.com/ukstudio" target="_blank">Twitter</a>
+			
+			<a href="https://github.com/ukstudio" target="_blank">GitHub</a>
+		</div>
+		<div class="copyright">Copyright &copy; AKAMATSU Yuki All rights reserved</div>
+	</footer>
+
+</div>
+
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+</body>
+</html>

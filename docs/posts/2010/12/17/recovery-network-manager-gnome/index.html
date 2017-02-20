@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="utf-8">
+<meta name="generator" content="Hugo 0.17" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="//fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/github.min.css">
+<link rel="stylesheet" href="/css/normalize.css">
+<link rel="stylesheet" href="/css/skeleton.css">
+<link rel="stylesheet" href="/css/custom.css">
+<link rel="alternate" href="/index.xml" type="application/rss+xml" title="UKSTUDIO">
+<title>うっかりnetwork-manager-gnomeを消してネット繋がらなくなった - UKSTUDIO</title>
+</head>
+<body>
+
+<div class="container">
+
+	<header role="banner">
+		<div class="header-logo">
+			<a href="/"><img src="/images/icon.png" width="60" height="60" alt="UKSTUDIO"></a>
+		</div>
+		
+	</header>
+
+
+	<main role="main">
+		<article itemscope itemtype="http://schema.org/BlogPosting">
+			<h1 class="entry-title" itemprop="headline">うっかりnetwork-manager-gnomeを消してネット繋がらなくなった</h1>
+			<span class="entry-meta"><time itemprop="datePublished" datetime="2010-12-17">December 17, 2010</time></span>
+			<section itemprop="entry-text">
+				<p>xubuntuを以前インストールしててもういらねーやと思って色々消してたら、気づいたらnetwork-manager-gnomeも消えていてインターネットに繋がらなくなったでござる。</p>
+
+<p>とりあえず手元のHT-03Aで適当にぐぐった結果、<a href="https://forums.ubuntulinux.jp/viewtopic.php?id=6441">Ubuntu日本語フォーラム / [Ubuntu 9.10] ネットワーク・マネジャーを復元したい</a>が見つかったので試してみるもそれっぽいパッケージがCDから見つからず挫折。</p>
+
+<p>んじゃ、コマンドラインからなんかネット接続する方法があればなんとかなるかな?と思ってこれまた適当にぐぐると<a href="http://felix-labo.jp/pukiwiki/?Ubuntu%2Femobile-H11HW%E6%8E%A5%E7%B6%9A%E6%96%B9%E6%B3%95">Ubuntu/emobile-H11HW接続方法 - Felix-labo&apos;s Wiki</a>が見つかったので試した結果なんとかインターネット接続成功。</p>
+
+<p>あとは<a href="http://packages.ubuntu.com/"> Ubuntu Packages Search</a>からnetwork-manager-gnomeのdebパッケージを落としてきて、recovery consoleからaptitudeでインストールで無事終了。</p>
+
+			</section>
+		</article>
+	</main>
+
+
+	<footer role="contentinfo">
+		<div class="hr"></div>
+		<div class="footer-link">
+			
+			<a href="https://twitter.com/ukstudio" target="_blank">Twitter</a>
+			
+			<a href="https://github.com/ukstudio" target="_blank">GitHub</a>
+		</div>
+		<div class="copyright">Copyright &copy; AKAMATSU Yuki All rights reserved</div>
+	</footer>
+
+</div>
+
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+</body>
+</html>

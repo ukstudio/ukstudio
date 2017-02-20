@@ -1,0 +1,12 @@
+baseURL = "http://ukstudio.jp"
+title = "UKSTUDIO"
+author = "AKAMATSU Yuki"
+copyright = "AKAMATSU Yuki All rights reserved"
+publishDir = 'docs'
+theme = 'hugo-zen'
+
+[params]
+  twitter = "https://twitter.com/ukstudio"
+  github = "https://github.com/ukstudio"
+  analytics = "UA-12755601-1"
+  logo = '/images/icon.png'

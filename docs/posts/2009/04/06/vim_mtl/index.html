@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="utf-8">
+<meta name="generator" content="Hugo 0.17" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="//fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/github.min.css">
+<link rel="stylesheet" href="/css/normalize.css">
+<link rel="stylesheet" href="/css/skeleton.css">
+<link rel="stylesheet" href="/css/custom.css">
+<link rel="alternate" href="/index.xml" type="application/rss+xml" title="UKSTUDIO">
+<title>Vim勉強会 in MTLで話してきました - UKSTUDIO</title>
+</head>
+<body>
+
+<div class="container">
+
+	<header role="banner">
+		<div class="header-logo">
+			<a href="/"><img src="/images/icon.png" width="60" height="60" alt="UKSTUDIO"></a>
+		</div>
+		
+	</header>
+
+
+	<main role="main">
+		<article itemscope itemtype="http://schema.org/BlogPosting">
+			<h1 class="entry-title" itemprop="headline">Vim勉強会 in MTLで話してきました</h1>
+			<span class="entry-meta"><time itemprop="datePublished" datetime="2009-04-06">April 06, 2009</time></span>
+			<section itemprop="entry-text">
+				<p><a href="http://atnd.org/events/482">Vim勉強会 in MTL : ATND</a>
+当日の<a href="http://www.lingr.com/room/vim_mtl/archives/2009/04/03">Lingrのログ</a>と<a href="http://www.flickr.com/photos/iandeth/sets/72157616306681532/">写真</a>と<a href="http://www.ustream.tv/channel/vimmtl20090403">録画</a></p>
+
+<p>録画はあまり質に期待しないでとのこと(見てない)</p>
+
+<p><h2>便利なVimスクリプトやTips紹介 id:iandeth</h2>
+タイトル通り便利なTipsの紹介。個人的には今回の勉強会に参加してくれた人達を見ると、これぐらいの内容が丁度よかったのかなーって思う。おれのはちょっと調子に乗りすぎたw</p>
+
+<p><h2><de>Vim捌きを上達させる、たったひとつの冴えたやり方</del>至高のエディタには、至高のキーボード id:ursm</h2>
+Vim勉強会なのにVimの話を一切しないという荒技。4万円ぐらいのキーボードの営業してました。フットペダル欲しいです。</p>
+
+<p><h2>Vim Script DE OOP id:ukstudio</h2>
+とりあえず<a href="http://www.slideshare.net/ukstudio/vim-de-oop">資料</a></p>
+
+<p>完全に参加者置いてけぼりの発表内容でした。まぁネタだからいいんです。Vim ScriptでOOPはネタです。</p>
+
+<p>Vim Scriptは名前空間とスクリプトローカルなスコープとかがあるのである程度規模が大きくてもなんとかなるので、無理矢理OOPする必要ないです。</p>
+
+<p>if_rubyもOOPできるというよりはVim Scriptヨクワカラナイヨーな人が気軽にスクリプト書きたい時にちょこちょこっと使うってのが多いんじゃないですかね。if_rubyのプラグインってほとんどみないいし。ujihisaのmixi.vimだっけ、そこらへんの連投スクリプトぐらい。</p>
+
+<p>今回のはどっちかというと僕個人がおれおれOOPというかそゆのをVim Scriptで作るのが楽しかったという理由だけでこの内容をチョイスしました。 ちなみにVim Scriptはスコープや可変長引数の文法がパッと見わかりづらいですけど、慣れればそんな難しい言語ではないですよ。一度挑戦してみるといいと思います。</p>
+
+<p><h2>懇親会</h2>
+懇親会ではピザを食べながら適当に談笑しつつ、Rails.vimやオススメのプラグイン教えてと言われたので適当にプロジェクタ使って話してました。以下プラグインのリスト。</p>
+
+<p><h3><a href="http://www.vim.org/scripts/script.php?script_id=1567">Rails.vim</a></h3>
+VimでRails開発するなら必須です。最初はとりあえず:Rcontroller, :Rmodel, :Rviewとgf、:Rpartialあたり使っておけばいいんじゃないでしょうか。</p>
+
+<dl>
+<dt>整形したいコードをヴィジュアルモードなどで選択して,t=とかやると=でキレイに並べてくれます。コードの整形にこだわりのある人へ。</dt>
+</dl>
+
+<dl>
+<dt>��イに並べてくれます。コードの整形にこだわりのある人へ。</dt>
+</dl>
+
+<p>:[Range]Align=&gt;とかやると複数の文字(この例だと=&gt;)で整形できます。これはid:ursmさんに教えてもらいました。</p>
+
+<p><h3><a href="http://www.vim.org/scripts/script.php?script_id=2290">smartchr.vim</a></h3>
+id:haltさんの記事を読むといいと思います。</p>
+
+<p><a href="http://project-p.jp/halt/anubis/blog_show/1068">smartchrというvim pluginが簡単便利で目ウロコ - /halt/Snapshot</a></p>
+
+<p><h3><a href="http://www.vim.org/scripts/script.php?script_id=1984">fuzzyfinder.vim</a></h3>
+バッファで開いてるファイルとか最近使ったファイルとかを開くのに便利です。コマンド呼び出すのは面倒なので適当にマッピングして使いましょう。</p>
+
+<blockquote>
+nmap fb :FuzzyFinderBuffer<cr>
+nmap ff :FuzzyFinderFile<cr>
+nmap fm :FuzzyFinderMruFile<cr>
+</blockquote>
+
+<p>これtaku-oさんの<a href="http://d.hatena.ne.jp/taku-o/20090404/1238829761">指摘</a>で気づきましたけど、fがもろに被ってますね。よい子は他のキーにマッピングしましょう。</p>
+
+<p><h3><a href="http://github.com/Shougo/neocomplcache/blob/master/presen/neocomplcache.txt">neocomplecache.vim</a></h3>
+autocomplpop.vim的な補完プラグインです。詳細はとりあえずリンク先を見ればいいと思います。</p>
+
+<p><a href="http://www.lingr.com/room/vim-users.jp">vim-users.jpのlingr</a>に作者がいるので興味がある人、物申したい人は来たらいいんじゃないでしょうか。</p>
+
+<p><h2>永和システムマネジメント及びMTLの皆様に感謝</h2>
+今回はちょっとしたことがきっかけで勉強会を行うことになったわけですが、永和システムマネジメントの角谷さん、MTLの石橋さん、小林さん他、このような場を提供して頂きありがとうございました!</p>
+
+<p>また、ATNDを見る限り50人弱の人に参加して頂いたようなのですが、お忙しいところありがとうございました。</p>
+
+<p>またどこか別の機会がありましたらよろしくお願いします。</p>
+
+<p>追記: 永和システムマネジメントを永和マネージメントシステムと誤表記していました。ごめんなさい。</p>
+
+			</section>
+		</article>
+	</main>
+
+
+	<footer role="contentinfo">
+		<div class="hr"></div>
+		<div class="footer-link">
+			
+			<a href="https://twitter.com/ukstudio" target="_blank">Twitter</a>
+			
+			<a href="https://github.com/ukstudio" target="_blank">GitHub</a>
+		</div>
+		<div class="copyright">Copyright &copy; AKAMATSU Yuki All rights reserved</div>
+	</footer>
+
+</div>
+
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+</body>
+</html>

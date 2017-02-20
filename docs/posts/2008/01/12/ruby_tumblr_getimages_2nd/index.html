@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="utf-8">
+<meta name="generator" content="Hugo 0.17" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="//fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/github.min.css">
+<link rel="stylesheet" href="/css/normalize.css">
+<link rel="stylesheet" href="/css/skeleton.css">
+<link rel="stylesheet" href="/css/custom.css">
+<link rel="alternate" href="/index.xml" type="application/rss+xml" title="UKSTUDIO">
+<title>Tumblrの全画像を取得するRubyスクリプト改 - UKSTUDIO</title>
+</head>
+<body>
+
+<div class="container">
+
+	<header role="banner">
+		<div class="header-logo">
+			<a href="/"><img src="/images/icon.png" width="60" height="60" alt="UKSTUDIO"></a>
+		</div>
+		
+	</header>
+
+
+	<main role="main">
+		<article itemscope itemtype="http://schema.org/BlogPosting">
+			<h1 class="entry-title" itemprop="headline">Tumblrの全画像を取得するRubyスクリプト改</h1>
+			<span class="entry-meta"><time itemprop="datePublished" datetime="2008-01-12">January 12, 2008</time></span>
+			<section itemprop="entry-text">
+				<p><a href="http://uk-studio.net/2008/01/11/ruby_tumblr_getimages/">Tumblrの全画像を取得するRubyスクリプトを書いた・・・けど</a></p>
+
+<p>上のエントリーのコードを書き直した。これで10kb未満の画像でも問題ないはず。それとTumblrのIDを引数で与えるようにも修正した。独自ドメインのやつには対応してないです。ごめんなさい。</p>
+
+<p>あとこっそり<a href="http://coderepos.org/share/browser/lang/ruby/misc/tumblr_getimages.rb">CodeReposにCommitした</a>ので、煮るなり焼くなりお好きにどうぞ。</p>
+
+<pre lang="ruby">
+require 'open-uri'
+require 'rexml/document'
+require 'FileUtils'
+
+if ARGV.size != 1
+  puts "Usage: #{$0} [id] "
+  exit
+end
+
+id = ARGV[0]
+
+res = open(url)
+doc = REXML::Document.new(res.read)
+total = REXML::XPath.first(doc, "/tumblr/posts").attributes['total'].to_i
+
+0.step(total, 50){|n|
+  image_list = []
+  res = open(url + "&start=#{n}")
+  doc = REXML::Document.new(res.read)
+  data = REXML::XPath.match(doc, "/tumblr/posts/post")
+  data.each{|i| image_list < < i.elements['photo-url'].text }
+
+  image_list.each{|image_url|
+    open(image_url) do |image|
+      open(image_url.split(/\//).last, "w") do |local_image|
+        local_image.write(image.read)
+      end
+    end
+  }
+}
+</pre></pre>
+
+			</section>
+		</article>
+	</main>
+
+
+	<footer role="contentinfo">
+		<div class="hr"></div>
+		<div class="footer-link">
+			
+			<a href="https://twitter.com/ukstudio" target="_blank">Twitter</a>
+			
+			<a href="https://github.com/ukstudio" target="_blank">GitHub</a>
+		</div>
+		<div class="copyright">Copyright &copy; AKAMATSU Yuki All rights reserved</div>
+	</footer>
+
+</div>
+
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+</body>
+</html>

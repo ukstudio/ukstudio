@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="utf-8">
+<meta name="generator" content="Hugo 0.17" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="//fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/github.min.css">
+<link rel="stylesheet" href="/css/normalize.css">
+<link rel="stylesheet" href="/css/skeleton.css">
+<link rel="stylesheet" href="/css/custom.css">
+<link rel="alternate" href="/index.xml" type="application/rss+xml" title="UKSTUDIO">
+<title>Tumblrの全画像を取得するRubyスクリプトを書いた・・・けど - UKSTUDIO</title>
+</head>
+<body>
+
+<div class="container">
+
+	<header role="banner">
+		<div class="header-logo">
+			<a href="/"><img src="/images/icon.png" width="60" height="60" alt="UKSTUDIO"></a>
+		</div>
+		
+	</header>
+
+
+	<main role="main">
+		<article itemscope itemtype="http://schema.org/BlogPosting">
+			<h1 class="entry-title" itemprop="headline">Tumblrの全画像を取得するRubyスクリプトを書いた・・・けど</h1>
+			<span class="entry-meta"><time itemprop="datePublished" datetime="2008-01-11">January 11, 2008</time></span>
+			<section itemprop="entry-text">
+				<p>今じゃほとんどTumblrは使ってないんだけど、なんとなく画像を取得するスクリプトを書いてみた。iPod touchに放り込んでみようかなとか思ったのよ。</p>
+
+<p>とりあえずコード。
+<pre lang="ruby">
+require &lsquo;open-uri&rsquo;
+require &lsquo;rexml/document&rsquo;
+require &lsquo;FileUtils&rsquo;</p>
+
+<p>res = open(url)
+doc = REXML::Document.new(res.read)
+total = REXML::XPath.first(doc, &ldquo;/tumblr/posts&rdquo;).attributes[&lsquo;total&rsquo;].to_i</p>
+
+<p>0.step(total, 50){|n|
+  image_list = []
+  res = open(url + &ldquo;&amp;start=#{n}&ldquo;)
+  doc = REXML::Document.new(res.read)</p>
+
+<p>data = REXML::XPath.match(doc, &ldquo;/tumblr/posts/post&rdquo;)
+  data.each{|i| image_list &lt; &lt; i.elements[&lsquo;photo-url&rsquo;].text }</p>
+
+<p>image_list.each{|image|
+    tempfile = open(image)
+    FileUtils.cp(tempfile.path, image.split(/\//).last)
+  }
+}
+</pre>
+ちなみにXPathはどんなものかなんとなくは知っていたけれど使うのは初めて。</p>
+
+<p>処理内容としてはTumblr APIを使って50件ずつ画像のURLを取得して、1個ずつカレントディレクトリにコピーすると言う至極単純な方法を選んだ。人によっては1000単位で画像があるだろうから(ちなみにオレは1000ちょいだった)かなり時間がかかると思う。</p>
+
+<p>1つよくわからない現象が起きていて、とある画像を取得するタイミングで必ずエラーが発生する。どの画像かまでは調べてないけど、いつも同じ画像なのは確か。</p>
+
+<p></pre><pre lang="bash">
+/opt/local/lib/ruby/1.8/FileUtils.rb:1407:in <code>fu_each_src_dest0': undefined method</code>to_str&rsquo; for nil:NilClass (NoMethodError)
+        from /opt/local/lib/ruby/1.8/FileUtils.rb:1393:in <code>fu_each_src_dest'
+        from /opt/local/lib/ruby/1.8/FileUtils.rb:382:in</code>cp&rsquo;
+        from tumblr_getimages.rb:19
+        from tumblr_getimages.rb:17:in <code>each'
+        from tumblr_getimages.rb:17
+        from tumblr_getimages.rb:10:in</code>step&rsquo;
+        from tumblr_getimages.rb:10
+</pre></p>
+
+<p>とりあえず、openで取得したtempfileとtempfile#pathをpで表示してみた。以下がその問題が起きる部分。なぜにStringIO・・・?
+<pre lang="bash">
+#<file :/var/folders/ni/niHXwO9-GoO0yPJpz3WMm++++TI/-Tmp-/open-uri.1153.4>
+&ldquo;/var/folders/ni/niHXwO9-GoO0yPJpz3WMm++++TI/-Tmp-/open-uri.1153.4&rdquo;
+#</file><file :/var/folders/ni/niHXwO9-GoO0yPJpz3WMm++++TI/-Tmp-/open-uri.1153.5>
+&ldquo;/var/folders/ni/niHXwO9-GoO0yPJpz3WMm++++TI/-Tmp-/open-uri.1153.5&rdquo;
+#<stringio :0x5c4af4>
+nil
+</stringio></file></pre></p>
+
+<p>無理矢理な対処としてはコピーの処理の時にオブジェクトのクラスを調べて、StringIOを回避すればとりあえずは何とかなる。そのかわり、その画像はローカルに保存されないけれど。</p>
+
+<pre lang="ruby">
+  FileUtils.cp(tempfile.path, image.split(/\//).last) if tempfile.kind_of?(Tempfile)
+</pre>
+
+<p>ちなみに1000件も取得するのが途中で面倒になってしまったので最後まで取得できるかまでは試してない。一応100件ぐらいは取得できたけど。</p>
+
+<p>tumblrのIDとか取得の開始地点、1回で取得する件数とかそのまま直書きしちゃってるけど、コマンドラインの引数で与えるようにすればそれなりに使い勝手がよくなるかもしれない。</p>
+
+<p>本当はページ番号と1ページごとの件数を与えれば、そのページの画像を取得するようにするつもりだったんだけどね。他にもテキストとかがたんぶらってあったりすると画像の数が不確定で、そこらへんどううまく処理するかとか考えると結構時間かかりそうだったからやめた。</p>
+
+<p><h2>追記: 08/01/11 6:13</h2>
+エラーが発生する画像を特定した。
+<a href="http://data.tumblr.com/14065003_500.jpg">http://data.tumblr.com/14065003_500.jpg</a></p>
+
+<p>パっと見、普通の画像なんだけどな。試しにirbから取得してみる。
+<pre lang="ruby">
+&gt;&gt; require &lsquo;open-uri&rsquo;
+=&gt; true
+&gt;&gt; tempfile = open(&ldquo;<a href="http://data.tumblr.com/14065003_500.jpg&quot;">http://data.tumblr.com/14065003_500.jpg&quot;</a>)
+=&gt; #<stringio :0x3d4384>
+</stringio></pre>
+やっぱり、StringIOオブジェクトだ・・・なんでー?</p>
+
+<p><h2>追記: 08/01/11 10:25</h2>
+ちょっとググってみたらruby-listの過去ログが引っかかった。</p>
+
+<p><a href="http://blade.nagaokaut.ac.jp/cgi-bin/scat.rb/ruby/ruby-list/40937">Re: multipartフォームから受け取ったオブジェクトにstatメソッドでエラー</a></p>
+
+<p>上のリンクはcgi.rbの話だけど、open-uriでもどうやら10kb未満の画像だとTempfileではなく、StringIOになる模様。ちなみに該当の画像は8kbでした。こやつめ、ハハハ。</p>
+
+<p><h2>追記 08/01/12 1:27</h2>
+コードを修正しました。
+<a href="http://uk-studio.net/2008/01/12/ruby_tumblr_getimages_2nd/">Tumblrの全画像を取得するRubyスクリプト改</a></p>
+
+			</section>
+		</article>
+	</main>
+
+
+	<footer role="contentinfo">
+		<div class="hr"></div>
+		<div class="footer-link">
+			
+			<a href="https://twitter.com/ukstudio" target="_blank">Twitter</a>
+			
+			<a href="https://github.com/ukstudio" target="_blank">GitHub</a>
+		</div>
+		<div class="copyright">Copyright &copy; AKAMATSU Yuki All rights reserved</div>
+	</footer>
+
+</div>
+
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+</body>
+</html>
