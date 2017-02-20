@@ -1,6 +1,8 @@
 ---
 title: Ruby1.8.7とRuby1.9.2を共存させる
 date: 2009-08-25
+aliases:
+- /2009/08/25/multiruby
 ---
 <strong>現在は、以下の方法より<a href="http://rvm.beginrescueend.com/">rvm</a>を使うことをオススメします。 10/05/28 追記</strong>
 

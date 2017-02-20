@@ -1,6 +1,8 @@
 ---
 title: ActiveRecordを使ってみる
 date: 2007-10-28
+aliases:
+- /2007/10/28/activerecord
 ---
 ActiveRecordはRubyOnRailsのO/Rマッパーとして有名ですが、Railsに依存しているわけではなく単体で使えます。
 

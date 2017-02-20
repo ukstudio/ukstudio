@@ -1,6 +1,8 @@
 ---
 title: Rails2.0.2から2.2.2に上げたらFileColumnがNameErrorだした。
 date: 2009-02-24
+aliases:
+- /2009/02/24/file_column_name_error
 ---
 自分の担当している案件のRailsのバージョンを2.0.2から2.2.2に上げたら以下のようなエラーが発生。
 <blockquote>

@@ -1,6 +1,8 @@
 ---
 title: Amazon商品ページにcrossreviewのレビューを表示するgreasemonkeyスクリプト書いた
 date: 2008-07-18
+aliases:
+- /2008/07/18/amazon_crossreview
 ---
 初グリモン。結構適当に書いたけど、とりあえず動くのでよし。codereposに上げたのでいじりたい人はご自由にどうぞー。
 

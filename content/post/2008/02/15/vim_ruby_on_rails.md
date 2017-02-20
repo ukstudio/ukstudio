@@ -1,6 +1,8 @@
 ---
 title: VimでRuby on Railsの開発する為の環境構築
 date: 2008-02-15
+aliases:
+- /2008/02/15/vim_ruby_on_rails
 ---
 ちょこっとだけ環境整えたので忘備録エントリとして。
 

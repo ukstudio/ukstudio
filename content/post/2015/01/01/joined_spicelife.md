@@ -1,8 +1,8 @@
 ---
 title: 株式会社spice lifeに入社しました
-
-tags:
 date: 2015-01-01
+aliases:
+- /2015/01/01/joined_spicelife
 ---
 
 あけましておめでとうございます。今年もどうぞよろしくお願いいたします。

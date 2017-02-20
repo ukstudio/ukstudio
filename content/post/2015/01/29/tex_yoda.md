@@ -1,8 +1,8 @@
 ---
 title: TEX Yodaが届いたので使い始めた
-
-tags:
 date: 2015-01-29
+aliases:
+- /2015/01/29/tex_yoda
 ---
 
 [TEX Yoda TrackPoint Keyboard - Massdrop](https://www.massdrop.com/buy/tex-yoda?mode=guest_open)

@@ -1,6 +1,8 @@
 ---
 title: Re:あなたの最も実力を発揮できる開発環境を教えてください
 date: 2007-10-26
+aliases:
+- /2007/10/26/programming_environment
 ---
 <a href="http://ujihisa.nowa.jp/entry/720100065b">rubyneko -
 あなたの最も実力を発揮できる開発環境を教えてください</a>に反応してみる。

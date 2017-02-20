@@ -1,6 +1,8 @@
 ---
 title: Gentooデビューしました
 date: 2011-09-29
+aliases:
+- /2011/09/29/debut_gentoo
 ---
 メインの開発マシンのOSをUbuntuからGentooにしました。Gentooにした理由は割となんとなくだけど、強いて言うならGentooいいよっていう人の気持ちを知りたいのと、あとPortageは割と好きだからかな。Ubuntuに不満があったわけでもない。Unityは好きじゃないけど、どうせXMonad使うし。
 

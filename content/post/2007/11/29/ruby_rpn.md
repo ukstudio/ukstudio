@@ -1,6 +1,8 @@
 ---
 title: 後置記法での計算
 date: 2007-11-29
+aliases:
+- /2007/11/29/ruby_rpn
 ---
 <a href="http://ja.wikipedia.org/wiki/逆ポーランド記法">後置記法</a>の文字列を計算するようStringクラスを拡張してみた。
 <strong>rpn.rb</strong>

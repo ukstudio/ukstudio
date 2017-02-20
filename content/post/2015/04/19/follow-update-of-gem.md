@@ -1,8 +1,8 @@
 ---
 title: 特定のGemの更新情報を追う
-
-tags: ruby, rubygems
 date: 2015-04-19
+aliases:
+- /2015/04/19/follow-update-of-gem
 ---
 
 コード自体を追うなら大体GitHubで事足りるけど、Gemがリリースされたのを追いたいときにはRubyGems.orgのSubscribe使えばよさそうだったのでメモ。

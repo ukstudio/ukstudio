@@ -1,6 +1,8 @@
 ---
 title: HT-03AでGtalkまわりでハマッったのでメモ
 date: 2009-07-16
+aliases:
+- /2009/07/16/ht_03a_gtalk
 ---
 なんだか変なところではまるな、android。
 

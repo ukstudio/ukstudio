@@ -1,8 +1,8 @@
 ---
 title: BitTorrent SyncでQNAPとFuntooで同期する
-
-tags: bittorrentsync qnap funtoo
 date: 2014-03-13
+aliases:
+- /2014/03/13/bittorrentsync_qnap_funtoo
 ---
 
 QNAPの一部のディレクトリ(主に電子書籍)とローカルのマシンで同期を取りたかったのでBitTorrent Syncで同期を取ってみる。NFSでもいいんだけど、電子書籍ぐらいならローカルにおけるぐらいのストレージ容量はあるので。

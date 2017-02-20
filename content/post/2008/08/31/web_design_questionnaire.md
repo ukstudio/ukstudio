@@ -1,6 +1,8 @@
 ---
 title: wuたんのWebデザインに関するアンケートにご協力を。
 date: 2008-08-31
+aliases:
+- /2008/08/31/web_design_questionnaire
 ---
 <strong>結果が公開されています</strong>
 <a href="http://3ping.org/2008/08/31/0120">Webデザインに関するアンケート結果</a>

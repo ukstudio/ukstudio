@@ -1,6 +1,8 @@
 ---
 title: MacからUbuntuに乗り換えた
 date: 2010-10-30
+aliases:
+- /2010/10/30/mac_to_ubuntu
 ---
 最近メインで使っているMacBookが調子悪かったので新しいマシンを買うことにした。元々、Core i7&メモリ8GBでMacBook Proの15インチを買うつもりだったけど、Lenovoが18周年記念でThinkPadが安かったので以前から考えていたLinuxマシンに手を出すことにした。
 

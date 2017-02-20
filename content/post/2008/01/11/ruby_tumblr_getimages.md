@@ -1,6 +1,8 @@
 ---
 title: Tumblrの全画像を取得するRubyスクリプトを書いた・・・けど
 date: 2008-01-11
+aliases:
+- /2008/01/11/ruby_tumblr_getimages
 ---
 今じゃほとんどTumblrは使ってないんだけど、なんとなく画像を取得するスクリプトを書いてみた。iPod touchに放り込んでみようかなとか思ったのよ。
 

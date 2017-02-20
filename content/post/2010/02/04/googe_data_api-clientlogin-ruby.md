@@ -1,6 +1,8 @@
 ---
 title: Google Data APIの認証をClientLogin + Rubyで
 date: 2010-02-04
+aliases:
+- /2010/02/04/googe_data_api-clientlogin-ruby
 ---
 <script src="http://gist.github.com/294044.js?file=google_client_login.rb"></script>
 

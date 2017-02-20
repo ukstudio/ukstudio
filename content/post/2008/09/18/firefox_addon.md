@@ -1,6 +1,8 @@
 ---
 title: Firefoxの拡張の整理
 date: 2008-09-18
+aliases:
+- /2008/09/18/firefox_addon
 ---
 1つ前の記事でプロファイルの使い分けの設定をしたけど、整理もかねて~/Library/Application Support/Firefoxを削除して、1から構築しなおした。
 

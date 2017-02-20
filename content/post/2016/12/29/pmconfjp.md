@@ -1,8 +1,8 @@
 ---
 title: Japan Product Manager Conferenceの資料公開
-
-tags:
 date: 2016-12-29
+aliases:
+- /2016/12/29/pmconfjp
 ---
 
 大分時間がたってしまったけど [プロダクトマネージャーカンファレンス 2016](http://pmconf.jp/)の資料を公開した。

@@ -1,6 +1,8 @@
 ---
 title: validates :foo_id, :presence => trueを追う
 date: 2012-09-11
+aliases:
+- /2012/09/11/validates_presence_of
 ---
 チームメンバーから「validates_presence_of :user_idはそのuser_idが存在するか確かめてくれる」という情報を得て、そんな隠れ仕様あんの?とおもってちょっと調べてみた。
 

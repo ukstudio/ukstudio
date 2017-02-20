@@ -1,6 +1,8 @@
 ---
 title: crossreviewがリリースされました!
 date: 2008-07-03
+aliases:
+- /2008/07/03/release_crossreview
 ---
 今日、<a href="http://crossreview.jp/">crossreview</a>というサービスがリリースしました。smashmediaの河野さんのアイディアと元に、僕の勤め先であるRAWHIDE.が開発を手伝わさせていただきました。
 

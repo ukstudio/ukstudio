@@ -1,6 +1,8 @@
 ---
 title: ふつケル第2章
 date: 2008-02-25
+aliases:
+- /2008/02/25/haskell_sec2
 ---
 <h2>ハロー、ワールド</h2>
 <pre lang="haskell">

@@ -1,6 +1,8 @@
 ---
 title: Quillリリースおめでとうございます
 date: 2008-08-08
+aliases:
+- /2008/08/08/quill
 ---
 <a href="http://quill.to/">Quill [羽根のように軽い、メモメモwebサービス]</a>
 <a href="http://blog.inafog.jp/archives/314">blog in a fog >> Quillリリースしました</a>

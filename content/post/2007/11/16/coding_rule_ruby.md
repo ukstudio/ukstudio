@@ -1,6 +1,8 @@
 ---
 title: 個人用のコーディング規約を書き始めたんよ
 date: 2007-11-16
+aliases:
+- /2007/11/16/coding_rule_ruby
 ---
 <a href="/coding_rule/">CodingRule</a>
 

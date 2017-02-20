@@ -1,6 +1,8 @@
 ---
 title: twitterオフ会に参加してきました
 date: 2007-06-21
+aliases:
+- /2007/06/21/twitter_offline_party
 ---
 エントリー書くのおせぇよ!っていう突っ込みはスルーです。
 

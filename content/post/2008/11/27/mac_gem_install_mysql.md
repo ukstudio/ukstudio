@@ -1,6 +1,8 @@
 ---
 title: Macでgem install mysqlをする方法
 date: 2008-11-27
+aliases:
+- /2008/11/27/mac_gem_install_mysql
 ---
 Rails2.2からmysqlのアダプタが付属していないので各個人でインストールする必要があります。gemで入れようとするとエラーがでると思うので以下のように対応してください。
 

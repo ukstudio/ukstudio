@@ -1,6 +1,8 @@
 ---
 title: コードブロックとyield文
 date: 2007-09-05
+aliases:
+- /2007/09/05/codeblock
 ---
 メソッド内でyield文を使うことでメソッドからコードブロックを呼び出すことができます。yield文が呼び出されるたびに、ブロックに処理が移り、処理が終わるとyieldの直後の処理に移ります。
 <pre lang="ruby">def exec_block

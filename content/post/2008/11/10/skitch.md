@@ -1,6 +1,8 @@
 ---
 title: Skitchでキャプチャアップロード
 date: 2008-11-10
+aliases:
+- /2008/11/10/skitch
 ---
 <a href="http://d.hatena.ne.jp/snow-bell/20081110/1226249937">セキュリティの教訓 - snow-bellの日記</a>
 

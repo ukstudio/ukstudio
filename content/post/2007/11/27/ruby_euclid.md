@@ -1,6 +1,8 @@
 ---
 title: ユークリッドの互除法をRubyで書いた
 date: 2007-11-27
+aliases:
+- /2007/11/27/ruby_euclid
 ---
 <pre lang="ruby">
 def euclid(a, b)

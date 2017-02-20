@@ -1,6 +1,8 @@
 ---
 title: HT-03AのGmailアプリからメールを送るとmultipart/alternativeになる
 date: 2009-07-16
+aliases:
+- /2009/07/16/android_alternative
 ---
 先日もエントリを書いたように、今現在HT-03Aを使っているのですが、ひとつ問題が。
 

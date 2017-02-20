@@ -1,8 +1,8 @@
 ---
 title: spotlights.jpが本日10時にリリースされました
-
-tags: SPOTLIGHTS
 date: 2014-11-27
+aliases:
+- /2014/11/27/spotlights-jp
 ---
 
 

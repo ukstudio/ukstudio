@@ -1,8 +1,8 @@
 ---
 title: FuntooからQNAPにOpenVPNでつなぐ
-
-tags: funtoo,openvpn,qnap
 date: 2014-03-13
+aliases:
+- /2014/03/13/openvpn_qnap_funtoo
 ---
 
 まずはFuntooにOpenVPNを入れる。

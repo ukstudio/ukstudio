@@ -1,6 +1,8 @@
 ---
 title: 関東Twitter用Googleカレンダー
 date: 2007-07-06
+aliases:
+- /2007/07/06/kanto_twitter
 ---
 Twitterがきっかけのイベントが多くて追いきれなくなってきたので専用のGoogleカレンダー作りました。全員に公開してるので気軽に登録してくださいな。
 

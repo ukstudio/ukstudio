@@ -1,6 +1,8 @@
 ---
 title: Vim Hacks Projectはじめました
 date: 2009-04-28
+aliases:
+- /2009/04/28/vim_hacks_project
 ---
 <a href="http://www.lingr.com/room/vim-users.jp/archives/2009/04/24#msg-66101529">Lingrでのkanaさんの発言がきっかけ</a>でVim Hacks Projectをはじめることにしました。
 

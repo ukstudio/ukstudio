@@ -1,6 +1,8 @@
 ---
 title: Railsのpartialの使い方
 date: 2008-08-13
+aliases:
+- /2008/08/13/ruby_on_rails_partial
 ---
 あまりpartialをちゃんと使いこなせていない気がするので(いつもインスタンス変数で適当に値わたしてる)使い方をちょっとメモ。
 

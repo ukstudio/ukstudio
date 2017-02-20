@@ -1,6 +1,8 @@
 ---
 title: Rubyで素数を求めるプログラムを書いた
 date: 2007-10-30
+aliases:
+- /2007/10/30/ruby_prime
 ---
 引数に入れた値までの素数を配列で返すRubyのクラスを書いてみた。アルゴリズムは<a href="http://ja.wikipedia.org/wiki/%E3%82%A8%E3%83%A9%E3%83%88%E3%82%B9%E3%83%86%E3%83%8D%E3%82%B9%E3%81%AE%E7%AF%A9">エラトステネスの篩</a>を使用。
 <strong>generate_prime.rb</strong>

@@ -1,6 +1,8 @@
 ---
 title: RubyのArrayの演算子はちょっとおもしろい
 date: 2007-12-05
+aliases:
+- /2007/12/05/ruby_array_operator
 ---
 Arrayの「+」「-」「&」「|」演算子がちょっとおもしろい。
 <h2>+演算子</h2>

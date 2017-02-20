@@ -1,6 +1,8 @@
 ---
 title: RAWHIDE.入社のお知らせ
 date: 2008-03-01
+aliases:
+- /2008/03/01/rawhide
 ---
 こんばんわ、UKです。
 

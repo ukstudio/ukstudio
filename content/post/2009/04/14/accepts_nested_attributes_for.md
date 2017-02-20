@@ -1,6 +1,8 @@
 ---
 title: accepts_nested_attributes_forしたモデルの日本語化
 date: 2009-04-14
+aliases:
+- /2009/04/14/accepts_nested_attributes_for
 ---
 名前、長いよね。accepts_nested_attributes_for。以下、ネストしたって言います。長いので。
 

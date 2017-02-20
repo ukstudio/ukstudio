@@ -1,6 +1,8 @@
 ---
 title: IRCでミサワをいつも側に...
 date: 2010-12-24
+aliases:
+- /2010/12/24/misawa-ruby-recipe
 ---
 このエントリーは<a href="http://atnd.org/events/10901">Ruby逆引きレシピAdvent Calendar</a>の参加エントリです。担当は12月24日です。前日のエントリは@kei-sさんの <a href="http://d.hatena.ne.jp/kei-s/20101223/1293084650">Ruby逆引きレシピで作る、忙しい人のための『地獄のミサワの「女に惚れさす名言集」』- 札幌市西区</a>です。
 

@@ -1,6 +1,8 @@
 ---
 title: そろそろ「初心者用言語」について一言いっておくか
 date: 2008-02-07
+aliases:
+- /2008/02/07/programming_for_beginner
 ---
 <a href="http://generation1986.g.hatena.ne.jp/ukstudio/20080204/1202113687">最もタメになる「初心者用言語」まとめ UK is not Britonish</a>
 

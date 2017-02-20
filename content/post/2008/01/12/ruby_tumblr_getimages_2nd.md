@@ -1,6 +1,8 @@
 ---
 title: Tumblrの全画像を取得するRubyスクリプト改
 date: 2008-01-12
+aliases:
+- /2008/01/12/ruby_tumblr_getimages_2nd
 ---
 <a href="http://uk-studio.net/2008/01/11/ruby_tumblr_getimages/">Tumblrの全画像を取得するRubyスクリプトを書いた・・・けど</a>
 

@@ -1,6 +1,8 @@
 ---
 title: カテゴリとタグを整理しました
 date: 2008-07-23
+aliases:
+- /2008/07/23/categories_and_tags_in_order
 ---
 なんかWordPressにいつのまにかタグ機能が実装されていたので、せっかくなので使ってみることにしました。
 

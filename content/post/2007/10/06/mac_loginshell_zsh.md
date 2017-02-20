@@ -1,6 +1,8 @@
 ---
 title: Macのログインシェルをzshに変更する
 date: 2007-10-06
+aliases:
+- /2007/10/06/mac_loginshell_zsh
 ---
 <a href="http://uk-studio.net/2007/07/08/start-macbook/">以前</a>に一度設定はしていたのですがちょっとおかしなところ(screenがうまく起動しない、日本語が入力できないとか)がいくつかあったので再設定しました。
 <h2>zsh-develをMacPortsでインストールする</h2>

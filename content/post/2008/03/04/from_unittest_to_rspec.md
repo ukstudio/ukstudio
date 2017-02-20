@@ -1,6 +1,8 @@
 ---
 title: test/unitで書いたテストにRSpecでテストを追記する方法
 date: 2008-03-04
+aliases:
+- /2008/03/04/from_unittest_to_rspec
 ---
 10分ぐらい調べて試してみただけだけど。
 

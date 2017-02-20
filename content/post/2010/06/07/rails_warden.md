@@ -1,6 +1,8 @@
 ---
 title: warden+railsでパスワード認証
 date: 2010-06-07
+aliases:
+- /2010/06/07/rails_warden
 ---
 今作っているサービスが後々、OAuth、OpenIDあたりにも対応することになるかもしれないので、そのあたり柔軟に対応できそうなwardenを試してみました。
 

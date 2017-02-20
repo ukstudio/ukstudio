@@ -1,8 +1,8 @@
 ---
 title: Arelあれこれ
-
-tags: ruby,rails,arel
 date: 2014-09-05
+aliases:
+- /2014/09/05/arel
 ---
 
 ## Model.arel_table を読みづらいと感じる

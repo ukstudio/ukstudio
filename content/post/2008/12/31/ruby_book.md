@@ -1,6 +1,8 @@
 ---
 title: Re:Ruby初心者の2冊目はなに?
 date: 2008-12-31
+aliases:
+- /2008/12/31/ruby_book
 ---
 <a href="http://anond.hatelabo.jp/20081230213406">Ruby初心者の２冊目はなに？</a>
 <a href="http://d.hatena.ne.jp/z/20081231/1230650467">Rubyの「最初の二冊目」は何?　に答えてみる。 - どんなジレンマ</a>

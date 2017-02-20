@@ -1,6 +1,8 @@
 ---
 title: opensocial-ruby-clientでmixiのRESTful APIを使ってみた
 date: 2010-01-31
+aliases:
+- /2010/01/31/opensocial-ruby-client
 ---
 opensocial-ruby-clientのドキュメントがあまり無くて結構苦労した。
 

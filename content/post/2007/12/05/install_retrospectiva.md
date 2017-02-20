@@ -1,6 +1,8 @@
 ---
 title: RetrospectivaをMacBookに設置してみた
 date: 2007-12-05
+aliases:
+- /2007/12/05/install_retrospectiva
 ---
 <a href="http://retrospectiva.org/blog">blog . retrospectiva</a>
 

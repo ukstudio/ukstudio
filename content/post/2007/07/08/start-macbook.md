@@ -1,6 +1,8 @@
 ---
 title: MacBook始めました
 date: 2007-07-08
+aliases:
+- /2007/07/08/start-macbook
 ---
 普段使っていたノートPC(Win) がどうやら逝ってしまったみたいなのでこの機会に念願のMacBookを手に入れました。
 <table border="0" cellpadding="5">

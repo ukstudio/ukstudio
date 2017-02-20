@@ -1,6 +1,8 @@
 ---
 title: TDDBC 東京 1.6でサポートスタッフをやってきました
 date: 2011-08-04
+aliases:
+- /2011/08/04/tddbc_tokyo_1_6
 ---
 <a href="http://www.zusaar.com/event/agZ6dXNhYXJyDQsSBUV2ZW50GPGlAww">TDD Boot Camp 東京 1.6</a>にRubyのサポートスタッフとして参加してきた。
 

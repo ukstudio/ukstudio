@@ -1,6 +1,8 @@
 ---
 title: fixdap.jpに「Rubyを極める」プロジェクトを作ってみました
 date: 2007-12-20
+aliases:
+- /2007/12/20/fixdap_ruby_project
 ---
 <a href="http://fixdap.com/p/Ruby/">Rubyを極める - fixdap</a>
 

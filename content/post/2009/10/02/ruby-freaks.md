@@ -1,6 +1,8 @@
 ---
 title: Ruby Freaks Loungeに記事を書きました
 date: 2009-10-02
+aliases:
+- /2009/10/02/ruby-freaks
 ---
 <a href="http://gihyo.jp/dev/serial/01/ruby/0021">第21回　Railsアプリの受け入れテストをCucumberで書こう</a>
 

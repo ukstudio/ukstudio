@@ -1,8 +1,8 @@
 ---
 title: RSpecでPower Assertをやるには
-
-tags: testing,rspec,power-assert
 date: 2014-09-21
+aliases:
+- /2014/09/21/rspec_power_assert
 ---
 
 RubyKaigi 2014でpower assertの話を聞いてrspecでどうにかならんかちょっと考えてみました。まず結論だけ書くとrspecでpower assertを使いたければ以下の様に書けばOK。

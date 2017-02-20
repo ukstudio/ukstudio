@@ -1,6 +1,8 @@
 ---
 title: たのしいRuby 第10章 練習問題
 date: 2007-12-20
+aliases:
+- /2007/12/20/tanoshi_ruby_sec10_practice
 ---
 たのしいRuby 第10章 数値(Numeric)クラスの練習問題をやってみた。
 

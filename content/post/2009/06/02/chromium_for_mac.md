@@ -1,6 +1,8 @@
 ---
 title: Mac版Chromium
 date: 2009-06-02
+aliases:
+- /2009/06/02/chromium_for_mac
 ---
 mattnさんの<a href="http://mattn.kaoriya.net/software/linux/20090601225017.htm">ChromiumのLinux版入れてみた</a>をみて、もしやと思って調べてみたらやっぱりありました。Mac版。
 

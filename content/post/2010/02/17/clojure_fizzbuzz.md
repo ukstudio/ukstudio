@@ -1,6 +1,8 @@
 ---
 title: ClojureでFizzBuzz
 date: 2010-02-17
+aliases:
+- /2010/02/17/clojure_fizzbuzz
 ---
 <script src="http://gist.github.com/306528.js?file=fizzbuzz.clj"></script>
 

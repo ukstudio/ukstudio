@@ -1,6 +1,8 @@
 ---
 title: プログラマの報酬について
 date: 2010-02-04
+aliases:
+- /2010/02/04/programmers_pay
 ---
 <a href="http://ukstudio.jp/2010/01/31/programmer_is_severe_job/">プログラマという職業は「ふつう」の人には厳しくないか</a>では結構な反応もらって少しびっくり。
 

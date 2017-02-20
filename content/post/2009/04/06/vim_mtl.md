@@ -1,6 +1,8 @@
 ---
 title: Vim勉強会 in MTLで話してきました
 date: 2009-04-06
+aliases:
+- /2009/04/06/vim_mtl
 ---
 <a href="http://atnd.org/events/482">Vim勉強会 in MTL : ATND</a>
 当日の<a href="http://www.lingr.com/room/vim_mtl/archives/2009/04/03">Lingrのログ</a>と<a href="http://www.flickr.com/photos/iandeth/sets/72157616306681532/">写真</a>と<a href="http://www.ustream.tv/channel/vimmtl20090403">録画</a>

@@ -1,6 +1,8 @@
 ---
 title: 近況
 date: 2011-03-24
+aliases:
+- /2011/03/24/activity
 ---
 <h3>個人事業主になりました</h3>
 <a href="http://ukstudio.jp/wp-content/uploads/2011/03/FxCam_1300951372227.jpg"><img src="http://ukstudio.jp/wp-content/uploads/2011/03/FxCam_1300951372227.jpg" alt="" title="FxCam_1300951372227" width="720" height="480" class="alignnone size-full wp-image-824" /></a>

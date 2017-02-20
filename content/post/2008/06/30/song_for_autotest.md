@@ -1,6 +1,8 @@
 ---
 title: autotestの結果をMacのsayコマンドで通知する
 date: 2008-06-30
+aliases:
+- /2008/06/30/song_for_autotest
 ---
 かなりネタなエントリー。
 

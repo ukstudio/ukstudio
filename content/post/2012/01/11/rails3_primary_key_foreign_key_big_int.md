@@ -1,6 +1,8 @@
 ---
 title: rails3でprimary keyとforeign keyをbig intにする
 date: 2012-01-11
+aliases:
+- /2012/01/11/rails3_primary_key_foreign_key_big_int
 ---
 以下は、PostgreSQLの例。
 <code><pre>ActiveRecord::ConnectionAdapters::PostgreSQLAdapter::NATIVE_DATABASE_TYPES[:primary_key] = 'bigserial primary key' </pre></code>

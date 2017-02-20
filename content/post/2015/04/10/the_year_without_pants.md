@@ -1,8 +1,8 @@
 ---
 title: 「マイクロソフトを辞めて、オフィスのない会社で働いてみた」読了した
-
-tags:
 date: 2015-04-10
+aliases:
+- /2015/04/10/the_year_without_pants
 ---
 
 
