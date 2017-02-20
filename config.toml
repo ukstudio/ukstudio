@@ -1,3 +1,10 @@
 baseURL = "http://ukstudio.jp"
 title = "UKSTUDIO"
-theme = 'beautifulhugo'
+author = "AKAMATSU Yuki"
+copyright = "AKAMATSU Yuki All rights reserved"
+theme = 'hugo-zen'
+
+[params]
+  twitter = "https://twitter.com/ukstudio"
+  github = "https://github.com/ukstudio"
+  analytics = "UA-12755601-1"
