@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="utf-8">
+<meta name="generator" content="Hugo 0.17" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="//fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/github.min.css">
+<link rel="stylesheet" href="/css/normalize.css">
+<link rel="stylesheet" href="/css/skeleton.css">
+<link rel="stylesheet" href="/css/custom.css">
+<link rel="alternate" href="/index.xml" type="application/rss+xml" title="UKSTUDIO">
+<title>Railsのpartialの使い方 - UKSTUDIO</title>
+</head>
+<body>
+
+<div class="container">
+
+	<header role="banner">
+		<div class="header-logo">
+			<a href="/"><img src="/images/icon.png" width="60" height="60" alt="UKSTUDIO"></a>
+		</div>
+		
+	</header>
+
+
+	<main role="main">
+		<article itemscope itemtype="http://schema.org/BlogPosting">
+			<h1 class="entry-title" itemprop="headline">Railsのpartialの使い方</h1>
+			<span class="entry-meta"><time itemprop="datePublished" datetime="2008-08-13">August 13, 2008</time></span>
+			<section itemprop="entry-text">
+				<p>あまりpartialをちゃんと使いこなせていない気がするので(いつもインスタンス変数で適当に値わたしてる)使い方をちょっとメモ。</p>
+
+<pre lang="ruby">
+render :partial => 'entry'
+</pre>
+
+<p>一番基本となるpartialの使い方。_entry.html.erbを描画。</p>
+
+<pre lang="ruby">
+render :partial => 'entry', :locals => {:title => "タイトル"}
+</pre>
+
+<p>localsでpartial側に値を渡す。partial側ではローカル変数titleで文字列&rdquo;タイトル&rdquo;を参照できる。</p>
+
+<pre lang="ruby">
+render :partial => 'entry', :object => @object
+render :partial => @entry # インスタンス変数で単数形
+</pre>
+
+<p>objectでpartial側に値を渡す。@objectの内容をpartial側でローカル変数entryで参照できる。</p>
+
+<pre lang="ruby">
+render :partial => 'entry', :collection => @objects
+render :partial => @entries # インスタンス変数で複数形
+</pre>
+
+<p>collectionで値を渡す。@objectsの値を1つずつ、partial側でentryとして参照できる。もちろん描画は@objects分繰り返される。</p>
+
+			</section>
+		</article>
+	</main>
+
+
+	<footer role="contentinfo">
+		<div class="hr"></div>
+		<div class="footer-link">
+			
+			<a href="https://twitter.com/ukstudio" target="_blank">Twitter</a>
+			
+			<a href="https://github.com/ukstudio" target="_blank">GitHub</a>
+		</div>
+		<div class="copyright">Copyright &copy; AKAMATSU Yuki All rights reserved</div>
+	</footer>
+
+</div>
+
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+</body>
+</html>

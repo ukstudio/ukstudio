@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="utf-8">
+<meta name="generator" content="Hugo 0.17" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="//fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/github.min.css">
+<link rel="stylesheet" href="/css/normalize.css">
+<link rel="stylesheet" href="/css/skeleton.css">
+<link rel="stylesheet" href="/css/custom.css">
+<link rel="alternate" href="/index.xml" type="application/rss+xml" title="UKSTUDIO">
+<title>Vimをソースからビルド - UKSTUDIO</title>
+</head>
+<body>
+
+<div class="container">
+
+	<header role="banner">
+		<div class="header-logo">
+			<a href="/"><img src="/images/icon.png" width="60" height="60" alt="UKSTUDIO"></a>
+		</div>
+		
+	</header>
+
+
+	<main role="main">
+		<article itemscope itemtype="http://schema.org/BlogPosting">
+			<h1 class="entry-title" itemprop="headline">Vimをソースからビルド</h1>
+			<span class="entry-meta"><time itemprop="datePublished" datetime="2011-05-09">May 09, 2011</time></span>
+			<section itemprop="entry-text">
+				<p>aptで入れたvimのrubyインターフェースのバージョンが1.8.6なのが気にいらなくてvimをソースからビルドした。</p>
+
+<pre><code>$ hg clone https://vim.googlecode.com/hg/ vim
+$ hg update vim73
+
+$ cd vim
+$ ./configure --enable-multibyte --prefix=$HOME/local --enable-rubyinterp</code></pre>
+
+<p>これでOK。aptで入れたvimも一応残しておきたかったのでprefixで$HOME以下にビルドするようにした。Rubyインターフェースはrvmで入れた1.9.2を見るようになっていたのでとりあえずよしとする。何でrvmの奴を見にいったのかはよくわからない。</p>
+
+			</section>
+		</article>
+	</main>
+
+
+	<footer role="contentinfo">
+		<div class="hr"></div>
+		<div class="footer-link">
+			
+			<a href="https://twitter.com/ukstudio" target="_blank">Twitter</a>
+			
+			<a href="https://github.com/ukstudio" target="_blank">GitHub</a>
+		</div>
+		<div class="copyright">Copyright &copy; AKAMATSU Yuki All rights reserved</div>
+	</footer>
+
+</div>
+
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+</body>
+</html>

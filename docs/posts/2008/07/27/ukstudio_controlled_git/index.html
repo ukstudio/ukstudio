@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="utf-8">
+<meta name="generator" content="Hugo 0.17" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="//fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/github.min.css">
+<link rel="stylesheet" href="/css/normalize.css">
+<link rel="stylesheet" href="/css/skeleton.css">
+<link rel="stylesheet" href="/css/custom.css">
+<link rel="alternate" href="/index.xml" type="application/rss+xml" title="UKSTUDIO">
+<title>ukstudio.jpをgitで管理するようにしてみた - UKSTUDIO</title>
+</head>
+<body>
+
+<div class="container">
+
+	<header role="banner">
+		<div class="header-logo">
+			<a href="/"><img src="/images/icon.png" width="60" height="60" alt="UKSTUDIO"></a>
+		</div>
+		
+	</header>
+
+
+	<main role="main">
+		<article itemscope itemtype="http://schema.org/BlogPosting">
+			<h1 class="entry-title" itemprop="headline">ukstudio.jpをgitで管理するようにしてみた</h1>
+			<span class="entry-meta"><time itemprop="datePublished" datetime="2008-07-27">July 27, 2008</time></span>
+			<section itemprop="entry-text">
+				<p>最近流行りのgitを使ってみようかなーってことでとりあえずukstudio.jpを全部gitで管理するようにした。</p>
+
+<p>最終的に以下のような構成になった。</p>
+
+<p><a href="http://ukstudio.jp/wp-content/uploads/2008/07/git-ukstudio.png"><img src="http://ukstudio.jp/wp-content/uploads/2008/07/git-ukstudio.png" alt="" title="git-ukstudio" width="284" height="284" class="alignnone size-medium wp-image-145" /></a></p>
+
+<p><h2>MacBookにgitをインストールする</h2>
+MacBookにgitをインストールするのは簡単だった。MacPortsですんなり入った。</p>
+
+<p>参考: <a href="http://d.hatena.ne.jp/from_kyushu/20080414/git_on_mac">MacPortsを使ってgitをインストールしてみた - Post-itみたいな</a></p>
+
+<p><h2>サーバにgitをインストールする</h2>
+サーバはslicehostのCentOS5.1を使用。インストールされてるsvnが1.4なのでこちらは一旦remove。</p>
+
+<pre lang="bash">
+$ yum remove subversion
+</pre>
+
+<p>gitはyumの標準リポジトリでは管理されてないので、外部リポジトリ(<a href="http://dag.wieers.com/rpm/">DAG</a>)を登録してそこからインストールした。</p>
+
+<pre lang="bash">
+$ wget http://dag.wieers.com/packages/rpmforge-release/rpmforge-release-$0.3.6-1.el5.rf.i386.rpm
+$ rpm -ivh rpmforge-release-0.3.6-1.el5.rf.i386.rpm
+$ yum install git
+</pre>
+
+<p><h2>リポジトリを作る</h2>
+とりあえずコミットする人の名前とメールアドレスを登録しないといけないらしいので登録。これはサーバの方も同じ。</p>
+
+<pre lang="bash">
+$ git config --global user.email yuki.0w0[at]gmail.com
+$ git config --global user.name YukiAkamatsu
+</pre>
+
+<p>次にローカルのファイル群をcommitする。
+<pre lang="bash">
+$ cd ~/ukstudio.jp
+$ git init
+$ git add .
+$ git commit -m &ldquo;first commit&rdquo;
+</pre></p>
+
+<p>この状態だとまだローカル内での変更のみ。なので、この変更をサーバ側で受け取れるようにする。</p>
+
+<pre lang="bash">
+# ukstudio.jpにログインした状態
+[ukstudio.jp]$ mkdir /var/git/ukstudio.jp
+[ukstudio.jp]$ cd /var/git/ukstudio.jp
+[ukstudio.jp]$ git init-db
+</pre>
+
+<p>んで、またローカルに戻ってさっきcommitしたのをpushして反映させる。</p>
+
+<pre lang="bash">
+$ git remote add ukstudio.jp ssh://ukstudio@ukstudio.jp/var/git/ukstudio.jp
+$ git push ukstudio.jp ukstudio.jp master
+</pre>
+
+<p>最後に外部から見れるように配置する。</p>
+
+<pre lang="bash">
+# ukstudio.jp
+[ukstudio.jp]$ cd /var/www/vhost/
+[ukstudio.jp]$ git clone /var/git/ukstudio.jp
+</pre>
+
+<p>これで/var/www/vhost/ukstudio.jpが作成されて、そこにずらーっとファイルができてるはず。とりあえずこれでukstudio.jpをgitで管理できるようになった。(と思う)</p>
+
+<p><h2>ローカルで変更を加えてみる</h2>
+本当にうまく管理できているのか、適当なファイルを作って確かめてみたいと思う。</p>
+
+<pre lang="bash">
+$ cd ~/ukstudio.jp
+$ touch hoge.txt
+$ git add hoge.txt
+$ git commit -m "commit test"
+$ git push ukstudio.jp master
+
+#ukstudio.jp
+[ukstudio.jp]$ cd ~/var/www/vhost/ukstudio.jp
+[ukstudio.jp]$ git pull
+</pre>
+
+<p>これでhoge.txtがあれば、うまく管理できてることになると思う。</p>
+
+<p>そんな感じで、とりあえずしばらくはgitを使ってみようかなーと思う。「git log -p」とやるとコミットログがdiff付きでみれて便利。</p>
+
+<p><h3>参考</h3>
+<a href="http://www8.atwiki.jp/git_jp/pub/Documentation.ja/user-manual.html">Git ユーザマニュアル(1.5.3以降)</a>
+<a href="http://www8.atwiki.jp/git_jp/pub/Documentation.ja/tutorial.html">Gitチュートリアル(1.5.1以降)</a>
+<a href="http://www.nofuture.tv/index.rb?GitMemo">Gitメモ</a>
+<a href="http://blog.champierre.com/archives/670">せっかちな人のためのgit入門</a>
+<a href="http://www.kaeruspoon.net/articles/477">バージョン管理をsubversionからgitに移行してみた</a></p>
+
+<p><h2>SSHについて補足</h2>
+サーバへのSSH接続は鍵認証でやっています。秘密鍵を~/.ssh/id_dsa_ukstudio.jpで保存して、~/.ssh/configに以下のように書いています。</p>
+
+<pre lang="bash">
+Host ukstudio.jp
+IdentityFile ~/.ssh/id_dsa_ukstudio.jp
+Protocol 2,1
+</pre>
+
+			</section>
+		</article>
+	</main>
+
+
+	<footer role="contentinfo">
+		<div class="hr"></div>
+		<div class="footer-link">
+			
+			<a href="https://twitter.com/ukstudio" target="_blank">Twitter</a>
+			
+			<a href="https://github.com/ukstudio" target="_blank">GitHub</a>
+		</div>
+		<div class="copyright">Copyright &copy; AKAMATSU Yuki All rights reserved</div>
+	</footer>
+
+</div>
+
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="utf-8">
+<meta name="generator" content="Hugo 0.17" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="//fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/github.min.css">
+<link rel="stylesheet" href="/css/normalize.css">
+<link rel="stylesheet" href="/css/skeleton.css">
+<link rel="stylesheet" href="/css/custom.css">
+<link rel="alternate" href="/index.xml" type="application/rss+xml" title="UKSTUDIO">
+<title>コードブロックとyield文 - UKSTUDIO</title>
+</head>
+<body>
+
+<div class="container">
+
+	<header role="banner">
+		<div class="header-logo">
+			<a href="/"><img src="/images/icon.png" width="60" height="60" alt="UKSTUDIO"></a>
+		</div>
+		
+	</header>
+
+
+	<main role="main">
+		<article itemscope itemtype="http://schema.org/BlogPosting">
+			<h1 class="entry-title" itemprop="headline">コードブロックとyield文</h1>
+			<span class="entry-meta"><time itemprop="datePublished" datetime="2007-09-05">September 05, 2007</time></span>
+			<section itemprop="entry-text">
+				<p>メソッド内でyield文を使うことでメソッドからコードブロックを呼び出すことができます。yield文が呼び出されるたびに、ブロックに処理が移り、処理が終わるとyieldの直後の処理に移ります。
+<pre lang="ruby">def exec_block
+  yield
+  puts &ldquo;hoge&rdquo;
+end</p>
+
+<p>exec_block{ puts &ldquo;Hello,World&rdquo;}</p>
+
+<hr />
+
+<p>Hello,Wold
+hoge</pre>
+ブロックで引数を使いたいときはこんな感じ。yield文に値を与えることでブロックからその値を変数として呼ぶことができます。
+<pre lang="ruby">
+def exec_block
+  yield(&ldquo;foo&rdquo;, 3)
+end</p>
+
+<p>exec_block {|str,num| puts str * num}</p>
+
+<hr />
+
+<p>foofoofoo</pre>
+ちなみに当たり前ですが、ブロックはブレース{}でなくても、do endでも問題ありません。１行のブロックの場合にはブレース、複数行の場合にdo endが一般的なようです。</p>
+
+<p>コードブロックを使うとイテレータが実装できますけど、大抵は組み込みのもので事足りるのであまり自分でイテレータを作るっていうのは少ないのかもしれないですね。ま、Rubyの経験が少ないのでよくわかりませんが。</p>
+
+			</section>
+		</article>
+	</main>
+
+
+	<footer role="contentinfo">
+		<div class="hr"></div>
+		<div class="footer-link">
+			
+			<a href="https://twitter.com/ukstudio" target="_blank">Twitter</a>
+			
+			<a href="https://github.com/ukstudio" target="_blank">GitHub</a>
+		</div>
+		<div class="copyright">Copyright &copy; AKAMATSU Yuki All rights reserved</div>
+	</footer>
+
+</div>
+
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+</body>
+</html>

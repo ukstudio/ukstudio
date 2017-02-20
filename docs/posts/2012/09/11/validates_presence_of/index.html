@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="utf-8">
+<meta name="generator" content="Hugo 0.17" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="//fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/github.min.css">
+<link rel="stylesheet" href="/css/normalize.css">
+<link rel="stylesheet" href="/css/skeleton.css">
+<link rel="stylesheet" href="/css/custom.css">
+<link rel="alternate" href="/index.xml" type="application/rss+xml" title="UKSTUDIO">
+<title>validates :foo_id, :presence =&gt; trueを追う - UKSTUDIO</title>
+</head>
+<body>
+
+<div class="container">
+
+	<header role="banner">
+		<div class="header-logo">
+			<a href="/"><img src="/images/icon.png" width="60" height="60" alt="UKSTUDIO"></a>
+		</div>
+		
+	</header>
+
+
+	<main role="main">
+		<article itemscope itemtype="http://schema.org/BlogPosting">
+			<h1 class="entry-title" itemprop="headline">validates :foo_id, :presence =&gt; trueを追う</h1>
+			<span class="entry-meta"><time itemprop="datePublished" datetime="2012-09-11">September 11, 2012</time></span>
+			<section itemprop="entry-text">
+				<p>チームメンバーから「validates_presence_of :user_idはそのuser_idが存在するか確かめてくれる」という情報を得て、そんな隠れ仕様あんの?とおもってちょっと調べてみた。</p>
+
+<p>結論だけまず言うと
+<pre>
+validates :user_id, :presence =&gt; true
+validates_presence_of :user_id
+</pre>
+ではなく、
+<pre>
+validates :user, :presence =&gt; true
+validates_presence_of :user, :presence =&gt; true
+</pre>
+の用に関連名を指定するとそれっぽい動作をしなくもない。</p>
+
+<p>とりあえずコードを追うとpresence系のバリデーション自体はActiveModel::Validations::PresenceValidatorで定義されている。</p>
+
+<pre>module ActiveModel
+  # == Active Model Presence Validator
+  module Validations
+    class PresenceValidator < EachValidator
+      def validate(record)
+        record.errors.add_on_blank(attributes, options)
+</pre>
+
+<p>次にadd_on_blankを見てみる。</p>
+
+<pre># File activemodel/lib/active_model/errors.rb, line 251
+def add_on_blank(attributes, options = {})
+  [attributes].flatten.each do |attribute|
+    value = @base.send(:read_attribute_for_validation, attribute)
+    add(attribute, :blank, options) if value.blank?
+  end
+end
+</pre>
+
+<p>add_on_blankメソッドはattributesの内容を走査してblankだったらerrorsに追加してるんだろうなーというのが読み取れる。じゃあ実際に値を取ってきてるであろう:read_attribute_for_validationは何なのだろう。api.rubyonrails.orgで検索してもヒットしない。仕方ないからgitリポジトリをgrepして探す。そうすると以下の様なコードがみつかる。</p>
+
+<pre># activemodel/lib/active_model/validations.rb line 327
+alias :read_attribute_for_validation :send
+</pre>
+
+<p>つまりただのsend。なので</p>
+
+<pre>validates :user_id, :presence => true</pre>
+
+<p>というコードは</p>
+
+<pre>instance.send(:send, :user_id)</pre>
+
+<p>となり、結局は普通に指定した属性の値を見るに過ぎない。</p>
+
+<p>で、最初の話に戻るが</p>
+
+<pre>
+validates :user_id, :presence => true
+</pre>
+は普通にuser_idの値がblank?かどうかだけを見るので実際にそのuser_idでUserが存在するかチェックはしない。
+
+<pre>
+validates :user, :presence => true
+</pre>
+
+<p>はどうかというと、instance.userがnilの状態でinstance.userを呼び出すとinstance.user_idでUserを取りにいく。そこでUserが存在しなければ[]が返ってくるのでblank?がtrueとなりこのバリデーションは失敗する。</p>
+
+<pre>
+instance = Model.new
+instance.user_id = 111111111
+instance.valid? #=> false
+  User Load (3.4ms)  SELECT "users".* FROM "users" WHERE ""."id" = 111111111 LIMIT 1
+</pre>
+
+<p>なので、このケースに限って言えばそのIDのレコードが存在するか確認する動作をしている。とは言え、あくまでisntance.userの値を見るだけなので</p>
+
+<pre>
+instance = Model.new
+instance.user = User.new
+instance.valid? #=> true
+</pre>
+
+<p>この様に直接値を入れてしまえばDBにselect文はなげない。</p>
+
+<p>なので、そういう動作をすることもあるだけで厳密にはそのIDのレコードが存在を確かめているわけではない。</p>
+
+			</section>
+		</article>
+	</main>
+
+
+	<footer role="contentinfo">
+		<div class="hr"></div>
+		<div class="footer-link">
+			
+			<a href="https://twitter.com/ukstudio" target="_blank">Twitter</a>
+			
+			<a href="https://github.com/ukstudio" target="_blank">GitHub</a>
+		</div>
+		<div class="copyright">Copyright &copy; AKAMATSU Yuki All rights reserved</div>
+	</footer>
+
+</div>
+
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+</body>
+</html>

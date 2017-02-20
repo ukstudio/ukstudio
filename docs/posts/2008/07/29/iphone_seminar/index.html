@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="utf-8">
+<meta name="generator" content="Hugo 0.17" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="//fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/github.min.css">
+<link rel="stylesheet" href="/css/normalize.css">
+<link rel="stylesheet" href="/css/skeleton.css">
+<link rel="stylesheet" href="/css/custom.css">
+<link rel="alternate" href="/index.xml" type="application/rss+xml" title="UKSTUDIO">
+<title>Apple主催のiPhoneアプリケーション開発入門セミナーに参加してきた - UKSTUDIO</title>
+</head>
+<body>
+
+<div class="container">
+
+	<header role="banner">
+		<div class="header-logo">
+			<a href="/"><img src="/images/icon.png" width="60" height="60" alt="UKSTUDIO"></a>
+		</div>
+		
+	</header>
+
+
+	<main role="main">
+		<article itemscope itemtype="http://schema.org/BlogPosting">
+			<h1 class="entry-title" itemprop="headline">Apple主催のiPhoneアプリケーション開発入門セミナーに参加してきた</h1>
+			<span class="entry-meta"><time itemprop="datePublished" datetime="2008-07-29">July 29, 2008</time></span>
+			<section itemprop="entry-text">
+				<p>会場が家からすぐ近くだったので行ってきました。なるべく話しても大丈夫そうなところを選んで書きますが、場合によってはエントリーが消えることもあるかも。セミナーの内容が完全黙秘なのか、SDKの部分はダメなのかどっちかよくわからないので。英語苦手だ。</p>
+
+<p><h2>ドキュメントみろ</h2>
+今回、話を聞いてきたことの大半は既にドキュメントとしてあるとのこと。英語だけど。なので英語がわかる人はそちらを読めばいいと思います。というか他にドキュメントがないので、英語読めなくても読まなきゃいけないんだけど。</p>
+
+<p><a href="http://developer.apple.com/jp">http://developer.apple.com/jp</a></p>
+
+<p><h2>iPhoneでできないこと(と言うよりはやっちゃいけないこと)</h2>
+いくつかAppleから「これはできない」と言われたアプリがあります。</p>
+
+<ul>
+<li>リアルタイムにルーティングするもの(カーナビとか。位置情報のみはOK)</li>
+<li>インストーラー、インタプリタは無理。(エグゼキュータブルは無理って言ってた)</li>
+<li>データの読み書きはバンドル内のみ(バンドル = アプリケーションの実行フォルダ)</li>
+</ul>
+
+<p>ちなみにOpenURLでアプリケーションを立ち上げるのは大丈夫らしいです。</p>
+
+<p><h2>開発手順</h2>
+ほぼドキュメントそのままなので省きます。</p>
+
+<p><h2>App Storeへの登録</h2>
+個人的な印象からすると、無料・個人であれば、そこまでハードルは高くなさそうな感じ。</p>
+
+<p>無料・個人であれば、アプリ情報を登録し、公開条件や配布する国の指定のみで大丈夫そうです。法人に関しては場合によっては登記標本が必要かもしれません。</p>
+
+<p>それに加えて有料の場合は、なんか書類を送る必要があります。ちょっとこの辺り聞き損ねてしまいましたが、特別ハードルが高いって程でもなさそうです。</p>
+
+<p>アプリの審査に関して言えば、現状は「実物を見て、評価し、判断する」のが前提だそうです。つまり、「これはダメ」という線引きが曖昧で実際に審査をお願いしてみないと何とも言えないとのこと。もちろん、上に書いた「できないこと」は即はじかれるのかもしれませんが。brainfuckインタプリタを「翻訳アプリ」とか言えば、もしかしたら通るのかもしれないですけどw とりあえずはApp Storeに登録されてるものから判断するしかなさそうです。</p>
+
+<p><h2>アプリのアップデート</h2>
+アプリのアップデートは機能としてあるそうです。つまり、アップデートをするのにお金がかかったり、特別な作業が必要というわけではなさそうです。ただ、アップデートが差分アップデートではなく、丸ごととりかえるそうです。</p>
+
+<p>Q&amp;Aで「例えばテキストエディタなのでバンドルに保存されてるデータはアップロード時どうなるのか?」と言った質問がありましたが「確かバックアップの仕組みがあったはずだが、確認してみないとわからない」とのこと。</p>
+
+<p><h2>アプリのローカライズ</h2>
+どこの国に配布するにせよ、登録するバイナリは1つです。つまり1つのバイナリをローカライズするってことかと。翻訳の仕組みは・・・聞き損ねたか、忘れました。確かビルド時に「single binary supporting multiple languages」を選ぶとかそんなん。これ書いちゃまずいのかな。まぁいいや。</p>
+
+<p>まぁ、大体こんな感じです。他にも色々聞いてますが、ほとんどドキュメントに書いてあるようなことばかりでした。ここに書いた内容がちょっと際どいので、さっきも書きましたがエントリが消えてる可能性もあります。その時はごめんなさい。</p>
+
+			</section>
+		</article>
+	</main>
+
+
+	<footer role="contentinfo">
+		<div class="hr"></div>
+		<div class="footer-link">
+			
+			<a href="https://twitter.com/ukstudio" target="_blank">Twitter</a>
+			
+			<a href="https://github.com/ukstudio" target="_blank">GitHub</a>
+		</div>
+		<div class="copyright">Copyright &copy; AKAMATSU Yuki All rights reserved</div>
+	</footer>
+
+</div>
+
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+</body>
+</html>

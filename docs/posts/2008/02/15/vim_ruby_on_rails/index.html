@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="utf-8">
+<meta name="generator" content="Hugo 0.17" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="//fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/github.min.css">
+<link rel="stylesheet" href="/css/normalize.css">
+<link rel="stylesheet" href="/css/skeleton.css">
+<link rel="stylesheet" href="/css/custom.css">
+<link rel="alternate" href="/index.xml" type="application/rss+xml" title="UKSTUDIO">
+<title>VimでRuby on Railsの開発する為の環境構築 - UKSTUDIO</title>
+</head>
+<body>
+
+<div class="container">
+
+	<header role="banner">
+		<div class="header-logo">
+			<a href="/"><img src="/images/icon.png" width="60" height="60" alt="UKSTUDIO"></a>
+		</div>
+		
+	</header>
+
+
+	<main role="main">
+		<article itemscope itemtype="http://schema.org/BlogPosting">
+			<h1 class="entry-title" itemprop="headline">VimでRuby on Railsの開発する為の環境構築</h1>
+			<span class="entry-meta"><time itemprop="datePublished" datetime="2008-02-15">February 15, 2008</time></span>
+			<section itemprop="entry-text">
+				<p>ちょこっとだけ環境整えたので忘備録エントリとして。</p>
+
+<p><h2>Vim/Rubyのインストール</h2>
+Ruby(.rb)とeruby(.rhtml)ファイルでシンタックスハイライトとオムニ補完が有効になる拡張。gemからインストール可能。</p>
+
+<pre lang="bash">
+$ sudo gem install vim-ruby
+$ vim-ruby-install.rb
+</pre>
+
+<p>vim-ruby-install.rbを実行するとインストール先の選択肢が表示される。1が自分のみ、2が全体へのインストールになる。基本的にどちらでもいいと思うけど、今回は1を選択しといた。</p>
+
+<p>オムニ補完の<c -X></c><c -O>の入力が面倒なのと、補完がRailsのメソッド名にも対応するように.vimrcを修正する。タブで補完できるInsertTabWrapper()は<a href="http://subtech.g.hatena.ne.jp/cho45/20071108/1194475703">Vim の自動補完候補表示 - 冬通りに消え行く制服ガールは、夢物語にリアルを求めない。 - subtech</a>よりコピペ。</p>
+
+<pre>
+set nocompatible
+
+syntax on
+
+"omni
+function InsertTabWrapper()
+  if pumvisible()
+    return "\<c -n>"
+  endif
+  let col = col('.') - 1
+  if !col || getline('.')[col -1] !~ '\k\|< \|/'
+    return "\<tab>"
+  elseif exists('&omnifunc') && &omnifunc == ''
+    return "\</c><c -n>"
+  else
+    return "\</c><c -x>\</c><c -o>"
+  endif
+endfunction
+inoremap <tab> <c -r>=InsertTabWrapper()<cr>
+
+" rubycomplete.vim
+let g:rubycomplete_buffer_loading = 1
+let g:rubycomplete_rails = 1
+let g:rubycomplete_classes_in_global = 1
+</cr></c></tab></c></pre>
+
+<p><h2>Rails.vimのインストール</h2>
+<a href="http://d.hatena.ne.jp/secondlife/20061222/1166781841">rails.vim まとめ - 川o・-・）＜2nd life</a>を参考にインストール。インストール方法は・・・リンク先参照でw</p>
+
+<p>.vimrcに以下を追記。</p>
+
+<pre>
+" rails.vim
+let g:rails_level=4
+let g:rails_default_file="app/controllers/application.rb"
+</pre>
+
+<p>対応ファイル切り替えがかなり便利。</p>
+
+<p>まだ補完と対応ファイル切り替えぐらいしか機能を使えてないので、追々使い方を学んでいこうと思う。</p>
+
+<p><h2>追記: <sup>2</sup>&frasl;<sub>18</sub> omni補完でvimが落ちる問題</h2>
+omni補完をするとvimが落ちる問題が発生している。</p>
+
+<pre lang="bash">
+im: Caught deadly signal ABRT
+Vim: preserving files...
+Vim: Finished.
+</pre>
+
+<p>普通のRubyプログラム上では問題なく補完できる。(例えば10.toで<tab>10.to_sに補完とか)問題はRailsの方の補完で例えばmodelでvalida</tab><tab>とすると上記のエラーと共にvimが落ちる。とりあえず、rails.vimを外すとちゃんと補完できるようだけど、ファイル切り替えが便利なので悩み所。うまく共存させる方法はないのかな。</tab></c></p>
+
+			</section>
+		</article>
+	</main>
+
+
+	<footer role="contentinfo">
+		<div class="hr"></div>
+		<div class="footer-link">
+			
+			<a href="https://twitter.com/ukstudio" target="_blank">Twitter</a>
+			
+			<a href="https://github.com/ukstudio" target="_blank">GitHub</a>
+		</div>
+		<div class="copyright">Copyright &copy; AKAMATSU Yuki All rights reserved</div>
+	</footer>
+
+</div>
+
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+</body>
+</html>

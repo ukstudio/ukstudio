@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="utf-8">
+<meta name="generator" content="Hugo 0.17" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="//fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/github.min.css">
+<link rel="stylesheet" href="/css/normalize.css">
+<link rel="stylesheet" href="/css/skeleton.css">
+<link rel="stylesheet" href="/css/custom.css">
+<link rel="alternate" href="/index.xml" type="application/rss+xml" title="UKSTUDIO">
+<title>TDDBC 東京 1.6でサポートスタッフをやってきました - UKSTUDIO</title>
+</head>
+<body>
+
+<div class="container">
+
+	<header role="banner">
+		<div class="header-logo">
+			<a href="/"><img src="/images/icon.png" width="60" height="60" alt="UKSTUDIO"></a>
+		</div>
+		
+	</header>
+
+
+	<main role="main">
+		<article itemscope itemtype="http://schema.org/BlogPosting">
+			<h1 class="entry-title" itemprop="headline">TDDBC 東京 1.6でサポートスタッフをやってきました</h1>
+			<span class="entry-meta"><time itemprop="datePublished" datetime="2011-08-04">August 04, 2011</time></span>
+			<section itemprop="entry-text">
+				<p><a href="http://www.zusaar.com/event/agZ6dXNhYXJyDQsSBUV2ZW50GPGlAww">TDD Boot Camp 東京 1.6</a>にRubyのサポートスタッフとして参加してきた。</p>
+
+<p>当初の予定ではあくまでサポートなのでペアプロには参加しない予定だったけど、Rubyのグループが5人で人数が奇数になってしまったので急遽ペアプロに参加することにした。</p>
+
+<p>この辺は@t_wadaさんや主催の@pocketberserkerさんとも相談してペアとトリオのふたつに分けるっていう話もあったけれど、僕が「せっかくだからペアプロして帰ってもらいたい」と思ったので若干の迷いはあれどペアプロに参加することにしたのでした。Ruby組は@takahashimさんや@1syoさん、@kwappaさんたちが参加されていて彼らなら付きっ切りでサポートしなくても大丈夫そうというのも理由のひとつ。</p>
+
+<p>コードレビューを見た感じだと一応はうまくいったんじゃないかなと思う。特に@1syoさんと@takahashimさんのペア(ダブル高橋!)は積極的に質問をしてくれたので、僕としても教えがいがあった(えらそう)。ただ、質問を受けると僕の方のペアプロが一時的に中断してしまうし、僕としても頭の切り替えが結構大変だったので出来ることならやはり参加者同士でペアが組めるといいんだろうなぁ。理想を言うと全部のペアをスタッフ+参加者にすることなんだろうけど、あまり現実的じゃなさそう。</p>
+
+<p>今回、最初に僕とペアを組んだ方が(お名前を聞くのを忘れてしまった&hellip;)モダンなテストの書き方を知りたいと言うので、ある程度xUnit的なテストの書き方でペアプロを進めた後、がっつりRSpec的な書き方にリファクタリングするということをやってみた。他のペアもRSpecは初期の<code>it &ldquo;なんちゃらかんちゃら&rdquo;</code>の書き方をされていたので、コードレビュー時に共有できたのはよかったのかな。RSpecの書き方については言っちゃいけないということはないだろうから言っちゃうけどそのうちるびまの方に書く予定なのでお楽しみに。</p>
+
+<p>Ruby組は全体的にTDDのサイクル自体はできていた感じで、内容としてはテストの書き方にフォーカスが移っていたように感じる。例えば、標準出力が絡むテストのやり方とか、システム時刻が絡むテストのやり方とかdescribe/contextの切り方とか。多分、TDDBCも回数が増えていくにつれ、こういう人達がどんどん増えてくると思うからTDDBCの次の道をしめせるといいんじゃないかと思った。参考図書はいくつかあるけど、例えばxUTPとかTDDBCからのジャンプアップがヘビーすぎるなぁという気もする。(もちろんいきなりあれを全部読めという話でもないんだけれど)</p>
+
+<p>話は変わって当日のお題を再度ひとりで実装してみたので、コードを公開しておきます。</p>
+
+<p><a href="https://github.com/ukstudio/tddbc1.6">ukstudio/tddbc1.6 - GitHub</a></p>
+
+<p>あまりじっくり書いたって感じでもないので仕様漏れとかありそうだけど、テストコードの書き方の参考にはなるかと思います。@bleisさんみたいに細かに解説しようと思ったけど気力がないのでした。</p>
+
+<p>そういえば今回のスタッフも若手が多いな。@bleisさんと俺が86世代、@kyonn_mmさんと@pocketberserkerさんがひとつだかふたつだか年下だっけ? 同世代の人が頑張ってるのはとても刺激になります。</p>
+
+<p>最後に、主催の@pocketberserkerさん、講演をしてくださった@t_wadaさんをはじめ、スタッフの方々どうもお疲れ様でした。参加者のみなさま、どうもありがとうございました。</p>
+
+<p>特に@pocketberserkerさんは佐賀の人なのにもかかわらず東京でTDDBC主催とか、そのパワフルさを見習いたい感じです。本当にお疲れ様でした。</p>
+
+<p>おまけ
+<script src="https://gist.github.com/1124762.js"> </script></p>
+
+			</section>
+		</article>
+	</main>
+
+
+	<footer role="contentinfo">
+		<div class="hr"></div>
+		<div class="footer-link">
+			
+			<a href="https://twitter.com/ukstudio" target="_blank">Twitter</a>
+			
+			<a href="https://github.com/ukstudio" target="_blank">GitHub</a>
+		</div>
+		<div class="copyright">Copyright &copy; AKAMATSU Yuki All rights reserved</div>
+	</footer>
+
+</div>
+
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+</body>
+</html>

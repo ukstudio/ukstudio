@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="utf-8">
+<meta name="generator" content="Hugo 0.17" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="//fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/github.min.css">
+<link rel="stylesheet" href="/css/normalize.css">
+<link rel="stylesheet" href="/css/skeleton.css">
+<link rel="stylesheet" href="/css/custom.css">
+<link rel="alternate" href="/index.xml" type="application/rss+xml" title="UKSTUDIO">
+<title>autotestの結果をMacのsayコマンドで通知する - UKSTUDIO</title>
+</head>
+<body>
+
+<div class="container">
+
+	<header role="banner">
+		<div class="header-logo">
+			<a href="/"><img src="/images/icon.png" width="60" height="60" alt="UKSTUDIO"></a>
+		</div>
+		
+	</header>
+
+
+	<main role="main">
+		<article itemscope itemtype="http://schema.org/BlogPosting">
+			<h1 class="entry-title" itemprop="headline">autotestの結果をMacのsayコマンドで通知する</h1>
+			<span class="entry-meta"><time itemprop="datePublished" datetime="2008-06-30">June 30, 2008</time></span>
+			<section itemprop="entry-text">
+				<p>かなりネタなエントリー。</p>
+
+<p>Macにはsayコマンドと言うものがあって、入力した英単語とかをしゃべらせることができる。詳細はMacの手書き説明書さんが最近エントリー書いているのでそちらを見てくださいな。</p>
+
+<p><a href="http://veadardiary.blog29.fc2.com/blog-entry-1645.html">Macが歌いだす！？ | Macの手書き説明書</a></p>
+
+<p>んで、今回はそのsayコマンドを使って、autotestの結果をしゃべらせよう!というネタ企画。実用性はほぼ皆無。</p>
+
+<p>まずは~/.autotestを修正。最下行に以下を追記する。既にgrowlの通知などの設定がある場合はそこにsayコマンドの実行文を追記すればOK。</p>
+
+<pre lang="ruby">
+module Autotest::Growl
+  Autotest.add_hook :ran_command do |at|
+    results = [at.results].flatten.flatten.join("\n")
+    output = results.slice(/(\d+)\s+examples?,\s*(\d+)\s+failures?(,\s*(\d+)\s+not implemented)?/)
+    if output
+      if $~[2].to_i > 0
+        `say -v bad faild`
+      else
+        `say -v good success!`
+      end
+    end
+  end
+end
+</pre>
+
+<p>`で括っている2箇所でsayコマンドを実行している。失敗したときはbadな声で、成功したときはgoodな声で結果を通知する。他にも色んな声があるらしいので、そこらへんは好みで。</p>
+
+<pre lang="bash">
+ls /System/Library/Speech/Voices
+</pre>
+
+<p>とすると声の一覧がでるっぽい。</p>
+
+			</section>
+		</article>
+	</main>
+
+
+	<footer role="contentinfo">
+		<div class="hr"></div>
+		<div class="footer-link">
+			
+			<a href="https://twitter.com/ukstudio" target="_blank">Twitter</a>
+			
+			<a href="https://github.com/ukstudio" target="_blank">GitHub</a>
+		</div>
+		<div class="copyright">Copyright &copy; AKAMATSU Yuki All rights reserved</div>
+	</footer>
+
+</div>
+
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+</body>
+</html>

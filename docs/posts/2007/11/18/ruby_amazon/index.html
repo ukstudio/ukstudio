@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="utf-8">
+<meta name="generator" content="Hugo 0.17" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="//fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/github.min.css">
+<link rel="stylesheet" href="/css/normalize.css">
+<link rel="stylesheet" href="/css/skeleton.css">
+<link rel="stylesheet" href="/css/custom.css">
+<link rel="alternate" href="/index.xml" type="application/rss+xml" title="UKSTUDIO">
+<title>Ruby/Amazonライブラリ - UKSTUDIO</title>
+</head>
+<body>
+
+<div class="container">
+
+	<header role="banner">
+		<div class="header-logo">
+			<a href="/"><img src="/images/icon.png" width="60" height="60" alt="UKSTUDIO"></a>
+		</div>
+		
+	</header>
+
+
+	<main role="main">
+		<article itemscope itemtype="http://schema.org/BlogPosting">
+			<h1 class="entry-title" itemprop="headline">Ruby/Amazonライブラリ</h1>
+			<span class="entry-meta"><time itemprop="datePublished" datetime="2007-11-18">November 18, 2007</time></span>
+			<section itemprop="entry-text">
+				
+
+<p>URL:<a href="http://www.caliban.org/ruby/ruby-amazon.shtml">http://www.caliban.org/ruby/ruby-amazon.shtml</a></p>
+
+<p>ちょっとAWSを使うプログラムを書こうと思ったので、準備としてRuby/Amazonライブラリを試してみた。
+<h2>Ruby/Amazonのインストール</h2>
+<ol>
+<li>ライブラリのアーカイブを<a href="http://www.caliban.org/ruby/ruby-amazon.shtml#files">ダウンロード</a></li>
+<li>アーカイブを解凍</li>
+<li>解凍してできたディレクトリにsetup.rbがあるので、それを使用してインストール</li>
+</ol>
+<pre lang="bash">
+% ruby setup.rb config
+% ruby setup.rb setup
+% ruby setup.rb install
+</pre>
+<h2>ISBN/ASINで検索</h2>
+<h3>ソースコード</h3>
+<pre lang="ruby">
+#! ruby -Ku</p>
+
+<p>require &lsquo;amazon/search&rsquo;
+include Amazon::Search</p>
+
+<p>DEV_TOKEN = &ldquo;****************&rdquo;
+ASSOCIATE_ID = &ldquo;ukstudio0c-22&rdquo;</p>
+
+<p>request = Request.new(DEV_TOKEN, ASSOCIATE_ID, &ldquo;jp&rdquo;)</p>
+
+<h1 id="asin-isbnで検索">ASIN/ISBNで検索</h1>
+
+<p>res = request.asin_search(&ldquo;4274066428&rdquo;, LITE) # HEAVYを指定した場合、詳細な情報が得られる</p>
+
+<h1 id="ヒット数">ヒット数</h1>
+
+<p>puts res.products.size #=&gt; 1 ASINでの検索なので1件のみ該当</p>
+
+<h1 id="ヒットした製品の情報">ヒットした製品の情報</h1>
+
+<p>puts res.products[0]
+</pre>
+<h3>実行結果</h3>
+<pre lang="bash">
+asin             = &ldquo;4274066428&rdquo;
+authors          = [&ldquo;Dave Thomas&rdquo;, &ldquo;Chad Fowler&rdquo;, &ldquo;Andy Hunt&rdquo;, &ldquo;田和 勝&rdquo;, &ldquo;まつもと ゆきひろ&rdquo;]
+availability     = &ldquo;通常24時間以内に発送&rdquo;
+catalog          = &ldquo;Book&rdquo;
+image_url_large  = &ldquo;<a href="http://ecx.images-amazon.com/images/I/4151YFZ27NL.jpg&quot;">http://ecx.images-amazon.com/images/I/4151YFZ27NL.jpg&quot;</a>
+image_url_medium = &ldquo;<a href="http://ecx.images-amazon.com/images/I/21QGW56WGCL.jpg&quot;">http://ecx.images-amazon.com/images/I/21QGW56WGCL.jpg&quot;</a>
+image_url_small  = &ldquo;<a href="http://ecx.images-amazon.com/images/I/11V7Q88BZ3L.jpg&quot;">http://ecx.images-amazon.com/images/I/11V7Q88BZ3L.jpg&quot;</a>
+list_price       = &ldquo;￥ 3,990&rdquo;
+manufacturer     = &ldquo;オーム社&rdquo;
+our_price        = &ldquo;￥ 3,990&rdquo;
+product_name     = &ldquo;プログラミングRuby 第2版 言語編&rdquo;
+release_date     = &ldquo;2006/08/26&rdquo;
+url              = &ldquo;<a href="http://www.amazon.co.jp/gp/product/4274066428%3ftag=ukstudio0c-22%26link_code=xm2%26camp=2025%26dev-t=0GTT93KAWBX07WMKM002&quot;">http://www.amazon.co.jp/gp/product/4274066428%3ftag=ukstudio0c-22%26link_code=xm2%26camp=2025%26dev-t=0GTT93KAWBX07WMKM002&quot;</a>
+used_price       = &ldquo;￥ 3,200&rdquo;
+</pre>
+<h2>キーワード検索</h2>
+<h3>ソースコード</h3>
+Requestオブジェクトを作るところまでは同じなので省略。
+<pre lang="ruby">
+res = request.keyword_search(&ldquo;ruby&rdquo;, &lsquo;books&rsquo;, LITE) # booksはモードの指定。musicとか。</p>
+
+<h1 id="ヒット数-1">ヒット数</h1>
+
+<p>puts res.products.size #=&gt; 11/18日現在、10件ヒットした。なんか少ないな・・・</p>
+
+<h1 id="ヒットした製品のタイトルを表示">ヒットした製品のタイトルを表示</h1>
+
+<p>res.products.each{|item|
+  puts item.product_name
+}
+</pre>
+<h3>実行結果</h3>
+<pre lang="bash">
+The Ruby (ザ・ルビー) 2007年 12月号 [雑誌]
+Ruby on Rails入門―優しいRailsの育て方
+たのしいRuby 第2版 Rubyではじめる気軽なプログラミング
+プログラミングRuby 第2版 言語編
+プログラミングRuby 第2版 ライブラリ編
+Rubyではじめるゲームプログラミング―人気の国産言語で、誰でも簡単にゲームが作れる! (I/O BOOKS)
+基礎Ruby on Rails (IMPRESS KISO SERIES)
+Rubyレシピブック 第2版 268の技
+はじめよう Ruby on Rails
+WEB+DB PRESS Vol.38
+</pre>
+<h3>追記(07-11-19)</h3>
+キーワード検索で10件しかヒットしなかったのはkeyword_searchメソッドにALL_PAGESオプションを指定してなかったためでした。
+<h3>キーワードがヒットしなかった場合</h3>
+検索したキーワードで何もヒットしなかった場合、例外が発生するみたいなので例外処理が必要。
+<pre lang="bash">
+/opt/local/lib/ruby/site_ruby/1.8/amazon/search.rb:1172:in `get_args&rsquo;: There are no exact matches for the search. (Amazon::Search::Request::SearchError)
+</pre></p>
+
+			</section>
+		</article>
+	</main>
+
+
+	<footer role="contentinfo">
+		<div class="hr"></div>
+		<div class="footer-link">
+			
+			<a href="https://twitter.com/ukstudio" target="_blank">Twitter</a>
+			
+			<a href="https://github.com/ukstudio" target="_blank">GitHub</a>
+		</div>
+		<div class="copyright">Copyright &copy; AKAMATSU Yuki All rights reserved</div>
+	</footer>
+
+</div>
+
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+</body>
+</html>

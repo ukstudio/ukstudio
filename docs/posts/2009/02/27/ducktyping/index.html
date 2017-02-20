@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="utf-8">
+<meta name="generator" content="Hugo 0.17" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="//fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/github.min.css">
+<link rel="stylesheet" href="/css/normalize.css">
+<link rel="stylesheet" href="/css/skeleton.css">
+<link rel="stylesheet" href="/css/custom.css">
+<link rel="alternate" href="/index.xml" type="application/rss+xml" title="UKSTUDIO">
+<title>RubyでDuckTyping - UKSTUDIO</title>
+</head>
+<body>
+
+<div class="container">
+
+	<header role="banner">
+		<div class="header-logo">
+			<a href="/"><img src="/images/icon.png" width="60" height="60" alt="UKSTUDIO"></a>
+		</div>
+		
+	</header>
+
+
+	<main role="main">
+		<article itemscope itemtype="http://schema.org/BlogPosting">
+			<h1 class="entry-title" itemprop="headline">RubyでDuckTyping</h1>
+			<span class="entry-meta"><time itemprop="datePublished" datetime="2009-02-27">February 27, 2009</time></span>
+			<section itemprop="entry-text">
+				<p>今日、知人に「DuckTypingのメリットが今一ピンとこない」と言われて実際にコード書いて説明をしたのだけれども、せっかくなのでエントリにまとめる。</p>
+
+<p>DuckTypingとは、動的言語の柔軟性を表現する概念で以下の格言に由来する。</p>
+
+<blockquote>
+    "If it walks like a duck and quacks like a duck, it must be a duck"
+（もしもそれがアヒルのように歩き、アヒルのように鳴くのなら、それはアヒルである）
+</blockquote>
+
+<p>つまり、アヒルのように振る舞うものは、実際にそれが何であろうとアヒルと見なすということになる。</p>
+
+<p>もうちょっと言語よりな言い方をするのであれば、あるオブジェクトどのクラスに属するか考慮せず、どのようなインターフェースを持つかに注目するのがDuckTyping。</p>
+
+<p>DuckTypingにおいて重要なことは「明示的な型チェックを避ける」と言うことで、どう言うことかと言うと</p>
+
+<script src="http://gist.github.com/70902.js"></script>
+
+<p>上記のようなコードを書いてしまうと、Duckクラスもしくはそれらを継承したクラスしか扱えなくなり、動的言語のメリットが失われてしまう。</p>
+
+<p>その知人に紹介した簡単なDuckTypingの例が以下。</p>
+
+<script src="http://gist.github.com/70734.js"></script>
+
+<p>ここではwriteメソッドさえあれば、渡されたオブジェクトが何かは問わない。これをもうちょっと実際に使うようなコードに書き直すと以下のようになる。</p>
+
+<script src="http://gist.github.com/70911.js"></script>
+
+<p>やっていることは、ほとんどwrite_messageと同じだけど、こちらの方がまだピンとくると思う。Loggerはログを書き出すだけの簡単なクラスだが、DuckTypingを用いることによって、その書き出し先を柔軟に変更することができる。</p>
+
+<p>実際はどんなオブジェクトが渡されるかわからないのでrespond_to?でメソッドの有無のチェックぐらいはした方がいい。</p>
+
+<script src="http://gist.github.com/70918.js"></script>
+
+<p>エラー処理をもうちょっと別の方法を取ってみる。</p>
+
+<script src="http://gist.github.com/70969.js"></script>
+
+<p>こちらの方法を取ると、仮に呼び出したメソッド内で例外が発生した場合もうまく処理することができる。個人的には大体こちらの手段を取ることが多い。</p>
+
+<p>結構長くなったけど、大体こんな感じ。DuckTypingは慣れない人からするとよくわからないところも多いと思うけど、うまく使えれば結構便利な機能。使いすぎは禁物だけどうまく使っていくといいだろう。</p>
+
+			</section>
+		</article>
+	</main>
+
+
+	<footer role="contentinfo">
+		<div class="hr"></div>
+		<div class="footer-link">
+			
+			<a href="https://twitter.com/ukstudio" target="_blank">Twitter</a>
+			
+			<a href="https://github.com/ukstudio" target="_blank">GitHub</a>
+		</div>
+		<div class="copyright">Copyright &copy; AKAMATSU Yuki All rights reserved</div>
+	</footer>
+
+</div>
+
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+</body>
+</html>
