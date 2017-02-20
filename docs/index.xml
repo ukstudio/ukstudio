@@ -6,8 +6,28 @@
     <description>Recent content on UKSTUDIO</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>AKAMATSU Yuki All rights reserved</copyright>
-    <lastBuildDate>Thu, 29 Dec 2016 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 21 Feb 2017 03:33:53 +0900</lastBuildDate>
     <atom:link href="http://ukstudio.jp/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>ブログをMiddlemanからHugoに移行した</title>
+      <link>http://ukstudio.jp/posts/2017/02/20/hugo/</link>
+      <pubDate>Tue, 21 Feb 2017 03:33:53 +0900</pubDate>
+      
+      <guid>http://ukstudio.jp/posts/2017/02/20/hugo/</guid>
+      <description>&lt;p&gt;ブログを割とほったらかしにしていてずっとどうにかしたいな〜と思ってたので少し手を入れた。本当はMiddlemanのままでHTML/CSSを自分でコーディングしようかなと思っていたのだけど、Middlemanがメジャーバージョンがあがっていてバージョンアップを頑張るぐらいなら今ならもっといいシステムがありそうだよなぁということでやめた。&lt;/p&gt;
+
+&lt;p&gt;Hugoにしたのは、ちょっと試してみてさすがにビルドが速かったのと、markdownの記事がほとんどそのまま移行できるから。と言っても最近のこの手の静的サイトをビルドする系のツールは大体markdown対応してるとは思うけど。&lt;/p&gt;
+
+&lt;p&gt;ちょっと苦労したのはHugoに&lt;a href=&#34;https://gohugo.io/content/front-matter/&#34;&gt;Front Matter&lt;/a&gt;というものがあって、そこに記事の作成日やタイトルをメタ情報としていれるんだけど、Middlemanで使ってたmarkdownにはdateの情報がHugoでパースできなかったりそもそも入っていなかったりした点。&lt;/p&gt;
+
+&lt;p&gt;日付情報がないと記事の並び順がおかしくなるので、golangでmarkdownのファイル名からFrontMatterに作成日を入れるスクリプトを書いた（幸いファイル名に日付を入れるようにしていた）。普段ならRubyで書いちゃうけど最近はgolangに興味があるのでなるべくgolangで書くようにしている。&lt;/p&gt;
+
+&lt;p&gt;あとはURLが&lt;code&gt;/2017/02/21/hugo&lt;/code&gt;だったのが今回の移行で&lt;code&gt;/posts/2017/02/21/hugo&lt;/code&gt;になったのだけど、Front MatterにAliasesというのがあって、旧URLから新URLにリダイレクトする仕組みがあったのでそこもなんとかなかった（これもgolangでaliasesを埋め込んだ）&lt;/p&gt;
+
+&lt;p&gt;というわけで、今までひどいデザイン状態で放置していたブログだけど、最低限みれるようにできた。&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Japan Product Manager Conferenceの資料公開</title>
@@ -622,33 +642,6 @@ let g:tagbar_type_ruby = {
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;これで上の画像のような感じでTagBarに表示されるようになるはず。&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>lsと間違えてerutasoを打ってしまうGentoo/Funtooユーザーのみなさまへ</title>
-      <link>http://ukstudio.jp/posts/2014/03/27/erutaso_ebuild/</link>
-      <pubDate>Thu, 27 Mar 2014 00:00:00 +0000</pubDate>
-      
-      <guid>http://ukstudio.jp/posts/2014/03/27/erutaso_ebuild/</guid>
-      <description>
-
-&lt;p&gt;&lt;a href=&#34;https://github.com/ukstudio/ukstudio-overlay/tree/master/app-shells/erutaso/&#34;&gt;ebuild&lt;/a&gt;を作ってみましたのでご活用ください。初めてのebuildなので不具合・不都合あればpull-reqを。ukstudioというoverlayを作りましたのでそこからインストールできるはずです。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://github.com/ukstudio/ukstudio-overlay&#34;&gt;https://github.com/ukstudio/ukstudio-overlay&lt;/a&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;curl https://raw.github.com/ukstudio/ukstudio-overlay/master/profiles/layman.xml &amp;gt; /etc/layman/overlays/ukstudio-overlay.xml
-layman -f -a ukstudio
-
-emerge erutaso
-which erutaso #=&amp;gt; /usr/bin/erutaso
-
-erutaso
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;see-also&#34;&gt;See also&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://twitter.com/sgymtic/status/448832543039574016&#34;&gt;https://twitter.com/sgymtic/status/448832543039574016&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
