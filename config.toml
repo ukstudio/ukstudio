@@ -2,6 +2,7 @@ baseURL = "http://ukstudio.jp"
 title = "UKSTUDIO"
 author = "AKAMATSU Yuki"
 copyright = "AKAMATSU Yuki All rights reserved"
+publishDir = 'docs'
 theme = 'hugo-zen'
 
 [params]
