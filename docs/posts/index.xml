@@ -67,11 +67,11 @@
       <guid>http://ukstudio.jp/posts/2015/04/19/follow-update-of-gem/</guid>
       <description>&lt;p&gt;コード自体を追うなら大体GitHubで事足りるけど、Gemがリリースされたのを追いたいときにはRubyGems.orgのSubscribe使えばよさそうだったのでメモ。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;images/2015-04-20-follow-update-of-gem-01.png&#34; alt=&#34;Click subscribe link&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://ukstudio.jp/images/2015-04-20-follow-update-of-gem-01.png&#34; alt=&#34;Click subscribe link&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;RubyGems.orgの適当なGemのページを開くと右下の方にSubscribeというリンクがある。このリンクをクリックするとDashboardにそのGemの更新情報が表示される。あとはそこに表示されているRSSを追えばOK。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;images/2015-04-20-follow-update-of-gem-02.png&#34; alt=&#34;Get dashboard&#39;s rss&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://ukstudio.jp/images/2015-04-20-follow-update-of-gem-02.png&#34; alt=&#34;Get dashboard&#39;s rss&#34; /&gt;&lt;/p&gt;
 </description>
     </item>
     
