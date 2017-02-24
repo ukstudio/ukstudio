@@ -5,6 +5,7 @@ copyright = "AKAMATSU Yuki All rights reserved"
 publishDir = 'docs'
 theme = 'hugo-zen'
 googleAnalytics = "UA-12755601-1"
+hasCJKLanguage = true
 
 [params]
   twitter = "https://twitter.com/ukstudio"
