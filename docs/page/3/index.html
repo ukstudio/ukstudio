@@ -1,417 +1,152 @@
-<!DOCTYPE html><html><head><meta charset="utf-8" /><!--Always force latest IE rendering engine or request Chrome Frame--><meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" /><meta content="width=device-width,initial-scale=1.0" name="viewport" /><title>ukstudio.jp</title><link href="/stylesheets/dist/normalize.css" rel="stylesheet" /><link href="/stylesheets/dist/skeleton.css" rel="stylesheet" /><link href="/stylesheets/all.css" rel="stylesheet" /><script src="/javascripts/all.js"></script><link href="/feed.xml" rel="alternate" title="atom" type="application/atom+xml" /><script>var _gaq = _gaq || [];
-_gaq.push(['_setAccount', 'UA-12755601-1']);
-_gaq.push(['_trackPageview']);
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="utf-8">
+<meta name="generator" content="Hugo 0.17" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="//fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/github.min.css">
+<link rel="stylesheet" href="/css/normalize.css">
+<link rel="stylesheet" href="/css/skeleton.css">
+<link rel="stylesheet" href="/css/custom.css">
+<link rel="stylesheet" href="/css/pagination.css">
+<link rel="alternate" href="/index.xml" type="application/rss+xml" title="UKSTUDIO">
+<title>UKSTUDIO</title>
+</head>
+<body>
+
+<div class="container">
+
+	<header role="banner">
+		<div class="header-logo">
+			<a href="/"><img src="/images/icon.png" width="60" height="60" alt="UKSTUDIO"></a>
+		</div>
+		<h1 class="site-title">UKSTUDIO</h1>
+	</header>
+
+
+
+
+
+	<main role="main">
+
+		<article itemscope itemtype="http://schema.org/Blog">
+			<h2 class="entry-title" itemprop="headline"><a href="/posts/2013/12/27/funtoo/">GentooからFuntooに移行しました</a></h2>
+			<span class="entry-meta"><time itemprop="datePublished" datetime="2013-12-27">December 27, 2013</time></span>
+      <div>
+        GentooからFuntooに移行した。Funtoo Linux インストール講習会から大分日が立ってしまった。 インストール自体はFuntoo Linux Inst…
+      </div>
+		</article>
+
+		<article itemscope itemtype="http://schema.org/Blog">
+			<h2 class="entry-title" itemprop="headline"><a href="/posts/2013/10/18/middleman/">ブログをWordPressからmiddlemanに移行しました</a></h2>
+			<span class="entry-meta"><time itemprop="datePublished" datetime="2013-10-18">October 18, 2013</time></span>
+      <div>
+        今まで当ブログはWordPressでブログを書いていたけれど、今回middlemanを使うことにした。特になにかが気に入ってmiddlema…
+      </div>
+		</article>
+
+		<article itemscope itemtype="http://schema.org/Blog">
+			<h2 class="entry-title" itemprop="headline"><a href="/posts/2012/09/11/ripping_cd_on_gentoo/">GentooでCDをリッピングして聞く</a></h2>
+			<span class="entry-meta"><time itemprop="datePublished" datetime="2012-09-11">September 11, 2012</time></span>
+      <div>
+        メモ CDをwavで一旦取り込んでflacに変換。 $ sudo emerge cdrtools $ sudo emerge flac $ cdda2wav -H -B $ find . -name &ldquo;*.wav&rdquo; -print0 | xargs -0 flac # /etc/security/limits.conf @audio - rtprio 99 @audio - memlock unlimited @audio - nice -10 # /etc/portage/package.use media-sound/aqualung alsa cdda cddb ffmpeg flac mp3 oss…
+      </div>
+		</article>
+
+		<article itemscope itemtype="http://schema.org/Blog">
+			<h2 class="entry-title" itemprop="headline"><a href="/posts/2012/09/11/validates_presence_of/">validates :foo_id, :presence =&gt; trueを追う</a></h2>
+			<span class="entry-meta"><time itemprop="datePublished" datetime="2012-09-11">September 11, 2012</time></span>
+      <div>
+        チームメンバーから「validates_presence_of :user_idはそのuser_idが存在するか確かめてくれる」という情報を得…
+      </div>
+		</article>
+
+		<article itemscope itemtype="http://schema.org/Blog">
+			<h2 class="entry-title" itemprop="headline"><a href="/posts/2012/04/09/tddconf2012/">TDDカンファレンスでLTしてきたのでその補足</a></h2>
+			<span class="entry-meta"><time itemprop="datePublished" datetime="2012-04-09">April 09, 2012</time></span>
+      <div>
+        4月の6日のTDDカンファレンスに参加&amp;LT発表してきた。参加といっても遅刻していったのでほとんど話を聞けていないのだけれど。 とりあ…
+      </div>
+		</article>
+
+		<article itemscope itemtype="http://schema.org/Blog">
+			<h2 class="entry-title" itemprop="headline"><a href="/posts/2012/02/20/study_ruby_at_spicelife/">ruby勉強会@spicelife</a></h2>
+			<span class="entry-meta"><time itemprop="datePublished" datetime="2012-02-20">February 20, 2012</time></span>
+      <div>
+        @holygrailに何か話してよと頼まれたので適当に話してきた。 資料 なんか当日、話す時に使った資料は古いやつだったみたい。どおりで何か違和…
+      </div>
+		</article>
+
+		<article itemscope itemtype="http://schema.org/Blog">
+			<h2 class="entry-title" itemprop="headline"><a href="/posts/2012/02/20/motivation_benkyo-ka/">勉強会とかで話す時のモチベーション</a></h2>
+			<span class="entry-meta"><time itemprop="datePublished" datetime="2012-02-20">February 20, 2012</time></span>
+      <div>
+        その勉強会やコミュニティから得たものがあるので、恩返ししたい 主催者もしくは声をかけてくれた人にお世話になったことがあるので恩返ししたい 勉強会…
+      </div>
+		</article>
+
+		<article itemscope itemtype="http://schema.org/Blog">
+			<h2 class="entry-title" itemprop="headline"><a href="/posts/2012/01/11/rails3_primary_key_foreign_key_big_int/">rails3でprimary keyとforeign keyをbig intにする</a></h2>
+			<span class="entry-meta"><time itemprop="datePublished" datetime="2012-01-11">January 11, 2012</time></span>
+      <div>
+        以下は、PostgreSQLの例。 ActiveRecord::ConnectionAdapters::PostgreSQLAdapter::NATIVE_DATABASE_TYPES[:primary_key] = &lsquo;bigserial primary key&rsquo; 外部キーの場合、t.references :userとか書いてると、ActiveRecord側でi…
+      </div>
+		</article>
+
+		<article itemscope itemtype="http://schema.org/Blog">
+			<h2 class="entry-title" itemprop="headline"><a href="/posts/2011/10/12/lvm_kvm/">LVMを使っているKVMのディスクイメージの容量を追加する</a></h2>
+			<span class="entry-meta"><time itemprop="datePublished" datetime="2011-10-12">October 12, 2011</time></span>
+      <div>
+        KVMのディスクイメージの容量を増やしたのでメモ。 イメージファイルの拡張 まずはイメージのフォーマットを確認する。qemu-imgのinfoで…
+      </div>
+		</article>
+
+		<article itemscope itemtype="http://schema.org/Blog">
+			<h2 class="entry-title" itemprop="headline"><a href="/posts/2011/09/29/debut_gentoo/">Gentooデビューしました</a></h2>
+			<span class="entry-meta"><time itemprop="datePublished" datetime="2011-09-29">September 29, 2011</time></span>
+      <div>
+        メインの開発マシンのOSをUbuntuからGentooにしました。Gentooにした理由は割となんとなくだけど、強いて言うならGentooい…
+      </div>
+		</article>
+
+
+    <nav class='pagination'>
+      
+      <a href="/page/2/">&lt; Prev</a>
+      
+
+      
+      <a href="/page/4/">Next ></a>
+      
+    </nav>
+	</main>
+
+	<footer role="contentinfo">
+		<div class="hr"></div>
+		<div class="footer-link">
+			
+			<a href="https://twitter.com/ukstudio" target="_blank">Twitter</a>
+			
+			<a href="https://github.com/ukstudio" target="_blank">GitHub</a>
+		</div>
+		<div class="copyright">Copyright &copy; AKAMATSU Yuki All rights reserved</div>
+	</footer>
+
+</div>
+
+<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-12755601-1', 'auto');
+	ga('send', 'pageview');
+</script>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+</body>
+</html>
 
-(function() {
-  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-})();</script></head><body class="page page_3 page_3_index"><div class="header"><div class="header-title"><h1><a href="/">ukstudio</a></h1></div></div><div class="container"><div class="row"><article class="one"><h1 class="article-title"><a href="/2011/01/23/bought_galaxy_tab/">Galaxy Tabを購入した</a></h1><div class="article-time"><time dateMime="2011-01-23 00:00:00 UTC" pubdate="pubdate">January 23 2011</time></div><div class="article-body">HT-03AからGalaxy Tabに機種変した。と言っても電話はこれしか持っておらず、さすがにGalaxy Tabで通話するのは不便なので機種変した後SIMを抜いてHT-03Aに戻した。Galaxy TabはWi-Fiメインで使う予定。今のところ外でGalaxy Tabからネットに繋ぐことはあまり考えてない。とは言え繋げるにこしたことはないので、今持っているイーモバをPocketWiFiにするか、b-mobileを契約するかぐらいのことは検討している。
-
-<h2>Galaxy Tabを購入した目的</h2>
-Galaxy Tabを購入した最大の目的は電子書籍。本については基本的に紙で読みたい派なのでちょっと前は「別に電子書籍とかいいや」と思っていたけど、仕事中に「あの本に書いてあった気がする。けど手元にない」みたいなことは結構良くあるので、その辺りのメリットを考慮して踏み切った。
-
-仕事中にという限定で言えば別に端末を買わずともPCにデータを入れておけばいいだけだ。にも関わらず端末を買ったのは本の大きさが原因で読む機会を減らしている物があること。例えば通勤中とかで本を読むのだけど、ある一定以上の大きさになると鞄から出すのが億劫になったり、そもそも鞄に入らないことが多い為。
-
-あともう1つの理由は、PCはやはりじっくり本を読むにはあまり適していないため。つまりは電子書籍買ったり自炊するんだったら、読み終わった本をデータとして持ち歩くだけでなく、最初から読むことも考えたかった。
-
-<h3>電子書籍としてのGalaxy Tabの評価</h3>
-評価と言っても他の端末を使っていないのであまり比較したものは言えないけど、僕からすると「必要十分」と言ったところ。PDFやepubのデータで読んでいるけど速度的には十分。流石に紙の本みたいにあるキーワードを探しながらペラペラめくるというのは厳しい。ただ、せっかくのデジタルなのでそこらへんは検索でカバーしたいところ。
-
-ちなみにPDFを読む為に使っているアプリはezPDF Readerと言うアプリ。有料だけど$1ぐらいだったと思うので問題ない。このアプリを使っている理由はブックマーク機能と文壇合わせ機能があること。Adobe Readerで読んでいる時はPDFの余白が結構邪魔で、端末のサイズが小さめのこともあって拡大を適宜調節するのがちょっと面倒だった。ezPDF Readerの文壇合わせは文章のブロックごとに余白を詰めてくれるので拡大をわざわざする必要がない。この機能が今のところezPDF Reader以外見当らなかったのでこれを使用している。
-
-端末のサイズ的には電車内で片手持ちをするならこのサイズが限界と言ったところか(人にもよるし女性だと辛いかもしれない)。逆に単純に電子書籍端末として考えると少し小さい気もする。この辺のバランスは人によって違うだろうから何とも言えない。個人的には満足してるし、現状販売されている端末の中だとこのサイズがベストだったと思う。
-
-<h2>Galaxy Tabを買って最初にやったこと</h2>
-<h3>root権の取得</h3>
-Galaxy Tabでrootを取得するには<a href="http://forum.xda-developers.com/showthread.php?t=833953">[APP] z4root - xda-developers</a>からz4rootのapkを取得してインストールすればいい(要会員登録)。インストールや使い方の詳細は検索すれば出てくると思うので割愛するが、とても簡単にroot化できる。root化は自己責任で。
-
-<h3>システムフォントをTakaoフォントに</h3>
-個人的にTakaoフォントが気に入っているのでGalaxy TabのシステムフォントをTakaoフォントにすることにした。手順はちょっと面倒だが以下の通り。ちなみにパソコンがUbuntu 10.10前提の話。
-
-まずは、Android SDKを用意してadbコマンドを使えるようにする。Galaxy TabはそのままだとDeviceとして認識されないので/etc/udev/rules.d/51.andorid.rulesにlsusbからidVendorとidProductというパラメータを記述しなければならない。この辺はDev Phoneと同じ問題っぽいので詳しくはDev Phoneについて検索するといいかも。
-
-<pre>SUBSYSTEM='usb', ATTRS{idVendor}=="04e8", ATTRS{idProduct}=="681c", MODE=="0666"</pre>
-
-ファイルを保存したら<code>sudo service udev restart</code>してやる。
-
-これだけでもまだadbで繋ぐには不十分でadbのserverをsudoで立ち上げてやらないといけない。
-
-<pre>
-$ adb kill-server
-$ sudo adb start-server
-$ adb devices # ここでdeviceが?????とかじゃなくちゃんと表示されていればOK
-</pre>
-
-adb shellで無事端末につなげたらフォントを書き換える為にsuしなくてはならない。suするとGalaxy Tab側でx4rootのアプリがrootを許可するかポップアップを出しているので許可してやる。システムフォントは/system/fonts以下に入っている。日本語フォントはDroidSansJapanese.ttfで、英語はDroidSans.ttfとDroidSans-Bold.ttf。他にもあるかもしれないけど今回書き換えたのはこの3つ。ちゃんとバックアップ取っておくこと。ハードリセットしても元には戻らない。
-
-/system以下がread onlyになっていたら再マウントする必要がある。最初にmountを叩いてどのデバイスがsystemにマウントされているか確認して再マウントしよう。
-
-<pre>
-# mount
-# mount -o remount,rw /dev/block/stl9 /system
-</pre>
-
-インストールするフォントはadbからpushするなり、USB接続してコピペするなりして転送する。僕は一旦/sdcardに置いてから、busyboxのcpで/system/fontsに移した(mvだとうまく出来なかったので)。busyboxはマーケットからインストールすることが出来る。日本語のフォントはサイズが大きいのでrenameしたものを3つ用意するよりは1つ置いてシンボリックリンクを貼るといい。リンク先は必ずsystem以下に置こう。/sdcard以下だとUSB接続した時とかにリンクが切れて、フォントを見つけられなくなったGalaxy Tabが延々と再起動を繰り返したりしてリセットせざるを得なくなる。
-
-<pre>
-# busybox cp /sdcard/TakaoGothic.ttf /system/fonts/
-# cd /system/fonts
-# ln -s TakaoGothic.ttf DroidSansJapanese.ttf
-</pre>
-
-これで端末の方でフォントを「標準フォント」に変更すればOK。
-
-<h2>全体的な使用感</h2>
-これもまた比較する端末がHT-03Aになるので何とも言えないけど、少なくともそこそこ快適に動作する。特にもたつきもないので、HT-03Aが余計に苦痛に感じられる程。画面サイズはTwitterやFacebook、Gmailなどのアプリを使うには非常に快適で、ブラウザでPCサイトも拡大・縮小がピンチイン・ピンチアウトでラクなのでそこそこ快適。ネットする程度ならPC起動する必要がないぐらい。ニコニコ動画はブラウザでもアプリでも見れてない。ブラウザはFlashがうまくうごいてない気がする。アプリはローディングが遅い(最初に全部読み込もうとしてるっぽい)から挫折しただけでもしかしたらちゃんと見れるかもしれない。
-
-そんな感じでGalaxy Tabは非常に満足している。今はちょうどキャンペーン中で4万しないぐらいで購入できた。値段的には割引価格後で個人的にはちょうどいいかなぁって感じ。もし買うなら今だし、買わないならせっかくなら他のタブレットが販売されるのを待った方がいいかもしれない。
-</div></article><article class="one"><h1 class="article-title"><a href="/2011/01/20/what_is_software_design/">ソフトウェア設計とは何か?(ソフトウェア工学とは何か?)</a></h1><div class="article-time"><time dateMime="2011-01-20 00:00:00 UTC" pubdate="pubdate">January 20 2011</time></div><div class="article-body">ソフトウェア設計とは何か?というとても良い論文の翻訳があるのだけど、いつのまにか記事が無くなっていた。手元にあるテキストデータを公開しようにも翻訳者の方との連絡手段がない。
-
-幸いなことにarchive.orgに記事のアーカイブが残っている。ただ、このarchive.orgが検索でまともにヒットしないので、せめて今後この記事を探す人がいた時のことを考えてここにリンクを貼っておく。
-
-<a href="http://web.archive.org/web/20080803072849/www.biwa.ne.jp/~mmura/SoftwareDevelopment/WhatIsSoftwareDesignJ.html"> ソフトウェア設計とは何か?</a>
-</div></article><article class="one"><h1 class="article-title"><a href="/2011/01/01/2010_retrospective/">2010年のふりかえり</a></h1><div class="article-time"><time dateMime="2011-01-01 00:00:00 UTC" pubdate="pubdate">January 01 2011</time></div><div class="article-body">新年あけましておめでとうございます。今年もどうぞよろしくお願い致します。
-
-去年のふりかえりの記事を去年中に書けなかったので、新年早々ブログを書いております。
-
-<h2>お仕事</h2>
-去年頭からフリーランスとして働きはじめてるけどまずは1年過ごせた。特に営業をせずともいくつかお仕事の紹介を頂いたり、実際にお手伝いさせてもらったりできるのは本当にありがたいことだなぁと思う。もし愛想つかしていらっしゃなければ今年もどうぞよろしくお願い致します。
-
-あと去年執筆したWEB+DBの記事は、思いの外好評で結構色々な人からお褒めを頂きました。たまに自分で読み直すけど、結構良く書けてるなぁと我ながら思う。あの時の自分すごい。この記事がきっかけでもう1つ進んでいるものがあるのだけれど、こっちも良いものにしたいなぁ。来年の夏頃にはお見せできるはずです。
-
-<h2>プログラミング</h2>
-去年はずっと自分なりのClean Codeを考えてたおかげか、ここ最近書くコードは以前に比べると大分マシになったと思う。あとはTDDを含めたTestingについても考えてるけど、この辺はまだまだ勉強不足な部分はあるなぁ。TDDそのもののやり方は大分馴染んできたけど、テストコードの書き方とか受け入れテストやモック/スタブの使い方がまだまだ。
-
-あとは使えるプログラミング言語が去年は増やせなかったなぁ。興味ある言語だけなら結構あるんだけど。今年はSmalltalkと関数型言語を何か1つ勉強したいなぁ。あとDCIやドメインモデルあたりの勉強もしたいな。去年中に理解することが出来なかったと言うか、そもそも勉強できてないというか。
-
-<h2>英語</h2>
-英語は去年も本当にだめだった。1年でそこそこ話せることを目標にしてたけど途中で頓挫した。今年こそはと意気込んでも多分また頓挫するので、ちゃんと計画を立てよう。これは英語に限らず。普段仕事で計画とか見積りとかやってる割には普段の私生活はそういうことあまりしてないのは良くないな。
-
-<h2>人とのつながり</h2>
-あと、去年一番強く意識したのが「人とのつながり」。Ruby会議やオブラブ、RailsDevConで会った人達、他にもasakusarb、mitakarb、ブログやWEB+DBの記事を見てお仕事を依頼してくれた人達、前々から知り合ってた人達。本当に色んな人に会ったと思う。色々な人とのつながりのおかげでできたことも多いし、人と合うことで新しい刺激と自分を見つめ直すことができた。去年は本当に色んな人から色んなものをもらえた、すごい良い年でした。
-
-<h2>今年</h2>
-去年は本当に良い年だったけど、それでもやっぱりいくつか出来なかったこともあるし、自分の未熟さを痛感することも多かったのでその辺は今年ちゃんとしたいな。毎年、あれやりたいこれが必要だをその場で判断してきてて、それはそれでそれなりに上手くまわっていたけど、今年はもうちょっと計画をたてていきたい。
-
-あとはRubyConfは今年こそ行こう。行きたいなーだと行かなそうなので、行くよ!とここに書いておこう。んで、現状のままで行っても英語よくわかりませんでしたで帰ってきそうなので、やっぱり諸々計画立てて動かないといけないのだ。
-</div></article><article class="one"><h1 class="article-title"><a href="/2010/12/24/misawa-ruby-recipe/">IRCでミサワをいつも側に...</a></h1><div class="article-time"><time dateMime="2010-12-24 00:00:00 UTC" pubdate="pubdate">December 24 2010</time></div><div class="article-body">このエントリーは<a href="http://atnd.org/events/10901">Ruby逆引きレシピAdvent Calendar</a>の参加エントリです。担当は12月24日です。前日のエントリは@kei-sさんの <a href="http://d.hatena.ne.jp/kei-s/20101223/1293084650">Ruby逆引きレシピで作る、忙しい人のための『地獄のミサワの「女に惚れさす名言集」』- 札幌市西区</a>です。
-
-<a href="http://ukstudio.jp/wp-content/uploads/2010/12/FxCam_12931282608781.jpg"><img src="http://ukstudio.jp/wp-content/uploads/2010/12/FxCam_12931282608781.jpg" alt="" title="FxCam_1293128260878" width="360" height="240" class="alignnone size-full wp-image-783" /></a>
-
-
-さて、私達プログラマが使うソフトウェアの中で最も起動時間の長いものは多分エディタでしょう。では次はなんでしょうか?そう、<strong>IRC</strong>ですね!今回は逆引きレシピの中から「レシピ109 IRC botを作りたい」を紹介します。
-
-レシピのサンプルコードを参考に「ミサワ」のキーワードに反応して地獄っぽい返答をするBOTを作ってみました。これでいつでもミサワ先輩のありがたい御言葉を頂戴することができますね!
-
-<script src="https://gist.github.com/753353.js?file=irc.rb"></script>
-<a href="http://ukstudio.jp/wp-content/uploads/2010/12/screenshot3.png"><img src="http://ukstudio.jp/wp-content/uploads/2010/12/screenshot3.png" alt="" title="screenshot3" width="711" height="125" class="alignnone size-full wp-image-781" /></a>
-
-上記のコードだとありがたい御言葉がハードコーディングされていますね。ミサワ先輩のありがたい御言葉はたくさんありますから全て書くのはあまり効率的ではありません。なのでRuby逆引きレシピAdvent Calendarの12月17日を担当した@june29さんの<a href="http://june29.jp/2010/12/17/glamorous-rubysappororecipe/">地獄のRuby札幌の「女に惚れさす逆引きレシピ集」 - 準二級.jp</a>を参考に御言葉のかわりに画像へのパーマリンクを取得しておいて返答するという方法もありだと思います。
-
-このエントリを書きはじめたのは火曜日でしたが、前日の@kei-sさんがまさかのミサワネタ。「おいおい天丼なんてレベルじゃねーぞ」状態でも動じない。それが俺の流儀だ。
-
-さて、ミサワ先輩以上に偉大なレシピ先輩ですが、@noplansさんに頂いてから「○○やるにはどうするんだっけ」と思ったらレシピ先輩に聞くようになりました。Rubyのコードを書くときは横に置いておきたい一冊です!ありがとうございます!
-</div></article><article class="one"><h1 class="article-title"><a href="/2010/12/17/recovery-network-manager-gnome/">うっかりnetwork-manager-gnomeを消してネット繋がらなくなった</a></h1><div class="article-time"><time dateMime="2010-12-17 00:00:00 UTC" pubdate="pubdate">December 17 2010</time></div><div class="article-body">xubuntuを以前インストールしててもういらねーやと思って色々消してたら、気づいたらnetwork-manager-gnomeも消えていてインターネットに繋がらなくなったでござる。
-
-とりあえず手元のHT-03Aで適当にぐぐった結果、<a href="https://forums.ubuntulinux.jp/viewtopic.php?id=6441">Ubuntu日本語フォーラム / [Ubuntu 9.10] ネットワーク・マネジャーを復元したい</a>が見つかったので試してみるもそれっぽいパッケージがCDから見つからず挫折。
-
-んじゃ、コマンドラインからなんかネット接続する方法があればなんとかなるかな?と思ってこれまた適当にぐぐると<a href="http://felix-labo.jp/pukiwiki/?Ubuntu%2Femobile-H11HW%E6%8E%A5%E7%B6%9A%E6%96%B9%E6%B3%95">Ubuntu/emobile-H11HW接続方法 - Felix-labo&apos;s Wiki</a>が見つかったので試した結果なんとかインターネット接続成功。
-
-あとは<a href="http://packages.ubuntu.com/"> Ubuntu Packages Search</a>からnetwork-manager-gnomeのdebパッケージを落としてきて、recovery consoleからaptitudeでインストールで無事終了。
-</div></article><article class="one"><h1 class="article-title"><a href="/2010/12/16/its_agile/">「問題→解決→原因調査→開発プロセスに組込む」 それアジャイルだよ</a></h1><div class="article-time"><time dateMime="2010-12-16 00:00:00 UTC" pubdate="pubdate">December 16 2010</time></div><div class="article-body">普段、イテレーションの終わり(ちなみに1週間)にKPTをやって問題点をだして、それを解決すべくTryを実践してはいる。けれど、短期的な解決で落ち着いてしまってしばらくすると似たような問題が発生する。 結局のところ、問題が発生したらその場の解決だけではなく、問題の原因を検証して、自分達の開発プロセスに再発防止の仕組みを組込まなければならないなと思った次第。
-
-そんなことをFaceBookやTwitterに書き込んでいたら、諸先輩方(@kdmsnrさん、@nawotoさんありがとうございます)から「それがアジャイル」みたいなことを言われてしまった。確かに言われてみればそうだ。一定のプロセスにこだわらないからこそ、柔軟に問題・変化に合わせてプロセスを変えていけるのがアジャイルなんだよね。うーむ、勉強不足。
-
-今までやってきたことを繰り返したところで結果は同じなのは当然。今までのやり方で「何かうまくいっていない」と思ったら、やり方を変える必要がある。その辺りの検証が今のチームには不足してるなぁ。
-
-あとは開発の遅れやバグの発生などが開発チームの問題として捉えられがちだけど、結構開発プロセスが上手くまわってなかったり、プロジェクト関係者のコミニュケーションロスが原因で発生してるものもある。そういう意味でちゃんと開発メンバー外のプロジェクトに関わる人を全員まきこんでやっていかないといけないわけだけど現状出来てないなぁ。そろそろアジャイルごっこから抜けだすべき時期なのかもしれない。(<a href="http://www.amazon.co.jp/gp/product/4839924023?ie=UTF8&redirect=true&tag=ukstudio0c-22&linkCode=shr&camp=1207&creative=8411&creativeASIN=4839924023">アジャイルな見積りと計画づくり</a>の訳者あとがき)
-
-その辺もなぜコミニュケーションが上手くいっていないのか、なぜデモ直前のテストで問題が多発するのかとか、ちゃんと原因を調べてプロセスに組み込んでいかないといけないなぁ。
-
-ちなみに僕が再発防止の仕組みをプロセスに組込まないなといけないなと思ったのは<a href="http://www.amazon.co.jp/gp/product/482228350X?linkCode=shr&camp=1207&creative=8411&tag=ukstudio0c-22">リーン開発の本質 ソフトウエア開発に活かす7つの原則</a>がきっかけ。リーンが何かと言うのはまだまだちゃんと理解しきれていないけれど、現状を色々考えさせてくれるいい本でした。
-</div></article><article class="one"><h1 class="article-title"><a href="/2010/12/14/rspec_japanize/">RSpec日本語化計画</a></h1><div class="article-time"><time dateMime="2010-12-14 00:00:00 UTC" pubdate="pubdate">December 14 2010</time></div><div class="article-body">やっぱ僕達は日本人なので仕様記述的と言うからには日本語で書きたい。とりあえずRubyは日本語を一応識別子に使えるのでその辺で適当にやってみた。<del datetime="2010-12-14T10:26:03+00:00">shouldが鬼門すぎるのだがどうしたもんか。「it should_not 空であること」って明らかにおかしすぎる。</del>@takaiさんが少し修正してくれた。
-
-<script src="https://gist.github.com/740240.js?file=hoge_spec.rb"></script>
-
-本当はもっとちゃんとした記事を書くつもりだったんだけどなんか脇道にそれてしまった。
-</div></article><article class="one"><h1 class="article-title"><a href="/2010/12/07/sappororubykaigi03/">札幌Ruby会議03に行ってきました</a></h1><div class="article-time"><time dateMime="2010-12-07 00:00:00 UTC" pubdate="pubdate">December 07 2010</time></div><div class="article-body">札幌Ruby会議03、お疲れ様でした!本当にいい会議でした、ありがとうございます。
-
-すごいざっくりと感想を言うと「感極まった」とだけ言っておく。あの場にいた時の気持ちはなかなか文章にしづらい。個々の発表で行くと気になるトピックがどうだったとか、この話が良かった、あの話よくわからんみたいなことは言えるのだけど、「札幌Ruby会議」のあの場に居て思ったことはうまく言い表せないんだなー。とは言え「感極まった」で止まってては話にならんので、今後どう行動していくかだな。
-
-ちょっと過去の話になるけど、札幌Ruby会議03に参加したきっかけとしては、やっぱりRubyKaigi2010でスタッフやったことかな。RubyKaigiスタッフで札幌なNiceな人達と会って「札幌RubyKaigiやるよ」と言われて、素直に「行きたい!」と思えたので参加を決めた。更にRubyKaigiのスタッフをやるきっかけとしては東京RubyKaigi03のスタッフをやったことで、そのスタッフをやったきっかけも更に前の〜と遡っていく。
-
-結局あの時あの場にいたってことはそれまでの積み重ねがあってそれが1本の道になってるんだなと。「今後どう行動していくか」ってのも結局は「今やれること、やるべきこと、やりたいこと」をやっていくしかないなと改めって思った次第。
-
-ところで話は少し変わって、島田さんの発表に僕の発表が影響を与えられていたようで良かったです。大抵、自分がなにかを発表したときはあの場にいた人やまわりにどう思ってもらえたのだろう?と不安になる部分は少なからずあるのでこう言ってもらえるのはとてもうれしいです。
-
-<blockquote>
-j, k, u, m
-みんながオブジェクト倶楽部の夏イベントでした発表は、コードや技術、自分自身に等身大で向き合ったとても良い発表でした。あの時の発表に対して自分だったらどんな発表をしただろうか、というのが発表の筋の入り口になりました。ありがとう。
-<cite><a href="http://snoozer05.org/?date=20101204#p01">『Rubyの教えてくれたこと』 - but it&apos;s up to us to change(2010-12-04)</a></cite>
-</blockquote>
-
-最後に、札幌Ruby会議03に参加できたことは僕の中で非常に大きなことだったと思います。単純なモチベアップだけでなく、今後自分がどうしていくか考えるきっかけになりました。本当にありがとうございます。
-
-<h2>札幌観光</h2>
-
-北海道は幼少のころに2回ほど来てるけどあまり記憶がないので実質初めて。なので滞在3日目(12/5)はひとりで適当に観光。本当はたいやき部の方に参加するつもりだったけど、午前中若干二日酔いですぐ動けなさそうだったのと、ツアーにスープカレーが含まれてた(辛いの苦手)ので断念。たいやきは食べたいのでそれはまたの機会に。
-
-観光は札幌周辺と小樽をノープランで。北海道は食べ物がおいしくて素晴しい。次は函館行きたいなぁ。
-</div></article><article class="one"><h1 class="article-title"><a href="/2010/11/25/pathogen_and_neocomplcache/">pathogen.vimとneocomplcache.vimのスニペット機能</a></h1><div class="article-time"><time dateMime="2010-11-25 00:00:00 UTC" pubdate="pubdate">November 25 2010</time></div><div class="article-body">vimの環境を少し整理した。
-
-<h2>pathogen.vimを使うことにした</h2>
-<a href="https://github.com/tpope/vim-pathogen">tpope&apos;s vim-pathogen at master - GitHub</a>
-
-我らがtpope先生のプラグイン、pathogen.vimを使ってプラグインを管理するようにした。.vim/bundleにあるプラグインに対してruntimepathを追加してくれるので、今まで.vim以下のautoloadやpluginsとかにバラバラになってたプラグインを1つにまとめたまま管理できる。
-
-1つにまとめられると、githubとかにあるプラグインはgitのsubmoduleで扱うことが出来るので便利。特にgithubにあがってるようなプラグインは更新が速いものが多いのでなおさら便利(unite.vimとか)。これで主要なプラグインの更新はgit submodule updateで済む。
-
-ちなみに今のディレクトリ構成はこんな感じ。
-<a href="https://github.com/ukstudio/config/tree/master/.vim/bundle/">.vim/bundle at master from ukstudio&apos;s config - GitHub</a>
-
-ちなみにこういうことをしていて、プラグインの自動更新とかがデフォルトでないvimもいい加減レガシーな環境だよなぁと思うのであった。
-
-<h2>neocomplcache.vimのsnippets機能を使いはじめた</h2>
-何となくなじめなかったsnippets機能だけど、neocomplcacheにいつのまにか実装されてたので試すことにした。とりあえず、rspecまわりをいくつか追加したけど思いの他便利である。補完で候補がでてくるのとsnippetsの編集がラクなのがとてもいい。
-
-<a href="https://github.com/ukstudio/config/blob/master/.vim/snippets/rspec.snip">.vim/snippets/rspec.snip at master from ukstudio&apos;s config - GitHub</a>
-</div></article><article class="one"><h1 class="article-title"><a href="/2010/11/22/railsdevcon2010/">RailsDevCon2010で話してきました</a></h1><div class="article-time"><time dateMime="2010-11-22 00:00:00 UTC" pubdate="pubdate">November 22 2010</time></div><div class="article-body">RailsDevCon2010、お疲れ様でした。主催かつ発表のお声をくれた@ysakakiさん、スタッフの方々、スピーカー、発表を聞いてくれたみなさま、どうもありがとうございました。
-
-今回、「Railsプロジェクトを成功させるために現場ができること」というタイトルで話したけどびっくりするぐらいRailsに関係のない話。オマケ程度にちょこっと。以下、資料です。
-
-
-
-
-テーマとしては、@ysakakiさんから声をかけて頂いた時に、[Railsの現場でまだまだバージョン管理すらしてないところあるよね。そういう基本的なところを改めて赤松さんの方から話して欲しい」と言うことだったので、個人的に基本的な所と言うと「TDD」と「バージョン管理」(できれば継続インテグレーションもいれたい)だったので、その変も踏まえて技術的負債というトピックを扱った。
-
-具体的な話をしても、スクリーン上じゃコード読みづらいし、わかりにくいかなと思ったので少しぼかした形で発表したわけだけど、全体的にふわふわと掴みどころのない話になってしまったかもしれない。次どこかで発表する時、もしくはブログにでももっと具体的なコードレベルのことを書きたいな。
-
-懇親会は二次会まで参加した。久しぶりに同世代の人と話せたのは楽しかった。ぜひぜひこれからも頑張ってほしい。
-</div></article><article class="one"><h1 class="article-title"><a href="/2010/11/17/pbcopy_for_ubuntu/">UbuntuでMacOSのpbcopyっぽいことをする</a></h1><div class="article-time"><time dateMime="2010-11-17 00:00:00 UTC" pubdate="pubdate">November 17 2010</time></div><div class="article-body">普段ブログ書くとき、ローカルのvimで記事を書いてからそれをWordPressの記事作成画面にコピペしている。Macの時はpbcopyを使っていたけど、それと同じことをUbuntuでするにはxselというのを使えばよさそうだ。
-
-<pre><code>$ sudo aptitude install xsel
-$ cat hoge.txt | xsel -ib
-</code></pre>
-</div></article><article class="one"><h1 class="article-title"><a href="/2010/10/30/mac_to_ubuntu/">MacからUbuntuに乗り換えた</a></h1><div class="article-time"><time dateMime="2010-10-30 00:00:00 UTC" pubdate="pubdate">October 30 2010</time></div><div class="article-body">最近メインで使っているMacBookが調子悪かったので新しいマシンを買うことにした。元々、Core i7&メモリ8GBでMacBook Proの15インチを買うつもりだったけど、Lenovoが18周年記念でThinkPadが安かったので以前から考えていたLinuxマシンに手を出すことにした。
-
-<h2>X201sをCore i7&メモリ8GBで</h2>
-基本的にほぼ毎日パソコンを持ち歩くので比較的重さが軽めのX201sを選択。CPUとメモリは元々予定してたi7と8GBを選択。HDDとSSDで迷ったけど、500GB HDDから128GB SSDへの変更で +6万円だったのでSSDは自分で換装することにしとりあえずはHDDを選択。キーボードは当然英字配列。
-
-X201sが届いて最初にやったことは電源を入れることではなく、SSDへの換装。HDDを引っこぬいてSSDを挿すだけだったのですぐに終了。ちなみに使用したSSDはまわりに聞いて評価の高かった<a href='http://amzn.to/byjKi8'>Intel SSD 160GB SATA 2.5 SSDSA2MH160G2C1</a>。Ubuntuは10.10の日本語RemixをCDに焼いてそれでインストール。
-
-<h2>立ち上がりの速さに感動</h2>
-起動して最初に思ったのが、立ち上がりの速さ。ログインするまでが本当に速い。普段起動時間が長いのを嫌ってノートPCの電源は基本的に落さないタイプだけどこれならちゃんと電源落してもいいかなと思える。Firefoxも待ち時間がほとんどなく立ち上がる。素晴しい。
-
-<h2>セットアップ</h2>
-とりあえずキーボードレイアウトからCapsLockをCtrlにする設定をした。次にSKKを使うためにuim-skkをaptitudeでインストール。Sands(Space長押しでShiftにするやつ)は結構設定がめんどうな感じだったのでとりあえず諦め。
-
-ChromeやCompiz、xchat、Sylpheedなど必要そうなものをインストール。Chromeは同期機能のおかげでMacの方のChromeから特別なにもしなくてもほとんど移行できた。Compizは余計なアニメーションとかさせなければ結構便利。
-
-IRCはxchatをとりあえずインストール。@ursmさんから<a href='http://quassel-irc.org/'>quassel</a>という奴をおすすめされたけど使い方がよくわからないのでとりあえず保留。おもしろそうな感じはするのでそのうちゆっくり試してみよう。
-
-EvernoteはUbuntu用のアプリケーションがないのでNevernoteやWine上でWindowsのEvernoteを動かしてみたけど日本語が文字化けして使い物にならないのでとりあえずWebで我慢。
-
-後は開発ツールまわりをインストール。vim、rvm、MySQL、screen(git://git.savannah.gnu.org/screen.git)、zshあたりをインストール。なんちゃらrc系全部githubに置いてあるのでこの辺りもさくっと移行完了。
-
-<h2>まとめ</h2>
-なによりUbuntu + SSDは本当に快適で素晴しい。これだけでも買い替えてよかったと思える。Linuxはデスクトップマシンとして使うのは初めてだけど、Ubuntuは一昔前じゃ考えられないぐらい洗練されていて何も不自由を感じない。プリンタなどのハードウェアまわりで不安がないわけじゃないけれど、とりあえずは何とかなるだろう。
-
-参考にしたところ
-<ul>
-<li><a href='http://gihyo.jp/admin/serial/01/ubuntu-recipe'>連載：Ubuntu Weekly Recipe｜gihyo.jp … 技術評論社</a></li>
-<li><a href='http://d.hatena.ne.jp/voidy21/20091127/1259345628'>キーボード派におすすめするLinuxのCompiz設定 - Secret Sword!!!</a></li>
-<li><a href='http://nippondanji.blogspot.com/2010/08/blog-post.html'>漢(オトコ)のコンピュータ道: ラップトップ購入!OSは・・・</a></li>
-</div></article><article class="one"><h1 class="article-title"><a href="/2010/10/19/search_with_scope/">scopeでお手軽検索</a></h1><div class="article-time"><time dateMime="2010-10-19 00:00:00 UTC" pubdate="pubdate">October 19 2010</time></div><div class="article-body">Rails3.0のscope(2系で言うnamed_scope)を使ったお手軽検索。モデルにextendして使う。やってることは渡されたパラメータのkeyのscopeを呼び出して、それらを全部チェインさせるだけ。お手軽だけど、scopeを定義するだけなので結構融通が効くし便利。
-<script src="http://gist.github.com/632769.js?file=searchable.rb"></script>
-</div></article><article class="one"><h1 class="article-title"><a href="/2010/10/07/steak_stats/">steakのspec/acceptanceをrake statsに反映させる</a></h1><div class="article-time"><time dateMime="2010-10-07 00:00:00 UTC" pubdate="pubdate">October 07 2010</time></div><div class="article-body"><strong>どうやらsteakで対応してるみたいです(コメント欄参照)。steakのgroupに:developmentを追加すればrake statsの結果にAcceptance specsと表示されます。</strong>
-
-結論から言うとrakeファイルを追加して以下のように書けばOK。(Rails.root/lib/tasks/statistics.rakeとかね)
-<script src="http://gist.github.com/613641.js?file=statistics.rake"></script>
-task名がstatsetupなのはrspec-rails/lib/rspec/tasks/rspec.rakeでそうなっている為。cucumberでも同じ要領で大丈夫なはず。rake statsを実行するとちゃんと計算されている。
-<a href="http://ukstudio.jp/wp-content/uploads/2010/10/steak_stats.jpg"><img src="http://ukstudio.jp/wp-content/uploads/2010/10/steak_stats.jpg" alt="" title="steak_stats" width="531" height="240" class="alignnone size-full wp-image-719" /></a>
-</div></article><article class="one"><h1 class="article-title"><a href="/2010/10/06/work/">最近のお仕事まわりでツラツラと書く</a></h1><div class="article-time"><time dateMime="2010-10-06 00:00:00 UTC" pubdate="pubdate">October 06 2010</time></div><div class="article-body">今の仕事についてつらつらと書く。今漠然と思ってることを書き出しただけなので、そんなに意味のある内容でもないかも。
-
-<h2>アジャイル</h2>
-そもそも何をもってアジャイルと言うのか、中々難しいところではある。昨日から読んでる「<a href="http://amzn.to/a6ueou">間違いだらけのソフトウェア・アーキテクチャ</a>」では<q>僕はアジャイル(開発)というのは、できればアジャイル宣言を守るか、守る努力をしているものだけに、その名前を冠してほしいと思っているけど・・・。</q>とある。そういう意味だと改めてうちのチームでもアジャイル宣言を確認するべきかもしれない。
-
-何はともあれ、今うちのチームではCTOのちゃんとアジャイルな開発をしていきたいという想いからいくつかのプラクティスを実践している。イテレーション、プランニングポーカー、バーンダウンチャートなど。まだまだチームとして未熟な為、見積りの精度ややり方が少しうまくいっていない気はするけどこの辺りは徐々に改善されそう。
-
-特にポイントを付けたことで、今週に終わらせないといけないポイント量や、バーンダウンチャートで間に合うのか間に合わないのかがわかるのがいい。現時点で正直色々と間に合っていないのだけど、納期と言うか1回目のリリースのタイミングは既に決まっていてそれはずらすことが出来ない。その代わり1回目のリリースに向けてストーリーを削れないかという交渉をしたりした。以前は(実は以前お世話になったところで個人として契約して仕事している)そもそもこう言う交渉すらなかったのでいい兆候だと思う。
-
-ただ、削ってもまだ間に合わないのでここは残業や土日でカバーをするしかないのが残念なところ。土日や残業で消化したポイントをベロシティに含むと正しいベロシティが出ないのかなと少し思ったけど、残業や土日作業は一時的なもの(リリースが今月)なので、そのうち誤差としておさまっていくのかな。
-
-最近コードを書くことに集中していたので改めてこの辺も勉強しなおすべきかなとちょっと思っている。とりあえず、「<a href="http://amzn.to/cxFXas">アジャイルな見積りと計画づくり</a>」を読み直そうと思う。
-
-<h2>ネガティブな感情</h2>
-実は最近自分自身にあまり良くない兆候がある。漠然とだけど、汚いコードや落ちてるテストを見ると「なんでちゃんとやれないんだ」という少しネガティブな感情があることにここ数日気づいた。念の為言っておくと、「テスト落ちてますよー」と言えばすぐ直してコミットしてくれるし、汚いコードと言うのもエンジニア同士でよくネタにする「ひどいコード」みたいなものではなく、「もう少し上手く書けるよなー、これ」と言ったもの。
-
-つまり、コードの質に拘るあまり若干過敏になり過ぎてる部分がある気がしてる。もちろんコードは出来る限りきれいに書くべきだとは思う。ただ、そこに拘り過ぎて本来の目的を忘れちゃいけないと思う。今の目標は最初のリリースに間に合わせることで、細かいリファクタリングや修正はその後でも出来る。
-
-<h2>テスト駆動開発</h2>
-テストコードの量を見る限り少し不十分な部分もありそうだけど、少なくとも全くテストが無いって部分は無くなってきてる感じ。バグがあった場合も「再現するテストコード書いて修正してください」で済むのでいい感じ。TDDに関してはそれなりに習得していると思うので、チーム内で不十分だなと思ったところは上手くサポートしていきたい。例えば僕が率先してテストコードを書けばそのコードから他のメンバーも書き方を知ることができるみたいに。
-
-<h3>steak</h3>
-今回、受け入れテストをsteakで書いてる。今のところ僕が書いてるだけだけど。実はまだチーム内でcukeにするかsteakにするかハッキリ決まってない。と言うのももしかしたらcukeのシナリオをエンジニアじゃない人が書く可能性があるから。ただ、結局テストデータを用意する必要があったりとかで中々難しいのかなとも思う部分もある。この辺@moroさんとちょっと話してみたいな。
-
-<h2>git-svn小話</h2>
-git-svnについては<a href='http://ukstudio.jp/2010/09/13/git-svn/'>この間も記事にした</a>けど、少しだけ補足。
-
-<h3>topic branchをmergeする前にgit rebase master</h3>
-gitはmergeした時にmerge commitを作るときがある。コミットメッセージがデフォで「Merge branch 'hoge」みたいになっている奴。これをそのままgit svn dcommitするとその「Merge branch 'hoge'」のコミットだけsvn側に反映される。これだと他の人が具体的にどんなコミットかよくわからない。なので、branchをmergeする前にmasterでgit svn rebaseしてbranch側でgit rebase masterをすると良い。これで履歴が一直線になるのでmerge commitが作られずsvn側にもちゃんとbranch側の各コミットが反映される。
-
-<h3>topic branchは作業が終わるまでmasterの変更を取り込まない</h3>
-この辺の話は「<a href="http://amzn.to/cFOuty">入門Git</a>」に詳しく書いてあったので細かくは話さない。何となしに、作業中のbranchに最新のmasterをrebaseしたら落ちてるテストがコミットされててちょっと面倒だったので改めて思い直した次第。
-
-<h2>Rails3.0とRuby1.9.2</h2>
-今のところ目立って困ってる所はなし。主要なライブラリもRails3.0に対応してきたし、結構実務でも使えるのではなかろうか。ただ、日本語の情報があまりなくRailsGuides(僕は大体<a href='http://edgeguides.rubyonrails.org/'>edge</a>を見てる)や、<a href='http://railsapi.com/'>http://railsapi.com/</a>や海外のブログを見ながら手探りな感じの部分もあったのでその辺は少し大変かも。個人的には今後Rails2系を使う理由はないかなといった所。個人的にはArelがお気に入り。Arelについては@a_matsudaさんの<a href='http://gihyo.jp/dev/serial/01/ruby/0043'>Ruby Freaks Lounge 第43回 Rails 3を支える名脇役たち その1 - Arel -</a>や<a href='http://edgeguides.rubyonrails.org/active_record_querying.html'>Active Record Query Interface</a>を読むといいです。
-
-本当につらつらと書いただけになったけど、ここまで読んでくれた人ありがとうございました。
-</div></article><article class="one"><h1 class="article-title"><a href="/2010/09/13/git-svn/">Better Subversionとしてのgit-svn</a></h1><div class="article-time"><time dateMime="2010-09-13 00:00:00 UTC" pubdate="pubdate">September 13 2010</time></div><div class="article-body">普段のプログラミングにgitを使用しているのだけど、実際の現場ではまだまだsvnが主流だったりする。svnを直接使ってもいいのだけど、やはりローカル上でコミットしたいとか、複数のコミットを1つにまとめたいとか、トピックブランチを切りたいとかあるのでそれはsvn単体だと厳しい。そんなわけでBetter SVNとしてのgit svnの紹介、と言うよりメモ。
-
-<h2>リポジトリのクローン</h2>
-<code><pre>git svn clone repository_url</pre></code>
-これでsvnリポジトリをgitリポジトリとして取得できる。大きめのリポジトリだと結構時間がかかるのでのんびりと。svnリポジトリの構成がtrunk/branches/tagsという一般的な構成であればオプション-を付けるのがおすすめ。trunkをmaster、branches/tagsをremote branchとして扱うようになる。個別に指定する方法もあるのでhelp参照。
-<code><pre>git svn clone -s repository_url</pre></code>
-
-<h2>リポジトリの更新</h2>
-<code><pre>git svn rebase</pre></code>
-svn upに相当する。remote brancheのtrunkをgit coしてそれをmergeする方法もあるけど、基本はこれで問題ない。
-
-<h2>リポジトリへのコミット</h2>
-<code><pre>git svn dcommit</pre></code>
-これはsvn ciに相当するって言うと、少し違う気もするのだけどsvnリポジトリにコミットするっていう意味だと同じ。git pushの方がイメージに近い。ローカルにたまっているコミットをsvnリポジトリにpushする感じ。ローカルにコミットされていない変更があるとdcommitできないので、その時はgit stashする。
-<code><pre>git stash
-git svn dcommit
-git pop
-</pre></code>
-
-<h2>ブランチの作成</h2>
-<code><pre>git svn branch name</pre></code>
-trunk-masterでやり取りするだけだったら、上記さえ覚えておけば後は普通のgitリポジトリと同じ。gitのブランチを作るのは通常のgitリポジトリと同じだけど、svnのブランチを作るにはこのコマンドを叩く。この時点でsvnリポジトリにコミットされるので注意(--dry-runオプションはある)。-mオプションでコミットメッセージを書ける。指定しない場合は「Create branch name」となる。
-
-svnリポジトリの別のブランチや、ローカルのgitリポジトリのブランチから新しくブランチを作る場合には後ろに名前を指定する。
-<code><pre>git svn branch name remotes/branch
-git svn branch name local_branch</pre></code>
-
-<h2>ブランチのチェックアウト</h2>
-<code><pre>git co -b branch remotes/branch</pre></code>
-svn switchに相当。git svnはsvnのbranches/tagsをremote branchとして扱うのでそれをgit coすればいい。これは上記のgit svn branchで作成したものも同じ。
-
-<h2>ブランチ間のマージ</h2>
-<code><pre>git merge --no-ff branch_name
-git svn dcommit</pre></code>
-マージは通常のgitとほぼ同じ。注意しなくてはいけないのは--no-ffが必要なこと(参考: <a href='http://webtech-walker.com/archive/2010/03/26101332.html'>http://webtech-walker.com/archive/2010/03/26101332.html</a>)。
-
-<h2>ブランチの削除</h2>
-<code><pre>svn rm branches/name #svnリポジトリをcoしてそこで
-git branch -r -d name #git-svnのgitリポジトリ上で</pre></code>
-現時点(v1.7.0.6)ではsvnリポジトリのブランチを削除するコマンドは用意されていない模様。なので直接svn上でブランチを消して、git側のremote branchも直接消すしかないと思う。
-
-<h2>どのブランチにコミットされるのか</h2>
-<code><pre>git svn info</pre></code>
-もしかしたら、今いるgitリポジトリのブランチでgit svn dcommitしたらsvnリポジトリのどのブランチにコミットされるのかがわからなくなることもあるかもしれない。その時はgit svn infoで表示されるURLをみればよい。
-
-<h2>ignoreの設定</h2>
-<code><pre>git svn create-ignore</pre></code>
-ignoreは少しややこしいんだけど、svn側とgit側の2つ存在する。このコマンドはsvn側のignore設定を.gitignoreとして出力する。ちなみにsvn側のみignore設定してある場合、当然git側ではignoreされずgit svn dcommit出来てしまう。その場合、svn側のignoreも無視して通常通りコミットされてしまうので注意。
-
-<h2>まとめ</h2>
-git-svnでの開発はsvnの面倒なところをカバーしてくれたりするので非常にオススメ。もちろん全てがgit-svnで出来るわけでもないので、その辺は諦めて直接svnを使う必要もある。ある意味、最悪わからなくなったらいつでもsvnに戻ればいいのでとりあえず試してみるといいと思う。
-
-ちなみにgitに詳しくない人は濱野さんの入門Gitがおすすめです。
-
-<iframe src="http://rcm-jp.amazon.co.jp/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=ukstudio0c-22&o=9&p=8&l=as1&m=amazon&f=ifr&md=1X69VDGQCMF7Z30FM082&asins=4798023809" style="width:120px;height:240px;" scrolling="no" marginwidth="0" marginheight="0" frameborder="0"></iframe>
-
-</div></article><article class="one"><h1 class="article-title"><a href="/2010/09/10/password_edit/">パスワード変更の機能をどこにもたせるべきか</a></h1><div class="article-time"><time dateMime="2010-09-10 00:00:00 UTC" pubdate="pubdate">September 10 2010</time></div><div class="article-body">ちょっと色々わからなくなったので、誰かのアドバイスを期待してここに書く。
-
-簡単に前提を書くと、UserモデルのCRUDとは別にUserのパスワードを変更する画面が必要になった。Usersコントローラにpassword_editみたいなactionを書くのもあまりきれいじゃないなと思ってコントローラを分けることにした。
-
-<pre><code>resources :users do
-  resource :password
-end
-</code></pre>
-
-確実にUserのレコードは必要になるので上記の用にネストさせることにした。ここで気になるのがpasswordのコントローラ名。通常PasswordsControllerになる。ただ、PasswordsController内の処理は確実にUserに依存する処理が入るため、これはこれであまりしっくりこない。別にPasswordsControllerを他で使う予定があるわけじゃないけど、User::PasswordsControllerの方がいい気がする。
-
-<pre><code>resources :users do
-  resource :password, :only => :edit, :module => 'user'
-end
-</code></pre>
-
-<pre><code># app/controllers/user/passwords_controller.rb
-module User
-  PasswordController < ApplicationController::Base
-</code></pre>
-
-ただ、たかがあるモデルのカラムの為にここまでする必要があるのか?そもそもリソースじゃないよなと思ったりもするわけで。やっぱりUsersコントローラにactionを用意する程度に留めるべきなのだろうか。
-
-<h3>追記:10/09/11</h3>
-やっぱりコントローラを作る(というよりresourcesを追加するのが)がおかしいと思いはじめ、結局気にしてるのはURLなので以下のようにしてみようかなと思う。
-<pre><code>resources :user do
-  match 'password/edit' => 'users#password_edit'
-end
-</code></pre>
-</div></article><article class="one"><h1 class="article-title"><a href="/2010/09/10/mitakarb10/">mitaka.rb#10に参加してきました</a></h1><div class="article-time"><time dateMime="2010-09-10 00:00:00 UTC" pubdate="pubdate">September 10 2010</time></div><div class="article-body">9日に開催された<a href='http://atnd.org/events/7542'>mitaka.rb#10</a>に参加してきた。何だかんだで3回目の参加。今回のmitaka.rbは主催の<a href='http://twitter.com/ysakaki'>@ysakaki</a>さんと協賛の(株)HatchUpさんの圧倒的財力により、なんと3000円というお得な会でした。飲み放題だし、ご飯もとてもおいしかった。おかげで今日は若干二日酔いです。
-
-今回は<a href='http://twitter.com/takahashim'>@takahashim</a>さんが参加されてて、たまたま席が近く色々とお話が出来て楽しかった。実はあまりちゃんと話したことがなかったのでよかった。後は<a href='http://www.tokyorubyistmeetup.org/'>Tokyo Rubyist Meetup</a>から<a href='http://twitter.com/pwim'>@pwim</a>さんが来られてて少しお話した。9月22日に<a href='http://tokyorubyistmeetup.doorkeeper.jp/events/36'>Kickoff Party</a>をやるとのことなのでみんな参加しよう!
-
-今回もLTがあって、わざわざ群馬から車で来られてる人がいた。フットワーク軽いなー。<a href='http://twitter.com/bash0C7'>@bash0C7</a>さんがChiba.rbとShibuya.rbと東京RubyKaigi04について発表してた。Shibuya.rbは今丁度渋谷勤務なので参加しようと思う。東京RubyKaigi04はスタッフまたやろうかなとも思ったけど、「初めてだけどスタッフやりたい!」って人が多そうだったら一般参加者になるかも。割と気分次第。
-
-帰り際、「実はえにしテックってどちらが社長か知らないんですけど」って言われたらすごい笑われた。本当に知らなかったんだよね。@takahasimさんに<a href='http://twitter.com/takahashim/status/24015182969'>放流</a>されてしまった。今は一応把握してます。多分。
-
-そんなわけで、主催の@ysakakiさんをはじめ、スタッフ、お店の方々ありがとうございました。
-</div></article><article class="one"><h1 class="article-title"><a href="/2010/09/05/sla/">外国語学習の科学</a></h1><div class="article-time"><time dateMime="2010-09-05 00:00:00 UTC" pubdate="pubdate">September 05 2010</time></div><div class="article-body">新書なのでサクッと読めた。おもしろかったので簡単に紹介する。
-
-<blockquote>
-このような背景から、「外国語学習」という現象そのものを対象とした学問分野が1960年代ごろから発達してきました。これが、「第二言語習得(Second Language Acquisition = SLA)」という新たな研究分野です。
-</blockquote>
-
-書名にある第二言語とは、上記の引用の通り比較的新しい学問で、主に「第二言語習得メカニズムの解明」と「どのような習得方法が効果的か」という問題を扱うとのこと。
-
-ちなみに第二言語 = 英語というわけではなく、母国語を第一言語として、それ以外の言語については全て第二言語として扱うらしい。日本語話者が英語を習って、次にロシア語を習った場合でも、ロシア語は第二言語と呼ばれる。
-
-そもそも僕がこの本を手にとったきっかけは「いい加減、科学的に正しい英語学習法が確立されてていいんじゃないの?」という疑問なので、この本はそういう疑問に対して丁度よさそうだったため。
-
-結論から書くと、現状「正しい英語学習法」というのは確立されていないらしい。とは言え、今までの研究でわかってきたことをベースに、ある程度の方向性は見えてきているようで、この本に目を通しておけば少なくとも巷の「うさんくさい英語学習法」に騙されることはなくなりそうではある。
-
-何にせよ、英語学習者、英語を教える側、子を持つ親(子供の言語学習についても触れられているため)など英語に関わる人は読んでおいて損はない本であるのは間違いない。もちろん「第二言語習得」という研究に興味がある人もその取っ掛かりとしてはいい本だと思う。
-
-ちなみに英語を学習するための効率的な方法を知りたいという人は6章の「効果的な外国語学習法」だけ読んでおけば十分かとも思うが、そんなに量の多い本でもないし、残りの章も読むことをおすすめする。読み易いし、内容もおもしろいので、ちょっとした読み物気分で読めばいいと思う。
-
-<iframe src="http://rcm-jp.amazon.co.jp/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=ukstudio0c-22&o=9&p=8&l=as1&m=amazon&f=ifr&md=1X69VDGQCMF7Z30FM082&asins=4004311500" style="width:120px;height:240px;" scrolling="no" marginwidth="0" marginheight="0" frameborder="0"></iframe>
-</div></article><article class="one"><h1 class="article-title"><a href="/2010/09/03/rspec2_rails3_autotes/">RSpec2+Rails3+autotest環境の構築</a></h1><div class="article-time"><time dateMime="2010-09-03 00:00:00 UTC" pubdate="pubdate">September 03 2010</time></div><div class="article-body">9月からやる仕事がめでたく、Rails3.0 + Ruby1.9.2のお仕事なので色々と環境構築。とりあえず自動テストまわりやりました。
-
-一応、環境を他と切り分けるために、rvmでアプリ用にgemsetを用意。アプリごとに簡単に環境を構築できるrvmマジ便利。
-
-<pre>
-gem install bundler --pre
-gem install rails
-</pre>
-
-まずは、bundlerとrailsをインストール。次は適当なアプリを作って必要なgemのインストールなどを行う。テストはRSpecで書くので、-TをつけてTest/Unitは使わないようにする。
-
-<pre>
-rails new demo -T
-</pre>
-
-次に必要なgemをGemfileに記述。rspecとかを「テストだけだから」と思って、gropu :testにしたら、モデルを作成したときにTest/Unitのテストコードが作られたりしたので注意。githubの<a href='http://ja.wiki.github.com/rspec/rspec/autotest/'>Wiki</a>を見るとautotestのgemは不要そうなんだけど、実際ないとうまくautotestが動かなかた。
-
-<script src="http://gist.github.com/563447.js?file=Gemfile"></script>
-
-<pre>
-bundle install
-</pre>
-
-あとはモデルを作って、テストが実行できればOK。
-
-<pre>
-rails g rspec:install
-rails g model user
-rake
-autotest
-</pre>
-
-<h3>追記</h3>
-Twitterで@conceal_rsさんから補足ありました。ありがとうございます!
-</div></article></div><div class="row"><div class="pager one"><ul><li class="previous"><a href="/page/2/">Prev</a></li><li class="next"><a href="/page/4/">Next</a></li></ul></div></div></div></body></html>
