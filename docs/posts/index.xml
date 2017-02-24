@@ -6,8 +6,60 @@
     <description>Recent content in Posts-rsses on UKSTUDIO</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>AKAMATSU Yuki All rights reserved</copyright>
-    <lastBuildDate>Tue, 21 Feb 2017 03:33:53 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 24 Feb 2017 21:58:33 +0900</lastBuildDate>
     <atom:link href="http://ukstudio.jp/posts/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>HIGH OUTPUT MANAGEMENT 読了</title>
+      <link>http://ukstudio.jp/posts/2017/02/24/high_output_management/</link>
+      <pubDate>Fri, 24 Feb 2017 21:58:33 +0900</pubDate>
+      
+      <guid>http://ukstudio.jp/posts/2017/02/24/high_output_management/</guid>
+      <description>
+
+&lt;p&gt;&lt;a href=&#34;https://www.amazon.co.jp/HIGH-OUTPUT-MANAGEMENT-%E3%82%A2%E3%83%B3%E3%83%89%E3%83%AA%E3%83%A5%E3%83%BC-S-%E3%82%B0%E3%83%AD%E3%83%BC%E3%83%96-ebook/dp/B01MU055XH/ref=as_li_ss_il?ie=UTF8&amp;qid=1487942590&amp;sr=8-1&amp;keywords=high+output+management&amp;linkCode=li3&amp;tag=ukstudio0c-22&amp;linkId=59e1cf53d3c891b6992d9a91f5ab2da3&#34; target=&#34;_blank&#34;&gt;&lt;img border=&#34;0&#34; src=&#34;//ws-fe.amazon-adsystem.com/widgets/q?_encoding=UTF8&amp;ASIN=B01MU055XH&amp;Format=_SL250_&amp;ID=AsinImage&amp;MarketPlace=JP&amp;ServiceVersion=20070822&amp;WS=1&amp;tag=ukstudio0c-22&#34; &gt;&lt;/a&gt;&lt;img src=&#34;https://ir-jp.amazon-adsystem.com/e/ir?t=ukstudio0c-22&amp;l=li3&amp;o=9&amp;a=B01MU055XH&#34; width=&#34;1&#34; height=&#34;1&#34; border=&#34;0&#34; alt=&#34;&#34; style=&#34;border:none !important; margin:0px !important;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;spicelifeに入社してから、気づけばCTOになりそれなりに管理職っぽい仕事が増えてきた。エンジニアとしての活動以外にも仕事範囲が広がってきて、特に組織やチームのマネージメントについては日々試行錯誤をしているのだけど、そんな時たまたま目についたので購入した本。&lt;/p&gt;
+
+&lt;h2 id=&#34;マネージャーのアウトプット&#34;&gt;マネージャーのアウトプット&lt;/h2&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;マネージャーのアウトプット = 自分の組織のアウトプット + 自分の影響力が及ぶ隣接諸組織のアウトプット&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;ソフトウェア開発はチーム開発であることが多く、弊社ももちろんそう。なので、日頃他人への影響というのは気にしている。例えばコードレビューを通しての技術、知識の伝搬とか、相手の作業をブロックしないように気にかけたりとか。&lt;/p&gt;
+
+&lt;p&gt;とは言え、いちエンジニアとして他人の成果が自分のアウトプットかというとなんか違う気がするし、いわゆるマネージャーとマネージャーじゃない人の違いはこの辺りにありそうだ。&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;マネジャー自身の仕事がきわめて重要なのは明らかであるが、それ自体はアウトプットをつくり出していない。その組織がつくり出しているのだ。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;今現在、自分の仕事にひとつに「コードを書く」ことがあるので、自分自身の仕事がアウトプットを作り出していないかというとそうじゃない。ただ、それは自分の複数あるロールのうちのプログラマとしての話であって、CTOや事業責任者としては違うんだろうなぁ。&lt;/p&gt;
+
+&lt;p&gt;コードを書くことも、組織をマネージメントすることも両方求められているのが難しいところだけど、自分のプログラマとしてのアウトプットとCTOとしてのアウトプットは分けて考えるとスッキリするのかもしれない。&lt;/p&gt;
+
+&lt;p&gt;今のうちの規模だと、自分がコードを書くことで組織のアウトプットの量は増えそうだし、組織のアウトプットの一部として自分のプログラミングが存在することになりそう。今後、規模がでかくなったらまた考える必要はでてきそうではある。&lt;/p&gt;
+
+&lt;h2 id=&#34;1対1のmtg&#34;&gt;1対1のMTG&lt;/h2&gt;
+
+&lt;p&gt;ちょっと前に「知人にマネージメントどうしてます？」という相談を雑談程度にしたときに「1対1のMTG」と教えてもらったことがある。&lt;/p&gt;
+
+&lt;p&gt;この本にも1対1のMTGの重要性が書かれている。&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;インテル社で、 ワン・オン・ワンというのは監督者と部下の間のミーティングのことで、 仕事上の関係を維持する重要な方法となっている。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;ちょうど今週にメンバーとMTGを行い、うまくいかなかったなぁという部分もあるけど、現場からの問題をヒアリング、解決へのアクションを行うことができた。ちょっとした問題ではあったけど、逆にいうとそのちょっとした問題ですら潜在的に埋まっていることがあるということなのかも。&lt;/p&gt;
+
+&lt;p&gt;最近は1対1のMTGの事例をよく聞くようになったけど、弊社でも色々試行錯誤しつつ継続していきたい。&lt;/p&gt;
+
+&lt;h2 id=&#34;メンターとしてのhigh-output-management&#34;&gt;メンターとしてのHIGH OUTPUT MANAGEMENT&lt;/h2&gt;
+
+&lt;p&gt;他にも管理職として色々悩ましい問題はある。この本には組織の話や、人事考課、採用などについても取り上げられており、管理職としての経験が浅い自分にとっては困った時、悩んだ時に相談できるメンターとしてHIGH OUTPUT MANAGEMENTを読み返したりしてる。&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>ブログをMiddlemanからHugoに移行した</title>
@@ -609,39 +661,6 @@ end
 &lt;p&gt;さっきのComment#recentの例でいうなら最初は&lt;code&gt;where(&#39;created_at &amp;gt; ?&#39;, 10.days.ago)&lt;/code&gt;で書いておく。merged使いたい時になったらArelの方で書き直す。&lt;/p&gt;
 
 &lt;p&gt;テーブル名の変更のリスクは気にしない。そもそもあまりテーブル変更しないし…。既にあるDBの上にRailsアプリケーションを構築する場合はDBリファクタリングのことを考えてArel使いまくった方がいいのかもしれない。&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Vim(TagBar)でRSpecのctagsを扱う</title>
-      <link>http://ukstudio.jp/posts/2014/04/18/rspec_ctags/</link>
-      <pubDate>Fri, 18 Apr 2014 00:00:00 +0000</pubDate>
-      
-      <guid>http://ukstudio.jp/posts/2014/04/18/rspec_ctags/</guid>
-      <description>&lt;p&gt;&lt;img src=&#34;http://ukstudio.jp/images/2014-04-18-vim-rspec-ctags.png&#34; alt=&#34;rspec ctags&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;unite-outlineとかを使う人には不要なのかもしれないけど、あいにくuniteユーザではないのでctagsでなんとかできないか調べてみた。&lt;/p&gt;
-
-&lt;p&gt;まず、Funtooで入るctagsではrspecのタグは生成できないのでforkされたctagsを使う必要がある。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://github.com/fishman/ctags&#34;&gt;fishman/ctags&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;インストール場所はお好みで。個人的には手で入れる系のものは$HOME/localにインストールするのが好きなのでそこにインストールした。あとはTagBarの方でこのctagsを使うよう設定する。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-vim&#34;&gt;let g:tagbar_ctags_bin=&amp;quot;/home/ukstudio/local/bin/ctags&amp;quot;
-let g:tagbar_type_ruby = {
-    \ &#39;kinds&#39; : [
-        \ &#39;m:modules&#39;,
-        \ &#39;c:classes&#39;,
-        \ &#39;d:describes&#39;,
-        \ &#39;C:contexts&#39;,
-        \ &#39;f:methods&#39;,
-        \ &#39;F:singleton methods&#39;
-    \ ]
-\ }
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;これで上の画像のような感じでTagBarに表示されるようになるはず。&lt;/p&gt;
 </description>
     </item>
     
