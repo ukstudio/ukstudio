@@ -6,8 +6,28 @@
     <description>Recent content in Posts-rsses on UKSTUDIO</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>AKAMATSU Yuki All rights reserved</copyright>
-    <lastBuildDate>Fri, 24 Feb 2017 21:58:33 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 30 May 2017 20:45:43 +0900</lastBuildDate>
     <atom:link href="http://ukstudio.jp/posts/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>PoEAAの勉強会を開催しています</title>
+      <link>http://ukstudio.jp/posts/2017/05/30/patterns_of_enterprice_application_architecture/</link>
+      <pubDate>Tue, 30 May 2017 20:45:43 +0900</pubDate>
+      
+      <guid>http://ukstudio.jp/posts/2017/05/30/patterns_of_enterprice_application_architecture/</guid>
+      <description>&lt;p&gt;今月から有志でPoEAA（Patterns of Enterprice Application Architecture）の勉強会を開催している。元々はPoEAAを1人で読んでいたのだけれど、なかなか難しくてFacebookでわからん〜と発言したらクックパッドの高井さんに声をかけていただいて、勉強会を開催することになった。&lt;/p&gt;
+
+&lt;p&gt;前回はクックパッドでの開催で、今回は弊社（株式会社spice life）のオフィスで開催した。最初は古い本だし10人集まればいいかな〜とか思っていたけどなんだかんだで15人程度は集まったようだ。&lt;/p&gt;
+
+&lt;p&gt;勉強会のスタイルとしては1章ずつぐらいで担当者を決めて、事前に内容をまとめてきてもらい、それを読み解きながらみんなで議論していくスタイル。今回は2章から3章まで。予定では4章もやる予定だったけど、タイムアップ。&lt;/p&gt;
+
+&lt;p&gt;2章は自分が、3章はうちの若者2人に担当してもらった。3章は「リレーショナルデータベースへのマッピング」という章で、普段はRailsのActiveRecordがよしなにやってくれている世界なので本人たちは当日の発表を見るに結構内容を読み解くのに苦労したみたい。勉強会当日の前に一緒に予習をしておいてあげたらとも思ったけど、この辺は自分にとっても難しい。&lt;/p&gt;
+
+&lt;p&gt;勉強会では高井さんが事あるごとに解説をしてくれているので非常にありがたい。1人だと理解するのがなかなか難しい部分でも、解説があったり、複数人での議論などを行うと理解が深まる感じがする。&lt;/p&gt;
+
+&lt;iframe style=&#34;width:120px;height:240px;&#34; marginwidth=&#34;0&#34; marginheight=&#34;0&#34; scrolling=&#34;no&#34; frameborder=&#34;0&#34; src=&#34;//rcm-fe.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=ukstudio0c-22&amp;o=9&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=B01B5MX2O2&amp;linkId=728ccdc00ad077518c9228cadd85baf7&#34;&gt;&lt;/iframe&gt;
+</description>
+    </item>
     
     <item>
       <title>HIGH OUTPUT MANAGEMENT 読了</title>
@@ -577,90 +597,6 @@ config.expect_with :rspec
 &lt;p&gt;今あるテスト資産をそのまんまpower assert対応にはできないのが悲しいところではあるけれども、このassertを使う方法でもexpectation部分以外はrspecの機能そのまま使えるのでそこまで悪くはないかなと思う。&lt;/p&gt;
 
 &lt;p&gt;まだpower_assert gemの実装を理解できていないので、もしかしたらうまいことやれるかもしれないけどとりあえずここでギブアップ…&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Arelあれこれ</title>
-      <link>http://ukstudio.jp/posts/2014/09/05/arel/</link>
-      <pubDate>Fri, 05 Sep 2014 00:00:00 +0000</pubDate>
-      
-      <guid>http://ukstudio.jp/posts/2014/09/05/arel/</guid>
-      <description>
-
-&lt;h2 id=&#34;model-arel-table-を読みづらいと感じる&#34;&gt;Model.arel_table を読みづらいと感じる&lt;/h2&gt;
-
-&lt;p&gt;例えばこういうコード。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-ruby&#34;&gt;Post.joins(:comments).order(Comment.arel_table[:created_at].desc)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;発行されるSQLはこんな感じ。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-sql&#34;&gt;SELECT &amp;quot;posts&amp;quot;.* FROM &amp;quot;posts&amp;quot; INNER JOIN &amp;quot;comments&amp;quot; ON &amp;quot;comments&amp;quot;.&amp;quot;post_id&amp;quot; = &amp;quot;posts&amp;quot;.&amp;quot;id&amp;quot;  ORDER BY &amp;quot;comments&amp;quot;.&amp;quot;created_at&amp;quot; DESC
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;こちらの方が個人的には読みやすい。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-ruby&#34;&gt;Post.joins(:comments).order(&#39;comments.created_at desc&#39;)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;問題もある&#34;&gt;問題もある&lt;/h2&gt;
-
-&lt;h3 id=&#34;テーブル名を変えてしまったとき&#34;&gt;テーブル名を変えてしまったとき&lt;/h3&gt;
-
-&lt;p&gt;仮にテーブル名がかわったら後者の場合はエラーになる。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-sql&#34;&gt;SELECT &amp;quot;posts&amp;quot;.* FROM &amp;quot;posts&amp;quot; INNER JOIN &amp;quot;new_comments&amp;quot; ON &amp;quot;new_comments&amp;quot;.&amp;quot;post_id&amp;quot; = &amp;quot;posts&amp;quot;.&amp;quot;id&amp;quot;  ORDER BY comments.created_at DESC
-SQLite3::SQLException: no such column: comments.created_at: SELECT &amp;quot;posts&amp;quot;.* FROM &amp;quot;posts&amp;quot; INNER JOIN &amp;quot;new_comments&amp;quot; ON &amp;quot;new_comments&amp;quot;.&amp;quot;post_id&amp;quot; = &amp;quot;posts&amp;quot;.&amp;quot;id&amp;quot;  ORDER BY comments.created_at D
-ESC
-ActiveRecord::StatementInvalid: SQLite3::SQLException: no such column: comments.created_at: SELECT &amp;quot;posts&amp;quot;.* FROM &amp;quot;posts&amp;quot; INNER JOIN &amp;quot;new_comments&amp;quot; ON &amp;quot;new_comments&amp;quot;.&amp;quot;post_id&amp;quot; = &amp;quot;posts&amp;quot;.&amp;quot;id&amp;quot;
-  ORDER BY comments.created_at DESC
-
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;前者はモデルの方でテーブル名を変更すれば動作する。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-ruby&#34;&gt;class Comment &amp;lt; ActiveRecord::Base
-  self.table_name  :new_comments
-end
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;scopeでmergeしたいとき&#34;&gt;scopeでmergeしたいとき&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-ruby&#34;&gt;class Comment &amp;lt; ActiveRecord::Base
-  scope :recent, -&amp;gt; { where(&#39;created_at &amp;gt; ?&#39;, 10.days.ago) }
-end
-
-Post.joins(:comments).merge(Comment.recent)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;これだとCommentのcreated_atが解決できなくてコケる。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-sql&#34;&gt;SELECT &amp;quot;posts&amp;quot;.* FROM &amp;quot;posts&amp;quot; INNER JOIN &amp;quot;comments&amp;quot; ON &amp;quot;comments&amp;quot;.&amp;quot;post_id&amp;quot; = &amp;quot;posts&amp;quot;.&amp;quot;id&amp;quot; WHERE (created_at &amp;gt; &#39;2014-08-26 09:16:45.106691&#39;)
-SQLite3::SQLException: ambiguous column name: created_at: SELECT &amp;quot;posts&amp;quot;.* FROM &amp;quot;posts&amp;quot; INNER JOIN &amp;quot;comments&amp;quot; ON &amp;quot;comments&amp;quot;.&amp;quot;post_id&amp;quot; = &amp;quot;posts&amp;quot;.&amp;quot;id&amp;quot; WHERE (created_at &amp;gt; &#39;2014-08-26 09:16:45.
-106691&#39;)
-ActiveRecord::StatementInvalid: SQLite3::SQLException: ambiguous column name: created_at: SELECT &amp;quot;posts&amp;quot;.* FROM &amp;quot;posts&amp;quot; INNER JOIN &amp;quot;comments&amp;quot; ON &amp;quot;comments&amp;quot;.&amp;quot;post_id&amp;quot; = &amp;quot;posts&amp;quot;.&amp;quot;id&amp;quot; WHERE (cr
-eated_at &amp;gt; &#39;2014-08-26 09:16:45.106691&#39;)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;正しくはこう。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-ruby&#34;&gt;class Comment &amp;lt; ActiveRecord::Base
-  scope :recent, -&amp;gt; { where(self.arel_table[:created_at].gt(10.days.ago)) }
-end
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-sql&#34;&gt;SELECT &amp;quot;posts&amp;quot;.* FROM &amp;quot;posts&amp;quot; INNER JOIN &amp;quot;comments&amp;quot; ON &amp;quot;comments&amp;quot;.&amp;quot;post_id&amp;quot; = &amp;quot;posts&amp;quot;.&amp;quot;id&amp;quot; WHERE (&amp;quot;comments&amp;quot;.&amp;quot;created_at&amp;quot; &amp;gt; &#39;2014-08-26 09:19:17.406299&#39;)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;僕個人の結論&#34;&gt;僕個人の結論&lt;/h2&gt;
-
-&lt;p&gt;Model.arel_tableはできる限り隠したい(読みづらいから)。そしてmergeを使いたいケースではArelを使っておく。その変わりmergeが必要になるまでは無理にArelを使わない。&lt;/p&gt;
-
-&lt;p&gt;さっきのComment#recentの例でいうなら最初は&lt;code&gt;where(&#39;created_at &amp;gt; ?&#39;, 10.days.ago)&lt;/code&gt;で書いておく。merged使いたい時になったらArelの方で書き直す。&lt;/p&gt;
-
-&lt;p&gt;テーブル名の変更のリスクは気にしない。そもそもあまりテーブル変更しないし…。既にあるDBの上にRailsアプリケーションを構築する場合はDBリファクタリングのことを考えてArel使いまくった方がいいのかもしれない。&lt;/p&gt;
 </description>
     </item>
     

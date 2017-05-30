@@ -39,6 +39,14 @@
 	<main role="main">
 
 		<article itemscope itemtype="http://schema.org/Blog">
+			<h2 class="entry-title" itemprop="headline"><a href="/posts/2007/11/29/ruby_rpn/">後置記法での計算</a></h2>
+			<span class="entry-meta"><time itemprop="datePublished" datetime="2007-11-29">November 29, 2007</time></span>
+      <div>
+        後置記法の文字列を計算するようStringクラスを拡張してみた。 rpn.rb class String def rpn @expr = self.split(&rdquo; &ldquo;) stack = Array.new @expr.each {|i| if i == &quot;+&quot; || i == &quot;-&quot; || i == &quot;*&quot; || i == &quot;/&quot; stack = calc(i, stack) else stack &lt; &lt;…
+      </div>
+		</article>
+
+		<article itemscope itemtype="http://schema.org/Blog">
 			<h2 class="entry-title" itemprop="headline"><a href="/posts/2007/11/27/ruby_euclid/">ユークリッドの互除法をRubyで書いた</a></h2>
 			<span class="entry-meta"><time itemprop="datePublished" datetime="2007-11-27">November 27, 2007</time></span>
       <div>
@@ -107,14 +115,6 @@
 			<span class="entry-meta"><time itemprop="datePublished" datetime="2007-10-28">October 28, 2007</time></span>
       <div>
         ActiveRecordはRubyOnRailsのO/Rマッパーとして有名ですが、Railsに依存しているわけではなく単体で使えます。 DBを…
-      </div>
-		</article>
-
-		<article itemscope itemtype="http://schema.org/Blog">
-			<h2 class="entry-title" itemprop="headline"><a href="/posts/2007/10/28/ruby_fizzbuzz/">RubyでFizzBuzz</a></h2>
-			<span class="entry-meta"><time itemprop="datePublished" datetime="2007-10-28">October 28, 2007</time></span>
-      <div>
-        今更ながらにFizzBuzz問題をRubyで問いてみる。前は確かPHPだけで問いて、Rubyで問いてなかったと思うから。 ループ内で出力 100.times(){|i| i +=…
       </div>
 		</article>
 
