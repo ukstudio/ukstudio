@@ -6,10 +6,10 @@ tags = [
   "",
   "",
 ]
-
+aliases = ["/posts/2017/05/30/patterns_of_enterprice_application_architecture"]
 +++
 
-今月から有志でPoEAA（Patterns of Enterprice Application Architecture）の勉強会を開催している。元々はPoEAAを1人で読んでいたのだけれど、なかなか難しくてFacebookでわからん〜と発言したらクックパッドの高井さんに声をかけていただいて、勉強会を開催することになった。
+今月から有志でPoEAA（Patterns of Enterprise Application Architecture）の勉強会を開催している。元々はPoEAAを1人で読んでいたのだけれど、なかなか難しくてFacebookでわからん〜と発言したらクックパッドの高井さんに声をかけていただいて、勉強会を開催することになった。
 
 前回はクックパッドでの開催で、今回は弊社（株式会社spice life）のオフィスで開催した。最初は古い本だし10人集まればいいかな〜とか思っていたけどなんだかんだで15人程度は集まったようだ。
 
