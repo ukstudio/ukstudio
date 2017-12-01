@@ -6,10 +6,19 @@
     <description>Recent content in Posts on UKSTUDIO</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>AKAMATSU Yuki All rights reserved</copyright>
-    <lastBuildDate>Fri, 01 Dec 2017 20:29:53 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 01 Dec 2017 20:40:18 +0900</lastBuildDate>
     
 	<atom:link href="http://ukstudio.jp/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>免許を取得して1ヶ月がたった</title>
+      <link>http://ukstudio.jp/posts/2017/12/01/drivers_license/</link>
+      <pubDate>Fri, 01 Dec 2017 20:40:18 +0900</pubDate>
+      
+      <guid>http://ukstudio.jp/posts/2017/12/01/drivers_license/</guid>
+      <description>免許合宿でAT限定 10月末に合宿で免許を取得をしてきた。免許自体取得したいなーとは思いつつも数年たってしまっていたのだけど、はげましやら諸々</description>
+    </item>
     
     <item>
       <title>Rails Developers Meetup #7 で発表してきました</title>
