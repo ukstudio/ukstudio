@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>http://ukstudio.jp/posts/2017/12/01/rails_developers_meetup_7th/</loc>
+    <lastmod>2017-12-01T20:29:53+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://ukstudio.jp/posts/2017/10/02/patterns_of_enterprice_application_architecture/</loc>
     <lastmod>2017-10-02T21:37:51+09:00</lastmod>
   </url>
@@ -1050,7 +1055,7 @@
   
   <url>
     <loc>http://ukstudio.jp/posts/</loc>
-    <lastmod>2017-10-02T21:37:51+09:00</lastmod>
+    <lastmod>2017-12-01T20:29:53+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1062,7 +1067,7 @@
   
   <url>
     <loc>http://ukstudio.jp/</loc>
-    <lastmod>2017-10-02T21:37:51+09:00</lastmod>
+    <lastmod>2017-12-01T20:29:53+09:00</lastmod>
     <priority>0</priority>
   </url>
   

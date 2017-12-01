@@ -2,7 +2,7 @@
 <html lang="en-US">
 <head>
 <meta charset="utf-8">
-<meta name="generator" content="Hugo 0.29" />
+<meta name="generator" content="Hugo 0.31.1" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link href="//fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet" type="text/css">
 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/github.min.css">
@@ -37,6 +37,14 @@
 
 
 	<main role="main">
+
+		<article itemscope itemtype="http://schema.org/Blog">
+			<h2 class="entry-title" itemprop="headline"><a href="/posts/2007/12/05/ruby_array_operator/">RubyのArrayの演算子はちょっとおもしろい</a></h2>
+			<span class="entry-meta"><time itemprop="datePublished" datetime="2007-12-05">December 05, 2007</time></span>
+      <div>
+        Arrayの「+」「-」「&amp;」「|」演算子がちょっとおもしろい。 +演算子 お互いを連結した新しい配列を返す。 [1, 2, 3] + [4, 5, 6] #=&gt; [1, 2, 3, 4, 5,…
+      </div>
+		</article>
 
 		<article itemscope itemtype="http://schema.org/Blog">
 			<h2 class="entry-title" itemprop="headline"><a href="/posts/2007/12/01/ruby_rpn_ujihisa_sixeight/">後置記法のコードを添削してもらっちゃいました</a></h2>
@@ -107,14 +115,6 @@
 			<span class="entry-meta"><time itemprop="datePublished" datetime="2007-11-01">November 01, 2007</time></span>
       <div>
         RubyでFizzBuzzの第二弾。大分スッキリしたと思うんだけどどでしょ。 fizzbuzz = (1..100).map{|i| if i%5 == 0 &amp;&amp; i%3 == 0 : &ldquo;FizzBuzz&rdquo; elsif i%5 == 0 : &ldquo;Buzz&rdquo; elsif i%3 == 0 : &ldquo;Fizz&rdquo; else i end }…
-      </div>
-		</article>
-
-		<article itemscope itemtype="http://schema.org/Blog">
-			<h2 class="entry-title" itemprop="headline"><a href="/posts/2007/10/30/ruby_prime/">Rubyで素数を求めるプログラムを書いた</a></h2>
-			<span class="entry-meta"><time itemprop="datePublished" datetime="2007-10-30">October 30, 2007</time></span>
-      <div>
-        引数に入れた値までの素数を配列で返すRubyのクラスを書いてみた。アルゴリズムはエラトステネスの篩を使用。 generate_prime.rb class GeneratePrime def generate_prime(max_num) if max_num &lt; 2 then return nil elsif max_num == 2 then…
       </div>
 		</article>
 
