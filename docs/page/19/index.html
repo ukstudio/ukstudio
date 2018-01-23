@@ -41,7 +41,7 @@
 		<article itemscope itemtype="http://schema.org/Blog">
 			<h2 class="entry-title" itemprop="headline"><a href="/posts/2007/12/20/tanoshi_ruby_sec10_practice/">たのしいRuby 第10章 練習問題</a></h2>
 			<span class="entry-meta"><time itemprop="datePublished" datetime="2007-12-20">December 20, 2007</time></span>
-      <div>
+      <div class="entry-summary">
         たのしいRuby 第10章 数値(Numeric)クラスの練習問題をやってみた。 (1)と(2)は華氏を摂氏、もしくは逆の摂氏を華氏に変換するプロ…
       </div>
 		</article>
@@ -49,7 +49,7 @@
 		<article itemscope itemtype="http://schema.org/Blog">
 			<h2 class="entry-title" itemprop="headline"><a href="/posts/2007/12/05/install_retrospectiva/">RetrospectivaをMacBookに設置してみた</a></h2>
 			<span class="entry-meta"><time itemprop="datePublished" datetime="2007-12-05">December 05, 2007</time></span>
-      <div>
+      <div class="entry-summary">
         blog . retrospectiva どんなものか試しに設置してみた。あくまで試しなのでSQLite、WEBrickで。まずは必要なソフトのインストールから。 SQLite3…
       </div>
 		</article>
@@ -57,7 +57,7 @@
 		<article itemscope itemtype="http://schema.org/Blog">
 			<h2 class="entry-title" itemprop="headline"><a href="/posts/2007/12/05/ruby_array_operator/">RubyのArrayの演算子はちょっとおもしろい</a></h2>
 			<span class="entry-meta"><time itemprop="datePublished" datetime="2007-12-05">December 05, 2007</time></span>
-      <div>
+      <div class="entry-summary">
         Arrayの「+」「-」「&amp;」「|」演算子がちょっとおもしろい。 +演算子 お互いを連結した新しい配列を返す。 [1, 2, 3] + [4, 5, 6] #=&gt; [1, 2, 3, 4, 5,…
       </div>
 		</article>
@@ -65,7 +65,7 @@
 		<article itemscope itemtype="http://schema.org/Blog">
 			<h2 class="entry-title" itemprop="headline"><a href="/posts/2007/12/01/ruby_rpn_ujihisa_sixeight/">後置記法のコードを添削してもらっちゃいました</a></h2>
 			<span class="entry-meta"><time itemprop="datePublished" datetime="2007-12-01">December 01, 2007</time></span>
-      <div>
+      <div class="entry-summary">
         rubyneko - Re: UK STUDIO 後置記法での計算 後置記法での計算の添削に便乗してみた - チナミニ ujihisaさんとSixeightさんには感謝です。せっかくなんで…
       </div>
 		</article>
@@ -73,7 +73,7 @@
 		<article itemscope itemtype="http://schema.org/Blog">
 			<h2 class="entry-title" itemprop="headline"><a href="/posts/2007/11/29/ruby_rpn/">後置記法での計算</a></h2>
 			<span class="entry-meta"><time itemprop="datePublished" datetime="2007-11-29">November 29, 2007</time></span>
-      <div>
+      <div class="entry-summary">
         後置記法の文字列を計算するようStringクラスを拡張してみた。 rpn.rb class String def rpn @expr = self.split(&rdquo; &ldquo;) stack = Array.new @expr.each {|i| if i == &quot;+&quot; || i == &quot;-&quot; || i == &quot;*&quot; || i == &quot;/&quot; stack = calc(i, stack) else stack &lt; &lt;…
       </div>
 		</article>
@@ -81,7 +81,7 @@
 		<article itemscope itemtype="http://schema.org/Blog">
 			<h2 class="entry-title" itemprop="headline"><a href="/posts/2007/11/27/ruby_euclid/">ユークリッドの互除法をRubyで書いた</a></h2>
 			<span class="entry-meta"><time itemprop="datePublished" datetime="2007-11-27">November 27, 2007</time></span>
-      <div>
+      <div class="entry-summary">
         def euclid(a, b) return nil if a Rubyは三項演算子でもちゃんと値返すから3行目みたいな書き方が出来るからラクだ。…
       </div>
 		</article>
@@ -89,7 +89,7 @@
 		<article itemscope itemtype="http://schema.org/Blog">
 			<h2 class="entry-title" itemprop="headline"><a href="/posts/2007/11/24/ruby_brainfuck/">RubyでBrainFuck処理系を書いてみた</a></h2>
 			<span class="entry-meta"><time itemprop="datePublished" datetime="2007-11-24">November 24, 2007</time></span>
-      <div>
+      <div class="entry-summary">
         class BrainFuck def convert(code) @code = code @memory = Array.new @code_ptr = @mem_ptr = 0 @output = "" while @code.size @code_ptr @memory[@mem_ptr] ||= 0 case @code[@code_ptr] when ? @mem_ptr += 1 when ?こんな感じで使う。 hello = "++++++++[+++++++++." # H hello += "++++++-." # e hello += "++++." # l hello += "." # l hello += "+++." # o bf = BrainFuck.new…
       </div>
 		</article>
@@ -97,7 +97,7 @@
 		<article itemscope itemtype="http://schema.org/Blog">
 			<h2 class="entry-title" itemprop="headline"><a href="/posts/2007/11/24/the_little_schemer/">The Little Schemer</a></h2>
 			<span class="entry-meta"><time itemprop="datePublished" datetime="2007-11-24">November 24, 2007</time></span>
-      <div>
+      <div class="entry-summary">
         The Little SchemerDaniel P. Friedman Matthias Felleisen Duane Bibby おすすめ平均 Schemeが好きになります 英語であるのが苦痛にならない楽しさ 面白いスタイル Amazonで詳しく見るby G-Tools Am…
       </div>
 		</article>
@@ -105,7 +105,7 @@
 		<article itemscope itemtype="http://schema.org/Blog">
 			<h2 class="entry-title" itemprop="headline"><a href="/posts/2007/11/22/re_startruby/">Re: Try Ruby! 第1章</a></h2>
 			<span class="entry-meta"><time itemprop="datePublished" datetime="2007-11-22">November 22, 2007</time></span>
-      <div>
+      <div class="entry-summary">
         msngさんがstartRubyというブログを始めたようです。せっかくなんで少しだけ補足しとこうかな。 Try Ruby! 第1章 演算子(一部除く)は再定義可…
       </div>
 		</article>
@@ -113,7 +113,7 @@
 		<article itemscope itemtype="http://schema.org/Blog">
 			<h2 class="entry-title" itemprop="headline"><a href="/posts/2007/11/18/ruby_amazon/">Ruby/Amazonライブラリ</a></h2>
 			<span class="entry-meta"><time itemprop="datePublished" datetime="2007-11-18">November 18, 2007</time></span>
-      <div>
+      <div class="entry-summary">
         URL:http://www.caliban.org/ruby/ruby-amazon.shtml ちょっとAWSを使うプログラムを書こうと思ったので、準備としてRuby/Amazonライブラリを試してみた。 Ruby/Amazonのインス…
       </div>
 		</article>
