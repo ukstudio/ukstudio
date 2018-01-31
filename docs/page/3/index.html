@@ -39,6 +39,14 @@
 	<main role="main">
 
 		<article itemscope itemtype="http://schema.org/Blog">
+			<h2 class="entry-title" itemprop="headline"><a href="/posts/2014/09/05/arel/">Arelあれこれ</a></h2>
+			<span class="entry-meta"><time itemprop="datePublished" datetime="2014-09-05">September 05, 2014</time></span>
+      <div class="entry-summary">
+        Model.arel_table を読みづらいと感じる 例えばこういうコード。 Post.joins(:comments).order(Comment.arel_table[:created_at].desc) 発行されるSQLはこんな感じ。 SELECT &quot;posts&quot;.* FROM &quot;posts&quot; INNER JOIN &quot;comments&quot; ON &quot;comments&quot;.&quot;post_id&quot; = &quot;posts&quot;.&quot;id&quot; ORDER BY &quot;comments&quot;.&quot;created_at&quot; DESC こちらの方が個人的には読みやすい。…
+      </div>
+		</article>
+
+		<article itemscope itemtype="http://schema.org/Blog">
 			<h2 class="entry-title" itemprop="headline"><a href="/posts/2014/04/18/rspec_ctags/">Vim(TagBar)でRSpecのctagsを扱う</a></h2>
 			<span class="entry-meta"><time itemprop="datePublished" datetime="2014-04-18">April 18, 2014</time></span>
       <div class="entry-summary">
@@ -107,14 +115,6 @@
 			<span class="entry-meta"><time itemprop="datePublished" datetime="2012-09-11">September 11, 2012</time></span>
       <div class="entry-summary">
         メモ CDをwavで一旦取り込んでflacに変換。 $ sudo emerge cdrtools $ sudo emerge flac $ cdda2wav -H -B $ find . -name &ldquo;*.wav&rdquo; -print0 | xargs -0 flac # /etc/security/limits.conf @audio - rtprio 99 @audio - memlock unlimited @audio - nice -10 # /etc/portage/package.use media-sound/aqualung alsa cdda cddb ffmpeg flac mp3 oss…
-      </div>
-		</article>
-
-		<article itemscope itemtype="http://schema.org/Blog">
-			<h2 class="entry-title" itemprop="headline"><a href="/posts/2012/09/11/validates_presence_of/">validates :foo_id, :presence =&gt; trueを追う</a></h2>
-			<span class="entry-meta"><time itemprop="datePublished" datetime="2012-09-11">September 11, 2012</time></span>
-      <div class="entry-summary">
-        チームメンバーから「validates_presence_of :user_idはそのuser_idが存在するか確かめてくれる」という情報を得…
       </div>
 		</article>
 

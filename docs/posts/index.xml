@@ -6,10 +6,19 @@
     <description>Recent content in Posts on UKSTUDIO</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>AKAMATSU Yuki All rights reserved</copyright>
-    <lastBuildDate>Sun, 07 Jan 2018 20:19:38 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 31 Jan 2018 14:34:50 +0900</lastBuildDate>
     
 	<atom:link href="http://ukstudio.jp/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>fish shellでrbenvを使うまで</title>
+      <link>http://ukstudio.jp/posts/2018/01/31/fish_rbenv/</link>
+      <pubDate>Wed, 31 Jan 2018 14:34:50 +0900</pubDate>
+      
+      <guid>http://ukstudio.jp/posts/2018/01/31/fish_rbenv/</guid>
+      <description>fishとrbenvのインストールについては割愛。 omfやfishermanのpluginを使わない場合 config.fishに以下を記述。</description>
+    </item>
     
     <item>
       <title>東京十社めぐりをした</title>
