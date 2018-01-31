@@ -57,6 +57,15 @@
     </item>
     
     <item>
+      <title>DIST.16 「esa meetup in Tokyo〜情報共有Night」で発表してきました</title>
+      <link>http://ukstudio.jp/posts/2017/06/26/esa_meetup_in_tokyo/</link>
+      <pubDate>Mon, 26 Jun 2017 17:29:12 +0900</pubDate>
+      
+      <guid>http://ukstudio.jp/posts/2017/06/26/esa_meetup_in_tokyo/</guid>
+      <description>6月23日に開催された、DIST.16 「esa meetup in Tokyo〜情報共有Nightにて「サービス開発を加速させる情報共有」というタイトルで発表</description>
+    </item>
+    
+    <item>
       <title>PoEAAの勉強会を開催しています</title>
       <link>http://ukstudio.jp/posts/2017/05/30/patterns_of_enterprise_application_architecture/</link>
       <pubDate>Tue, 30 May 2017 20:45:43 +0900</pubDate>
@@ -99,6 +108,15 @@
       
       <guid>http://ukstudio.jp/posts/2015/06/15/ux_introduction/</guid>
       <description>【満席のため受付終了】UX概論 〜UXデザインの基礎を学ぶ勉強会〜 : ATND この間の土曜日に参加してきた。ミニワークショップいれて3時間弱の勉強会だ</description>
+    </item>
+    
+    <item>
+      <title>既存のRailsアプリケーションにVue.jsを採用した話</title>
+      <link>http://ukstudio.jp/posts/2015/04/30/rails_with_vuejs/</link>
+      <pubDate>Thu, 30 Apr 2015 15:20:06 +0900</pubDate>
+      
+      <guid>http://ukstudio.jp/posts/2015/04/30/rails_with_vuejs/</guid>
+      <description>今回は現在所属しているspicelifeのサービスの1つであるSPOTLIGHTSにVue.jsを採用した話をしようと思います。 SPOTLI</description>
     </item>
     
     <item>
