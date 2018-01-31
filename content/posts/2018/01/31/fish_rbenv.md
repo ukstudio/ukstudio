@@ -24,7 +24,7 @@ rbenv init - | source
 curl -L https://get.oh-my.fish | fish
 ```
 
-config.fishにはPATHの記述が必要だけど、config.fishに書いてしまうとomfのrbenvプラグインの方が先に読み込まれるため、rbenvがないとエラーになってしまう。なので先にPATHの設定が登録されるように~/.config/fish/conf.d/000-env.fishに記述する。
+rbenvを使うのにはPATHの記述が必要だけど、config.fishに書いてしまうとomfのrbenvプラグインの方が先に読み込まれるため、rbenvがないとエラーになってしまう。なので先にPATHの設定が登録されるように~/.config/fish/conf.d/000-env.fishに記述する。
 
 ```sh
 set -x PATH ~/.rbenv/bin $PATH
