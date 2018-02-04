@@ -5,10 +5,6 @@ aliases:
 - /2014/11/27/spotlights-jp
 ---
 
-
-<a class="embedly-card" href="https://spotlights.jp">みんなで贈るソーシャルギフト・プレゼント ＼SPOTLIGHTS／（スポットライト）</a>
-<script async src="//cdn.embedly.com/widgets/platform.js" charset="UTF-8"></script>
-
 <div style="text-align: center">
   <iframe width="560" height="315" src="//www.youtube.com/embed/xP14KD2qIR8" frameborder="0" allowfullscreen></iframe>
 </div>
