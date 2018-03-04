@@ -39,6 +39,14 @@
 	<main role="main">
 
 		<article itemscope itemtype="http://schema.org/Blog">
+			<h2 class="entry-title" itemprop="headline"><a href="/posts/2007/12/30/rubycocoa_brainfuckinterpreter/">RubyCocoaでBrainFuckインタプリタっぽいものを作ってみた</a></h2>
+			<span class="entry-meta"><time itemprop="datePublished" datetime="2007-12-30">December 30, 2007</time></span>
+      <div class="entry-summary">
+        初めてのRubyCocoaでのプログラミング。以前作ったBrainfuckのコードを処理するRubyプログラムを流用した。主に参考にしたのは…
+      </div>
+		</article>
+
+		<article itemscope itemtype="http://schema.org/Blog">
 			<h2 class="entry-title" itemprop="headline"><a href="/posts/2007/12/28/mac_leopard/">Leopardをインストール</a></h2>
 			<span class="entry-meta"><time itemprop="datePublished" datetime="2007-12-28">December 28, 2007</time></span>
       <div class="entry-summary">
@@ -107,14 +115,6 @@
 			<span class="entry-meta"><time itemprop="datePublished" datetime="2007-11-29">November 29, 2007</time></span>
       <div class="entry-summary">
         後置記法の文字列を計算するようStringクラスを拡張してみた。 rpn.rb class String def rpn @expr = self.split(&rdquo; &ldquo;) stack = Array.new @expr.each {|i| if i == &quot;+&quot; || i == &quot;-&quot; || i == &quot;*&quot; || i == &quot;/&quot; stack = calc(i, stack) else stack &lt; &lt;…
-      </div>
-		</article>
-
-		<article itemscope itemtype="http://schema.org/Blog">
-			<h2 class="entry-title" itemprop="headline"><a href="/posts/2007/11/27/ruby_euclid/">ユークリッドの互除法をRubyで書いた</a></h2>
-			<span class="entry-meta"><time itemprop="datePublished" datetime="2007-11-27">November 27, 2007</time></span>
-      <div class="entry-summary">
-        def euclid(a, b) return nil if a Rubyは三項演算子でもちゃんと値返すから3行目みたいな書き方が出来るからラクだ。…
       </div>
 		</article>
 

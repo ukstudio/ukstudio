@@ -6,10 +6,19 @@
     <description>Recent content in Posts on UKSTUDIO</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>AKAMATSU Yuki All rights reserved</copyright>
-    <lastBuildDate>Thu, 01 Feb 2018 20:03:30 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 04 Mar 2018 22:40:51 +0900</lastBuildDate>
     
 	<atom:link href="http://ukstudio.jp/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>イテレーション開発におけるゴールについて</title>
+      <link>http://ukstudio.jp/posts/2018/03/04/goal_in_iterative_development/</link>
+      <pubDate>Sun, 04 Mar 2018 22:40:51 +0900</pubDate>
+      
+      <guid>http://ukstudio.jp/posts/2018/03/04/goal_in_iterative_development/</guid>
+      <description>小さく回してゴールを修正しながら進むのがイテレーション開発だと僕は考えているので前提に含めていたんだけど、修正するのはゴールじゃなくて進め方</description>
+    </item>
     
     <item>
       <title>株式会社spice lifeを退職します</title>
