@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>UKSTUDIO</title>
+    <link>http://ukstudio.jp/tags/</link>
+    <description>Recent content on UKSTUDIO</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>AKAMATSU Yuki All rights reserved</copyright>
+    <lastBuildDate>Mon, 02 Oct 2017 21:37:51 +0900</lastBuildDate>
+    
+	<atom:link href="http://ukstudio.jp/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>PoEAA勉強会が終了しました</title>
+      <link>http://ukstudio.jp/posts/2017/10/02/patterns_of_enterprice_application_architecture/</link>
+      <pubDate>Mon, 02 Oct 2017 21:37:51 +0900</pubDate>
+      
+      <guid>http://ukstudio.jp/posts/2017/10/02/patterns_of_enterprice_application_architecture/</guid>
+      <description>PoEAAの勉強会を開催しています でも書いたPoEAAの勉強会が9/25をもって無事終了した。5月の頭ぐらいに第1回を行っていたので、大体4</description>
+    </item>
+    
+    <item>
+      <title>PoEAA勉強会が終了しました</title>
+      <link>http://ukstudio.jp/posts/2017/10/02/patterns_of_enterprice_application_architecture/</link>
+      <pubDate>Mon, 02 Oct 2017 21:37:51 +0900</pubDate>
+      
+      <guid>http://ukstudio.jp/posts/2017/10/02/patterns_of_enterprice_application_architecture/</guid>
+      <description>PoEAAの勉強会を開催しています でも書いたPoEAAの勉強会が9/25をもって無事終了した。5月の頭ぐらいに第1回を行っていたので、大体4</description>
+    </item>
+    
+    <item>
+      <title>PoEAAの勉強会を開催しています</title>
+      <link>http://ukstudio.jp/posts/2017/05/30/patterns_of_enterprise_application_architecture/</link>
+      <pubDate>Tue, 30 May 2017 20:45:43 +0900</pubDate>
+      
+      <guid>http://ukstudio.jp/posts/2017/05/30/patterns_of_enterprise_application_architecture/</guid>
+      <description>今月から有志でPoEAA（Patterns of Enterprise Application Architecture）の勉強会を開催している。元々はPoEAAを1人で読んでいたのだけれ</description>
+    </item>
+    
+    <item>
+      <title>PoEAAの勉強会を開催しています</title>
+      <link>http://ukstudio.jp/posts/2017/05/30/patterns_of_enterprise_application_architecture/</link>
+      <pubDate>Tue, 30 May 2017 20:45:43 +0900</pubDate>
+      
+      <guid>http://ukstudio.jp/posts/2017/05/30/patterns_of_enterprise_application_architecture/</guid>
+      <description>今月から有志でPoEAA（Patterns of Enterprise Application Architecture）の勉強会を開催している。元々はPoEAAを1人で読んでいたのだけれ</description>
+    </item>
+    
+    <item>
+      <title>HIGH OUTPUT MANAGEMENT 読了</title>
+      <link>http://ukstudio.jp/posts/2017/02/24/high_output_management/</link>
+      <pubDate>Fri, 24 Feb 2017 21:58:33 +0900</pubDate>
+      
+      <guid>http://ukstudio.jp/posts/2017/02/24/high_output_management/</guid>
+      <description>spicelifeに入社してから、気づけばCTOになりそれなりに管理職っぽい仕事が増えてきた。エンジニアとしての活動以外にも仕事範囲が広がっ</description>
+    </item>
+    
+    <item>
+      <title>HIGH OUTPUT MANAGEMENT 読了</title>
+      <link>http://ukstudio.jp/posts/2017/02/24/high_output_management/</link>
+      <pubDate>Fri, 24 Feb 2017 21:58:33 +0900</pubDate>
+      
+      <guid>http://ukstudio.jp/posts/2017/02/24/high_output_management/</guid>
+      <description>spicelifeに入社してから、気づけばCTOになりそれなりに管理職っぽい仕事が増えてきた。エンジニアとしての活動以外にも仕事範囲が広がっ</description>
+    </item>
+    
+  </channel>
+</rss>
