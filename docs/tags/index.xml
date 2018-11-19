@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>UKSTUDIO</title>
+    <title>Tags on UKSTUDIO</title>
     <link>http://ukstudio.jp/tags/</link>
-    <description>Recent content on UKSTUDIO</description>
+    <description>Recent content in Tags on UKSTUDIO</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>AKAMATSU Yuki All rights reserved</copyright>
     <lastBuildDate>Mon, 02 Oct 2017 21:37:51 +0900</lastBuildDate>
@@ -12,11 +12,16 @@
     
     
     <item>
-      <title>PoEAA勉強会が終了しました</title>
-      <link>http://ukstudio.jp/posts/2017/10/02/patterns_of_enterprice_application_architecture/</link>
+      <title></title>
+      <link>http://ukstudio.jp/tags/</link>
       <pubDate>Mon, 02 Oct 2017 21:37:51 +0900</pubDate>
       
-      <guid>http://ukstudio.jp/posts/2017/10/02/patterns_of_enterprice_application_architecture/</guid>
+      <guid>http://ukstudio.jp/tags/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>s/2017/10/02/patterns_of_enterprice_application_architecture/</guid>
       <description>PoEAAの勉強会を開催しています でも書いたPoEAAの勉強会が9/25をもって無事終了した。5月の頭ぐらいに第1回を行っていたので、大体4</description>
     </item>
     
