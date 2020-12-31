@@ -1,8 +1,8 @@
 ---
-title: RAWHIDE.入社のお知らせ
-date: 2008-03-01
 aliases:
 - /2008/03/01/rawhide
+date: "2008-03-01"
+title: RAWHIDE.入社のお知らせ
 ---
 こんばんわ、UKです。
 

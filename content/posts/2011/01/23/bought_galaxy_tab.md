@@ -1,8 +1,8 @@
 ---
-title: Galaxy Tabを購入した
-date: 2011-01-23
 aliases:
 - /2011/01/23/bought_galaxy_tab
+date: "2011-01-23"
+title: Galaxy Tabを購入した
 ---
 HT-03AからGalaxy Tabに機種変した。と言っても電話はこれしか持っておらず、さすがにGalaxy Tabで通話するのは不便なので機種変した後SIMを抜いてHT-03Aに戻した。Galaxy TabはWi-Fiメインで使う予定。今のところ外でGalaxy Tabからネットに繋ぐことはあまり考えてない。とは言え繋げるにこしたことはないので、今持っているイーモバをPocketWiFiにするか、b-mobileを契約するかぐらいのことは検討している。
 

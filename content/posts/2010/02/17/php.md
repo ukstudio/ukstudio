@@ -1,8 +1,8 @@
 ---
-title: PHPについて適当に
-date: 2010-02-17
 aliases:
 - /2010/02/17/php
+date: "2010-02-17"
+title: PHPについて適当に
 ---
 <a href="http://redline.hippy.jp/lab/php/">RedLine Magazine : PHP</a>
 

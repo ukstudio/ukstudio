@@ -1,8 +1,8 @@
 ---
-title: CentOS 5.4(EC2)にApache+PassengerでRails環境作る
-date: 2010-03-29
 aliases:
 - /2010/03/29/apache_passenger_rails_for_centos
+date: "2010-03-29"
+title: CentOS 5.4(EC2)にApache+PassengerでRails環境作る
 ---
 後々、また参照する気がするので記録しておく。この手の環境構築系のドキュメントってWikiかなんかにみんなで情報集めたらそこそこ便利そうな気がするのだけどどうだろう。
 

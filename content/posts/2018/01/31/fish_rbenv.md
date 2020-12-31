@@ -1,6 +1,6 @@
 ---
-title: "fish shellでrbenvを使うまで"
-date: 2018-01-31T14:34:50+09:00
+date: "2018-01-31T14:34:50+09:00"
+title: fish shellでrbenvを使うまで
 ---
 
 fishとrbenvのインストールについては割愛。

@@ -1,8 +1,8 @@
 ---
-title: MacBookにRubyOnRailsをインストールする
-date: 2007-09-28
 aliases:
 - /2007/09/28/rubyonrails_install_in_macbook
+date: "2007-09-28"
+title: MacBookにRubyOnRailsをインストールする
 ---
 Railsを試すためにMacBookにRubyOnRailsをインストールしてみました。MacPortsは既にインストールされてるものとして話を進めるので、インストールしていない人はGoogleで調べるなりしてインストールしてくださいな。と言ってもRubyGemsのインストールでしか今回は使いませんけど。
 <h2>まずはRubyGemsをインストール</h2>

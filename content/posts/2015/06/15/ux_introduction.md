@@ -1,8 +1,8 @@
 ---
-title: UX概論に参加した
-date: 2015-06-15
 aliases:
 - /2015/06/15/ux_introduction
+date: "2015-06-15"
+title: UX概論に参加した
 ---
 
 [【満席のため受付終了】UX概論　〜UXデザインの基礎を学ぶ勉強会〜 : ATND](https://atnd.org/events/66918)

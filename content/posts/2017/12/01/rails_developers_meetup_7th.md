@@ -1,6 +1,6 @@
 ---
-title: "Rails Developers Meetup #7 で発表してきました"
-date: 2017-12-01T20:29:53+09:00
+date: "2017-12-01T20:29:53+09:00"
+title: 'Rails Developers Meetup #7 で発表してきました'
 ---
 
 ありがたいことに主催の@yoshi_hiranoさんに声をかけて頂いたので、[Rails Developers Meetup #7](https://techplay.jp/event/631428)で発表をしてきました。

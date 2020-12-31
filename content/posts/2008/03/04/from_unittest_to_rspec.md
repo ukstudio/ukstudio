@@ -1,8 +1,8 @@
 ---
-title: test/unitで書いたテストにRSpecでテストを追記する方法
-date: 2008-03-04
 aliases:
 - /2008/03/04/from_unittest_to_rspec
+date: "2008-03-04"
+title: test/unitで書いたテストにRSpecでテストを追記する方法
 ---
 10分ぐらい調べて試してみただけだけど。
 

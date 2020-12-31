@@ -1,8 +1,8 @@
 ---
-title: ukstudio.jpをgitで管理するようにしてみた
-date: 2008-07-27
 aliases:
 - /2008/07/27/ukstudio_controlled_git
+date: "2008-07-27"
+title: ukstudio.jpをgitで管理するようにしてみた
 ---
 最近流行りのgitを使ってみようかなーってことでとりあえずukstudio.jpを全部gitで管理するようにした。
 

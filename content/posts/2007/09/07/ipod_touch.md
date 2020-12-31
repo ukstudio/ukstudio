@@ -1,8 +1,8 @@
 ---
-title: iPod touchを予約しました
-date: 2007-09-07
 aliases:
 - /2007/09/07/ipod_touch
+date: "2007-09-07"
+title: iPod touchを予約しました
 ---
 <a href="http://www.amazon.co.jp/gp/redirect.html%3FASIN=B000IDHJ30%26tag=ukstudio0c-22%26lcode=xm2%26cID=2025%26ccmID=165953%26location=/o/ASIN/B000IDHJ30%253FSubscriptionId=1N9AHEAQ2F6SVD97BE02" title="Click and drag this image to the post editor"><img src="http://g-ec2.images-amazon.com/images/I/41eCukUobxL.jpg" width="500" /></a>
 

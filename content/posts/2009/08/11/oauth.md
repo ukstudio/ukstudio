@@ -1,8 +1,8 @@
 ---
-title: OAuthを使ってみた雑感
-date: 2009-08-11
 aliases:
 - /2009/08/11/oauth
+date: "2009-08-11"
+title: OAuthを使ってみた雑感
 ---
 最近、TwitterのDMスパムなどで話題のOAuthですが、仕事で使ってみて色々思うところもあるのでまとめておく。
 

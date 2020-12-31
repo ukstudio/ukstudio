@@ -1,8 +1,8 @@
 ---
-title: AlphaGripキーボード買いました
-date: 2009-07-08
 aliases:
 - /2009/07/08/alphagrip
+date: "2009-07-08"
+title: AlphaGripキーボード買いました
 ---
 <a href="http://www.flickr.com/photos/ukstudio/3700581002/"><img src="http://farm4.static.flickr.com/3652/3700581002_3e6002fcfc.jpg?v=0" alt="" /></a>
 

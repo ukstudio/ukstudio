@@ -1,8 +1,8 @@
 ---
-title: ブログをWordPressからmiddlemanに移行しました
-date: 2013-10-18
 aliases:
-  - /2013/10/18/middleman
+- /2013/10/18/middleman
+date: "2013-10-18"
+title: ブログをWordPressからmiddlemanに移行しました
 ---
 
 今まで当ブログはWordPressでブログを書いていたけれど、今回[middleman](http://middlemanapp.com/)を使うことにした。特になにかが気に入ってmiddlemanを選んだわけでもないのだけど、しばらくはこれで運用してみようと思う。

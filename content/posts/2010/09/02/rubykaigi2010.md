@@ -1,8 +1,8 @@
 ---
-title: RubyKaigi2010を終えて
-date: 2010-09-02
 aliases:
 - /2010/09/02/rubykaigi2010
+date: "2010-09-02"
+title: RubyKaigi2010を終えて
 ---
 <img src='http://farm5.static.flickr.com/4134/4935820587_2169342225.jpg'/>
 <a href='http://www.flickr.com/photos/recompile_net/sets/72157624694727057/'>via http://www.flickr.com/photos/recompile_net/sets/72157624694727057/</a>

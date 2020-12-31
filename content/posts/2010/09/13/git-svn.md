@@ -1,8 +1,8 @@
 ---
-title: Better Subversionとしてのgit-svn
-date: 2010-09-13
 aliases:
 - /2010/09/13/git-svn
+date: "2010-09-13"
+title: Better Subversionとしてのgit-svn
 ---
 普段のプログラミングにgitを使用しているのだけど、実際の現場ではまだまだsvnが主流だったりする。svnを直接使ってもいいのだけど、やはりローカル上でコミットしたいとか、複数のコミットを1つにまとめたいとか、トピックブランチを切りたいとかあるのでそれはsvn単体だと厳しい。そんなわけでBetter SVNとしてのgit svnの紹介、と言うよりメモ。
 

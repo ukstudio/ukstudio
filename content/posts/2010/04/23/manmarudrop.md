@@ -1,8 +1,8 @@
 ---
-title: Limechat for Macのテーマ「まんまるドロップ」を公開します
-date: 2010-04-23
 aliases:
 - /2010/04/23/manmarudrop
+date: "2010-04-23"
+title: Limechat for Macのテーマ「まんまるドロップ」を公開します
 ---
 
 追記: __2015年2月時点でこのテーマは更新されていません__

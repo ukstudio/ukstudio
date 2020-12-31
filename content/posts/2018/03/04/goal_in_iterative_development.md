@@ -1,6 +1,6 @@
 ---
-title: "イテレーション開発におけるゴールについて"
-date: 2018-03-04T22:40:51+09:00
+date: "2018-03-04T22:40:51+09:00"
+title: イテレーション開発におけるゴールについて
 ---
 
 <blockquote class="twitter-tweet" data-lang="en"><p lang="ja" dir="ltr">小さく回してゴールを修正しながら進むのがイテレーション開発だと僕は考えているので前提に含めていたんだけど、修正するのはゴールじゃなくて進め方だという派閥もある。(のでコミュニケーションミスが起きやすかった</p>&mdash; Takafumi ONAKA (@onk) <a href="https://twitter.com/onk/status/970262406189346816?ref_src=twsrc%5Etfw">March 4, 2018</a></blockquote>

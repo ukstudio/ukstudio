@@ -1,8 +1,8 @@
 ---
-title: TEX Yodaが届いたので使い始めた
-date: 2015-01-29
 aliases:
 - /2015/01/29/tex_yoda
+date: "2015-01-29"
+title: TEX Yodaが届いたので使い始めた
 ---
 
 [TEX Yoda TrackPoint Keyboard - Massdrop](https://www.massdrop.com/buy/tex-yoda?mode=guest_open)

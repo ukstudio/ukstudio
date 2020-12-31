@@ -1,8 +1,8 @@
 ---
-title: WEB+DB PRESS Vol.51でRailsの特集を執筆しました
-date: 2009-06-19
 aliases:
 - /2009/06/19/webdb_51
+date: "2009-06-19"
+title: WEB+DB PRESS Vol.51でRailsの特集を執筆しました
 ---
 <table  class="g-tools_table"><tr><td colspan="2"><span class="g-tools_title"><a href="http://www.amazon.co.jp/WEB-DB-PRESS-Vol-51-PRESS%E7%B7%A8%E9%9B%86%E9%83%A8/dp/4774138908%3FSubscriptionId%3D0G91FPYVW6ZGWBH4Y9G2%26tag%3D2004-05-22%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D4774138908" target="_blank">WEB+DB PRESS Vol.51</a><img src='http://www.assoc-amazon.jp/e/ir?t=2004-05-22&l=ur2&o=9' width='1' height='1' border='0' alt='' /></span></td></tr><tr><td valign="top"><span class="g-tools_img"><a href="http://www.amazon.co.jp/WEB-DB-PRESS-Vol-51-PRESS%E7%B7%A8%E9%9B%86%E9%83%A8/dp/4774138908%3FSubscriptionId%3D0G91FPYVW6ZGWBH4Y9G2%26tag%3D2004-05-22%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D4774138908" target="_blank"><img src="http://ecx.images-amazon.com/images/I/61aVDmJxrxL._SL160_.jpg"  alt="WEB+DB PRESS Vol.51" /></a></span></td><td valign="top"><span class="g-tools_body">WEB+DB PRESS編集部 <br /><br />技術評論社  2009-06-24<br />売り上げランキング : 130<br /><br /><br /><a href="http://www.amazon.co.jp/WEB-DB-PRESS-Vol-51-PRESS%E7%B7%A8%E9%9B%86%E9%83%A8/dp/4774138908%3FSubscriptionId%3D0G91FPYVW6ZGWBH4Y9G2%26tag%3D2004-05-22%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D4774138908" target="_blank">Amazonで詳しく見る</a></span><span class="g-tools_by"> by <a href="http://www.goodpic.com/mt/aws/index.html" >G-Tools</a></span></td></tr></table>
 

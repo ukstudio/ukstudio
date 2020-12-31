@@ -1,8 +1,8 @@
 ---
-title: Arelあれこれ
-date: 2014-09-05
 aliases:
 - /2014/09/05/arel
+date: "2014-09-05"
+title: Arelあれこれ
 ---
 
 ## Model.arel_table を読みづらいと感じる

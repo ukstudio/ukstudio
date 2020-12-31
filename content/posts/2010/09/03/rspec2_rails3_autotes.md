@@ -1,8 +1,8 @@
 ---
-title: RSpec2+Rails3+autotest環境の構築
-date: 2010-09-03
 aliases:
 - /2010/09/03/rspec2_rails3_autotes
+date: "2010-09-03"
+title: RSpec2+Rails3+autotest環境の構築
 ---
 9月からやる仕事がめでたく、Rails3.0 + Ruby1.9.2のお仕事なので色々と環境構築。とりあえず自動テストまわりやりました。
 

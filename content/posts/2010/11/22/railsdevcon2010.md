@@ -1,8 +1,8 @@
 ---
-title: RailsDevCon2010で話してきました
-date: 2010-11-22
 aliases:
 - /2010/11/22/railsdevcon2010
+date: "2010-11-22"
+title: RailsDevCon2010で話してきました
 ---
 RailsDevCon2010、お疲れ様でした。主催かつ発表のお声をくれた@ysakakiさん、スタッフの方々、スピーカー、発表を聞いてくれたみなさま、どうもありがとうございました。
 
