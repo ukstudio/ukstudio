@@ -93,6 +93,10 @@ hr {
   border: 0;
 }
 
+img {
+  width: 100%;
+}
+
 /* Heading */
 
 h1,
