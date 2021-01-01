@@ -1,8 +1,8 @@
 ---
-title: 後置記法のコードを添削してもらっちゃいました
-date: 2007-12-01
 aliases:
 - /2007/12/01/ruby_rpn_ujihisa_sixeight
+date: "2007-12-01"
+title: 後置記法のコードを添削してもらっちゃいました
 ---
 <a href="http://ujihisa.nowa.jp/entry/60c2b3fcf9">rubyneko - Re: UK STUDIO 後置記法での計算</a>
 <a href="http://d.hatena.ne.jp/Sixeight/20071130/1196438912">後置記法での計算の添削に便乗してみた - チナミニ</a>

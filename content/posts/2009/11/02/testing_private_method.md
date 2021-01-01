@@ -1,8 +1,8 @@
 ---
-title: RSpecでprivateメソッドをテストする
-date: 2009-11-02
 aliases:
 - /2009/11/02/testing_private_method
+date: "2009-11-02"
+title: RSpecでprivateメソッドをテストする
 ---
 <script src="http://gist.github.com/223674.js"></script>
 

@@ -1,8 +1,8 @@
 ---
-title: RubyでBrainFuck処理系を書いてみた
-date: 2007-11-24
 aliases:
 - /2007/11/24/ruby_brainfuck
+date: "2007-11-24"
+title: RubyでBrainFuck処理系を書いてみた
 ---
 <pre lang="ruby">
 class BrainFuck

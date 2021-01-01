@@ -1,8 +1,8 @@
 ---
-title: RubyでFizzBuzz
-date: 2007-10-28
 aliases:
 - /2007/10/28/ruby_fizzbuzz
+date: "2007-10-28"
+title: RubyでFizzBuzz
 ---
 今更ながらにFizzBuzz問題をRubyで問いてみる。前は確かPHPだけで問いて、Rubyで問いてなかったと思うから。
 

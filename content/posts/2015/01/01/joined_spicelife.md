@@ -1,8 +1,8 @@
 ---
-title: 株式会社spice lifeに入社しました
-date: 2015-01-01
 aliases:
 - /2015/01/01/joined_spicelife
+date: "2015-01-01"
+title: 株式会社spice lifeに入社しました
 ---
 
 あけましておめでとうございます。今年もどうぞよろしくお願いいたします。

@@ -1,8 +1,8 @@
 ---
-title: steakのspec/acceptanceをrake statsに反映させる
-date: 2010-10-07
 aliases:
 - /2010/10/07/steak_stats
+date: "2010-10-07"
+title: steakのspec/acceptanceをrake statsに反映させる
 ---
 <strong>どうやらsteakで対応してるみたいです(コメント欄参照)。steakのgroupに:developmentを追加すればrake statsの結果にAcceptance specsと表示されます。</strong>
 

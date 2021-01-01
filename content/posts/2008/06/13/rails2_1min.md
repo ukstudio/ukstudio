@@ -1,8 +1,8 @@
 ---
-title: Ruby on Rails 2.0アプリを10秒で作る2.0
-date: 2008-06-13
 aliases:
 - /2008/06/13/rails2_1min
+date: "2008-06-13"
+title: Ruby on Rails 2.0アプリを10秒で作る2.0
 ---
 <ul>
 <li>Railsのインストールは作業時間に含みません</li>

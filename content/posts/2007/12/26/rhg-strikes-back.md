@@ -1,8 +1,8 @@
 ---
-title: 「RHG片手にRuby 1.9の実装を読む集い」に参加する予定
-date: 2007-12-26
 aliases:
 - /2007/12/26/rhg-strikes-back
+date: "2007-12-26"
+title: 「RHG片手にRuby 1.9の実装を読む集い」に参加する予定
 ---
 <a href="http://qwik.jp/rhg-strikes-back/">The RHG Strikes Back - RHG片手にRuby 1.9の実装を読む集い</a>
 

@@ -1,8 +1,8 @@
 ---
-title: RubyでDuckTyping
-date: 2009-02-27
 aliases:
 - /2009/02/27/ducktyping
+date: "2009-02-27"
+title: RubyでDuckTyping
 ---
 今日、知人に「DuckTypingのメリットが今一ピンとこない」と言われて実際にコード書いて説明をしたのだけれども、せっかくなのでエントリにまとめる。
 

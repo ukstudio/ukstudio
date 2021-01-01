@@ -1,13 +1,13 @@
-+++
-title = "PoEAAの勉強会を開催しています"
-date = "2017-05-30T20:45:43+09:00"
-slug = ""
-tags = [
-  "",
-  "",
-]
-aliases = ["/posts/2017/05/30/patterns_of_enterprice_application_architecture"]
-+++
+---
+aliases:
+- /posts/2017/05/30/patterns_of_enterprice_application_architecture
+date: "2017-05-30T20:45:43+09:00"
+slug: ""
+tags:
+- ""
+- ""
+title: PoEAAの勉強会を開催しています
+---
 
 今月から有志でPoEAA（Patterns of Enterprise Application Architecture）の勉強会を開催している。元々はPoEAAを1人で読んでいたのだけれど、なかなか難しくてFacebookでわからん〜と発言したらクックパッドの高井さんに声をかけていただいて、勉強会を開催することになった。
 

@@ -1,8 +1,8 @@
 ---
-title: BitlBeeでHipChatに接続する
-date: 2014-03-18
 aliases:
 - /2014/03/18/bitlbee_hipchat
+date: "2014-03-18"
+title: BitlBeeでHipChatに接続する
 ---
 
 HipChatのLinuxクライアントは残念ながら日本語入力ができないのでかわりにIRCを使ってみる。

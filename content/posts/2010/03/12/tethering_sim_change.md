@@ -1,8 +1,8 @@
 ---
-title: HT-03AでテザリングかつSIM挿し替え時の料金について
-date: 2010-03-12
 aliases:
 - /2010/03/12/tethering_sim_change
+date: "2010-03-12"
+title: HT-03AでテザリングかつSIM挿し替え時の料金について
 ---
 docomoに問合せて返信きた。
 

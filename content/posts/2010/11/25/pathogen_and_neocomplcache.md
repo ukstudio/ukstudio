@@ -1,8 +1,8 @@
 ---
-title: pathogen.vimとneocomplcache.vimのスニペット機能
-date: 2010-11-25
 aliases:
 - /2010/11/25/pathogen_and_neocomplcache
+date: "2010-11-25"
+title: pathogen.vimとneocomplcache.vimのスニペット機能
 ---
 vimの環境を少し整理した。
 

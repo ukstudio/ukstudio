@@ -1,8 +1,8 @@
 ---
-title: ruby勉強会@spicelife
-date: 2012-02-20
 aliases:
 - /2012/02/20/study_ruby_at_spicelife
+date: "2012-02-20"
+title: ruby勉強会@spicelife
 ---
 <a href='http://twitter.com/holygrail' target='_blank'>@holygrail</a>に何か話してよと頼まれたので適当に話してきた。
 

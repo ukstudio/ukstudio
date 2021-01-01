@@ -1,8 +1,8 @@
 ---
-title: 東京Ruby会議03にスタッフとして参加した
-date: 2010-03-02
 aliases:
 - /2010/03/02/tokyorubykaigi03
+date: "2010-03-02"
+title: 東京Ruby会議03にスタッフとして参加した
 ---
 2月27日に開催された<a href='http://regional.rubykaigi.org/tokyo03' target='_blank'>東京Ruby会議03</a>にスタッフとして参加した。
 

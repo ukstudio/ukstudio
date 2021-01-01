@@ -1,8 +1,8 @@
 ---
-title: Android携帯しか持っていない人がGAEのアカウントを作る方法
-date: 2009-09-24
 aliases:
 - /2009/09/24/gae_account_for_android
+date: "2009-09-24"
+title: Android携帯しか持っていない人がGAEのアカウントを作る方法
 ---
 今月の頭の話だけど、GAEのアカウントを作った。
 

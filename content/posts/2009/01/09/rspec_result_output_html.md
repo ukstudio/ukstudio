@@ -1,8 +1,8 @@
 ---
-title: RSpecの結果をHTMLで出力する方法
-date: 2009-01-09
 aliases:
-  - /2009/01/09/rspec_result_output_html
+- /2009/01/09/rspec_result_output_html
+date: "2009-01-09"
+title: RSpecの結果をHTMLで出力する方法
 ---
 
 RSpecにはオプション-hがあるので、そこでフォーマットを指定してやればいい。以下、Railsの例。

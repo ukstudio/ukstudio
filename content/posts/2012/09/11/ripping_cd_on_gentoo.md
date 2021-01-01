@@ -1,8 +1,8 @@
 ---
-title: GentooでCDをリッピングして聞く
-date: 2012-09-11
 aliases:
 - /2012/09/11/ripping_cd_on_gentoo
+date: "2012-09-11"
+title: GentooでCDをリッピングして聞く
 ---
 メモ
 

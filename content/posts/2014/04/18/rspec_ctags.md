@@ -1,8 +1,8 @@
 ---
-title: Vim(TagBar)でRSpecのctagsを扱う
-date: 2014-04-18
 aliases:
 - /2014/04/18/rspec_ctags
+date: "2014-04-18"
+title: Vim(TagBar)でRSpecのctagsを扱う
 ---
 
 ![rspec ctags](/images/2014-04-18-vim-rspec-ctags.png)

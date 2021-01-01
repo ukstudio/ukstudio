@@ -1,8 +1,8 @@
 ---
-title: スクラム実践入門読み終わった
-date: 2015-04-03
 aliases:
 - /2015/04/03/gihyo_scrum_book
+date: "2015-04-03"
+title: スクラム実践入門読み終わった
 ---
 
 [Amazon.co.jp： スクラム実践入門 ── 成果を生み出すアジャイルな開発プロセス (WEB+DB PRESS plus): 貝瀬 岳志, 原田 勝信, 和島 史典, 栗林 健太郎, 柴田 博志, 家永 英治: 本](http://www.amazon.co.jp/gp/product/4774172367?ie=UTF8&camp=1207&creative=8411&creativeASIN=4774172367&linkCode=shr&tag=ukstudio0c-22&qid=1428081771&sr=8-1&keywords=%E3%82%B9%E3%82%AF%E3%83%A9%E3%83%A0%E5%AE%9F%E8%B7%B5%E5%85%A5%E9%96%80)

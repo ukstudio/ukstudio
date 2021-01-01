@@ -1,8 +1,8 @@
 ---
-title: RailsからOAuthを利用してTwitterにポストする
-date: 2009-07-14
 aliases:
 - /2009/07/14/rails_oauth_twitter
+date: "2009-07-14"
+title: RailsからOAuthを利用してTwitterにポストする
 ---
 OAuthの細かい説明は抜き。
 

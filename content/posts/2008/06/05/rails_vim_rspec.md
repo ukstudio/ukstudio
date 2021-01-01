@@ -1,8 +1,8 @@
 ---
-title: rails.vimのファイル切り替えをRSpecに対応させる(仮)
-date: 2008-06-05
 aliases:
 - /2008/06/05/rails_vim_rspec
+date: "2008-06-05"
+title: rails.vimのファイル切り替えをRSpecに対応させる(仮)
 ---
 rails.vimをインストールすると、RcontrollerとかRmodelコマンドでRSpecファイルからControllerやModelファイルに切り替えることができるんだけど、その逆ができないので対応させた。仮なのはVimスクリプトをちゃんと書けなくてコピペのごまかしだから。
 

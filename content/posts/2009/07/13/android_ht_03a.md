@@ -1,8 +1,8 @@
 ---
-title: DoCoMoのAndroid携帯「HT-03A」を買って3日たったので適当にレビューする
-date: 2009-07-13
 aliases:
 - /2009/07/13/android_ht_03a
+date: "2009-07-13"
+title: DoCoMoのAndroid携帯「HT-03A」を買って3日たったので適当にレビューする
 ---
 買いました、DoCoMoのAndroid携帯「HT-03A」。本当は買わないつもりだったんですけど。以下レビューです。画像はない上にそれなりに長文です。
 

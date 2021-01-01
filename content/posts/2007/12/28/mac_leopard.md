@@ -1,8 +1,8 @@
 ---
-title: Leopardをインストール
-date: 2007-12-28
 aliases:
 - /2007/12/28/mac_leopard
+date: "2007-12-28"
+title: Leopardをインストール
 ---
 来年から仕事でMacBookを使う可能性がでてきたのもあって、OSをLeopardに入れ替えた。仕事で使い始めると入れ替えるタイミングが難しくなるからね。
 

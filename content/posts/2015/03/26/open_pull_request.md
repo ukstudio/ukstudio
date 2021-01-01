@@ -1,8 +1,8 @@
 ---
-title: 特定のコミットが含まれるGitHub Pull Requestを開く
-date: 2015-03-26
 aliases:
 - /2015/03/26/open_pull_request
+date: "2015-03-26"
+title: 特定のコミットが含まれるGitHub Pull Requestを開く
 ---
 
 今日たまたまあるコミットが含まれているGitHubのPull Requestをサクッと探したい事案が発生した。というのも自分が以前書いたコードがどうしてこうなっているのかというのを知りたかったんだけど、commit messageだけじゃよくわからんかった(〜を実装したみたいなことを英語で書いてあっただけ)。

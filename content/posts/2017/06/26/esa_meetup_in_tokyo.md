@@ -1,6 +1,6 @@
 ---
-Title: "DIST.16 「esa meetup in Tokyo〜情報共有Night」で発表してきました"
-date: 2017-06-26T17:29:12+09:00
+Title: DIST.16 「esa meetup in Tokyo〜情報共有Night」で発表してきました
+date: "2017-06-26T17:29:12+09:00"
 ---
 
 

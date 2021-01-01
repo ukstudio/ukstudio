@@ -1,8 +1,8 @@
 ---
-title: FuntooからQNAPにOpenVPNでつなぐ
-date: 2014-03-13
 aliases:
 - /2014/03/13/openvpn_qnap_funtoo
+date: "2014-03-13"
+title: FuntooからQNAPにOpenVPNでつなぐ
 ---
 
 まずはFuntooにOpenVPNを入れる。

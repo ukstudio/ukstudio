@@ -1,8 +1,8 @@
 ---
-title: Kinesisを2週間使ったのでレビューする
-date: 2009-08-20
 aliases:
 - /2009/08/20/review_kinesis
+date: "2009-08-20"
+title: Kinesisを2週間使ったのでレビューする
 ---
 <a href="http://d.hatena.ne.jp/ursm">ursm</a>さんに2週間程、<a href="http://ja.wikipedia.org/wiki/Kinesis">Kinesis</a>をお借りしたのでレビューを書く。
 

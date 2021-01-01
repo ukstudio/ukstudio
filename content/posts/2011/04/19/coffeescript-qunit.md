@@ -1,8 +1,8 @@
 ---
-title: CoffeeScript + QUnitでTDD環境作ったよ
-date: 2011-04-19
 aliases:
 - /2011/04/19/coffeescript-qunit
+date: "2011-04-19"
+title: CoffeeScript + QUnitでTDD環境作ったよ
 ---
 Rails3.1からCoffeeScriptがデフォルトで入ってるとかなんとかで、とりあえずCoffeeScriptだけで少し触ってみた。とりあえずQUnit自体もCoffeeScriptで書けるようなTDD環境を作ってみた。
 

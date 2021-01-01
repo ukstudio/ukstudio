@@ -1,8 +1,8 @@
 ---
-title: GentooからFuntooに移行しました
-date: 2013-12-27
 aliases:
-  - /2013/12/27/funtoo
+- /2013/12/27/funtoo
+date: "2013-12-27"
+title: GentooからFuntooに移行しました
 ---
 
 GentooからFuntooに移行した。[Funtoo Linux インストール講習会](http://esminc.doorkeeper.jp/events/3547)から大分日が立ってしまった。

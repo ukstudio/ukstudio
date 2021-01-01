@@ -1,8 +1,8 @@
 ---
-title: 'Re: Try Ruby! 第1章'
-date: 2007-11-22
 aliases:
 - /2007/11/22/re_startruby
+date: "2007-11-22"
+title: 'Re: Try Ruby! 第1章'
 ---
 msngさんがstartRubyというブログを始めたようです。せっかくなんで少しだけ補足しとこうかな。
 

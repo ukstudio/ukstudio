@@ -1,8 +1,8 @@
 ---
-title: RailsでMySQLとPostgreSQLを同時に扱う方法(+問題点)
-date: 2008-10-04
 aliases:
 - /2008/10/04/rails_many_db
+date: "2008-10-04"
+title: RailsでMySQLとPostgreSQLを同時に扱う方法(+問題点)
 ---
 プラグインとか無しで、複数のDB(MySQLとPostgreSQL)を扱う方法。Rails2.1でしか試してないけど、多分1.2とかでも大丈夫。多分。MySQLとPostgreSQLの接続ライブラリはgemからインストールしておくこと。
 

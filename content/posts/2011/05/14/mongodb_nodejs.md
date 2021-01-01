@@ -1,8 +1,8 @@
 ---
-title: mongodb + node.js を軽く試した
-date: 2011-05-14
 aliases:
 - /2011/05/14/mongodb_nodejs
+date: "2011-05-14"
+title: mongodb + node.js を軽く試した
 ---
 <h2>mongodbのインストール</h2>
 <pre class='sunlight-hilight-bash'>$ sudo aptitude install mongodb

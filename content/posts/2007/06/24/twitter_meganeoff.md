@@ -1,8 +1,8 @@
 ---
-title: Twitterメガネオフに参加してきました
-date: 2007-06-24
 aliases:
 - /2007/06/24/twitter_meganeoff
+date: "2007-06-24"
+title: Twitterメガネオフに参加してきました
 ---
 昨日(23日)、<a href="http://twitter.com/crema">crema</a>さん主催のTwitterメガネオフに参加してきました。cremaさんが<a href="http://twitter.com/crema/statuses/110880622">期間限定メガネ</a>発言をしたあと、メガネ好きがすかさず反応。じゃぁメガネオフしようという流れで開催されました。
 <blockquote> woopsdez: <a href="http://twitter.com/woopsdez/statuses/110886312">@crema Twitter メガネオフ？？</a>

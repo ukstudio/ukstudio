@@ -1,8 +1,8 @@
 ---
-title: 最近のHT-03A(Android)の使い方
-date: 2009-11-09
 aliases:
 - /2009/11/09/ht-03a_android
+date: "2009-11-09"
+title: 最近のHT-03A(Android)の使い方
 ---
 HT-03Aを買ってからそれなりに時間がたったわけだけど、現時点で僕の使い方をまとめておく。
 

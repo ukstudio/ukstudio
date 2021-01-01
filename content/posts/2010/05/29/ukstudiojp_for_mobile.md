@@ -1,8 +1,8 @@
 ---
-title: ukstudio.jpを携帯対応させました
-date: 2010-05-29
 aliases:
 - /2010/05/29/ukstudiojp_for_mobile
+date: "2010-05-29"
+title: ukstudio.jpを携帯対応させました
 ---
 当ブログを携帯でも見れるようにしました。とは言っても、MobilePressとktai-styleを入れただけですが。
 

@@ -1,8 +1,8 @@
 ---
-title: Mitaka.rb meets Twitterに参加してきた + α
-date: 2010-04-30
 aliases:
 - /2010/04/30/mitakarb
+date: "2010-04-30"
+title: Mitaka.rb meets Twitterに参加してきた + α
 ---
 <a href='http://atnd.org/events/4085' target='_blank'>Mitaka.rb meets Twitter</a>に参加してきた。以前参加したのがMitaka.rbの初回で今回が一周年記念ということでもう1年たったのかという感じ。はやいものだ。
 
