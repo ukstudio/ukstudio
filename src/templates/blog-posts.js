@@ -4,7 +4,7 @@ import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
-const BlogIndex = ({ data, location }) => {
+const BlogPosts = ({ data, location, pageContext }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
   const posts = data.allMarkdownRemark.nodes
 
@@ -66,11 +66,17 @@ const BlogIndex = ({ data, location }) => {
             padding: 0,
           }}
         >
-          <li/>
           <li>
-            <Link to="/pages/1" rel="next">
-                Next →
+            <Link to={pageContext.prevPath} rel="prev">
+              ← Prev
             </Link>
+          </li>
+          <li>
+            {pageContext.nextPath && (
+              <Link to={pageContext.nextPath} rel="next">
+                 Next →
+              </Link>
+            )}
           </li>
         </ul>
       </nav>
@@ -78,10 +84,10 @@ const BlogIndex = ({ data, location }) => {
   )
 }
 
-export default BlogIndex
+export default BlogPosts
 
 export const pageQuery = graphql`
-  query {
+  query blogPosts($limit: Int!, $skip: Int!) {
     site {
       siteMetadata {
         title
@@ -89,8 +95,8 @@ export const pageQuery = graphql`
     }
     allMarkdownRemark(
       sort: { fields: [frontmatter___date], order: DESC }
-      limit: 10
-      skip: 0
+      limit: $limit
+      skip: $skip
     ) {
       nodes {
         excerpt

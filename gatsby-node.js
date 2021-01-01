@@ -13,7 +13,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       {
         allMarkdownRemark(
           sort: { fields: [frontmatter___date], order: ASC }
-          limit: 1000
+          limit: 10000
         ) {
           nodes {
             id
@@ -41,6 +41,22 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   // `context` is available in the template as a prop and as a variable in GraphQL
 
   if (posts.length > 0) {
+    const postsPerPage = 10
+    const numPages = Math.ceil(posts.length / postsPerPage)
+    Array.from({ length: numPages }).forEach((_, i) => {
+      if(i === 0) { return }
+      createPage({
+        path: `/pages/${i}`,
+        component: path.resolve('./src/templates/blog-posts.js'),
+        context: {
+          limit: postsPerPage,
+          skip: i * postsPerPage,
+          prevPath: i === 1 ? '/' : `/pages/${i - 1}`,
+          nextPath: i === numPages - 1 ? null : `/pages/${i + 1}`
+        }
+      })
+    })
+
     posts.forEach((post, index) => {
       const previousPostId = index === 0 ? null : posts[index - 1].id
       const nextPostId = index === posts.length - 1 ? null : posts[index + 1].id
