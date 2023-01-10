@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-background: #f7f7f7;
+  --color-text: #333;
+  --color-link: #3b81b5;
+}
+
+body {
+  color: var(--color-text);
+  background-color: var(--color-background);
+}
+
+a {
+  color: var(--color-link);
+}
+
+@layer base {
+  h1 {
+    @apply text-3xl mt-2 font-bold;
+  }
+
+  h2 {
+    @apply text-2xl my-4 font-bold;
+  }
+
+  p {
+    @apply my-4;
+  }
+
+  ul {
+    @apply list-disc px-4;
+  }
+}
