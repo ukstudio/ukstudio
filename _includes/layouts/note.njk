@@ -4,7 +4,7 @@ layout: layouts/base.njk
 <section>
   <h1 class="text-center">{{ title }}</h1>
   <ul class="list-none text-sm text-right py-2">
-    <li>Published on {{ created | formatDate('YYYY-MM-DD')}}</li>
+    <li>Published on {{ date | formatDate('YYYY-MM-DD')}}</li>
     <li>Updated on {{ updated | formatDate('YYYY-MM-DD')}}</li>
   </ul>
   <hr>

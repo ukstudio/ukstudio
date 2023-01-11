@@ -24,6 +24,7 @@ module.exports = function(eleventyConfig) {
 
     eleventyConfig.setLibrary('md', md);
     eleventyConfig.addPassthroughCopy('assets');
+    eleventyConfig.addPassthroughCopy('CNAME');
 
     eleventyConfig.addCollection("notes", function (collection) {
         return collection.getFilteredByGlob(["notes/**/*.md", "index.md"]);
