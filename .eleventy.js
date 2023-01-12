@@ -1,3 +1,4 @@
+const debug = require('debug')('myapp')
 const dayjs = require('dayjs')
 dayjs.locale('ja')
 
@@ -28,6 +29,16 @@ module.exports = function(eleventyConfig) {
 
   eleventyConfig.addCollection("notes", function (collection) {
     return collection.getFilteredByGlob(["notes/**/*.md", "index.md"]);
+  });
+
+  // https://boehs.org/node/11ty-aliases
+  eleventyConfig.addCollection('redirects', function (collection) {
+    let redirects = [];
+    const notes = collection.getFilteredByGlob('notes/**/*.md')
+    notes.forEach(function(note) {
+      (note.data.aliases || []).forEach(alias => redirects.push([note.url, alias]))
+    })
+    return redirects
   });
 
   eleventyConfig.addFilter("formatDate", (date,format) => {

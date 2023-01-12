@@ -1,0 +1,13 @@
+---
+pagination:
+  data: collections.redirects
+  size: 1
+  alias: redirect
+permalink: "{{redirect[1]}}"
+layout: ""
+---
+<!doctype html>
+<html>
+  <meta http-equiv="refresh" content="0; URL='{{ redirect[0] }}'">
+  <link rel="canonical" href="{{ redirect[0] }}">
+</html>
