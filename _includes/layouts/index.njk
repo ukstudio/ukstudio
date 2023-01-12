@@ -4,7 +4,7 @@ layout: layouts/base.njk
 {{ content | safe }}
 
 <h2>Newest notes</h2>
-{%- for note in collections.all | reverse -%}
+{%- for note in collections.notes | reverse -%}
   <ul>
     {% if loop.index < 11 %}
       <li>{{note.data.date | formatDate("YYYY-MM-DD")}} <a href="/{{note.data.title}}">{{note.data.title}}</a></li>
