@@ -573,25 +573,9 @@ ul {
   }
 }
 
-.static {
-  position: static;
-}
-
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
-}
-
-.block {
-  display: block;
-}
-
-.table {
-  display: table;
-}
-
-.hidden {
-  display: none;
 }
 
 .max-w-3xl {
@@ -600,10 +584,6 @@ ul {
 
 .list-none {
   list-style-type: none;
-}
-
-.border {
-  border-width: 1px;
 }
 
 .p-4 {
@@ -640,10 +620,6 @@ ul {
 
 .font-extrabold {
   font-weight: 800;
-}
-
-.filter {
-  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
 :root {
