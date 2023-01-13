@@ -1,3 +1,4 @@
+const sitemap = require("@quasibit/eleventy-plugin-sitemap")
 const debug = require('debug')('myapp')
 const dayjs = require('dayjs')
 dayjs.locale('ja')
@@ -43,5 +44,12 @@ module.exports = function(eleventyConfig) {
 
   eleventyConfig.addFilter("formatDate", (date,format) => {
     return dayjs(date).format(format)
+  });
+
+  eleventyConfig.addPlugin(sitemap, {
+    sitemap: {
+      lastModifiedProperty: "updated",
+      hostname: "https://ukstudio.jp",
+    },
   });
 }
