@@ -1,6 +1,7 @@
 ---
 aliases:
 - /2011/07/02/bdd/
+- /posts/2011/07/02/bdd/
 date: "2011-07-02"
 updated: 2011-07-02
 title: BDDについて自分なりにまとめてみた
@@ -19,7 +20,7 @@ BDDという言葉も割と人によって指すものが違うようなので�
 
 BDDは振る舞い駆動開発と言われたりするように、テストという言葉のかわりに<strong>振る舞い</strong>という言葉を使う。日本語的には仕様と言うほうがわかりやすいかもしれない。多分、BDDのイメージが掴みにくいのはこの振る舞いという言葉にあると思う。と言うのも振る舞いと言うのは、人の立場よって変わるからだ。例えば、プログラマがあるクラスを実装している時に言う振る舞いはそのクラスのメソッドとかの仕様になる。逆にユーザレベルの人が言う振る舞いはアプリケーションの要件・動作を言うだろう。 つまり、BDDという言葉はTDDからATDDの両方にかかるので文脈によって指すものがかわってくる。この辺は<a href="http://twitter.com/#!/t_wada">@t_wada</a>さんの言う「誰のためのテストか」を考える方がわかりやすいだろう。
 
-<div style="width:425px" id="__ss_7353562"> <strong style="display:block;margin:12px 0 4px"><a href="http://www.slideshare.net/t_wada/tddbc-fukuoka-day1" title="TDDBC Fukuoka Day1" target="_blank">TDDBC Fukuoka Day1</a></strong> <iframe src="http://www.slideshare.net/slideshow/embed_code/7353562?startSlide=24" width="425" height="355" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe> <div style="padding:5px 0 12px"> View more <a href="http://www.slideshare.net/" target="_blank">presentations</a> from <a href="http://www.slideshare.net/t_wada" target="_blank">Takuto Wada</a> </div> </div>
+<div style="width:425px" id="__ss_7353562"> <strong style="display:block;margin:12px 0 4px"><a href="https://www.slideshare.net/t_wada/tddbc-fukuoka-day1" title="TDDBC Fukuoka Day1" target="_blank">TDDBC Fukuoka Day1</a></strong> <iframe src="https://www.slideshare.net/slideshow/embed_code/7353562?startSlide=24" width="425" height="355" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe> <div style="padding:5px 0 12px"> View more <a href="https://www.slideshare.net/" target="_blank">presentations</a> from <a href="https://www.slideshare.net/t_wada" target="_blank">Takuto Wada</a> </div> </div>
 
 ## TDDの別名としてのBDD
 
