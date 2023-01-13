@@ -1,5 +1,9 @@
 const sitemap = require("@quasibit/eleventy-plugin-sitemap")
+
+const emoji = require('markdown-it-emoji')
+
 const debug = require('debug')('myapp')
+
 const dayjs = require('dayjs')
 const utc = require('dayjs/plugin/utc')
 const timezone = require('dayjs/plugin/timezone')
@@ -18,18 +22,19 @@ module.exports = function(eleventyConfig) {
   };
 
   const md = markdownIt(markdownItOptions)
-  .use(function(md) {
-    // Recognize Mediawiki links ([[text]])
-    md.linkify.add("[[", {
-      validate: /^\s?([^\[\]\|\n\r]+)(\|[^\[\]\|\n\r]+)?\s?\]\]/,
-      normalize: match => {
-        const parts = match.raw.slice(2,-2).split("|");
-        parts[0] = parts[0].replace(/.(md|markdown)\s?$/i, "");
-        match.text = (parts[1] || parts[0]).trim();
-        match.url = `/${parts[0].trim()}/`;
-      }
+    .use(emoji)
+    .use(function(md) {
+      // Recognize Mediawiki links ([[text]])
+      md.linkify.add("[[", {
+        validate: /^\s?([^\[\]\|\n\r]+)(\|[^\[\]\|\n\r]+)?\s?\]\]/,
+        normalize: match => {
+          const parts = match.raw.slice(2,-2).split("|");
+          parts[0] = parts[0].replace(/.(md|markdown)\s?$/i, "");
+          match.text = (parts[1] || parts[0]).trim();
+          match.url = `/${parts[0].trim()}/`;
+        }
+      })
     })
-  })
 
   eleventyConfig.setLibrary('md', md);
   eleventyConfig.addPassthroughCopy('assets');

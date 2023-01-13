@@ -24,6 +24,7 @@
   },
   "dependencies": {
     "@quasibit/eleventy-plugin-sitemap": "^2.2.0",
-    "dayjs": "^1.11.7"
+    "dayjs": "^1.11.7",
+    "markdown-it-emoji": "^2.0.2"
   }
 }
