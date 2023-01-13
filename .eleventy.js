@@ -1,6 +1,13 @@
 const sitemap = require("@quasibit/eleventy-plugin-sitemap")
 const debug = require('debug')('myapp')
 const dayjs = require('dayjs')
+const utc = require('dayjs/plugin/utc')
+const timezone = require('dayjs/plugin/timezone')
+
+dayjs.extend(utc)
+dayjs.extend(timezone)
+dayjs.tz.setDefault("Asia/Tokyo")
+
 dayjs.locale('ja')
 
 module.exports = function(eleventyConfig) {
@@ -43,7 +50,7 @@ module.exports = function(eleventyConfig) {
   });
 
   eleventyConfig.addFilter("formatDate", (date,format) => {
-    return dayjs(date).format(format)
+    return dayjs(date).tz().format(format)
   });
 
   eleventyConfig.addPlugin(sitemap, {
