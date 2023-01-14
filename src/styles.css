@@ -26,6 +26,10 @@ a {
     @apply text-2xl my-4 font-bold;
   }
 
+  h3 {
+    @apply font-bold;
+  }
+
   p {
     @apply my-4;
   }

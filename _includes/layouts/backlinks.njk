@@ -1,13 +1,15 @@
-<hr>
-<h2>Backlinks</h2>
-{% if backlinks.length > 0%}
-<ul>
-{% for link in backlinks %}
-    <li>
-        <a href="{{link.url}}">{{link.title}}</a>
-    </li>
-{% endfor %}
-</ul>
-{% else %}
-    <p>No backlinks found.</p>
-{% endif %}
+<div class="py-4">
+  <hr>
+  <div class="font-bold my-4">Backlinks</div>
+  {% if backlinks.length > 0%}
+  <ul>
+  {% for link in backlinks %}
+      <li>
+          <a href="{{link.url}}">{{link.title}}</a>
+      </li>
+  {% endfor %}
+  </ul>
+  {% else %}
+      <p>No backlinks found.</p>
+  {% endif %}
+</div>
