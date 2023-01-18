@@ -3,7 +3,7 @@ eleventyExcludeFromCollections: true
 layout: layouts/index.njk
 ---
 
-ここは ukstudio の個人サイトです。Degital Gardenという思想をもとに構成されています。庭の手入れのように徐々にコンテンツが増えていく予定です。また、各記事やコンテンツは不完全なものも多くあります。
+ここは ukstudio の個人サイトです。[[Digital Garden]]という思想をもとに構成されています。庭の手入れのように徐々にコンテンツが増えていく予定です。また、各記事やコンテンツは不完全なものも多くあります。
 
 ## About me
 

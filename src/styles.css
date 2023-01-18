@@ -37,4 +37,9 @@ a {
   ul {
     @apply list-disc px-4;
   }
+
+  blockquote {
+    @apply ml-8 pl-4 border-l-4;
+  }
+
 }

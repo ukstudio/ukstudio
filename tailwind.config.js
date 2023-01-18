@@ -7,7 +7,7 @@ module.exports = {
     extend: {
       fontFamily: {
         'sans': ['Helvetica Neue', 'Arial', 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', 'Meiryo', 'sans-serif', ...defaultTheme.fontFamily.sans]
-      }
+      },
     },
   },
   plugins: [],
