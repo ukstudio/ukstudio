@@ -449,6 +449,12 @@ ul {
   padding-right: 1rem;
 }
 
+blockquote {
+  margin-left: 2rem;
+  border-left-width: 4px;
+  padding-left: 1rem;
+}
+
 *, ::before, ::after {
   --tw-border-spacing-x: 0;
   --tw-border-spacing-y: 0;
