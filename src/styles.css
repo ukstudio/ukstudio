@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root {
-  --color-background: #f7f7f7;
+  --color-background: #fff;
   --color-text: #333;
   --color-link: #3b81b5;
 }
@@ -27,7 +27,7 @@ a {
   }
 
   h3 {
-    @apply font-bold;
+    @apply text-xl my-4 font-bold;
   }
 
   p {
