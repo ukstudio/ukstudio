@@ -2,7 +2,6 @@
 eleventyExcludeFromCollections: true
 layout: layouts/index.njk
 ---
-
 ここは ukstudio の個人サイトです。なんか色々書き溜めていこうと思います。
 
 - [[about]]

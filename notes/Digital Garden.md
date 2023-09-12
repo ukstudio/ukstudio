@@ -3,7 +3,6 @@ title: Digital Garden
 date: 2023-01-18
 updated: 2023-01-18
 ---
-
 Digital Gardenと呼ばれるムーブメント・思想についてはMaggie Appletonによる https://maggieappleton.com/garden-history が詳しい。
 
 日本語の記事であれば https://www.technologyreview.jp/s/218383/digital-gardens-let-you-cultivate-your-own-little-bit-of-the-internet/ あたりが参考になる。
