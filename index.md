@@ -9,6 +9,9 @@ layout: layouts/index.njk
 - [[now]]
 	- 著者の近況
 
+## Philosophy
+
+- [[越境する]]
 ## Development
 
 - [[BDDについて自分なりにまとめてみた]]
