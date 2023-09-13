@@ -2,6 +2,8 @@
 title: Personal Knowledge Management
 date: 2023-09-12
 updated: 2023-09-12
+aliases:
+  - /パーソナルナレッジマネジメント/
 ---
 Personal Knowledge Management(PKM)とは、集めた情報や自身の経験から得られた知識を集め、更にその知識を活用するための活動やシステム、手法などのこと。
 
