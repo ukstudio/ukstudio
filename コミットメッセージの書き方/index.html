@@ -1,0 +1,94 @@
+<!doctype html>
+<html>
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9XZH9K61N7"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-9XZH9K61N7');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@ukstudio">
+    <meta name="twitter:description" content="コミットメッセージの書き方
+
+Published on 2023-11-20
+Updated on..."><meta name="twitter:title" content="コミットメッセージの書き方 - UKSTUDIO">
+    <title>コミットメッセージの書き方 - UKSTUDIO</title><link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
+    <link href="/assets/styles.css" rel="stylesheet">
+    <script src="//instant.page/5.1.1" type="module" integrity="sha384-MWfCL6g1OTGsbSwfuMHc8+8J2u71/LA8dzlIN3ycajckxuZZmF+DNjdm7O6H3PSq"></script>
+  </head>
+  <body>
+    <div class="container max-w-3xl mx-auto">
+      <header class="p-4">
+        <a href="/" class="font-extrabold text-3xl">UKSTUDIO</a>
+      </header>
+      <main class="px-4">
+        <section>
+  <h1 class="text-center">コミットメッセージの書き方</h1>
+  <ul class="list-none text-sm text-right py-2">
+    <li>Published on 2023-11-20</li>
+    <li>Updated on 2023-11-20</li>
+  </ul>
+  <hr>
+  <h2>なぜコミットメッセージが重要なのか</h2>
+<ul>
+<li>効率的にコードレビューを行なうため</li>
+<li>コードの理解およびコードだけでは知ることができない情報を説明するため</li>
+<li>ソフトウェアに加えられた変更や過去の履歴を追いやすくするため</li>
+</ul>
+<h2>良いコミットメッセージを書くために</h2>
+<p>自分なりに意識するポイントを書く</p>
+<h3>タイトルは命令文で書く</h3>
+<ul>
+<li>世の中の慣習として命令文でコミットメッセージを書くのが大半なのでそれにあわせる
+<ul>
+<li>Git の merge や revert などで生成されるコミットメッセージも命令文である</li>
+</ul>
+</li>
+<li><a href="https://cbea.ms/git-commit/">https://cbea.ms/git-commit/</a> の &quot;5. Use the imperative mood in the subject line&quot; のテンプレートはわかりやすい。以下のようなに文章を組み立てたときに自然かどうかで判断できる。
+<blockquote>
+<p>If applied, this commit will {commit message}.</p>
+</blockquote>
+</li>
+</ul>
+<h3>タイトルでは簡潔に変更の内容を伝える</h3>
+<ul>
+<li>簡潔であるべきだが省略のしすぎはよくない。最低限どのような変更が加えたれたのかわかるように。
+<ul>
+<li>悪い例: <code>Fix bug</code></li>
+</ul>
+</li>
+</ul>
+<h3>本文ではWhyを中心に書く</h3>
+<ul>
+<li>実装がむずかしい場合はHowについても述べてもよいが、基本的にWhyについて述べるようにする</li>
+<li>なぜその変更を加える必要があったのかはコードから読み解くのがむずかしい</li>
+<li>Howについてはインラインのコメントも活用する</li>
+</ul>
+<h3>絵文字は使わない</h3>
+<ul>
+<li>個人的な好みと言ってしまえばそうかもしれないが、あまり有効に感じたことがない</li>
+<li>理由としては適切なタイトルが設定されていれば、絵文字がなくても十分に内容は伝わるため</li>
+<li>また、環境によっては絵文字を表示できずにノイズになることもある</li>
+</ul>
+
+</section>
+<div class="py-4">
+  <hr>
+  <div class="font-bold my-4">Backlinks</div>
+  
+      <p>No backlinks found.</p>
+  
+</div>
+
+
+      </main>
+    </div>
+  </body>
+</html>
