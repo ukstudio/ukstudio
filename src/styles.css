@@ -8,6 +8,10 @@
   --color-link: #3b81b5;
 }
 
+html {
+  font-size: 14px;
+}
+
 body {
   color: var(--color-text);
   background-color: var(--color-background);
@@ -23,19 +27,19 @@ a {
   }
 
   h2 {
-    @apply text-2xl my-4 font-bold;
+    @apply text-lg mt-8 mb-4 font-bold;
   }
 
   h3 {
-    @apply text-xl my-4 font-bold;
+    @apply text-lg mt-6 mb-6 font-bold decoration-solid;
   }
 
   p {
-    @apply my-4;
+    @apply my-4 leading-6;
   }
 
   ul {
-    @apply list-disc px-4;
+    @apply list-disc px-4 ml-6;
   }
 
   blockquote {
