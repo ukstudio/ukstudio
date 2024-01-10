@@ -21,6 +21,11 @@ a {
   color: var(--color-link);
 }
 
+.note-main-content img {
+  width: 50%;
+  margin: 0 auto;
+}
+
 @layer base {
   h1 {
     @apply text-3xl mt-2 font-bold;

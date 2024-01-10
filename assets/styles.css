@@ -775,3 +775,8 @@ body {
 a {
   color: var(--color-link);
 }
+
+.note-main-content img {
+  width: 50%;
+  margin: 0 auto;
+}
