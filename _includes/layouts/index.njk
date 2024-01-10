@@ -9,8 +9,8 @@ layout: layouts/base.njk
       {% if loop.index < 16 %}
       <div class="flex-1 shrink min-w-64">
         <div class="p-4 h-86">
-          <div style="background-color: #3b81b5" class="py-4 rounded-lg">
-            <div class="h-60 w-36 mx-auto overflow-hidden bg-white" style="position: relative">
+          <div style="background-color: #3b81b5; position: relative" class="py-4 rounded-lg">
+            <div class="h-60 w-36 mx-auto overflow-hidden bg-white">
               <div class="w-[620px]" style="transform: scale(0.2); transform-origin: top left;">
                 <section class="mx-auto w-[480px] note-main-content">
                   <h1 class="text-center">{{ note.data.title }}</h1>
@@ -22,8 +22,8 @@ layout: layouts/base.njk
                   {{ note.data.content | safe }}
                 </section>
               </div>
-              <a href="/{{note.data.title}}" style="position: absolute; top: 0; left: 0; bottom: 0; right: 0;"></a>
             </div>
+            <a href="/{{note.data.title}}" style="position: absolute; top: 0; left: 0; bottom: 0; right: 0;"></a>
           </div>
           <div class="text-center w-full bg-white">
             <aside class="mt-4">
