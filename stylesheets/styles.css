@@ -667,12 +667,16 @@ blockquote {
   width: 100%;
 }
 
+.min-w-80 {
+  min-width: 20rem;
+}
+
 .min-w-64 {
   min-width: 16rem;
 }
 
-.min-w-80 {
-  min-width: 20rem;
+.max-w-3xl {
+  max-width: 48rem;
 }
 
 .max-w-4xl {
@@ -714,6 +718,11 @@ blockquote {
 
 .p-4 {
   padding: 1rem;
+}
+
+.px-4 {
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 .px-6 {

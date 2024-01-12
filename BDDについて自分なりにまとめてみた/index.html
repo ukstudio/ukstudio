@@ -15,12 +15,14 @@
 
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@ukstudio">
-    <meta name="twitter:description" content="BDDについて自分なりにまとめてみた
+    
+    <meta name="twitter:title" content="BDDについて自分なりにまとめてみた - UKSTUDIO">
+    <title>BDDについて自分なりにまとめてみた - UKSTUDIO</title>
+    
 
-Published on 2011-07-02
-Updated on..."><meta name="twitter:title" content="BDDについて自分なりにまとめてみた - UKSTUDIO">
-    <title>BDDについて自分なりにまとめてみた - UKSTUDIO</title><link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
-    <link href="/assets/styles.css" rel="stylesheet">
+
+    <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
+    <link href="/assets/stylesheets/styles.css" rel="stylesheet">
     <script src="//instant.page/5.1.1" type="module" integrity="sha384-MWfCL6g1OTGsbSwfuMHc8+8J2u71/LA8dzlIN3ycajckxuZZmF+DNjdm7O6H3PSq"></script>
   </head>
   <body>
@@ -30,13 +32,13 @@ Updated on..."><meta name="twitter:title" content="BDDについて自分なり�
       </header>
       <main>
         <section class="note-main-content">
-  <h1 class="text-center">BDDについて自分なりにまとめてみた</h1>
-  <ul class="list-none text-sm text-right py-2">
-    <li>Published on 2011-07-02</li>
-    <li>Updated on 2011-07-02</li>
-  </ul>
-  <hr>
-  <p>BDDという言葉も割と人によって指すものが違うようなので「俺の中でのBDDはこうだよ」って内容のエントリ。別に絶対的なものでもないと思うので参考までに</p>
+          <h1 class="text-center">BDDについて自分なりにまとめてみた</h1>
+          <ul class="list-none text-sm text-right py-2">
+            <li>Published on 2011-07-02</li>
+            <li>Updated on 2011-07-02</li>
+          </ul>
+          <hr>
+          <p>BDDという言葉も割と人によって指すものが違うようなので「俺の中でのBDDはこうだよ」って内容のエントリ。別に絶対的なものでもないと思うので参考までに</p>
 <h2>結論から</h2>
 <p>とりあえず結論だけ知りたい人向けに。</p>
 <ul>
@@ -61,7 +63,7 @@ Updated on..."><meta name="twitter:title" content="BDDについて自分なり�
 <p>とは言え結局のところやることはTDDと変わらない。はたから見たら、TDDをしているのかBDDをしているのか区別つかないだろう。なのでここでひとつめの結論__BDDはTDDの言い換え__になる。もちろん使う言葉が違いプログラマに与える影響が違う以上、厳密にはTDDとBDDは違うものなのかもしれない。けれど個人的にはそこまでTDDとBDDの違いに厳密性を求めてないし、求める必要もないと思うので、__プログラマ視点で見たときはほぼ同じ__という結論。</p>
 <h2>ATDDとBDD</h2>
 <p>ATDDはAcceptance Test Driven Developmentの略でAcceptance Testというのは受け入れテストのこと。TDDのよりレイヤの高いものだと思えばいい。<a href="http://t.co/MKI3PST">Growing Object-Oriented Software, Guided by Tes</a>tの画像がわかりやすいので拝借。</p>
-<p><img src="/assets/2011-07-02-growing-circle.png" alt="">
+<p><img src="/assets/images/2011-07-02-growing-circle.png" alt="" />
 ATDDのひとつのサイクルでひとつの受け入れテストが完了し、それを繰り返すことでアプリケーションを実装していく。__受け入れテストはどちらかと言えば顧客のためのテスト。__受け入れという名の通り、このテストがパスすればその機能は実装が完了したとわかり、顧客の立場からすると要件が正しく実装されていること、進捗が管理しやすいなどの利点がある。</p>
 <p>これとBDDに何が関係するのかと言うと、上で書いたように<strong>BDDの振る舞いはユーザレベルで見たときはアプリケーションの要件・動作を指す。</strong>顧客は大抵の場合、ユーザレベルなのでこの場合での振る舞いは受け入れ条件となり得る。つまり、ATDDをBDDでやることは可能と言える。ATDDをBDDでやるメリットは、BDDでは振る舞いの言葉を使うのでより顧客・ユーザに近い言葉で受け入れテストを記述できるようになる(例:<a href="http://cukes.info/">cucumber</a>の日本語での記述とか)。</p>
 <p>これがふたつめの結論の<strong>ATDDでのBDD</strong>。</p>
@@ -86,16 +88,14 @@ ATDDのひとつのサイクルでひとつの受け入れテストが完了し�
 <li><a href="http://www.slideshare.net/haru01/xpcustomertesting">XP Customer Testing</a></li>
 </ul>
 
-</section>
-<div class="py-4">
-  <hr>
-  <div class="font-bold my-4">Backlinks</div>
-  
-      <p>No backlinks found.</p>
-  
-</div>
-
-
+        </section>
+        <div class="py-4">
+          <hr>
+          <div class="font-bold my-4">Backlinks</div>
+          
+              <p>No backlinks found.</p>
+          
+        </div>
       </main>
     </div>
   </body>
