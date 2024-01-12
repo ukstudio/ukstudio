@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9XZH9K61N7"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-9XZH9K61N7');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@ukstudio">
+    <% if page.title == 'index' %>
+    <meta name="twitter:title" content="UKSTUDIO">
+    <title>UKSTUDIO</title>
+    <% else %>
+    <meta name="twitter:title" content="<%= page.title %> - UKSTUDIO">
+    <title><%= page.title %> - UKSTUDIO</title>
+    <% end %>
+
+
+    <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
+    <link href="/assets/stylesheets/styles.css" rel="stylesheet">
+    <script src="//instant.page/5.1.1" type="module" integrity="sha384-MWfCL6g1OTGsbSwfuMHc8+8J2u71/LA8dzlIN3ycajckxuZZmF+DNjdm7O6H3PSq"></script>
+  </head>
+  <body>
+    <div class="container max-w-4xl min-w-80 mx-auto px-6">
+      <header class="py-4">
+        <a href="/" class="font-extrabold text-3xl">UKSTUDIO</a>
+      </header>
+      <main>
+        <%= page.content %>
+
+        <h2>Newest notes</h2>
+        <div class="flex flex-wrap">
+          <% collection.pages.take(16).each do |page| %>
+            <div class="flex-1 shrink min-w-64">
+              <div class="p-4 h-86">
+                <div style="background-color: #3b81b5; position: relative" class="py-4 rounded-lg">
+                  <div class="h-60 w-36 mx-auto overflow-hidden bg-white">
+                    <div class="w-[620px]" style="transform: scale(0.2); transform-origin: top left;">
+                      <section class="mx-auto w-[480px] note-main-content">
+                        <h1 class="text-center"><%= page.title %></h1>
+                        <ul class="list-none text-sm text-right py-2">
+                          <li>Published on <%= page.created.strftime('%Y-%m-%d') %></li>
+                          <li>Updated on <%= page.updated.strftime('%Y-%m-%d') %></li>
+                        </ul>
+                        <hr>
+                        <%= page.content %>
+                      </section>
+                    </div>
+                  </div>
+                  <a href="<%= page.permalink %>" style="position: absolute; top: 0; left: 0; bottom: 0; right: 0;"></a>
+                </div>
+                <div class="text-center w-full bg-white">
+                  <aside class="mt-4">
+                    <%= page.created.strftime('%Y-%m-%d') %><br/>
+                    <a href="<%= page.permalink %>"><%= page.title %></a>
+                  </aside>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

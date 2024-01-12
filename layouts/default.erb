@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9XZH9K61N7"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-9XZH9K61N7');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@ukstudio">
+    <% if page.title == 'index' %>
+    <meta name="twitter:title" content="UKSTUDIO">
+    <title>UKSTUDIO</title>
+    <% else %>
+    <meta name="twitter:title" content="<%= page.title %> - UKSTUDIO">
+    <title><%= page.title %> - UKSTUDIO</title>
+    <% end %>
+
+
+    <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
+    <link href="/assets/stylesheets/styles.css" rel="stylesheet">
+    <script src="//instant.page/5.1.1" type="module" integrity="sha384-MWfCL6g1OTGsbSwfuMHc8+8J2u71/LA8dzlIN3ycajckxuZZmF+DNjdm7O6H3PSq"></script>
+  </head>
+  <body>
+    <div class="container max-w-4xl min-w-80 mx-auto px-6">
+      <header class="py-4">
+        <a href="/" class="font-extrabold text-3xl">UKSTUDIO</a>
+      </header>
+      <main>
+        <section class="note-main-content">
+          <h1 class="text-center"><%= page.title %></h1>
+          <ul class="list-none text-sm text-right py-2">
+            <li>Published on <%= page.created.strftime('%Y-%m-%d') %></li>
+            <li>Updated on <%= page.updated.strftime('%Y-%m-%d') %></li>
+          </ul>
+          <hr>
+          <%= page.content %>
+        </section>
+        <div class="py-4">
+          <hr>
+          <div class="font-bold my-4">Backlinks</div>
+          <% unless page.meta['backlinks'].empty? %>
+            <ul>
+              <% page.meta['backlinks'].each do |link| %>
+                <li>
+                  <a href="<%= link.permalink %>"><%= link.title %></a>
+                </li>
+              <% end %>
+            </ul>
+          <% else %>
+              <p>No backlinks found.</p>
+          <% end %>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>
