@@ -2,4 +2,4 @@
 
 source "https://rubygems.org"
 
-gem 'tororo', path: '/Users/yuki-akamatsu/ghq/github.com/ukstudio/tororo'
+gem 'florby', path: '/Users/yuki-akamatsu/ghq/github.com/ukstudio/florby'

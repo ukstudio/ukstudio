@@ -1,7 +1,7 @@
 PATH
-  remote: /Users/yuki-akamatsu/ghq/github.com/ukstudio/tororo
+  remote: /Users/yuki-akamatsu/ghq/github.com/ukstudio/florby
   specs:
-    tororo (0.1.0)
+    florby (0.1.0)
       commonmarker
       sitemap_generator
       webrick
@@ -19,7 +19,7 @@ PLATFORMS
   arm64-darwin-22
 
 DEPENDENCIES
-  tororo!
+  florby!
 
 BUNDLED WITH
    2.4.12
