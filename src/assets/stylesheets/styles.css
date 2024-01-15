@@ -658,8 +658,14 @@ blockquote {
   flex: 1 1 0%;
 }
 
-.p-8 {
-  padding: 2rem;
+.px-12 {
+  padding-left: 3rem;
+  padding-right: 3rem;
+}
+
+.py-4 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 
 .pl-8 {
@@ -682,8 +688,8 @@ blockquote {
 }
 
 html {
-  font-size: 14px;
-  line-height: 1.8;
+  font-size: 16px;
+  line-height: 1.7;
 }
 
 body {
