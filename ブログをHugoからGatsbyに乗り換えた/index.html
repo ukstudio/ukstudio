@@ -20,25 +20,23 @@
     <title>ブログをHugoからGatsbyに乗り換えた - UKSTUDIO</title>
     
 
-
     <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
     <link href="/assets/stylesheets/styles.css" rel="stylesheet">
     <script src="//instant.page/5.1.1" type="module" integrity="sha384-MWfCL6g1OTGsbSwfuMHc8+8J2u71/LA8dzlIN3ycajckxuZZmF+DNjdm7O6H3PSq"></script>
   </head>
   <body>
-    <div class="container max-w-4xl min-w-80 mx-auto px-6">
-      <header class="py-4">
-        <a href="/" class="font-extrabold text-3xl">UKSTUDIO</a>
+    <div class="container max-w-screen-lg mx-auto p-4">
+      <header>
+        <a href="/" class="font-extrabold text-lg">UKSTUDIO</a>
       </header>
-      <main>
-        <section class="note-main-content">
-          <h1 class="text-center">ブログをHugoからGatsbyに乗り換えた</h1>
-          <ul class="list-none text-sm text-right py-2">
-            <li>Published on 2021-01-01</li>
-            <li>Updated on 2021-01-01</li>
-          </ul>
-          <hr>
-          <p>ほとんどまともに活用されていない当ブログだけど、<a href="https://gohugo.io/">Hugo</a>から<a href="https://www.gatsbyjs.com/">Gatsby</a>に乗り換えた。乗り換えた理由はなんとなく以上のものは実はそんなにないのだけど、強いて言うなら</p>
+      <main class="flex">
+        <article class="flex-1 max-2-3xl">
+          <header>
+            <h1 class="mb-0">ブログをHugoからGatsbyに乗り換えた</h1>
+            <p class="mt-0" style="color: #999">Updated on Jan  1, 2021</p>
+          </header>
+          <section class="article-body">
+            <p>ほとんどまともに活用されていない当ブログだけど、<a href="https://gohugo.io/">Hugo</a>から<a href="https://www.gatsbyjs.com/">Gatsby</a>に乗り換えた。乗り換えた理由はなんとなく以上のものは実はそんなにないのだけど、強いて言うなら</p>
 <ul>
 <li>Webフロントエンドの技術を軽く触っておくのに丁度良さそうだった</li>
 <li>データソースをGraphQLを通して取得できるのが良さそうに感じた</li>
@@ -54,10 +52,10 @@
 <p>前者についてはエクスポート機能があれば仮にサービス終了となったり、そのサービスを使うことができない事情があったとしても別のところに移行することはできる。noteは確かエクスポート機能がないが…</p>
 <p>後者に関しては自分で管理するのが最善かなと今は考えている。もちろん、独自ドメインを設定できるブログプラットフォームもあるので、なんとかしようと思えばなんとかできるだろうが、細かいこと考えるより結局自分で管理する方が楽だなと思う。</p>
 
-        </section>
-        <div class="py-4">
-          <hr>
-          <div class="font-bold my-4">Backlinks</div>
+          </section>
+        </article>
+        <aside class="w-64 pl-8 md:block hidden">
+          <h2 class='mt-0'>Backlinks</h2>
           
             <ul>
               
@@ -67,7 +65,7 @@
               
             </ul>
           
-        </div>
+        </aside>
       </main>
     </div>
   </body>

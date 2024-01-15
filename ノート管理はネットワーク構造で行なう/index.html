@@ -20,25 +20,23 @@
     <title>ノート管理はネットワーク構造で行なう - UKSTUDIO</title>
     
 
-
     <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
     <link href="/assets/stylesheets/styles.css" rel="stylesheet">
     <script src="//instant.page/5.1.1" type="module" integrity="sha384-MWfCL6g1OTGsbSwfuMHc8+8J2u71/LA8dzlIN3ycajckxuZZmF+DNjdm7O6H3PSq"></script>
   </head>
   <body>
-    <div class="container max-w-4xl min-w-80 mx-auto px-6">
-      <header class="py-4">
-        <a href="/" class="font-extrabold text-3xl">UKSTUDIO</a>
+    <div class="container max-w-screen-lg mx-auto p-4">
+      <header>
+        <a href="/" class="font-extrabold text-lg">UKSTUDIO</a>
       </header>
-      <main>
-        <section class="note-main-content">
-          <h1 class="text-center">ノート管理はネットワーク構造で行なう</h1>
-          <ul class="list-none text-sm text-right py-2">
-            <li>Published on 2023-08-13</li>
-            <li>Updated on 2023-08-13</li>
-          </ul>
-          <hr>
-          <h2>階層型ではなくネットワーク構造</h2>
+      <main class="flex">
+        <article class="flex-1 max-2-3xl">
+          <header>
+            <h1 class="mb-0">ノート管理はネットワーク構造で行なう</h1>
+            <p class="mt-0" style="color: #999">Updated on Aug 13, 2023</p>
+          </header>
+          <section class="article-body">
+            <h2>階層型ではなくネットワーク構造</h2>
 <p>ノートは階層型(要はフォルダ)で整理するのではなく、ノート間のつながりによるネットワーク構造になることを重視している。</p>
 <p>この考えは主にZettelkastenと呼ばれるNiklas Luhmannというドイツの社会学者のアナログのノート管理術に基づいているが、Zettelkastenに影響された考え方・ツールは多く、それらの影響も受けている。</p>
 <h3>新たなアイデアの発見</h3>
@@ -49,10 +47,10 @@
 <p>階層型で管理した場合、時にはあるノートがどの階層に置くべきか迷うこともあるだろう。例えば「Ruby」と「テスト駆動開発」というフォルダがあったときに「Rubyでテスト駆動開発するときの注意点」はどちらのフォルダに置くのが適切だろうか?</p>
 <p>仮にネットワーク構造の場合「Ruby」というノートと「テスト駆動開発」というノートの両方から「Rubyでテスト駆動開発するときの注意点」にリンクを貼ればよい。</p>
 
-        </section>
-        <div class="py-4">
-          <hr>
-          <div class="font-bold my-4">Backlinks</div>
+          </section>
+        </article>
+        <aside class="w-64 pl-8 md:block hidden">
+          <h2 class='mt-0'>Backlinks</h2>
           
             <ul>
               
@@ -62,7 +60,7 @@
               
             </ul>
           
-        </div>
+        </aside>
       </main>
     </div>
   </body>
