@@ -23,29 +23,27 @@
     <title><%= page.title %> - UKSTUDIO</title>
     <% end %>
 
-
     <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
     <link href="/assets/stylesheets/styles.css" rel="stylesheet">
     <script src="//instant.page/5.1.1" type="module" integrity="sha384-MWfCL6g1OTGsbSwfuMHc8+8J2u71/LA8dzlIN3ycajckxuZZmF+DNjdm7O6H3PSq"></script>
   </head>
   <body>
-    <div class="container max-w-4xl min-w-80 mx-auto px-6">
-      <header class="py-4">
-        <a href="/" class="font-extrabold text-3xl">UKSTUDIO</a>
+    <div class="container max-w-screen-lg mx-auto p-4">
+      <header>
+        <a href="/" class="font-extrabold text-lg">UKSTUDIO</a>
       </header>
-      <main>
-        <section class="note-main-content">
-          <h1 class="text-center"><%= page.title %></h1>
-          <ul class="list-none text-sm text-right py-2">
-            <li>Published on <%= page.created.strftime('%Y-%m-%d') %></li>
-            <li>Updated on <%= page.updated.strftime('%Y-%m-%d') %></li>
-          </ul>
-          <hr>
-          <%= page.content %>
-        </section>
-        <div class="py-4">
-          <hr>
-          <div class="font-bold my-4">Backlinks</div>
+      <main class="flex">
+        <article class="flex-1 max-2-3xl">
+          <header>
+            <h1 class="mb-0"><%= page.title %></h1>
+            <p class="mt-0" style="color: #999">Updated on <%= page.updated.strftime('%b %e, %Y') %></p>
+          </header>
+          <section class="article-body">
+            <%= page.content %>
+          </section>
+        </article>
+        <aside class="w-64 pl-8 md:block hidden">
+          <h2 class='mt-0'>Backlinks</h2>
           <% unless page.meta['backlinks'].empty? %>
             <ul>
               <% page.meta['backlinks'].each do |link| %>
@@ -57,7 +55,7 @@
           <% else %>
               <p>No backlinks found.</p>
           <% end %>
-        </div>
+        </aside>
       </main>
     </div>
   </body>

@@ -3,13 +3,14 @@
 @tailwind utilities;
 
 :root {
-  --color-background: #fff;
+  --color-background: #f7f7f7;
   --color-text: #333;
-  --color-link: #3b81b5;
+  --color-link: #08548a;
 }
 
 html {
   font-size: 14px;
+  line-height: 1.8;
 }
 
 body {
@@ -21,9 +22,16 @@ a {
   color: var(--color-link);
 }
 
-.note-main-content img {
-  width: 50%;
-  margin: 0 auto;
+a:hover {
+  text-decoration: underline;
+}
+
+.article-body {
+  img {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 @layer base {
@@ -43,6 +51,10 @@ a {
     @apply my-4 leading-6;
   }
 
+  img {
+    @apply my-4;
+  }
+
   ul {
     @apply list-disc px-4 ml-6;
   }
@@ -50,5 +62,4 @@ a {
   blockquote {
     @apply ml-8 pl-4 border-l-4;
   }
-
 }

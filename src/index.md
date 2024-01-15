@@ -1,5 +1,4 @@
 ---
-layout: index
 exclude_from_collections: "true"
 permalink: /
 ---
