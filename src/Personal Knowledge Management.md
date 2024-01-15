@@ -29,7 +29,7 @@ Logseqはプライベートな環境で運用しているので、そこから�
 	- https://notes.andymatuschak.org/Evergreen_notes
 - [[Digital Garden]]
 
-# Notes
+## Notes
 
 - [[私の書く習慣]]
 	- 私がノートを取るようになったきっかけについて
