@@ -1,7 +1,7 @@
 ---
 title: about
 created: 2023-07-27
-updated: 2023-07-27
+updated: 2024-01-15
 ---
 ## 著者について
 
@@ -27,6 +27,7 @@ updated: 2023-07-27
 
 ### 履歴
 
+- 2024年 MarkdownからHTML生成するツールを自作
 - 2023年 GatsbyからEleventyに乗り換える & フローよりストックを意識した作りへ
 - 2021年 [[ブログをHugoからGatsbyに乗り換えた]]
 - 2017年 MiddlemanからHugoに乗り換える

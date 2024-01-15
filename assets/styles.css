@@ -40,11 +40,11 @@ a:hover {
   }
 
   h2 {
-    @apply text-lg mt-8 mb-4 font-bold;
+    @apply text-xl mt-8 mb-4 font-bold;
   }
 
   h3 {
-    @apply text-lg mt-6 mb-6 font-bold decoration-solid;
+    @apply text-base mt-6 mb-4 font-bold;
   }
 
   p {
