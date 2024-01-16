@@ -668,6 +668,11 @@ blockquote {
   padding-bottom: 1rem;
 }
 
+.px-4 {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
 .pl-8 {
   padding-left: 2rem;
 }
@@ -688,7 +693,7 @@ blockquote {
 }
 
 html {
-  font-size: 16px;
+  font-size: 15px;
   line-height: 1.7;
 }
 
