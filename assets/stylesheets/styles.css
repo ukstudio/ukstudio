@@ -658,6 +658,10 @@ blockquote {
   flex: 1 1 0%;
 }
 
+.break-all {
+  word-break: break-all;
+}
+
 .px-12 {
   padding-left: 3rem;
   padding-right: 3rem;
