@@ -681,18 +681,26 @@ blockquote {
   line-height: 1.75rem;
 }
 
+.text-sm {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
 .font-extrabold {
   font-weight: 800;
 }
 
+.no-underline {
+  text-decoration-line: none;
+}
+
 :root {
-  --color-background: #f7f7f7;
+  --color-background: #fff;
   --color-text: #333;
   --color-link: #08548a;
 }
 
 html {
-  font-size: 15px;
   line-height: 1.7;
 }
 
@@ -703,10 +711,11 @@ body {
 
 a {
   color: var(--color-link);
+  text-decoration: underline;
 }
 
 a:hover {
-  text-decoration: underline;
+  font-weight: bold;
 }
 
 .article-body {
@@ -720,5 +729,10 @@ a:hover {
 @media (min-width: 768px) {
   .md\:block {
     display: block;
+  }
+
+  .md\:text-base {
+    font-size: 1rem;
+    line-height: 1.5rem;
   }
 }

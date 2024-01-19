@@ -3,13 +3,12 @@
 @tailwind utilities;
 
 :root {
-  --color-background: #f7f7f7;
+  --color-background: #fff;
   --color-text: #333;
   --color-link: #08548a;
 }
 
 html {
-  font-size: 15px;
   line-height: 1.7;
 }
 
@@ -20,10 +19,11 @@ body {
 
 a {
   color: var(--color-link);
+  text-decoration: underline;
 }
 
 a:hover {
-  text-decoration: underline;
+  font-weight: bold;
 }
 
 .article-body {
