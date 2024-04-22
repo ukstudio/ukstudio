@@ -20,6 +20,7 @@ updated: 2024-04-22
 	- 打ち上げ参加したい方は [Google Form](https://docs.google.com/forms/d/e/1FAIpQLSeV-5VJJp5VkEkSfpENTr2NNNKpSvnKvUXsY_-5BF88E5kNhw/viewform)より事前に伝えてもらえると食材調達の関係上、とても助かります
 - 料金: 1,500円(ワンドリンク込み)
 	- オペレーションの都合上、現金のみです
+- ハッシュタグ: `#ukfes`
 
 ## タイムテーブル
 
