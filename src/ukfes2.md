@@ -2,7 +2,7 @@
 permalink: /ukfes-vol2/
 title: ukfes#2 開催のお知らせ
 created: 2024-04-22
-updated: 2024-04-22
+updated: 2024-04-23
 ---
 2024年4月27日(土)にフェスを主催します！
 
@@ -14,7 +14,7 @@ updated: 2024-04-22
 
 - 有志による計6組のバンド演奏とDJをやります
 - 場所: [大岡山劇場](https://www.okageki.com/)
-- 日程: 2024年4月27日 17:30 - 21:30
+- 日程: 2024年4月27日 17:15 - 21:30
 	- 開場は17:15を予定していますがリハ次第でズレます
 	- 21:30以降、同会場での打ち上げを予定しています(飲み放題 + 食事で別途3,500円)
 	- 打ち上げ参加したい方は [Google Form](https://docs.google.com/forms/d/e/1FAIpQLSeV-5VJJp5VkEkSfpENTr2NNNKpSvnKvUXsY_-5BF88E5kNhw/viewform)より事前に伝えてもらえると食材調達の関係上、とても助かります
@@ -24,12 +24,12 @@ updated: 2024-04-22
 
 ## タイムテーブル
 
-- 17:15 オープン + オープニングDJ
+- 17:15 MaySoMusician (Opening DJ)
 - 17:30 lintしてdoyaty
 - 18:05 chichimow
 - 18:40 目黒線
-- 19:15 DJ
-- 19:30 ゆーぺいず♾️
+- 19:15 SpicyCoffee (DJ)
+- 19:35 ゆーぺいず♾️
 - 20:10 ハヌマート
 - 20:45 うなばん！
 - 21:30 打ち上げ開始
