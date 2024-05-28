@@ -37,7 +37,7 @@ li {
 
 @layer base {
   h1 {
-    @apply text-3xl mt-2 font-bold;
+    @apply text-2xl mt-2 font-bold;
   }
 
   h2 {
