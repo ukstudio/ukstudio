@@ -9,6 +9,7 @@
 }
 
 html {
+  font-size: 18px;
   line-height: 1.7;
 }
 
@@ -22,8 +23,8 @@ a {
   text-decoration: underline;
 }
 
-a:hover {
-  font-weight: bold;
+li {
+  line-height: 1.7;
 }
 
 .article-body {
