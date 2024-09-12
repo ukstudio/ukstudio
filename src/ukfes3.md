@@ -1,6 +1,6 @@
 ---
 permalink: /ukfes-vol3/
-title: "ukfes #3"
+title: ukfes#3
 created: 2024-09-12
 updated: 2024-09-12
 ---
