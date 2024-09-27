@@ -1,7 +1,7 @@
 ---
 permalink: /ukfes
 created: 2024-05-28
-updated: 2024-05-28
+updated: 2024-09-27
 ---
 ukfesとはukstudioが主催するライブ・DJイベントです。
 
@@ -10,8 +10,8 @@ ukfesとはukstudioが主催するライブ・DJイベントです。
 成り立ちからクックパッドの社員・元社員が中心となるイベントですが、何らかの繋りがある人は出演してもらってよいと思うので興味ある人は声かけてください。
 ## 開催記録
 
-- 2023/10/20 DJオンリーイベント at YOKOHAMA COAST garage+
+- 2024/09/28 [[ukfes3]] at 池尻大橋
 - 2024/04/27 at 大岡山劇場
 	- [[ukfes2]]
 	- [[ukfes2開催報告]]
-- 2024/09/28 [[ukfes3]] at 池尻大橋
+- 2023/10/20 DJオンリーイベント at YOKOHAMA COAST garage+
