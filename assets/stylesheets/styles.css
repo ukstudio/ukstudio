@@ -625,6 +625,10 @@ blockquote {
   }
 }
 
+.order-last {
+  order: 9999;
+}
+
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
@@ -642,10 +646,6 @@ blockquote {
   display: flex;
 }
 
-.hidden {
-  display: none;
-}
-
 .w-64 {
   width: 16rem;
 }
@@ -656,6 +656,10 @@ blockquote {
 
 .flex-1 {
   flex: 1 1 0%;
+}
+
+.flex-col {
+  flex-direction: column;
 }
 
 .break-all {
@@ -672,8 +676,8 @@ blockquote {
   padding-bottom: 1rem;
 }
 
-.pl-8 {
-  padding-left: 2rem;
+.pb-4 {
+  padding-bottom: 1rem;
 }
 
 .text-lg {
@@ -728,8 +732,12 @@ li {
 }
 
 @media (min-width: 768px) {
-  .md\:block {
-    display: block;
+  .md\:flex-row {
+    flex-direction: row;
+  }
+
+  .md\:pl-8 {
+    padding-left: 2rem;
   }
 
   .md\:text-base {
