@@ -6,7 +6,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        'sans': ['Helvetica Neue', 'Arial', 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', 'Meiryo', 'sans-serif']
+        'sans': ['Helvetica Neue', 'Noto Sans CJK JP', 'Noto Sans JP', 'Segoe UI', 'sans-serif']
       },
     },
   },
