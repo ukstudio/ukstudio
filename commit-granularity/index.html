@@ -20,8 +20,8 @@
     <meta name="twitter:card" content="summary">
     <meta name="twitter:image" content="https://ukstudio.jp/assets/images/ukstudio.jpg">
     
-    <meta name="og:title" content="ソフトウェアテスト - ukstudio">
-    <title>ソフトウェアテスト - ukstudio</title>
+    <meta name="og:title" content="適切なコミットの粒度 - ukstudio">
+    <title>適切なコミットの粒度 - ukstudio</title>
     
 
     <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
@@ -36,23 +36,21 @@
       <main class="flex flex-col md:flex-row">
         <article class="flex-1 max-2-3xl pb-4">
           <header>
-            <h1 class="mb-0">ソフトウェアテスト</h1>
-            <p class="mt-0" style="color: #999">Updated on Feb 10, 2024</p>
+            <h1 class="mb-0">適切なコミットの粒度</h1>
+            <p class="mt-0" style="color: #999">Updated on Dec 18, 2024</p>
           </header>
           <section class="article-body break-all">
-            <p>ソフトウェアテスト、特に自動テストやユニットテスト、テスト駆動開発には割と興味を持っているのでその辺についても少しずつまとめていきたいと思っている</p>
+            <h2>1つのコミットは1つの論理的な変更に対応させる</h2>
 <ul>
-<li><a href='/bdd-personal-summary/'>BDDについて自分なりにまとめてみた</a>
-<ul>
-<li>かなり昔に書いたBDDに関する記事です</li>
-<li>そこそこちゃんとまとまっていると思いますが、今はテスト駆動開発の付録Cを読むのがよいと思います</li>
+<li>機能追加、バグ修正、リファクタリングなど異なる種類の修正はコミットを分ける</li>
+<li>複数のバグ修正や機能追加は別のコミットに分ける</li>
+<li>リファクタリングと機能変更は別のコミットに分ける</li>
 </ul>
-</li>
-<li><a href='/test-what-worries-you/'>不安をテストする</a>
+<h2>適切な粒度を保つメリット</h2>
 <ul>
-<li>最近はあまり聞かなくなってきた気もするけど、何をテストすればいいのか?と質問されたときに伝えるひとつの考え方。</li>
-</ul>
-</li>
+<li>git bisectによるバグの原因特定が容易になる</li>
+<li>特定の変更のみをgit revertで取り消すことができる</li>
+<li>変更の意図や背景を明確に残すことができる</li>
 </ul>
 
           </section>
