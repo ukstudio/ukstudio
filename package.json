@@ -18,13 +18,7 @@
   },
   "homepage": "https://github.com/ukstudio/ukstudio#readme",
   "devDependencies": {
-    "@11ty/eleventy": "^1.0.2",
     "gh-pages": "^4.0.0",
     "tailwindcss": "^3.4.1"
-  },
-  "dependencies": {
-    "@quasibit/eleventy-plugin-sitemap": "^2.2.0",
-    "dayjs": "^1.11.7",
-    "markdown-it-emoji": "^2.0.2"
   }
 }
