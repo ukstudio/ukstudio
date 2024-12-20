@@ -9,7 +9,7 @@
 }
 
 html {
-  font-size: 18px;
+  font-size: 16px;
   line-height: 1.7;
 }
 
@@ -24,7 +24,6 @@ a {
 }
 
 li {
-  line-height: 1.7;
 }
 
 .article-body {
@@ -42,9 +41,14 @@ li {
 
   h2 {
     @apply text-xl mt-8 mb-4 font-bold;
+    
   }
 
   h3 {
+    @apply text-lg mt-6 mb-4 font-bold;
+  }
+
+  h4 {
     @apply text-base mt-6 mb-4 font-bold;
   }
 
@@ -58,6 +62,10 @@ li {
 
   ul {
     @apply list-disc px-4 ml-6;
+  }
+
+  li {
+    @apply mb-1;
   }
 
   blockquote {
