@@ -1,13 +1,13 @@
 ---
 title: about
 created: 2023-07-27
-updated: 2024-10-22
+updated: 2024-12-23
 ---
 ## 著者について
 
 赤松 祐希。インターネットなどでは主に `ukstudio` のIDで活動。
 
-ずっと[[Ruby]]で仕事をしているRubyist。Rubyとの関わりについては[[私とRuby]]に少し書いた。
+ずっと[[Ruby]]で仕事をしているRubyist。Rubyとの関わりについては[[私とRuby]]に少し書いた。経歴については [[Resume - Yuki Akamatsu]] を参照。
 ### 近況
 
 近況については [[now]] を参照。
