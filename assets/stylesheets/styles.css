@@ -613,6 +613,38 @@ blockquote {
   padding-left: 1rem;
 }
 
+table {
+  margin: auto;
+  width: 100%;
+  table-layout: auto;
+  border-collapse: collapse;
+  border-width: 1px;
+  --tw-border-opacity: 1;
+  border-color: rgb(148 163 184 / var(--tw-border-opacity, 1));
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+@media (min-width: 768px) {
+  table {
+    width: 66.666667%;
+  }
+}
+
+th {
+  border-width: 1px;
+  --tw-border-opacity: 1;
+  border-color: rgb(203 213 225 / var(--tw-border-opacity, 1));
+  padding: 0.5rem;
+}
+
+td {
+  border-width: 1px;
+  --tw-border-opacity: 1;
+  border-color: rgb(203 213 225 / var(--tw-border-opacity, 1));
+  padding: 0.5rem;
+}
+
 .container {
   width: 100%;
 }
@@ -666,6 +698,10 @@ blockquote {
 
 .flex {
   display: flex;
+}
+
+.table {
+  display: table;
 }
 
 .w-64 {
