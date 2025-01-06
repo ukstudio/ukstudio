@@ -71,4 +71,16 @@ li {
   blockquote {
     @apply ml-8 pl-4 border-l-4;
   }
+
+  table {
+    @apply w-full md:w-4/6 m-auto border-collapse border border-slate-400 table-auto text-sm;
+  }
+
+  th {
+    @apply border border-slate-300 p-2;
+  }
+
+  td {
+    @apply border border-slate-300 p-2;
+  }
 }
