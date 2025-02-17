@@ -14,6 +14,10 @@ ZEPP TOUR 2024 "We will"には残念ながらチケットが当たらず、We wi
 
 今回良かったポイントはいくつもあるのだけど、一番印象に残ったのは、長谷川育美さん、青山吉能さん、水野朔さん、鈴代紗弓さんら4人によるフラッシュバッカーの演奏。誰もいないステージに4人がでてきて、それぞれが各楽器の準備をしはじめたときは驚いた。1年以上かけて練習してきたとのことで、あれだけの人数を前に堂々たる演奏をしていたのは感動した。スクリーンに4人が縦4分割で表示されたのもあまりにかっこよすぎた。最初はみんな緊張してるような表情だったけど、後半はみんな楽しそうに演奏していて良かった。
 
+公式からフラッシュバッカーのところが無料でYouTubeに動画が公開されているのでぜひ見てほしい。
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/A7nKFqPHPLw?si=M6AFZWG_kBZ6whjx" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 結束バンドは好きな曲が多いけど、なんだかんだで忘れてやらないと星座になれたらが好き。忘れてやらないを歌う長谷川育美さんはかわいらしかったし、星座になれたらは秀華祭バージョンで喜多ちゃんのアドリブとぼっちちゃんのボトルネック奏法のソロの再現は感動してちょっと泣いてしまった。
 
 あと惑う星もかっこよくて好きな曲なんだけど、カラカラと惑う星で水野朔さんの歌声が違うのでそのギャップも相まって更にかっこよく感じた。カラカラも好きだけど、水野朔さんの力強く歌う時の声が好き。
