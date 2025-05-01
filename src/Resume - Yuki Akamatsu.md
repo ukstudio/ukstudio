@@ -1,6 +1,6 @@
 ---
 title: Resume - Yuki Akamatsu
-created: 2024-12-19
+created: 2025-05-01
 updated: 2024-12-19
 permalink: resume
 ---
@@ -23,7 +23,10 @@ permalink: resume
 
 ## 職務経歴
 
-### クックパッド株式会社 2018年3月 - 現在
+### 株式会社IVRy 2025年4月 - 現在
+
+電話自動応答サービス「IVRy」のバックエンド開発を担当
+### クックパッド株式会社 2018年3月 - 2025年3月
 
 #### レシピサービス
 
