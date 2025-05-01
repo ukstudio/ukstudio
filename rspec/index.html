@@ -45,10 +45,10 @@
 </ul>
 <p>2024年現在、<a href='/ruby/'>Ruby</a>のデファクトスタンダード的なテスティングフレームワーク。BDDと言ってはいるものの、BDD自体がややこしい言葉になっている今となってはあまりBDDとかは関係なく使っているユーザーが多いと思われる。</p>
 <p>BDDについてはかなり昔に <a href='/bdd-personal-summary/'>BDDについて自分なりにまとめてみた</a> という記事を書いているのでそちらもどうぞ。</p>
-<h2>Tips</h2>
+<h2><a href="#tips" aria-hidden="true" class="anchor" id="tips"></a>Tips</h2>
 <p>以下Tipsというかメモ。</p>
-<h3>let!とインスタンス変数を組み合わせるとき初期化タイミングに注意</h3>
-<pre style="background-color:#2b303b;"><code class="language-ruby"><span style="color:#c0c5ce;">let!(</span><span style="color:#a3be8c;">:var</span><span style="color:#c0c5ce;">) { @</span><span style="color:#bf616a;">var </span><span style="color:#c0c5ce;">}
+<h3><a href="#letとインスタンス変数を組み合わせるとき初期化タイミングに注意" aria-hidden="true" class="anchor" id="letとインスタンス変数を組み合わせるとき初期化タイミングに注意"></a>let!とインスタンス変数を組み合わせるとき初期化タイミングに注意</h3>
+<pre lang="ruby" style="background-color:#2b303b;"><code><span style="color:#c0c5ce;">let!(</span><span style="color:#a3be8c;">:var</span><span style="color:#c0c5ce;">) { @</span><span style="color:#bf616a;">var </span><span style="color:#c0c5ce;">}
 </span><span style="color:#c0c5ce;">
 </span><span style="color:#c0c5ce;">before </span><span style="color:#b48ead;">do
 </span><span style="color:#c0c5ce;">  @</span><span style="color:#bf616a;">var </span><span style="color:#c0c5ce;">= </span><span style="color:#d08770;">1
@@ -57,11 +57,11 @@
 </span><span style="color:#c0c5ce;">it { expect(var).to eq </span><span style="color:#d08770;">1 </span><span style="color:#c0c5ce;">} </span><span style="color:#65737e;">#=&gt; 失敗する。varが返す値はnil
 </span></code></pre>
 <p><code>let!</code>は内部的には<code>before</code>と<code>let</code>の組み合せである。また、<code>before</code>は基本的に上から順に実行される。つまり、この場合<code>@var = 1</code>より前に<code>let!</code>による<code>@var</code>への参照が発生するが、値は設定されていないため<code>nil</code>が設定される。</p>
-<h2>参考情報</h2>
+<h2><a href="#参考情報" aria-hidden="true" class="anchor" id="参考情報"></a>参考情報</h2>
 <ul>
-<li><a href="https://github.com/willnet/rspec-style-guide">willnet/rspec-style-guide: 可読性の高いテストコードを書くためのお作法集</a></li>
-<li><a href="https://onk.hatenablog.jp/entry/2023/02/26/221616">RSpec では context 間の違いを表現するときにのみ let を使う - id:onk のはてなブログ</a></li>
-<li><a href="https://blog.onk.ninja/2017/12/13/rspec_shigusa">Rails Developers Meetup 2017 で RSpec しぐさについて話した - onk.ninja</a></li>
+<li><a href="https://github.com/willnet/rspec-style-guide">willnet/rspec<span data-escaped-char>-</span>style<span data-escaped-char>-</span>guide: 可読性の高いテストコードを書くためのお作法集</a></li>
+<li><a href="https://onk.hatenablog.jp/entry/2023/02/26/221616">RSpec では context 間の違いを表現するときにのみ let を使う <span data-escaped-char>-</span> id:onk のはてなブログ</a></li>
+<li><a href="https://blog.onk.ninja/2017/12/13/rspec_shigusa">Rails Developers Meetup 2017 で RSpec しぐさについて話した <span data-escaped-char>-</span> onk<span data-escaped-char>.</span>ninja</a></li>
 </ul>
 
           </section>
