@@ -18,7 +18,7 @@ updated: 2025-01-20
 - 放置してたInstagramのアカウントを写真用に使うことにした
 	- https://www.instagram.com/ukstudio/
 
-## 過去
+## 過去のこと
 
 - [[2024年のふりかえり]]
 - [[2021年の近況]]
