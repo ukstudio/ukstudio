@@ -1,7 +1,8 @@
 PATH
-  remote: /Users/yuki-akamatsu/ghq/github.com/ukstudio/florby
+  remote: ../florby
   specs:
     florby (0.1.0)
+      bigdecimal
       commonmarker
       sitemap_generator
       webrick
@@ -9,19 +10,17 @@ PATH
 GEM
   remote: https://rubygems.org/
   specs:
+    bigdecimal (3.1.9)
     builder (3.3.0)
-    commonmarker (1.1.5)
-      rb_sys (~> 0.9)
-    commonmarker (1.1.5-arm64-darwin)
-    rb_sys (0.9.102)
+    commonmarker (2.3.0-arm64-darwin)
     sitemap_generator (6.3.0)
       builder (~> 3.0)
-    webrick (1.8.1)
+    webrick (1.9.1)
 
 PLATFORMS
   arm64-darwin-22
   arm64-darwin-23
-  ruby
+  arm64-darwin-24
 
 DEPENDENCIES
   florby!

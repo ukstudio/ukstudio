@@ -2,4 +2,4 @@
 
 source "https://rubygems.org"
 
-gem 'florby', path: '/Users/yuki-akamatsu/ghq/github.com/ukstudio/florby'
+gem 'florby', path: '~/ghq/github.com/ukstudio/florby'
