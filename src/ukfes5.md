@@ -24,7 +24,7 @@ updated: 2025-05-14
 - 14:20 - 15:10 ukstudio
 - 15:10 - 16:00 sorah
 - 16:00 - 16:50 MaySoMusician
-- 16:50 - 17:40 SpicyCoffee
+- 16:50 - 17:40 asonas
 - 17:40 - 18:30 terfno
 - 18:30 - 19:00 クローズ & 撤収
 
