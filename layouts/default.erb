@@ -33,20 +33,23 @@
   </head>
   <body class="md:text-base text-sm">
     <div class="container max-w-screen-lg mx-auto py-4 px-4">
-      <header>
-        <a href="/" class="font-extrabold text-lg no-underline">ukstudio</a>
-      </header>
       <main class="flex flex-col md:flex-row">
         <article class="flex-1 max-2-3xl pb-4">
-          <header>
-            <h1 class="mb-0"><%= page.title %></h1>
-            <p class="mt-0" style="color: #999">Updated on <%= page.updated.strftime('%b %e, %Y') %></p>
-          </header>
-          <section class="article-body break-all">
-            <%= page.content %>
-          </section>
+          <div class="max-w-[65ch] mx-auto">
+            <header class="mb-8">
+              <a href="/" class="font-extrabold text-lg no-underline">ukstudio</a>
+            </header>
+            <header>
+              <h1 class="mb-0"><%= page.title %></h1>
+              <p class="mt-0 text-gray-500 text-sm">Updated on <%= page.updated.strftime('%b %e, %Y') %></p>
+            </header>
+            <section class="article-body break-all">
+              <%= page.content %>
+            </section>
+          </div>
         </article>
         <aside class="w-64 md:pl-8 order-last">
+          <div class="mb-8">&nbsp;</div>
           <h2 class='mt-0'>Backlinks</h2>
           <% unless page.meta['backlinks'].empty? %>
             <ul>

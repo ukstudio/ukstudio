@@ -4,8 +4,11 @@
 
 :root {
   --color-background: #fff;
-  --color-text: #333;
+  --color-text: #1a1a1a;
   --color-link: #08548a;
+  --color-text-muted: #666;
+  --color-border: #e5e7eb;
+  --color-code-bg: #f3f4f6;
 }
 
 html {
@@ -16,44 +19,85 @@ html {
 body {
   color: var(--color-text);
   background-color: var(--color-background);
+  font-family: 'Helvetica Neue', 'Noto Sans CJK JP', 'Noto Sans JP', 'Segoe UI', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 a {
   color: var(--color-link);
   text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: color 0.15s ease-in-out;
+}
+
+a:hover {
+  color: #0a6bb8;
+  text-decoration-thickness: 2px;
 }
 
 li {
 }
 
 .article-body {
+  
   img {
-    width: 50%;
+    @apply my-6 rounded-lg shadow-sm;
+    max-width: 100%;
+    height: auto;
+    display: block;
     margin-left: auto;
     margin-right: auto;
+  }
+  
+  code {
+    @apply px-1 py-0.5 text-sm rounded;
+    background-color: var(--color-code-bg);
+    font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Fira Code', monospace;
+  }
+  
+  pre {
+    @apply my-6 p-4 rounded-lg overflow-x-auto text-sm;
+    background-color: var(--color-code-bg);
+    
+    code {
+      @apply p-0;
+      background-color: transparent;
+    }
+  }
+  
+  hr {
+    @apply my-8 border-t border-gray-200;
+  }
+  
+  strong {
+    @apply font-semibold;
+  }
+  
+  em {
+    @apply italic;
   }
 }
 
 @layer base {
   h1 {
-    @apply text-2xl mt-2 font-bold;
+    @apply text-3xl mt-2 mb-4 font-bold leading-tight;
   }
 
   h2 {
-    @apply text-xl mt-8 mb-4 font-bold;
-    
+    @apply text-2xl mt-12 mb-6 font-bold leading-tight;
   }
 
   h3 {
-    @apply text-lg mt-6 mb-4 font-bold;
+    @apply text-xl mt-8 mb-4 font-semibold leading-tight;
   }
 
   h4 {
-    @apply text-base mt-6 mb-4 font-bold;
+    @apply text-lg mt-6 mb-3 font-semibold;
   }
 
   p {
-    @apply my-4 leading-6;
+    @apply my-6 leading-7;
   }
 
   img {
@@ -61,15 +105,31 @@ li {
   }
 
   ul {
-    @apply list-disc px-4 ml-6;
+    @apply list-disc my-6 ml-6;
+  }
+  
+  ol {
+    @apply list-decimal my-6 ml-6;
   }
 
   li {
+    @apply mb-2 leading-7;
+  }
+  
+  /* ネストしたリストの余白調整 */
+  li > ul,
+  li > ol {
+    @apply my-2 ml-6;
+  }
+  
+  /* ネストしたリスト内のアイテム間隔も調整 */
+  li > ul > li,
+  li > ol > li {
     @apply mb-1;
   }
 
   blockquote {
-    @apply ml-8 pl-4 border-l-4;
+    @apply my-6 ml-0 pl-6 border-l-4 border-gray-300 italic text-gray-600;
   }
 
   table {
