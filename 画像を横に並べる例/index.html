@@ -1,0 +1,91 @@
+<!doctype html>
+<html prefix="og: http://ogp.me/ns#">
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9XZH9K61N7"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-9XZH9K61N7');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="og:image" content="https://ukstudio.jp/assets/images/ukstudio.jpg">
+    <meta name="og:site_name" content="ukstudio.jp">
+    <meta name="og:type" content="article">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:image" content="https://ukstudio.jp/assets/images/ukstudio.jpg">
+    
+    <meta name="og:title" content="画像を横に並べる例 - ukstudio">
+    <title>画像を横に並べる例 - ukstudio</title>
+    
+
+    <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
+    <link href="/assets/stylesheets/styles.css" rel="stylesheet">
+    <script src="//instant.page/5.1.1" type="module" integrity="sha384-MWfCL6g1OTGsbSwfuMHc8+8J2u71/LA8dzlIN3ycajckxuZZmF+DNjdm7O6H3PSq"></script>
+  </head>
+  <body class="md:text-base text-sm">
+    <div class="container max-w-screen-lg mx-auto py-4 px-4">
+      <main class="flex flex-col md:flex-row">
+        <article class="flex-1 max-2-3xl pb-4">
+          <div class="max-w-[65ch] mx-auto">
+            <header class="mb-8">
+              <a href="/" class="font-extrabold text-lg no-underline">ukstudio</a>
+            </header>
+            <header>
+              <h1 class="mb-0">画像を横に並べる例</h1>
+              <p class="mt-0 text-gray-500 text-sm">Updated on Jan  8, 2026</p>
+            </header>
+            <section class="article-body break-all">
+              <h2><a href="#画像を2枚横に並べる方法" aria-hidden="true" class="anchor" id="画像を2枚横に並べる方法"></a>画像を2枚横に並べる方法</h2>
+<h3><a href="#方法1-通常のグリッド表示" aria-hidden="true" class="anchor" id="方法1-通常のグリッド表示"></a>方法1: 通常のグリッド表示</h3>
+<p>画像の高さが異なっても、それぞれの高さを保ちながら横に並べます。</p>
+<div class="image-grid">
+  <img src="/assets/images/sample1.jpg" alt="画像1">
+  <img src="/assets/images/sample2.jpg" alt="画像2">
+</div>
+<h3><a href="#方法2-同じ高さで表示" aria-hidden="true" class="anchor" id="方法2-同じ高さで表示"></a>方法2: 同じ高さで表示</h3>
+<p>画像を300pxの高さで統一して表示します。</p>
+<div class="image-grid-equal">
+  <img src="/assets/images/sample3.jpg" alt="画像3">
+  <img src="/assets/images/sample4.jpg" alt="画像4">
+</div>
+<h3><a href="#使い方" aria-hidden="true" class="anchor" id="使い方"></a>使い方</h3>
+<ol>
+<li>
+<p><strong>通常のグリッド</strong>: <code>&lt;div class=&quot;image-grid&quot;&gt;</code>で画像を囲む</p>
+<ul>
+<li>画像の元の高さを保持</li>
+<li>モバイルでは縦に並ぶ</li>
+</ul>
+</li>
+<li>
+<p><strong>高さを揃える</strong>: <code>&lt;div class=&quot;image-grid-equal&quot;&gt;</code>で画像を囲む</p>
+<ul>
+<li>高さ300pxで統一</li>
+<li>画像は自動的にトリミング（object-fit: cover）</li>
+<li>モバイルでは縦に並ぶ</li>
+</ul>
+</li>
+</ol>
+<h3><a href="#3枚以上並べたい場合" aria-hidden="true" class="anchor" id="3枚以上並べたい場合"></a>3枚以上並べたい場合</h3>
+<p>CSSをカスタマイズして、3列や4列のグリッドも作成できます。</p>
+
+            </section>
+          </div>
+        </article>
+        <aside class="w-64 md:pl-8 order-last">
+          <div class="mb-8">&nbsp;</div>
+          <h2 class='mt-0'>Backlinks</h2>
+          
+              <p>No backlinks found.</p>
+          
+        </aside>
+      </main>
+    </div>
+  </body>
+</html>
