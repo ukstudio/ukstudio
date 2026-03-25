@@ -2,6 +2,7 @@ PATH
   remote: .
   specs:
     florby (0.1.0)
+      bigdecimal
       commonmarker
       sitemap_generator
       webrick
@@ -9,16 +10,18 @@ PATH
 GEM
   remote: https://rubygems.org/
   specs:
+    bigdecimal (4.0.1)
     builder (3.2.4)
-    commonmarker (1.0.4-arm64-darwin)
+    commonmarker (0.23.12)
     rake (13.1.0)
     sitemap_generator (6.3.0)
       builder (~> 3.0)
-    webrick (1.8.1)
+    webrick (1.8.2)
 
 PLATFORMS
   arm64-darwin-21
   arm64-darwin-22
+  x86_64-linux
 
 DEPENDENCIES
   florby!
