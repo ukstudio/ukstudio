@@ -1,0 +1,28 @@
+PATH
+  remote: .
+  specs:
+    florby (0.1.0)
+      commonmarker
+      sitemap_generator
+      webrick
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    builder (3.2.4)
+    commonmarker (1.0.4-arm64-darwin)
+    rake (13.1.0)
+    sitemap_generator (6.3.0)
+      builder (~> 3.0)
+    webrick (1.8.1)
+
+PLATFORMS
+  arm64-darwin-21
+  arm64-darwin-22
+
+DEPENDENCIES
+  florby!
+  rake (~> 13.0)
+
+BUNDLED WITH
+   2.3.26
