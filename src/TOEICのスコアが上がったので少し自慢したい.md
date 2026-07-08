@@ -3,6 +3,8 @@ created: 2018-11-19
 updated: 2018-11-19
 title: TOEICのスコアが上がったので少し自慢したい
 aliases: ["/2018/11/19/toeic/"]
+tags:
+  - essay
 ---
 
 8月〜10月の3ヶ月間、[ENGLISH COMPANY](https://englishcompany.jp/)に通ってTOEICのスコアが完全に目標通りとまではいかなくても8割ぐらい達成できたのでちょっとだけ自慢したい。

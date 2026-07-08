@@ -3,6 +3,8 @@ title: AT限定解除した
 created: 2026-01-03
 updated: 2026-01-03
 permalink: /got-manual-transmission-license
+tags:
+  - essay
 ---
 車の免許を取得したのが、確か2017年の冬。当時はMT車を乗る予定もなかったのでAT限定の免許を取得した。
 

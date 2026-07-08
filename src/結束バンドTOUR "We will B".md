@@ -4,6 +4,8 @@ created: 2025-02-17
 updated: 2025-02-17
 permalink: kessoku-band-we-will-b
 aliases: []
+tags:
+  - essay
 ---
 2025年2月15日に開催された結束バンドのライブ、We will Bに参加することができたのでその感想記事。
 
