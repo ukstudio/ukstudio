@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://ukstudio.jp/</loc>
-    <lastmod>2026-02-06</lastmod>
+    <lastmod>2026-07-08</lastmod>
   </url>
   <url>
     <loc>https://ukstudio.jp/2025-wrapup/</loc>
@@ -227,5 +227,9 @@
   <url>
     <loc>https://ukstudio.jp/%E3%81%A4%E3%81%84%E3%81%A3%E3%81%9F%E3%83%BCBOT%E4%BD%9C%E8%80%85%E3%81%AB%E3%81%8A%E9%A1%98%E3%81%84%E3%81%97%E3%81%9F%E3%81%84%E3%81%93%E3%81%A8/</loc>
     <lastmod>2009-08-12</lastmod>
+  </url>
+  <url>
+    <loc>https://ukstudio.jp/tags/essay/</loc>
+    <lastmod>2026-01-03</lastmod>
   </url>
 </urlset>
