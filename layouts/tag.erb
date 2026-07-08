@@ -1,0 +1,56 @@
+<!doctype html>
+<html prefix="og: http://ogp.me/ns#">
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9XZH9K61N7"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-9XZH9K61N7');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>#<%= h tag %> - <%= config.title %></title>
+    <meta property="og:title" content="#<%= h tag %> - <%= config.title %>">
+    <meta property="og:image" content="<%= config.og_image %>">
+    <meta property="og:site_name" content="<%= config.title %>">
+    <meta property="og:type" content="website">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:image" content="<%= config.og_image %>">
+
+    <link rel="canonical" href="<%= config.host %>/tags/<%= tag %>/">
+    <link rel="alternate" type="application/atom+xml" title="<%= config.title %>" href="/feed.xml">
+
+    <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
+    <link href="/assets/stylesheets/styles.css" rel="stylesheet">
+    <script src="//instant.page/5.1.1" type="module" integrity="sha384-MWfCL6g1OTGsbSwfuMHc8+8J2u71/LA8dzlIN3ycajckxuZZmF+DNjdm7O6H3PSq"></script>
+  </head>
+  <body class="md:text-base text-sm">
+    <div class="container max-w-screen-lg mx-auto py-4 px-4">
+      <main>
+        <div class="max-w-[65ch] mx-auto">
+          <header class="mb-8">
+            <a href="/" class="font-extrabold text-lg no-underline"><%= config.title %></a>
+          </header>
+          <header>
+            <h1 class="mb-0">#<%= h tag %></h1>
+          </header>
+          <section class="article-body">
+            <ul>
+              <% pages.each do |page| %>
+                <li>
+                  <a href="<%= page.permalink %>"><%= h page.title %></a>
+                  <span class="text-gray-500 text-sm"><%= page.updated.strftime('%Y-%m-%d') %></span>
+                </li>
+              <% end %>
+            </ul>
+          </section>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

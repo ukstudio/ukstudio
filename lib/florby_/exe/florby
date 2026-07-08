@@ -1,5 +1,0 @@
-#!/usr/bin/env ruby
-
-require "florby"
-
-Florby::CLI.run(ARGV)

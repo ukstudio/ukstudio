@@ -1,0 +1,14 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Tag: <%= h tag %> - <%= config.title %></title>
+  </head>
+  <body>
+    <h1><%= h tag %></h1>
+    <ul>
+      <% pages.each do |page| -%>
+        <li><a href="<%= page.permalink %>"><%= h page.title %></a></li>
+      <% end -%>
+    </ul>
+  </body>
+</html>

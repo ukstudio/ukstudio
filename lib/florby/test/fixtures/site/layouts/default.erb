@@ -1,0 +1,15 @@
+<!doctype html>
+<html>
+  <head>
+    <title><%= h page.title %> - <%= config.title %></title>
+    <meta name="description" content="<%= h page.description %>">
+  </head>
+  <body>
+    <article><%= content %></article>
+    <aside id="backlinks">
+      <% site.backlinks(page).each do |source| -%>
+        <a href="<%= source.permalink %>"><%= h source.title %></a>
+      <% end -%>
+    </aside>
+  </body>
+</html>

@@ -13,21 +13,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="og:image" content="https://ukstudio.jp/assets/ukstudio.jpg">
-    <meta name="og:site_name" content="ukstudio.jp">
-    <meta name="og:type" content="website">
+    <title><%= config.title %></title>
+    <meta property="og:title" content="<%= config.title %>">
+    <meta name="description" content="<%= h config.description %>">
+    <meta property="og:description" content="<%= h config.description %>">
+    <meta property="og:url" content="<%= config.host %>/">
+    <meta property="og:image" content="<%= config.og_image %>">
+    <meta property="og:site_name" content="<%= config.title %>">
+    <meta property="og:type" content="website">
 
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:image" content="https://ukstudio.jp/assets/images/ukstudio.jpg">
+    <meta name="twitter:image" content="<%= config.og_image %>">
 
-    <% if page.title == 'index' %>
-    <meta name="og:title" content="ukstudio">
-    <title>ukstudio</title>
-    <% else %>
-    <meta name="og:title" content="<%= page.title %> - ukstudio">
-    <title><%= page.title %> - ukstudio</title>
-    <% end %>
-
+    <link rel="canonical" href="<%= config.host %>/">
+    <link rel="alternate" type="application/atom+xml" title="<%= config.title %>" href="/feed.xml">
 
     <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
     <link href="/assets/stylesheets/styles.css" rel="stylesheet">
@@ -36,36 +35,36 @@
   <body class="md:text-sm text-base">
     <div class="container max-w-4xl min-w-80 mx-auto px-6">
       <header class="py-4">
-        <a href="/" class="font-extrabold text-3xl">ukstudio</a>
+        <a href="/" class="font-extrabold text-3xl"><%= config.title %></a>
       </header>
       <main>
-        <%= page.content %>
+        <%= content %>
 
         <h2>Newest notes</h2>
         <div class="flex flex-wrap">
-          <% collection.pages.take(15).each do |page| %>
+          <% site.pages.take(15).each do |note| %>
             <div class="flex-1 shrink min-w-64">
               <div class="p-4 h-86">
                 <div style="background-color: #3b81b5; position: relative" class="py-4 rounded-lg">
                   <div class="h-60 w-36 mx-auto overflow-hidden bg-white">
                     <div class="w-[620px]" style="transform: scale(0.2); transform-origin: top left;">
                       <section class="mx-auto w-[480px] note-main-content">
-                        <h1 class="text-center"><%= page.title %></h1>
+                        <h1 class="text-center"><%= h note.title %></h1>
                         <ul class="list-none text-sm text-right py-2">
-                          <li>Published on <%= page.created.strftime('%Y-%m-%d') %></li>
-                          <li>Updated on <%= page.updated.strftime('%Y-%m-%d') %></li>
+                          <li>Published on <%= note.created.strftime('%Y-%m-%d') %></li>
+                          <li>Updated on <%= note.updated.strftime('%Y-%m-%d') %></li>
                         </ul>
                         <hr>
-                        <%= page.content %>
+                        <%= content(note) %>
                       </section>
                     </div>
                   </div>
-                  <a href="<%= page.permalink %>" style="position: absolute; top: 0; left: 0; bottom: 0; right: 0;"></a>
+                  <a href="<%= note.permalink %>" style="position: absolute; top: 0; left: 0; bottom: 0; right: 0;"></a>
                 </div>
                 <div class="text-center w-full bg-white">
                   <aside class="mt-4">
-                    <%= page.created.strftime('%Y-%m-%d') %><br/>
-                    <a href="<%= page.permalink %>"><%= page.title %></a>
+                    <%= note.created.strftime('%Y-%m-%d') %><br/>
+                    <a href="<%= note.permalink %>"><%= h note.title %></a>
                   </aside>
                 </div>
               </div>

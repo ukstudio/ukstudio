@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "deploy": "rm -rf ./_site && npx @11ty/eleventy && gh-pages -d ./_site"
+    "css": "tailwindcss -i ./assets/styles.css -o ./src/assets/stylesheets/styles.css --minify",
+    "deploy": "bundle exec florby build && npm run css && bundle exec florby build && gh-pages -d ./_build"
   },
   "repository": {
     "type": "git",
