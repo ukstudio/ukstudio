@@ -1,0 +1,887 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>ukstudio</title>
+  <subtitle>ukstudio（赤松 祐希）の個人サイト。仕事、趣味問わずざっくばらんにテキストを置いています。</subtitle>
+  <link href="https://ukstudio.jp/feed.xml" rel="self"/>
+  <link href="https://ukstudio.jp/"/>
+  <id>https://ukstudio.jp/</id>
+  <updated>2026-01-07T15:00:00Z</updated>
+  <author><name>赤松 祐希</name></author>
+  <entry>
+  <title>2025年のふりかえり</title>
+  <link href="https://ukstudio.jp/2025-wrapup/"/>
+  <id>https://ukstudio.jp/2025-wrapup/</id>
+  <published>2026-01-07T15:00:00Z</published>
+  <updated>2026-01-07T15:00:00Z</updated>
+  <summary>2025年のふりかえり。 仕事 2025年の3月いっぱいでクックパッドを退職し、4月からIVRyで働くこととなった。4月は全社合宿やRubyKaigi 2025であったりとバタバタしていたが、5月以降は本格的に開発に携わることに。IVRyで</summary>
+  <content type="html">&lt;p&gt;2025年のふりかえり。&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;#仕事&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot; id=&quot;仕事&quot;&gt;&lt;/a&gt;仕事&lt;/h2&gt;
+&lt;p&gt;2025年の3月いっぱいでクックパッドを退職し、4月からIVRyで働くこととなった。4月は全社合宿やRubyKaigi 2025であったりとバタバタしていたが、5月以降は本格的に開発に携わることに。IVRyではIC(Individual Contributor)として入社したが、実際には評価を行なわない(組織上部下を持たない)だけで、開発をすすめる上で必要なプロジェクトマネジメント的なことはそれなりにやったりもしている。&lt;/p&gt;
+&lt;p&gt;2025年は主にプロダクトの開発をしているが、これまであまり経験したことのないような機能・領域の開発に携わることが多く、なかなか楽しい。IVRyの主要プロダクトであるアイブリーの固有の事情などもあり、技術的に成長したいという当初の目的はある程度満たせていると感じている。&lt;/p&gt;
+&lt;p&gt;一方で、それなりの疲弊も感じており、疲れていると判断や仕事の質が雑になる傾向があると最近感じているので、仕事におけるタフさや持久力は身に付けたい。もちろん業務量の調整というのもあるが、期待されている役割もそれなりにあるのでなかなか難しいところではある。&lt;/p&gt;
+&lt;p&gt;なんにせよ、トータルでは楽しいと感じており、転職して良かったなと思っている。&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;#ruby&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot; id=&quot;ruby&quot;&gt;&lt;/a&gt;Ruby&lt;/h2&gt;
+&lt;p&gt;仕事では引き続きRubyを使って開発をしている。ただ、コロナ禍以降、Rubyコミュニティでどう過ごしたらいいか分からなくなっており、ちょっと課題に感じている。Rubyコミュニティに限らず、多数の人がいる場所で積極的にコミュニケーションを取る能力が失なわれてしまった。&lt;/p&gt;
+&lt;p&gt;仕事でそれなりに疲弊しているのは前職からも続いており、Rubyそのものに対するモチベーションを見失っているのも問題のひとつとしてある。RubyやRubyコミュニティに対する興味、自分自身の対外的なアウトプットがなければ、Rubyが共通の話題として機能しないため、結局お互いに何を話したらいいのかわからなくなってしまう。&lt;/p&gt;
+&lt;p&gt;今年もRubyKaigiやその他イベントには参加するつもりではいるので、徐々にRubyコミュニティが自分の居場所だと再度感じることができるようにしていきたいと思っている。&lt;/p&gt;
+&lt;p&gt;そういえば今年は久々にRWCに参加した。なんとなく行こうかな〜ぐらいに思っていたところ、IVRyがRuby biz Grand prixで受賞したため、社の代表として参加することになった。授賞式というものに全然慣れていなのでめちゃくちゃ緊張したが、ふりかえってみればおもしろい機会だったなと思う。&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;#写真&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot; id=&quot;写真&quot;&gt;&lt;/a&gt;写真&lt;/h2&gt;
+&lt;p&gt;2025年の3月にOM-3を購入し、写真を撮りに出掛けることが多くなった。買った当初に比べると頻度自体は落ちたが、今でも時々カメラを持って散策することがある。元々歩くこと自体が好きなので、適当に歩きながら写真を取るのはなかなか楽しく、自分と相性が良い趣味だと思う。一方で、写真の現像にはあまり気が乗らず、最近は撮った写真はそのままになりがちだ。&lt;/p&gt;
+&lt;div class=&quot;image-grid&quot;&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/20250321-P3210122.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/20250325-P3250028.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;h2&gt;&lt;a href=&quot;#音楽&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot; id=&quot;音楽&quot;&gt;&lt;/a&gt;音楽&lt;/h2&gt;
+&lt;p&gt;ドラムは2024年からレッスンにも通っていたが、レッスンは一旦区切りをつけ2025年の9月から通うのを止めた。練習自体はゆるく続けている。2025年はライブは主催する余裕があまりなかったので開催しなかったが、来年は元気があればやるという感じ。&lt;/p&gt;
+&lt;p&gt;DJもゆるく続けており、IVRyはDJを趣味にしている人がいて、オフィスにDJ機材もあるので、今年はIVRyのDJイベントにDJとして参加した。なんとなく自分のDJのスタイルも見えてきたので2026年も機会があれば人前でDJしていきたいと思う。&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;#旅行&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot; id=&quot;旅行&quot;&gt;&lt;/a&gt;旅行&lt;/h2&gt;
+&lt;h3&gt;&lt;a href=&quot;#愛媛&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot; id=&quot;愛媛&quot;&gt;&lt;/a&gt;愛媛&lt;/h3&gt;
+&lt;p&gt;RubyKaigi 2025が愛媛県・松山での開催だったので、開催終了後の土日を利用して観光。レンタカーを借り、宇和島の方にも行った。松山はどことなく時間がのんびりしているし、海もきれいだったので、また行ってみたい場所のひとつになった。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;/ehime/&quot;&gt;愛媛県&lt;/a&gt; のページに少し写真をアップしてある。&lt;/p&gt;
+&lt;h3&gt;&lt;a href=&quot;#宮城&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot; id=&quot;宮城&quot;&gt;&lt;/a&gt;宮城&lt;/h3&gt;
+&lt;p&gt;クックパッドの有給休暇の消化期間中に1泊2日で仙台へ。1泊2日と言いつつ、強風で新幹線が止まってしまったため、到着したのは1日目の24時近くになってしまった。なので実質的には1日も観光できていない。色々行きたいところもあったが、レンタカーで秋保温泉に行くぐらいの旅行となってしまった。&lt;/p&gt;
+&lt;h3&gt;&lt;a href=&quot;#島根鳥取&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot; id=&quot;島根鳥取&quot;&gt;&lt;/a&gt;島根・鳥取&lt;/h3&gt;
+&lt;p&gt;RWCで島根の松江へ。RubyKaigi同様に開催の終了後の土日を利用して観光。松江周辺は何度か来たことがあったので、今回は足を伸ばして砂丘を見に鳥取へ。鳥取砂丘は遠近感が狂う感じがおもしろかったし、あまり混雑もしていないのでよかったが、わざわざ行く場所かというとちょっと微妙かもしれない。なにかのついでぐらいが丁度良さそう。&lt;/p&gt;
+&lt;p&gt;松江では庭園を見に足立美術館へ。ちょっと混雑していたが、人工的に整えられた庭園は美しく、見ていておもしろかった。&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;#車&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot; id=&quot;車&quot;&gt;&lt;/a&gt;車&lt;/h2&gt;
+&lt;p&gt;割と唐突に車が欲しいという気分になり、車を買うことにした。免許がAT限定だったため、AT車でもいいかと思いつつ、趣味の車なら乗っていて楽しい車が欲しいよなということで、スポーツカーを検討する中でMT車も有りかなと思うようになった。&lt;/p&gt;
+&lt;p&gt;MT車はそれなりに不便なことはなんとなく知識では知ってはいるものの、走らせるのも楽しいとも聞く。スポーツカーはMT車で乗る人が多いということもあるし、一旦AT限定解除をして、MT車乗れるようになってから考えることにした。&lt;/p&gt;
+&lt;p&gt;というわけで&lt;a href=&quot;/got-manual-transmission-license/&quot;&gt;AT限定解除した&lt;/a&gt;わけだが、教習中に色々調べたり考えたりするうちに、MT車を買う気分になってしまったので教習が終わる前にMT車を発注してしまった。2026年の3月あたりが納期になりそうなので、おそらくRubyKaigi 2026には自分の車で行くと思われる。&lt;/p&gt;
+</content>
+</entry>
+<entry>
+  <title>AT限定解除した</title>
+  <link href="https://ukstudio.jp/got-manual-transmission-license/"/>
+  <id>https://ukstudio.jp/got-manual-transmission-license/</id>
+  <published>2026-01-02T15:00:00Z</published>
+  <updated>2026-01-02T15:00:00Z</updated>
+  <summary>車の免許を取得したのが、確か2017年の冬。当時はMT車を乗る予定もなかったのでAT限定の免許を取得した。 これまでAT限定で何も不自由なかったのだが、唐突に車を買う気になり、車を買うなら乗っていて楽しい車が良いのでいわゆるスポーツカーの購</summary>
+  <content type="html">&lt;p&gt;車の免許を取得したのが、確か2017年の冬。当時はMT車を乗る予定もなかったのでAT限定の免許を取得した。&lt;/p&gt;
+&lt;p&gt;これまでAT限定で何も不自由なかったのだが、唐突に車を買う気になり、車を買うなら乗っていて楽しい車が良いのでいわゆるスポーツカーの購入を2025年の12月に検討しはじめた。最初はAT車でいいかなと思っていたが、後々でMT車が良かったと思っても嫌なので、まずはMT車に乗ってから考えようということでAT限定解除をすることにした(結局、MT車を買うことに決めるのだが、その話はまた後日)。&lt;/p&gt;
+&lt;p&gt;教習所には目黒駅と恵比須駅の間にある日の丸自動車学校に通うことにした。本当は近所の教習所に通うつもりでいたが、予約を取れるのが2026年になってしまうということで、色々問い合わせた結果予約が比較的取れそうな日の丸自動車学校にした。&lt;/p&gt;
+&lt;p&gt;ただ、日の丸自動車学校でかかる費用は最初検討していた教習所より3〜4万円ほど高く、倍近い金額になってしまったので金額だけで言うとあまりお勧めできない。それが理由なのかは不明だが、予約の枠の空きはそれなりにあったのでスケジュール的には助かった。教習の質も特別悪いとは思わなかった。そもそも比較するものが最初に通った教習所しかないのだが、多分普通のクオリティだとは思う。一方、教習所内のコースはあまり広くないし、高速教習もシミュレーターらしいので、金額のことも考えると基本的には他の教習所の方が良いとは思う(自分がお世話になった教習所を下げるようなことを言うのもあれだが…)&lt;/p&gt;
+&lt;p&gt;肝心の教習だが、当初思っていたよりは苦労した。最初は4時間の教習+検定で5回でMT車乗れるようになるのか〜と気楽に考えていたが、思ったよりシフト操作、クラッチ操作に苦労した。普段AT車に乗っていて運転で苦労した覚えはないし、AT車の免許を取ったときも何も苦労しなかったので楽観的に考えていたが、あまりにも初回の教習がグダグダだったので、同じ内容をもう1時限受けることにした(要は補講である)。最初は結構ショックを受けていたが、調べてみると4時間の教習だけで済む人はそこまで多くないという話もみかけたので、あまり気にしないことにした。&lt;/p&gt;
+&lt;p&gt;教習の中で坂道発進やクランク、S字、方向転換などあったが、結局シフト操作、クラッチ操作が大変だった。よく話題に上がる坂道発進は発進自体は問題なくできるのだが、クラッチペダルの操作が雑で車体がガックンと揺れることが多かった。今の車は性能がよいのでこれでも発進できるが、古い車だとエンストしたりするのかもしれない。&lt;/p&gt;
+&lt;p&gt;教習の時間が限られているので仕方ないと言えば仕方ないと思うが、教官も「クラッチ操作を丁寧に」と言うだけで、あまりコツらしいコツを教えてくれないので、YouTubeの動画見てイメージを掴んだり、家でのイメトレも何回もやったりした。現代は動画のコンテンツで色々と学べるのは本当にありがたい。YouTubeでは特に&lt;a href=&quot;https://www.youtube.com/@tsukinowaproduction&quot;&gt;ツキノワプロダクションの動画&lt;/a&gt;にお世話になった。おすすめ。&lt;/p&gt;
+&lt;p&gt;そんなわけで、補講はありつつも2025年内に無事AT限定解除をすることができた。AT限定解除は路上の教習がないので、これで路上に放り出されるのかということに多少の驚きはあるが、MT車の運転を安全に楽しんでいきたいと思う。&lt;/p&gt;
+</content>
+</entry>
+<entry>
+  <title>ukfes#5</title>
+  <link href="https://ukstudio.jp/ukfes5/"/>
+  <id>https://ukstudio.jp/ukfes5/</id>
+  <published>2025-05-13T15:00:00Z</published>
+  <updated>2025-05-13T15:00:00Z</updated>
+  <summary>6月1日(日)に池尻大橋のSWIPEを借りてDJイベントやります。気軽に遊びにきてください。 概要 日時: 2025年6月1日(日) 13:00 - 19:00 場所: SWIPE 池尻大橋 https://tabelog.com/toky</summary>
+  <content type="html">&lt;p&gt;6月1日(日)に池尻大橋のSWIPEを借りてDJイベントやります。気軽に遊びにきてください。&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;#概要&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot; id=&quot;概要&quot;&gt;&lt;/a&gt;概要&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;日時: 2025年6月1日(日) 13:00 - 19:00&lt;/li&gt;
+&lt;li&gt;場所: SWIPE 池尻大橋
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://tabelog.com/tokyo/A1317/A131705/13290380/&quot;&gt;https://tabelog.com/tokyo/A1317/A131705/13290380/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;料金: 無料&lt;/li&gt;
+&lt;li&gt;備考
+&lt;ul&gt;
+&lt;li&gt;入店時に最低1杯のドリンク注文をお願いします。&lt;/li&gt;
+&lt;li&gt;飲料の持ち込みは不可。食べ物の持ち込みはOK。&lt;/li&gt;
+&lt;li&gt;出入りは自由です。お好きな時間に遊びにきてください。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;&lt;a href=&quot;#タイムテーブル&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot; id=&quot;タイムテーブル&quot;&gt;&lt;/a&gt;タイムテーブル&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;13:00 - 13:30 オープン &amp;amp; 準備&lt;/li&gt;
+&lt;li&gt;13:30 - 14:20 taso0096&lt;/li&gt;
+&lt;li&gt;14:20 - 15:10 ukstudio&lt;/li&gt;
+&lt;li&gt;15:10 - 16:00 sorah&lt;/li&gt;
+&lt;li&gt;16:00 - 16:50 MaySoMusician&lt;/li&gt;
+&lt;li&gt;16:50 - 17:40 asonas&lt;/li&gt;
+&lt;li&gt;17:40 - 18:30 terfno&lt;/li&gt;
+&lt;li&gt;18:30 - 19:00 クローズ &amp;amp; 撤収&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;タイムテーブルは予告なく変わる可能性があります&lt;/p&gt;
+</content>
+</entry>
+<entry>
+  <title>所持しているカメラ機材</title>
+  <link href="https://ukstudio.jp/camera/"/>
+  <id>https://ukstudio.jp/camera/</id>
+  <published>2025-05-01T15:00:00Z</published>
+  <updated>2025-05-01T15:00:00Z</updated>
+  <summary>OM SYSTEM OM-3 ふとそろそろ新しいカメラ、できればレンズ交換できるカメラが欲しいな〜と考えていた日がちょうどOM SYSTEMからOM-3が発売される前日だったので、半ば勢いで購入。マイクロフォーサーズにちょっと興味もあったし</summary>
+  <content type="html">&lt;h2&gt;&lt;a href=&quot;#om-system-om-3&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot; id=&quot;om-system-om-3&quot;&gt;&lt;/a&gt;OM SYSTEM OM-3&lt;/h2&gt;
+&lt;p&gt;ふとそろそろ新しいカメラ、できればレンズ交換できるカメラが欲しいな〜と考えていた日がちょうどOM SYSTEMからOM-3が発売される前日だったので、半ば勢いで購入。マイクロフォーサーズにちょっと興味もあったし、カメラ自体の見た目も好み、ボディサイズも小さめということで使いやすそうだなというのが決め手でした。&lt;/p&gt;
+&lt;h3&gt;&lt;a href=&quot;#レンズ&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot; id=&quot;レンズ&quot;&gt;&lt;/a&gt;レンズ&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;M.ZUIKO DIGITAL ED 12-45mm F4.0 PRO&lt;/li&gt;
+&lt;li&gt;M.ZUIKO DIGITAL 25mm F1.8 II&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;RX1RIIと比べるとちょっと大きいですが、持ち歩くのにそこまで負担ではないのでなるべく持ち歩いて街中を撮っています。&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;#pentax-q手放し済み&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot; id=&quot;pentax-q手放し済み&quot;&gt;&lt;/a&gt;PENTAX Q(手放し済み)&lt;/h2&gt;
+&lt;p&gt;記憶が間違っていなければ自分で最初に購入したカメラです。Lightroomに保存されている写真を見る限りでは2013年に購入していたみたいです。最初の一台に買うようなカメラじゃない気もしつつ、小さいサイズがかわいくて結構気にいっていました。小さいなりにレンズを交換して撮る楽しみもあり、一眼カメラの楽しさはこのカメラに教わった気がします。&lt;/p&gt;
+&lt;p&gt;なかなか楽しいカメラではあったんですが、撮りたい被写体が増えるにつれ流石に物足りなくなったのでD7100を買ったあとはあまり出番はなくなってしまいました。&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;#nikon-d7100手放し済み&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot; id=&quot;nikon-d7100手放し済み&quot;&gt;&lt;/a&gt;Nikon D7100(手放し済み)&lt;/h2&gt;
+&lt;p&gt;PENTAX Qで満足できなくなったのが割とはやく、同年の2013年にAPS-C機であるD7100を購入しました。&lt;/p&gt;
+&lt;p&gt;当時ロードバイクに乗っていたのですが、ロードバイクのレースの写真を撮りたくなったというのが良いカメラが欲しくなった理由だったと思います。結構なスピードで動く被写体を撮る必要があったし、場合によってはそこそこ距離があったりもするので、連射スピードがはやく、かつしっかりとした望遠レンズが使えるカメラが欲しかったんですよね。&lt;/p&gt;
+&lt;p&gt;D7100は結構活躍してくれて2013年に購入してから2018年ぐらいまで使っていました。ただLightroomを見る限りは2016年、2017年はほとんど写真を撮っていなかったみたいです。2018年も思い出して引っ張りだして使ってみただけで、実質的には2013年から2015年にかけて使っていたという感じです。&lt;/p&gt;
+&lt;p&gt;使わなくなった理由ですが、1つはボディの大きさです。自分の撮影スタイル的に「撮影のためにでかける」というより「何かのついでに撮影する」ことが多く、荷物の量が増えるのがネックでした。もうひとつはしょうもない話ですが、どこかにぶつけたのか液晶が割れてしまい、修理に出すか迷っているうちにフェードアウトしてしまいました。&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;#sony-rx1rii&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot; id=&quot;sony-rx1rii&quot;&gt;&lt;/a&gt;Sony RX1RII&lt;/h2&gt;
+&lt;p&gt;たまたま新古品を見かけ、結構いい感じに値引きされていたので勢いで購入しました。2019年から使っていて、今でも時々使うお気に入りのカメラです。&lt;/p&gt;
+&lt;p&gt;2019年頃からあまり動体を撮ることがなく、ちょっとしたスナップがほとんどだったのでズームがないこのカメラでも十分でした。そもそもセンサーサイズがフルサイズだったので、ある程度クロップに耐えることができたというのもあります。&lt;/p&gt;
+&lt;p&gt;オートフォーカスがちょっと弱かったり、手ぶれ補正がなく夜使うのに苦労するなどありましたが、このボディサイズでセンサーがフルサイズ、写りも良いなど弱点が気にならないぐらい良いカメラでした。&lt;/p&gt;
+&lt;p&gt;旅行時にカバンに放り込んだり、たまに登山行くときもリュックのストラップ部分につけて持ち歩いたりと、ボディサイズの小ささを活かしたスナップ撮影にとても使いやすかったです。&lt;/p&gt;
+&lt;p&gt;願わくば後継機が出てほしいんですがどうなんでしょうね…&lt;/p&gt;
+</content>
+</entry>
+<entry>
+  <title>ソフトウェアエンジニアリング</title>
+  <link href="https://ukstudio.jp/software-engineering/"/>
+  <id>https://ukstudio.jp/software-engineering/</id>
+  <published>2025-04-30T15:00:00Z</published>
+  <updated>2025-04-30T15:00:00Z</updated>
+  <summary>私とRuby ソフトウェアテスト エンジニアリングマネジメント イテレーション開発においてゴールは変わるもの Git コミットメッセージの書き方 適切なコミットの粒度 越境する 個人の問題とチームの問題を区別する 本 Tidy First?</summary>
+  <content type="html">&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;/ruby-and-ukstudio/&quot;&gt;私とRuby&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;/software-testing/&quot;&gt;ソフトウェアテスト&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;/engineering-management/&quot;&gt;エンジニアリングマネジメント&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;/イテレーション開発においてゴールは変わるもの/&quot;&gt;イテレーション開発においてゴールは変わるもの&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Git
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;/my-commit-message-style/&quot;&gt;コミットメッセージの書き方&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;/commit-granularity/&quot;&gt;適切なコミットの粒度&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;/beyond-the-boundaries/&quot;&gt;越境する&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;/distinguishing-between-invidiual-issues-and-team-issues/&quot;&gt;個人の問題とチームの問題を区別する&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;本
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;/tidy-first/&quot;&gt;Tidy First?&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+</entry>
+<entry>
+  <title>趣味</title>
+  <link href="https://ukstudio.jp/interests/"/>
+  <id>https://ukstudio.jp/interests/</id>
+  <published>2025-04-30T15:00:00Z</published>
+  <updated>2025-04-30T15:00:00Z</updated>
+  <summary>音楽 2023年からドラムをはじめた。演奏の場が欲しいので、自分でイベントを主催し時々ライブをしている。たまにDJもやる。 ukfes 演奏する場は自分で用意すればいいってことで、主催してるイベント 電子ドラムの振動対策 自宅の電子ドラムの</summary>
+  <content type="html">&lt;h2&gt;&lt;a href=&quot;#音楽&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot; id=&quot;音楽&quot;&gt;&lt;/a&gt;音楽&lt;/h2&gt;
+&lt;p&gt;2023年からドラムをはじめた。演奏の場が欲しいので、自分でイベントを主催し時々ライブをしている。たまにDJもやる。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;/ukfes/&quot;&gt;ukfes&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;演奏する場は自分で用意すればいいってことで、主催してるイベント&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;/electronic-drums-vibration-reduction/&quot;&gt;電子ドラムの振動対策&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;自宅の電子ドラムの振動対策。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;&lt;a href=&quot;#写真&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot; id=&quot;写真&quot;&gt;&lt;/a&gt;写真&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.instagram.com/ukstudio/&quot;&gt;https://www.instagram.com/ukstudio/&lt;/a&gt; に写真をアップしている&lt;/li&gt;
+&lt;li&gt;メイン機材はOM SYSTEMのOM-3
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;/camera/&quot;&gt;所持しているカメラ機材&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;&lt;a href=&quot;#旅行&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot; id=&quot;旅行&quot;&gt;&lt;/a&gt;旅行&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;/ehime/&quot;&gt;愛媛県&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+</entry>
+<entry>
+  <title>愛媛県</title>
+  <link href="https://ukstudio.jp/ehime/"/>
+  <id>https://ukstudio.jp/ehime/</id>
+  <published>2025-04-30T15:00:00Z</published>
+  <updated>2025-04-30T15:00:00Z</updated>
+  <summary>2025年4月 RubyKaigi 2025で訪問。会場である松山市以外にも伊予市、宇和島市にも行った。 松山市 松山市は松山城や道後温泉がある。今回は松山城には行かなかったが、道後温泉には行った。道後温泉の近くには神社などもあり、ちょっと</summary>
+  <content type="html">&lt;h2&gt;&lt;a href=&quot;#2025年4月&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot; id=&quot;2025年4月&quot;&gt;&lt;/a&gt;2025年4月&lt;/h2&gt;
+&lt;p&gt;RubyKaigi 2025で訪問。会場である松山市以外にも伊予市、宇和島市にも行った。&lt;/p&gt;
+&lt;h3&gt;&lt;a href=&quot;#松山市&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot; id=&quot;松山市&quot;&gt;&lt;/a&gt;松山市&lt;/h3&gt;
+&lt;p&gt;松山市は松山城や道後温泉がある。今回は松山城には行かなかったが、道後温泉には行った。道後温泉の近くには神社などもあり、ちょっと散策するにはなかなか良いところだった。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/ehime/20250420-P4200383.jpg&quot; alt=&quot;&quot; /&gt;&lt;br /&gt;
+&lt;img src=&quot;/assets/images/ehime/20250420-P4200427.jpg&quot; alt=&quot;&quot; /&gt;&lt;br /&gt;
+&lt;img src=&quot;/assets/images/ehime/20250420-P4200456.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;h3&gt;&lt;a href=&quot;#伊予市&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot; id=&quot;伊予市&quot;&gt;&lt;/a&gt;伊予市&lt;/h3&gt;
+&lt;p&gt;伊予市という名前より下灘の方が有名かもしれない。下灘駅は小さい駅だが観光名所にもなっている。近くに臨時駐車場があり、約20台ほど停められるが満車の可能性も高く、駐車場に行く道も狭いので注意。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/ehime/20250419-P4190204.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;h3&gt;&lt;a href=&quot;#宇和島市&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot; id=&quot;宇和島市&quot;&gt;&lt;/a&gt;宇和島市&lt;/h3&gt;
+&lt;p&gt;鯛めしで有名な宇和島市。かどや本店に行ったが、かどや自体は松山市にもあるので注意。鯛めしはかなりうまい。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/ehime/20250419-P4190351.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/ehime/20250419-P4190289.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+</content>
+</entry>
+<entry>
+  <title>Resume - Yuki Akamatsu</title>
+  <link href="https://ukstudio.jp/resume/"/>
+  <id>https://ukstudio.jp/resume/</id>
+  <published>2025-04-30T15:00:00Z</published>
+  <updated>2024-12-18T15:00:00Z</updated>
+  <summary>私はRubyistであり、10年以上のRuby on RailsでのWebアプリケーション開発の経験を持ちます。最も得意なレイヤはデータベースのスキーマ設計からアプリケーションのロジックの実装です。 数人〜10数人程度のチームのマネジメント</summary>
+  <content type="html">&lt;p&gt;私はRubyistであり、10年以上のRuby on RailsでのWebアプリケーション開発の経験を持ちます。最も得意なレイヤはデータベースのスキーマ設計からアプリケーションのロジックの実装です。&lt;/p&gt;
+&lt;p&gt;数人〜10数人程度のチームのマネジメント・リードのも得意領域です。プロジェクトマネジメント、ピープルマネジメントの両方において担当することが可能です。また、スクラム開発を始めとしたアジャイル開発の知識・経験もあります。&lt;/p&gt;
+&lt;p&gt;チーム内外、職能問わず誰とても適切なコミュニケーションを行うことが可能です。そのため関係者が多いようなプロジェクトでも要件定義や技術設計、プロジェクト管理を行いながらチーム開発全体のリードを行うことができます。&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;#スキル&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot; id=&quot;スキル&quot;&gt;&lt;/a&gt;スキル&lt;/h2&gt;
+&lt;p&gt;自分にとって未知の技術においてもキャッチアップし、業務で活用することが可能ですが、ここではコアスキルに限定して記します。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;RubyおよびRuby on RailsによるWebアプリケーション開発&lt;/li&gt;
+&lt;li&gt;OpenAPIやREST、gRPCを活用したAPI開発&lt;/li&gt;
+&lt;li&gt;MySQLを使用したWebアプリケーション開発&lt;/li&gt;
+&lt;li&gt;スクラムを始めとしたアジャイルな開発プロセスの運用&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;&lt;a href=&quot;#職務経歴&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot; id=&quot;職務経歴&quot;&gt;&lt;/a&gt;職務経歴&lt;/h2&gt;
+&lt;h3&gt;&lt;a href=&quot;#株式会社ivry-2025年4月---現在&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot; id=&quot;株式会社ivry-2025年4月---現在&quot;&gt;&lt;/a&gt;株式会社IVRy 2025年4月 - 現在&lt;/h3&gt;
+&lt;p&gt;電話自動応答サービス「IVRy」のバックエンド開発を担当&lt;/p&gt;
+&lt;h3&gt;&lt;a href=&quot;#クックパッド株式会社-2018年3月---2025年3月&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot; id=&quot;クックパッド株式会社-2018年3月---2025年3月&quot;&gt;&lt;/a&gt;クックパッド株式会社 2018年3月 - 2025年3月&lt;/h3&gt;
+&lt;h4&gt;&lt;a href=&quot;#レシピサービス&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot; id=&quot;レシピサービス&quot;&gt;&lt;/a&gt;レシピサービス&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;2019年9月 - 2025年2月&lt;/li&gt;
+&lt;li&gt;バックエンドエンジニア、テックリード&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a href=&quot;https://cookpad.com&quot;&gt;https://cookpad.com&lt;/a&gt; の開発に従事。テックリードとしてユーザー向けの機能を開発するプロダクト開発のチームをリードしました。&lt;/p&gt;
+&lt;p&gt;大まかな責任範囲・領域を以下に記します。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;プロダクト開発チームが安定してユーザーに価値を届けられるようにチームビルディングおよびマネジメント&lt;/li&gt;
+&lt;li&gt;プロダクト開発チームの主にバックエンド領域の技術品質の担保&lt;/li&gt;
+&lt;li&gt;個々のメンバーと1 on 1を通したピープルマネジメント&lt;/li&gt;
+&lt;li&gt;個々のメンバーの評価とフィードバック&lt;/li&gt;
+&lt;li&gt;新卒・中途入社の採用活動および面接&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;以下に主要なプロジェクトとその概要を記します。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://techlife.cookpad.com/entry/2024/10/10/105832&quot;&gt;One Experience&lt;/a&gt; プロジェクトにおいてプロダクト開発チームのリードとして貢献。他のチームや海外のエンジニアとも連携し、日本版とグローバル版のシステム統合を完遂しました。
+&lt;ul&gt;
+&lt;li&gt;期間: 2023年10月 - 2024年10月&lt;/li&gt;
+&lt;li&gt;技術・ツール: Ruby on Rails, OpenAPI(Swagger), MySQL, CircleCI&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;iOS・Androidのアプリトップのリニューアルプロジェクトにチームリーダーとして貢献。10名程度で構成されるスクラムチームをプレイングマネージャーとして自身も開発を行いながらチームをリードしました。
+&lt;ul&gt;
+&lt;li&gt;期間: 2023年7月&lt;/li&gt;
+&lt;li&gt;技術・ツール: Ruby on Rails, Spring Framework, gRPC, GraphQL, MySQL&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;レシピ投稿訴求するためのiOS・Androidの新画面の開発プロジェクトのリードとして貢献。プロジェクト全体の管理・進行および、バックエンドの実装の設計と品質に責任を持ち、開発チームを牽引しました。
+&lt;ul&gt;
+&lt;li&gt;期間: 2022年5月 - 2022年7月&lt;/li&gt;
+&lt;li&gt;技術・ツール: Ruby on Rails, Spring Framework, gRPC, GraphQL, MySQL&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;新卒採用に貢献。&lt;a href=&quot;https://techlife.cookpad.com/entry/2019/09/06/180000&quot;&gt;Cookpad Summer Intenship 2019&lt;/a&gt;の実行委員長としてサマーインターンシップ全体の管理・運営を務めました。サマーインターンシップ以外にもワンデイのインターンシップや就業型インターンシップなど新卒採用全体に貢献しました。
+&lt;ul&gt;
+&lt;li&gt;期間: 2019年2月 - 2020年4月&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;&lt;a href=&quot;#料理トレーニングアプリ&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot; id=&quot;料理トレーニングアプリ&quot;&gt;&lt;/a&gt;料理トレーニングアプリ&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;2018年3月 - 2019年8月&lt;/li&gt;
+&lt;li&gt;バックエンドエンジニア&lt;/li&gt;
+&lt;li&gt;Ruby on Rails, GraphQL, PostgreSQL&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;新規事業の料理トレーニングアプリの開発にバックエンドエンジニアとして従事しました。新規事業であったため少人数のチーム開発を行い、バックエンド全般の開発を一人で担当しました。&lt;/p&gt;
+&lt;h3&gt;&lt;a href=&quot;#株式会社spice-life-2015年1月---2018年2月&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot; id=&quot;株式会社spice-life-2015年1月---2018年2月&quot;&gt;&lt;/a&gt;株式会社spice life 2015年1月 - 2018年2月&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;2015年1月にバックエンドエンジニアとして入社&lt;/li&gt;
+&lt;li&gt;2017年2月にCTOに就任&lt;/li&gt;
+&lt;li&gt;関連: &lt;a href=&quot;/株式会社spice lifeを退職します/&quot;&gt;株式会社spice lifeを退職します&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;&lt;a href=&quot;#オリジナルtシャツ販売サービスsteersの開発運営&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot; id=&quot;オリジナルtシャツ販売サービスsteersの開発運営&quot;&gt;&lt;/a&gt;オリジナルTシャツ販売サービス「STEERS」の開発・運営&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;2015年8月 - 2018年2月&lt;/li&gt;
+&lt;li&gt;事業責任者および開発責任者&lt;/li&gt;
+&lt;li&gt;Ruby on Rails, Vue.js, CircleCI, GitHub, PostgreSQL&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;社の代表からサービスのコンセプトを提示され、開発責任者として新規事業をゼロから立ち上げ、開発を行いました。当初は代表が事業責任者でしたが、2016年の3月のリリース後に事業責任者を引き継ぎました。開発だけでなく、新規事業の戦略やサービス設計、提携するプリント工場との価格交渉など事業全般に関与しました。&lt;/p&gt;
+&lt;h4&gt;&lt;a href=&quot;#ソーシャルギフトサービス-spotlights-の開発運営&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot; id=&quot;ソーシャルギフトサービス-spotlights-の開発運営&quot;&gt;&lt;/a&gt;ソーシャルギフトサービス spotlights の開発・運営&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;2015年1月 - 2015年7月&lt;/li&gt;
+&lt;li&gt;開発責任者&lt;/li&gt;
+&lt;li&gt;Ruby on Rails, Vue.js, CircleCI, GitHub, MySQL&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;2015年以前は業務委託としてバックエンド開発に従事していました。2015年に入社後、開発責任者としてチームをリードしました。実装全般とプロジェクトのスケジュール管理を担当し、開発以外にもユーザーインタビュー・テストなど、サービス設計もデザイナーと協力して行いました。&lt;/p&gt;
+</content>
+</entry>
+<entry>
+  <title>エンジニアリングマネジメント</title>
+  <link href="https://ukstudio.jp/engineering-management/"/>
+  <id>https://ukstudio.jp/engineering-management/</id>
+  <published>2025-02-25T15:00:00Z</published>
+  <updated>2025-02-27T15:00:00Z</updated>
+  <summary>エンジニアリングをマネジメントする エンジニアリングとは技術の知識やスキルを活用し、ユーザーのニーズを満たし、課題を解決するためのプロダクトを構築するための活動だと考える。エンジニアリングマネジメントとはこの活動においてユーザーに届く価値が</summary>
+  <content type="html">&lt;h2&gt;&lt;a href=&quot;#エンジニアリングをマネジメントする&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot; id=&quot;エンジニアリングをマネジメントする&quot;&gt;&lt;/a&gt;エンジニアリングをマネジメントする&lt;/h2&gt;
+&lt;p&gt;エンジニアリングとは技術の知識やスキルを活用し、ユーザーのニーズを満たし、課題を解決するためのプロダクトを構築するための活動だと考える。エンジニアリングマネジメントとはこの活動においてユーザーに届く価値がより大きくなるように努める&lt;a href=&quot;/management/&quot;&gt;マネジメント&lt;/a&gt;活動といえるだろう。&lt;/p&gt;
+&lt;p&gt;エンジニアリングの活動は広いため、どうしてもエンジニアリングマネジメントの役割や責任範囲も曖昧になる。ただし、自分の組織のエンジニアリングによるアウトプットが最大化するという点では共通するはずだ。 &lt;/p&gt;
+&lt;p&gt;Andrew Groveによるとマネージャーのアウトプットは自分のチーム+周辺チームのアウトプットとしている。基本的にエンジニアリングマネージャーであれば自分の担当する組織・チームが存在するはずだ。よって、如何に自分のチームおよび周辺チームのアウトプットを大きくするかを考えればよい。&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;#エンジニアリングマネジメントは複数のマネジメント領域で構成される&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot; id=&quot;エンジニアリングマネジメントは複数のマネジメント領域で構成される&quot;&gt;&lt;/a&gt;エンジニアリングマネジメントは複数のマネジメント領域で構成される&lt;/h2&gt;
+&lt;p&gt;エンジニアリングは我々のソフトウェア活動そのものであり、その活動においていくつかのマネジメント領域が存在する。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;テクニカルマネジメント&lt;/li&gt;
+&lt;li&gt;ピープルマネジメント&lt;/li&gt;
+&lt;li&gt;プロジェクトマネジメント&lt;/li&gt;
+&lt;li&gt;プロダクトマネジメント&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;上記の4つ以外にもあるかもしれないが、主要なのはこの辺りだろう。エンジニアリングマネージャー以外に、テックリードやプロジェクトマネージャー、プロダクトマネージャーがチームにいる場合その役割は分担できる。一方でチームや組織のサイズが小さく、各領域に専任のマネージャーがいない場合、エンジニアリングマネージャーが担当することが多いだろう。&lt;/p&gt;
+&lt;p&gt;もちろん、プロダクトマネージャーや、プロジェクトマネージャーが他のマネジメント領域を担うこともあると思うが、個人的な経験からするとエンジニアリングについて理解しているであろうエンジニアがエンジニアリングマネージャーとして他の領域も見ることが多い印象だ。&lt;/p&gt;
+&lt;p&gt;テクニカルマネジメントであれば、テックリードが不在の場合技術面におけるリードをエンジニアリングマネージャーが行なうこともあるだろう。いわゆるプレイングマネージャーと呼ばれる形になると思うが、Will LarsonのエレガントパズルではTLM(Tech Lead Manager)と呼ばれていた。 このようにエンジニアリングマネジメントにおいては責任範囲・担当領域が組織のフェーズや状況によって変わることが多い。&lt;/p&gt;
+</content>
+</entry>
+<entry>
+  <title>パーソナルナレッジマネジメントの構築</title>
+  <link href="https://ukstudio.jp/building-own-personal-knowledge-system/"/>
+  <id>https://ukstudio.jp/building-own-personal-knowledge-system/</id>
+  <published>2025-02-17T15:00:00Z</published>
+  <updated>2025-02-17T15:00:00Z</updated>
+  <summary>パーソナルナレッジマネジメント(Personal Knowledge Management : PKM)とは、集めた情報や自身の経験から得られた知識を集め、更にその知識を活用するための活動やシステム、手法などのこと。 いつ頃からパーソナルナ</summary>
+  <content type="html">&lt;p&gt;パーソナルナレッジマネジメント(Personal Knowledge Management : PKM)とは、集めた情報や自身の経験から得られた知識を集め、更にその知識を活用するための活動やシステム、手法などのこと。&lt;/p&gt;
+&lt;p&gt;いつ頃からパーソナルナレッジマネジメントという言葉が使われてきたのか調べてないが、&lt;a href=&quot;https://roamresearch.com/&quot;&gt;Roam Research&lt;/a&gt;や&lt;a href=&quot;https://obsidian.md/&quot;&gt;Obsidian&lt;/a&gt;のようなノートテイキングツールを使う人達の中で部分的に流行り出した印象を受ける。&lt;/p&gt;
+&lt;p&gt;個人的にも自分の知的資産をどのように発展、管理していくかということに一定興味があり、自分なりのやり方を模索している。&lt;/p&gt;
+&lt;p&gt;このサイトも自分のナレッジを管理するプロセスの一部として組み込もうとしてる最中。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/my-personal-knowledge-management.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;上記の図はざっくりとした今のプロセスである。基本的にまずは&lt;a href=&quot;https://logseq.com/&quot;&gt;Logseq&lt;/a&gt;に情報を集約している。細かいことは省くが、雑多なメモや日記のようなものから、それなりにちゃんと調べた技術的な情報などもまずはLogseqにまとめている。&lt;/p&gt;
+&lt;p&gt;Logseqではネットワーク構造を意識して各ノートのリンクを適宜紐づけたりしているが、基本的にはJournalsと呼ばれる日誌のページに雑に文章を書いている。そこから必要に応じてページに切り出したり、別のページに追記したりしている。&lt;/p&gt;
+&lt;p&gt;Logseqでのノート管理については &lt;a href=&quot;/ノート管理はネットワーク構造で行なう/&quot;&gt;ノート管理はネットワーク構造で行なう&lt;/a&gt; に大まかな方針を書いている。&lt;/p&gt;
+&lt;p&gt;Logseqはプライベートな環境で運用しているので、そこから外部に公開できそうなものを抽出し、このサイトで公開していく。Obsidianで管理しているMarkdownファイルをHTMLに変換したものをそのままGitHub Pagesで公開しているので、Obsidianとukstudio.jpの内容に差は基本的にはない。&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;#参考にしているもの&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot; id=&quot;参考にしているもの&quot;&gt;&lt;/a&gt;参考にしているもの&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;思考の整理学のメタ・ノート
+&lt;ul&gt;
+&lt;li&gt;LogseqのJournalsから個別のページ、さらに ukstudio.jp で公開した記事という三段階の流れは思考の整理学のメタ・ノートを少し参考にしている。思考の整理学では思い付きを手帖にメモし、まずはそれを寝かせる。寝かせたあとにネタとして脈がありそうなものを別のノートに転記し、さらに寝かせる。そしてそこからさらに良さそうなものを別のノート(メタ・ノート)に転記するという流れとなっている。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Zettelkasten&lt;/li&gt;
+&lt;li&gt;Evergreen Notes
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://notes.andymatuschak.org/Evergreen_notes&quot;&gt;https://notes.andymatuschak.org/Evergreen_notes&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;/digital-garden/&quot;&gt;Digital Garden&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;&lt;a href=&quot;#notes&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot; id=&quot;notes&quot;&gt;&lt;/a&gt;Notes&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;/私の書く習慣/&quot;&gt;私の書く習慣&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;私がノートを取るようになったきっかけについて&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+</entry>
+<entry>
+  <title>結束バンドTOUR &quot;We will B</title>
+  <link href="https://ukstudio.jp/kessoku-band-we-will-b/"/>
+  <id>https://ukstudio.jp/kessoku-band-we-will-b/</id>
+  <published>2025-02-16T15:00:00Z</published>
+  <updated>2025-02-16T15:00:00Z</updated>
+  <summary>2025年2月15日に開催された結束バンドのライブ、We will Bに参加することができたのでその感想記事。 ZEPP TOUR 2024 &quot;We will&quot;には残念ながらチケットが当たらず、We will Bも先行抽選が外れ諦めていたと</summary>
+  <content type="html">&lt;p&gt;2025年2月15日に開催された結束バンドのライブ、We will Bに参加することができたのでその感想記事。&lt;/p&gt;
+&lt;p&gt;ZEPP TOUR 2024 &amp;quot;We will&amp;quot;には残念ながらチケットが当たらず、We will Bも先行抽選が外れ諦めていたところ、運よく一般販売(先着)で立見指定が取れたので参戦。&lt;/p&gt;
+&lt;p&gt;ライブは最高で現地で見れて本当に良かった。立見の席も見やすくて何の不満もなかった。多分アリーナ席の方がまわりの観客との一体感は強いんだろうけど、ステージをじっくりみたかったので満足。&lt;/p&gt;
+&lt;p&gt;ライブに行くこと自体が今回初めてだったので、あまり一般的なところはわからないけど、恐らくMCが少なめだった。曲数だけで言えば20曲超をほぼ休憩なしで演奏していたので、ほとんどの曲を歌った長谷川育美さんと当然全部の曲を演奏したバンドメンバーには脱帽。&lt;/p&gt;
+&lt;p&gt;今回良かったポイントはいくつもあるのだけど、一番印象に残ったのは、長谷川育美さん、青山吉能さん、水野朔さん、鈴代紗弓さんら4人によるフラッシュバッカーの演奏。誰もいないステージに4人がでてきて、それぞれが各楽器の準備をしはじめたときは驚いた。1年以上かけて練習してきたとのことで、あれだけの人数を前に堂々たる演奏をしていたのは感動した。スクリーンに4人が縦4分割で表示されたのもあまりにかっこよすぎた。最初はみんな緊張してるような表情だったけど、後半はみんな楽しそうに演奏していて良かった。&lt;/p&gt;
+&lt;p&gt;公式からフラッシュバッカーのところが無料でYouTubeに動画が公開されているのでぜひ見てほしい。&lt;/p&gt;
+&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/A7nKFqPHPLw?si=M6AFZWG_kBZ6whjx&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&quot; referrerpolicy=&quot;strict-origin-when-cross-origin&quot; allowfullscreen&gt;&lt;/iframe&gt;
+&lt;p&gt;結束バンドは好きな曲が多いけど、なんだかんだで忘れてやらないと星座になれたらが好き。忘れてやらないを歌う長谷川育美さんはかわいらしかったし、星座になれたらは秀華祭バージョンで喜多ちゃんのアドリブとぼっちちゃんのボトルネック奏法のソロの再現は感動してちょっと泣いてしまった。&lt;/p&gt;
+&lt;p&gt;あと惑う星もかっこよくて好きな曲なんだけど、カラカラと惑う星で水野朔さんの歌声が違うのでそのギャップも相まって更にかっこよく感じた。カラカラも好きだけど、水野朔さんの力強く歌う時の声が好き。&lt;/p&gt;
+&lt;p&gt;惑う星と同じアルバムに入ってるUNITEを歌う鈴代紗弓さんも良かった。ステージを動きまわりながら、熱唱する姿はとてもかっこよかった。UNITEを歌いながら動きまわるの本当に大変だと思うんだけど、盛り上げようという気持ちが伝わってくる演奏だった。&lt;/p&gt;
+&lt;p&gt;Re:Reと転がる岩、君に朝が降るはアンコールで演奏されたけど、この2曲は絶対やるだろと思ってたし好きな曲なのでついに来た!という感じだった。この2曲はどことなく哀愁もあるので、ライブも終わりなんだなぁという寂しさ的な感情もあり、ちょっと泣けしまった。&lt;/p&gt;
+&lt;p&gt;転がる岩、君に朝が降るの後は上で書いたように声優4人によるフラッシュバッカー、その後にアニメ第二期の告知、最後に今、僕、アンダーグラウンドから、光の中への演奏とラッシュがすごくて感情がややおかしくなってきた気がする。ただ、アンコール以降が一番テンションあがってたのは間違いない。&lt;/p&gt;
+&lt;p&gt;メンバーがWe will Bは2024年のツアーの集大成的なライブと言っていたけど、本当に集大成というようなライブで観客として参加できたのは本当にラッキーだった。結束バンドは本当に好きなバンドだし、二期も始まればまたこれからも盛り上っていくだろうし楽しみ。&lt;/p&gt;
+</content>
+</entry>
+<entry>
+  <title>Tidy First?</title>
+  <link href="https://ukstudio.jp/tidy-first/"/>
+  <id>https://ukstudio.jp/tidy-first/</id>
+  <published>2025-02-04T15:00:00Z</published>
+  <updated>2025-02-04T15:00:00Z</updated>
+  <summary>このページはKent BeckのTidy First?(アフィリエイト)の感想記事だ。 この本はコードの整頓について扱っている。ここでいう整頓とは、数分から長くても数時間で完了するコードの改善作業を指す。 本書は3部作の第1巻として企画され</summary>
+  <content type="html">&lt;p&gt;このページはKent Beckの&lt;a href=&quot;https://amzn.to/3ErRCXa&quot;&gt;Tidy First?&lt;/a&gt;(アフィリエイト)の感想記事だ。&lt;/p&gt;
+&lt;p&gt;この本はコードの整頓について扱っている。ここでいう整頓とは、数分から長くても数時間で完了するコードの改善作業を指す。&lt;/p&gt;
+&lt;p&gt;本書は3部作の第1巻として企画されており、続巻では「リファクタリング」「アーキテクチャの進化」が予定されている。より大きなスケールのテーマへと発展していく構想だ。&lt;/p&gt;
+&lt;p&gt;そのため、本書の内容は細かい話に終始しているように見えるかもしれない。ただし、小さな積み重ねが大きな成果につながることは多く、その意味でも本書に十分価値はある。&lt;/p&gt;
+&lt;p&gt;第一部は整頓のテクニックが述べられている。ある程度経験のあるプログラマだと正直この章は退屈かもしれない。経験の浅いプログラマなら得られるものがあると思うが、類似の内容を扱う本は他にもあるのでそちらも読んだ方がより理解が深まるだろう。&lt;/p&gt;
+&lt;p&gt;第二部は整頓をどう実践していくかの話だ。整頓をいつ始め、いつ終えるか。整頓とそうでない変更をどう統合していくか。ここもそこまで目新しい話はないだろう。経験のあるプログラマであれば経験的に感じている話だ。&lt;/p&gt;
+&lt;p&gt;第三部は少しむずかしい。特にオプションについて詳しくない人は話がややこしく思えるだろう(自分もそうだ）。一方で「いつコードを整頓するのか?」に対して、丁寧な言語化をしていなかった自分にとってオプションの観点で説明されたのはなかなか興味深くあった。&lt;/p&gt;
+&lt;p&gt;なかなか理解が難しい部なのだが、正直そこまで丁寧に理解をしなくても良いかなと思う。結局Kent Beckも本の結論として、先に整頓した方がいいのか？という問いに「おそらくイエス」と言っているのだ。自分もそれでいいと思う。&lt;/p&gt;
+&lt;h3&gt;&lt;a href=&quot;#オプショナリティ&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot; id=&quot;オプショナリティ&quot;&gt;&lt;/a&gt;オプショナリティ&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;今日の1ドルは明日の1ドルよりも価値があるので、早く稼ぎ、あとで使う。&lt;/li&gt;
+&lt;li&gt;カオスな状況では、モノよりオプションのほうが優れているので、不確実性に対してオプションを作る。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;上の2行は本書からの抜粋だが、前者の戦略に立つとコードの整頓よりお金を稼ぐコードを先に書くほうがよい可能性がある。逆に後者の場合はコードを整頓し不確実性に備えておいたほうがよいということになる。&lt;/p&gt;
+&lt;p&gt;オプションについて私の理解を述べると、不確実性が高い状況下では将来の選択肢を幅広く確保しておくことに価値がある、ということになる。。特に昨今のソフトウェアが扱うビジネスは変化のスピードが速いことが多いので、そのビジネスの変化に合わせた対応が取れるのかというのは非常に重要だ。つまり、結局変更容易性の話なのかなと理解している。&lt;/p&gt;
+&lt;h3&gt;&lt;a href=&quot;#結局いつ整頓するのか&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot; id=&quot;結局いつ整頓するのか&quot;&gt;&lt;/a&gt;結局いつ整頓するのか？&lt;/h3&gt;
+&lt;p&gt;オプショナリティを高めるためとはいえ、常に整頓を優先していいというわけではない。これは結局個々の判断になるのだが、その辺りのむずかしさが書名の「?」の意味するところだと思う。常に先に整頓してよいなら?をなくし「Tidy First」という書名でもよかったはずだ。&lt;/p&gt;
+&lt;p&gt;ただ、この本で取り上げている整頓はかかる時間も少ないし、整頓をする癖をつけるという意味でも最初に整頓をするようにして問題ないだろう。&lt;/p&gt;
+&lt;p&gt;それに整頓を行なうということは単純にビジネスの利益や価値のためだけではない。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;だが、いちばん重要なのはあなただ。整頓はあなたのプログラミングに平穏と満足、喜びをもたらしてくれるだろうか? 多少はありそうだ。これは重要だ。なぜなら、あなたが最高の自分でいれば、より良いプログラマーでいられるからだ。いつも急いでいて、変更に痛みを伴うコードの変更をしているなら、最高の自分ではいられない。&lt;br /&gt;
+....&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;先に整頓するか? おそらく答えはイエスだろう。ほどほどに。あなたにはその価値がある。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;この文章からはKent Beckらしい、人間性を重視する姿勢が感じられる。ビジネス的な合理性も重要だが、ソフトウェアを作るのは結局のところプログラマである私たちだ。なので、我々プログラマが満足に働けているのか、最高の自分でいられているのかというのも非常に重要だし、それが良いソフトウェアを作ることに繋るのだろう。&lt;/p&gt;
+</content>
+</entry>
+<entry>
+  <title>2024年のふりかえり</title>
+  <link href="https://ukstudio.jp/2024-wrapup/"/>
+  <id>https://ukstudio.jp/2024-wrapup/</id>
+  <published>2025-01-09T15:00:00Z</published>
+  <updated>2025-01-19T15:00:00Z</updated>
+  <summary>仕事 クックパッドに在籍して7年目に突入。今年はずっとOne Experienceプロジェクトをやっていた。このプロジェクトについてはクックパッドの開発者ブログに記事を書いたのでそちらを参照してほしい。 日本とグローバルのクックパッドを統合</summary>
+  <content type="html">&lt;h2&gt;&lt;a href=&quot;#仕事&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot; id=&quot;仕事&quot;&gt;&lt;/a&gt;仕事&lt;/h2&gt;
+&lt;p&gt;クックパッドに在籍して7年目に突入。今年はずっとOne Experienceプロジェクトをやっていた。このプロジェクトについてはクックパッドの開発者ブログに記事を書いたのでそちらを参照してほしい。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://techlife.cookpad.com/entry/2024/10/10/105832&quot;&gt;日本とグローバルのクックパッドを統合しました &lt;span data-escaped-char&gt;-&lt;/span&gt; クックパッド開発者ブログ&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;記事を書いたのは自分ではあるが、このプロジェクトにおけるトップというわけではなく複数人いるリーダーのうちの1人という立ち位置である。主にユーザー向けの開発を行なうチームのリードを務めた。マネジメントだけでなく、自分もバックエンドの実装を行なったが、グローバルのRailsアプリケーションは結構思想が強く、良くも悪くも学びがあった。&lt;/p&gt;
+&lt;p&gt;それとこれはこの記事が2025年に書いているから公表できるのだけど、2025年の3月いっぱいでクックパッドを退職する。この記事を書いてる時点では次の職場はまだ決めていない。&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;#音楽&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot; id=&quot;音楽&quot;&gt;&lt;/a&gt;音楽&lt;/h2&gt;
+&lt;p&gt;ドラムの趣味は引き続き継続している。今年も自分でイベントを主催してライブを行なった。あとはバンドではないけどDJオンリーのイベントも主催した。ただDJに関してはドラムほどモチベが高いわけではない。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;/ukfes-vol2/&quot;&gt;ukfes#2 開催のお知らせ&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;/ukfes-vol2-report/&quot;&gt;ukfes#2 開催報告&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;/ukfes-vol3/&quot;&gt;ukfes#3&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;ドラムに関して1個大きなアップデートとしてはモチベーションがあがったので家の近所のドラムレッスンに通いはじめた。大体月に2回ぐらいのペースで通っている。曲の練習というより基礎練中心にレッスンしてもらっているが、独学ではわからないところも教えてもらえてかなり役に立ってる。&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;#ゲーム&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot; id=&quot;ゲーム&quot;&gt;&lt;/a&gt;ゲーム&lt;/h2&gt;
+&lt;p&gt;今年はそこまでゲームをやってないかも。もうちょっとやりたい気もするけど、ドラムの練習もしたいしなかなか時間を捻出するのがむずかしい。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://rpg.jp/&quot;&gt;メタファー・リファンタジオ&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;100時間ぐらいプレイした。トロコンまで頑張ろうと思ったけど、残り2、3個ぐらいで切り上げてしまった。2週目をやるモチベーションがちょっと薄いのが難点だが、おもしろいゲームだった。よくもわるくもアトラスという感じ。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.marv.jp/special/game/sakuna/&quot;&gt;天穂のサクラヒメ&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;以前途中でやめていたのをふと思い出してプレイ。クリアまで遊んだ。似たようなことを繰り返す感はあるけど、トータルの出来はよくストーリーも結構好きなゲームだった。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://store.steampowered.com/app/692890/Roboquest/&quot;&gt;Roboquest&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;ローグライトFPS。爽快感があり、繰り返しプレイするのにあまりストレスがなかった。おもしろいゲームではあるが、収集要素がちょっと浮いてる感じがして残念。ゲーム性的にあまりフィールドを探索する感じではないのだが、アイテムを収集するのにフィールドを探さなきゃいけないのがちょっと微妙。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://bethesda.net/en/game/starfield&quot;&gt;Starfield&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;おもしろかった…と思うんだけど、やや記憶が薄れている。ゲームのボリュームに比べなんか薄味な印象だった気がする。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://store.steampowered.com/app/1601580/2/&quot;&gt;Frostpunk 2&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;実は1はやってないのだけど、この手のゲームは割と好きなのでプレイ。つまらなくはないけど、ハマるほどではないなという感じ。派閥の概念がちょっと合わなかった。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.dragonquest.jp/roto-trilogy/dq3/&quot;&gt;ドラゴンクエスト3&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;実はドラクエ3をちゃんとやったことないので、リメイクされた機会にプレイ。おもしろかったけど、なんだかんだで古いゲームだなぁという印象。ただ、30時間程度でクリアできるのでこれぐらい気軽にプレイできるRPGはいいなと思った。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;&lt;a href=&quot;#アニメ&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot; id=&quot;アニメ&quot;&gt;&lt;/a&gt;アニメ&lt;/h2&gt;
+&lt;p&gt;晩御飯を食べながらアニメを見る習慣ができたので、これまでほとんどアニメを見ていなかったけど結構見るようになった。NetflixかAmazon Primeで見れるやつを見ているので、新作も古い奴も適当に見ている。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Dr. STONE
+&lt;ul&gt;
+&lt;li&gt;原作も好きだけどアニメもよかった。2025年からの新シーズンも楽しみ。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;ワールドトリガー
+&lt;ul&gt;
+&lt;li&gt;1stシーズンは作画の崩れや引き伸ばしが気になりつつもそれなりにおもしろかった。2ndシーズンからは作画が良くなったのと、ランク戦の好きなエピソードだったので満足。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;ハイキュー
+&lt;ul&gt;
+&lt;li&gt;なんとなく見始めたら良かったので全シーズン見てしまった。ゴミ捨て場の決戦の配給が終わったあとに見始めてしまったので、ゴミ捨て場の決戦を劇場で見れなかったのはちょっと残念。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;葬送のフリーレン
+&lt;ul&gt;
+&lt;li&gt;元々アニメを見なかったのは原作で十分だと思ってたからなんだけど、葬送のフリーレンを見てからは原作とアニメはそれぞれ良さが違うなという考えになった。良いアニメだった。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;ダンジョン飯
+&lt;ul&gt;
+&lt;li&gt;マルシルがかわいい。アニメのライオスの方がやばさがわかりやすい気がする。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;&lt;a href=&quot;#旅行&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot; id=&quot;旅行&quot;&gt;&lt;/a&gt;旅行&lt;/h2&gt;
+&lt;h3&gt;&lt;a href=&quot;#沖縄&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot; id=&quot;沖縄&quot;&gt;&lt;/a&gt;沖縄&lt;/h3&gt;
+&lt;p&gt;RubyKaigiで沖縄に行ったので、追加で休みを取って沖縄旅行。沖縄に行くのは2回目だけど、今回の旅行もよかった。&lt;/p&gt;
+&lt;p&gt;前回もダイビングをして良かったので、今回もダイビングに行ったけど前回のダイビングより満足度が高い内容だった。前回はビーチから入水したけど今回はボートで沖にでてから入水した。なので結果的に結構深いところまで潜れたし、魚とかもたくさん見れた。次回はウミガメ見たいところ。&lt;/p&gt;
+&lt;h3&gt;&lt;a href=&quot;#鹿児島&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot; id=&quot;鹿児島&quot;&gt;&lt;/a&gt;鹿児島&lt;/h3&gt;
+&lt;p&gt;鹿児島は人生初めての来訪。がっつり色々観光というよりは、指宿で温泉入るのと鹿児島市街地あたりでちょっとうろちょろする程度で全体的にのんびりめの旅行だった。&lt;/p&gt;
+&lt;p&gt;指宿では砂風呂に入ったけど、砂の重さと暑さが心地良かった。今回はホテル併設の砂風呂だったけど、海沿いの砂風呂も気持ちよさそうだった。あとは指宿には各種イーブイのマンホールがあるので一通り自転車で見てまわった。割と旅行先を徒歩とか自転車で見てまわるのが好きなので、楽しかった。&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;#お金&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot; id=&quot;お金&quot;&gt;&lt;/a&gt;お金&lt;/h2&gt;
+&lt;p&gt;新NISA枠を使い切れた。正確には成長投資枠はETFを現金化して新NISAの方に移したのでゼロから全部現金を用意できたわけではない。&lt;/p&gt;
+&lt;p&gt;2025年も使い切れたらいいなとおもっているけど、さすがにちょっと厳しい気はする。とりあえず積立の方は使い切って、成長投資枠はベストエフォートでという感じ。&lt;/p&gt;
+&lt;p&gt;マネーフォーワードの2024ふりかえりによると資産が61%増えているらしい。本当かよ?という感じがするけどグラフみると本当っぽい。ちょっと実感が薄いのでマネーフォーワード管理外からなにか資産を移したとかを疑ってるけど、それっぽいのは記憶にないのでちょっと謎。投資信託の成長や円安による水増し?がそれなりに影響あるのかもしれない(現金はほとんどもっておらず、資産の7割ぐらいが投資信託なため)。&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;#おわり&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot; id=&quot;おわり&quot;&gt;&lt;/a&gt;おわり&lt;/h2&gt;
+&lt;p&gt;なんか他にも色々あった気がするけど、思い出したら追記する。&lt;/p&gt;
+</content>
+</entry>
+<entry>
+  <title>ukfes#4</title>
+  <link href="https://ukstudio.jp/ukfes-vol4/"/>
+  <id>https://ukstudio.jp/ukfes-vol4/</id>
+  <published>2025-01-05T15:00:00Z</published>
+  <updated>2025-01-05T15:00:00Z</updated>
+  <summary>概要 今回のukfesは軽音中心です。全8組のバンドが出演します。 日時: 1月11日 16:15 - 22:30 16時から入れますが、準備でバタついてると思うので15分ぐらいから来てもらえるとありがたいです 入退場自由 場所: 飯田橋ス</summary>
+  <content type="html">&lt;h2&gt;&lt;a href=&quot;#概要&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot; id=&quot;概要&quot;&gt;&lt;/a&gt;概要&lt;/h2&gt;
+&lt;p&gt;今回の&lt;a href=&quot;/ukfes/&quot;&gt;ukfes&lt;/a&gt;は軽音中心です。全8組のバンドが出演します。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;日時: 1月11日 16:15 - 22:30
+&lt;ul&gt;
+&lt;li&gt;16時から入れますが、準備でバタついてると思うので15分ぐらいから来てもらえるとありがたいです&lt;/li&gt;
+&lt;li&gt;入退場自由&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;場所: &lt;a href=&quot;https://www.spacewith.co.jp/&quot;&gt;飯田橋スペースウィズ&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;料金: 1,500円(ワンドリンク込み)
+&lt;ul&gt;
+&lt;li&gt;現金のみです&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;ハッシュタグ: &lt;code&gt;#ukfes&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;&lt;a href=&quot;#タイムテーブル出演バンド&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot; id=&quot;タイムテーブル出演バンド&quot;&gt;&lt;/a&gt;タイムテーブル・出演バンド&lt;/h2&gt;
+&lt;p&gt;今回、事前のリハなしなので各バンドごとに音出しの時間があります。また、このタイムテーブルは目安です。当日の進行に応じてズレると思うのでご了承ください。&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;開始&lt;/th&gt;
+&lt;th&gt;終了&lt;/th&gt;
+&lt;th&gt;内容&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;16:00&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;開場&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;16:10&lt;/td&gt;
+&lt;td&gt;16:30&lt;/td&gt;
+&lt;td&gt;準備&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;16:30&lt;/td&gt;
+&lt;td&gt;16:55&lt;/td&gt;
+&lt;td&gt;ゆーぺいず&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;16:55&lt;/td&gt;
+&lt;td&gt;17:15&lt;/td&gt;
+&lt;td&gt;入れ替え・音出し&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;17:15&lt;/td&gt;
+&lt;td&gt;17:40&lt;/td&gt;
+&lt;td&gt;五反田ノット&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;17:40&lt;/td&gt;
+&lt;td&gt;18:00&lt;/td&gt;
+&lt;td&gt;入れ替え・音出し&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;18:00&lt;/td&gt;
+&lt;td&gt;18:25&lt;/td&gt;
+&lt;td&gt;BUMP OF BOCCHI&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;18:25&lt;/td&gt;
+&lt;td&gt;18:45&lt;/td&gt;
+&lt;td&gt;入れ替え・音出し&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;18:45&lt;/td&gt;
+&lt;td&gt;19:15&lt;/td&gt;
+&lt;td&gt;lintしてdoyaty&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;19:15&lt;/td&gt;
+&lt;td&gt;19:35&lt;/td&gt;
+&lt;td&gt;入れ替え・音出し&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;19:35&lt;/td&gt;
+&lt;td&gt;19:50&lt;/td&gt;
+&lt;td&gt;うなばん！&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;19:50&lt;/td&gt;
+&lt;td&gt;20:10&lt;/td&gt;
+&lt;td&gt;入れ替え・音出し&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;20:10&lt;/td&gt;
+&lt;td&gt;20:35&lt;/td&gt;
+&lt;td&gt;chichimow&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;20:35&lt;/td&gt;
+&lt;td&gt;20:55&lt;/td&gt;
+&lt;td&gt;入れ替え・音出し&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;20:55&lt;/td&gt;
+&lt;td&gt;21:20&lt;/td&gt;
+&lt;td&gt;目黒線&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;21:20&lt;/td&gt;
+&lt;td&gt;21:40&lt;/td&gt;
+&lt;td&gt;入れ替え・音出し&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;21:40&lt;/td&gt;
+&lt;td&gt;22:00&lt;/td&gt;
+&lt;td&gt;REDIRECT LOOP&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;22:00&lt;/td&gt;
+&lt;td&gt;22:30&lt;/td&gt;
+&lt;td&gt;撤収&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+</content>
+</entry>
+<entry>
+  <title>マネジメント</title>
+  <link href="https://ukstudio.jp/management/"/>
+  <id>https://ukstudio.jp/management/</id>
+  <published>2024-12-26T15:00:00Z</published>
+  <updated>2024-12-26T15:00:00Z</updated>
+  <summary>WIP マネジメントとは 組織の目標達成のために、組織に所属する人達の活動を管理する体系的なプロセスおよびその実践 マネジメントの成り立ち フレデリック・W・テイラーの科学的管理法 アンリ・ファヨールの「計画・組織・指揮・調整・統制」 ピー</summary>
+  <content type="html">&lt;p&gt;WIP&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;#マネジメントとは&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot; id=&quot;マネジメントとは&quot;&gt;&lt;/a&gt;マネジメントとは&lt;/h2&gt;
+&lt;p&gt;組織の目標達成のために、組織に所属する人達の活動を管理する体系的なプロセスおよびその実践&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;#マネジメントの成り立ち&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot; id=&quot;マネジメントの成り立ち&quot;&gt;&lt;/a&gt;マネジメントの成り立ち&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;フレデリック・W・テイラーの科学的管理法&lt;/li&gt;
+&lt;li&gt;アンリ・ファヨールの「計画・組織・指揮・調整・統制」&lt;/li&gt;
+&lt;li&gt;ピーター・ドラッガーの「マネジメント」&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;この辺りが恐らく古典として重要か?&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;#自分のマネジメント領域&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot; id=&quot;自分のマネジメント領域&quot;&gt;&lt;/a&gt;自分のマネジメント領域&lt;/h2&gt;
+&lt;p&gt;2024年12月現在、マネジメント領域を仕事で担当しているが明確な肩書があるわけではない。恐らく自分のマネジメント領域に名前を付けるのであればエンジニアリングマネジメントが一番近いと思うが、そもそもエンジニアリングマネジメント自体の定義が曖昧だ。また、エンジニアリングマネージャー専任というわけではなく、どちらかと言えばプレイングマネージャー寄りだ。&lt;/p&gt;
+&lt;p&gt;なので自分のマネジメント領域は明確に定まっているわけではないが、思いつくままにリストアップしてみると以下のようになる。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;プロジェクトマネジメント
+&lt;ul&gt;
+&lt;li&gt;スクラムなどのアジャイルな開発プロセスを軸としたチームの進行管理&lt;/li&gt;
+&lt;li&gt;ウォーターフォールのような古典的かつ長期に渡るようなプロジェクトマネジメントはそこまで得意ではない&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;ピープルマネジメント
+&lt;ul&gt;
+&lt;li&gt;1 on 1を主軸としたチームメンバーのメンタリング、成長支援&lt;/li&gt;
+&lt;li&gt;チームメンバーの評価およびフィードバック&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;エンジニアリングマネジメント(技術領域)
+&lt;ul&gt;
+&lt;li&gt;上記のプロジェクトマネジメント、ピープルマネジメント以外の部分&lt;/li&gt;
+&lt;li&gt;肩書としてテックリードも持っているので、正確にはエンジニアリングマネジメントとテックリードの兼任ということなのかもしれない&lt;/li&gt;
+&lt;li&gt;チームのアウトプットの品質に責任を持つ&lt;/li&gt;
+&lt;li&gt;チームメンバーの技術的な成長支援&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;ところで、私はマネジメントを行なう上で技術力は重要な要素だと考えている。それはプロジェクトマネジメント、ピープルマネジメント、エンジニアリングマネジメントのそれぞれにおいて技術力が一定の土台となっているためだ。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;プロジェクトマネジメント
+&lt;ul&gt;
+&lt;li&gt;見積りやタスクの割り振り&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;ピープルマネジメント
+&lt;ul&gt;
+&lt;li&gt;エンジニアの成長支援を考える際、本人の技術力向上も含まれる&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;エンジニアリングマネジメント
+&lt;ul&gt;
+&lt;li&gt;言語化整理中。自分はテックリードを兼任しているため、技術的要素が含まれるが仮にテックリードとエンジアリングマネジメントを切り離した場合、エンジニアリングマネジメントにおける技術の必要性については考えたい。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+</entry>
+<entry>
+  <title>適切なコミットの粒度</title>
+  <link href="https://ukstudio.jp/commit-granularity/"/>
+  <id>https://ukstudio.jp/commit-granularity/</id>
+  <published>2024-12-17T15:00:00Z</published>
+  <updated>2024-12-17T15:00:00Z</updated>
+  <summary>1つのコミットは1つの論理的な変更に対応させる 機能追加、バグ修正、リファクタリングなど異なる種類の修正はコミットを分ける 複数のバグ修正や機能追加は別のコミットに分ける リファクタリングと機能変更は別のコミットに分ける 適切な粒度を保つメ</summary>
+  <content type="html">&lt;h2&gt;&lt;a href=&quot;#1つのコミットは1つの論理的な変更に対応させる&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot; id=&quot;1つのコミットは1つの論理的な変更に対応させる&quot;&gt;&lt;/a&gt;1つのコミットは1つの論理的な変更に対応させる&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;機能追加、バグ修正、リファクタリングなど異なる種類の修正はコミットを分ける&lt;/li&gt;
+&lt;li&gt;複数のバグ修正や機能追加は別のコミットに分ける&lt;/li&gt;
+&lt;li&gt;リファクタリングと機能変更は別のコミットに分ける&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;&lt;a href=&quot;#適切な粒度を保つメリット&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot; id=&quot;適切な粒度を保つメリット&quot;&gt;&lt;/a&gt;適切な粒度を保つメリット&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;git bisectによるバグの原因特定が容易になる&lt;/li&gt;
+&lt;li&gt;特定の変更のみをgit revertで取り消すことができる&lt;/li&gt;
+&lt;li&gt;変更の意図や背景を明確に残すことができる&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+</entry>
+<entry>
+  <title>個人の問題とチームの問題を区別する</title>
+  <link href="https://ukstudio.jp/distinguishing-between-invidiual-issues-and-team-issues/"/>
+  <id>https://ukstudio.jp/distinguishing-between-invidiual-issues-and-team-issues/</id>
+  <published>2024-10-21T15:00:00Z</published>
+  <updated>2024-10-21T15:00:00Z</updated>
+  <summary>KPTなどのふりかえりを行なうチームも多いと思うが、そういったふりかえりでなにか問題をあげるときはその問題が個人の問題なのか、チームの問題なのかを区別したい。 というのも、個人レベルの問題をチームレベルの問題として扱うと、変に大袈裟な話にな</summary>
+  <content type="html">&lt;p&gt;KPTなどのふりかえりを行なうチームも多いと思うが、そういったふりかえりでなにか問題をあげるときはその問題が個人の問題なのか、チームの問題なのかを区別したい。&lt;/p&gt;
+&lt;p&gt;というのも、個人レベルの問題をチームレベルの問題として扱うと、変に大袈裟な話になってしまい、適切な解決策が導き出せないと思うからだ。&lt;/p&gt;
+&lt;p&gt;例えば「Pull Requestがレビューされず、進捗を出すことができない」と問題をあげた人がいるとする。これに対して「じゃあみんなで毎日同期的にレビューする時間を用意しよう」とか「レビューされないときはメンションしてレビューを促そう」という解決策が思い浮かぶかもしれない。&lt;/p&gt;
+&lt;p&gt;でも、実はその人のPull Requestが普段から粒度が大きくレビュー負荷の高いものだとしたら? その人以外のPull Requestは適切にレビューされているのかもしれない。そのような状況の時に、さきほどあげた解決策は適切なものだろうか? もしかしたらチーム全員を巻き込むのではなく、その人が自分の行動を変えるだけでよいのかもしれない。&lt;/p&gt;
+&lt;p&gt;また、個人の問題をチームの問題として話をしてしまうと、その人へのフィードバックの機会が失われてしまう。自分に問題があったことを気づけないままだ。&lt;/p&gt;
+&lt;p&gt;もちろん、個人の問題をチームで解決してはいけないということではない。問題 vs 私たちであるべきだと思う。今回の例も、ペアプロしながら適切なコミットやPull Requestの分け方を伝えることで、本人のスキルを伸ばすことができるかもしれない。他にもチーム内でより適切な解決策を一緒に考えたり、サポートしたりすることもできるだろう。&lt;/p&gt;
+&lt;p&gt;今回は個人の問題をチームの問題として扱ってしまう例をだしたが、逆のパターンもあるだろう。&lt;/p&gt;
+&lt;p&gt;この話は別の言い方をすると、問題の芯をしっかり捉えよう、ということなのかもしれない。自分が問題としていることが、どこから生まれているのか、なにが理由で起きているのか、しっかりと見極めるように心掛けたい。&lt;/p&gt;
+</content>
+</entry>
+<entry>
+  <title>ukfes#3</title>
+  <link href="https://ukstudio.jp/ukfes-vol3/"/>
+  <id>https://ukstudio.jp/ukfes-vol3/</id>
+  <published>2024-09-11T15:00:00Z</published>
+  <updated>2024-09-26T15:00:00Z</updated>
+  <summary>概要 友人を集めてDJイベントを池尻大橋でやります。身内イベントなので気軽に遊びに来てください。 日時 9/28 13:00 - 19:00 場所 SWIPE 池尻大橋 https://tabelog.com/tokyo/A1317/A13</summary>
+  <content type="html">&lt;h2&gt;&lt;a href=&quot;#概要&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot; id=&quot;概要&quot;&gt;&lt;/a&gt;概要&lt;/h2&gt;
+&lt;p&gt;友人を集めてDJイベントを池尻大橋でやります。身内イベントなので気軽に遊びに来てください。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;日時 9/28 13:00 - 19:00&lt;/li&gt;
+&lt;li&gt;場所 SWIPE 池尻大橋
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://tabelog.com/tokyo/A1317/A131705/13290380/&quot;&gt;https://tabelog.com/tokyo/A1317/A131705/13290380/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;料金 無料(カンパ制)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;&lt;a href=&quot;#タイムテーブル&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot; id=&quot;タイムテーブル&quot;&gt;&lt;/a&gt;タイムテーブル&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;13:00 - 13:15 オープン&lt;/li&gt;
+&lt;li&gt;13:15 - 14:00 ukstudio&lt;/li&gt;
+&lt;li&gt;14:00 - 14:45 terfno&lt;/li&gt;
+&lt;li&gt;14:45 - 15:30 こでい&lt;/li&gt;
+&lt;li&gt;15:30 - 16:15 SpicyCoffee&lt;/li&gt;
+&lt;li&gt;16:15 - 17:00 sorah&lt;/li&gt;
+&lt;li&gt;17:00 - 17:45 barometrica&lt;/li&gt;
+&lt;li&gt;17:45 - 18:30 MaySoMusician&lt;/li&gt;
+&lt;li&gt;18:30 -  19:00 クローズ(撤収作業)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;&lt;a href=&quot;#その他&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot; id=&quot;その他&quot;&gt;&lt;/a&gt;その他&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;飲み物の持ち込みは禁止ですが、食べ物の持ち込みはOKです。&lt;/li&gt;
+&lt;li&gt;出入り自由です。お好きな時間に遊びに来てください。&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+</entry>
+<entry>
+  <title>電子ドラムの振動対策</title>
+  <link href="https://ukstudio.jp/electronic-drums-vibration-reduction/"/>
+  <id>https://ukstudio.jp/electronic-drums-vibration-reduction/</id>
+  <published>2024-06-12T15:00:00Z</published>
+  <updated>2024-06-12T15:00:00Z</updated>
+  <summary>お隣から電子ドラムの振動について苦情が来てしまったので対策を試みた。苦情の内容からパッドなどを叩いたときの音ではなく、パッドやバスドラを叩いたときに発生する振動(特に足のペダルを踏んだときの振動)が伝わってると思われるので主に振動の対策をす</summary>
+  <content type="html">&lt;p&gt;お隣から電子ドラムの振動について苦情が来てしまったので対策を試みた。苦情の内容からパッドなどを叩いたときの音ではなく、パッドやバスドラを叩いたときに発生する振動(特に足のペダルを踏んだときの振動)が伝わってると思われるので主に振動の対策をする。&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;#電子ドラムを2階から1階に移す&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot; id=&quot;電子ドラムを2階から1階に移す&quot;&gt;&lt;/a&gt;電子ドラムを2階から1階に移す&lt;/h2&gt;
+&lt;p&gt;うちは2階建のテラスハウスで電子ドラムも2階に置いていたが、2階の方が床が薄いためおそらく振動が伝わりやすい。防音・防振について調べても2階の方が対策がむずかしいという話をよく見かけたので、1階にスペースを作り持っていくことにした。&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;#ディスクふにゃふにゃシステム&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot; id=&quot;ディスクふにゃふにゃシステム&quot;&gt;&lt;/a&gt;ディスクふにゃふにゃシステム&lt;/h2&gt;
+&lt;p&gt;防振対策については電子ドラム界隈だと有名な&lt;a href=&quot;https://dtxmania.net/documents/dfs/&quot;&gt;ディスクふにゃふにゃシステム&lt;/a&gt;を構築することにした。厳密にはバランスディスクではなく、&lt;a href=&quot;https://www.exseal.jp/products/detail/383&quot;&gt;ゲルダンパー&lt;/a&gt;を使ったのでディスクふにゃふにゃシステムではないが、基本的な考えは一緒である。&lt;/p&gt;
+&lt;p&gt;バランスディスクではなくゲルダンパーを使った理由は、バランスディスクは結構揺れが発生すると見かけたし想像も難くなかったので、もう少し安定しそうなゲルダンパーにした。防振的にもおそらく十分だと思われる。&lt;/p&gt;
+&lt;p&gt;最終的に防振のためにつくったものは以下の通り。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/%E3%83%89%E3%83%A9%E3%83%A0%E9%98%B2%E6%8C%AF%E5%8F%B0.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;一番下に防振のジョイントマット(確かΔLL-4のもの)&lt;/li&gt;
+&lt;li&gt;その上にゲルダンパー(黒の50mm x 50mm)を13個(写真は9個だがこのあと4個足している)
+&lt;ul&gt;
+&lt;li&gt;1個あたりの適正荷重が10kg未満なので130kgまで大丈夫な計算&lt;/li&gt;
+&lt;li&gt;ドラムについてはある程度均等に荷重がかかるから恐らく問題ない&lt;/li&gt;
+&lt;li&gt;自分自身(椅子)は台の外の想定なので計算に含めなくてよいが、時々台の上に乗ることもある
+&lt;ul&gt;
+&lt;li&gt;端の方に立ったりしたときに一部のゲルダンパーに荷重が強くかかるのがちょっと心配だが、一時的なので大丈夫だろうと判断した&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;ゲルダンパーがジョイントマットのように少し柔らかいものの上に置くのと床に直置きのどちらがいいかは不明&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;ゲルダンパーの上にF☆☆☆☆の板を奥行91cm、幅140cmのものを乗せる
+&lt;ul&gt;
+&lt;li&gt;コーナンで奥行91cm、幅182cmのものを購入し、カットしてもらった&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;最後にドラム用のカーペットを敷く&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;また、防振台以外にも以下の対策を行なった&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;電子ドラムをアップデートし、スネア・タム類をすべてメッシュヘッドに変更
+&lt;ul&gt;
+&lt;li&gt;ゴムのパッドは音も結構でかいが、振動がそれなりに発生する&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;バスドラのキックペダルのビーターを通常のものからスポンジビーターへ
+&lt;ul&gt;
+&lt;li&gt;やや感触が気持ちわるいが、かなり静かになった&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;キックペダルやハイハットペダルの下に&lt;a href=&quot;https://www.tama.com/jp/products/detail/tibp1.html&quot;&gt;Iso-Base&lt;/a&gt;を置く
+&lt;ul&gt;
+&lt;li&gt;ちなみにキックペダルの下には元々持っていた&lt;a href=&quot;https://www.roland.com/jp/products/NE-10/&quot;&gt;NE-10&lt;/a&gt;も置いている&lt;/li&gt;
+&lt;li&gt;NE-10はフローリングの上に直置きだとほぼ効果がない印象。Iso-Baseの方が振動を軽減するが、こちらもフローリングの上に直置きはやや厳しい&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;これらの対策によりかなり床から伝わる振動を減らすことができた。室内にパッドを叩く音はそれなりに響いているが、これらの音は恐らく隣りには届いてないと思うのでこれである程度安心して家で電子ドラムを叩く環境を用意できた。&lt;/p&gt;
+&lt;p&gt;意外とお金がかかっており、特に値段が高めだったのはゲルダンパーとIso-Base。もっとコストを抑えるならオリジナルのディスクふにゃふにゃシステムと同じようにバランスディスクを使うのがよいと思う。&lt;/p&gt;
+&lt;p&gt;一応いくつか改善したい点はあって軽くメモをしておくと以下の通り。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;ドラムマットがかなり薄くあまり意味がないので一番上もジョイントマットでよかったかもしれない&lt;/li&gt;
+&lt;li&gt;やや揺れるので、防振が問題ないならゲルダンパーはもう少し固いものでよかったかもしれない&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+</entry>
+<entry>
+  <title>Ruby</title>
+  <link href="https://ukstudio.jp/ruby/"/>
+  <id>https://ukstudio.jp/ruby/</id>
+  <published>2024-06-06T15:00:00Z</published>
+  <updated>2024-06-06T15:00:00Z</updated>
+  <summary>オブジェクト指向スクリプト言語 Ruby 自分のプログラミングの経歴の大半はRubyによる経験であり、今もRubyで仕事をしている。自分とRubyについては私とRubyに書いた。 Notes RSpec 私とRuby</summary>
+  <content type="html">&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.ruby-lang.org/ja/&quot;&gt;オブジェクト指向スクリプト言語 Ruby&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;自分のプログラミングの経歴の大半はRubyによる経験であり、今もRubyで仕事をしている。自分とRubyについては&lt;a href=&quot;/ruby-and-ukstudio/&quot;&gt;私とRuby&lt;/a&gt;に書いた。&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;#notes&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot; id=&quot;notes&quot;&gt;&lt;/a&gt;Notes&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;/rspec/&quot;&gt;RSpec&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;/ruby-and-ukstudio/&quot;&gt;私とRuby&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+</entry>
+
+</feed>
