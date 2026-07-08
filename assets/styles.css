@@ -4,27 +4,31 @@
 @source "../src/**/*.md";
 
 @theme {
-  --font-sans: 'Helvetica Neue', 'Noto Sans CJK JP', 'Noto Sans JP', 'Segoe UI', sans-serif;
+  --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', 'BIZ UDPGothic', 'Noto Sans JP', sans-serif;
 }
 
 :root {
-  --color-background: #fff;
-  --color-text: #1a1a1a;
-  --color-link: #08548a;
-  --color-text-muted: #666;
-  --color-border: #e5e7eb;
-  --color-code-bg: #f3f4f6;
+  --color-background: #f3f5f7;
+  --color-surface: #ffffff;
+  --color-text: rgba(3, 10, 18, 0.92);
+  --color-text-muted: #6f777b;
+  --color-link: #20658f;
+  --color-link-hover: #0a6bb8;
+  --color-border: #e6e9ec;
+  --color-code-bg: #f1f4f6;
+  --shadow-card: 0 0 0 1px rgba(3, 10, 18, 0.04), 0 4px 16px -6px rgba(3, 10, 18, 0.08);
 }
 
 html {
   font-size: 16px;
-  line-height: 1.7;
+  line-height: 1.8;
 }
 
 body {
   color: var(--color-text);
   background-color: var(--color-background);
-  font-family: 'Helvetica Neue', 'Noto Sans CJK JP', 'Noto Sans JP', 'Segoe UI', sans-serif;
+  font-family: var(--font-sans);
+  font-weight: 500;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -32,18 +36,74 @@ body {
 a {
   color: var(--color-link);
   text-decoration: underline;
-  text-underline-offset: 2px;
-  transition: color 0.15s ease-in-out;
+  text-decoration-color: color-mix(in srgb, currentColor 35%, transparent);
+  text-underline-offset: 3px;
+  transition: color 0.15s ease-in-out, text-decoration-color 0.15s ease-in-out;
 }
 
 a:hover {
-  color: #0a6bb8;
-  text-decoration-thickness: 2px;
+  color: var(--color-link-hover);
+  text-decoration-color: currentColor;
+}
+
+/* 本文を載せる白いカード */
+.content-card {
+  background-color: var(--color-surface);
+  border-radius: 1.5rem;
+  box-shadow: var(--shadow-card);
+  padding: 2rem 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .content-card {
+    padding: 3rem;
+  }
+}
+
+.site-title {
+  color: var(--color-text);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+}
+
+.site-title:hover {
+  color: var(--color-text);
+  text-decoration: underline;
+  text-decoration-color: color-mix(in srgb, currentColor 30%, transparent);
+}
+
+.page-meta {
+  color: var(--color-text-muted);
+  font-size: 0.875rem;
+}
+
+.page-meta a {
+  color: var(--color-text-muted);
+}
+
+.backlinks {
+  color: var(--color-text-muted);
+}
+
+.backlinks h2 {
+  @apply mt-0 text-base;
+  color: var(--color-text-muted);
+}
+
+.backlinks a {
+  color: var(--color-text-muted);
+}
+
+.backlinks a:hover {
+  color: var(--color-link-hover);
 }
 
 .article-body {
+  overflow-wrap: anywhere;
+
   img {
-    @apply my-6 rounded-lg shadow-xs;
+    @apply my-6 rounded-xl shadow-xs;
     max-width: 100%;
     height: auto;
     display: block;
@@ -78,7 +138,7 @@ a:hover {
   }
 
   pre {
-    @apply my-6 p-4 rounded-lg overflow-x-auto text-sm;
+    @apply my-6 p-4 rounded-xl overflow-x-auto text-sm;
     background-color: var(--color-code-bg);
 
     code {
@@ -88,7 +148,8 @@ a:hover {
   }
 
   hr {
-    @apply my-8 border-t border-gray-200;
+    @apply my-8 border-t;
+    border-color: var(--color-border);
   }
 
   strong {
@@ -102,15 +163,15 @@ a:hover {
 
 @layer base {
   h1 {
-    @apply text-3xl mt-2 mb-4 font-bold leading-tight;
+    @apply text-3xl mt-2 mb-4 font-bold leading-snug;
   }
 
   h2 {
-    @apply text-2xl mt-12 mb-6 font-bold leading-tight;
+    @apply text-2xl mt-12 mb-6 font-bold leading-snug;
   }
 
   h3 {
-    @apply text-xl mt-8 mb-4 font-semibold leading-tight;
+    @apply text-xl mt-8 mb-4 font-semibold leading-snug;
   }
 
   h4 {
@@ -118,7 +179,7 @@ a:hover {
   }
 
   p {
-    @apply my-6 leading-7;
+    @apply my-6 leading-8;
   }
 
   img {
@@ -134,7 +195,7 @@ a:hover {
   }
 
   li {
-    @apply mb-2 leading-7;
+    @apply mb-2 leading-8;
   }
 
   /* ネストしたリストの余白調整 */
@@ -150,18 +211,24 @@ a:hover {
   }
 
   blockquote {
-    @apply my-6 ml-0 pl-6 border-l-4 border-gray-300 italic text-gray-600;
+    @apply my-6 ml-0 pl-6 border-l-4 italic;
+    border-color: var(--color-border);
+    color: var(--color-text-muted);
   }
 
   table {
-    @apply w-full md:w-4/6 m-auto border-collapse border border-slate-400 table-auto text-sm;
+    @apply w-full md:w-4/6 m-auto border-collapse border table-auto text-sm;
+    border-color: var(--color-border);
   }
 
   th {
-    @apply border border-slate-300 p-2;
+    @apply border p-2;
+    border-color: var(--color-border);
+    background-color: var(--color-code-bg);
   }
 
   td {
-    @apply border border-slate-300 p-2;
+    @apply border p-2;
+    border-color: var(--color-border);
   }
 }
