@@ -32,44 +32,27 @@
     <link href="/assets/stylesheets/styles.css" rel="stylesheet">
     <script src="//instant.page/5.1.1" type="module" integrity="sha384-MWfCL6g1OTGsbSwfuMHc8+8J2u71/LA8dzlIN3ycajckxuZZmF+DNjdm7O6H3PSq"></script>
   </head>
-  <body class="md:text-sm text-base">
-    <div class="container max-w-4xl min-w-80 mx-auto px-6">
-      <header class="py-4">
-        <a href="/" class="font-extrabold text-3xl"><%= config.title %></a>
-      </header>
+  <body class="md:text-base text-sm">
+    <div class="container max-w-screen-lg mx-auto py-6 px-4">
       <main>
-        <%= content %>
-
-        <h2>Newest notes</h2>
-        <div class="flex flex-wrap">
-          <% site.pages.take(15).each do |note| %>
-            <div class="flex-1 shrink min-w-64">
-              <div class="p-4 h-86">
-                <div style="background-color: #3b81b5; position: relative" class="py-4 rounded-lg">
-                  <div class="h-60 w-36 mx-auto overflow-hidden bg-white">
-                    <div class="w-[620px]" style="transform: scale(0.2); transform-origin: top left;">
-                      <section class="mx-auto w-[480px] note-main-content">
-                        <h1 class="text-center"><%= h note.title %></h1>
-                        <ul class="list-none text-sm text-right py-2">
-                          <li>Published on <%= note.created.strftime('%Y-%m-%d') %></li>
-                          <li>Updated on <%= note.updated.strftime('%Y-%m-%d') %></li>
-                        </ul>
-                        <hr>
-                        <%= content(note) %>
-                      </section>
-                    </div>
-                  </div>
-                  <a href="<%= note.permalink %>" style="position: absolute; top: 0; left: 0; bottom: 0; right: 0;"></a>
-                </div>
-                <div class="text-center w-full bg-white">
-                  <aside class="mt-4">
-                    <%= note.created.strftime('%Y-%m-%d') %><br/>
-                    <a href="<%= note.permalink %>"><%= h note.title %></a>
-                  </aside>
-                </div>
-              </div>
-            </div>
-          <% end %>
+        <div class="content-card max-w-[70ch] mx-auto">
+          <header class="mb-10">
+            <a href="/" class="site-title text-lg"><%= config.title %></a>
+          </header>
+          <section class="article-body">
+            <%= content %>
+          </section>
+          <section class="mt-12">
+            <h2>Newest notes</h2>
+            <ul class="list-none my-6 ml-0">
+              <% site.pages.take(15).each do |note| %>
+                <li class="mb-3">
+                  <span class="page-meta mr-2"><%= note.created.strftime('%Y-%m-%d') %></span>
+                  <a href="<%= note.permalink %>"><%= h note.title %></a>
+                </li>
+              <% end %>
+            </ul>
+          </section>
         </div>
       </main>
     </div>
