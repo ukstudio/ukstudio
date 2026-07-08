@@ -1,6 +1,11 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss" source(none);
+
+@source "../layouts";
+@source "../src/**/*.md";
+
+@theme {
+  --font-sans: 'Helvetica Neue', 'Noto Sans CJK JP', 'Noto Sans JP', 'Segoe UI', sans-serif;
+}
 
 :root {
   --color-background: #fff;
@@ -36,64 +41,60 @@ a:hover {
   text-decoration-thickness: 2px;
 }
 
-li {
-}
-
 .article-body {
-  
   img {
-    @apply my-6 rounded-lg shadow-sm;
+    @apply my-6 rounded-lg shadow-xs;
     max-width: 100%;
     height: auto;
     display: block;
     margin-left: auto;
     margin-right: auto;
   }
-  
+
   /* 画像を横に並べるためのコンテナ */
   .image-grid {
     @apply grid grid-cols-1 md:grid-cols-2 gap-4 my-6;
-    
+
     img {
       @apply my-0 w-full h-full object-cover;
     }
   }
-  
+
   /* 同じ高さにするオプション */
   .image-grid-equal {
     @apply grid grid-cols-1 md:grid-cols-2 gap-4 my-6;
-    
+
     img {
       @apply my-0 w-full;
       height: 300px;
       object-fit: cover;
     }
   }
-  
+
   code {
-    @apply px-1 py-0.5 text-sm rounded;
+    @apply px-1 py-0.5 text-sm rounded-sm;
     background-color: var(--color-code-bg);
     font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Fira Code', monospace;
   }
-  
+
   pre {
     @apply my-6 p-4 rounded-lg overflow-x-auto text-sm;
     background-color: var(--color-code-bg);
-    
+
     code {
       @apply p-0;
       background-color: transparent;
     }
   }
-  
+
   hr {
     @apply my-8 border-t border-gray-200;
   }
-  
+
   strong {
     @apply font-semibold;
   }
-  
+
   em {
     @apply italic;
   }
@@ -127,7 +128,7 @@ li {
   ul {
     @apply list-disc my-6 ml-6;
   }
-  
+
   ol {
     @apply list-decimal my-6 ml-6;
   }
@@ -135,13 +136,13 @@ li {
   li {
     @apply mb-2 leading-7;
   }
-  
+
   /* ネストしたリストの余白調整 */
   li > ul,
   li > ol {
     @apply my-2 ml-6;
   }
-  
+
   /* ネストしたリスト内のアイテム間隔も調整 */
   li > ul > li,
   li > ol > li {

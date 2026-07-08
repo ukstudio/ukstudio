@@ -28,15 +28,15 @@ bundle exec florby watch  # ファイル変更を検知して自動ビルド
 cd lib/florby && bundle exec rake test
 ```
 
-### CSS（Tailwind）
+### CSS（Tailwind v4）
 ```bash
 npm run css  # assets/styles.css → src/assets/stylesheets/styles.css を再生成
 ```
-Tailwind は `_build/**/*.html` をスキャンするため、レイアウトのclassを変えたら「ビルド → npm run css → 再ビルド」の順で反映する。
+Tailwind v4 のCSSファースト設定を使用。設定はすべて `assets/styles.css` 内（`@theme` / `@source`）にあり、`tailwind.config.js` は存在しない。スキャン対象は `layouts/` と `src/**/*.md`（ソース側）なので、classを変えたら「npm run css → ビルド」の順で1回ずつでよい。
 
 ### デプロイ
 ```bash
-npm run deploy  # ビルド → CSS再生成 → 再ビルド → gh-pages で GitHub Pages へ
+npm run deploy  # CSS再生成 → ビルド → gh-pages で GitHub Pages へ
 ```
 
 ## アーキテクチャ概要

@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "css": "tailwindcss -i ./assets/styles.css -o ./src/assets/stylesheets/styles.css --minify",
-    "deploy": "bundle exec florby build && npm run css && bundle exec florby build && gh-pages -d ./_build"
+    "deploy": "npm run css && bundle exec florby build && gh-pages -d ./_build"
   },
   "repository": {
     "type": "git",
@@ -19,7 +19,8 @@
   },
   "homepage": "https://github.com/ukstudio/ukstudio#readme",
   "devDependencies": {
+    "@tailwindcss/cli": "^4.3.2",
     "gh-pages": "^6.2.0",
-    "tailwindcss": "^3.4.1"
+    "tailwindcss": "^4.3.2"
   }
 }
