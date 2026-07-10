@@ -25,7 +25,9 @@ bundle exec florby watch  # ファイル変更を検知して自動ビルド
 
 ### テスト（florby本体）
 ```bash
-cd lib/florby && bundle exec rake test
+cd lib/florby && bundle exec rake test                     # 全テスト
+cd lib/florby && bundle exec ruby -Itest -Ilib test/page_test.rb  # 単一ファイル
+cd lib/florby && bundle exec rake test N=/wiki/            # テスト名でフィルタ
 ```
 
 ### CSS（Tailwind v4）

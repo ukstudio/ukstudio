@@ -1,5 +1,5 @@
 ---
-title: Tidy First?
+title: Tidy First?を読んだ
 permalink: tidy-first
 created: 2025-02-05
 updated: 2025-02-05

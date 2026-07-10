@@ -1,5 +1,5 @@
 ---
-title: 結束バンドTOUR "We will B
+title: 結束バンドTOUR "We will Bに参加した
 created: 2025-02-17
 updated: 2025-02-17
 permalink: kessoku-band-we-will-b

@@ -3,6 +3,8 @@ permalink: /ukfes-vol2-report
 created: 2024-05-28
 updated: 2024-05-28
 title: ukfes#2 開催報告
+tags:
+  - essay
 ---
 開催してから1ヶ月ぐらいたちましたが、[[ukfes2]]の開催報告記事です。そもそもukfesって何なの?という話は[[ukfes]]を見てください。
 
