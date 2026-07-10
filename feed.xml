@@ -37,7 +37,7 @@
 &lt;h2&gt;&lt;a href=&quot;#旅行&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot; id=&quot;旅行&quot;&gt;&lt;/a&gt;旅行&lt;/h2&gt;
 &lt;h3&gt;&lt;a href=&quot;#愛媛&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot; id=&quot;愛媛&quot;&gt;&lt;/a&gt;愛媛&lt;/h3&gt;
 &lt;p&gt;RubyKaigi 2025が愛媛県・松山での開催だったので、開催終了後の土日を利用して観光。レンタカーを借り、宇和島の方にも行った。松山はどことなく時間がのんびりしているし、海もきれいだったので、また行ってみたい場所のひとつになった。&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;/ehime/&quot;&gt;愛媛県&lt;/a&gt; のページに少し写真をアップしてある。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;/ehime/&quot;&gt;愛媛県に行ってきた&lt;/a&gt; のページに少し写真をアップしてある。&lt;/p&gt;
 &lt;h3&gt;&lt;a href=&quot;#宮城&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot; id=&quot;宮城&quot;&gt;&lt;/a&gt;宮城&lt;/h3&gt;
 &lt;p&gt;クックパッドの有給休暇の消化期間中に1泊2日で仙台へ。1泊2日と言いつつ、強風で新幹線が止まってしまったため、到着したのは1日目の24時近くになってしまった。なので実質的には1日も観光できていない。色々行きたいところもあったが、レンタカーで秋保温泉に行くぐらいの旅行となってしまった。&lt;/p&gt;
 &lt;h3&gt;&lt;a href=&quot;#島根鳥取&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot; id=&quot;島根鳥取&quot;&gt;&lt;/a&gt;島根・鳥取&lt;/h3&gt;
@@ -137,93 +137,6 @@
 </content>
 </entry>
 <entry>
-  <title>ソフトウェアエンジニアリング</title>
-  <link href="https://ukstudio.jp/software-engineering/"/>
-  <id>https://ukstudio.jp/software-engineering/</id>
-  <published>2025-04-30T15:00:00Z</published>
-  <updated>2025-04-30T15:00:00Z</updated>
-  <summary>私とRuby ソフトウェアテスト エンジニアリングマネジメント イテレーション開発においてゴールは変わるもの Git コミットメッセージの書き方 適切なコミットの粒度 越境する 個人の問題とチームの問題を区別する 本 Tidy First?</summary>
-  <content type="html">&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;/ruby-and-ukstudio/&quot;&gt;私とRuby&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;/software-testing/&quot;&gt;ソフトウェアテスト&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;/engineering-management/&quot;&gt;エンジニアリングマネジメント&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;/イテレーション開発においてゴールは変わるもの/&quot;&gt;イテレーション開発においてゴールは変わるもの&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Git
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;/my-commit-message-style/&quot;&gt;コミットメッセージの書き方&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;/commit-granularity/&quot;&gt;適切なコミットの粒度&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;/beyond-the-boundaries/&quot;&gt;越境する&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;/distinguishing-between-invidiual-issues-and-team-issues/&quot;&gt;個人の問題とチームの問題を区別する&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;本
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;/tidy-first/&quot;&gt;Tidy First?&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-</content>
-</entry>
-<entry>
-  <title>趣味</title>
-  <link href="https://ukstudio.jp/interests/"/>
-  <id>https://ukstudio.jp/interests/</id>
-  <published>2025-04-30T15:00:00Z</published>
-  <updated>2025-04-30T15:00:00Z</updated>
-  <summary>音楽 2023年からドラムをはじめた。演奏の場が欲しいので、自分でイベントを主催し時々ライブをしている。たまにDJもやる。 ukfes 演奏する場は自分で用意すればいいってことで、主催してるイベント 電子ドラムの振動対策 自宅の電子ドラムの</summary>
-  <content type="html">&lt;h2&gt;&lt;a href=&quot;#音楽&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot; id=&quot;音楽&quot;&gt;&lt;/a&gt;音楽&lt;/h2&gt;
-&lt;p&gt;2023年からドラムをはじめた。演奏の場が欲しいので、自分でイベントを主催し時々ライブをしている。たまにDJもやる。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;/ukfes/&quot;&gt;ukfes&lt;/a&gt;
-&lt;ul&gt;
-&lt;li&gt;演奏する場は自分で用意すればいいってことで、主催してるイベント&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;/electronic-drums-vibration-reduction/&quot;&gt;電子ドラムの振動対策&lt;/a&gt;
-&lt;ul&gt;
-&lt;li&gt;自宅の電子ドラムの振動対策。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2&gt;&lt;a href=&quot;#写真&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot; id=&quot;写真&quot;&gt;&lt;/a&gt;写真&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.instagram.com/ukstudio/&quot;&gt;https://www.instagram.com/ukstudio/&lt;/a&gt; に写真をアップしている&lt;/li&gt;
-&lt;li&gt;メイン機材はOM SYSTEMのOM-3
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;/camera/&quot;&gt;所持しているカメラ機材&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2&gt;&lt;a href=&quot;#旅行&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot; id=&quot;旅行&quot;&gt;&lt;/a&gt;旅行&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;/ehime/&quot;&gt;愛媛県&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</content>
-</entry>
-<entry>
-  <title>愛媛県</title>
-  <link href="https://ukstudio.jp/ehime/"/>
-  <id>https://ukstudio.jp/ehime/</id>
-  <published>2025-04-30T15:00:00Z</published>
-  <updated>2025-04-30T15:00:00Z</updated>
-  <summary>2025年4月 RubyKaigi 2025で訪問。会場である松山市以外にも伊予市、宇和島市にも行った。 松山市 松山市は松山城や道後温泉がある。今回は松山城には行かなかったが、道後温泉には行った。道後温泉の近くには神社などもあり、ちょっと</summary>
-  <content type="html">&lt;h2&gt;&lt;a href=&quot;#2025年4月&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot; id=&quot;2025年4月&quot;&gt;&lt;/a&gt;2025年4月&lt;/h2&gt;
-&lt;p&gt;RubyKaigi 2025で訪問。会場である松山市以外にも伊予市、宇和島市にも行った。&lt;/p&gt;
-&lt;h3&gt;&lt;a href=&quot;#松山市&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot; id=&quot;松山市&quot;&gt;&lt;/a&gt;松山市&lt;/h3&gt;
-&lt;p&gt;松山市は松山城や道後温泉がある。今回は松山城には行かなかったが、道後温泉には行った。道後温泉の近くには神社などもあり、ちょっと散策するにはなかなか良いところだった。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/assets/images/ehime/20250420-P4200383.jpg&quot; alt=&quot;&quot; /&gt;&lt;br /&gt;
-&lt;img src=&quot;/assets/images/ehime/20250420-P4200427.jpg&quot; alt=&quot;&quot; /&gt;&lt;br /&gt;
-&lt;img src=&quot;/assets/images/ehime/20250420-P4200456.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-&lt;h3&gt;&lt;a href=&quot;#伊予市&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot; id=&quot;伊予市&quot;&gt;&lt;/a&gt;伊予市&lt;/h3&gt;
-&lt;p&gt;伊予市という名前より下灘の方が有名かもしれない。下灘駅は小さい駅だが観光名所にもなっている。近くに臨時駐車場があり、約20台ほど停められるが満車の可能性も高く、駐車場に行く道も狭いので注意。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/assets/images/ehime/20250419-P4190204.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-&lt;h3&gt;&lt;a href=&quot;#宇和島市&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot; id=&quot;宇和島市&quot;&gt;&lt;/a&gt;宇和島市&lt;/h3&gt;
-&lt;p&gt;鯛めしで有名な宇和島市。かどや本店に行ったが、かどや自体は松山市にもあるので注意。鯛めしはかなりうまい。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/assets/images/ehime/20250419-P4190351.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/assets/images/ehime/20250419-P4190289.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-</content>
-</entry>
-<entry>
   <title>Resume - Yuki Akamatsu</title>
   <link href="https://ukstudio.jp/resume/"/>
   <id>https://ukstudio.jp/resume/</id>
@@ -315,6 +228,93 @@
 </content>
 </entry>
 <entry>
+  <title>趣味</title>
+  <link href="https://ukstudio.jp/interests/"/>
+  <id>https://ukstudio.jp/interests/</id>
+  <published>2025-04-30T15:00:00Z</published>
+  <updated>2025-04-30T15:00:00Z</updated>
+  <summary>音楽 2023年からドラムをはじめた。演奏の場が欲しいので、自分でイベントを主催し時々ライブをしている。たまにDJもやる。 ukfes 演奏する場は自分で用意すればいいってことで、主催してるイベント 電子ドラムの振動対策 自宅の電子ドラムの</summary>
+  <content type="html">&lt;h2&gt;&lt;a href=&quot;#音楽&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot; id=&quot;音楽&quot;&gt;&lt;/a&gt;音楽&lt;/h2&gt;
+&lt;p&gt;2023年からドラムをはじめた。演奏の場が欲しいので、自分でイベントを主催し時々ライブをしている。たまにDJもやる。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;/ukfes/&quot;&gt;ukfes&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;演奏する場は自分で用意すればいいってことで、主催してるイベント&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;/electronic-drums-vibration-reduction/&quot;&gt;電子ドラムの振動対策&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;自宅の電子ドラムの振動対策。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;&lt;a href=&quot;#写真&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot; id=&quot;写真&quot;&gt;&lt;/a&gt;写真&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.instagram.com/ukstudio/&quot;&gt;https://www.instagram.com/ukstudio/&lt;/a&gt; に写真をアップしている&lt;/li&gt;
+&lt;li&gt;メイン機材はOM SYSTEMのOM-3
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;/camera/&quot;&gt;所持しているカメラ機材&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;&lt;a href=&quot;#旅行&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot; id=&quot;旅行&quot;&gt;&lt;/a&gt;旅行&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;/ehime/&quot;&gt;愛媛県に行ってきた&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+</entry>
+<entry>
+  <title>愛媛県に行ってきた</title>
+  <link href="https://ukstudio.jp/ehime/"/>
+  <id>https://ukstudio.jp/ehime/</id>
+  <published>2025-04-30T15:00:00Z</published>
+  <updated>2025-04-30T15:00:00Z</updated>
+  <summary>2025年4月 RubyKaigi 2025で訪問。会場である松山市以外にも伊予市、宇和島市にも行った。 松山市 松山市は松山城や道後温泉がある。今回は松山城には行かなかったが、道後温泉には行った。道後温泉の近くには神社などもあり、ちょっと</summary>
+  <content type="html">&lt;h2&gt;&lt;a href=&quot;#2025年4月&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot; id=&quot;2025年4月&quot;&gt;&lt;/a&gt;2025年4月&lt;/h2&gt;
+&lt;p&gt;RubyKaigi 2025で訪問。会場である松山市以外にも伊予市、宇和島市にも行った。&lt;/p&gt;
+&lt;h3&gt;&lt;a href=&quot;#松山市&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot; id=&quot;松山市&quot;&gt;&lt;/a&gt;松山市&lt;/h3&gt;
+&lt;p&gt;松山市は松山城や道後温泉がある。今回は松山城には行かなかったが、道後温泉には行った。道後温泉の近くには神社などもあり、ちょっと散策するにはなかなか良いところだった。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/ehime/20250420-P4200383.jpg&quot; alt=&quot;&quot; /&gt;&lt;br /&gt;
+&lt;img src=&quot;/assets/images/ehime/20250420-P4200427.jpg&quot; alt=&quot;&quot; /&gt;&lt;br /&gt;
+&lt;img src=&quot;/assets/images/ehime/20250420-P4200456.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;h3&gt;&lt;a href=&quot;#伊予市&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot; id=&quot;伊予市&quot;&gt;&lt;/a&gt;伊予市&lt;/h3&gt;
+&lt;p&gt;伊予市という名前より下灘の方が有名かもしれない。下灘駅は小さい駅だが観光名所にもなっている。近くに臨時駐車場があり、約20台ほど停められるが満車の可能性も高く、駐車場に行く道も狭いので注意。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/ehime/20250419-P4190204.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;h3&gt;&lt;a href=&quot;#宇和島市&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot; id=&quot;宇和島市&quot;&gt;&lt;/a&gt;宇和島市&lt;/h3&gt;
+&lt;p&gt;鯛めしで有名な宇和島市。かどや本店に行ったが、かどや自体は松山市にもあるので注意。鯛めしはかなりうまい。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/ehime/20250419-P4190351.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/ehime/20250419-P4190289.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+</content>
+</entry>
+<entry>
+  <title>ソフトウェアエンジニアリング</title>
+  <link href="https://ukstudio.jp/software-engineering/"/>
+  <id>https://ukstudio.jp/software-engineering/</id>
+  <published>2025-04-30T15:00:00Z</published>
+  <updated>2025-04-30T15:00:00Z</updated>
+  <summary>私とRuby ソフトウェアテスト エンジニアリングマネジメント イテレーション開発においてゴールは変わるもの Git コミットメッセージの書き方 適切なコミットの粒度 越境する 個人の問題とチームの問題を区別する 本 Tidy First?</summary>
+  <content type="html">&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;/ruby-and-ukstudio/&quot;&gt;私とRuby&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;/software-testing/&quot;&gt;ソフトウェアテスト&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;/engineering-management/&quot;&gt;エンジニアリングマネジメント&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;/イテレーション開発においてゴールは変わるもの/&quot;&gt;イテレーション開発においてゴールは変わるもの&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Git
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;/my-commit-message-style/&quot;&gt;コミットメッセージの書き方&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;/commit-granularity/&quot;&gt;適切なコミットの粒度&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;/beyond-the-boundaries/&quot;&gt;越境する&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;/distinguishing-between-invidiual-issues-and-team-issues/&quot;&gt;個人の問題とチームの問題を区別する&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;本
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;/tidy-first/&quot;&gt;Tidy First?を読んだ&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+</entry>
+<entry>
   <title>エンジニアリングマネジメント</title>
   <link href="https://ukstudio.jp/engineering-management/"/>
   <id>https://ukstudio.jp/engineering-management/</id>
@@ -380,7 +380,7 @@
 </content>
 </entry>
 <entry>
-  <title>結束バンドTOUR &quot;We will B</title>
+  <title>結束バンドTOUR &quot;We will Bに参加した</title>
   <link href="https://ukstudio.jp/kessoku-band-we-will-b/"/>
   <id>https://ukstudio.jp/kessoku-band-we-will-b/</id>
   <published>2025-02-16T15:00:00Z</published>
@@ -402,7 +402,7 @@
 </content>
 </entry>
 <entry>
-  <title>Tidy First?</title>
+  <title>Tidy First?を読んだ</title>
   <link href="https://ukstudio.jp/tidy-first/"/>
   <id>https://ukstudio.jp/tidy-first/</id>
   <published>2025-02-04T15:00:00Z</published>
@@ -866,20 +866,34 @@
 </content>
 </entry>
 <entry>
-  <title>Ruby</title>
-  <link href="https://ukstudio.jp/ruby/"/>
-  <id>https://ukstudio.jp/ruby/</id>
+  <title>RSpec</title>
+  <link href="https://ukstudio.jp/rspec/"/>
+  <id>https://ukstudio.jp/rspec/</id>
   <published>2024-06-06T15:00:00Z</published>
   <updated>2024-06-06T15:00:00Z</updated>
-  <summary>オブジェクト指向スクリプト言語 Ruby 自分のプログラミングの経歴の大半はRubyによる経験であり、今もRubyで仕事をしている。自分とRubyについては私とRubyに書いた。 Notes RSpec 私とRuby</summary>
+  <summary>RSpec: Behaviour Driven Development for Ruby 2024年現在、Rubyのデファクトスタンダード的なテスティングフレームワーク。BDDと言ってはいるものの、BDD自体がややこしい言葉になっている今と</summary>
   <content type="html">&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.ruby-lang.org/ja/&quot;&gt;オブジェクト指向スクリプト言語 Ruby&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://rspec.info/&quot;&gt;RSpec: Behaviour Driven Development for Ruby&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;自分のプログラミングの経歴の大半はRubyによる経験であり、今もRubyで仕事をしている。自分とRubyについては&lt;a href=&quot;/ruby-and-ukstudio/&quot;&gt;私とRuby&lt;/a&gt;に書いた。&lt;/p&gt;
-&lt;h2&gt;&lt;a href=&quot;#notes&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot; id=&quot;notes&quot;&gt;&lt;/a&gt;Notes&lt;/h2&gt;
+&lt;p&gt;2024年現在、Rubyのデファクトスタンダード的なテスティングフレームワーク。BDDと言ってはいるものの、BDD自体がややこしい言葉になっている今となってはあまりBDDとかは関係なく使っているユーザーが多いと思われる。&lt;/p&gt;
+&lt;p&gt;BDDについてはかなり昔に &lt;a href=&quot;/bdd-personal-summary/&quot;&gt;BDDについて自分なりにまとめてみた&lt;/a&gt; という記事を書いているのでそちらもどうぞ。&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;#tips&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot; id=&quot;tips&quot;&gt;&lt;/a&gt;Tips&lt;/h2&gt;
+&lt;p&gt;以下Tipsというかメモ。&lt;/p&gt;
+&lt;h3&gt;&lt;a href=&quot;#letとインスタンス変数を組み合わせるとき初期化タイミングに注意&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot; id=&quot;letとインスタンス変数を組み合わせるとき初期化タイミングに注意&quot;&gt;&lt;/a&gt;let!とインスタンス変数を組み合わせるとき初期化タイミングに注意&lt;/h3&gt;
+&lt;pre lang=&quot;ruby&quot; style=&quot;background-color:#2b303b;&quot;&gt;&lt;code&gt;&lt;span style=&quot;color:#c0c5ce;&quot;&gt;let!(&lt;/span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;:var&lt;/span&gt;&lt;span style=&quot;color:#c0c5ce;&quot;&gt;) { @&lt;/span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;var &lt;/span&gt;&lt;span style=&quot;color:#c0c5ce;&quot;&gt;}
+&lt;/span&gt;&lt;span style=&quot;color:#c0c5ce;&quot;&gt;
+&lt;/span&gt;&lt;span style=&quot;color:#c0c5ce;&quot;&gt;before &lt;/span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;do
+&lt;/span&gt;&lt;span style=&quot;color:#c0c5ce;&quot;&gt;  @&lt;/span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;var &lt;/span&gt;&lt;span style=&quot;color:#c0c5ce;&quot;&gt;= &lt;/span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;1
+&lt;/span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;end
+&lt;/span&gt;&lt;span style=&quot;color:#c0c5ce;&quot;&gt;
+&lt;/span&gt;&lt;span style=&quot;color:#c0c5ce;&quot;&gt;it { expect(var).to eq &lt;/span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;1 &lt;/span&gt;&lt;span style=&quot;color:#c0c5ce;&quot;&gt;} &lt;/span&gt;&lt;span style=&quot;color:#65737e;&quot;&gt;#=&amp;gt; 失敗する。varが返す値はnil
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;code&gt;let!&lt;/code&gt;は内部的には&lt;code&gt;before&lt;/code&gt;と&lt;code&gt;let&lt;/code&gt;の組み合せである。また、&lt;code&gt;before&lt;/code&gt;は基本的に上から順に実行される。つまり、この場合&lt;code&gt;@var = 1&lt;/code&gt;より前に&lt;code&gt;let!&lt;/code&gt;による&lt;code&gt;@var&lt;/code&gt;への参照が発生するが、値は設定されていないため&lt;code&gt;nil&lt;/code&gt;が設定される。&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;#参考情報&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot; id=&quot;参考情報&quot;&gt;&lt;/a&gt;参考情報&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;/rspec/&quot;&gt;RSpec&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;/ruby-and-ukstudio/&quot;&gt;私とRuby&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/willnet/rspec-style-guide&quot;&gt;willnet/rspec&lt;span data-escaped-char&gt;-&lt;/span&gt;style&lt;span data-escaped-char&gt;-&lt;/span&gt;guide: 可読性の高いテストコードを書くためのお作法集&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://onk.hatenablog.jp/entry/2023/02/26/221616&quot;&gt;RSpec では context 間の違いを表現するときにのみ let を使う &lt;span data-escaped-char&gt;-&lt;/span&gt; id:onk のはてなブログ&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://blog.onk.ninja/2017/12/13/rspec_shigusa&quot;&gt;Rails Developers Meetup 2017 で RSpec しぐさについて話した &lt;span data-escaped-char&gt;-&lt;/span&gt; onk&lt;span data-escaped-char&gt;.&lt;/span&gt;ninja&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </content>
 </entry>
