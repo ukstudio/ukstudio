@@ -137,6 +137,57 @@
 </content>
 </entry>
 <entry>
+  <title>愛媛県に行ってきた</title>
+  <link href="https://ukstudio.jp/ehime/"/>
+  <id>https://ukstudio.jp/ehime/</id>
+  <published>2025-04-30T15:00:00Z</published>
+  <updated>2025-04-30T15:00:00Z</updated>
+  <summary>2025年4月 RubyKaigi 2025で訪問。会場である松山市以外にも伊予市、宇和島市にも行った。 松山市 松山市は松山城や道後温泉がある。今回は松山城には行かなかったが、道後温泉には行った。道後温泉の近くには神社などもあり、ちょっと</summary>
+  <content type="html">&lt;h2&gt;&lt;a href=&quot;#2025年4月&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot; id=&quot;2025年4月&quot;&gt;&lt;/a&gt;2025年4月&lt;/h2&gt;
+&lt;p&gt;RubyKaigi 2025で訪問。会場である松山市以外にも伊予市、宇和島市にも行った。&lt;/p&gt;
+&lt;h3&gt;&lt;a href=&quot;#松山市&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot; id=&quot;松山市&quot;&gt;&lt;/a&gt;松山市&lt;/h3&gt;
+&lt;p&gt;松山市は松山城や道後温泉がある。今回は松山城には行かなかったが、道後温泉には行った。道後温泉の近くには神社などもあり、ちょっと散策するにはなかなか良いところだった。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/ehime/20250420-P4200383.jpg&quot; alt=&quot;&quot; /&gt;&lt;br /&gt;
+&lt;img src=&quot;/assets/images/ehime/20250420-P4200427.jpg&quot; alt=&quot;&quot; /&gt;&lt;br /&gt;
+&lt;img src=&quot;/assets/images/ehime/20250420-P4200456.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;h3&gt;&lt;a href=&quot;#伊予市&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot; id=&quot;伊予市&quot;&gt;&lt;/a&gt;伊予市&lt;/h3&gt;
+&lt;p&gt;伊予市という名前より下灘の方が有名かもしれない。下灘駅は小さい駅だが観光名所にもなっている。近くに臨時駐車場があり、約20台ほど停められるが満車の可能性も高く、駐車場に行く道も狭いので注意。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/ehime/20250419-P4190204.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;h3&gt;&lt;a href=&quot;#宇和島市&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot; id=&quot;宇和島市&quot;&gt;&lt;/a&gt;宇和島市&lt;/h3&gt;
+&lt;p&gt;鯛めしで有名な宇和島市。かどや本店に行ったが、かどや自体は松山市にもあるので注意。鯛めしはかなりうまい。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/ehime/20250419-P4190351.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/ehime/20250419-P4190289.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+</content>
+</entry>
+<entry>
+  <title>ソフトウェアエンジニアリング</title>
+  <link href="https://ukstudio.jp/software-engineering/"/>
+  <id>https://ukstudio.jp/software-engineering/</id>
+  <published>2025-04-30T15:00:00Z</published>
+  <updated>2025-04-30T15:00:00Z</updated>
+  <summary>私とRuby ソフトウェアテスト エンジニアリングマネジメント イテレーション開発においてゴールは変わるもの Git コミットメッセージの書き方 適切なコミットの粒度 越境する 個人の問題とチームの問題を区別する 本 Tidy First?</summary>
+  <content type="html">&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;/ruby-and-ukstudio/&quot;&gt;私とRuby&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;/software-testing/&quot;&gt;ソフトウェアテスト&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;/engineering-management/&quot;&gt;エンジニアリングマネジメント&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;/イテレーション開発においてゴールは変わるもの/&quot;&gt;イテレーション開発においてゴールは変わるもの&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Git
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;/my-commit-message-style/&quot;&gt;コミットメッセージの書き方&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;/commit-granularity/&quot;&gt;適切なコミットの粒度&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;/beyond-the-boundaries/&quot;&gt;越境する&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;/distinguishing-between-invidiual-issues-and-team-issues/&quot;&gt;個人の問題とチームの問題を区別する&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;本
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;/tidy-first/&quot;&gt;Tidy First?を読んだ&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+</entry>
+<entry>
   <title>Resume - Yuki Akamatsu</title>
   <link href="https://ukstudio.jp/resume/"/>
   <id>https://ukstudio.jp/resume/</id>
@@ -225,93 +276,6 @@
 &lt;li&gt;Ruby on Rails, Vue.js, CircleCI, GitHub, MySQL&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;2015年以前は業務委託としてバックエンド開発に従事していました。2015年に入社後、開発責任者としてチームをリードしました。実装全般とプロジェクトのスケジュール管理を担当し、開発以外にもユーザーインタビュー・テストなど、サービス設計もデザイナーと協力して行いました。&lt;/p&gt;
-</content>
-</entry>
-<entry>
-  <title>趣味</title>
-  <link href="https://ukstudio.jp/interests/"/>
-  <id>https://ukstudio.jp/interests/</id>
-  <published>2025-04-30T15:00:00Z</published>
-  <updated>2025-04-30T15:00:00Z</updated>
-  <summary>音楽 2023年からドラムをはじめた。演奏の場が欲しいので、自分でイベントを主催し時々ライブをしている。たまにDJもやる。 ukfes 演奏する場は自分で用意すればいいってことで、主催してるイベント 電子ドラムの振動対策 自宅の電子ドラムの</summary>
-  <content type="html">&lt;h2&gt;&lt;a href=&quot;#音楽&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot; id=&quot;音楽&quot;&gt;&lt;/a&gt;音楽&lt;/h2&gt;
-&lt;p&gt;2023年からドラムをはじめた。演奏の場が欲しいので、自分でイベントを主催し時々ライブをしている。たまにDJもやる。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;/ukfes/&quot;&gt;ukfes&lt;/a&gt;
-&lt;ul&gt;
-&lt;li&gt;演奏する場は自分で用意すればいいってことで、主催してるイベント&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;/electronic-drums-vibration-reduction/&quot;&gt;電子ドラムの振動対策&lt;/a&gt;
-&lt;ul&gt;
-&lt;li&gt;自宅の電子ドラムの振動対策。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2&gt;&lt;a href=&quot;#写真&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot; id=&quot;写真&quot;&gt;&lt;/a&gt;写真&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.instagram.com/ukstudio/&quot;&gt;https://www.instagram.com/ukstudio/&lt;/a&gt; に写真をアップしている&lt;/li&gt;
-&lt;li&gt;メイン機材はOM SYSTEMのOM-3
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;/camera/&quot;&gt;所持しているカメラ機材&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2&gt;&lt;a href=&quot;#旅行&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot; id=&quot;旅行&quot;&gt;&lt;/a&gt;旅行&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;/ehime/&quot;&gt;愛媛県に行ってきた&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</content>
-</entry>
-<entry>
-  <title>愛媛県に行ってきた</title>
-  <link href="https://ukstudio.jp/ehime/"/>
-  <id>https://ukstudio.jp/ehime/</id>
-  <published>2025-04-30T15:00:00Z</published>
-  <updated>2025-04-30T15:00:00Z</updated>
-  <summary>2025年4月 RubyKaigi 2025で訪問。会場である松山市以外にも伊予市、宇和島市にも行った。 松山市 松山市は松山城や道後温泉がある。今回は松山城には行かなかったが、道後温泉には行った。道後温泉の近くには神社などもあり、ちょっと</summary>
-  <content type="html">&lt;h2&gt;&lt;a href=&quot;#2025年4月&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot; id=&quot;2025年4月&quot;&gt;&lt;/a&gt;2025年4月&lt;/h2&gt;
-&lt;p&gt;RubyKaigi 2025で訪問。会場である松山市以外にも伊予市、宇和島市にも行った。&lt;/p&gt;
-&lt;h3&gt;&lt;a href=&quot;#松山市&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot; id=&quot;松山市&quot;&gt;&lt;/a&gt;松山市&lt;/h3&gt;
-&lt;p&gt;松山市は松山城や道後温泉がある。今回は松山城には行かなかったが、道後温泉には行った。道後温泉の近くには神社などもあり、ちょっと散策するにはなかなか良いところだった。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/assets/images/ehime/20250420-P4200383.jpg&quot; alt=&quot;&quot; /&gt;&lt;br /&gt;
-&lt;img src=&quot;/assets/images/ehime/20250420-P4200427.jpg&quot; alt=&quot;&quot; /&gt;&lt;br /&gt;
-&lt;img src=&quot;/assets/images/ehime/20250420-P4200456.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-&lt;h3&gt;&lt;a href=&quot;#伊予市&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot; id=&quot;伊予市&quot;&gt;&lt;/a&gt;伊予市&lt;/h3&gt;
-&lt;p&gt;伊予市という名前より下灘の方が有名かもしれない。下灘駅は小さい駅だが観光名所にもなっている。近くに臨時駐車場があり、約20台ほど停められるが満車の可能性も高く、駐車場に行く道も狭いので注意。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/assets/images/ehime/20250419-P4190204.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-&lt;h3&gt;&lt;a href=&quot;#宇和島市&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot; id=&quot;宇和島市&quot;&gt;&lt;/a&gt;宇和島市&lt;/h3&gt;
-&lt;p&gt;鯛めしで有名な宇和島市。かどや本店に行ったが、かどや自体は松山市にもあるので注意。鯛めしはかなりうまい。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/assets/images/ehime/20250419-P4190351.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/assets/images/ehime/20250419-P4190289.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-</content>
-</entry>
-<entry>
-  <title>ソフトウェアエンジニアリング</title>
-  <link href="https://ukstudio.jp/software-engineering/"/>
-  <id>https://ukstudio.jp/software-engineering/</id>
-  <published>2025-04-30T15:00:00Z</published>
-  <updated>2025-04-30T15:00:00Z</updated>
-  <summary>私とRuby ソフトウェアテスト エンジニアリングマネジメント イテレーション開発においてゴールは変わるもの Git コミットメッセージの書き方 適切なコミットの粒度 越境する 個人の問題とチームの問題を区別する 本 Tidy First?</summary>
-  <content type="html">&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;/ruby-and-ukstudio/&quot;&gt;私とRuby&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;/software-testing/&quot;&gt;ソフトウェアテスト&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;/engineering-management/&quot;&gt;エンジニアリングマネジメント&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;/イテレーション開発においてゴールは変わるもの/&quot;&gt;イテレーション開発においてゴールは変わるもの&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Git
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;/my-commit-message-style/&quot;&gt;コミットメッセージの書き方&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;/commit-granularity/&quot;&gt;適切なコミットの粒度&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;/beyond-the-boundaries/&quot;&gt;越境する&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;/distinguishing-between-invidiual-issues-and-team-issues/&quot;&gt;個人の問題とチームの問題を区別する&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;本
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;/tidy-first/&quot;&gt;Tidy First?を読んだ&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
 </content>
 </entry>
 <entry>
@@ -894,6 +858,31 @@
 &lt;li&gt;&lt;a href=&quot;https://github.com/willnet/rspec-style-guide&quot;&gt;willnet/rspec&lt;span data-escaped-char&gt;-&lt;/span&gt;style&lt;span data-escaped-char&gt;-&lt;/span&gt;guide: 可読性の高いテストコードを書くためのお作法集&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;https://onk.hatenablog.jp/entry/2023/02/26/221616&quot;&gt;RSpec では context 間の違いを表現するときにのみ let を使う &lt;span data-escaped-char&gt;-&lt;/span&gt; id:onk のはてなブログ&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;https://blog.onk.ninja/2017/12/13/rspec_shigusa&quot;&gt;Rails Developers Meetup 2017 で RSpec しぐさについて話した &lt;span data-escaped-char&gt;-&lt;/span&gt; onk&lt;span data-escaped-char&gt;.&lt;/span&gt;ninja&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+</entry>
+<entry>
+  <title>ukfes</title>
+  <link href="https://ukstudio.jp/ukfes/"/>
+  <id>https://ukstudio.jp/ukfes/</id>
+  <published>2024-05-27T15:00:00Z</published>
+  <updated>2024-09-26T15:00:00Z</updated>
+  <summary>ukfesとはukstudioが主催するライブ・DJイベントです。 自分が現在所属しているクックパッドにはフェス部なるものがあり、以前から有志によるライブイベントをやっていました。主催していた人が忙しくなり、イベントを主催するのが難しくなっ</summary>
+  <content type="html">&lt;p&gt;ukfesとはukstudioが主催するライブ・DJイベントです。&lt;/p&gt;
+&lt;p&gt;自分が現在所属しているクックパッドにはフェス部なるものがあり、以前から有志によるライブイベントをやっていました。主催していた人が忙しくなり、イベントを主催するのが難しくなってきたので、代わりに自分が主催し、イベント名を変えたのがukfesです。自分がライブ・DJをやるための場を自分で作ってるみたいなところがあります。&lt;/p&gt;
+&lt;p&gt;成り立ちからクックパッドの社員・元社員が中心となるイベントですが、何らかの繋りがある人は出演してもらってよいと思うので興味ある人は声かけてください。&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;#開催記録&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot; id=&quot;開催記録&quot;&gt;&lt;/a&gt;開催記録&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;2025/06/01 &lt;a href=&quot;/ukfes5/&quot;&gt;ukfes#5&lt;/a&gt; at 池尻大橋&lt;/li&gt;
+&lt;li&gt;2025/01/11 &lt;a href=&quot;/ukfes-vol4/&quot;&gt;ukfes#4&lt;/a&gt; at 飯田橋&lt;/li&gt;
+&lt;li&gt;2024/09/28 &lt;a href=&quot;/ukfes-vol3/&quot;&gt;ukfes#3&lt;/a&gt; at 池尻大橋&lt;/li&gt;
+&lt;li&gt;2024/04/27 at 大岡山劇場
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;/ukfes-vol2/&quot;&gt;ukfes#2 開催のお知らせ&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;/ukfes-vol2-report/&quot;&gt;ukfes#2 開催報告&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;2023/10/20 DJオンリーイベント at YOKOHAMA COAST garage+&lt;/li&gt;
 &lt;/ul&gt;
 </content>
 </entry>
