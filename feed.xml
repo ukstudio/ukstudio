@@ -5,7 +5,7 @@
   <link href="https://ukstudio.jp/feed.xml" rel="self"/>
   <link href="https://ukstudio.jp/"/>
   <id>https://ukstudio.jp/</id>
-  <updated>2026-01-07T15:00:00Z</updated>
+  <updated>2026-08-25T15:00:00Z</updated>
   <author><name>赤松 祐希</name></author>
   <entry>
   <title>2025年のふりかえり</title>
@@ -164,13 +164,14 @@
   <link href="https://ukstudio.jp/software-engineering/"/>
   <id>https://ukstudio.jp/software-engineering/</id>
   <published>2025-04-30T15:00:00Z</published>
-  <updated>2025-04-30T15:00:00Z</updated>
-  <summary>私とRuby ソフトウェアテスト エンジニアリングマネジメント イテレーション開発においてゴールは変わるもの Git コミットメッセージの書き方 適切なコミットの粒度 越境する 個人の問題とチームの問題を区別する 本 Tidy First?</summary>
+  <updated>2026-08-25T15:00:00Z</updated>
+  <summary>私とRuby ソフトウェアテスト エンジニアリングマネジメント イテレーション開発においてゴールは変わるもの スクラム Git コミットメッセージの書き方 適切なコミットの粒度 越境する 個人の問題とチームの問題を区別する 本 Tidy F</summary>
   <content type="html">&lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;/ruby-and-ukstudio/&quot;&gt;私とRuby&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;/software-testing/&quot;&gt;ソフトウェアテスト&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;/engineering-management/&quot;&gt;エンジニアリングマネジメント&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;/イテレーション開発においてゴールは変わるもの/&quot;&gt;イテレーション開発においてゴールは変わるもの&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;/scrum/&quot;&gt;スクラム&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Git
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;/my-commit-message-style/&quot;&gt;コミットメッセージの書き方&lt;/a&gt;&lt;/li&gt;
@@ -283,7 +284,7 @@
   <link href="https://ukstudio.jp/engineering-management/"/>
   <id>https://ukstudio.jp/engineering-management/</id>
   <published>2025-02-25T15:00:00Z</published>
-  <updated>2025-02-27T15:00:00Z</updated>
+  <updated>2026-08-25T15:00:00Z</updated>
   <summary>エンジニアリングをマネジメントする エンジニアリングとは技術の知識やスキルを活用し、ユーザーのニーズを満たし、課題を解決するためのプロダクトを構築するための活動だと考える。エンジニアリングマネジメントとはこの活動においてユーザーに届く価値が</summary>
   <content type="html">&lt;h2&gt;&lt;a href=&quot;#エンジニアリングをマネジメントする&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot; id=&quot;エンジニアリングをマネジメントする&quot;&gt;&lt;/a&gt;エンジニアリングをマネジメントする&lt;/h2&gt;
 &lt;p&gt;エンジニアリングとは技術の知識やスキルを活用し、ユーザーのニーズを満たし、課題を解決するためのプロダクトを構築するための活動だと考える。エンジニアリングマネジメントとはこの活動においてユーザーに届く価値がより大きくなるように努める&lt;a href=&quot;/management/&quot;&gt;マネジメント&lt;/a&gt;活動といえるだろう。&lt;/p&gt;
@@ -300,6 +301,12 @@
 &lt;p&gt;上記の4つ以外にもあるかもしれないが、主要なのはこの辺りだろう。エンジニアリングマネージャー以外に、テックリードやプロジェクトマネージャー、プロダクトマネージャーがチームにいる場合その役割は分担できる。一方でチームや組織のサイズが小さく、各領域に専任のマネージャーがいない場合、エンジニアリングマネージャーが担当することが多いだろう。&lt;/p&gt;
 &lt;p&gt;もちろん、プロダクトマネージャーや、プロジェクトマネージャーが他のマネジメント領域を担うこともあると思うが、個人的な経験からするとエンジニアリングについて理解しているであろうエンジニアがエンジニアリングマネージャーとして他の領域も見ることが多い印象だ。&lt;/p&gt;
 &lt;p&gt;テクニカルマネジメントであれば、テックリードが不在の場合技術面におけるリードをエンジニアリングマネージャーが行なうこともあるだろう。いわゆるプレイングマネージャーと呼ばれる形になると思うが、Will LarsonのエレガントパズルではTLM(Tech Lead Manager)と呼ばれていた。 このようにエンジニアリングマネジメントにおいては責任範囲・担当領域が組織のフェーズや状況によって変わることが多い。&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;#notes&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot; id=&quot;notes&quot;&gt;&lt;/a&gt;Notes&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;/scrum/&quot;&gt;スクラム&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;/イテレーション開発においてゴールは変わるもの/&quot;&gt;イテレーション開発においてゴールは変わるもの&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;/distinguishing-between-invidiual-issues-and-team-issues/&quot;&gt;個人の問題とチームの問題を区別する&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 </content>
 </entry>
 <entry>
@@ -633,7 +640,7 @@
   <link href="https://ukstudio.jp/management/"/>
   <id>https://ukstudio.jp/management/</id>
   <published>2024-12-26T15:00:00Z</published>
-  <updated>2024-12-26T15:00:00Z</updated>
+  <updated>2026-08-25T15:00:00Z</updated>
   <summary>WIP マネジメントとは 組織の目標達成のために、組織に所属する人達の活動を管理する体系的なプロセスおよびその実践 マネジメントの成り立ち フレデリック・W・テイラーの科学的管理法 アンリ・ファヨールの「計画・組織・指揮・調整・統制」 ピー</summary>
   <content type="html">&lt;p&gt;WIP&lt;/p&gt;
 &lt;h2&gt;&lt;a href=&quot;#マネジメントとは&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot; id=&quot;マネジメントとは&quot;&gt;&lt;/a&gt;マネジメントとは&lt;/h2&gt;
@@ -651,7 +658,7 @@
 &lt;ul&gt;
 &lt;li&gt;プロジェクトマネジメント
 &lt;ul&gt;
-&lt;li&gt;スクラムなどのアジャイルな開発プロセスを軸としたチームの進行管理&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;/scrum/&quot;&gt;スクラム&lt;/a&gt;などのアジャイルな開発プロセスを軸としたチームの進行管理&lt;/li&gt;
 &lt;li&gt;ウォーターフォールのような古典的かつ長期に渡るようなプロジェクトマネジメントはそこまで得意ではない&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
@@ -688,6 +695,20 @@
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
+&lt;h2&gt;&lt;a href=&quot;#notes&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot; id=&quot;notes&quot;&gt;&lt;/a&gt;Notes&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;/engineering-management/&quot;&gt;エンジニアリングマネジメント&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;自分のマネジメント領域として一番近いもの&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;/beyond-the-boundaries/&quot;&gt;越境する&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;役割の境界について&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;/distinguishing-between-invidiual-issues-and-team-issues/&quot;&gt;個人の問題とチームの問題を区別する&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 </content>
 </entry>
 <entry>
@@ -716,7 +737,7 @@
   <link href="https://ukstudio.jp/distinguishing-between-invidiual-issues-and-team-issues/"/>
   <id>https://ukstudio.jp/distinguishing-between-invidiual-issues-and-team-issues/</id>
   <published>2024-10-21T15:00:00Z</published>
-  <updated>2024-10-21T15:00:00Z</updated>
+  <updated>2026-08-25T15:00:00Z</updated>
   <summary>KPTなどのふりかえりを行なうチームも多いと思うが、そういったふりかえりでなにか問題をあげるときはその問題が個人の問題なのか、チームの問題なのかを区別したい。 というのも、個人レベルの問題をチームレベルの問題として扱うと、変に大袈裟な話にな</summary>
   <content type="html">&lt;p&gt;KPTなどのふりかえりを行なうチームも多いと思うが、そういったふりかえりでなにか問題をあげるときはその問題が個人の問題なのか、チームの問題なのかを区別したい。&lt;/p&gt;
 &lt;p&gt;というのも、個人レベルの問題をチームレベルの問題として扱うと、変に大袈裟な話になってしまい、適切な解決策が導き出せないと思うからだ。&lt;/p&gt;
@@ -726,6 +747,15 @@
 &lt;p&gt;もちろん、個人の問題をチームで解決してはいけないということではない。問題 vs 私たちであるべきだと思う。今回の例も、ペアプロしながら適切なコミットやPull Requestの分け方を伝えることで、本人のスキルを伸ばすことができるかもしれない。他にもチーム内でより適切な解決策を一緒に考えたり、サポートしたりすることもできるだろう。&lt;/p&gt;
 &lt;p&gt;今回は個人の問題をチームの問題として扱ってしまう例をだしたが、逆のパターンもあるだろう。&lt;/p&gt;
 &lt;p&gt;この話は別の言い方をすると、問題の芯をしっかり捉えよう、ということなのかもしれない。自分が問題としていることが、どこから生まれているのか、なにが理由で起きているのか、しっかりと見極めるように心掛けたい。&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;#notes&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot; id=&quot;notes&quot;&gt;&lt;/a&gt;Notes&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;/management/&quot;&gt;マネジメント&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;/beyond-the-boundaries/&quot;&gt;越境する&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;役割の境界を越えて協力してほしい、という話&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
 </content>
 </entry>
 <entry>
@@ -770,7 +800,7 @@
   <link href="https://ukstudio.jp/electronic-drums-vibration-reduction/"/>
   <id>https://ukstudio.jp/electronic-drums-vibration-reduction/</id>
   <published>2024-06-12T15:00:00Z</published>
-  <updated>2024-06-12T15:00:00Z</updated>
+  <updated>2026-08-25T15:00:00Z</updated>
   <summary>お隣から電子ドラムの振動について苦情が来てしまったので対策を試みた。苦情の内容からパッドなどを叩いたときの音ではなく、パッドやバスドラを叩いたときに発生する振動(特に足のペダルを踏んだときの振動)が伝わってると思われるので主に振動の対策をす</summary>
   <content type="html">&lt;p&gt;お隣から電子ドラムの振動について苦情が来てしまったので対策を試みた。苦情の内容からパッドなどを叩いたときの音ではなく、パッドやバスドラを叩いたときに発生する振動(特に足のペダルを踏んだときの振動)が伝わってると思われるので主に振動の対策をする。&lt;/p&gt;
 &lt;h2&gt;&lt;a href=&quot;#電子ドラムを2階から1階に移す&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot; id=&quot;電子ドラムを2階から1階に移す&quot;&gt;&lt;/a&gt;電子ドラムを2階から1階に移す&lt;/h2&gt;
@@ -827,6 +857,10 @@
 &lt;li&gt;ドラムマットがかなり薄くあまり意味がないので一番上もジョイントマットでよかったかもしれない&lt;/li&gt;
 &lt;li&gt;やや揺れるので、防振が問題ないならゲルダンパーはもう少し固いものでよかったかもしれない&lt;/li&gt;
 &lt;/ul&gt;
+&lt;h2&gt;&lt;a href=&quot;#notes&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot; id=&quot;notes&quot;&gt;&lt;/a&gt;Notes&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;/band/&quot;&gt;バンド活動&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 </content>
 </entry>
 <entry>
@@ -834,13 +868,13 @@
   <link href="https://ukstudio.jp/rspec/"/>
   <id>https://ukstudio.jp/rspec/</id>
   <published>2024-06-06T15:00:00Z</published>
-  <updated>2024-06-06T15:00:00Z</updated>
+  <updated>2026-08-25T15:00:00Z</updated>
   <summary>RSpec: Behaviour Driven Development for Ruby 2024年現在、Rubyのデファクトスタンダード的なテスティングフレームワーク。BDDと言ってはいるものの、BDD自体がややこしい言葉になっている今と</summary>
   <content type="html">&lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https://rspec.info/&quot;&gt;RSpec: Behaviour Driven Development for Ruby&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;2024年現在、Rubyのデファクトスタンダード的なテスティングフレームワーク。BDDと言ってはいるものの、BDD自体がややこしい言葉になっている今となってはあまりBDDとかは関係なく使っているユーザーが多いと思われる。&lt;/p&gt;
-&lt;p&gt;BDDについてはかなり昔に &lt;a href=&quot;/bdd-personal-summary/&quot;&gt;BDDについて自分なりにまとめてみた&lt;/a&gt; という記事を書いているのでそちらもどうぞ。&lt;/p&gt;
+&lt;p&gt;BDDについてはかなり昔に &lt;a href=&quot;/bdd-personal-summary/&quot;&gt;BDDについて自分なりにまとめてみた&lt;/a&gt; という記事を書いているのでそちらもどうぞ。テストそのものについては &lt;a href=&quot;/software-testing/&quot;&gt;ソフトウェアテスト&lt;/a&gt; にまとめている。&lt;/p&gt;
 &lt;h2&gt;&lt;a href=&quot;#tips&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot; id=&quot;tips&quot;&gt;&lt;/a&gt;Tips&lt;/h2&gt;
 &lt;p&gt;以下Tipsというかメモ。&lt;/p&gt;
 &lt;h3&gt;&lt;a href=&quot;#letとインスタンス変数を組み合わせるとき初期化タイミングに注意&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot; id=&quot;letとインスタンス変数を組み合わせるとき初期化タイミングに注意&quot;&gt;&lt;/a&gt;let!とインスタンス変数を組み合わせるとき初期化タイミングに注意&lt;/h3&gt;
