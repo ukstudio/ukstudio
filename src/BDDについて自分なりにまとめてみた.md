@@ -6,6 +6,8 @@ created: 2011-07-02
 updated: 2011-07-02
 title: BDDについて自分なりにまとめてみた
 permalink: bdd-personal-summary
+tags:
+  - blog
 ---
 BDDという言葉も割と人によって指すものが違うようなので「俺の中でのBDDはこうだよ」って内容のエントリ。別に絶対的なものでもないと思うので参考までに
 

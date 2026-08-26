@@ -3,7 +3,7 @@ created: 2018-11-19
 updated: 2018-11-19
 title: AWS Solution Architect Associateを取得した
 tags:
-  - essay
+  - blog
 ---
 
 AWS re:Inventに参加するにあたって取得しておいた方がいいよってなったのでガッとやって取得。会場は歌舞伎座のテストセンターで受けたけど、まわりのおすすめ通り静かで受けやすい良い会場だった。

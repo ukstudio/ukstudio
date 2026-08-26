@@ -4,7 +4,7 @@ updated: 2018-02-01
 title: 株式会社spice lifeを退職します
 aliases: ["/2018/02/01/leave_spicelife/"]
 tags:
-  - essay
+  - blog
 ---
 
 少し先になりますが、2018年2月28日をもって株式会社spice lifeを退職します。今日が最終勤務になり、残りは有給消化する予定です。

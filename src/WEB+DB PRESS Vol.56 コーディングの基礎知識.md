@@ -5,6 +5,8 @@ permalink: wdpress-vol56
 aliases:
   - /2010/04/19/web_db_vol56/
   - /posts/2010/04/19/web_db_vol56/
+tags:
+  - blog
 ---
 2010年4月24日発売のWEB+DB PRESS Vol.56の特集「コーディングの基礎知識」を書いた。既にAmazonに書影が出てるね。(<a href='http://www.amazon.co.jp/gp/product/4774142107?linkCode=shr&camp=1207&creative=8411&tag=ukstudio0c-22' target='_blank'>アフィリエイトリンク</a>)。
 

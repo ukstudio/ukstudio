@@ -3,7 +3,7 @@ title: ブログをHugoからGatsbyに乗り換えた
 created: 2021-01-01
 updated: 2021-01-01
 tags:
-  - essay
+  - blog
 ---
 ほとんどまともに活用されていない当ブログだけど、[Hugo](https://gohugo.io/)から[Gatsby](https://www.gatsbyjs.com/)に乗り換えた。乗り換えた理由はなんとなく以上のものは実はそんなにないのだけど、強いて言うなら
 

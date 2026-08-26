@@ -2,6 +2,8 @@
 title: オンラインでDJやりました & セトリ
 created: 2021-05-23
 updated: 2021-05-23
+tags:
+  - blog
 ---
 
 <blockquote class="twitter-tweet"><p lang="ja" dir="ltr">5月21日21時からインターネットでいいかんじにDJやります！<br>1時頃には終わるイベントなので参加しやすい(と思う！)イベントです。当日は下記URLから!!<br>URLの遷移先は適宜出演中のDJのチャンネルにする予定です！<a href="https://t.co/1MjFozf8xc">https://t.co/1MjFozf8xc</a> <a href="https://t.co/DDogyij1Un">pic.twitter.com/DDogyij1Un</a></p>&mdash; あそなす (@asonas) <a href="https://twitter.com/asonas/status/1389590588710789120?ref\_src=twsrc%5Etfw">May 4, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

@@ -3,6 +3,8 @@ title: Tidy First?を読んだ
 permalink: tidy-first
 created: 2025-02-05
 updated: 2025-02-05
+tags:
+  - blog
 ---
 このページはKent Beckの[Tidy First?](https://amzn.to/3ErRCXa)(アフィリエイト)の感想記事だ。
 

@@ -7,7 +7,7 @@ aliases:
 permalink: sapporo-ruby-kaigi-03
 title: 札幌Ruby会議03に参加した
 tags:
-  - essay
+  - blog
 ---
 - [札幌Ruby会議03 \- Regional RubyKaigi](https://regional.rubykaigi.org/sapporo03/)
 

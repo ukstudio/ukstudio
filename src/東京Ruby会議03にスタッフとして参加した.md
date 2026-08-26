@@ -7,7 +7,7 @@ aliases:
 permalink: tokyo-ruby-kaigi-03
 title: 東京Ruby会議03にスタッフとして参加した
 tags:
-  - essay
+  - blog
 ---
 2月27日に開催された<a href='http://regional.rubykaigi.org/tokyo03' target='_blank'>東京Ruby会議03</a>にスタッフとして参加した。
 

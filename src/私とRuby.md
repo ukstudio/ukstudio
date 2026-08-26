@@ -3,7 +3,7 @@ permalink: ruby-and-ukstudio
 created: 2024-01-16
 updated: 2024-01-16
 tags:
-  - essay
+  - blog
 ---
 Rubyの思い出話。10年以上前のこともあるのでもしかしたら記憶違いな部分もあるかもしれない。
 
