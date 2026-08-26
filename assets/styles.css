@@ -31,6 +31,10 @@ body {
   /* 和文(Hiragino W3/W6)と欧文(SF Pro)の実効ウェイトを揃えるため 400。
      500にすると欧文だけMediumになり、和文はW3に落ちて太さが揃わない */
   font-weight: 400;
+  /* 和文の約物(、。「」など)を詰めて和欧混植のアキを揃える。
+     paltで詰まる分をletter-spacingで戻して釣り合いを取る */
+  font-feature-settings: "palt" 1;
+  letter-spacing: 0.03em;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -65,7 +69,7 @@ a:hover {
 .site-title {
   color: var(--color-text);
   font-weight: 700;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.03em;
   text-decoration: none;
 }
 
@@ -137,6 +141,8 @@ a:hover {
     @apply px-1 py-0.5 text-sm rounded-sm;
     background-color: var(--color-code-bg);
     font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Fira Code', monospace;
+    /* 等幅は本文のトラッキングを引き継がせない */
+    letter-spacing: normal;
   }
 
   pre {
