@@ -28,7 +28,9 @@ body {
   color: var(--color-text);
   background-color: var(--color-background);
   font-family: var(--font-sans);
-  font-weight: 500;
+  /* 和文(Hiragino W3/W6)と欧文(SF Pro)の実効ウェイトを揃えるため 400。
+     500にすると欧文だけMediumになり、和文はW3に落ちて太さが揃わない */
+  font-weight: 400;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
